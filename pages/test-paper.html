@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>টেস্ট পেপার প্রশ্নব্যাংক - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/test-paper.css">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="goBackTestPaper()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span id="back-btn-text">হোমে ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="goBackTestPaper()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html" class="active"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কন্টেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব বার -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span>টেস্ট পেপার</span>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current" id="breadcrumb-current">সাল নির্বাচন</span>
+                </div>
+            </div>
+
+            <!-- ধাপ ১: বছর নির্বাচন -->
+            <section id="step-years">
+                <div class="page-header-banner" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%);">
+                    <div class="page-header-text">
+                        <h1>এইচএসসি টেস্ট পেপার প্রশ্নব্যাংক</h1>
+                        <p>ঢাকা ও অন্যান্য বিভাগের খ্যাতনামা শীর্ষ কলেজসমূহের নির্বাচনী ও প্রাক-নির্বাচনী পরীক্ষার প্রশ্নপত্র এবং সঠিক সমাধান অনুশীলন করুন।</p>
+                    </div>
+                </div>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+                    <div class="list-card" onclick="selectTestYear('2026')">
+                        <div class="card-icon-box" style="background: #ECFDF5; color: #10B981;">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">টেস্ট পেপার ২০২৬</div>
+                            <div class="card-subtitle">আসন্ন বোর্ড পরীক্ষার্থীদের জন্য স্পেশাল</div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right card-arrow"></i>
+                    </div>
+
+                    <div class="list-card" onclick="selectTestYear('2025')">
+                        <div class="card-icon-box" style="background: #ECFDF5; color: #10B981;">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">টেস্ট পেপার ২০২৫</div>
+                            <div class="card-subtitle">শীর্ষ কলেজের বিগত টেস্ট পরীক্ষা</div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right card-arrow"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ধাপ ২: শীর্ষ কলেজ নির্বাচন -->
+            <section id="step-colleges" style="display: none;">
+                <div class="page-header-banner" style="background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);">
+                    <div class="page-header-text">
+                        <h1>শীর্ষ কলেজ নির্বাচন করুন (<span id="current-year-display">2026</span>)</h1>
+                        <p>নিচের তালিকা থেকে আপনার পছন্দের কলেজ নির্বাচন করে তাদের টেস্ট পরীক্ষার প্রশ্ন অনুশীলন শুরু করুন।</p>
+                    </div>
+                </div>
+
+                <div class="colleges-grid">
+                    <div class="college-card" onclick="openCollegeModal('নটর ডেম কলেজ, ঢাকা')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">নটর ডেম কলেজ, ঢাকা</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> মতিঝিল, ঢাকা</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> বেইলি রোড, ঢাকা</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('রাজউক উত্তরা মডেল কলেজ')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">রাজউক উত্তরা মডেল কলেজ</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> উত্তরা, ঢাকা</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('ঢাকা রেসিডেনসিয়াল মডেল কলেজ')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">ঢাকা রেসিডেনসিয়াল মডেল কলেজ</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> মোহাম্মদপুর, ঢাকা</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('ঢাকা সিটি কলেজ')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">ঢাকা সিটি কলেজ</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> ধানমন্ডি, ঢাকা</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('চট্টগ্রাম কলেজ, চট্টগ্রাম')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">চট্টগ্রাম কলেজ, চট্টগ্রাম</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> চকবাজার, চট্টগ্রাম</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('রাজশাহী কলেজ, রাজশাহী')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">রাজশাহী কলেজ, রাজশাহী</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> বোয়ালিয়া, রাজশাহী</div>
+                        </div>
+                    </div>
+
+                    <div class="college-card" onclick="openCollegeModal('ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ')">
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> রংপুর</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ধাপ ৩: প্রশ্ন ভিউ (MCQ ও CQ) -->
+            <section id="step-questions" style="display: none;">
+                <div class="breadcrumb-bar" style="background: #F8FAFC;">
+                    <h2 id="test-q-view-title" style="font-size: 1.15rem; color: var(--primary);">কলেজ টেস্ট পেপার অনুশীলন</h2>
+                </div>
+
+                <!-- MCQ ভিউ -->
+                <div id="test-mcq-view">
+                    <div class="quiz-toolbar">
+                        <span class="quiz-progress-text" id="test-mcq-count"><i class="fa-solid fa-circle-question"></i> মোট প্রশ্ন: লোড হচ্ছে...</span>
+                        <div class="show-answer-control">
+                            <span>সরাসরি উত্তর দেখুন</span>
+                            <label class="switch">
+                                <input type="checkbox" id="testPaperShowAns" onchange="toggleCollegeAnswers(this)">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ডাইনামিক কলেজ MCQ কন্টেইনার -->
+                    <div id="test-mcq-questions-list">
+                    </div>
+                </div>
+
+                <!-- CQ ভিউ -->
+                <div id="test-cq-view" style="display: none;">
+                    <div class="question-card">
+                        <div class="cq-stem">
+                            <span class="cq-tag"><i class="fa-solid fa-feather-pointed"></i> উদ্দীপক [নটর ডেম কলেজ টেস্ট পরীক্ষা]</span>
+                            <p>আরিফ পারমাণবিক স্কেলে উন্নত ন্যানো পার্টিকেল ব্যবহার করে ওষুধ উৎপাদন নিয়ে গবেষণা করেন। অপরদিকে তার বন্ধু তানভীর ভার্চুয়াল রিয়েলিটি প্রযুক্তির সিমুলেটর ব্যবহার করে ফ্লাইট ড্রাইভিং প্রশিক্ষণ গ্রহণ করছেন।</p>
+                        </div>
+
+                        <div class="cq-sub-questions">
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(ক) টেলিপ্রেজেন্স (Telepresence) কী? [মান: ১]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> টেলিপ্রেজেন্স হলো এমন একটি উন্নত প্রযুক্তি যার মাধ্যমে ব্যবহারকারী দূরবর্তী কোনো স্থানে শারীরিকভাবে উপস্থিত না থেকেও বাস্তবে উপস্থিত থাকার নিখুঁত অনুভূতি লাভ করেন।
+                                </div>
+                            </div>
+
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(খ) "ভার্চুয়াল রিয়েলিটির মাধ্যমে ঝুঁকিমুক্ত ড্রাইভিং প্রশিক্ষণ সম্ভব"- ব্যাখ্যা কর। [মান: ২]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> ভার্চুয়াল রিয়েলিটি হেডসেট ও কম্পিউটার সিমুলেশনের মাধ্যমে রাস্তায় না নেমেই ত্রিমাত্রিক কাল্পনিক পরিবেশে বাস্তবসম্মত গাড়ি বা বিমান চালানোর অভিজ্ঞতা তৈরি করা যায়। ভুল করলেও এতে কোনো দুর্ঘটনা বা আর্থিক ক্ষতির ঝুঁকি থাকে না।
+                                </div>
+                            </div>
+
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(গ) আরিফের গবেষণার প্রযুক্তিটির কার্যপদ্ধতি বিশ্লেষণ কর। [মান: ৩]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> আরিফ ন্যানোটেকনোলজি ব্যবহার করে গবেষণা করছেন। ১ থেকে ১০০ ন্যানোমিটার স্কেলের উপাদান নিয়ে কাজ করাই ন্যানোপ্রযুক্তি। চিকিৎসাবিজ্ঞানে এর মাধ্যমে শরীরের নির্দিষ্ট আক্রান্ত কোষে সরাসরি স্মার্ট ড্রাগ ডেলিভারি করা যায়।
+                                </div>
+                            </div>
+
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(ঘ) মানবকল্যাণে আরিফ ও তানভীরের ব্যবহৃত প্রযুক্তিদ্বয়ের গুরুত্ব মূল্যায়ন কর। [মান: ৪]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> আরিফের ন্যানোটেকনোলজি ক্যান্সার চিকিৎসা ও টেকসই উৎপাদনে বিপ্লব ঘটিয়েছে, আর তানভীরের ভার্চুয়াল রিয়েলিটি জটিল প্রশিক্ষণ ও শিক্ষায় নিরাপত্তা নিশ্চিত করছে। উভয় প্রযুক্তিই আধুনিক মানবকল্যাণে অপরিহার্য।
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ -->
+    <div id="testTypeModal" class="modal-overlay" onclick="if(event.target === this) closeCollegeModal()">
+        <div class="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title" id="modal-college-title">Choose Question Type</h3>
+            
+            <div class="sheet-options">
+                <div class="type-option-card" onclick="selectTestQuestionType('MCQ')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ প্র্যাকটিস</h3>
+                        <p>শীর্ষ কলেজের নির্বাচনী বহুনির্বাচনি প্রশ্নাবলি সমাধান</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectTestQuestionType('CQ')">
+                    <div class="type-icon cq">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের আদর্শ সমাধান</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeCollegeModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/test-paper.js"></script>
+</body>
+</html>

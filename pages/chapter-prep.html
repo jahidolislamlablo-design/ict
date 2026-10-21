@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অধ্যায়ভিত্তিক প্রস্তুতি - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/chapter-prep.css">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="goBackChapterPrep()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span id="back-btn-text">হোমে ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="goBackChapterPrep()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html" class="active"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব বার -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span>অধ্যায়ভিত্তিক প্রস্তুতি</span>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current" id="breadcrumb-current">অধ্যায় নির্বাচন</span>
+                </div>
+            </div>
+
+            <!-- অধ্যায় তালিকা ভিউ -->
+            <section id="chapterListView">
+                <div class="page-header-banner" style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);">
+                    <div class="page-header-text">
+                        <h1>এইচএসসি আইসিটি অধ্যায়সমূহ</h1>
+                        <p>প্রতিটি অধ্যায়ের গুরুত্বপূর্ণ টপিকভিত্তিক বহুনির্বাচনি (MCQ) এবং সৃজনশীল (CQ) প্রশ্ন ব্যাখ্যাসহ অনুশীলন করে আপনার দক্ষতা বৃদ্ধি করুন।</p>
+                    </div>
+                </div>
+
+                <div class="chapters-grid">
+                    <!-- ১ম অধ্যায় -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('১ম অধ্যায়: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #EEF2FF; color: #4F46E5;">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>১ম অধ্যায়</span>
+                                <h3>তথ্য ও যোগাযোগ প্রযুক্তি</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">ভার্চুয়াল রিয়েলিটি, কৃত্রিম বুদ্ধিমত্তা, বায়োমেট্রিক্স, ন্যানোটেকনোলজি ও ক্রায়োসার্জারি।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ১৪০টি MCQ | ২৮টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 85%;"></div></div>
+                                <span>৮৫%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ২য় অধ্যায় -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('২য় অধ্যায়: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #ECFEFF; color: #06B6D4;">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>২য় অধ্যায়</span>
+                                <h3>কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">ডাটা কমিউনিকেশন মাধ্যম, ওয়াইফাই/ওয়াইম্যাক্স, নেটওয়ার্ক টপোলজি ও ক্লাউড কম্পিউটিং।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ১৬৫টি MCQ | ৩২টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 70%;"></div></div>
+                                <span>৭০%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ৩য় অধ্যায় ১ম অংশ -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('৩য় অধ্যায় (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #FAF5FF; color: #8B5CF6;">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>৩য় অধ্যায় (১ম অংশ)</span>
+                                <h3>সংখ্যা পদ্ধতি</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">বাইনারি, অক্টাল, ডেসিমেল, হেক্সাডেসিমেল রূপান্তর, চিহ্নযুক্ত সংখ্যা ও ২ এর পরিপূরক।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ১৮০টি MCQ | ৩৫টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 90%;"></div></div>
+                                <span>৯০%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ৩য় অধ্যায় ২য় অংশ -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('৩য় অধ্যায় (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #FFFBEB; color: #D97706;">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>৩য় অধ্যায় (২য় অংশ)</span>
+                                <h3>ডিজিটাল ডিভাইস</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">মৌলিক ও সার্বজনীন গেট, বুলিয়ান অ্যালজেবরা, ডিমরগানের উপপাদ্য, এনকোডার, ডিকোডার ও অ্যাডার।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ১৫৫টি MCQ | ৩০টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 60%;"></div></div>
+                                <span>৬০%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ৪র্থ অধ্যায় -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('৪র্থ অধ্যায়: ওয়েব ডিজাইন পরিচিতি এবং এইচটিএমএল (HTML)')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #ECFDF5; color: #10B981;">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>৪র্থ অধ্যায়</span>
+                                <h3>ওয়েব ডিজাইন ও HTML</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">ওয়েবসাইটের কাঠামো, HTML ট্যাগ ও সিনট্যাক্স, টেবিল, ইমেজ, লিংক এবং ওয়েব পাবলিশিং।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ১৭৫টি MCQ | ২৬টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 95%;"></div></div>
+                                <span>৯৫%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ৫ম অধ্যায় -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('৫ম অধ্যায়: প্রোগ্রামিং ভাষা (C Programming)')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #FEF2F2; color: #EF4444;">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>৫ম অধ্যায়</span>
+                                <h3>প্রোগ্রামিং ভাষা (C)</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">অ্যালগরিদম ও ফ্লোচার্ট, সি প্রোগ্রামের বেসিক গঠন, ডাটা টাইপ, লুপ (for, while) ও ফাংশন।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ২১০টি MCQ | ৪০টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 50%;"></div></div>
+                                <span>৫০%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ৬ষ্ঠ অধ্যায় -->
+                    <div class="chapter-prep-card" onclick="openChapterModal('৬ষ্ঠ অধ্যায়: ডাটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)')">
+                        <div class="chapter-card-top">
+                            <div class="chapter-badge-icon" style="background: #FDF2F8; color: #DB2777;">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div class="chapter-heading">
+                                <span>৬ষ্ঠ অধ্যায়</span>
+                                <h3>ডাটাবেজ ম্যানেজমেন্ট সিস্টেম</h3>
+                            </div>
+                        </div>
+                        <p class="chapter-desc">রিলেশনাল ডাটাবেজ, প্রাইমারি ও ফরেন কী, এসকিউএল (SQL কুয়েরি) ও ডাটা সিকিউরিটি।</p>
+                        <div class="chapter-footer-stats">
+                            <span><i class="fa-regular fa-circle-question"></i> ১২০টি MCQ | ২২টি CQ</span>
+                            <div class="chapter-progress-wrapper">
+                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 40%;"></div></div>
+                                <span>৪০%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MCQ ভিউ -->
+            <section id="mcqView" style="display: none;">
+                <div class="breadcrumb-bar" style="background: #F8FAFC;">
+                    <h2 id="active-mcq-title" style="font-size: 1.15rem; color: var(--primary);">MCQ অনুশীলন</h2>
+                </div>
+
+                <div class="quiz-toolbar">
+                    <span class="quiz-progress-text" id="chapter-mcq-count"><i class="fa-solid fa-list-check"></i> মোট প্রশ্ন: লোড হচ্ছে...</span>
+                    <div class="show-answer-control">
+                        <span>সরাসরি উত্তর দেখুন</span>
+                        <label class="switch">
+                            <input type="checkbox" id="chapterShowAnsToggle" onchange="toggleChapterAnswers(this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ডাইনামিক অধ্যায়ভিত্তিক MCQ কন্টেইনার -->
+                <div id="chapter-mcq-list">
+                </div>
+            </section>
+
+            <!-- CQ ভিউ -->
+            <section id="cqView" style="display: none;">
+                <div class="breadcrumb-bar" style="background: #F8FAFC;">
+                    <h2 id="active-cq-title" style="font-size: 1.15rem; color: var(--primary);">সৃজনশীল প্রশ্ন (CQ)</h2>
+                </div>
+
+                <div class="question-card">
+                    <div class="cq-stem">
+                        <span class="cq-tag"><i class="fa-solid fa-feather-pointed"></i> উদ্দীপক</span>
+                        <p>একটি কলেজের আইসিটি শিক্ষক শ্রেণিকক্ষে একটি বিশেষ ওয়েবপেজ প্রদর্শন করলেন যেখানে কলেজের বিভিন্ন বিভাগের তথ্য একটি সুশৃঙ্খল সারিবদ্ধ ছকে (Table) উপস্থাপিত ছিল এবং নোটিশ দেখার জন্য একটি ক্লিকযোগ্য হাইপারলিঙ্ক ছিল।</p>
+                    </div>
+
+                    <div class="cq-sub-questions">
+                        <div class="cq-accordion">
+                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                <span>(ক) হাইপারলিংক কী? [মান: ১]</span>
+                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                            </div>
+                            <div class="cq-accordion-body">
+                                <strong>উত্তর:</strong> কোনো ওয়েবপেজের একটি নির্দিষ্ট অংশ বা অন্য কোনো ওয়েবপেজের সাথে সংযোগ স্থাপনকারী টেক্সট বা উপাদানকে হাইপারলিংক বলে। এইচটিএমএল-এ <code>&lt;a&gt;</code> ট্যাগের মাধ্যমে এটি তৈরি হয়।
+                            </div>
+                        </div>
+
+                        <div class="cq-accordion">
+                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                <span>(খ) "আইপি অ্যাড্রেসের চেয়ে ডোমেইন নেম ব্যবহার সুবিধাজনক"- বুঝিয়ে লেখ। [মান: ২]</span>
+                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                            </div>
+                            <div class="cq-accordion-body">
+                                <strong>উত্তর:</strong> প্রতিটি ওয়েবসাইটের একটি অনন্য সাংখ্যিক আইপি অ্যাড্রেস থাকে (যেমন: 192.168.1.1)। কিন্তু মানুষের পক্ষে অসংখ্য দুর্বোধ্য সংখ্যা মনে রাখা অত্যন্ত কঠিন। তাই আইপি অ্যাড্রেসের পরিবর্তে মানুষের বোধগম্য বর্ণভিত্তিক নাম বা ডোমেইন নেম (যেমন: google.com) ব্যবহার করা অনেক বেশি সুবিধাজনক।
+                            </div>
+                        </div>
+
+                        <div class="cq-accordion">
+                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                <span>(গ) উদ্দীপকে প্রদর্শিত সারিবদ্ধ ছক (Table) তৈরির প্রয়োজনীয় এইচটিএমএল কোড লেখ। [মান: ৩]</span>
+                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                            </div>
+                            <div class="cq-accordion-body">
+                                <strong>উত্তর:</strong> এইচটিএমএল-এ টেবিল তৈরির বেসিক কোড:<br>
+                                <pre style="background: #f1f5f9; padding: 10px; border-radius: 6px; font-family: monospace; margin-top: 8px;">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;বিভাগ&lt;/th&gt;
+    &lt;th&gt;শিক্ষার্থী সংখ্যা&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;বিজ্ঞান&lt;/td&gt;
+    &lt;td&gt;১২০&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div class="cq-accordion">
+                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                <span>(ঘ) শিক্ষকের ব্যবহৃত প্রযুক্তির মাধ্যমে কলেজটির কার্যক্রমে কী ধরনের পরিবর্তন আসবে? বিশ্লেষণ কর। [মান: ৪]</span>
+                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                            </div>
+                            <div class="cq-accordion-body">
+                                <strong>উত্তর:</strong> ওয়েবপেজের মাধ্যমে কলেজের তথ্য অনলাইনে প্রকাশের ফলে যেকোনো শিক্ষার্থী বা অভিভাবক যেকোনো স্থান থেকে মুহূর্তে নোটিশ ও তথ্য সংগ্রহ করতে পারবেন। এতে কাগুজে নোটিশের নির্ভরতা কমবে, প্রশাসনিক কাজের গতি বাড়বে এবং তথ্যের স্বচ্ছতা নিশ্চিত হবে।
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ শিট -->
+    <div id="chapterModeModal" class="modal-overlay" onclick="if(event.target === this) closeChapterModal()">
+        <div class="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title" id="modal-chapter-name">Choose Question Type</h3>
+            
+            <div class="sheet-options">
+                <div class="type-option-card" onclick="selectChapterMode('mcq')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ প্র্যাকটিস</h3>
+                        <p>অধ্যায়ের বহুনির্বাচনি প্রশ্নাবলি সমাধান ও সঠিক উত্তর যাচাই</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectChapterMode('cq')">
+                    <div class="type-icon cq">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের প্রশ্ন ও আদর্শ ব্যাখ্যা</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeChapterModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/chapter-prep.js"></script>
+</body>
+</html>

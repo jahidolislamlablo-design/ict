@@ -1,0 +1,1482 @@
+/* ==========================================================================
+   ICT EASY LEARNING - GLOBAL DESIGN SYSTEM
+   Professional, Responsive, Modern EdTech Platform CSS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Brand Colors */
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --primary-light: #EEF2FF;
+    --primary-glow: rgba(79, 70, 229, 0.15);
+    
+    --secondary: #06B6D4;
+    --secondary-light: #ECFEFF;
+    --accent: #8B5CF6;
+    
+    /* Semantic Colors */
+    --success: #10B981;
+    --success-light: #ECFDF5;
+    --success-dark: #065F46;
+    
+    --danger: #EF4444;
+    --danger-light: #FEF2F2;
+    --danger-dark: #991B1B;
+    
+    --warning: #F59E0B;
+    --warning-light: #FFFBEB;
+    --warning-dark: #92400E;
+    
+    --info: #3B82F6;
+    --info-light: #EFF6FF;
+
+    /* Neutrals & Backgrounds */
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-subtle: #F1F5F9;
+    --border-color: #E2E8F0;
+    --border-subtle: #F1F5F9;
+    
+    /* Typography Colors */
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --text-inverse: #FFFFFF;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    
+    /* Radius & Spacing */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --container-max: 1200px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    /* മൊബൈல் ও ট্যাবলেটে স্মুথ স্ক্রলিং নিশ্চিত রাখতে html-এ overflow-y: auto বা overflow-x: hidden পরিহার করা হয়েছে */
+}
+
+body {
+    font-family: 'Hind Siliguri', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* হরিজন্টাল স্ক্রল প্রতিরোধে overflow-x: clip এবং hidden ব্যবহার করা হয়েছে যাতে মোবাইল টাচ স্ক্রলিং বাধাগ্রস্ত না হয় */
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR (Responsive for Desktop, Tablet & Mobile)
+   ========================================================================== */
+
+.site-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.header-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Brand Logo */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.brand-logo-img {
+    height: 48px;
+    max-height: 52px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+    transition: var(--transition);
+}
+
+.brand-link:hover .brand-logo-img {
+    transform: scale(1.03);
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary) 0%, #7C3AED 100%);
+    color: #fff;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    flex-shrink: 0;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.brand-subtitle {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    flex-shrink: 0;
+}
+
+.desktop-nav li {
+    flex-shrink: 0;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap; /* লেখা কখনো ভেঙে দুই লাইনে যাবে না */
+    flex-shrink: 0;
+}
+
+.desktop-nav a i {
+    font-size: 0.85rem;
+}
+
+.desktop-nav a:hover {
+    color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+.desktop-nav a.active {
+    color: var(--primary);
+    background-color: var(--primary-light);
+    font-weight: 700;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.header-user-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 6px 12px;
+    background-color: var(--bg-card-subtle);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.header-user-btn:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+.header-user-btn img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.header-user-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+/* Back Button for Subpages - Modern Circular Icon Button */
+.nav-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-back-btn:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: scale(1.06);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-back-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-back-btn span {
+    display: none !important; /* কোনো টেক্সট প্রদর্শিত হবে না - শুধু গোল বৃত্ত ও তীর আইকন থাকবে */
+}
+
+/* Header Brand Group (ডেস্কটপ মোডে ব্যাক বাটন ও লোগো পাশাপাশি) */
+.header-brand-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Header Navigation Wrapper */
+.header-nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-nav-back-btn {
+    display: none !important;
+}
+
+.desktop-back-btn {
+    display: inline-flex !important;
+}
+
+/* মাঝারি ল্যাপটপ স্ক্রিনের জন্য মেনু স্পেসিং এডজাস্টমেন্ট (১০২৫px - ১২৫০px) */
+@media (min-width: 1025px) and (max-width: 1250px) {
+    .nav-back-btn {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+    .brand-subtitle {
+        display: none !important;
+    }
+    .desktop-nav {
+        gap: 3px;
+    }
+    .desktop-nav a {
+        padding: 6px 10px;
+        font-size: 0.84rem;
+        gap: 4px;
+    }
+    .desktop-nav a i {
+        font-size: 0.82rem;
+    }
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS & GRID
+   ========================================================================== */
+
+.main-content {
+    flex: 1 0 auto;
+    width: 100%;
+    min-height: 0;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 24px 20px 80px 20px; /* bottom padding for mobile nav */
+}
+
+/* Breadcrumb Bar */
+.breadcrumb-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 12px 18px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.breadcrumbs a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs span.current {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Page Header Banner */
+.page-header-banner {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    color: #ffffff;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.page-header-banner::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.page-header-text h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-header-text p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 650px;
+}
+
+/* ==========================================================================
+   BUTTONS & COMMON COMPONENTS
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--primary-glow);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.badge-success {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.badge-warning {
+    background: var(--warning-light);
+    color: var(--warning-dark);
+}
+
+/* ==========================================================================
+   CARDS & CONTAINERS
+   ========================================================================== */
+
+.content-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.content-box:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Selection List Cards (Year, Board, College) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.list-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.list-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background-color: #FAFAFF;
+}
+
+.list-card.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.card-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.list-card:hover .card-icon-box {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.card-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.card-arrow {
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.list-card:hover .card-arrow {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   MODALS & BOTTOM SHEETS
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: var(--transition);
+    padding: 16px;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-window {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 480px;
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    box-shadow: var(--shadow-xl);
+    transform: scale(0.95);
+    transition: var(--transition);
+}
+
+.modal-overlay.open .modal-window {
+    transform: scale(1);
+}
+
+/* Bottom Sheet specifically for mobile, modal on desktop */
+.bottom-sheet {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-xl);
+    transform: scale(0.95);
+    transition: var(--transition);
+}
+
+.modal-overlay.open .bottom-sheet {
+    transform: scale(1);
+}
+
+.sheet-handle {
+    width: 48px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin: 0 auto 18px auto;
+    display: none;
+}
+
+.sheet-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.sheet-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.type-option-card {
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg-card);
+}
+
+.type-option-card:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.type-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.type-icon.mcq {
+    background-color: #EEF2FF;
+    color: #4F46E5;
+}
+
+.type-icon.cq {
+    background-color: #ECFDF5;
+    color: #10B981;
+}
+
+.type-info {
+    flex: 1;
+}
+
+.type-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.type-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   MCQ & CQ QUESTION STYLES (UNIVERSAL)
+   ========================================================================== */
+
+.quiz-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-progress-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.show-answer-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Switch UI */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--border-color);
+    transition: var(--transition);
+    border-radius: var(--radius-full);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: var(--transition);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Question Cards */
+.question-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.question-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.question-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.question-title code {
+    background: #F1F5F9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #E11D48;
+    font-family: monospace;
+    font-size: 0.95em;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .options-grid.two-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: var(--bg-page);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+    user-select: none;
+}
+
+.option-item:hover {
+    border-color: var(--primary);
+    background-color: #FAFAFF;
+}
+
+.option-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.option-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.option-status-icon {
+    font-size: 1.1rem;
+}
+
+/* MCQ Interactive States */
+.option-item.correct {
+    background-color: var(--success-light) !important;
+    border-color: var(--success) !important;
+    color: var(--success-dark) !important;
+    font-weight: 600;
+}
+
+.option-item.correct .option-marker {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: #fff;
+}
+
+.option-item.wrong {
+    background-color: var(--danger-light) !important;
+    border-color: var(--danger) !important;
+    color: var(--danger-dark) !important;
+    font-weight: 600;
+}
+
+.option-item.wrong .option-marker {
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+}
+
+/* Question Explanation Box */
+.explanation-box {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background-color: #F8FAFC;
+    border-left: 4px solid var(--info);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: none;
+}
+
+.question-card.answered .explanation-box,
+.show-answers-active .explanation-box {
+    display: block;
+}
+
+.question-card.answered .option-item {
+    cursor: default;
+}
+
+.show-answers-active [data-correct="true"] {
+    background-color: var(--success-light) !important;
+    border-color: var(--success) !important;
+    color: var(--success-dark) !important;
+    font-weight: 600;
+}
+
+.show-answers-active [data-correct="true"] .option-marker {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: #fff;
+}
+
+/* CQ Question Styles (Creative Question) */
+.cq-stem {
+    background-color: #F8FAFC;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.cq-tag {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+    font-size: 0.88rem;
+}
+
+.cq-sub-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cq-accordion {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    overflow: hidden;
+}
+
+.cq-accordion-header {
+    padding: 14px 18px;
+    background: #FAFBFD;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.cq-accordion-header:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.cq-accordion-body {
+    padding: 16px 20px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    background: #FFFFFF;
+    border-top: 1px solid var(--border-color);
+    display: none;
+}
+
+.cq-accordion.open .cq-accordion-body {
+    display: block;
+}
+
+.cq-accordion.open .cq-accordion-header {
+    color: var(--primary);
+}
+
+.cq-accordion-arrow {
+    transition: transform 0.2s ease;
+}
+
+.cq-accordion.open .cq-accordion-arrow {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   MOBILE BOTTOM NAVIGATION BAR
+   ========================================================================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.05);
+    z-index: 1000;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.nav-item i {
+    font-size: 1.25rem;
+}
+
+.nav-item:hover {
+    color: var(--primary);
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   FOOTER (Desktop & Platform Branding)
+   ========================================================================== */
+
+.site-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+    padding: 30px 20px 80px 20px; /* space for mobile bottom nav */
+}
+
+.footer-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Desktop, Tablet, Mobile)
+   ========================================================================== */
+
+/* Tablet & Mobile Navigation (<= 1024px) - ২-স্তরের রেসপন্সিভ কমপ্যাক্ট হেডার */
+@media (max-width: 1024px) {
+    .site-header {
+        padding: 0;
+    }
+
+    .header-container {
+        height: auto;
+        min-height: auto;
+        flex-wrap: wrap;
+        padding: 8px 16px 6px 16px;
+        row-gap: 8px;
+        column-gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* সারি ১: ব্র্যান্ড লোগো উপরে বাম পাশে কর্নারে থাকবে */
+    .header-brand-group,
+    .header-container > .brand-link {
+        order: 1;
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* মোবাইলে ডেস্কটপের ব্যাক বাটন লুকিয়ে রাখা হবে যাতে লোগো উপরে বাম কর্নারে থাকে */
+    .desktop-back-btn {
+        display: none !important;
+    }
+
+    .header-actions {
+        order: 2;
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    .brand-logo-img {
+        height: 38px;
+        max-width: 140px;
+        margin-right: 120px;
+    }
+
+    .brand-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.15rem;
+    }
+
+    .brand-title {
+        font-size: 1.05rem;
+    }
+
+    .brand-subtitle {
+        display: none !important;
+    }
+
+    .header-user-btn {
+        padding: 4px 10px;
+        gap: 6px;
+    }
+
+    .header-user-btn img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header-user-name {
+        font-size: 0.82rem;
+    }
+
+    /* সারি ২: নেভিগেশন বার - বামে গোল ব্যাক বাটন এবং পাশে অনুভূমিক স্ক্রলেবল মেনু পিলবার */
+    .header-nav-wrapper {
+        order: 3;
+        width: 100%;
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 0 2px 0;
+        margin: 0;
+        border-top: 1px solid var(--border-color);
+        min-width: 0;
+    }
+
+    /* মোবাইল ব্যাক বাটন: গোল বৃত্তের ভিতরে তীর চিহ্ন */
+    .mobile-nav-back-btn {
+        display: inline-flex !important;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        border-radius: 50%;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-color);
+        color: var(--text-primary);
+        box-shadow: var(--shadow-sm);
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 0.9rem;
+    }
+
+    .mobile-nav-back-btn:hover,
+    .mobile-nav-back-btn:active {
+        background-color: var(--primary-light);
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    /* অনুভূমিক স্ক্রলেবল মেনু পিলবার */
+    .desktop-nav {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+        display: flex !important;
+        align-items: center;
+        gap: 6px;
+        padding: 0;
+        margin: 0;
+        border-top: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE / Edge */
+    }
+
+    .desktop-nav::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .desktop-nav li {
+        flex-shrink: 0;
+    }
+
+    .desktop-nav a {
+        padding: 5px 12px;
+        font-size: 0.80rem;
+        gap: 5px;
+        border-radius: var(--radius-full);
+        background-color: var(--bg-card-subtle);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-weight: 600;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .desktop-nav a i {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        transition: color 0.2s ease;
+    }
+
+    .desktop-nav a:hover {
+        background-color: var(--primary-light);
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .desktop-nav a:hover i {
+        color: var(--primary);
+    }
+
+    .desktop-nav a.active {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #ffffff !important;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.28);
+    }
+
+    .desktop-nav a.active i {
+        color: #ffffff !important;
+    }
+}
+
+/* Mobile view (< 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 6px 12px 5px 12px;
+        row-gap: 6px;
+    }
+
+    .brand-logo-img {
+        height: 32px;
+        max-width: 120px;
+        margin-right: 50px;
+    }
+
+    .brand-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .brand-title {
+        font-size: 0.95rem;
+    }
+
+    .mobile-nav-back-btn {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        min-height: 34px;
+        font-size: 0.84rem;
+    }
+
+    .header-user-name {
+        display: none !important;
+    }
+
+    .header-user-btn {
+        padding: 2px;
+        border-radius: 50%;
+    }
+
+    .header-user-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .desktop-nav {
+        gap: 5px;
+    }
+
+    .desktop-nav a {
+        padding: 4px 10px;
+        font-size: 0.76rem;
+        gap: 4px;
+        border-radius: var(--radius-full);
+    }
+
+    .desktop-nav a i {
+        font-size: 0.74rem;
+    }
+    
+    .container {
+        padding: 16px 14px 80px 14px;
+    }
+    
+    .page-header-banner {
+        padding: 20px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .page-header-banner h1 {
+        font-size: 1.35rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* On mobile, modal displays as bottom sheet */
+    .modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+    
+    .bottom-sheet {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        transform: translateY(100%);
+        padding-bottom: calc(24px + env(safe-area-inset-bottom, 0));
+    }
+    
+    .modal-overlay.open .bottom-sheet {
+        transform: translateY(0);
+    }
+    
+    .sheet-handle {
+        display: block;
+    }
+}
+
+/* Extra Small Mobile (< 480px) */
+@media (max-width: 480px) {
+    .brand-link {
+        gap: 6px;
+    }
+
+    .brand-logo-img {
+        height: 28px;
+        max-width: 90px;
+    }
+
+    .brand-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .brand-title {
+        font-size: 0.85rem;
+    }
+
+    .mobile-nav-back-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        font-size: 0.80rem;
+    }
+
+    .desktop-nav a {
+        padding: 3.5px 8.5px;
+        font-size: 0.72rem;
+    }
+
+    .desktop-nav a i {
+        font-size: 0.70rem;
+    }
+}
+
+/* Tablet & Desktop view (>= 769px) */
+@media (min-width: 769px) {
+    /* Hide mobile bottom navigation bar on tablet/desktop */
+    .bottom-nav {
+        display: none !important;
+    }
+    
+    .container {
+        padding-bottom: 40px;
+    }
+    
+    .site-footer {
+        padding-bottom: 30px;
+    }
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার প্রোফাইল ও অগ্রগতি - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="window.navigateBack('../index.html')" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>হোমে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="window.navigateBack('../index.html')" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" style="border-color: var(--primary); background: var(--primary-light);" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name" style="color: var(--primary);">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current">শিক্ষার্থীর প্রোফাইল</span>
+                </div>
+            </div>
+
+            <div class="profile-layout-grid">
+                <!-- বাম কলাম: ইউজার ইনফো কার্ড -->
+                <div class="profile-card">
+                    <div class="profile-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="ইউজার ছবি" class="profile-avatar-img">
+                        <div class="avatar-edit-badge" onclick="openEditProfileModal()" title="ছবি পরিবর্তন">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                    </div>
+                    <h2 class="profile-name" id="profileDisplayName">মোঃ তানভীর আহমেদ</h2>
+                    <p class="profile-role" id="profileDisplayCollege">নটর ডেম কলেজ, ঢাকা</p>
+
+                    <div class="profile-badges-row">
+                        <span class="badge badge-primary">HSC ২০২৬</span>
+                        <span class="badge badge-success"><i class="fa-solid fa-award"></i> নিয়মিত লার্নার</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+                        <button class="btn btn-outline btn-sm" onclick="openEditProfileModal()">
+                            <i class="fa-solid fa-pen-to-square"></i> তথ্য এডিট করুন
+                        </button>
+                        <button class="btn btn-sm" onclick="confirmLogout()" style="background: #FEE2E2; color: #DC2626; border: 1px solid #FCA5A5;">
+                            <i class="fa-solid fa-right-from-bracket"></i> লগ আউট
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ডান কলাম: অগ্রগতি ও পরিসংখ্যান -->
+                <div>
+                    <!-- স্ট্যাট মেট্রিক্স কার্ড গ্রিড -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon-box" style="background: #EEF2FF; color: #4F46E5;">
+                                <i class="fa-solid fa-stopwatch"></i>
+                            </div>
+                            <div class="metric-info">
+                                <strong>১৮টি</strong>
+                                <span>সম্পন্ন মডেল টেস্ট</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon-box" style="background: #ECFDF5; color: #10B981;">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="metric-info">
+                                <strong>৮৬.৫%</strong>
+                                <span>গড় পরীক্ষার স্কোর</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon-box" style="background: #FFFBEB; color: #D97706;">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <div class="metric-info">
+                                <strong>৪৮৫টি</strong>
+                                <span>সমাধানকৃত MCQ</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon-box" style="background: #FEF2F2; color: #EF4444;">
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <div class="metric-info">
+                                <strong>১৪ দিন</strong>
+                                <span>স্টাডি স্ট্রিক</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- অধ্যায়ভিত্তিক প্রস্তুতি স্ট্যাটাস -->
+                    <div class="content-box">
+                        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 6px;">অধ্যায়ভিত্তিক প্রস্তুতির অগ্রগতি</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">এইচএসসি আইসিটির প্রতিটি অধ্যায়ে আপনার সার্বিক সমাপ্তির হার:</p>
+
+                        <div class="chapter-progress-list">
+                            <div class="progress-item">
+                                <div class="progress-info-row">
+                                    <span>১ম অধ্যায়: বিশ্ব ও বাংলাদেশ প্রেক্ষিত</span>
+                                    <span>৮৫%</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 85%; background: #4F46E5;"></div></div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-info-row">
+                                    <span>২য় অধ্যায়: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</span>
+                                    <span>৭০%</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 70%; background: #06B6D4;"></div></div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-info-row">
+                                    <span>৩য় অধ্যায়: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</span>
+                                    <span>৮০%</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 80%; background: #8B5CF6;"></div></div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-info-row">
+                                    <span>৪র্থ অধ্যায়: ওয়েব ডিজাইন ও HTML</span>
+                                    <span>৯৫%</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 95%; background: #10B981;"></div></div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-info-row">
+                                    <span>৫ম অধ্যায়: প্রোগ্রামিং ভাষা (C)</span>
+                                    <span>৫৫%</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 55%; background: #EF4444;"></div></div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-info-row">
+                                    <span>৬ষ্ঠ অধ্যায়: ডাটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)</span>
+                                    <span>৪০%</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 40%; background: #EC4899;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- সাম্প্রতিক পরীক্ষার ইতিহাস -->
+                    <div class="content-box">
+                        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 6px;">সাম্প্রতিক মডেল টেস্ট ইতিহাস</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">আপনার সর্বশেষ সম্পন্ন করা পরীক্ষাগুলোর সংক্ষিপ্ত বিবরণ:</p>
+
+                        <div style="overflow-x: auto;">
+                            <table class="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>পরীক্ষার নাম</th>
+                                        <th>তারিখ</th>
+                                        <th>প্রাপ্ত স্কোর</th>
+                                        <th>ফলাফল</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>পূর্ণাঙ্গ চূড়ান্ত মডেল টেস্ট - ০১</strong></td>
+                                        <td>গতকাল</td>
+                                        <td><strong>২৩ / ২৫</strong></td>
+                                        <td><span class="badge badge-success">চমৎকার</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HTML ও ওয়েব ডিজাইন কুইজ</strong></td>
+                                        <td>৩ দিন আগে</td>
+                                        <td><strong>১৯ / ২০</strong></td>
+                                        <td><span class="badge badge-success">এ প্লাস</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>সংখ্যা পদ্ধতি মেগা টেস্ট</strong></td>
+                                        <td>৫ দিন আগে</td>
+                                        <td><strong>২২ / ২৫</strong></td>
+                                        <td><span class="badge badge-primary">পাস</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- প্রোফাইল এডিট মডাল -->
+    <div id="editProfileModal" class="modal-overlay" onclick="if(event.target === this) closeEditProfileModal()">
+        <div class="modal-window">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;">প্রোফাইল তথ্য পরিবর্তন</h3>
+            <form onsubmit="saveProfile(event)">
+                <div style="margin-bottom: 14px;">
+                    <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">শিক্ষার্থীর নাম</label>
+                    <input type="text" id="editNameInput" value="মোঃ তানভীর আহমেদ" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); font-family: inherit; font-size: 0.95rem;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">কলেজের নাম</label>
+                    <input type="text" id="editCollegeInput" value="নটর ডেম কলেজ, ঢাকা" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); font-family: inherit; font-size: 0.95rem;">
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-outline btn-sm" onclick="closeEditProfileModal()">বাতিল</button>
+                    <button type="submit" class="btn btn-primary btn-sm">সংরক্ষণ করুন</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/profile.js"></script>
+</body>
+</html>

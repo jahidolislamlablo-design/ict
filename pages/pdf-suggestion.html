@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পিডিএফ সাজেশন ও হ্যান্ডনোট - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/pdf-suggestion.css">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="window.navigateBack('../index.html')" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="window.navigateBack('../index.html')" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html" class="active"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current">পিডিএফ সাজেশন ও হ্যান্ডনোট</span>
+                </div>
+            </div>
+
+            <!-- ব্যানার -->
+            <div class="page-header-banner" style="background: linear-gradient(135deg, #DC2626 0%, #EA580C 100%);">
+                <div class="page-header-text">
+                    <h1>এইচএসসি আইসিটি স্পেশাল নোট ও সাজেশন</h1>
+                    <p>বোর্ড ফাইনাল পরীক্ষার জন্য নির্বাচিত সুপার সাজেশন, অধ্যায়ভিত্তিক শর্টনোট, ফর্মুলা শিট এবং কোডিং চিটশিট সম্পূর্ণ ফ্রিতে পড়ুন ও ডাউনলোড করুন।</p>
+                </div>
+            </div>
+
+            <!-- সার্চ বার -->
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="pdfSearchInput" class="search-input" placeholder="নোটের নাম, অধ্যায় বা টপিক দিয়ে সার্চ করুন...">
+            </div>
+
+            <!-- ফিল্টার ট্যাব -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-category="all">সকল রিসোর্স</button>
+                <button class="tab-btn" data-category="suggestion">বোর্ড সুপার সাজেশন</button>
+                <button class="tab-btn" data-category="handnote">অধ্যায়ভিত্তিক হ্যান্ডনোট</button>
+                <button class="tab-btn" data-category="cheatsheet">চিটশিট ও কোড বুকলেট</button>
+            </div>
+
+            <!-- পিডিএফ কার্ড গ্রিড -->
+            <div class="pdf-grid">
+                <!-- ১. সুপার সাজেশন -->
+                <div class="pdf-card" data-category="suggestion">
+                    <div>
+                        <div class="pdf-header">
+                            <div class="pdf-icon-box">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <span class="badge badge-warning" style="margin-bottom: 6px;">সুপার সাজেশন</span>
+                                <h3>এইচএসসি আইসিটি সুপার সাজেশন ও জ্ঞান-অনুধাবন প্রশ্নব্যাংক (২০২৬/২০২৫)</h3>
+                            </div>
+                        </div>
+                        <div class="pdf-meta">
+                            <span><i class="fa-solid fa-layer-group"></i> সকল অধ্যায়</span>
+                            <span><i class="fa-solid fa-file-lines"></i> ৪২ পৃষ্ঠা</span>
+                            <span><i class="fa-solid fa-hard-drive"></i> ৩.৮ MB</span>
+                            <span><i class="fa-solid fa-download"></i> ১২,৪৫০ বার</span>
+                        </div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn btn-outline btn-sm" onclick="openPdfPreview('এইচএসসি আইসিটি সুপার সাজেশন (২০২৬/২০২৫)', 'এই ডকুমেন্টে ১ম থেকে ৬ষ্ঠ অধ্যায়ের সর্বাধিক কমন উপযোগী জ্ঞান ও অনুধাবনমূলক প্রশ্ন ও ১০০% নির্ভুল উত্তর সন্নিবেশিত রয়েছে। সাথে বিগত ৫ বছরের বোর্ড প্রশ্নের অধ্যায়ভিত্তিক বিশ্লেষণ রয়েছে।')">
+                            <i class="fa-solid fa-eye"></i> পড়ুন
+                        </button>
+                        <button class="btn btn-primary btn-sm" onclick="downloadPdf('এইচএসসি আইসিটি সুপার সাজেশন')">
+                            <i class="fa-solid fa-download"></i> ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ২. সি প্রোগ্রামিং হ্যান্ডনোট -->
+                <div class="pdf-card" data-category="handnote">
+                    <div>
+                        <div class="pdf-header">
+                            <div class="pdf-icon-box" style="background: #EEF2FF; color: #4F46E5;">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <span class="badge badge-primary" style="margin-bottom: 6px;">হ্যান্ডনোট</span>
+                                <h3>সি প্রোগ্রামিং (C Programming) কমপ্লিট হ্যান্ডনোট ও ৫০টি গুরুত্বপূর্ণ কোড</h3>
+                            </div>
+                        </div>
+                        <div class="pdf-meta">
+                            <span><i class="fa-solid fa-layer-group"></i> ৫ম অধ্যায়</span>
+                            <span><i class="fa-solid fa-file-lines"></i> ৩৬ পৃষ্ঠা</span>
+                            <span><i class="fa-solid fa-hard-drive"></i> ৪.৫ MB</span>
+                            <span><i class="fa-solid fa-download"></i> ৯,৮২০ বার</span>
+                        </div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn btn-outline btn-sm" onclick="openPdfPreview('সি প্রোগ্রামিং কমপ্লিট হ্যান্ডনোট', 'সি প্রোগ্রামিংয়ের অ্যালগরিদম, ফ্লোচার্ট, ডাটা টাইপ, লুপ স্টেটমেন্ট (for, while, do-while), লিপ ইয়ার নির্ণয়, মৌলিক সংখ্যা যাচাই এবং ধারার যোগফল সংক্রান্ত ৫০টি গুরুত্বপূর্ণ কোডের লাইন বাই লাইন ব্যাখ্যা।')">
+                            <i class="fa-solid fa-eye"></i> পড়ুন
+                        </button>
+                        <button class="btn btn-primary btn-sm" onclick="downloadPdf('সি প্রোগ্রামিং হ্যান্ডনোট')">
+                            <i class="fa-solid fa-download"></i> ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ৩. HTML চিটশিট -->
+                <div class="pdf-card" data-category="cheatsheet">
+                    <div>
+                        <div class="pdf-header">
+                            <div class="pdf-icon-box" style="background: #ECFDF5; color: #10B981;">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <span class="badge badge-success" style="margin-bottom: 6px;">চিটশিট</span>
+                                <h3>HTML ও ওয়েব ডিজাইন সমস্ত ট্যাগ চিটশিট ও আউটপুট বুকলেট</h3>
+                            </div>
+                        </div>
+                        <div class="pdf-meta">
+                            <span><i class="fa-solid fa-layer-group"></i> ৪র্থ অধ্যায়</span>
+                            <span><i class="fa-solid fa-file-lines"></i> ১৮ পৃষ্ঠা</span>
+                            <span><i class="fa-solid fa-hard-drive"></i> ২.১ MB</span>
+                            <span><i class="fa-solid fa-download"></i> ১১,২০০ বার</span>
+                        </div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn btn-outline btn-sm" onclick="openPdfPreview('HTML ট্যাগ চিটশিট', 'এইচটিএমএল এর সকল মৌলিক ট্যাগ (Formatting, Table, Lists, Hyperlink, Images, Forms) এর বাস্তব উদাহরণ ও ব্রাউজার আউটপুট সম্বলিত এক নজরে রিভিশন শিট।')">
+                            <i class="fa-solid fa-eye"></i> পড়ুন
+                        </button>
+                        <button class="btn btn-primary btn-sm" onclick="downloadPdf('HTML চিটশিট')">
+                            <i class="fa-solid fa-download"></i> ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ৪. সংখ্যা পদ্ধতি শর্টকাট -->
+                <div class="pdf-card" data-category="handnote">
+                    <div>
+                        <div class="pdf-header">
+                            <div class="pdf-icon-box" style="background: #FAF5FF; color: #8B5CF6;">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <span class="badge badge-primary" style="margin-bottom: 6px;">হ্যান্ডনোট</span>
+                                <h3>সংখ্যা পদ্ধতি রূপান্তর ও ২ এর পরিপূরক ম্যাজিক ট্রিকস ও সমাধান</h3>
+                            </div>
+                        </div>
+                        <div class="pdf-meta">
+                            <span><i class="fa-solid fa-layer-group"></i> ৩য় অধ্যায়</span>
+                            <span><i class="fa-solid fa-file-lines"></i> ২৪ পৃষ্ঠা</span>
+                            <span><i class="fa-solid fa-hard-drive"></i> ২.৯ MB</span>
+                            <span><i class="fa-solid fa-download"></i> ৮,৭৫০ বার</span>
+                        </div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn btn-outline btn-sm" onclick="openPdfPreview('সংখ্যা পদ্ধতি রূপান্তর শর্টকাট', 'দশমিক থেকে বাইনারি, অক্টাল ও হেক্সাডেসিমেল এবং বিপরীত রূপান্তরের শর্টকাট মেথড, ২ এর পরিপূরক পদ্ধতিতে যোগের মাধ্যমে বিয়োগের শতভাগ নির্ভুল নিয়মাবলি।')">
+                            <i class="fa-solid fa-eye"></i> পড়ুন
+                        </button>
+                        <button class="btn btn-primary btn-sm" onclick="downloadPdf('সংখ্যা পদ্ধতি সমাধান শিট')">
+                            <i class="fa-solid fa-download"></i> ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- পিডিএফ প্রিভিউ মডাল -->
+    <div id="pdfPreviewModal" class="modal-overlay" onclick="if(event.target === this) closePdfPreview()">
+        <div class="modal-window">
+            <h3 id="previewModalTitle" style="font-size: 1.15rem; margin-bottom: 12px; color: var(--primary);">নোট প্রিভিউ</h3>
+            <div style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; line-height: 1.7; font-size: 0.95rem; margin-bottom: 20px; max-height: 250px; overflow-y: auto;" id="previewModalContent">
+                <!-- কনটেন্ট ডাইনামিকালি বসবে -->
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-outline btn-sm" onclick="closePdfPreview()">বন্ধ করুন</button>
+                <button class="btn btn-primary btn-sm" onclick="downloadPdf(document.getElementById('previewModalTitle').innerText)">
+                    <i class="fa-solid fa-download"></i> ডাউনলোড করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item active">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/pdf-suggestion.js"></script>
+</body>
+</html>

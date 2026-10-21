@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মডেল টেস্ট পরীক্ষা - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/model-test.css">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="exitExam()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="exitExam()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html" class="active"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- মডেল টেস্ট তালিকা ভিউ -->
+            <section id="model-test-list-view">
+                <!-- ব্রেডক্রাম্ব -->
+                <div class="breadcrumb-bar">
+                    <div class="breadcrumbs">
+                        <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                        <span class="current">মডেল টেস্ট তালিকা</span>
+                    </div>
+                </div>
+
+                <!-- ব্যানার -->
+                <div class="page-header-banner" style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);">
+                    <div class="page-header-text">
+                        <h1>এইচএসসি পূর্ণাঙ্গ মডেল টেস্ট</h1>
+                        <p>পরীক্ষার হলের আসল পরিবেশের মতো নির্দিষ্ট সময়ের মধ্যে পূর্ণাঙ্গ ও অধ্যায়ভিত্তিক মডেল টেস্ট দিয়ে নিজের প্রস্তুতি যাচাই ও আত্মবিশ্বাস বাড়ান।</p>
+                    </div>
+                </div>
+
+                <!-- ফিল্টার ট্যাব -->
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">সকল মডেল টেস্ট</button>
+                    <button class="tab-btn" data-filter="full">পূর্ণাঙ্গ সিলেবাস (Full)</button>
+                    <button class="tab-btn" data-filter="chapter">অধ্যায়ভিত্তিক স্পিড টেস্ট</button>
+                </div>
+
+                <!-- মডেল টেস্ট কার্ড গ্রিড -->
+                <div class="model-tests-grid">
+                    <!-- টেস্ট ১ -->
+                    <div class="test-card" data-category="full">
+                        <div>
+                            <div class="test-card-header">
+                                <span class="badge badge-primary">পূর্ণাঙ্গ সিলেবাস</span>
+                                <span class="badge badge-success"><i class="fa-solid fa-users"></i> ১৪২০ জন অংশগ্রহণকারী</span>
+                            </div>
+                            <h3 class="test-card-title">পূর্ণাঙ্গ চূড়ান্ত মডেল টেস্ট - ০১</h3>
+                            <div class="test-meta-info">
+                                <span class="test-meta-item"><i class="fa-solid fa-circle-question"></i> ২৫টি প্রশ্ন</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-clock"></i> ২৫ মিনিট</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-award"></i> ২৫ নম্বর</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="startExam('পূর্ণাঙ্গ চূড়ান্ত মডেল টেস্ট - ০১', 25)">
+                            <i class="fa-solid fa-play"></i> পরীক্ষা শুরু করুন
+                        </button>
+                    </div>
+
+                    <!-- টেস্ট ২ -->
+                    <div class="test-card" data-category="full">
+                        <div>
+                            <div class="test-card-header">
+                                <span class="badge badge-primary">পূর্ণাঙ্গ সিলেবাস</span>
+                                <span class="badge badge-success"><i class="fa-solid fa-users"></i> ৯৮০ জন অংশগ্রহণকারী</span>
+                            </div>
+                            <h3 class="test-card-title">পূর্ণাঙ্গ চূড়ান্ত মডেল টেস্ট - ০২</h3>
+                            <div class="test-meta-info">
+                                <span class="test-meta-item"><i class="fa-solid fa-circle-question"></i> ২৫টি প্রশ্ন</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-clock"></i> ২৫ মিনিট</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-award"></i> ২৫ নম্বর</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="startExam('পূর্ণাঙ্গ চূড়ান্ত মডেল টেস্ট - ০২', 25)">
+                            <i class="fa-solid fa-play"></i> পরীক্ষা শুরু করুন
+                        </button>
+                    </div>
+
+                    <!-- টেস্ট ৩ -->
+                    <div class="test-card" data-category="chapter">
+                        <div>
+                            <div class="test-card-header">
+                                <span class="badge badge-warning">৪র্থ অধ্যায়</span>
+                                <span class="badge badge-success"><i class="fa-solid fa-users"></i> ২৩১০ জন</span>
+                            </div>
+                            <h3 class="test-card-title">HTML ও ওয়েব ডিজাইন স্পিড টেস্ট</h3>
+                            <div class="test-meta-info">
+                                <span class="test-meta-item"><i class="fa-solid fa-circle-question"></i> ২০টি প্রশ্ন</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-clock"></i> ১৫ মিনিট</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-award"></i> ২০ নম্বর</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="startExam('HTML ও ওয়েব ডিজাইন স্পিড টেস্ট', 15)">
+                            <i class="fa-solid fa-play"></i> পরীক্ষা শুরু করুন
+                        </button>
+                    </div>
+
+                    <!-- টেস্ট ৪ -->
+                    <div class="test-card" data-category="chapter">
+                        <div>
+                            <div class="test-card-header">
+                                <span class="badge badge-warning">৫ম অধ্যায়</span>
+                                <span class="badge badge-success"><i class="fa-solid fa-users"></i> ১৮৫০ জন</span>
+                            </div>
+                            <h3 class="test-card-title">সি প্রোগ্রামিং ও অ্যালগরিদম কুইজ</h3>
+                            <div class="test-meta-info">
+                                <span class="test-meta-item"><i class="fa-solid fa-circle-question"></i> ২০টি প্রশ্ন</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-clock"></i> ২০ মিনিট</span>
+                                <span class="test-meta-item"><i class="fa-solid fa-award"></i> ২০ নম্বর</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="startExam('সি প্রোগ্রামিং ও অ্যালগরিদম কুইজ', 20)">
+                            <i class="fa-solid fa-play"></i> পরীক্ষা শুরু করুন
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- লাইভ এক্সাম ভিউ (পরীক্ষা চলাকালীন দৃশ্যমান) -->
+            <section id="live-exam-view">
+                <div class="exam-topbar">
+                    <div>
+                        <h2 id="exam-active-title" style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">মডেল টেস্ট</h2>
+                        <span id="exam-q-counter" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;"><i class="fa-solid fa-circle-check"></i> উত্তর সম্পন্ন: ০ / ৫</span>
+                    </div>
+                    <div class="exam-timer normal" id="examTimer">
+                        <i class="fa-solid fa-stopwatch"></i> ২৫:০০
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="confirmSubmitExam()">
+                        <i class="fa-solid fa-paper-plane"></i> সাবমিট করুন
+                    </button>
+                </div>
+
+                <div class="exam-layout">
+                    <!-- স্ক্রল্যাবল সকল প্রশ্ন কন্টেইনার -->
+                    <div class="exam-questions-scroll-area">
+                        <div id="questionsListContainer">
+                            <!-- জাভাস্ক্রিপ্ট দ্বারা ক্রমানুসারে সকল প্রশ্ন লোড হবে -->
+                        </div>
+
+                        <!-- স্ক্রলের শেষে সাবমিট সেকশন -->
+                        <div class="exam-bottom-submit">
+                            <h4 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 6px;">সকল প্রশ্নের উত্তর দেওয়া সম্পন্ন হয়েছে?</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;" id="bottomSubmitStatus">উত্তর নিশ্চিত হয়ে সাবমিট বাটনে ক্লিক করুন</p>
+                            <button class="btn btn-primary" onclick="confirmSubmitExam()" style="padding: 12px 32px; font-size: 1.05rem;">
+                                <i class="fa-solid fa-paper-plane"></i> পরীক্ষা শেষ ও ফলাফল দেখুন
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- প্রশ্ন নেভিগেটর সাইডবার (প্যালেট) -->
+                    <div class="exam-nav-sidebar">
+                        <div class="exam-nav-title">
+                            <span>প্রশ্ন তালিকা (Navigator)</span>
+                            <i class="fa-solid fa-grip"></i>
+                        </div>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px;">যেকোনো নম্বরে ক্লিক করে সরাসরি সেই প্রশ্নে স্ক্রল করুন:</p>
+                        <div class="question-palette" id="questionPalette">
+                            <!-- বাটন তৈরি হবে -->
+                        </div>
+                        <div class="palette-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot" style="background: var(--success);"></span>
+                                <span>উত্তর প্রদান করা হয়েছে</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot" style="background: var(--bg-page); border: 1px solid var(--border-color);"></span>
+                                <span>অনুত্তরিত প্রশ্ন</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- পরীক্ষার ফলাফল পপআপ মডাল -->
+    <div id="examResultModal" class="modal-overlay" onclick="if(event.target === this) exitExam()">
+        <div class="modal-window" style="text-align: center;">
+            <div class="score-badge-circle">
+                <strong id="modal-score-percentage">৮০%</strong>
+                <span>স্কোর হার</span>
+            </div>
+
+            <h3 style="font-size: 1.3rem; margin-bottom: 6px;">পরীক্ষা সফলভাবে সম্পন্ন হয়েছে!</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">আপনার মডেল টেস্টের বিস্তারিত ফলাফল নিচে দেখুন:</p>
+
+            <div class="score-stats-grid">
+                <div class="score-stat-box" style="border-top: 3px solid var(--success);">
+                    <strong style="color: var(--success);" id="modal-correct-count">৪টি</strong>
+                    <span>সঠিক উত্তর</span>
+                </div>
+                <div class="score-stat-box" style="border-top: 3px solid var(--danger);">
+                    <strong style="color: var(--danger);" id="modal-wrong-count">১টি</strong>
+                    <span>ভুল উত্তর</span>
+                </div>
+                <div class="score-stat-box" style="border-top: 3px solid var(--warning);">
+                    <strong style="color: var(--warning-dark);" id="modal-skipped-count">০টি</strong>
+                    <span>অনুত্তরিত</span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <button class="btn btn-primary" onclick="reviewExamAnswers()">
+                    <i class="fa-solid fa-list-check"></i> সমাধান ও ব্যাখ্যা দেখুন
+                </button>
+                <button class="btn btn-outline" onclick="retakeExam()">
+                    <i class="fa-solid fa-rotate-right"></i> পুনরায় দিন
+                </button>
+                <button class="btn btn-outline" onclick="exitExam()">
+                    <i class="fa-solid fa-arrow-left"></i> টেস্ট তালিকায় যান
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item active">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/model-test.js"></script>
+</body>
+</html>

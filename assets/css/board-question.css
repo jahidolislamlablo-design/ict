@@ -1,0 +1,146 @@
+/* ==========================================================================
+   BOARD QUESTION SPECIFIC STYLES
+   ========================================================================== */
+
+.step-indicator-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 12px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.step-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.step-info {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Year Selection Grid */
+.years-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.year-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.year-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background-color: #FAFAFF;
+}
+
+.year-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.year-number {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.year-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Board Selection Grid */
+.boards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.board-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.board-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background-color: #FAFAFF;
+}
+
+.board-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.board-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.board-code {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+    .years-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .year-card {
+        padding: 14px 10px;
+    }
+    .year-number {
+        font-size: 1.15rem;
+    }
+    .boards-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

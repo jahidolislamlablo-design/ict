@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বোর্ড প্রশ্নব্যাংক - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/board-question.css">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="goBackStep()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span id="back-btn-text">ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="goBackStep()" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html" class="active"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট কন্টেইনার -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব ও ধাপ নির্দেশক -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span>বোর্ড প্রশ্ন</span>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current" id="breadcrumb-current">সাল নির্বাচন</span>
+                </div>
+            </div>
+
+            <!-- ধাপ ১: বছর নির্বাচন -->
+            <section id="step-years">
+                <div class="page-header-banner">
+                    <div class="page-header-text">
+                        <h1>এইচএসসি বোর্ড পরীক্ষার সাল নির্বাচন করুন</h1>
+                        <p>বিগত বছরগুলোর সকল শিক্ষা বোর্ডের এইচএসসি আইসিটি বিষয়ের নৈর্ব্যক্তিক (MCQ) ও সৃজনশীল (CQ) প্রশ্নাবলি নির্ভুল সমাধানসহ অনুশীলন করুন।</p>
+                    </div>
+                </div>
+
+                <div class="years-grid">
+                    <div class="year-card" onclick="selectYear('2026')">
+                        <div class="year-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="year-number">২০২৬</div>
+                        <div class="year-sub">সম্ভাব্য বোর্ড প্রশ্ন</div>
+                    </div>
+                    <div class="year-card" onclick="selectYear('2025')">
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">২০২৫</div>
+                        <div class="year-sub">বিগত সালের প্রশ্ন</div>
+                    </div>
+                    <div class="year-card" onclick="selectYear('2024')">
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">২০২৪</div>
+                        <div class="year-sub">বিগত সালের প্রশ্ন</div>
+                    </div>
+                    <div class="year-card" onclick="selectYear('2023')">
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">২০২৩</div>
+                        <div class="year-sub">বিগত সালের প্রশ্ন</div>
+                    </div>
+                    <div class="year-card" onclick="selectYear('2022')">
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">২০২২</div>
+                        <div class="year-sub">বিগত সালের প্রশ্ন</div>
+                    </div>
+                    <div class="year-card" onclick="selectYear('2021')">
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">২০২১</div>
+                        <div class="year-sub">বিগত সালের প্রশ্ন</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ধাপ ২: বোর্ড নির্বাচন -->
+            <section id="step-boards" style="display: none;">
+                <div class="page-header-banner" style="background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);">
+                    <div class="page-header-text">
+                        <h1>শিক্ষা বোর্ড নির্বাচন করুন (<span id="current-year-badge">2026</span>)</h1>
+                        <p>আপনি যে বোর্ডের প্রশ্ন প্র্যাকটিস করতে চান, নিচের তালিকা থেকে সেই বোর্ডটি নির্বাচন করুন।</p>
+                    </div>
+                </div>
+
+                <div class="boards-grid">
+                    <div class="board-card" onclick="openTypeModal('ঢাকা বোর্ড (DHAKA BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">ঢাকা বোর্ড</div>
+                            <div class="board-code">DHAKA BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('রাজশাহী বোর্ড (RAJSHAHI BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">রাজশাহী বোর্ড</div>
+                            <div class="board-code">RAJSHAHI BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('চট্টগ্রাম বোর্ড (CHATTOGRAM BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">চট্টগ্রাম বোর্ড</div>
+                            <div class="board-code">CHATTOGRAM BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('যশোর বোর্ড (JASHORE BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">যশোর বোর্ড</div>
+                            <div class="board-code">JASHORE BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('কুমিল্লা বোর্ড (COMILLA BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">কুমিল্লা বোর্ড</div>
+                            <div class="board-code">COMILLA BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('সিলেট বোর্ড (SYLHET BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">সিলেট বোর্ড</div>
+                            <div class="board-code">SYLHET BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('বরিশাল বোর্ড (BARISHAL BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">বরিশাল বোর্ড</div>
+                            <div class="board-code">BARISHAL BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('দিনাজপুর বোর্ড (DINAJPUR BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">দিনাজপুর বোর্ড</div>
+                            <div class="board-code">DINAJPUR BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('ময়মনসিংহ বোর্ড (MYMENSINGH BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">ময়মনসিংহ বোর্ড</div>
+                            <div class="board-code">MYMENSINGH BOARD</div>
+                        </div>
+                    </div>
+                    <div class="board-card" onclick="openTypeModal('মাদ্রাসা বোর্ড (MADRASAH BOARD)')">
+                        <div class="board-icon"><i class="fa-solid fa-mosque"></i></div>
+                        <div>
+                            <div class="board-name">মাদ্রাসা বোর্ড</div>
+                            <div class="board-code">MADRASAH BOARD</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ধাপ ৩: প্রশ্ন ভিউ (MCQ ও CQ) -->
+            <section id="step-questions" style="display: none;">
+                <div class="breadcrumb-bar" style="background: #F8FAFC;">
+                    <h2 id="q-view-title" style="font-size: 1.15rem; color: var(--primary);">বোর্ড প্রশ্ন অনুশীলন</h2>
+                </div>
+
+                <!-- MCQ ভিউ -->
+                <div id="mcq-view-container">
+                    <div class="quiz-toolbar">
+                        <span class="quiz-progress-text" id="board-mcq-count"><i class="fa-solid fa-circle-question"></i> মোট প্রশ্ন: লোড হচ্ছে...</span>
+                        <div class="show-answer-control">
+                            <span>সরাসরি উত্তর দেখুন</span>
+                            <label class="switch">
+                                <input type="checkbox" id="boardShowAnsToggle" onchange="toggleAnswersSwitch(this)">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ডাইনামিক প্রশ্ন কন্টেইনার (সরাসরি ডেটাবেজ থেকে লোড হবে) -->
+                    <div id="board-mcq-questions-list">
+                    </div>
+                </div>
+
+                <!-- CQ ভিউ -->
+                <div id="cq-view-container" style="display: none;">
+                    <div class="question-card">
+                        <div class="cq-stem">
+                            <span class="cq-tag"><i class="fa-solid fa-feather-pointed"></i> সৃজনশীল প্রশ্ন ১ [উদ্দীপক]</span>
+                            <p>মি. রাকিব তার অফিসের কম্পিউটার নেটওয়ার্কে এমন একটি টপোলজি স্থাপন করলেন যেখানে একটি কেন্দ্রীয় হাব বা সুইচের সাথে সবকটি কম্পিউটার সংযুক্ত রয়েছে। পরবর্তীতে ডাটা নিরাপত্তার জন্য তিনি অফিসের মূল গেটে কর্মীদের চোখের আইরিশ স্ক্যান করার প্রযুক্তি স্থাপন করলেন।</p>
+                        </div>
+
+                        <div class="cq-sub-questions">
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(ক) বায়োমেট্রিক্স কী? [মান: ১]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> মানুষের শারীরিক গঠন বা আচরণগত বৈশিষ্ট্যের ওপর ভিত্তি করে কোনো ব্যক্তিকে অনন্যভাবে সনাক্ত ও যাচাই করার স্বয়ংক্রিয় প্রযুক্তিকে বায়োমেট্রিক্স বলে।
+                                </div>
+                            </div>
+
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(খ) ক্লাউড কম্পিউটিং কেন সাশ্রয়ী? ব্যাখ্যা কর। [মান: ২]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> ক্লাউড কম্পিউটিংয়ে ব্যবহারকারীকে নিজস্ব ডেটা সেন্টার বা দামি সার্ভার ও সফটওয়্যার কিনতে হয় না। ইন্টারনেটের মাধ্যমে ভাড়া ভিত্তিক ও 'Pay-as-you-go' পদ্ধতিতে রিসোর্স ব্যবহার করা যায় বলে এটি অত্যন্ত সাশ্রয়ী।
+                                </div>
+                            </div>
+
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(গ) উদ্দীপকে উল্লেখিত কম্পিউটার নেটওয়ার্ক টপোলজিটি ব্যাখ্যা কর। [মান: ৩]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> উদ্দীপকে মি. রাকিবের ব্যবহৃত নেটওয়ার্ক টপোলজিটি হলো <strong>স্টার টপোলজি (Star Topology)</strong>। এতে সকল কম্পিউটার একটি কেন্দ্রীয় নিয়ন্ত্রণকারী ডিভাইস (সুইচ বা হাব)-এর সাথে সংযুক্ত থাকে। এর সুবিধা হলো কোনো একটি নোড বিকল হলে পুরো নেটওয়ার্ক অচল হয় না।
+                                </div>
+                            </div>
+
+                            <div class="cq-accordion">
+                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
+                                    <span>(ঘ) মি. রাকিবের নিরাপত্তা প্রযুক্তিটির যৌক্তিকতা বিশ্লেষণ কর। [মান: ৪]</span>
+                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                                </div>
+                                <div class="cq-accordion-body">
+                                    <strong>উত্তর:</strong> উদ্দীপকে মি. রাকিব অফিসের গেটে চোখের আইরিশ স্ক্যানার ব্যবহার করেছেন যা একটি উচ্চ নিরাপত্তা সম্পন্ন বায়োমেট্রিক্স প্রযুক্তি। সাধারণ পাসওয়ার্ড বা আইডি কার্ড চুরি, নকল বা হারিয়ে যাওয়ার ঝুঁকি থাকে। কিন্তু প্রতিটি মানুষের চোখের রেটিনা ও আইরিশের প্যাটার্ন সম্পূর্ণ অনন্য এবং মৃত্যুর আগ পর্যন্ত অপরিবর্তিত থাকে। ফলে অননুমোদিত ব্যক্তির অনুপ্রবেশ শতভাগ রোধ করা সম্ভব। তাই মি. রাকিবের এই প্রযুক্তি নির্বাচন অত্যন্ত যৌক্তিক।
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ / বটম শিট -->
+    <div id="typeModal" class="modal-overlay" onclick="if(event.target === this) closeTypeModal()">
+        <div class="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title" id="modal-board-name">Choose Question Type</h3>
+            
+            <div class="sheet-options">
+                <div class="type-option-card" onclick="selectQuestionType('MCQ')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ প্র্যাকটিস</h3>
+                        <p>বহুনির্বাচনি প্রশ্নাবলি সমাধান ও তাৎক্ষণিক ব্যাখ্যাসহ উত্তর</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectQuestionType('CQ')">
+                    <div class="type-icon cq">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের পূর্ণাঙ্গ আদর্শ উত্তর</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeTypeModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/board-question.js"></script>
+</body>
+</html>

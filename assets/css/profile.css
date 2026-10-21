@@ -1,0 +1,214 @@
+/* ==========================================================================
+   PROFILE & ANALYTICS SPECIFIC STYLES
+   ========================================================================== */
+
+.profile-layout-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+    align-items: start;
+}
+
+/* User Card */
+.profile-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 90px;
+}
+
+.profile-avatar-wrapper {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 16px auto;
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.avatar-edit-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+}
+
+.profile-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.profile-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.profile-badges-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* Stat Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: var(--transition);
+}
+
+.metric-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.metric-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.metric-info strong {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.metric-info span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Chapter Progress Bar List */
+.chapter-progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.progress-info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: #E2E8F0;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+/* Recent History Table */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 0.92rem;
+}
+
+.history-table th, .history-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-table th {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .profile-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-card {
+        position: static;
+    }
+}
+
+@media (max-width: 640px) {
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .metric-card {
+        padding: 14px;
+        gap: 10px;
+    }
+    .metric-icon-box {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .metric-info strong {
+        font-size: 1.1rem;
+    }
+}
