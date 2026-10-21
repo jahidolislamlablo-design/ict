@@ -1,0 +1,7 @@
+# Backup directory
+_backup_old_structure/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/

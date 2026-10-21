@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Easy Learning - এইচএসসি আইসিটি শেখার সেরা প্ল্যাটফর্ম</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Universal Design System -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Hero Automatic Image Slider Styles */
+        .hero-slider-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-bottom: 28px;
+            box-shadow: 0 12px 30px -5px rgba(15, 23, 42, 0.25);
+            min-height: 420px;
+            background: #0F172A;
+            touch-action: pan-y;
+        }
+
+        .hero-slider-track {
+            position: relative;
+            width: 100%;
+            min-height: 420px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            transform: scale(1.02);
+            display: flex;
+            align-items: center;
+            padding: 40px 36px 56px 36px;
+            box-sizing: border-box;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            z-index: 2;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+        }
+
+        .hero-slide.active .slide-bg {
+            transform: scale(1.06);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(30, 27, 75, 0.88) 55%, rgba(15, 23, 42, 0.65) 100%);
+            z-index: 2;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 3;
+            color: #ffffff;
+            max-width: 760px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .hero-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .hero-desc {
+            font-size: 0.98rem;
+            opacity: 0.92;
+            max-width: 620px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .slide-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .hero-stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-stat-item i {
+            font-size: 1.2rem;
+            color: #A5B4FC;
+        }
+
+        .hero-stat-info strong {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .hero-stat-info span {
+            font-size: 0.78rem;
+            opacity: 0.8;
+        }
+
+        /* Slider Controls */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .slider-btn:hover {
+            background: #ffffff;
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider-btn.prev-btn { left: 16px; }
+        .slider-btn.next-btn { right: 16px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+            align-items: center;
+        }
+
+        .dot-btn {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .dot-btn.active {
+            width: 28px;
+            border-radius: 6px;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Mobile Hero Slider (Height Halved for Compact Screen) */
+        @media (max-width: 768px) {
+            .hero-slider-wrapper, .hero-slider-track {
+                min-height: 220px;
+                height: 220px;
+            }
+            .hero-slide {
+                padding: 18px 20px 28px 20px;
+                align-items: center;
+            }
+            .hero-tag {
+                padding: 3px 10px;
+                font-size: 0.7rem;
+                margin-bottom: 6px;
+            }
+            .hero-title {
+                font-size: 1.18rem;
+                line-height: 1.25;
+                margin-bottom: 6px;
+            }
+            .hero-desc {
+                font-size: 0.78rem;
+                line-height: 1.35;
+                margin-bottom: 10px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                opacity: 0.9;
+            }
+            .slide-actions {
+                gap: 8px;
+                margin-bottom: 0;
+            }
+            .slide-actions .btn {
+                padding: 5px 12px;
+                font-size: 0.78rem;
+                border-radius: var(--radius-sm);
+            }
+            .slide-actions .btn i {
+                font-size: 0.75rem;
+            }
+            /* মোবাইলে অতিরিক্ত স্ট্যাটস রো লুকিয়ে ব্যানারকে স্লিম ও কমপ্যাক্ট রাখা হয়েছে */
+            .hero-stats-row {
+                display: none;
+            }
+            .slider-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 0.78rem;
+                background: rgba(15, 23, 42, 0.45);
+                backdrop-filter: blur(4px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .slider-btn.prev-btn { left: 8px; }
+            .slider-btn.next-btn { right: 8px; }
+            .slider-dots {
+                bottom: 8px;
+                gap: 5px;
+            }
+            .dot-btn {
+                width: 6px;
+                height: 6px;
+            }
+            .dot-btn.active {
+                width: 16px;
+                border-radius: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-slider-wrapper, .hero-slider-track {
+                min-height: 200px;
+                height: 200px;
+            }
+            .hero-slide {
+                padding: 14px 16px 26px 16px;
+            }
+            .hero-title {
+                font-size: 1.05rem;
+                margin-bottom: 4px;
+            }
+            .hero-desc {
+                -webkit-line-clamp: 1;
+                margin-bottom: 8px;
+                font-size: 0.75rem;
+            }
+            .hero-tag {
+                font-size: 0.68rem;
+                padding: 2px 8px;
+                margin-bottom: 5px;
+            }
+            .slide-actions .btn {
+                padding: 4px 10px;
+                font-size: 0.72rem;
+            }
+        }
+
+        /* Resume Study Card */
+        .resume-card {
+            background: var(--bg-card);
+            border: 1.5px solid #E0E7FF;
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .resume-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .resume-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .resume-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .resume-info h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .resume-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-container {
+            width: 140px;
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* 4 Main Feature Cards (Responsive Grid) */
+        .features-section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .feature-box {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 24px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .feature-box:hover::before {
+            background: var(--primary);
+        }
+
+        .feature-icon-wrapper {
+            width: 68px;
+            height: 68px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .feature-box:hover .feature-icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .feature-box.board .feature-icon-wrapper { background: #EEF2FF; color: #4F46E5; }
+        .feature-box.testpaper .feature-icon-wrapper { background: #ECFDF5; color: #10B981; }
+        .feature-box.chapter .feature-icon-wrapper { background: #FFFBEB; color: #F59E0B; }
+        .feature-box.pdf .feature-icon-wrapper { background: #FEF2F2; color: #EF4444; }
+
+        .feature-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .feature-box p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .feature-badge {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            background: var(--bg-page);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Extra Quick Links Banner */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .promo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .promo-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .promo-card-content h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .promo-card-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .promo-btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .main-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .hero-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .main-features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .feature-box {
+                padding: 16px 10px;
+                border-radius: var(--radius-lg);
+            }
+            .feature-icon-wrapper {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+            .feature-box h3 {
+                font-size: 0.92rem;
+            }
+            .feature-box p {
+                display: none;
+            }
+            .promo-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .resume-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .resume-action {
+                width: 100%;
+            }
+            .resume-action .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- ব্র্যান্ড লোগো ও টাইটেল -->
+            <a href="index.html" class="brand-link">
+                <img src="assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+ 
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                
+                <div class="brand-text">
+                    <span class="brand-title">ICT EASY LEARNING</span>
+                    <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                </div>
+            
+            </a>
+
+            <!-- নেভিগেশন লিংক বার -->
+            <div class="header-nav-wrapper">
+                <ul class="desktop-nav">
+                    <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="pages/board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="pages/test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="pages/chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="pages/model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pages/pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <!-- হেডার ডানপাশের অ্যাকশন / প্রোফাইল -->
+            <div class="header-actions">
+                <a href="pages/profile.html" class="header-user-btn" title="আমার প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- হিরো অটোমেটিক ইমেজ স্লাইডার (Hero Automatic Image Slider) -->
+            <div class="hero-slider-wrapper" id="heroSlider">
+                <div class="hero-slider-track">
+                    <!-- স্লাইড ১: আইসিটি প্রস্তুতি -->
+                    <div class="hero-slide active">
+                        <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');"></div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="hero-tag">
+                                <i class="fa-solid fa-bolt"></i> এইচএসসি প্রস্তুতি ২০২৬ ও ২০২৫
+                            </div>
+                            <h1 class="hero-title">আইসিটি প্রস্তুতি এখন হাতের মুঠোয়!</h1>
+                            <p class="hero-desc">সকল শিক্ষা বোর্ডের বিগত বছরের প্রশ্ন, শীর্ষ কলেজের টেস্ট পেপার ও পূর্ণাঙ্গ মডেল টেস্ট দিয়ে নিজের প্রস্তুতিকে আরও নিখুঁত করুন।</p>
+                            
+                            <div class="slide-actions">
+                                <a href="pages/chapter-prep.html" class="btn btn-primary">
+                                    <i class="fa-solid fa-book-open"></i> অধ্যায়ভিত্তিক প্রস্তুতি
+                                </a>
+                                <a href="pages/model-test.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #ffffff;">
+                                    <i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট দিন
+                                </a>
+                            </div>
+
+                            <div class="hero-stats-row">
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>২,৫০০+ প্রশ্ন</strong>
+                                        <span>ব্যাখ্যাসহ উত্তর</span>
+                                    </div>
+                                </div>
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-landmark"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>১০টি শিক্ষা বোর্ড</strong>
+                                        <span>২০১৯-২০২৬ সমাধান</span>
+                                    </div>
+                                </div>
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-file-shield"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>সুপার সাজেশন</strong>
+                                        <span>ফ্রি পিডিএফ নোট</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- স্লাইড ২: বোর্ড প্রশ্নব্যাংক -->
+                    <div class="hero-slide">
+                        <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80');"></div>
+                        <div class="slide-overlay" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(6, 78, 59, 0.88) 55%, rgba(15, 23, 42, 0.65) 100%);"></div>
+                        <div class="slide-content">
+                            <div class="hero-tag" style="background: rgba(16, 185, 129, 0.25);">
+                                <i class="fa-solid fa-building-columns"></i> বিগত ৬ বছরের বোর্ড প্রশ্নব্যাংক
+                            </div>
+                            <h1 class="hero-title">সকল বোর্ডের প্রশ্ন সমাধান ও নির্ভুল ব্যাখ্যা</h1>
+                            <p class="hero-desc">ঢাকা, রাজশাহী, চট্টগ্রাম, যশোর সহ ১০টি শিক্ষা বোর্ডের ২০১৯ থেকে ২০২৬ সালের MCQ ও সৃজনশীল (CQ) প্রশ্নের শতভাগ সঠিক উত্তর।</p>
+                            
+                            <div class="slide-actions">
+                                <a href="pages/board-question.html" class="btn btn-primary" style="background: #10B981; border-color: #10B981;">
+                                    <i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন অনুশীলন করুন
+                                </a>
+                            </div>
+
+                            <div class="hero-stats-row">
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-calendar-check" style="color: #6EE7B7;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>২০১৯ – ২০২৬</strong>
+                                        <span>সকল সাল অন্তর্ভুক্ত</span>
+                                    </div>
+                                </div>
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-check-double" style="color: #6EE7B7;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>MCQ + CQ</strong>
+                                        <span>আদর্শ ব্যাখ্যা সহ</span>
+                                    </div>
+                                </div>
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-graduation-cap" style="color: #6EE7B7;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>১০টি বোর্ড</strong>
+                                        <span>সাধারণ ও মাদ্রাসা</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- স্লাইড ৩: শীর্ষ কলেজ টেস্ট পেপার -->
+                    <div class="hero-slide">
+                        <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');"></div>
+                        <div class="slide-overlay" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(120, 53, 15, 0.88) 55%, rgba(15, 23, 42, 0.65) 100%);"></div>
+                        <div class="slide-content">
+                            <div class="hero-tag" style="background: rgba(245, 158, 11, 0.25);">
+                                <i class="fa-solid fa-school"></i> শীর্ষ ৫০+ কলেজ টেস্ট পেপার
+                            </div>
+                            <h1 class="hero-title">নটর ডেম ও ভিকারুননিসা সহ সেরা কলেজের প্রশ্ন</h1>
+                            <p class="hero-desc">দেশের নামকরা শীর্ষ কলেজসমূহের টেস্ট ও প্রি-টেস্ট পরীক্ষার মানসম্মত প্রশ্ন সমাধান করে বোর্ড পরীক্ষার জন্য নিজেকে প্রস্তুত করুন।</p>
+                            
+                            <div class="slide-actions">
+                                <a href="pages/test-paper.html" class="btn btn-primary" style="background: #D97706; border-color: #D97706;">
+                                    <i class="fa-solid fa-book-open-reader"></i> টেস্ট পেপার সমাধান করুন
+                                </a>
+                            </div>
+
+                            <div class="hero-stats-row">
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-landmark" style="color: #FCD34D;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>৫০+ কলেজ</strong>
+                                        <span>টেস্ট পরীক্ষার প্রশ্ন</span>
+                                    </div>
+                                </div>
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-award" style="color: #FCD34D;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>এ+ টার্গেট</strong>
+                                        <span>স্পেশাল প্র্যাকটিস</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- স্লাইড ৪: লাইভ মডেল টেস্ট -->
+                    <div class="hero-slide">
+                        <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80');"></div>
+                        <div class="slide-overlay" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(153, 27, 27, 0.88) 55%, rgba(15, 23, 42, 0.65) 100%);"></div>
+                        <div class="slide-content">
+                            <div class="hero-tag" style="background: rgba(239, 68, 68, 0.25);">
+                                <i class="fa-solid fa-stopwatch"></i> লাইভ এক্সাম ও টাইমার
+                            </div>
+                            <h1 class="hero-title">কাউন্টডাউন টাইমার সহ অনলাইন মডেল টেস্ট</h1>
+                            <p class="hero-desc">পরীক্ষার হলের পরিবেশে নির্দিষ্ট সময়ে ২৫টি প্রশ্নের পরীক্ষা দিন, তাৎক্ষণিক নির্ভুল রেজাল্ট, সঠিক/ভুল মার্কিং ও প্রগ্রেস কার্ড পান।</p>
+                            
+                            <div class="slide-actions">
+                                <a href="pages/model-test.html" class="btn btn-primary" style="background: #EF4444; border-color: #EF4444;">
+                                    <i class="fa-solid fa-play"></i> এখনই মডেল টেস্ট দিন
+                                </a>
+                            </div>
+
+                            <div class="hero-stats-row">
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-clock" style="color: #FCA5A5;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>২৫ মিনিট</strong>
+                                        <span>লাইভ টাইমার</span>
+                                    </div>
+                                </div>
+                                <div class="hero-stat-item">
+                                    <i class="fa-solid fa-chart-pie" style="color: #FCA5A5;"></i>
+                                    <div class="hero-stat-info">
+                                        <strong>তাৎক্ষণিক রেজাল্ট</strong>
+                                        <span>স্বয়ংক্রিয় মূল্যায়ন</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- স্লাইডার কন্ট্রোল বাটন (Prev/Next) -->
+                <button class="slider-btn prev-btn" id="heroPrevBtn" aria-label="পূর্ববর্তী স্লাইড">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next-btn" id="heroNextBtn" aria-label="পরবর্তী স্লাইড">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- স্লাইড ইন্ডিকেটর ডটস -->
+                <div class="slider-dots" id="heroSliderDots">
+                    <button class="dot-btn active" data-index="0" aria-label="স্লাইড ১"></button>
+                    <button class="dot-btn" data-index="1" aria-label="স্লাইড ২"></button>
+                    <button class="dot-btn" data-index="2" aria-label="স্লাইড ৩"></button>
+                    <button class="dot-btn" data-index="3" aria-label="স্লাইড ৪"></button>
+                </div>
+            </div>
+
+        
+            <!-- চলমান পড়াশোনা (Resume Study) -->
+            <div class="resume-card">
+                <div class="resume-left">
+                    <div class="resume-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="resume-info">
+                        <h4>৪র্থ অধ্যায়: ওয়েব ডিজাইন ও HTML</h4>
+                        <p>সর্বশেষ পড়া টপিক: HTML টেবিল ও হাইপারলিংক ফরম্যাটিং</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-action">
+                    <a href="pages/chapter-prep.html" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-play"></i> চালিয়ে যান
+                    </a>
+                </div>
+            </div>
+            
+            <!-- মূল ৪টি ফিচারের গ্রিড -->
+            <div class="features-section-title">
+                <span>Features</span>
+                <span class="badge badge-primary">৪টি ক্যাটাগরি</span>
+            </div>
+
+            <div class="main-features-grid">
+                <!-- ১. বোর্ড প্রশ্ন -->
+                <a href="pages/board-question.html" class="feature-box board">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <h3>Board Question</h3>
+                    <p>সকল বোর্ডের সালভিত্তিক MCQ ও CQ প্রশ্ন ও সঠিক সমাধান</p>
+                    <span class="feature-badge">২০১৯ - ২০২৬ সাল</span>
+                </a>
+
+                 <!-- 2. অধ্যায়ভিত্তিক প্রস্তুতি -->
+                <a href="pages/chapter-prep.html" class="feature-box chapter">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <h3>Chapter Wise</h3>
+                    <p>১ম থেকে ৬ষ্ঠ অধ্যায়ের টপিকভিত্তিক নিখুঁত প্রস্তুতি ও প্র্যাকটিস</p>
+                    <span class="feature-badge">৬টি পূর্ণাঙ্গ অধ্যায়</span>
+                </a>
+                <!-- 3. টেস্ট পেপার -->
+                <a href="pages/test-paper.html" class="feature-box testpaper">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3>Test Paper</h3>
+                    <p>নটর ডেম, ভিকারুননিসা সহ শীর্ষ কলেজের টেস্ট পরীক্ষার প্রশ্ন</p>
+                    <span class="feature-badge">শীর্ষ ৫০+ কলেজ</span>
+                </a>
+
+
+                <!-- ৪. পিডিএফ সাজেশন -->
+                <a href="pages/pdf-suggestion.html" class="feature-box pdf">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3>PDF Suggestions</h3>
+                    <p>অধ্যায়ভিত্তিক স্পেশাল হ্যান্ডনোট, ফর্মুলা শিট ও সুপার সাজেশন</p>
+                    <span class="feature-badge">ফ্রি ডাউনলোড</span>
+                </a>
+            </div>
+
+            <!-- অতিরিক্ত দ্রুত অ্যাকশন কার্ড (মডেল টেস্ট ও কুইজ) -->
+            <div class="promo-grid">
+                <a href="pages/model-test.html" class="promo-card">
+                    <div class="promo-card-content">
+                        <span class="badge badge-warning" style="margin-bottom: 6px;">লাইভ এক্সাম</span>
+                        <h4>পূর্ণাঙ্গ চূড়ান্ত মডেল টেস্ট</h4>
+                        <p>২৫ মিনিট ২৫টি প্রশ্ন দিয়ে পরীক্ষা দিন এবং তাৎক্ষণিক স্কোর জানুন।</p>
+                    </div>
+                    <div class="promo-btn-icon">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="pages/chapter-prep.html" class="promo-card">
+                    <div class="promo-card-content">
+                        <span class="badge badge-success" style="margin-bottom: 6px;">সি প্রোগ্রামিং ও HTML</span>
+                        <h4>কোডিং ও অ্যালগরিদম স্পেশাল</h4>
+                        <p>সি প্রোগ্রামিং ও এইচটিএমএল কোডের সরাসরি ব্যাখ্যা ও কুইজ অনুশীলন।</p>
+                    </div>
+                    <div class="promo-btn-icon">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- প্ল্যাটফর্ম ফুটার -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div>
+                <strong style="color: var(--primary);">ICT EASY LEARNING</strong> &copy; ২০২৬ । সর্বস্বত্ব সংরক্ষিত।
+            </div>
+            <div class="footer-links">
+                <a href="pages/board-question.html">বোর্ড প্রশ্ন</a>
+                <a href="pages/test-paper.html">টেস্ট পেপার</a>
+                <a href="pages/model-test.html">মডেল টেস্ট</a>
+                <a href="pages/profile.html">প্রোফাইল</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- মোবাইল বটম নেভিগেশন বার (শুধু মোবাইলে দৃশ্যমান) -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="pages/model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pages/pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="pages/profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
