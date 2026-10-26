@@ -241,6 +241,8 @@ function renderAllQuestions() {
  */
 function selectExamOption(qIndex, optionIndex) {
     if (isExamSubmitted) return; // পরীক্ষা সাবমিট হওয়ার পর অপশন পরিবর্তন বন্ধ
+    // যেকোনো একটি অপশনে একবারই ক্লিক করা যাবে (একবার উত্তর দিলে লক হয়ে যাবে)
+    if (userAnswers[qIndex] !== undefined) return;
 
     userAnswers[qIndex] = optionIndex;
 
@@ -251,6 +253,7 @@ function selectExamOption(qIndex, optionIndex) {
             const marker = opt.querySelector('.option-marker');
             const icon = opt.querySelector('.option-status-icon');
 
+            opt.style.pointerEvents = 'none'; // আর ক্লিক করা যাবে না
             if (oIdx === optionIndex) {
                 opt.style.backgroundColor = 'var(--primary-light)';
                 opt.style.borderColor = 'var(--primary)';
@@ -262,18 +265,9 @@ function selectExamOption(qIndex, optionIndex) {
                     marker.style.color = '#fff';
                 }
                 if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>';
-                
             } else {
-                opt.style.backgroundColor = '';
-                opt.style.borderColor = '';
-                opt.style.color = '';
-                opt.style.fontWeight = '';
-                if (marker) {
-                    marker.style.background = '';
-                    marker.style.borderColor = '';
-                    marker.style.color = '';
-                }
-                if (icon) icon.innerHTML = '';
+                opt.style.opacity = '0.65';
+                opt.style.cursor = 'not-allowed';
             }
         });
     }
@@ -487,11 +481,29 @@ function reviewExamAnswers() {
  * পরীক্ষা থেকে প্রস্থান
  */
 function exitExam() {
-    const resultModal = document.getElementById('examResultModal');
-    if (resultModal) {
-        resultModal.classList.remove('open');
+    const examView = document.getElementById('live-exam-view');
+    const isExamActive = examView && examView.style.display !== 'none';
+
+    if (isExamActive) {
+        if (!isExamSubmitted && Object.keys(userAnswers).length > 0) {
+            if (!confirm('আপনি কি চলমান পরীক্ষাটি স্থগিত করে মডেল টেস্ট তালিকায় ফিরে যেতে চান?')) {
+                return;
+            }
+        }
+        clearInterval(timerInterval);
+        const resultModal = document.getElementById('examResultModal');
+        if (resultModal) {
+            resultModal.classList.remove('open');
+        }
+        examView.style.display = 'none';
+        document.getElementById('model-test-list-view').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // মডেল টেস্ট লিস্ট থেকে হোম পেজে ফিরে যাওয়া
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = '../index.html';
+        }
     }
-    document.getElementById('live-exam-view').style.display = 'none';
-    document.getElementById('model-test-list-view').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -13,13 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getChapterIdFromTitle(title) {
     if (!title) return 1;
+    if (title.includes('১ম অংশ') || title.includes('সংখ্যা পদ্ধতি')) return '3.1';
+    if (title.includes('২য় অংশ') || title.includes('ডিজিটাল ডিভাইস') || title.includes('লজিক গেট')) return '3.2';
     if (title.includes('১ম') || title.includes('1st')) return 1;
     if (title.includes('২য়') || title.includes('2nd')) return 2;
-    if (title.includes('৩য়') || title.includes('3rd')) return 3;
+    if (title.includes('৩য়') || title.includes('3rd')) return '3.1';
     if (title.includes('৪র্থ') || title.includes('4th')) return 4;
     if (title.includes('৫ম') || title.includes('5th')) return 5;
     if (title.includes('৬ষ্ঠ') || title.includes('6th')) return 6;
-    if (title.includes('৭ম') || title.includes('7th')) return 7;
     return 1;
 }
 

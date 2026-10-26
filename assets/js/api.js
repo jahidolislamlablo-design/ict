@@ -487,10 +487,6 @@ const ApiService = {
     async getChapterMCQ(chapterId) {
         try {
             let chapterNum = chapterId;
-            if (chapterId === 4) chapterNum = 3;
-            if (chapterId === 5) chapterNum = 4;
-            if (chapterId === 6) chapterNum = 5;
-            if (chapterId === 7) chapterNum = 6;
 
             const endpoint = `/api/mcqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterNum)}`;
             const res = await fetchFromBackend(endpoint);
@@ -510,10 +506,6 @@ const ApiService = {
     async getChapterCQ(chapterId) {
         try {
             let chapterNum = chapterId;
-            if (chapterId === 4) chapterNum = 3;
-            if (chapterId === 5) chapterNum = 4;
-            if (chapterId === 6) chapterNum = 5;
-            if (chapterId === 7) chapterNum = 6;
 
             const endpoint = `/api/cqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterNum)}`;
             const res = await fetchFromBackend(endpoint);
@@ -529,6 +521,22 @@ const ApiService = {
     },
 
     // ৪. টেস্ট পেপার / কলেজ ভিত্তিক MCQ লোড
+        // ৪.২ টেস্ট পেপার / কলেজ ভিত্তিক CQ লোড
+    async getCollegeCQ(collegeId) {
+        try {
+            let endpoint = `/api/cqs?categoryType=College Test Paper`;
+            if (collegeId) endpoint += `&collegeName=${encodeURIComponent(collegeId)}`;
+
+            const res = await fetchFromBackend(endpoint);
+            if (res && res.success && Array.isArray(res.data)) {
+                return res.data.map(mapBackendCqToFrontend);
+            }
+            return [];
+        } catch (e) {
+            return [];
+        }
+    },
+
     async getCollegeMCQ(collegeId) {
         try {
             let endpoint = `/api/mcqs?categoryType=College Test Paper`;

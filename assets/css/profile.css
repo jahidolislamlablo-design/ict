@@ -212,3 +212,40 @@
         font-size: 1.1rem;
     }
 }
+
+
+/* Fix for mobile text & score wrapping */
+.history-table th, .history-table td {
+    white-space: nowrap !important;
+}
+
+.history-table th:nth-child(3),
+.history-table td:nth-child(3) {
+    white-space: nowrap !important;
+    text-align: center;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    .metric-card {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+    .metric-info strong {
+        font-size: 1.05rem;
+        white-space: nowrap;
+    }
+    .metric-info span {
+        font-size: 0.72rem;
+        white-space: nowrap;
+    }
+    .history-table th, .history-table td {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+        white-space: nowrap !important;
+    }
+}

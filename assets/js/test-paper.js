@@ -38,7 +38,7 @@ function selectTestYear(year) {
 
 function openCollegeModal(collegeName, collegeId = '') {
     selectedCollege = collegeName;
-    selectedCollegeId = collegeId || getCollegeIdFromName(collegeName);
+    selectedCollegeId = collegeName;
     
     const titleEl = document.getElementById('modal-college-title');
     if (titleEl) titleEl.innerText = `${selectedCollege} (${selectedTestYear})`;
@@ -62,13 +62,14 @@ async function selectTestQuestionType(type) {
         titleEl.innerText = `${selectedCollege} - টেস্ট পরীক্ষা ${selectedTestYear} (${type})`;
     }
 
-    if (type === 'MCQ') {
+        if (type === 'MCQ') {
         document.getElementById('test-mcq-view').style.display = 'block';
         document.getElementById('test-cq-view').style.display = 'none';
         await loadCollegeMCQQuestions();
     } else {
         document.getElementById('test-mcq-view').style.display = 'none';
         document.getElementById('test-cq-view').style.display = 'block';
+        await loadCollegeCQQuestions();
     }
 
     updateTestPaperStep();
@@ -198,5 +199,24 @@ function toggleAccordion(header) {
     const accordion = header.closest('.cq-accordion');
     if (accordion) {
         accordion.classList.toggle('open');
+    }
+}
+
+async function loadCollegeCQQuestions() {
+    const container = document.getElementById('test-cq-view');
+    if (!container) return;
+
+    try {
+        const cqs = await ApiService.getCollegeCQ(selectedCollegeId);
+        if (!cqs || cqs.length === 0) {
+            return; // keep default sample if empty
+        }
+        let html = '';
+        cqs.forEach((cq, idx) => {
+            html += renderCQCardHTML(cq, idx);
+        });
+        container.innerHTML = html;
+    } catch (e) {
+        console.warn('College CQ load error:', e);
     }
 }
