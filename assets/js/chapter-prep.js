@@ -67,6 +67,7 @@ async function selectChapterMode(mode) {
         const titleEl = document.getElementById('active-cq-title');
         if (titleEl) titleEl.innerText = `${activeChapter} - সৃজনশীল (CQ)`;
         if (currentBreadcrumb) currentBreadcrumb.innerText = `${activeChapter} > CQ`;
+        await loadChapterCQQuestions();
     }
 
     if (backBtnText) backBtnText.innerText = 'অধ্যায়ে ফিরে যান';
@@ -121,6 +122,55 @@ async function loadChapterMCQQuestions() {
                 <i class="fa-solid fa-circle-exclamation fa-2x" style="margin-bottom: 10px;"></i>
                 <p style="font-weight: 600;">প্রশ্ন লোড করতে সমস্যা হয়েছে।</p>
                 <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 4px;">অনুগ্রহ করে ইন্টারনেট সংযোগ পরীক্ষা করুন।</p>
+            </div>
+        `;
+    }
+}
+
+
+
+async function loadChapterCQQuestions() {
+    const container = document.getElementById('chapter-cq-list');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div style="text-align: center; padding: 45px 20px; color: var(--text-secondary);">
+            <i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
+            <p style="font-weight: 500;">ডাটাবেজ থেকে সৃজনশীল প্রশ্ন লোড করা হচ্ছে...</p>
+        </div>
+    `;
+
+    try {
+        let questions = [];
+        if (typeof ApiService !== 'undefined' && ApiService.getChapterCQ) {
+            questions = await ApiService.getChapterCQ(activeChapterId);
+        }
+
+        if (!questions || questions.length === 0) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 40px; background: #fff; border-radius: 12px; border: 1.5px dashed var(--border-color); margin-top: 15px;">
+                    <i class="fa-regular fa-folder-open fa-3x" style="color: var(--text-muted); margin-bottom: 12px;"></i>
+                    <h3 style="color: var(--text-primary); margin-bottom: 6px;">কোনো সৃজনশীল প্রশ্ন পাওয়া যায়নি</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">এই অধ্যায়ের সৃজনশীল প্রশ্ন শীঘ্রই ডাটাবেজে যুক্ত করা হবে।</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        questions.forEach((q, idx) => {
+            if (typeof renderCQCardHTML === 'function') {
+                html += renderCQCardHTML(q, idx);
+            }
+        });
+        container.innerHTML = html;
+
+    } catch (err) {
+        console.error("Failed to load chapter CQ:", err);
+        container.innerHTML = `
+            <div style="text-align: center; padding: 35px 20px; background: #FEF2F2; border-radius: 12px; color: var(--danger);">
+                <i class="fa-solid fa-circle-exclamation fa-2x" style="margin-bottom: 10px;"></i>
+                <p style="font-weight: 600;">সৃজনশীল প্রশ্ন লোড করতে সমস্যা হয়েছে।</p>
             </div>
         `;
     }

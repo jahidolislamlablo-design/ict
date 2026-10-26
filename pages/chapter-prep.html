@@ -259,64 +259,8 @@
                     <h2 id="active-cq-title" style="font-size: 1.15rem; color: var(--primary);">সৃজনশীল প্রশ্ন (CQ)</h2>
                 </div>
 
-                <div class="question-card">
-                    <div class="cq-stem">
-                        <span class="cq-tag"><i class="fa-solid fa-feather-pointed"></i> উদ্দীপক</span>
-                        <p>একটি কলেজের আইসিটি শিক্ষক শ্রেণিকক্ষে একটি বিশেষ ওয়েবপেজ প্রদর্শন করলেন যেখানে কলেজের বিভিন্ন বিভাগের তথ্য একটি সুশৃঙ্খল সারিবদ্ধ ছকে (Table) উপস্থাপিত ছিল এবং নোটিশ দেখার জন্য একটি ক্লিকযোগ্য হাইপারলিঙ্ক ছিল।</p>
-                    </div>
-
-                    <div class="cq-sub-questions">
-                        <div class="cq-accordion">
-                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                <span>(ক) হাইপারলিংক কী? [মান: ১]</span>
-                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                            </div>
-                            <div class="cq-accordion-body">
-                                <strong>উত্তর:</strong> কোনো ওয়েবপেজের একটি নির্দিষ্ট অংশ বা অন্য কোনো ওয়েবপেজের সাথে সংযোগ স্থাপনকারী টেক্সট বা উপাদানকে হাইপারলিংক বলে। এইচটিএমএল-এ <code>&lt;a&gt;</code> ট্যাগের মাধ্যমে এটি তৈরি হয়।
-                            </div>
-                        </div>
-
-                        <div class="cq-accordion">
-                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                <span>(খ) "আইপি অ্যাড্রেসের চেয়ে ডোমেইন নেম ব্যবহার সুবিধাজনক"- বুঝিয়ে লেখ। [মান: ২]</span>
-                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                            </div>
-                            <div class="cq-accordion-body">
-                                <strong>উত্তর:</strong> প্রতিটি ওয়েবসাইটের একটি অনন্য সাংখ্যিক আইপি অ্যাড্রেস থাকে (যেমন: 192.168.1.1)। কিন্তু মানুষের পক্ষে অসংখ্য দুর্বোধ্য সংখ্যা মনে রাখা অত্যন্ত কঠিন। তাই আইপি অ্যাড্রেসের পরিবর্তে মানুষের বোধগম্য বর্ণভিত্তিক নাম বা ডোমেইন নেম (যেমন: google.com) ব্যবহার করা অনেক বেশি সুবিধাজনক।
-                            </div>
-                        </div>
-
-                        <div class="cq-accordion">
-                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                <span>(গ) উদ্দীপকে প্রদর্শিত সারিবদ্ধ ছক (Table) তৈরির প্রয়োজনীয় এইচটিএমএল কোড লেখ। [মান: ৩]</span>
-                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                            </div>
-                            <div class="cq-accordion-body">
-                                <strong>উত্তর:</strong> এইচটিএমএল-এ টেবিল তৈরির বেসিক কোড:<br>
-                                <pre style="background: #f1f5f9; padding: 10px; border-radius: 6px; font-family: monospace; margin-top: 8px;">
-&lt;table border="1"&gt;
-  &lt;tr&gt;
-    &lt;th&gt;বিভাগ&lt;/th&gt;
-    &lt;th&gt;শিক্ষার্থী সংখ্যা&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;বিজ্ঞান&lt;/td&gt;
-    &lt;td&gt;১২০&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</pre>
-                            </div>
-                        </div>
-
-                        <div class="cq-accordion">
-                            <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                <span>(ঘ) শিক্ষকের ব্যবহৃত প্রযুক্তির মাধ্যমে কলেজটির কার্যক্রমে কী ধরনের পরিবর্তন আসবে? বিশ্লেষণ কর। [মান: ৪]</span>
-                                <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                            </div>
-                            <div class="cq-accordion-body">
-                                <strong>উত্তর:</strong> ওয়েবপেজের মাধ্যমে কলেজের তথ্য অনলাইনে প্রকাশের ফলে যেকোনো শিক্ষার্থী বা অভিভাবক যেকোনো স্থান থেকে মুহূর্তে নোটিশ ও তথ্য সংগ্রহ করতে পারবেন। এতে কাগুজে নোটিশের নির্ভরতা কমবে, প্রশাসনিক কাজের গতি বাড়বে এবং তথ্যের স্বচ্ছতা নিশ্চিত হবে।
-                            </div>
-                        </div>
-                    </div>
+                <div id="chapter-cq-list">
+                    <!-- Dynamic CQ questions loaded from database -->
                 </div>
             </section>
 

@@ -72,6 +72,7 @@ async function selectQuestionType(type) {
     } else {
         document.getElementById('mcq-view-container').style.display = 'none';
         document.getElementById('cq-view-container').style.display = 'block';
+        await loadBoardCQQuestions();
     }
     
     updateStepView();
@@ -202,5 +203,31 @@ function toggleAccordion(header) {
     const accordion = header.closest('.cq-accordion');
     if (accordion) {
         accordion.classList.toggle('open');
+    }
+}
+
+// বোর্ড সৃজনশীল (CQ) প্রশ্ন লোডার
+async function loadBoardCQQuestions() {
+    const cqContainer = document.getElementById('cq-view-container');
+    if (!cqContainer) return;
+    
+    cqContainer.innerHTML = '<div style="text-align: center; padding: 45px 20px; color: var(--text-secondary);"><i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i><p style="font-weight: 500;">ডাটাবেজ থেকে সৃজনশীল (CQ) প্রশ্ন লোড করা হচ্ছে...</p></div>';
+
+    try {
+        const cqs = await ApiService.getBoardCQ(selectedBoardCode, selectedYear);
+        if (!cqs || cqs.length === 0) {
+            cqContainer.innerHTML = '<div style="text-align: center; padding: 40px; background: #fff; border-radius: 12px; border: 1.5px dashed var(--border-color); margin-top: 15px;"><i class="fa-regular fa-folder-open fa-3x" style="color: var(--text-muted); margin-bottom: 12px;"></i><h3 style="color: var(--text-primary); margin-bottom: 6px;">কোনো সৃজনশীল প্রশ্ন পাওয়া যায়নি</h3><p style="color: var(--text-secondary); font-size: 0.95rem;">এই বোর্ড ও সালের সৃজনশীল প্রশ্ন ডাটাবেজে যুক্ত করা হলে এখানে দেখতে পাবেন।</p></div>';
+            return;
+        }
+
+        let html = '';
+        cqs.forEach((cq, idx) => {
+            html += (typeof renderCQCardHTML === 'function') 
+                ? renderCQCardHTML(cq, idx) 
+                : '<div class="question-card"><p>' + cq.stem + '</p></div>';
+        });
+        cqContainer.innerHTML = html;
+    } catch (err) {
+        console.error("Failed to load CQ:", err);
     }
 }

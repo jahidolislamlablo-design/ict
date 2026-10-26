@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT Easy Learning - অ্যাডমিন ডাটা এন্ট্রি ও এডিট পোর্টাল</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-light: #eef2ff;
+      --secondary: #06b6d4;
+      --success: #10b981;
+      --success-light: #ecfdf5;
+      --danger: #ef4444;
+      --danger-light: #fef2f2;
+      --warning: #f59e0b;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Hind Siliguri', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+
+    .brand-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .server-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background: #f1f5f9;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warning);
+    }
+
+    .status-dot.online {
+      background: var(--success);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+
+    .status-dot.offline {
+      background: var(--danger);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 1.5rem auto 3rem auto;
+      padding: 0 1.25rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      background: #ffffff;
+      padding: 0.4rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      background: #f8fafc;
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+
+    .tab-btn .badge {
+      background: rgba(255, 255, 255, 0.25);
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .tab-btn:not(.active) .badge {
+      background: #e2e8f0;
+      color: #475569;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title svg {
+      color: var(--primary);
+    }
+
+    /* Checkbox Badges for Multi-selection */
+    .category-checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+    .cat-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: #ffffff;
+      cursor: pointer;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #334155;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .cat-pill:hover {
+      border-color: var(--primary);
+      background: #f8faff;
+    }
+
+    .cat-pill:has(input:checked) {
+      border-color: var(--primary);
+      background: #eef2ff;
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(79, 70, 229, 0.15);
+    }
+
+    .cat-pill input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .form-group label .required {
+      color: var(--danger);
+      margin-left: 0.2rem;
+    }
+
+    .form-group .hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      color: #1e293b;
+      background: #ffffff;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .option-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem;
+      transition: border-color 0.2s;
+    }
+
+    .option-box:focus-within {
+      border-color: var(--primary);
+      background: #faf5ff;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .cq-question-group {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cq-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+
+    .metadata-card {
+      background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+      border: 1px solid #dbeafe;
+      border-left: 4px solid var(--primary);
+    }
+
+    .metadata-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #475569;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .metadata-toggle input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+
+    .action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-danger {
+      background: var(--danger-light);
+      color: var(--danger);
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-danger:hover {
+      background: #fee2e2;
+    }
+
+    .btn-edit {
+      background: #e0e7ff;
+      color: #4338ca;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s ease;
+      margin-right: 0.35rem;
+    }
+
+    .btn-edit:hover {
+      background: #c7d2fe;
+    }
+
+    /* Modal for Editing */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      max-width: 850px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+
+    .modal-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      background: #f8fafc;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .toast-container {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .toast {
+      pointer-events: auto;
+      min-width: 300px;
+      max-width: 420px;
+      background: white;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      transform: translateX(120%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    .toast.success {
+      border-left-color: var(--success);
+    }
+
+    .toast.error {
+      border-left-color: var(--danger);
+    }
+
+    .toast-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .toast-content h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .toast-content p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .toast-close {
+      margin-left: auto;
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th {
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      color: #475569;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-purple { background: #f3e8ff; color: #6b21a8; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-emerald { background: #d1fae5; color: #065f46; }
+
+    footer {
+      background: white;
+      border-top: 1px solid var(--border);
+      padding: 1.25rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">ICT</div>
+        <div class="brand-text">
+          <h1>ICT Easy Learning</h1>
+          <p>অ্যাডমিন ডাটা এন্ট্রি ও এডিট পোর্টাল (MCQ & CQ Management)</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="index.html" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem; text-decoration: none;">
+          🌐 মূল ওয়েবসাইট দেখুন
+        </a>
+        <div class="server-status" id="serverStatusBadge">
+          <span class="status-dot" id="serverStatusDot"></span>
+          <span id="serverStatusText">সার্ভার চেক করা হচ্ছে...</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <button type="button" class="tab-btn active" onclick="switchTab('mcqTab')">
+        <span>📝 MCQ এন্ট্রি</span>
+        <span class="badge" id="mcqCountBadge">0</span>
+      </button>
+      <button type="button" class="tab-btn" onclick="switchTab('cqTab')">
+        <span>📑 CQ এন্ট্রি</span>
+        <span class="badge" id="cqCountBadge">0</span>
+      </button>
+      <button type="button" class="tab-btn" onclick="switchTab('previewTab')">
+        <span>📋 লাইভ প্রিভিউ ও এডিট</span>
+        <span class="badge" id="totalCountBadge">0</span>
+      </button>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- ১. MCQ এন্ট্রি ফরম -->
+    <!-- ============================================== -->
+    <section id="mcqTab" class="tab-content active">
+      <form id="mcqForm" onsubmit="handleMcqSubmit(event)">
+
+        <!-- মেটাডেটা বক্স -->
+        <div class="card metadata-card">
+          <div class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+            <span>ফিল্টারিং মেটাডেটা (Metadata Options)</span>
+          </div>
+
+          <!-- মাল্টিপল ক্যাটাগরি চেকবক্স নির্বাচন -->
+          <div class="form-group">
+            <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে চেকবক্স টিক দিন)<span class="required">*</span></label>
+            <div class="category-checkbox-grid">
+              <label class="cat-pill">
+                <input type="checkbox" name="mcqCategory" value="Board Question">
+                <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
+              </label>
+              <label class="cat-pill">
+                <input type="checkbox" name="mcqCategory" value="College Test Paper">
+                <span>🏫 College Test Paper (টেস্ট পেপার)</span>
+              </label>
+              <label class="cat-pill">
+                <input type="checkbox" name="mcqCategory" value="Model Test">
+                <span>⏱️ Model Test (মডেল টেস্ট)</span>
+              </label>
+              <label class="cat-pill">
+                <input type="checkbox" name="mcqCategory" value="Chapter Practice" checked>
+                <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+              </label>
+            </div>
+            <span class="hint">টিপস: আপনি একাধিক টিক দিলে প্রশ্নটি একই সাথে বোর্ড, অধ্যায়, টেস্ট পেপার ও মডেল টেস্টের তালিকায় যুক্ত হবে।</span>
+          </div>
+
+          <div class="grid-2" style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="mcqChapter">অধ্যায় নির্বাচন (chapter)<span class="required">*</span></label>
+              <select id="mcqChapter" required>
+                <option value="Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)">Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)</option>
+                <option value="Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং">Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</option>
+                <option value="Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস" selected>Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</option>
+                <option value="Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML">Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML</option>
+                <option value="Chapter 5: প্রোগ্রামিং ভাষা (C Programming)">Chapter 5: প্রোগ্রামিং ভাষা (C Programming)</option>
+                <option value="Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)">Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="mcqBoardGroup">
+              <label for="mcqBoardName">বোর্ডের নাম (boardName)</label>
+              <select id="mcqBoardName">
+                <option value="">-- কোনো বোর্ড নয় --</option>
+                <option value="Dhaka Board">Dhaka Board (ঢাকা বোর্ড)</option>
+                <option value="Rajshahi Board">Rajshahi Board (রাজশাহী বোর্ড)</option>
+                <option value="Cumilla Board">Cumilla Board (কুমিল্লা বোর্ড)</option>
+                <option value="Jashore Board">Jashore Board (যশোর বোর্ড)</option>
+                <option value="Chattogram Board">Chattogram Board (চট্টগ্রাম বোর্ড)</option>
+                <option value="Barishal Board">Barishal Board (বরিশাল বোর্ড)</option>
+                <option value="Sylhet Board">Sylhet Board (সিলেট বোর্ড)</option>
+                <option value="Dinajpur Board">Dinajpur Board (দিনাজপুর বোর্ড)</option>
+                <option value="Mymensingh Board">Mymensingh Board (ময়মনসিংহ বোর্ড)</option>
+                <option value="Madrasah Board">Madrasah Board (মাদ্রাসা বোর্ড)</option>
+                <option value="All Boards">All Boards (সকল বোর্ড)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-4" style="margin-top: 0.5rem;">
+            <div class="form-group" id="mcqCollegeGroup">
+              <label for="mcqCollegeName">কলেজের নাম (collegeName)</label>
+              <input type="text" id="mcqCollegeName" list="collegeList" placeholder="e.g. Notre Dame College">
+            </div>
+
+            <div class="form-group">
+              <label for="mcqExamYear">পরীক্ষার সাল (examYear)</label>
+              <input type="text" id="mcqExamYear" list="yearList" placeholder="e.g. 2026, 2025" value="2025">
+            </div>
+
+            <div class="form-group">
+              <label for="mcqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
+              <input type="text" id="mcqTestPaperName" list="testPaperList" placeholder="e.g. Royal Test Paper">
+            </div>
+
+            <div class="form-group">
+              <label for="mcqModelTestNo">মডেল টেস্ট নম্বর</label>
+              <input type="text" id="mcqModelTestNo" placeholder="e.g. Model Test 01">
+            </div>
+          </div>
+
+          <label class="metadata-toggle">
+            <input type="checkbox" id="mcqKeepMetadata" checked>
+            <span>📌 সাবমিট করার পরও মেটাডেটা (অধ্যায়, বোর্ড, সাল, কলেজ) ধরে রাখুন</span>
+          </label>
+        </div>
+
+        <!-- MCQ মূল প্রশ্ন ও অপশন বক্স -->
+        <div class="card">
+          <div class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>MCQ প্রশ্ন ও অপশনসমূহ</span>
+          </div>
+
+          <div class="form-group">
+            <label for="mcqQuestion">প্রশ্ন (Question)<span class="required">*</span></label>
+            <textarea id="mcqQuestion" required placeholder="এখানে বহুনির্বাচনি প্রশ্নটি বাংলায় বা ইংরেজিতে লিখুন..."></textarea>
+          </div>
+
+          <div class="grid-2">
+            <div class="option-box">
+              <div class="option-label">
+                <span>(ক) অপশন ১</span>
+              </div>
+              <input type="text" id="mcqOpt1" required placeholder="প্রথম অপশন লিখুন" oninput="updateCorrectAnswerOptions()">
+            </div>
+
+            <div class="option-box">
+              <div class="option-label">
+                <span>(খ) অপশন ২</span>
+              </div>
+              <input type="text" id="mcqOpt2" required placeholder="দ্বিতীয় অপশন লিখুন" oninput="updateCorrectAnswerOptions()">
+            </div>
+
+            <div class="option-box">
+              <div class="option-label">
+                <span>(গ) অপশন ৩</span>
+              </div>
+              <input type="text" id="mcqOpt3" required placeholder="তৃতীয় অপশন লিখুন" oninput="updateCorrectAnswerOptions()">
+            </div>
+
+            <div class="option-box">
+              <div class="option-label">
+                <span>(ঘ) অপশন ৪</span>
+              </div>
+              <input type="text" id="mcqOpt4" required placeholder="চতুর্থ অপশন লিখুন" oninput="updateCorrectAnswerOptions()">
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top: 1.25rem;">
+            <div class="form-group">
+              <label for="mcqCorrectAnswer">সঠিক উত্তর নির্বাচন করুন (correctAnswer)<span class="required">*</span></label>
+              <select id="mcqCorrectAnswer" required>
+                <option value="">-- সঠিক উত্তর সিলেক্ট করুন --</option>
+                <option value="1">অপশন ১ (ক)</option>
+                <option value="2">অপশন ২ (খ)</option>
+                <option value="3">অপশন ৩ (গ)</option>
+                <option value="4">অপশন ৪ (ঘ)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mcqExplanation">উত্তরের ব্যাখ্যা (explanation)</label>
+              <textarea id="mcqExplanation" placeholder="যদি কোনো ব্যাখ্যা থাকে তবে এখানে লিখুন (ঐচ্ছিক)..." style="min-height: 48px;"></textarea>
+            </div>
+          </div>
+
+          <div class="action-bar">
+            <button type="button" class="btn btn-secondary" onclick="resetMcqForm(false)">
+              🔄 ফর্ম ক্লিয়ার করুন
+            </button>
+            <button type="submit" class="btn btn-primary" id="mcqSubmitBtn">
+              💾 MCQ ডাটাবেজে সংরক্ষণ করুন
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ২. CQ এন্ট্রি ফরম (সৃজনশীল) -->
+    <!-- ============================================== -->
+    <section id="cqTab" class="tab-content">
+      <form id="cqForm" onsubmit="handleCqSubmit(event)">
+
+        <!-- মেটাডেটা বক্স -->
+        <div class="card metadata-card">
+          <div class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+            <span>ফিল্টারিং মেটাডেটা (Metadata Options)</span>
+          </div>
+
+          <!-- মাল্টিপল ক্যাটাগরি চেকবক্স নির্বাচন -->
+          <div class="form-group">
+            <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে চেকবক্স টিক দিন)<span class="required">*</span></label>
+            <div class="category-checkbox-grid">
+              <label class="cat-pill">
+                <input type="checkbox" name="cqCategory" value="Board Question" checked>
+                <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
+              </label>
+              <label class="cat-pill">
+                <input type="checkbox" name="cqCategory" value="College Test Paper">
+                <span>🏫 College Test Paper (টেস্ট পেপার)</span>
+              </label>
+              <label class="cat-pill">
+                <input type="checkbox" name="cqCategory" value="Model Test">
+                <span>⏱️ Model Test (মডেল টেস্ট)</span>
+              </label>
+              <label class="cat-pill">
+                <input type="checkbox" name="cqCategory" value="Chapter Practice">
+                <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="cqChapter">অধ্যায় নির্বাচন (chapter)<span class="required">*</span></label>
+              <select id="cqChapter" required>
+                <option value="Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)">Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)</option>
+                <option value="Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং">Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</option>
+                <option value="Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস" selected>Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</option>
+                <option value="Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML">Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML</option>
+                <option value="Chapter 5: প্রোগ্রামিং ভাষা (C Programming)">Chapter 5: প্রোগ্রামিং ভাষা (C Programming)</option>
+                <option value="Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)">Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="cqBoardGroup">
+              <label for="cqBoardName">বোর্ডের নাম (boardName)</label>
+              <select id="cqBoardName">
+                <option value="">-- কোনো বোর্ড নয় --</option>
+                <option value="Dhaka Board" selected>Dhaka Board (ঢাকা বোর্ড)</option>
+                <option value="Rajshahi Board">Rajshahi Board (রাজশাহী বোর্ড)</option>
+                <option value="Cumilla Board">Cumilla Board (কুমিল্লা বোর্ড)</option>
+                <option value="Jashore Board">Jashore Board (যশোর বোর্ড)</option>
+                <option value="Chattogram Board">Chattogram Board (চট্টগ্রাম বোর্ড)</option>
+                <option value="Barishal Board">Barishal Board (বরিশাল বোর্ড)</option>
+                <option value="Sylhet Board">Sylhet Board (সিলেট বোর্ড)</option>
+                <option value="Dinajpur Board">Dinajpur Board (দিনাজপুর বোর্ড)</option>
+                <option value="Mymensingh Board">Mymensingh Board (ময়মনসিংহ বোর্ড)</option>
+                <option value="Madrasah Board">Madrasah Board (মাদ্রাসা বোর্ড)</option>
+                <option value="All Boards">All Boards (সকল বোর্ড)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-4" style="margin-top: 0.5rem;">
+            <div class="form-group" id="cqCollegeGroup">
+              <label for="cqCollegeName">কলেজের নাম (collegeName)</label>
+              <input type="text" id="cqCollegeName" list="collegeList" placeholder="e.g. Dhaka College">
+            </div>
+
+            <div class="form-group">
+              <label for="cqExamYear">পরীক্ষার সাল (examYear)</label>
+              <input type="text" id="cqExamYear" list="yearList" placeholder="e.g. 2026, 2025" value="2025">
+            </div>
+
+            <div class="form-group">
+              <label for="cqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
+              <input type="text" id="cqTestPaperName" list="testPaperList" placeholder="e.g. Royal Test Paper">
+            </div>
+
+            <div class="form-group">
+              <label for="cqModelTestNo">মডেল টেস্ট নম্বর</label>
+              <input type="text" id="cqModelTestNo" placeholder="e.g. Model Test 01">
+            </div>
+          </div>
+
+          <label class="metadata-toggle">
+            <input type="checkbox" id="cqKeepMetadata" checked>
+            <span>📌 সাবমিট করার পরও মেটাডেটা (অধ্যায়, বোর্ড, সাল, কলেজ) ধরে রাখুন</span>
+          </label>
+        </div>
+
+        <!-- CQ উদ্দীপক বক্স -->
+        <div class="card">
+          <div class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>সৃজনশীল উদ্দীপক (Stem)<span class="required">*</span></span>
+          </div>
+
+          <div class="form-group">
+            <textarea id="cqStem" required placeholder="উদ্দীপকের বিস্তারিত অনুচ্ছেদ, কোড বা চিত্রভিত্তিক বর্ণনা এখানে লিখুন..." style="min-height: 120px;"></textarea>
+          </div>
+        </div>
+
+        <!-- CQ ৪টি প্রশ্ন ও উত্তর -->
+        <div class="card">
+          <div class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>সৃজনশীল অংশের প্রশ্ন ও উত্তর (ক, খ, গ, ঘ)</span>
+          </div>
+
+          <div class="cq-question-group">
+            <span class="cq-badge">ক. জ্ঞানমূলক প্রশ্ন (মান: ১)</span>
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="cq_q_ka">প্রশ্ন 'ক'<span class="required">*</span></label>
+                <input type="text" id="cq_q_ka" required placeholder="যেমন: বাইনারি সংখ্যা পদ্ধতি কাকে বলে?">
+              </div>
+              <div class="form-group">
+                <label for="cq_a_ka">উত্তর 'ক'</label>
+                <input type="text" id="cq_a_ka" placeholder="সংক্ষিপ্ত এক লাইনের উত্তর">
+              </div>
+            </div>
+          </div>
+
+          <div class="cq-question-group">
+            <span class="cq-badge">খ. অনুধাবনমূলক প্রশ্ন (মান: ২)</span>
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="cq_q_kha">প্রশ্ন 'খ'<span class="required">*</span></label>
+                <input type="text" id="cq_q_kha" required placeholder="যেমন: ১ + ১ = ১ ব্যাখ্যা করো।">
+              </div>
+              <div class="form-group">
+                <label for="cq_a_kha">উত্তর 'খ'</label>
+                <textarea id="cq_a_kha" placeholder="অনুধাবনমূলক উত্তর লিখুন..." style="min-height: 48px;"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="cq-question-group">
+            <span class="cq-badge">গ. প্রয়োগমূলক প্রশ্ন (মান: ৩)</span>
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="cq_q_ga">প্রশ্ন 'গ'<span class="required">*</span></label>
+                <textarea id="cq_q_ga" required placeholder="প্রয়োগমূলক প্রশ্ন লিখুন..." style="min-height: 60px;"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="cq_a_ga">উত্তর 'গ' (সমাধান)</label>
+                <textarea id="cq_a_ga" placeholder="গ-এর গাণিতিক সমাধান বা বর্ণনা..." style="min-height: 60px;"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="cq-question-group">
+            <span class="cq-badge">ঘ. উচ্চতর দক্ষতামূলক প্রশ্ন (মান: ৪)</span>
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="cq_q_gha">প্রশ্ন 'ঘ'<span class="required">*</span></label>
+                <textarea id="cq_q_gha" required placeholder="উচ্চতর দক্ষতামূলক প্রশ্ন লিখুন..." style="min-height: 60px;"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="cq_a_gha">উত্তর 'ঘ' (বিশ্লেষণ)</label>
+                <textarea id="cq_a_gha" placeholder="ঘ-এর সম্পূর্ণ বিশ্লেষণধর্মী উত্তর..." style="min-height: 60px;"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-bar">
+            <button type="button" class="btn btn-secondary" onclick="resetCqForm(false)">
+              🔄 ফর্ম ক্লিয়ার করুন
+            </button>
+            <button type="submit" class="btn btn-primary" id="cqSubmitBtn">
+              💾 CQ ডাটাবেজে সংরক্ষণ করুন
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ৩. লাইভ প্রিভিউ ও এডিট ড্যাশবোর্ড -->
+    <!-- ============================================== -->
+    <section id="previewTab" class="tab-content">
+      <div class="card">
+        <div class="card-title" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+            <span>ডাটাবেজে সংরক্ষিত প্রশ্নাবলি (এডিট ও ডিলিট করুন)</span>
+          </div>
+          <button type="button" class="btn btn-secondary" onclick="loadDatabaseItems()" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;">
+            🔄 রিফ্রেশ করুন
+          </button>
+        </div>
+
+        <div style="margin-bottom: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn btn-secondary" onclick="filterPreview('all')" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">সব দেখুন</button>
+          <button class="btn btn-secondary" onclick="filterPreview('mcq')" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">শুধুমাত্র MCQ</button>
+          <button class="btn btn-secondary" onclick="filterPreview('cq')" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">শুধুমাত্র CQ</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 80px;">টাইপ</th>
+                <th style="width: 220px;">ক্যাটাগরি ও মেটাডেটা</th>
+                <th>প্রশ্ন / উদ্দীপক</th>
+                <th style="width: 140px;">অ্যাকশন</th>
+              </tr>
+            </thead>
+            <tbody id="previewTableBody">
+              <tr>
+                <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                  ডাটা লোড হচ্ছে...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- ৪. প্রশ্ন এডিট ও আপডেট মোডাল (Edit Modal) -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="editModalTitle">✏️ প্রশ্ন এডিট ও আপডেট করুন</h3>
+        <button type="button" style="background:transparent; border:none; font-size:1.5rem; cursor:pointer;" onclick="closeEditModal()">&times;</button>
+      </div>
+
+      <div class="modal-body" id="editModalBody">
+        <!-- ডায়নামিক এডিট ফরম ইনজেক্ট হবে -->
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeEditModal()">বাতিল করুন</button>
+        <button type="button" class="btn btn-primary" id="saveEditBtn" onclick="submitEditForm()">💾 আপডেট সংরক্ষণ করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Datalists for Auto-suggestions -->
+  <datalist id="collegeList">
+    <option value="Notre Dame College">
+    <option value="Dhaka College">
+    <option value="Viqarunnisa Noon College">
+    <option value="Rajuk Uttara Model College">
+    <option value="Adamjee Cantonment College">
+    <option value="Holy Cross College">
+    <option value="Ideal School and College">
+    <option value="Chittagong College">
+    <option value="Rajshahi College">
+    <option value="Sylhet MC College">
+  </datalist>
+
+  <datalist id="yearList">
+    <option value="2026">
+    <option value="2025">
+    <option value="2024">
+    <option value="2023">
+    <option value="2022">
+    <option value="2021">
+    <option value="2020">
+  </datalist>
+
+  <datalist id="testPaperList">
+    <option value="Royal Test Paper">
+    <option value="Lecture Test Paper">
+    <option value="Panjeree Test Paper">
+    <option value="Made Easy">
+    <option value="Nobodoot Test Paper">
+  </datalist>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <footer>
+    ICT Easy Learning Dashboard • Backend: <a href="http://localhost:5000" target="_blank" style="color: var(--primary); text-decoration: none;">http://localhost:5000</a>
+  </footer>
+
+  <script>
+    const API_BASE = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
+      ? window.location.origin
+      : 'http://localhost:5000';
+
+    let allMcqs = [];
+    let allCqs = [];
+    let currentFilter = 'all';
+    let currentEditingItem = null;
+    let currentEditingType = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'mcqTab') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      } else if (tabId === 'cqTab') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      } else if (tabId === 'previewTab') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        loadDatabaseItems();
+      }
+
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function showToast(title, message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icon = type === 'success' ? '✅' : '❌';
+
+      toast.innerHTML = `
+        <div class="toast-icon">${icon}</div>
+        <div class="toast-content">
+          <h4>${escapeHtml(title)}</h4>
+          <p>${escapeHtml(message)}</p>
+        </div>
+        <button class="toast-close" onclick="this.parentElement.remove()">&times;</button>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => toast.classList.add('show'), 50);
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 4500);
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function updateCorrectAnswerOptions() {
+      const opt1 = document.getElementById('mcqOpt1').value.trim();
+      const opt2 = document.getElementById('mcqOpt2').value.trim();
+      const opt3 = document.getElementById('mcqOpt3').value.trim();
+      const opt4 = document.getElementById('mcqOpt4').value.trim();
+
+      const select = document.getElementById('mcqCorrectAnswer');
+      const currentValue = select.value;
+
+      select.options[1].text = `ক. ${opt1 ? opt1.substring(0, 25) : 'অপশন ১'}`;
+      select.options[2].text = `খ. ${opt2 ? opt2.substring(0, 25) : 'অপশন ২'}`;
+      select.options[3].text = `গ. ${opt3 ? opt3.substring(0, 25) : 'অপশন ৩'}`;
+      select.options[4].text = `ঘ. ${opt4 ? opt4.substring(0, 25) : 'অপশন ৪'}`;
+
+      select.value = currentValue;
+    }
+
+    // MCQ ফর্ম সাবমিট হ্যান্ডলার (একাধিক ক্যাটাগরি সাপোর্ট সহ)
+    async function handleMcqSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('mcqSubmitBtn');
+      const originalText = btn.innerHTML;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '⏳ সংরক্ষণ করা হচ্ছে...';
+
+        // একাধিক ক্যাটাগরি চেকবক্স থেকে সংগ্রহ
+        const catBoxes = document.querySelectorAll('input[name="mcqCategory"]:checked');
+        const categoryTypes = Array.from(catBoxes).map(cb => cb.value);
+
+        if (categoryTypes.length === 0) {
+          showToast('সতর্কতা', 'অনুগ্রহ করে কমপক্ষে একটি প্রশ্ন টাইপ নির্বাচন করুন', 'error');
+          return;
+        }
+
+        const chapter = document.getElementById('mcqChapter').value;
+        const boardName = document.getElementById('mcqBoardName').value;
+        const collegeName = document.getElementById('mcqCollegeName').value;
+        const examYear = document.getElementById('mcqExamYear').value;
+        const testPaperName = document.getElementById('mcqTestPaperName').value;
+        const modelTestNo = document.getElementById('mcqModelTestNo').value;
+
+        const question = document.getElementById('mcqQuestion').value.trim();
+        const opt1 = document.getElementById('mcqOpt1').value.trim();
+        const opt2 = document.getElementById('mcqOpt2').value.trim();
+        const opt3 = document.getElementById('mcqOpt3').value.trim();
+        const opt4 = document.getElementById('mcqOpt4').value.trim();
+
+        const correctSelect = document.getElementById('mcqCorrectAnswer').value;
+        let correctAnswer = '';
+        if (correctSelect === '1') correctAnswer = opt1;
+        else if (correctSelect === '2') correctAnswer = opt2;
+        else if (correctSelect === '3') correctAnswer = opt3;
+        else if (correctSelect === '4') correctAnswer = opt4;
+
+        const explanation = document.getElementById('mcqExplanation').value.trim();
+
+        if (!correctAnswer) {
+          showToast('ত্রুটি', 'অনুগ্রহ করে সঠিক উত্তর নির্ধারণ করুন', 'error');
+          return;
+        }
+
+        const payload = {
+          categoryTypes,
+          categoryType: categoryTypes[0],
+          chapter,
+          boardName,
+          collegeName,
+          examYear,
+          testPaperName,
+          modelTestNo,
+          question,
+          options: [opt1, opt2, opt3, opt4],
+          option1: opt1,
+          option2: opt2,
+          option3: opt3,
+          option4: opt4,
+          correctAnswer,
+          explanation
+        };
+
+        const response = await fetch(`${API_BASE}/api/mcqs`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          showToast('সফল হয়েছে!', data.message || 'MCQ সফলভাবে সংরক্ষিত হয়েছে!', 'success');
+          resetMcqForm(document.getElementById('mcqKeepMetadata').checked);
+          updateCounts();
+        } else {
+          showToast('ব্যর্থ হয়েছে', data.message || 'সংরক্ষণ করা সম্ভব হয়নি', 'error');
+        }
+      } catch (err) {
+        showToast('সার্ভার এরর', 'সার্ভারের সাথে যোগাযোগ করা যায়নি: ' + err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    function resetMcqForm(keepMetadata = false) {
+      document.getElementById('mcqQuestion').value = '';
+      document.getElementById('mcqOpt1').value = '';
+      document.getElementById('mcqOpt2').value = '';
+      document.getElementById('mcqOpt3').value = '';
+      document.getElementById('mcqOpt4').value = '';
+      document.getElementById('mcqCorrectAnswer').value = '';
+      document.getElementById('mcqExplanation').value = '';
+      updateCorrectAnswerOptions();
+
+      if (!keepMetadata) {
+        document.getElementById('mcqCollegeName').value = '';
+        document.getElementById('mcqModelTestNo').value = '';
+        document.getElementById('mcqTestPaperName').value = '';
+      }
+    }
+
+    // CQ ফর্ম সাবমিট হ্যান্ডলার
+    async function handleCqSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('cqSubmitBtn');
+      const originalText = btn.innerHTML;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '⏳ সংরক্ষণ করা হচ্ছে...';
+
+        const catBoxes = document.querySelectorAll('input[name="cqCategory"]:checked');
+        const categoryTypes = Array.from(catBoxes).map(cb => cb.value);
+
+        if (categoryTypes.length === 0) {
+          showToast('সতর্কতা', 'অনুগ্রহ করে কমপক্ষে একটি প্রশ্ন টাইপ নির্বাচন করুন', 'error');
+          return;
+        }
+
+        const chapter = document.getElementById('cqChapter').value;
+        const boardName = document.getElementById('cqBoardName').value;
+        const collegeName = document.getElementById('cqCollegeName').value;
+        const examYear = document.getElementById('cqExamYear').value;
+        const testPaperName = document.getElementById('cqTestPaperName').value;
+        const modelTestNo = document.getElementById('cqModelTestNo').value;
+
+        const stem = document.getElementById('cqStem').value.trim();
+        const q_ka = document.getElementById('cq_q_ka').value.trim();
+        const a_ka = document.getElementById('cq_a_ka').value.trim();
+        const q_kha = document.getElementById('cq_q_kha').value.trim();
+        const a_kha = document.getElementById('cq_a_kha').value.trim();
+        const q_ga = document.getElementById('cq_q_ga').value.trim();
+        const a_ga = document.getElementById('cq_a_ga').value.trim();
+        const q_gha = document.getElementById('cq_q_gha').value.trim();
+        const a_gha = document.getElementById('cq_a_gha').value.trim();
+
+        const payload = {
+          categoryTypes,
+          categoryType: categoryTypes[0],
+          chapter,
+          boardName,
+          collegeName,
+          examYear,
+          testPaperName,
+          modelTestNo,
+          stem,
+          q_ka,
+          a_ka,
+          q_kha,
+          a_kha,
+          q_ga,
+          a_ga,
+          q_gha,
+          a_gha
+        };
+
+        const response = await fetch(`${API_BASE}/api/cqs`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          showToast('সফল হয়েছে!', data.message || 'CQ সফলভাবে সংরক্ষিত হয়েছে!', 'success');
+          resetCqForm(document.getElementById('cqKeepMetadata').checked);
+          updateCounts();
+        } else {
+          showToast('ব্যর্থ হয়েছে', data.message || 'সংরক্ষণ করা সম্ভব হয়নি', 'error');
+        }
+      } catch (err) {
+        showToast('সার্ভার এরর', 'সার্ভারের সাথে যোগাযোগ করা যায়নি: ' + err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    function resetCqForm(keepMetadata = false) {
+      document.getElementById('cqStem').value = '';
+      document.getElementById('cq_q_ka').value = '';
+      document.getElementById('cq_a_ka').value = '';
+      document.getElementById('cq_q_kha').value = '';
+      document.getElementById('cq_a_kha').value = '';
+      document.getElementById('cq_q_ga').value = '';
+      document.getElementById('cq_a_ga').value = '';
+      document.getElementById('cq_q_gha').value = '';
+      document.getElementById('cq_a_gha').value = '';
+
+      if (!keepMetadata) {
+        document.getElementById('cqCollegeName').value = '';
+        document.getElementById('cqModelTestNo').value = '';
+        document.getElementById('cqTestPaperName').value = '';
+      }
+    }
+
+    async function checkServerHealth() {
+      const dot = document.getElementById('serverStatusDot');
+      const text = document.getElementById('serverStatusText');
+
+      try {
+        const res = await fetch(`${API_BASE}/api/mcqs`, { cache: 'no-cache' });
+        if (res.ok) {
+          dot.className = 'status-dot online';
+          text.textContent = 'সার্ভার অনলাইন (port 5000)';
+          updateCounts();
+        } else {
+          throw new Error('Server returned ' + res.status);
+        }
+      } catch (e) {
+        dot.className = 'status-dot offline';
+        text.textContent = 'সার্ভার অফলাইন (কানেকশন নেই)';
+      }
+    }
+
+    async function updateCounts() {
+      try {
+        const [mcqRes, cqRes] = await Promise.all([
+          fetch(`${API_BASE}/api/mcqs`),
+          fetch(`${API_BASE}/api/cqs`)
+        ]);
+
+        if (mcqRes.ok) {
+          const mcqData = await mcqRes.json();
+          allMcqs = mcqData.data || [];
+          document.getElementById('mcqCountBadge').textContent = allMcqs.length;
+        }
+
+        if (cqRes.ok) {
+          const cqData = await cqRes.json();
+          allCqs = cqData.data || [];
+          document.getElementById('cqCountBadge').textContent = allCqs.length;
+        }
+
+        document.getElementById('totalCountBadge').textContent = allMcqs.length + allCqs.length;
+      } catch (e) {
+        console.error('Count update error:', e);
+      }
+    }
+
+    async function loadDatabaseItems() {
+      await updateCounts();
+      renderPreviewTable();
+    }
+
+    function filterPreview(type) {
+      currentFilter = type;
+      renderPreviewTable();
+    }
+
+    function renderPreviewTable() {
+      const tbody = document.getElementById('previewTableBody');
+      tbody.innerHTML = '';
+
+      let items = [];
+
+      if (currentFilter === 'all' || currentFilter === 'mcq') {
+        items = items.concat(allMcqs.map(item => ({ ...item, _type: 'MCQ' })));
+      }
+      if (currentFilter === 'all' || currentFilter === 'cq') {
+        items = items.concat(allCqs.map(item => ({ ...item, _type: 'CQ' })));
+      }
+
+      if (items.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+              কোনো প্রশ্ন পাওয়া যায়নি। উপরে ফরম থেকে নতুন প্রশ্ন এন্ট্রি করুন।
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      items.forEach(item => {
+        const tr = document.createElement('tr');
+
+        const typeBadge = item._type === 'MCQ'
+          ? '<span class="tag tag-blue">MCQ</span>'
+          : '<span class="tag tag-purple">CQ</span>';
+
+        // একাধিক ক্যাটাগরি ব্যাজ
+        const cats = Array.isArray(item.categoryTypes) && item.categoryTypes.length > 0 
+          ? item.categoryTypes 
+          : (item.categoryType ? [item.categoryType] : []);
+
+        const catTags = cats.map(c => `<span class="tag tag-amber">${escapeHtml(c)}</span>`).join(' ');
+        const boardTag = item.boardName ? `<span class="tag tag-emerald">${escapeHtml(item.boardName)}</span>` : '';
+        const collegeTag = item.collegeName ? `<span class="tag">${escapeHtml(item.collegeName)}</span>` : '';
+        const yearTag = item.examYear ? `<span class="tag">${escapeHtml(item.examYear)}</span>` : '';
+
+        const metaHtml = `
+          <div style="font-size: 0.8rem; line-height: 1.4;">
+            <div style="font-weight: 600; color: #1e293b;">${escapeHtml(item.chapter || '')}</div>
+            <div style="margin-top: 0.25rem; display: flex; gap: 0.25rem; flex-wrap: wrap;">
+              ${catTags} ${boardTag} ${collegeTag} ${yearTag}
+            </div>
+          </div>
+        `;
+
+        let contentHtml = '';
+        if (item._type === 'MCQ') {
+          contentHtml = `
+            <div style="font-weight: 600; color: #0f172a; margin-bottom: 0.35rem;">
+              ${escapeHtml(item.question)}
+            </div>
+            <div style="font-size: 0.82rem; color: #334155; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.2rem 0.5rem;">
+              <span>ক. ${escapeHtml(item.options ? item.options[0] : '')}</span>
+              <span>খ. ${escapeHtml(item.options ? item.options[1] : '')}</span>
+              <span>গ. ${escapeHtml(item.options ? item.options[2] : '')}</span>
+              <span>ঘ. ${escapeHtml(item.options ? item.options[3] : '')}</span>
+            </div>
+            <div style="font-size: 0.8rem; margin-top: 0.35rem; color: var(--success); font-weight: 600;">
+              ✓ সঠিক উত্তর: ${escapeHtml(item.correctAnswer || '')}
+            </div>
+          `;
+        } else {
+          contentHtml = `
+            <div style="font-size: 0.82rem; color: #475569; margin-bottom: 0.35rem; background: #f1f5f9; padding: 0.4rem; border-radius: 4px;">
+              <strong>উদ্দীপক:</strong> ${escapeHtml(item.stem ? item.stem.substring(0, 140) + '...' : '')}
+            </div>
+            <div style="font-size: 0.82rem; line-height: 1.4;">
+              <div><strong>ক:</strong> ${escapeHtml(item.q_ka || '')}</div>
+              <div><strong>খ:</strong> ${escapeHtml(item.q_kha || '')}</div>
+              <div><strong>গ:</strong> ${escapeHtml(item.q_ga || '')}</div>
+              <div><strong>ঘ:</strong> ${escapeHtml(item.q_gha || '')}</div>
+            </div>
+          `;
+        }
+
+        const deleteUrl = item._type === 'MCQ' ? `${API_BASE}/api/mcqs/${item._id}` : `${API_BASE}/api/cqs/${item._id}`;
+
+        tr.innerHTML = `
+          <td>${typeBadge}</td>
+          <td>${metaHtml}</td>
+          <td>${contentHtml}</td>
+          <td style="white-space: nowrap;">
+            <button class="btn btn-edit" onclick="openEditModal('${item._type}', '${item._id}')">
+              ✏️ এডিট
+            </button>
+            <button class="btn btn-danger" onclick="deleteItem('${deleteUrl}', '${item._type}')">
+              🗑 মুছুন
+            </button>
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    // ==============================================
+    // ৫. প্রশ্ন এডিট ও আপডেট লজিক (Edit Modal Logic)
+    // ==============================================
+
+    function openEditModal(type, id) {
+      currentEditingType = type;
+      currentEditingItem = type === 'MCQ' 
+        ? allMcqs.find(q => q._id === id) 
+        : allCqs.find(q => q._id === id);
+
+      if (!currentEditingItem) {
+        showToast('ত্রুটি', 'প্রশ্নটি খুঁজে পাওয়া যায়নি', 'error');
+        return;
+      }
+
+      const modal = document.getElementById('editModal');
+      const body = document.getElementById('editModalBody');
+      document.getElementById('editModalTitle').textContent = `✏️ ${type} প্রশ্ন এডিট ও আপডেট করুন`;
+
+      const cats = Array.isArray(currentEditingItem.categoryTypes) 
+        ? currentEditingItem.categoryTypes 
+        : (currentEditingItem.categoryType ? [currentEditingItem.categoryType] : []);
+
+      const isBoard = cats.includes('Board Question');
+      const isCollege = cats.includes('College Test Paper');
+      const isModel = cats.includes('Model Test');
+      const isChapter = cats.includes('Chapter Practice');
+
+      let formHtml = `
+        <div class="form-group">
+          <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক টিক দিন)<span class="required">*</span></label>
+          <div class="category-checkbox-grid">
+            <label class="cat-pill">
+              <input type="checkbox" id="editCatBoard" value="Board Question" ${isBoard ? 'checked' : ''}>
+              <span>🏛️ Board Question</span>
+            </label>
+            <label class="cat-pill">
+              <input type="checkbox" id="editCatCollege" value="College Test Paper" ${isCollege ? 'checked' : ''}>
+              <span>🏫 College Test Paper</span>
+            </label>
+            <label class="cat-pill">
+              <input type="checkbox" id="editCatModel" value="Model Test" ${isModel ? 'checked' : ''}>
+              <span>⏱️ Model Test</span>
+            </label>
+            <label class="cat-pill">
+              <input type="checkbox" id="editCatChapter" value="Chapter Practice" ${isChapter ? 'checked' : ''}>
+              <span>📖 Chapter Practice</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="editChapter">অধ্যায়</label>
+            <select id="editChapter">
+              <option value="Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)">Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি</option>
+              <option value="Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং">Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</option>
+              <option value="Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস">Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</option>
+              <option value="Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML">Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML</option>
+              <option value="Chapter 5: প্রোগ্রামিং ভাষা (C Programming)">Chapter 5: প্রোগ্রামিং ভাষা (C Programming)</option>
+              <option value="Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)">Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="editBoardName">বোর্ড</label>
+            <select id="editBoardName">
+              <option value="">-- কোনো বোর্ড নয় --</option>
+              <option value="Dhaka Board">Dhaka Board (ঢাকা বোর্ড)</option>
+              <option value="Rajshahi Board">Rajshahi Board (রাজশাহী বোর্ড)</option>
+              <option value="Cumilla Board">Cumilla Board (কুমিল্লা বোর্ড)</option>
+              <option value="Jashore Board">Jashore Board (যশোর বোর্ড)</option>
+              <option value="Chattogram Board">Chattogram Board (চট্টগ্রাম বোর্ড)</option>
+              <option value="Barishal Board">Barishal Board (বরিশাল বোর্ড)</option>
+              <option value="Sylhet Board">Sylhet Board (সিলেট বোর্ড)</option>
+              <option value="Dinajpur Board">Dinajpur Board (দিনাজপুর বোর্ড)</option>
+              <option value="Mymensingh Board">Mymensingh Board (ময়মনসিংহ বোর্ড)</option>
+              <option value="Madrasah Board">Madrasah Board (মাদ্রাসা বোর্ড)</option>
+              <option value="All Boards">All Boards (সকল বোর্ড)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="form-group">
+            <label for="editCollegeName">কলেজের নাম</label>
+            <input type="text" id="editCollegeName" value="${escapeHtml(currentEditingItem.collegeName || '')}">
+          </div>
+          <div class="form-group">
+            <label for="editExamYear">সাল</label>
+            <input type="text" id="editExamYear" value="${escapeHtml(currentEditingItem.examYear || '')}">
+          </div>
+          <div class="form-group">
+            <label for="editTestPaperName">টেস্ট পেপার প্রকাশনী</label>
+            <input type="text" id="editTestPaperName" value="${escapeHtml(currentEditingItem.testPaperName || '')}">
+          </div>
+        </div>
+      `;
+
+      if (type === 'MCQ') {
+        const opts = currentEditingItem.options || ['', '', '', ''];
+        formHtml += `
+          <div class="form-group">
+            <label for="editQuestion">প্রশ্ন (Question)<span class="required">*</span></label>
+            <textarea id="editQuestion" required>${escapeHtml(currentEditingItem.question || '')}</textarea>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>(ক) অপশন ১</label>
+              <input type="text" id="editOpt1" value="${escapeHtml(opts[0] || '')}">
+            </div>
+            <div class="form-group">
+              <label>(খ) অপশন ২</label>
+              <input type="text" id="editOpt2" value="${escapeHtml(opts[1] || '')}">
+            </div>
+            <div class="form-group">
+              <label>(গ) অপশন ৩</label>
+              <input type="text" id="editOpt3" value="${escapeHtml(opts[2] || '')}">
+            </div>
+            <div class="form-group">
+              <label>(ঘ) অপশন ৪</label>
+              <input type="text" id="editOpt4" value="${escapeHtml(opts[3] || '')}">
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="editCorrectAnswer">সঠিক উত্তর<span class="required">*</span></label>
+              <input type="text" id="editCorrectAnswer" value="${escapeHtml(currentEditingItem.correctAnswer || '')}">
+              <span class="hint">অপশনগুলোর যেকোনো একটির লেখা হুবহু এখানে রাখুন।</span>
+            </div>
+            <div class="form-group">
+              <label for="editExplanation">ব্যাখ্যা</label>
+              <textarea id="editExplanation" style="min-height:50px;">${escapeHtml(currentEditingItem.explanation || '')}</textarea>
+            </div>
+          </div>
+        `;
+      } else {
+        // CQ
+        formHtml += `
+          <div class="form-group">
+            <label for="editStem">উদ্দীপক (Stem)<span class="required">*</span></label>
+            <textarea id="editStem" required style="min-height:90px;">${escapeHtml(currentEditingItem.stem || '')}</textarea>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>প্রশ্ন 'ক' (জ্ঞানমূলক)</label>
+              <input type="text" id="edit_q_ka" value="${escapeHtml(currentEditingItem.q_ka || '')}">
+            </div>
+            <div class="form-group">
+              <label>উত্তর 'ক'</label>
+              <input type="text" id="edit_a_ka" value="${escapeHtml(currentEditingItem.a_ka || '')}">
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>প্রশ্ন 'খ' (অনুধাবনমূলক)</label>
+              <input type="text" id="edit_q_kha" value="${escapeHtml(currentEditingItem.q_kha || '')}">
+            </div>
+            <div class="form-group">
+              <label>উত্তর 'খ'</label>
+              <textarea id="edit_a_kha" style="min-height:48px;">${escapeHtml(currentEditingItem.a_kha || '')}</textarea>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>প্রশ্ন 'গ' (প্রয়োগমূলক)</label>
+              <textarea id="edit_q_ga" style="min-height:50px;">${escapeHtml(currentEditingItem.q_ga || '')}</textarea>
+            </div>
+            <div class="form-group">
+              <label>উত্তর 'গ'</label>
+              <textarea id="edit_a_ga" style="min-height:50px;">${escapeHtml(currentEditingItem.a_ga || '')}</textarea>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>প্রশ্ন 'ঘ' (উচ্চতর দক্ষতা)</label>
+              <textarea id="edit_q_gha" style="min-height:50px;">${escapeHtml(currentEditingItem.q_gha || '')}</textarea>
+            </div>
+            <div class="form-group">
+              <label>উত্তর 'ঘ'</label>
+              <textarea id="edit_a_gha" style="min-height:50px;">${escapeHtml(currentEditingItem.a_gha || '')}</textarea>
+            </div>
+          </div>
+        `;
+      }
+
+      body.innerHTML = formHtml;
+
+      // সেট সিলেক্টেড ভ্যালুজ
+      const chSelect = document.getElementById('editChapter');
+      if (chSelect && currentEditingItem.chapter) {
+        for (let i = 0; i < chSelect.options.length; i++) {
+          if (chSelect.options[i].value.includes(currentEditingItem.chapter) || currentEditingItem.chapter.includes(chSelect.options[i].value.substring(0, 9))) {
+            chSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      const bdSelect = document.getElementById('editBoardName');
+      if (bdSelect && currentEditingItem.boardName) {
+        for (let i = 0; i < bdSelect.options.length; i++) {
+          if (bdSelect.options[i].value.toLowerCase().includes(currentEditingItem.boardName.toLowerCase())) {
+            bdSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      modal.classList.add('open');
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('open');
+      currentEditingItem = null;
+      currentEditingType = null;
+    }
+
+    async function submitEditForm() {
+      if (!currentEditingItem) return;
+
+      const btn = document.getElementById('saveEditBtn');
+      const originalText = btn.innerHTML;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '⏳ আপডেট হচ্ছে...';
+
+        const categoryTypes = [];
+        if (document.getElementById('editCatBoard').checked) categoryTypes.push('Board Question');
+        if (document.getElementById('editCatCollege').checked) categoryTypes.push('College Test Paper');
+        if (document.getElementById('editCatModel').checked) categoryTypes.push('Model Test');
+        if (document.getElementById('editCatChapter').checked) categoryTypes.push('Chapter Practice');
+
+        if (categoryTypes.length === 0) {
+          showToast('সতর্কতা', 'কমপক্ষে একটি প্রশ্ন টাইপ নির্বাচন করুন', 'error');
+          return;
+        }
+
+        const chapter = document.getElementById('editChapter').value;
+        const boardName = document.getElementById('editBoardName').value;
+        const collegeName = document.getElementById('editCollegeName').value;
+        const examYear = document.getElementById('editExamYear').value;
+        const testPaperName = document.getElementById('editTestPaperName').value;
+
+        let payload = {
+          categoryTypes,
+          categoryType: categoryTypes[0],
+          chapter,
+          boardName,
+          collegeName,
+          examYear,
+          testPaperName
+        };
+
+        let url = '';
+
+        if (currentEditingType === 'MCQ') {
+          const question = document.getElementById('editQuestion').value.trim();
+          const opt1 = document.getElementById('editOpt1').value.trim();
+          const opt2 = document.getElementById('editOpt2').value.trim();
+          const opt3 = document.getElementById('editOpt3').value.trim();
+          const opt4 = document.getElementById('editOpt4').value.trim();
+          const correctAnswer = document.getElementById('editCorrectAnswer').value.trim();
+          const explanation = document.getElementById('editExplanation').value.trim();
+
+          payload.question = question;
+          payload.options = [opt1, opt2, opt3, opt4];
+          payload.correctAnswer = correctAnswer;
+          payload.explanation = explanation;
+
+          url = `${API_BASE}/api/mcqs/${currentEditingItem._id}`;
+        } else {
+          // CQ
+          payload.stem = document.getElementById('editStem').value.trim();
+          payload.q_ka = document.getElementById('edit_q_ka').value.trim();
+          payload.a_ka = document.getElementById('edit_a_ka').value.trim();
+          payload.q_kha = document.getElementById('edit_q_kha').value.trim();
+          payload.a_kha = document.getElementById('edit_a_kha').value.trim();
+          payload.q_ga = document.getElementById('edit_q_ga').value.trim();
+          payload.a_ga = document.getElementById('edit_a_ga').value.trim();
+          payload.q_gha = document.getElementById('edit_q_gha').value.trim();
+          payload.a_gha = document.getElementById('edit_a_gha').value.trim();
+
+          url = `${API_BASE}/api/cqs/${currentEditingItem._id}`;
+        }
+
+        const res = await fetch(url, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          showToast('সফল হয়েছে!', data.message || 'প্রশ্ন সফলভাবে আপডেট করা হয়েছে!', 'success');
+          closeEditModal();
+          loadDatabaseItems();
+        } else {
+          showToast('ব্যর্থ', data.message || 'আপডেট করা সম্ভব হয়নি', 'error');
+        }
+      } catch (err) {
+        showToast('সার্ভার এরর', err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    async function deleteItem(url, type) {
+      if (!confirm(`আপনি কি সত্যিই এই ${type} প্রশ্নটি মুছে ফেলতে চান?`)) return;
+
+      try {
+        const res = await fetch(url, { method: 'DELETE' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল হয়েছে', 'প্রশ্ন সফলভাবে মুছে ফেলা হয়েছে', 'success');
+          loadDatabaseItems();
+        } else {
+          showToast('ব্যর্থ', data.message || 'ডিলিট করা যায়নি', 'error');
+        }
+      } catch (err) {
+        showToast('এরর', err.message, 'error');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      checkServerHealth();
+      setInterval(checkServerHealth, 15000);
+    });
+  </script>
+</body>
+</html>

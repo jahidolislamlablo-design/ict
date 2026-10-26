@@ -211,7 +211,7 @@
 }
 
 .palette-btn:hover {
-    border-color: var(--primary);
+   border-color: var(--primary); 
 }
 
 .palette-btn.current {
@@ -223,7 +223,7 @@
 .palette-btn.answered {
     background: var(--success);
     border-color: var(--success);
-    color: #ffffff;
+    color: #ffffff; 
 }
 
 .palette-legend {

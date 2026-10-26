@@ -256,6 +256,7 @@ function selectExamOption(qIndex, optionIndex) {
                     marker.style.color = '#fff';
                 }
                 if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>';
+                
             } else {
                 opt.style.backgroundColor = '';
                 opt.style.borderColor = '';
@@ -270,7 +271,6 @@ function selectExamOption(qIndex, optionIndex) {
             }
         });
     }
-
     // প্যালেট বাটনে সবুজ স্ট্যাটাস যুক্ত করা
     const palBtn = document.getElementById(`palette-btn-${qIndex}`);
     if (palBtn) palBtn.classList.add('answered');
