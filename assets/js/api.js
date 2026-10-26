@@ -426,6 +426,64 @@ const ApiService = {
     },
 
     // ৩. অধ্যায়ভিত্তিক MCQ লোড - শুধুমাত্র নির্দিষ্ট অধ্যায়ের অনুশীলন প্রশ্ন
+
+    /**
+     * মডেল টেস্ট নম্বর অনুযায়ী MCQ প্রশ্ন লোড করা
+     */
+    async getModelTestMCQ(testIdentifier) {
+        try {
+            // testIdentifier e.g. "Model Test 01" or "মডেল টেস্ট - ০১"
+            let testKey = testIdentifier;
+            const match = testIdentifier.match(/(?:Model Test\s*|মডেল টেস্ট\s*[-–]?\s*)(\d+)/i);
+            if (match) {
+                const n = parseInt(match[1], 10);
+                const numStr = n < 10 ? '0' + n : '' + n;
+                testKey = 'Model Test ' + numStr;
+            }
+
+            const query = `/api/mcqs?categoryType=Model Test&modelTestNo=${encodeURIComponent(testKey)}`;
+            const res = await fetchFromBackend(query);
+            if (res && res.success && res.data && res.data.length > 0) {
+                return res.data;
+            }
+            return [];
+        } catch (e) {
+            console.warn("Failed to load model test questions:", e);
+            return [];
+        }
+    },
+
+    /**
+     * পিডিএফ সাজেশন ও নোট লোড করা
+     */
+    async getAllPDFs(category = 'all', chapter = '') {
+        try {
+            let url = '/api/pdfs?';
+            if (category && category !== 'all') url += `category=${encodeURIComponent(category)}&`;
+            if (chapter && chapter !== 'all') url += `chapter=${encodeURIComponent(chapter)}&`;
+            
+            const res = await fetchFromBackend(url);
+            if (res && res.success && Array.isArray(res.data)) {
+                return res.data;
+            }
+            return [];
+        } catch (e) {
+            console.warn("Failed to load PDFs:", e);
+            return [];
+        }
+    },
+
+    /**
+     * পিডিএফ ডাউনলোড রেকর্ড করা
+     */
+    async recordPdfDownload(pdfId) {
+        try {
+            await fetchFromBackend(`/api/pdfs/${pdfId}/download`, { method: 'POST' });
+        } catch (e) {
+            // Silent fail
+        }
+    },
+
     async getChapterMCQ(chapterId) {
         try {
             let chapterNum = chapterId;

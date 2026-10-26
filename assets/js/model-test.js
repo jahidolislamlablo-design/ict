@@ -132,9 +132,15 @@ async function startExam(testTitle, durationMins = 25) {
     userAnswers = {};
     remainingSeconds = durationMins * 60;
 
-    // ডাটাবেজ থেকে প্রশ্ন লোড
+    // ডাটাবেজ থেকে প্রশ্ন লোড (নির্দিষ্ট মডেল টেস্ট অনুযায়ী)
     try {
-        const dbQuestions = await ApiService.getAllMCQ(25);
+        let dbQuestions = null;
+        if (typeof ApiService !== 'undefined' && ApiService.getModelTestMCQ) {
+            dbQuestions = await ApiService.getModelTestMCQ(testTitle);
+        }
+        if (!dbQuestions || dbQuestions.length === 0) {
+            dbQuestions = await ApiService.getAllMCQ(25);
+        }
         if (dbQuestions && dbQuestions.length > 0) {
             activeExamQuestions = dbQuestions.map((q, idx) => {
                 let opts = q.options;

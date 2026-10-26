@@ -252,6 +252,91 @@
       background: #f8faff;
     }
 
+    
+    /* Custom Multi-Select Dropdown */
+    .multiselect-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .multiselect-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .multiselect-trigger:hover,
+    .multiselect-wrapper.open .multiselect-trigger {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    .multiselect-trigger .chevron-icon {
+      transition: transform 0.2s ease;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .multiselect-wrapper.open .multiselect-trigger .chevron-icon {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .multiselect-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      z-index: 999;
+      padding: 0.5rem;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    .multiselect-wrapper.open .multiselect-menu {
+      display: block;
+    }
+
+    .multiselect-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #334155;
+      user-select: none;
+    }
+
+    .multiselect-item:hover {
+      background: #f1f5f9;
+    }
+
+    .multiselect-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
     .cat-pill:has(input:checked) {
       border-color: var(--primary);
       background: #eef2ff;
@@ -725,6 +810,10 @@
         <span>📋 লাইভ প্রিভিউ ও এডিট</span>
         <span class="badge" id="totalCountBadge">0</span>
       </button>
+      <button type="button" class="tab-btn" onclick="switchTab('pdfTab')">
+        <span>📄 PDF আপলোড ও নোট</span>
+        <span class="badge" id="pdfCountBadge">0</span>
+      </button>
     </div>
 
     <!-- ============================================== -->
@@ -740,28 +829,34 @@
             <span>ফিল্টারিং মেটাডেটা (Metadata Options)</span>
           </div>
 
-          <!-- মাল্টিপল ক্যাটাগরি চেকবক্স নির্বাচন -->
+          <!-- মাল্টিপল ক্যাটাগরি ড্রপডাউন নির্বাচন -->
           <div class="form-group">
-            <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে চেকবক্স টিক দিন)<span class="required">*</span></label>
-            <div class="category-checkbox-grid">
-              <label class="cat-pill">
-                <input type="checkbox" name="mcqCategory" value="Board Question">
-                <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
-              </label>
-              <label class="cat-pill">
-                <input type="checkbox" name="mcqCategory" value="College Test Paper">
-                <span>🏫 College Test Paper (টেস্ট পেপার)</span>
-              </label>
-              <label class="cat-pill">
-                <input type="checkbox" name="mcqCategory" value="Model Test">
-                <span>⏱️ Model Test (মডেল টেস্ট)</span>
-              </label>
-              <label class="cat-pill">
-                <input type="checkbox" name="mcqCategory" value="Chapter Practice" checked>
-                <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
-              </label>
+            <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে ড্রপডাউনে ক্লিক করে টিক দিন)<span class="required">*</span></label>
+            <div class="multiselect-wrapper" id="mcqCategoryWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('mcqCategoryWrapper')">
+                <span id="mcqCategoryTriggerText">📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+                <span class="chevron-icon">▼</span>
+              </div>
+              <div class="multiselect-menu">
+                <label class="multiselect-item">
+                  <input type="checkbox" name="mcqCategory" value="Board Question" onchange="syncMultiSelectDisplay('mcq')">
+                  <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
+                </label>
+                <label class="multiselect-item">
+                  <input type="checkbox" name="mcqCategory" value="College Test Paper" onchange="syncMultiSelectDisplay('mcq')">
+                  <span>🏫 College Test Paper (টেস্ট পেপার)</span>
+                </label>
+                <label class="multiselect-item">
+                  <input type="checkbox" name="mcqCategory" value="Model Test" onchange="syncMultiSelectDisplay('mcq')">
+                  <span>⏱️ Model Test (মডেল টেস্ট)</span>
+                </label>
+                <label class="multiselect-item">
+                  <input type="checkbox" name="mcqCategory" value="Chapter Practice" checked onchange="syncMultiSelectDisplay('mcq')">
+                  <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+                </label>
+              </div>
             </div>
-            <span class="hint">টিপস: আপনি একাধিক টিক দিলে প্রশ্নটি একই সাথে বোর্ড, অধ্যায়, টেস্ট পেপার ও মডেল টেস্টের তালিকায় যুক্ত হবে।</span>
+            <span class="hint">টিপস: ড্রপডাউনে ক্লিক করে একাধিক টিক দিলে প্রশ্নটি একই সাথে বোর্ড, অধ্যায়, টেস্ট পেপার ও মডেল টেস্টে যাবে।</span>
           </div>
 
           <div class="grid-2" style="margin-top: 1rem;">
@@ -799,22 +894,122 @@
           <div class="grid-4" style="margin-top: 0.5rem;">
             <div class="form-group" id="mcqCollegeGroup">
               <label for="mcqCollegeName">কলেজের নাম (collegeName)</label>
-              <input type="text" id="mcqCollegeName" list="collegeList" placeholder="e.g. Notre Dame College">
+              <select id="mcqCollegeName">
+
+                <option value="">-- শীর্ষ কলেজ নির্বাচন করুন --</option>
+                <option value="Notre Dame College, Dhaka">নটর ডেম কলেজ, ঢাকা (Notre Dame College)</option>
+                <option value="Dhaka College, Dhaka">ঢাকা কলেজ, ঢাকা (Dhaka College)</option>
+                <option value="Viqarunnisa Noon School & College">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ (Viqarunnisa)</option>
+                <option value="RAJUK Uttara Model College">রাজউক উত্তরা মডেল কলেজ (RAJUK Uttara)</option>
+                <option value="Dhaka Residential Model College">ঢাকা রেসিডেনসিয়াল মডেল কলেজ (DRMC)</option>
+                <option value="Dhaka City College">ঢাকা সিটি কলেজ (Dhaka City College)</option>
+                <option value="Adamjee Cantonment College">আদমজী ক্যান্টনমেন্ট কলেজ (Adamjee Cantonment)</option>
+                <option value="Ideal School & College, Motijheel">আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</option>
+                <option value="Chittagong College, Chittagong">চট্টগ্রাম কলেজ, চট্টগ্রাম (Chittagong College)</option>
+                <option value="Govt. Hazi Muhammad Mohsin College">সরকারি হাজী মুহাম্মদ মহসিন কলেজ, চট্টগ্রাম</option>
+                <option value="Rajshahi College, Rajshahi">রাজশাহী কলেজ, রাজশাহী (Rajshahi College)</option>
+                <option value="Cantonment Public School & College, Rangpur">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</option>
+                <option value="Govt. Mujib College, Sakhipur, Tangail">সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</option>
+                <option value="Comilla Victoria Govt. College">কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</option>
+                <option value="Sylhet MC College">সিলেট এম সি কলেজ (Murari Chand College)</option>
+                <option value="Govt. BM College, Barishal">সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</option>
+                <option value="Ananda Mohan College, Mymensingh">আনন্দ মোহন কলেজ, ময়মনসিংহ</option>
+                <option value="Other">অন্যান্য কলেজ (Other College)</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="mcqExamYear">পরীক্ষার সাল (examYear)</label>
-              <input type="text" id="mcqExamYear" list="yearList" placeholder="e.g. 2026, 2025" value="2025">
+              <select id="mcqExamYear">
+
+                <option value="">-- পরীক্ষার সাল নির্বাচন করুন --</option>
+                <option value="2026" >2026 (২০২৬)</option>
+                <option value="2025" selected>2025 (২০২৫)</option>
+                <option value="2024" >2024 (২০২৪)</option>
+                <option value="2023" >2023 (২০২৩)</option>
+                <option value="2022" >2022 (২০২২)</option>
+                <option value="2021" >2021 (২০২১)</option>
+                <option value="2020" >2020 (২০২০)</option>
+                <option value="2019" >2019 (২০১৯)</option>
+                <option value="2018" >2018 (২০১৮)</option>
+                <option value="2017" >2017 (২০১৭)</option>
+                <option value="2016" >2016 (২০১৬)</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="mcqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
-              <input type="text" id="mcqTestPaperName" list="testPaperList" placeholder="e.g. Royal Test Paper">
+              <select id="mcqTestPaperName">
+
+                <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
+                <option value="Lecture Test Paper">লেকচার টেস্ট পেপার (Lecture Test Paper)</option>
+                <option value="Panjeree Test Paper">পাঞ্জেরী টেস্ট পেপার (Panjeree Test Paper)</option>
+                <option value="Royal Test Paper">রয়্যাল টেস্ট পেপার (Royal Test Paper)</option>
+                <option value="Anupam Test Paper">অনুপম টেস্ট পেপার (Anupam Test Paper)</option>
+                <option value="Nobodoot Test Paper">নবদূত টেস্ট পেপার (Nobodoot Test Paper)</option>
+                <option value="Akkhorpotro Test Paper">অক্ষরপত্র টেস্ট পেপার (Akkhorpotro)</option>
+                <option value="Dikdarshan Test Paper">দিকদর্শন টেস্ট পেপার (Dikdarshan)</option>
+                <option value="Joykoly Test Paper">জয়কলি টেস্ট পেপার (Joykoly)</option>
+                <option value="Other">অন্যান্য প্রকাশনী (Other)</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="mcqModelTestNo">মডেল টেস্ট নম্বর</label>
-              <input type="text" id="mcqModelTestNo" placeholder="e.g. Model Test 01">
+              <label for="mcqModelTestNo">মডেল টেস্ট নম্বর (৫০টি)</label>
+              <select id="mcqModelTestNo">
+
+                <option value="">-- মডেল টেস্ট নম্বর নির্বাচন করুন --</option>
+                <option value="Model Test 01">Model Test 01 (মডেল টেস্ট ০১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 02">Model Test 02 (মডেল টেস্ট ০২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 03">Model Test 03 (মডেল টেস্ট ০৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 04">Model Test 04 (মডেল টেস্ট ০৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 05">Model Test 05 (মডেল টেস্ট ০৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 06">Model Test 06 (মডেল টেস্ট ০৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 07">Model Test 07 (মডেল টেস্ট ০৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 08">Model Test 08 (মডেল টেস্ট ০৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 09">Model Test 09 (মডেল টেস্ট ০৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 10">Model Test 10 (মডেল টেস্ট ১০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 11">Model Test 11 (মডেল টেস্ট ১১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 12">Model Test 12 (মডেল টেস্ট ১২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 13">Model Test 13 (মডেল টেস্ট ১৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 14">Model Test 14 (মডেল টেস্ট ১৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 15">Model Test 15 (মডেল টেস্ট ১৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 16">Model Test 16 (মডেল টেস্ট ১৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 17">Model Test 17 (মডেল টেস্ট ১৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 18">Model Test 18 (মডেল টেস্ট ১৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 19">Model Test 19 (মডেল টেস্ট ১৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 20">Model Test 20 (মডেল টেস্ট ২০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 21">Model Test 21 (মডেল টেস্ট ২১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 22">Model Test 22 (মডেল টেস্ট ২২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 23">Model Test 23 (মডেল টেস্ট ২৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 24">Model Test 24 (মডেল টেস্ট ২৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 25">Model Test 25 (মডেল টেস্ট ২৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 26">Model Test 26 (মডেল টেস্ট ২৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 27">Model Test 27 (মডেল টেস্ট ২৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 28">Model Test 28 (মডেল টেস্ট ২৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 29">Model Test 29 (মডেল টেস্ট ২৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 30">Model Test 30 (মডেল টেস্ট ৩০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 31">Model Test 31 (মডেল টেস্ট ৩১ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 32">Model Test 32 (মডেল টেস্ট ৩২ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 33">Model Test 33 (মডেল টেস্ট ৩৩ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 34">Model Test 34 (মডেল টেস্ট ৩৪ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 35">Model Test 35 (মডেল টেস্ট ৩৫ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 36">Model Test 36 (মডেল টেস্ট ৩৬ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 37">Model Test 37 (মডেল টেস্ট ৩৭ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 38">Model Test 38 (মডেল টেস্ট ৩৮ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 39">Model Test 39 (মডেল টেস্ট ৩৯ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 40">Model Test 40 (মডেল টেস্ট ৪০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 41">Model Test 41 (মডেল টেস্ট ৪১ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 42">Model Test 42 (মডেল টেস্ট ৪২ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 43">Model Test 43 (মডেল টেস্ট ৪৩ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 44">Model Test 44 (মডেল টেস্ট ৪৪ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 45">Model Test 45 (মডেল টেস্ট ৪৫ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 46">Model Test 46 (মডেল টেস্ট ৪৬ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 47">Model Test 47 (মডেল টেস্ট ৪৭ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 48">Model Test 48 (মডেল টেস্ট ৪৮ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 49">Model Test 49 (মডেল টেস্ট ৪৯ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 50">Model Test 50 (মডেল টেস্ট ৫০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+              </select>
             </div>
           </div>
 
@@ -910,27 +1105,34 @@
             <span>ফিল্টারিং মেটাডেটা (Metadata Options)</span>
           </div>
 
-          <!-- মাল্টিপল ক্যাটাগরি চেকবক্স নির্বাচন -->
+          <!-- CQ মাল্টিপল ক্যাটাগরি ড্রপডাউন নির্বাচন -->
           <div class="form-group">
-            <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে চেকবক্স টিক দিন)<span class="required">*</span></label>
-            <div class="category-checkbox-grid">
-              <label class="cat-pill">
-                <input type="checkbox" name="cqCategory" value="Board Question" checked>
-                <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
-              </label>
-              <label class="cat-pill">
-                <input type="checkbox" name="cqCategory" value="College Test Paper">
-                <span>🏫 College Test Paper (টেস্ট পেপার)</span>
-              </label>
-              <label class="cat-pill">
-                <input type="checkbox" name="cqCategory" value="Model Test">
-                <span>⏱️ Model Test (মডেল টেস্ট)</span>
-              </label>
-              <label class="cat-pill">
-                <input type="checkbox" name="cqCategory" value="Chapter Practice">
-                <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
-              </label>
+            <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে ড্রপডাউনে ক্লিক করে টিক দিন)<span class="required">*</span></label>
+            <div class="multiselect-wrapper" id="cqCategoryWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('cqCategoryWrapper')">
+                <span id="cqCategoryTriggerText">🏛️ Board Question (বোর্ড প্রশ্ন)</span>
+                <span class="chevron-icon">▼</span>
+              </div>
+              <div class="multiselect-menu">
+                <label class="multiselect-item">
+                  <input type="checkbox" name="cqCategory" value="Board Question" checked onchange="syncMultiSelectDisplay('cq')">
+                  <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
+                </label>
+                <label class="multiselect-item">
+                  <input type="checkbox" name="cqCategory" value="College Test Paper" onchange="syncMultiSelectDisplay('cq')">
+                  <span>🏫 College Test Paper (টেস্ট পেপার)</span>
+                </label>
+                <label class="multiselect-item">
+                  <input type="checkbox" name="cqCategory" value="Model Test" onchange="syncMultiSelectDisplay('cq')">
+                  <span>⏱️ Model Test (মডেল টেস্ট)</span>
+                </label>
+                <label class="multiselect-item">
+                  <input type="checkbox" name="cqCategory" value="Chapter Practice" onchange="syncMultiSelectDisplay('cq')">
+                  <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+                </label>
+              </div>
             </div>
+            <span class="hint">টিপস: ড্রপডাউনে ক্লিক করে একাধিক টিক দিলে সৃজনশীলটি একই সাথে বোর্ড, অধ্যায় ও টেস্ট পেপারে যাবে।</span>
           </div>
 
           <div class="grid-2" style="margin-top: 1rem;">
@@ -968,22 +1170,122 @@
           <div class="grid-4" style="margin-top: 0.5rem;">
             <div class="form-group" id="cqCollegeGroup">
               <label for="cqCollegeName">কলেজের নাম (collegeName)</label>
-              <input type="text" id="cqCollegeName" list="collegeList" placeholder="e.g. Dhaka College">
+              <select id="cqCollegeName">
+
+                <option value="">-- শীর্ষ কলেজ নির্বাচন করুন --</option>
+                <option value="Notre Dame College, Dhaka">নটর ডেম কলেজ, ঢাকা (Notre Dame College)</option>
+                <option value="Dhaka College, Dhaka">ঢাকা কলেজ, ঢাকা (Dhaka College)</option>
+                <option value="Viqarunnisa Noon School & College">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ (Viqarunnisa)</option>
+                <option value="RAJUK Uttara Model College">রাজউক উত্তরা মডেল কলেজ (RAJUK Uttara)</option>
+                <option value="Dhaka Residential Model College">ঢাকা রেসিডেনসিয়াল মডেল কলেজ (DRMC)</option>
+                <option value="Dhaka City College">ঢাকা সিটি কলেজ (Dhaka City College)</option>
+                <option value="Adamjee Cantonment College">আদমজী ক্যান্টনমেন্ট কলেজ (Adamjee Cantonment)</option>
+                <option value="Ideal School & College, Motijheel">আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</option>
+                <option value="Chittagong College, Chittagong">চট্টগ্রাম কলেজ, চট্টগ্রাম (Chittagong College)</option>
+                <option value="Govt. Hazi Muhammad Mohsin College">সরকারি হাজী মুহাম্মদ মহসিন কলেজ, চট্টগ্রাম</option>
+                <option value="Rajshahi College, Rajshahi">রাজশাহী কলেজ, রাজশাহী (Rajshahi College)</option>
+                <option value="Cantonment Public School & College, Rangpur">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</option>
+                <option value="Govt. Mujib College, Sakhipur, Tangail">সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</option>
+                <option value="Comilla Victoria Govt. College">কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</option>
+                <option value="Sylhet MC College">সিলেট এম সি কলেজ (Murari Chand College)</option>
+                <option value="Govt. BM College, Barishal">সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</option>
+                <option value="Ananda Mohan College, Mymensingh">আনন্দ মোহন কলেজ, ময়মনসিংহ</option>
+                <option value="Other">অন্যান্য কলেজ (Other College)</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="cqExamYear">পরীক্ষার সাল (examYear)</label>
-              <input type="text" id="cqExamYear" list="yearList" placeholder="e.g. 2026, 2025" value="2025">
+              <select id="cqExamYear">
+
+                <option value="">-- পরীক্ষার সাল নির্বাচন করুন --</option>
+                <option value="2026" >2026 (২০২৬)</option>
+                <option value="2025" selected>2025 (২০২৫)</option>
+                <option value="2024" >2024 (২০২৪)</option>
+                <option value="2023" >2023 (২০২৩)</option>
+                <option value="2022" >2022 (২০২২)</option>
+                <option value="2021" >2021 (২০২১)</option>
+                <option value="2020" >2020 (২০২০)</option>
+                <option value="2019" >2019 (২০১৯)</option>
+                <option value="2018" >2018 (২০১৮)</option>
+                <option value="2017" >2017 (২০১৭)</option>
+                <option value="2016" >2016 (২০১৬)</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="cqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
-              <input type="text" id="cqTestPaperName" list="testPaperList" placeholder="e.g. Royal Test Paper">
+              <select id="cqTestPaperName">
+
+                <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
+                <option value="Lecture Test Paper">লেকচার টেস্ট পেপার (Lecture Test Paper)</option>
+                <option value="Panjeree Test Paper">পাঞ্জেরী টেস্ট পেপার (Panjeree Test Paper)</option>
+                <option value="Royal Test Paper">রয়্যাল টেস্ট পেপার (Royal Test Paper)</option>
+                <option value="Anupam Test Paper">অনুপম টেস্ট পেপার (Anupam Test Paper)</option>
+                <option value="Nobodoot Test Paper">নবদূত টেস্ট পেপার (Nobodoot Test Paper)</option>
+                <option value="Akkhorpotro Test Paper">অক্ষরপত্র টেস্ট পেপার (Akkhorpotro)</option>
+                <option value="Dikdarshan Test Paper">দিকদর্শন টেস্ট পেপার (Dikdarshan)</option>
+                <option value="Joykoly Test Paper">জয়কলি টেস্ট পেপার (Joykoly)</option>
+                <option value="Other">অন্যান্য প্রকাশনী (Other)</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="cqModelTestNo">মডেল টেস্ট নম্বর</label>
-              <input type="text" id="cqModelTestNo" placeholder="e.g. Model Test 01">
+              <label for="cqModelTestNo">মডেল টেস্ট নম্বর (৫০টি)</label>
+              <select id="cqModelTestNo">
+
+                <option value="">-- মডেল টেস্ট নম্বর নির্বাচন করুন --</option>
+                <option value="Model Test 01">Model Test 01 (মডেল টেস্ট ০১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 02">Model Test 02 (মডেল টেস্ট ০২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 03">Model Test 03 (মডেল টেস্ট ০৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 04">Model Test 04 (মডেল টেস্ট ০৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 05">Model Test 05 (মডেল টেস্ট ০৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 06">Model Test 06 (মডেল টেস্ট ০৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 07">Model Test 07 (মডেল টেস্ট ০৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 08">Model Test 08 (মডেল টেস্ট ০৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 09">Model Test 09 (মডেল টেস্ট ০৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 10">Model Test 10 (মডেল টেস্ট ১০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 11">Model Test 11 (মডেল টেস্ট ১১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 12">Model Test 12 (মডেল টেস্ট ১২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 13">Model Test 13 (মডেল টেস্ট ১৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 14">Model Test 14 (মডেল টেস্ট ১৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 15">Model Test 15 (মডেল টেস্ট ১৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 16">Model Test 16 (মডেল টেস্ট ১৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 17">Model Test 17 (মডেল টেস্ট ১৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 18">Model Test 18 (মডেল টেস্ট ১৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 19">Model Test 19 (মডেল টেস্ট ১৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 20">Model Test 20 (মডেল টেস্ট ২০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 21">Model Test 21 (মডেল টেস্ট ২১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 22">Model Test 22 (মডেল টেস্ট ২২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 23">Model Test 23 (মডেল টেস্ট ২৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 24">Model Test 24 (মডেল টেস্ট ২৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 25">Model Test 25 (মডেল টেস্ট ২৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 26">Model Test 26 (মডেল টেস্ট ২৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 27">Model Test 27 (মডেল টেস্ট ২৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 28">Model Test 28 (মডেল টেস্ট ২৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 29">Model Test 29 (মডেল টেস্ট ২৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 30">Model Test 30 (মডেল টেস্ট ৩০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 31">Model Test 31 (মডেল টেস্ট ৩১ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 32">Model Test 32 (মডেল টেস্ট ৩২ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 33">Model Test 33 (মডেল টেস্ট ৩৩ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 34">Model Test 34 (মডেল টেস্ট ৩৪ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 35">Model Test 35 (মডেল টেস্ট ৩৫ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 36">Model Test 36 (মডেল টেস্ট ৩৬ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 37">Model Test 37 (মডেল টেস্ট ৩৭ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 38">Model Test 38 (মডেল টেস্ট ৩৮ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 39">Model Test 39 (মডেল টেস্ট ৩৯ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 40">Model Test 40 (মডেল টেস্ট ৪০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 41">Model Test 41 (মডেল টেস্ট ৪১ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 42">Model Test 42 (মডেল টেস্ট ৪২ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 43">Model Test 43 (মডেল টেস্ট ৪৩ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 44">Model Test 44 (মডেল টেস্ট ৪৪ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 45">Model Test 45 (মডেল টেস্ট ৪৫ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 46">Model Test 46 (মডেল টেস্ট ৪৬ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 47">Model Test 47 (মডেল টেস্ট ৪৭ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 48">Model Test 48 (মডেল টেস্ট ৪৮ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 49">Model Test 49 (মডেল টেস্ট ৪৯ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 50">Model Test 50 (মডেল টেস্ট ৫০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+              </select>
             </div>
           </div>
 
@@ -1124,6 +1426,131 @@
       </div>
     </section>
 
+    <!-- ============================================== -->
+    <!-- ৪. PDF আপলোড ও ম্যানেজমেন্ট সেকশন -->
+    <!-- ============================================== -->
+    <section id="pdfTab" class="tab-content">
+      <div class="card">
+        <div class="card-title">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+          <span>নতুন PDF সাজেশন বা হ্যান্ডনোট আপলোড করুন</span>
+        </div>
+
+        <form id="pdfUploadForm" onsubmit="handlePdfSubmit(event)">
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="pdfTitle">পিডিএফ শিরোনাম (Title)<span class="required">*</span></label>
+              <input type="text" id="pdfTitle" placeholder="e.g. এইচএসসি আইসিটি সুপার সাজেশন ও জ্ঞান-অনুধাবন (২০২৬/২০২৫)" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pdfCategory">ক্যাটাগরি<span class="required">*</span></label>
+              <select id="pdfCategory" required>
+                <option value="suggestion">বোর্ড সুপার সাজেশন (suggestion)</option>
+                <option value="handnote">অধ্যায়ভিত্তিক হ্যান্ডনোট (handnote)</option>
+                <option value="cheatsheet">চিটশিট ও কোড বুকলেট (cheatsheet)</option>
+                <option value="board">বোর্ড প্রশ্ন সমাধান (board)</option>
+                <option value="testpaper">কলেজ টেস্ট পেপার সমাধান (testpaper)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-3" style="margin-top: 0.5rem;">
+            <div class="form-group">
+              <label for="pdfChapter">অধ্যায় / বিষয়</label>
+              <select id="pdfChapter">
+                <option value="সকল অধ্যায়">সকল অধ্যায় (Full Syllabus)</option>
+                <option value="Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি">অধ্যায় ১: তথ্য ও যোগাযোগ প্রযুক্তি</option>
+                <option value="Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং">অধ্যায় ২: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</option>
+                <option value="Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস">অধ্যায় ৩: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</option>
+                <option value="Chapter 4: ওয়েব ডিজাইন ও HTML">অধ্যায় ৪: ওয়েব ডিজাইন ও HTML</option>
+                <option value="Chapter 5: প্রোগ্রামিং ভাষা (C)">অধ্যায় ৫: প্রোগ্রামিং ভাষা (C)</option>
+                <option value="Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম">অধ্যায় ৬: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pdfPages">মোট পৃষ্ঠাসংখ্যা</label>
+              <input type="text" id="pdfPages" placeholder="e.g. ৪২ পৃষ্ঠা" value="১৫ পৃষ্ঠা">
+            </div>
+
+            <div class="form-group">
+              <label for="pdfFileSize">ফাইলের আনুমানিক আকার (ঐচ্ছিক)</label>
+              <input type="text" id="pdfFileSize" placeholder="e.g. ২.৫ MB (ফাইল আপলোড করলে স্বয়ংক্রিয় বসবে)">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <label for="pdfDescription">সংক্ষিপ্ত বিবরণ / প্রিভিউ টেকস্ট</label>
+            <textarea id="pdfDescription" placeholder="এই ডকুমেন্টের বিষয়বস্তু বা প্রিভিউয়ের বিবরণ লিখুন..." style="min-height: 60px;"></textarea>
+          </div>
+
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <label>PDF ফাইল নির্বাচন (Upload .pdf file)<span class="required">*</span></label>
+            <div style="border: 2px dashed var(--border); padding: 1.5rem; border-radius: 10px; background: #f8fafc; text-align: center;">
+              <input type="file" id="pdfFileInput" accept="application/pdf,.pdf" style="display: none;" onchange="handleFileChosen(this)">
+              <div onclick="document.getElementById('pdfFileInput').click()" style="cursor: pointer;">
+                <svg width="40" height="40" fill="none" stroke="var(--primary)" viewBox="0 0 24 24" style="margin: 0 auto 8px auto;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <p style="font-weight: 600; color: #1e293b;" id="pdfFileLabel">📁 কম্পিউটার থেকে PDF ফাইল নির্বাচন করতে এখানে ক্লিক করুন</p>
+                <p style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">সর্বোচ্চ ৫০ MB সাইজের .pdf ফাইল অনুমোদিত</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="directPdfUrl">অথবা সরাসরি অনলাইন PDF লিংক (যদি থাকে)</label>
+            <input type="url" id="directPdfUrl" placeholder="https://example.com/document.pdf">
+            <span class="hint">ফাইল আপলোড না করে সরাসরি লিংক দিতে চাইলে এই ফিল্ডটি ব্যবহার করুন।</span>
+          </div>
+
+          <div class="btn-group" style="margin-top: 1.25rem;">
+            <button type="submit" class="btn btn-primary" id="pdfSubmitBtn">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+              <span>পিডিএফ আপলোড ও প্রকাশ করুন</span>
+            </button>
+            <button type="reset" class="btn btn-secondary" onclick="resetPdfForm()">
+              <span>রিসেট</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- আপলোডকৃত পিডিএফের তালিকা -->
+      <div class="card" style="margin-top: 1.5rem;">
+        <div class="card-title" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>আপলোডকৃত পিডিএফ তালিকা</span>
+          </div>
+          <button type="button" class="btn btn-secondary" onclick="loadPdfItems()" style="padding: 0.3rem 0.75rem; font-size: 0.82rem;">
+            🔄 রিফ্রেশ তালিকা
+          </button>
+        </div>
+
+        <div style="overflow-x: auto; margin-top: 1rem;">
+          <table class="data-table" id="pdfTable">
+            <thead>
+              <tr>
+                <th style="width: 50px;">নং</th>
+                <th>শিরোনাম ও বিবরণ</th>
+                <th>ক্যাটাগরি ও অধ্যায়</th>
+                <th>সাইজ ও পৃষ্ঠা</th>
+                <th>ডাউনলোড</th>
+                <th style="width: 140px;">অ্যাকশন</th>
+              </tr>
+            </thead>
+            <tbody id="pdfTableBody">
+              <tr>
+                <td colspan="6" style="text-align: center; padding: 2rem; color: #64748b;">
+                  পিডিএফ তালিকা লোড করা হচ্ছে...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ============================================== -->
@@ -1207,6 +1634,9 @@
       } else if (tabId === 'previewTab') {
         document.querySelectorAll('.tab-btn')[2].classList.add('active');
         loadDatabaseItems();
+      } else if (tabId === 'pdfTab') {
+        document.querySelectorAll('.tab-btn')[3].classList.add('active');
+        loadPdfItems();
       }
 
       document.getElementById(tabId).classList.add('active');
@@ -1469,6 +1899,218 @@
       }
     }
 
+
+    // Multi-Select Dropdown Helpers
+    function toggleMultiSelectDropdown(wrapperId) {
+      const wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      const wasOpen = wrapper.classList.contains('open');
+      document.querySelectorAll('.multiselect-wrapper').forEach(w => w.classList.remove('open'));
+      if (!wasOpen) {
+        wrapper.classList.add('open');
+      }
+    }
+
+    function syncMultiSelectDisplay(prefix) {
+      const checked = document.querySelectorAll(`input[name="${prefix}Category"]:checked`);
+      const textEl = document.getElementById(`${prefix}CategoryTriggerText`);
+      if (!textEl) return;
+      if (checked.length === 0) {
+        textEl.innerHTML = `<span style="color:#94a3b8;">-- কমপক্ষে একটি প্রশ্ন টাইপ নির্বাচন করুন --</span>`;
+      } else if (checked.length === 1) {
+        const val = checked[0].value;
+        const nameMap = {
+          'Board Question': '🏛️ Board Question (বোর্ড প্রশ্ন)',
+          'College Test Paper': '🏫 College Test Paper (টেস্ট পেপার)',
+          'Model Test': '⏱️ Model Test (মডেল টেস্ট)',
+          'Chapter Practice': '📖 Chapter Practice (অধ্যায়ভিত্তিক)'
+        };
+        textEl.innerHTML = `<span style="font-weight:600; color:var(--primary);">${nameMap[val] || val}</span>`;
+      } else {
+        textEl.innerHTML = `<span style="font-weight:600; color:var(--primary);">${checked.length}টি ক্যাটাগরি নির্বাচিত</span> <span class="badge" style="background:#e0e7ff; color:#4338ca; font-size:0.75rem; margin-left:6px;">মাল্টিপল</span>`;
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.multiselect-wrapper')) {
+        document.querySelectorAll('.multiselect-wrapper').forEach(w => w.classList.remove('open'));
+      }
+    });
+
+    // PDF Management Handlers
+    function handleFileChosen(input) {
+      const label = document.getElementById('pdfFileLabel');
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+        label.innerHTML = `📄 <strong>${escapeHtml(file.name)}</strong> (${sizeMb} MB) নির্বাচিত হয়েছে`;
+        label.style.color = 'var(--primary)';
+        
+        const titleInput = document.getElementById('pdfTitle');
+        if (!titleInput.value) {
+          titleInput.value = file.name.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ');
+        }
+      } else {
+        label.innerHTML = '📁 কম্পিউটার থেকে PDF ফাইল নির্বাচন করতে এখানে ক্লিক করুন';
+        label.style.color = '#1e293b';
+      }
+    }
+
+    function resetPdfForm() {
+      document.getElementById('pdfUploadForm').reset();
+      const label = document.getElementById('pdfFileLabel');
+      if (label) {
+        label.innerHTML = '📁 কম্পিউটার থেকে PDF ফাইল নির্বাচন করতে এখানে ক্লিক করুন';
+        label.style.color = '#1e293b';
+      }
+    }
+
+    async function handlePdfSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('pdfSubmitBtn');
+      const origText = btn.innerHTML;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '⏳ আপলোড হচ্ছে...';
+
+        const title = document.getElementById('pdfTitle').value.trim();
+        const category = document.getElementById('pdfCategory').value;
+        const chapter = document.getElementById('pdfChapter').value;
+        const pagesCount = document.getElementById('pdfPages').value.trim();
+        const fileSize = document.getElementById('pdfFileSize').value.trim();
+        const description = document.getElementById('pdfDescription').value.trim();
+        const directPdfUrl = document.getElementById('directPdfUrl').value.trim();
+        const fileInput = document.getElementById('pdfFileInput');
+
+        if (!fileInput.files[0] && !directPdfUrl) {
+          showToast('সতর্কতা', 'অনুগ্রহ করে একটি PDF ফাইল নির্বাচন করুন অথবা সরাসরি লিংক দিন', 'error');
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('category', category);
+        formData.append('chapter', chapter);
+        formData.append('pagesCount', pagesCount || '১০ পৃষ্ঠা');
+        formData.append('fileSize', fileSize);
+        formData.append('description', description);
+        if (directPdfUrl) formData.append('directPdfUrl', directPdfUrl);
+        if (fileInput.files[0]) formData.append('pdfFile', fileInput.files[0]);
+
+        const res = await fetch(`${API_BASE}/api/pdfs`, {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল!', 'পিডিএফ সফলভাবে আপলোড করা হয়েছে!', 'success');
+          resetPdfForm();
+          loadPdfItems();
+        } else {
+          showToast('ত্রুটি', data.message || 'পিডিএফ আপলোড ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', err.message || 'সার্ভারের সাথে সংযোগ বিচ্ছিন্ন', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = origText;
+      }
+    }
+
+    let allPdfItems = [];
+    async function loadPdfItems() {
+      const tbody = document.getElementById('pdfTableBody');
+      const badge = document.getElementById('pdfCountBadge');
+      if (!tbody) return;
+
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">পিডিএফ লোড করা হচ্ছে...</td></tr>';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/pdfs`);
+        const result = await res.json();
+
+        if (res.ok && result.success) {
+          allPdfItems = result.data || [];
+          if (badge) badge.innerText = allPdfItems.length;
+
+          if (allPdfItems.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2.5rem; color: #64748b;">কোনো পিডিএফ আপলোড করা নেই। উপরে নতুন পিডিএফ আপলোড করুন।</td></tr>';
+            return;
+          }
+
+          let html = '';
+          allPdfItems.forEach((pdf, idx) => {
+            const isLocal = pdf.pdfUrl.startsWith('/uploads/');
+            const fullUrl = isLocal ? `${API_BASE}${pdf.pdfUrl}` : pdf.pdfUrl;
+            const catMap = {
+              suggestion: 'বোর্ড সুপার সাজেশন',
+              handnote: 'হ্যান্ডনোট',
+              cheatsheet: 'চিটশিট ও কোড',
+              board: 'বোর্ড প্রশ্ন সমাধান',
+              testpaper: 'টেস্ট পেপার সমাধান'
+            };
+
+            html += `
+              <tr>
+                <td><strong>${idx + 1}</strong></td>
+                <td>
+                  <strong style="color: #1e293b;">${escapeHtml(pdf.title)}</strong>
+                  ${pdf.description ? `<p style="font-size: 0.8rem; color: #64748b; margin-top: 3px;">${escapeHtml(pdf.description)}</p>` : ''}
+                </td>
+                <td>
+                  <span class="badge" style="background: #eef2ff; color: #4338ca;">${catMap[pdf.category] || pdf.category}</span>
+                  <div style="font-size: 0.8rem; color: #475569; margin-top: 4px;">${escapeHtml(pdf.chapter || '')}</div>
+                </td>
+                <td>
+                  <div>${escapeHtml(pdf.fileSize || '১.০ MB')}</div>
+                  <div style="font-size: 0.78rem; color: #64748b;">${escapeHtml(pdf.pagesCount || '')}</div>
+                </td>
+                <td>
+                  <span class="badge" style="background: #ecfdf5; color: #047857;">${pdf.downloadsCount || 0} বার</span>
+                </td>
+                <td>
+                  <div style="display: flex; gap: 6px;">
+                    <a href="${fullUrl}" target="_blank" class="action-btn" title="পড়ুন বা ভিউ করুন" style="color: #4f46e5; text-decoration: none; padding: 4px 8px; border-radius: 4px; border: 1px solid #c7d2fe;">
+                      👁️ ভিউ
+                    </a>
+                    <button type="button" class="action-btn" onclick="deletePdf('${pdf._id}')" title="ডিলিট করুন" style="color: #ef4444; padding: 4px 8px; border-radius: 4px; border: 1px solid #fecaca; background: none; cursor: pointer;">
+                      🗑️
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            `;
+          });
+          tbody.innerHTML = html;
+        } else {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: red;">পিডিএফ তালিকা আনতে ব্যর্থ হয়েছে</td></tr>';
+        }
+      } catch (e) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 2rem; color: red;">সার্ভার সংযোগ পাওয়া যায়নি: ${escapeHtml(e.message)}</td></tr>`;
+      }
+    }
+
+    async function deletePdf(id) {
+      if (!confirm('আপনি কি নিশ্চিতভাবে এই পিডিএফটি মুছে ফেলতে চান?')) return;
+
+      try {
+        const res = await fetch(`${API_BASE}/api/pdfs/${id}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল!', 'পিডিএফ সফলভাবে মুছে ফেলা হয়েছে', 'success');
+          loadPdfItems();
+        } else {
+          showToast('ত্রুটি', data.message || 'ডিলিট করতে ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', err.message, 'error');
+      }
+    }
+
     async function checkServerHealth() {
       const dot = document.getElementById('serverStatusDot');
       const text = document.getElementById('serverStatusText');
@@ -1516,6 +2158,7 @@
     async function loadDatabaseItems() {
       await updateCounts();
       renderPreviewTable();
+          loadPdfItems();
     }
 
     function filterPreview(type) {
@@ -1652,25 +2295,32 @@
       const isChapter = cats.includes('Chapter Practice');
 
       let formHtml = `
+        <!-- এডিট মেটাডেটা ক্যাটাগরি -->
         <div class="form-group">
-          <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক টিক দিন)<span class="required">*</span></label>
-          <div class="category-checkbox-grid">
-            <label class="cat-pill">
-              <input type="checkbox" id="editCatBoard" value="Board Question" ${isBoard ? 'checked' : ''}>
-              <span>🏛️ Board Question</span>
-            </label>
-            <label class="cat-pill">
-              <input type="checkbox" id="editCatCollege" value="College Test Paper" ${isCollege ? 'checked' : ''}>
-              <span>🏫 College Test Paper</span>
-            </label>
-            <label class="cat-pill">
-              <input type="checkbox" id="editCatModel" value="Model Test" ${isModel ? 'checked' : ''}>
-              <span>⏱️ Model Test</span>
-            </label>
-            <label class="cat-pill">
-              <input type="checkbox" id="editCatChapter" value="Chapter Practice" ${isChapter ? 'checked' : ''}>
-              <span>📖 Chapter Practice</span>
-            </label>
+          <label>প্রশ্ন টাইপ নির্বাচন করুন (একাধিক সেকশনে পাঠাতে ড্রপডাউনে ক্লিক করে টিক দিন)</label>
+          <div class="multiselect-wrapper" id="editCategoryWrapper">
+            <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('editCategoryWrapper')">
+              <span id="editCategoryTriggerText">ক্যাটাগরি নির্বাচন করুন</span>
+              <span class="chevron-icon">▼</span>
+            </div>
+            <div class="multiselect-menu">
+              <label class="multiselect-item">
+                <input type="checkbox" name="editCategory" value="Board Question" ${isBoard ? 'checked' : ''} onchange="syncMultiSelectDisplay('edit')">
+                <span>🏛️ Board Question (বোর্ড প্রশ্ন)</span>
+              </label>
+              <label class="multiselect-item">
+                <input type="checkbox" name="editCategory" value="College Test Paper" ${isCollege ? 'checked' : ''} onchange="syncMultiSelectDisplay('edit')">
+                <span>🏫 College Test Paper (টেস্ট পেপার)</span>
+              </label>
+              <label class="multiselect-item">
+                <input type="checkbox" name="editCategory" value="Model Test" ${isModel ? 'checked' : ''} onchange="syncMultiSelectDisplay('edit')">
+                <span>⏱️ Model Test (মডেল টেস্ট)</span>
+              </label>
+              <label class="multiselect-item">
+                <input type="checkbox" name="editCategory" value="Chapter Practice" ${isChapter ? 'checked' : ''} onchange="syncMultiSelectDisplay('edit')">
+                <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -1706,18 +2356,122 @@
           </div>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-4">
           <div class="form-group">
-            <label for="editCollegeName">কলেজের নাম</label>
-            <input type="text" id="editCollegeName" value="${escapeHtml(currentEditingItem.collegeName || '')}">
+            <label for="editCollegeName">শীর্ষ কলেজ</label>
+            <select id="editCollegeName">
+
+                <option value="">-- শীর্ষ কলেজ নির্বাচন করুন --</option>
+                <option value="Notre Dame College, Dhaka">নটর ডেম কলেজ, ঢাকা (Notre Dame College)</option>
+                <option value="Dhaka College, Dhaka">ঢাকা কলেজ, ঢাকা (Dhaka College)</option>
+                <option value="Viqarunnisa Noon School & College">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ (Viqarunnisa)</option>
+                <option value="RAJUK Uttara Model College">রাজউক উত্তরা মডেল কলেজ (RAJUK Uttara)</option>
+                <option value="Dhaka Residential Model College">ঢাকা রেসিডেনসিয়াল মডেল কলেজ (DRMC)</option>
+                <option value="Dhaka City College">ঢাকা সিটি কলেজ (Dhaka City College)</option>
+                <option value="Adamjee Cantonment College">আদমজী ক্যান্টনমেন্ট কলেজ (Adamjee Cantonment)</option>
+                <option value="Ideal School & College, Motijheel">আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</option>
+                <option value="Chittagong College, Chittagong">চট্টগ্রাম কলেজ, চট্টগ্রাম (Chittagong College)</option>
+                <option value="Govt. Hazi Muhammad Mohsin College">সরকারি হাজী মুহাম্মদ মহসিন কলেজ, চট্টগ্রাম</option>
+                <option value="Rajshahi College, Rajshahi">রাজশাহী কলেজ, রাজশাহী (Rajshahi College)</option>
+                <option value="Cantonment Public School & College, Rangpur">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</option>
+                <option value="Govt. Mujib College, Sakhipur, Tangail">সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</option>
+                <option value="Comilla Victoria Govt. College">কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</option>
+                <option value="Sylhet MC College">সিলেট এম সি কলেজ (Murari Chand College)</option>
+                <option value="Govt. BM College, Barishal">সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</option>
+                <option value="Ananda Mohan College, Mymensingh">আনন্দ মোহন কলেজ, ময়মনসিংহ</option>
+                <option value="Other">অন্যান্য কলেজ (Other College)</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="editExamYear">সাল</label>
-            <input type="text" id="editExamYear" value="${escapeHtml(currentEditingItem.examYear || '')}">
+            <label for="editExamYear">পরীক্ষার সাল</label>
+            <select id="editExamYear">
+
+                <option value="">-- পরীক্ষার সাল নির্বাচন করুন --</option>
+                <option value="2026" >2026 (২০২৬)</option>
+                <option value="2025" selected>2025 (২০২৫)</option>
+                <option value="2024" >2024 (২০২৪)</option>
+                <option value="2023" >2023 (২০২৩)</option>
+                <option value="2022" >2022 (২০২২)</option>
+                <option value="2021" >2021 (২০২১)</option>
+                <option value="2020" >2020 (২০২০)</option>
+                <option value="2019" >2019 (২০১৯)</option>
+                <option value="2018" >2018 (২০১৮)</option>
+                <option value="2017" >2017 (২০১৭)</option>
+                <option value="2016" >2016 (২০১৬)</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="editTestPaperName">টেস্ট পেপার প্রকাশনী</label>
-            <input type="text" id="editTestPaperName" value="${escapeHtml(currentEditingItem.testPaperName || '')}">
+            <select id="editTestPaperName">
+
+                <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
+                <option value="Lecture Test Paper">লেকচার টেস্ট পেপার (Lecture Test Paper)</option>
+                <option value="Panjeree Test Paper">পাঞ্জেরী টেস্ট পেপার (Panjeree Test Paper)</option>
+                <option value="Royal Test Paper">রয়্যাল টেস্ট পেপার (Royal Test Paper)</option>
+                <option value="Anupam Test Paper">অনুপম টেস্ট পেপার (Anupam Test Paper)</option>
+                <option value="Nobodoot Test Paper">নবদূত টেস্ট পেপার (Nobodoot Test Paper)</option>
+                <option value="Akkhorpotro Test Paper">অক্ষরপত্র টেস্ট পেপার (Akkhorpotro)</option>
+                <option value="Dikdarshan Test Paper">দিকদর্শন টেস্ট পেপার (Dikdarshan)</option>
+                <option value="Joykoly Test Paper">জয়কলি টেস্ট পেপার (Joykoly)</option>
+                <option value="Other">অন্যান্য প্রকাশনী (Other)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editModelTestNo">মডেল টেস্ট নম্বর</label>
+            <select id="editModelTestNo">
+
+                <option value="">-- মডেল টেস্ট নম্বর নির্বাচন করুন --</option>
+                <option value="Model Test 01">Model Test 01 (মডেল টেস্ট ০১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 02">Model Test 02 (মডেল টেস্ট ০২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 03">Model Test 03 (মডেল টেস্ট ০৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 04">Model Test 04 (মডেল টেস্ট ০৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 05">Model Test 05 (মডেল টেস্ট ০৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 06">Model Test 06 (মডেল টেস্ট ০৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 07">Model Test 07 (মডেল টেস্ট ০৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 08">Model Test 08 (মডেল টেস্ট ০৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 09">Model Test 09 (মডেল টেস্ট ০৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 10">Model Test 10 (মডেল টেস্ট ১০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 11">Model Test 11 (মডেল টেস্ট ১১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 12">Model Test 12 (মডেল টেস্ট ১২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 13">Model Test 13 (মডেল টেস্ট ১৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 14">Model Test 14 (মডেল টেস্ট ১৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 15">Model Test 15 (মডেল টেস্ট ১৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 16">Model Test 16 (মডেল টেস্ট ১৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 17">Model Test 17 (মডেল টেস্ট ১৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 18">Model Test 18 (মডেল টেস্ট ১৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 19">Model Test 19 (মডেল টেস্ট ১৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 20">Model Test 20 (মডেল টেস্ট ২০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 21">Model Test 21 (মডেল টেস্ট ২১ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 22">Model Test 22 (মডেল টেস্ট ২২ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 23">Model Test 23 (মডেল টেস্ট ২৩ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 24">Model Test 24 (মডেল টেস্ট ২৪ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 25">Model Test 25 (মডেল টেস্ট ২৫ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 26">Model Test 26 (মডেল টেস্ট ২৬ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 27">Model Test 27 (মডেল টেস্ট ২৭ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 28">Model Test 28 (মডেল টেস্ট ২৮ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 29">Model Test 29 (মডেল টেস্ট ২৯ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 30">Model Test 30 (মডেল টেস্ট ৩০ - পূর্ণাঙ্গ সিলেবাস)</option>
+                <option value="Model Test 31">Model Test 31 (মডেল টেস্ট ৩১ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 32">Model Test 32 (মডেল টেস্ট ৩২ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 33">Model Test 33 (মডেল টেস্ট ৩৩ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 34">Model Test 34 (মডেল টেস্ট ৩৪ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 35">Model Test 35 (মডেল টেস্ট ৩৫ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 36">Model Test 36 (মডেল টেস্ট ৩৬ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 37">Model Test 37 (মডেল টেস্ট ৩৭ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 38">Model Test 38 (মডেল টেস্ট ৩৮ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 39">Model Test 39 (মডেল টেস্ট ৩৯ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 40">Model Test 40 (মডেল টেস্ট ৪০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 41">Model Test 41 (মডেল টেস্ট ৪১ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 42">Model Test 42 (মডেল টেস্ট ৪২ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 43">Model Test 43 (মডেল টেস্ট ৪৩ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 44">Model Test 44 (মডেল টেস্ট ৪৪ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 45">Model Test 45 (মডেল টেস্ট ৪৫ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 46">Model Test 46 (মডেল টেস্ট ৪৬ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 47">Model Test 47 (মডেল টেস্ট ৪৭ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 48">Model Test 48 (মডেল টেস্ট ৪৮ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 49">Model Test 49 (মডেল টেস্ট ৪৯ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+                <option value="Model Test 50">Model Test 50 (মডেল টেস্ট ৫০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
+            </select>
           </div>
         </div>
       `;
@@ -1816,6 +2570,11 @@
       }
 
       body.innerHTML = formHtml;
+      if (currentEditingItem.collegeName) document.getElementById('editCollegeName').value = currentEditingItem.collegeName;
+      if (currentEditingItem.examYear) document.getElementById('editExamYear').value = currentEditingItem.examYear;
+      if (currentEditingItem.testPaperName) document.getElementById('editTestPaperName').value = currentEditingItem.testPaperName;
+      if (currentEditingItem.modelTestNo) document.getElementById('editModelTestNo').value = currentEditingItem.modelTestNo;
+      syncMultiSelectDisplay('edit');
 
       // সেট সিলেক্টেড ভ্যালুজ
       const chSelect = document.getElementById('editChapter');
@@ -1857,12 +2616,7 @@
         btn.disabled = true;
         btn.innerHTML = '⏳ আপডেট হচ্ছে...';
 
-        const categoryTypes = [];
-        if (document.getElementById('editCatBoard').checked) categoryTypes.push('Board Question');
-        if (document.getElementById('editCatCollege').checked) categoryTypes.push('College Test Paper');
-        if (document.getElementById('editCatModel').checked) categoryTypes.push('Model Test');
-        if (document.getElementById('editCatChapter').checked) categoryTypes.push('Chapter Practice');
-
+        const categoryTypes = Array.from(document.querySelectorAll('input[name="editCategory"]:checked')).map(cb => cb.value);
         if (categoryTypes.length === 0) {
           showToast('সতর্কতা', 'কমপক্ষে একটি প্রশ্ন টাইপ নির্বাচন করুন', 'error');
           return;
@@ -1873,6 +2627,7 @@
         const collegeName = document.getElementById('editCollegeName').value;
         const examYear = document.getElementById('editExamYear').value;
         const testPaperName = document.getElementById('editTestPaperName').value;
+        const modelTestNo = document.getElementById('editModelTestNo').value;
 
         let payload = {
           categoryTypes,
@@ -1881,7 +2636,8 @@
           boardName,
           collegeName,
           examYear,
-          testPaperName
+          testPaperName,
+          modelTestNo
         };
 
         let url = '';
