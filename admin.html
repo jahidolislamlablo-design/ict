@@ -941,17 +941,8 @@
             <div class="form-group">
               <label for="mcqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
               <select id="mcqTestPaperName">
-
                 <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
-                <option value="Lecture Test Paper">লেকচার টেস্ট পেপার (Lecture Test Paper)</option>
-                <option value="Panjeree Test Paper">পাঞ্জেরী টেস্ট পেপার (Panjeree Test Paper)</option>
-                <option value="Royal Test Paper">রয়্যাল টেস্ট পেপার (Royal Test Paper)</option>
-                <option value="Anupam Test Paper">অনুপম টেস্ট পেপার (Anupam Test Paper)</option>
-                <option value="Nobodoot Test Paper">নবদূত টেস্ট পেপার (Nobodoot Test Paper)</option>
-                <option value="Akkhorpotro Test Paper">অক্ষরপত্র টেস্ট পেপার (Akkhorpotro)</option>
-                <option value="Dikdarshan Test Paper">দিকদর্শন টেস্ট পেপার (Dikdarshan)</option>
-                <option value="Joykoly Test Paper">জয়কলি টেস্ট পেপার (Joykoly)</option>
-                <option value="Other">অন্যান্য প্রকাশনী (Other)</option>
+                <option value="টেস্ট পেপার ২০২৬">টেস্ট পেপার ২০২৬ (Test Paper 2026)</option>
               </select>
             </div>
 
@@ -1218,17 +1209,8 @@
             <div class="form-group">
               <label for="cqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
               <select id="cqTestPaperName">
-
                 <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
-                <option value="Lecture Test Paper">লেকচার টেস্ট পেপার (Lecture Test Paper)</option>
-                <option value="Panjeree Test Paper">পাঞ্জেরী টেস্ট পেপার (Panjeree Test Paper)</option>
-                <option value="Royal Test Paper">রয়্যাল টেস্ট পেপার (Royal Test Paper)</option>
-                <option value="Anupam Test Paper">অনুপম টেস্ট পেপার (Anupam Test Paper)</option>
-                <option value="Nobodoot Test Paper">নবদূত টেস্ট পেপার (Nobodoot Test Paper)</option>
-                <option value="Akkhorpotro Test Paper">অক্ষরপত্র টেস্ট পেপার (Akkhorpotro)</option>
-                <option value="Dikdarshan Test Paper">দিকদর্শন টেস্ট পেপার (Dikdarshan)</option>
-                <option value="Joykoly Test Paper">জয়কলি টেস্ট পেপার (Joykoly)</option>
-                <option value="Other">অন্যান্য প্রকাশনী (Other)</option>
+                <option value="টেস্ট পেপার ২০২৬">টেস্ট পেপার ২০২৬ (Test Paper 2026)</option>
               </select>
             </div>
 
@@ -1400,10 +1382,65 @@
           </button>
         </div>
 
-        <div style="margin-bottom: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <button class="btn btn-secondary" onclick="filterPreview('all')" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">সব দেখুন</button>
-          <button class="btn btn-secondary" onclick="filterPreview('mcq')" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">শুধুমাত্র MCQ</button>
-          <button class="btn btn-secondary" onclick="filterPreview('cq')" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">শুধুমাত্র CQ</button>
+        <div style="margin-bottom: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; justify-content: space-between; background: #f8fafc; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <!-- বাম পাশে টাইপ ফিল্টার বাটন -->
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+            <button id="filterBtnAll" type="button" class="btn btn-primary" onclick="filterPreview('all')" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">সব দেখুন</button>
+            <button id="filterBtnMcq" type="button" class="btn btn-secondary" onclick="filterPreview('mcq')" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">শুধুমাত্র MCQ</button>
+            <button id="filterBtnCq" type="button" class="btn btn-secondary" onclick="filterPreview('cq')" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">শুধুমাত্র CQ</button>
+            <span id="filterCountBadge" style="font-size: 0.8rem; background: #e2e8f0; color: #334155; padding: 0.25rem 0.6rem; border-radius: 20px; font-weight: 600;">লোড হচ্ছে...</span>
+          </div>
+
+          <!-- ডান পাশে অধ্যায়, বোর্ড ও কলেজ ফিল্টার -->
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+            <!-- অধ্যায় ফিল্টার -->
+            <select id="filterChapter" onchange="applyPreviewFilters()" style="padding: 0.45rem 0.65rem; font-size: 0.85rem; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: #ffffff; color: var(--text-color); max-width: 200px; cursor: pointer;">
+              <option value="all">📚 সকল অধ্যায়</option>
+              <option value="Chapter 1">অধ্যায় ১: তথ্য ও যোগাযোগ প্রযুক্তি</option>
+              <option value="Chapter 2">অধ্যায় ২: কমিউনিকেশন সিস্টেমস</option>
+              <option value="Chapter 3 (১ম)">অধ্যায় ৩ (১ম অংশ): সংখ্যা পদ্ধতি</option>
+              <option value="Chapter 3 (২য়)">অধ্যায় ৩ (২য় অংশ): ডিজিটাল ডিভাইস</option>
+              <option value="Chapter 4">অধ্যায় ৪: ওয়েব ডিজাইন ও HTML</option>
+              <option value="Chapter 5">অধ্যায় ৫: সি প্রোগ্রামিং</option>
+              <option value="Chapter 6">অধ্যায় ৬: ডাটাবেজ ম্যানেজমেন্ট</option>
+            </select>
+
+            <!-- বোর্ড ফিল্টার -->
+            <select id="filterBoard" onchange="applyPreviewFilters()" style="padding: 0.45rem 0.65rem; font-size: 0.85rem; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: #ffffff; color: var(--text-color); max-width: 170px; cursor: pointer;">
+              <option value="all">🏛️ সকল বোর্ড</option>
+              <option value="Dhaka">ঢাকা বোর্ড (Dhaka)</option>
+              <option value="Rajshahi">রাজশাহী বোর্ড (Rajshahi)</option>
+              <option value="Cumilla">কুমিল্লা বোর্ড (Cumilla)</option>
+              <option value="Jashore">যশোর বোর্ড (Jashore)</option>
+              <option value="Chattogram">চট্টগ্রাম বোর্ড (Chattogram)</option>
+              <option value="Barishal">বরিশাল বোর্ড (Barishal)</option>
+              <option value="Sylhet">সিলেট বোর্ড (Sylhet)</option>
+              <option value="Dinajpur">দিনাজপুর বোর্ড (Dinajpur)</option>
+              <option value="Mymensingh">ময়মনসিংহ বোর্ড (Mymensingh)</option>
+              <option value="Madrasah">মাদ্রাসা বোর্ড (Madrasah)</option>
+            </select>
+
+            <!-- কলেজ ফিল্টার -->
+            <select id="filterCollege" onchange="applyPreviewFilters()" style="padding: 0.45rem 0.65rem; font-size: 0.85rem; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: #ffffff; color: var(--text-color); max-width: 190px; cursor: pointer;">
+              <option value="all">🏫 সকল কলেজ</option>
+              <option value="Notre Dame">নটর ডেম কলেজ</option>
+              <option value="Dhaka College">ঢাকা কলেজ</option>
+              <option value="Viqarunnisa">ভিকারুননিসা নূন স্কুল ও কলেজ</option>
+              <option value="RAJUK">রাজউক উত্তরা মডেল কলেজ</option>
+              <option value="Residential">রেসিডেনসিয়াল মডেল কলেজ</option>
+              <option value="City College">ঢাকা সিটি কলেজ</option>
+              <option value="Adamjee">আদমজী ক্যান্টনমেন্ট কলেজ</option>
+              <option value="Holy Cross">হলিক্রস কলেজ</option>
+              <option value="Ideal">আইডিয়াল স্কুল অ্যান্ড কলেজ</option>
+              <option value="Chittagong College">চট্টগ্রাম কলেজ</option>
+              <option value="Rajshahi College">রাজশাহী কলেজ</option>
+            </select>
+
+            <!-- ফিল্টার রিসেট বাটন -->
+            <button type="button" class="btn btn-secondary" onclick="resetPreviewFilters()" title="সব ফিল্টার রিসেট করুন" style="padding: 0.45rem 0.75rem; font-size: 0.85rem;">
+              ✕ রিসেট
+            </button>
+          </div>
         </div>
 
         <div class="table-container">
@@ -1599,11 +1636,7 @@
   </datalist>
 
   <datalist id="testPaperList">
-    <option value="Royal Test Paper">
-    <option value="Lecture Test Paper">
-    <option value="Panjeree Test Paper">
-    <option value="Made Easy">
-    <option value="Nobodoot Test Paper">
+    <option value="টেস্ট পেপার ২০২৬">
   </datalist>
 
   <div class="toast-container" id="toastContainer"></div>
@@ -1613,13 +1646,18 @@
   </footer>
 
   <script>
-    const API_BASE = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
-      ? window.location.origin
-      : 'http://localhost:5000';
+    const API_BASE = (window.location.port === '5000' || (window.location.origin && window.location.origin.includes(':5000')))
+      ? ''
+      : ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? 'http://localhost:5000'
+        : (window.location.protocol.startsWith('http') && window.location.hostname ? `${window.location.protocol}//${window.location.hostname}:5000` : 'http://localhost:5000'));
 
     let allMcqs = [];
     let allCqs = [];
     let currentFilter = 'all';
+    let selectedChapterFilter = 'all';
+    let selectedBoardFilter = 'all';
+    let selectedCollegeFilter = 'all';
     let currentEditingItem = null;
     let currentEditingType = null;
 
@@ -2157,13 +2195,61 @@
 
     async function loadDatabaseItems() {
       await updateCounts();
+      populateCollegeFilterOptions();
       renderPreviewTable();
-          loadPdfItems();
+      loadPdfItems();
     }
 
     function filterPreview(type) {
       currentFilter = type;
+      const btnAll = document.getElementById('filterBtnAll');
+      const btnMcq = document.getElementById('filterBtnMcq');
+      const btnCq = document.getElementById('filterBtnCq');
+      if (btnAll) btnAll.className = type === 'all' ? 'btn btn-primary' : 'btn btn-secondary';
+      if (btnMcq) btnMcq.className = type === 'mcq' ? 'btn btn-primary' : 'btn btn-secondary';
+      if (btnCq) btnCq.className = type === 'cq' ? 'btn btn-primary' : 'btn btn-secondary';
       renderPreviewTable();
+    }
+
+    function applyPreviewFilters() {
+      selectedChapterFilter = document.getElementById('filterChapter') ? document.getElementById('filterChapter').value : 'all';
+      selectedBoardFilter = document.getElementById('filterBoard') ? document.getElementById('filterBoard').value : 'all';
+      selectedCollegeFilter = document.getElementById('filterCollege') ? document.getElementById('filterCollege').value : 'all';
+      renderPreviewTable();
+    }
+
+    function resetPreviewFilters() {
+      currentFilter = 'all';
+      selectedChapterFilter = 'all';
+      selectedBoardFilter = 'all';
+      selectedCollegeFilter = 'all';
+      if (document.getElementById('filterChapter')) document.getElementById('filterChapter').value = 'all';
+      if (document.getElementById('filterBoard')) document.getElementById('filterBoard').value = 'all';
+      if (document.getElementById('filterCollege')) document.getElementById('filterCollege').value = 'all';
+      filterPreview('all');
+    }
+
+    function populateCollegeFilterOptions() {
+      const select = document.getElementById('filterCollege');
+      if (!select) return;
+      const currentVal = select.value;
+      const existingValues = Array.from(select.options).map(o => o.value.toLowerCase());
+      const added = new Set(existingValues);
+
+      [...allMcqs, ...allCqs].forEach(item => {
+        if (item.collegeName && item.collegeName.trim()) {
+          const colName = item.collegeName.trim();
+          const colLower = colName.toLowerCase();
+          if (!added.has(colLower)) {
+            added.add(colLower);
+            const opt = document.createElement('option');
+            opt.value = colName;
+            opt.textContent = colName;
+            select.appendChild(opt);
+          }
+        }
+      });
+      select.value = currentVal;
     }
 
     function renderPreviewTable() {
@@ -2177,6 +2263,46 @@
       }
       if (currentFilter === 'all' || currentFilter === 'cq') {
         items = items.concat(allCqs.map(item => ({ ...item, _type: 'CQ' })));
+      }
+
+      // অধ্যায় ফিল্টার
+      if (selectedChapterFilter && selectedChapterFilter !== 'all') {
+        const query = selectedChapterFilter.toLowerCase();
+        items = items.filter(item => {
+          if (!item.chapter) return false;
+          const ch = item.chapter.toLowerCase();
+          if (query.includes('chapter 1') || query === 'chapter 1') return ch.includes('chapter 1') || ch.includes('অধ্যায় ১') || ch.includes('বিশ্ব ও বাংলাদেশ');
+          if (query.includes('chapter 2') || query === 'chapter 2') return ch.includes('chapter 2') || ch.includes('অধ্যায় ২') || ch.includes('কমিউনিকেশন');
+          if (query.includes('১ম')) return ch.includes('সংখ্যা') || ch.includes('number') || ch.includes('১ম');
+          if (query.includes('২য়')) return ch.includes('ডিজিটাল') || ch.includes('digital') || ch.includes('২য়');
+          if (query.includes('chapter 4') || query === 'chapter 4') return ch.includes('chapter 4') || ch.includes('অধ্যায় ৪') || ch.includes('html');
+          if (query.includes('chapter 5') || query === 'chapter 5') return ch.includes('chapter 5') || ch.includes('অধ্যায় ৫') || ch.includes('c program') || ch.includes('প্রোগ্রামিং');
+          if (query.includes('chapter 6') || query === 'chapter 6') return ch.includes('chapter 6') || ch.includes('অধ্যায় ৬') || ch.includes('dbms') || ch.includes('ডাটাবেজ');
+          return ch.includes(query);
+        });
+      }
+
+      // বোর্ড ফিল্টার
+      if (selectedBoardFilter && selectedBoardFilter !== 'all') {
+        const query = selectedBoardFilter.toLowerCase();
+        items = items.filter(item => {
+          if (!item.boardName) return false;
+          return item.boardName.toLowerCase().includes(query);
+        });
+      }
+
+      // কলেজ ফিল্টার
+      if (selectedCollegeFilter && selectedCollegeFilter !== 'all') {
+        const query = selectedCollegeFilter.toLowerCase();
+        items = items.filter(item => {
+          if (!item.collegeName) return false;
+          return item.collegeName.toLowerCase().includes(query);
+        });
+      }
+
+      const countBadge = document.getElementById('filterCountBadge');
+      if (countBadge) {
+        countBadge.textContent = `প্রদর্শিত: ${items.length} টি`;
       }
 
       if (items.length === 0) {
@@ -2404,17 +2530,8 @@
           <div class="form-group">
             <label for="editTestPaperName">টেস্ট পেপার প্রকাশনী</label>
             <select id="editTestPaperName">
-
                 <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
-                <option value="Lecture Test Paper">লেকচার টেস্ট পেপার (Lecture Test Paper)</option>
-                <option value="Panjeree Test Paper">পাঞ্জেরী টেস্ট পেপার (Panjeree Test Paper)</option>
-                <option value="Royal Test Paper">রয়্যাল টেস্ট পেপার (Royal Test Paper)</option>
-                <option value="Anupam Test Paper">অনুপম টেস্ট পেপার (Anupam Test Paper)</option>
-                <option value="Nobodoot Test Paper">নবদূত টেস্ট পেপার (Nobodoot Test Paper)</option>
-                <option value="Akkhorpotro Test Paper">অক্ষরপত্র টেস্ট পেপার (Akkhorpotro)</option>
-                <option value="Dikdarshan Test Paper">দিকদর্শন টেস্ট পেপার (Dikdarshan)</option>
-                <option value="Joykoly Test Paper">জয়কলি টেস্ট পেপার (Joykoly)</option>
-                <option value="Other">অন্যান্য প্রকাশনী (Other)</option>
+                <option value="টেস্ট পেপার ২০২৬">টেস্ট পেপার ২০২৬ (Test Paper 2026)</option>
             </select>
           </div>
           <div class="form-group">

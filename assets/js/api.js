@@ -24,16 +24,33 @@ function getApiBaseUrl() {
         return CONFIG.LIVE_API_URL.trim().replace(/\/+$/, '');
     }
 
+    // ১. ব্যাকএন্ড পোর্ট (৫০০০) থেকে যেকোনো ডিভাইসে (পিসি বা মোবাইল) ব্রাউজ করলে রিলেটিভ রুট '' ব্যবহার হবে
+    if (window.location.port === '5000' || (window.location.origin && window.location.origin.includes(':5000'))) {
+        return '';
+    }
+
     const hostname = window.location.hostname;
+
+    // ২. লোকালহোস্ট বা ১২৭.০.০.১ (যদি অন্য পোর্ট e.g. লাইভ সার্ভার ৫৫০০ থেকে ব্রাউজ করা হয়)
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
-        if (window.location.port === '5000') {
-            return ''; // একই সার্ভার থেকে রিলেটিভ পাথ
-        }
         return CONFIG.LOCAL_API_URL;
+    }
+
+    // ৩. মোবাইল ফোন দিয়ে ওয়াইফাই বা লোকাল নেটওয়ার্কে পিসির আইপিতে ঢুকলে (e.g. 192.168.x.x, 10.x.x.x, 172.x.x.x)
+    if (/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(hostname)) {
+        return `${window.location.protocol}//${hostname}:5000`;
+    }
+
+    // ৪. যদি কোনো লাইভ ডোমেইনে থাকে (GitHub Pages ব্যতীত)
+    if (window.location.protocol.startsWith('http') && window.location.host && !window.location.host.includes('github.io')) {
+        return `${window.location.protocol}//${window.location.host}`;
     }
 
     return CONFIG.LOCAL_API_URL;
 }
+
+// গ্লোবাল ভ্যারিয়েবল এক্সপোর্ট যাতে অন্যান্য স্ক্রিপ্ট (যেমন pdf-suggestion.js) সরাসরি পায়
+window.BACKEND_URL = getApiBaseUrl();
 
 // জেনেরিক ফেচ হেল্পার যা ব্যাকএন্ডের সাথে যোগাযোগ করে
 async function fetchFromBackend(endpoint, options = {}) {
@@ -323,14 +340,56 @@ const MOCK_DATA = {
 
     pdfSuggestions: [
         {
-            id: "pdf-01",
-            title: "এইচএসসি আইসিটি সুপার সাজেশন ও জ্ঞান-অনুধাবন প্রশ্নব্যাংক (২০২৬/২০২৫)",
+            _id: "6adfa36938626371f01e28b3",
+            id: "6adfa36938626371f01e28b3",
+            title: "apps  + fb content  jahid sir ict full 4th chepter mcq",
+            category: "suggestion",
+            chapter: "৪র্থ অধ্যায়",
+            description: "৪র্থ অধ্যায়ের গুরুত্বপূর্ণ MCQ ও ব্যাখ্যাসহ সমাধান শিট",
+            pdfUrl: "/uploads/pdfs/1793041257178-874160668-apps____fb_content__jahid_sir_ict_full_4th_chepter_mcq.pdf",
+            originalFileName: "apps  + fb content  jahid sir ict full 4th chepter mcq.pdf",
+            fileSize: "0.6 MB",
+            pagesCount: "১৫ পৃষ্ঠা",
+            downloadsCount: 14
+        },
+        {
+            _id: "6adfa25d38626371f01e28b2",
+            id: "6adfa25d38626371f01e28b2",
+            title: "Citi Coachig - স্পেশাল আইসিটি মডেল প্রশ্ন",
             category: "suggestion",
             chapter: "সকল অধ্যায়",
-            size: "3.8 MB",
-            pages: 42,
-            downloads: 12450,
-            download_url: "#"
+            description: "সিটি কোচিং এর বিশেষ মডেল প্রশ্ন ও ফাইনাল রিভিশন শিট",
+            pdfUrl: "/uploads/pdfs/1793040989662-300337963-Citi_Coachig.pdf",
+            originalFileName: "Citi Coachig.pdf",
+            fileSize: "0.1 MB",
+            pagesCount: "১৫ পৃষ্ঠা",
+            downloadsCount: 8
+        },
+        {
+            _id: "6adfa21b38626371f01e28b1",
+            id: "6adfa21b38626371f01e28b1",
+            title: "3rd chapter 2nd part exam - ডিজিটাল ডিভাইস ও লজিক গেট",
+            category: "suggestion",
+            chapter: "৩য় অধ্যায়",
+            description: "৩য় অধ্যায় ২য় অংশ (ডিজিটাল ডিভাইস ও লজিক গেট) পরীক্ষার প্রশ্ন ও উত্তরমালা",
+            pdfUrl: "/uploads/pdfs/1793040923787-720132605-3rd_chapter_2nd_part_exam.pdf",
+            originalFileName: "3rd chapter 2nd part exam.pdf",
+            fileSize: "0.3 MB",
+            pagesCount: "১৫ পৃষ্ঠা",
+            downloadsCount: 26
+        },
+        {
+            _id: "6adf92a538626371f01e28b0",
+            id: "6adf92a538626371f01e28b0",
+            title: "HSC ICT 2026 Exam MCQ Suggestion 1st  Chapter",
+            category: "suggestion",
+            chapter: "১ম অধ্যায়",
+            description: "এইচএসসি ২০২৬ এর ১ম অধ্যায় (বিশ্ব ও বাংলাদেশ প্রেক্ষিত) শতভাগ কমন MCQ সুপার সাজেশন",
+            pdfUrl: "/uploads/pdfs/1793036965027-516918355-HSC_ICT_2026_Exam_MCQ_Suggestion_1st__Chapter_.pdf",
+            originalFileName: "HSC ICT 2026 Exam MCQ Suggestion 1st  Chapter .pdf",
+            fileSize: "0.8 MB",
+            pagesCount: "১৫ পৃষ্ঠা",
+            downloadsCount: 45
         }
     ],
 
@@ -457,20 +516,51 @@ const ApiService = {
      * পিডিএফ সাজেশন ও নোট লোড করা
      */
     async getAllPDFs(category = 'all', chapter = '') {
+        // ১. যদি লাইভ ব্যাকএন্ড চালু থাকে, সেখান থেকে ফেচ করার চেষ্টা
         try {
             let url = '/api/pdfs?';
             if (category && category !== 'all') url += `category=${encodeURIComponent(category)}&`;
             if (chapter && chapter !== 'all') url += `chapter=${encodeURIComponent(chapter)}&`;
             
             const res = await fetchFromBackend(url);
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data;
             }
-            return [];
         } catch (e) {
-            console.warn("Failed to load PDFs:", e);
-            return [];
+            // লাইভ ব্যাকএন্ড অফলাইন বা গিটহাব পেজেসে থাকলে ক্যাচ করে পরবর্তী ধাপে যাবে
         }
+
+        // ২. গিটহাব পেজেস বা স্ট্যাটিক হোস্টিংয়ের জন্য database/pdfs.json থেকে লোড
+        try {
+            const isPages = window.location.pathname.includes('/pages/');
+            const staticUrl = isPages ? '../database/pdfs.json' : 'database/pdfs.json';
+            const staticRes = await fetch(staticUrl);
+            if (staticRes.ok) {
+                const staticData = await staticRes.json();
+                if (Array.isArray(staticData) && staticData.length > 0) {
+                    let filtered = staticData;
+                    if (category && category !== 'all') {
+                        filtered = filtered.filter(p => p.category === category);
+                    }
+                    if (chapter && chapter !== 'all') {
+                        filtered = filtered.filter(p => p.chapter && p.chapter.includes(chapter));
+                    }
+                    return filtered;
+                }
+            }
+        } catch (err) {
+            // স্ট্যাটিক ফেচ ব্যর্থ হলে বিল্ট-ইন মেমোরি অবজেক্ট ব্যবহার হবে
+        }
+
+        // ৩. বিল্ট-ইন মেমোরি ফলব্যাক
+        let list = (MOCK_DATA && Array.isArray(MOCK_DATA.pdfSuggestions)) ? [...MOCK_DATA.pdfSuggestions] : [];
+        if (category && category !== 'all') {
+            list = list.filter(p => p.category === category);
+        }
+        if (chapter && chapter !== 'all') {
+            list = list.filter(p => p.chapter && p.chapter.includes(chapter));
+        }
+        return list;
     },
 
     /**

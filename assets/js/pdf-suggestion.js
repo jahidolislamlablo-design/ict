@@ -30,6 +30,28 @@ async function loadLivePdfs() {
     }
 }
 
+// পিডিএফ ফাইলের সঠিক পাথ নির্ধারণকারী হেল্পার (GitHub Pages, Localhost ও ডিরেক্ট ফাইলের জন্য)
+function resolvePdfUrl(rawUrl) {
+    if (!rawUrl) return '#';
+    if (/^https?:\/\//i.test(rawUrl)) return rawUrl;
+
+    // ১. ব্যাকএন্ড পোর্ট ৫০০০ এ থাকলে ডিরেক্ট রুট পাথ
+    if (window.location.port === '5000') {
+        return rawUrl.startsWith('/') ? rawUrl : '/' + rawUrl;
+    }
+
+    // ২. লোকালহোস্টে অন্য পোর্ট (যেমন Live Server 5500)
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (isLocalhost && typeof CONFIG !== 'undefined' && CONFIG.LOCAL_API_URL) {
+        return `${CONFIG.LOCAL_API_URL.replace(/\/+$/, '')}/${rawUrl.replace(/^\/+/, '')}`;
+    }
+
+    // ৩. GitHub Pages (/ict/) অথবা লোকাল ডিরেক্টরি (file://)
+    const cleanRel = rawUrl.replace(/^\/+/, '');
+    const inPages = window.location.pathname.includes('/pages/');
+    return inPages ? `../${cleanRel}` : cleanRel;
+}
+
 function renderPdfCards(pdfs) {
     const grid = document.querySelector('.pdf-grid');
     if (!grid) return;
@@ -42,13 +64,10 @@ function renderPdfCards(pdfs) {
         testpaper: { name: 'টেস্ট পেপার সমাধান', badge: 'badge-info' }
     };
 
-    const backendUrl = (typeof BACKEND_URL !== 'undefined') ? BACKEND_URL : 'http://localhost:5000';
-
     let html = '';
     pdfs.forEach(pdf => {
         const catInfo = catMap[pdf.category] || { name: 'সাজেশন নোট', badge: 'badge-primary' };
-        const isLocal = pdf.pdfUrl.startsWith('/uploads/');
-        const fullUrl = isLocal ? (backendUrl + pdf.pdfUrl) : pdf.pdfUrl;
+        const fullUrl = resolvePdfUrl(pdf.pdfUrl);
 
         html += `
             <div class="pdf-card" data-category="${pdf.category}">
@@ -71,7 +90,7 @@ function renderPdfCards(pdfs) {
                     ${pdf.description ? `<p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">${escapeHtml(pdf.description)}</p>` : ''}
                 </div>
                 <div class="pdf-actions">
-                    <a href="${fullUrl}" target="_blank" class="btn btn-outline btn-sm" style="text-decoration: none;">
+                    <a href="${fullUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="text-decoration: none;">
                         <i class="fa-solid fa-eye"></i> পড়ুন
                     </a>
                     <a href="${fullUrl}" download="${escapeHtml(pdf.originalFileName || pdf.title + '.pdf')}" class="btn btn-primary btn-sm" onclick="triggerDownload('${pdf._id}', '${escapeHtml(pdf.title)}')" style="text-decoration: none;">
