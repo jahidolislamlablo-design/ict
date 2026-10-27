@@ -2130,6 +2130,33 @@
       }
     }
 
+    
+    async function syncToGitHubPages(e) {
+      const btn = e ? e.currentTarget : null;
+      let originalText = '';
+      if (btn) {
+        originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '⏳ সিঙ্ক হচ্ছে...';
+      }
+      try {
+        const res = await fetch(`${API_BASE}/api/sync-github`, { method: 'POST' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল!', data.message || 'GitHub Pages এ সফলভাবে সিঙ্ক হয়েছে!', 'success');
+        } else {
+          showToast('ত্রুটি', data.message || 'সিঙ্ক করতে সমস্যা হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', 'সার্ভারে কানেক্ট করা যায়নি: ' + err.message, 'error');
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }
+      }
+    }
+
     async function deletePdf(id) {
       if (!confirm('আপনি কি নিশ্চিতভাবে এই পিডিএফটি মুছে ফেলতে চান?')) return;
 

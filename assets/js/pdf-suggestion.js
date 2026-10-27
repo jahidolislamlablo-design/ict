@@ -40,13 +40,18 @@ function resolvePdfUrl(rawUrl) {
         return rawUrl.startsWith('/') ? rawUrl : '/' + rawUrl;
     }
 
-    // ২. লোকালহোস্টে অন্য পোর্ট (যেমন Live Server 5500)
+    // ২. লাইভ ক্লাউড ব্যাকএন্ড URL কনফিগার করা থাকলে
+    if (typeof CONFIG !== 'undefined' && CONFIG.LIVE_API_URL && CONFIG.LIVE_API_URL.trim() !== '') {
+        return `${CONFIG.LIVE_API_URL.replace(/\/+$/, '')}/${rawUrl.replace(/^\/+/, '')}`;
+    }
+
+    // ৩. লোকালহোস্টে অন্য পোর্ট (যেমন Live Server 5500)
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     if (isLocalhost && typeof CONFIG !== 'undefined' && CONFIG.LOCAL_API_URL) {
         return `${CONFIG.LOCAL_API_URL.replace(/\/+$/, '')}/${rawUrl.replace(/^\/+/, '')}`;
     }
 
-    // ৩. GitHub Pages (/ict/) অথবা লোকাল ডিরেক্টরি (file://)
+    // ৪. GitHub Pages (/ict/) অথবা লোকাল ডিরেক্টরি (file://)
     const cleanRel = rawUrl.replace(/^\/+/, '');
     const inPages = window.location.pathname.includes('/pages/');
     return inPages ? `../${cleanRel}` : cleanRel;
