@@ -558,6 +558,68 @@ async function syncPdfsJson() {
   return syncDatabaseJson('pdfs');
 }
 
+
+// ------------------------------------------
+// ক. হেলথ ও MCQ রাউটস
+// ------------------------------------------
+
+// হেলথ চেক API
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ success: true, status: 'online', port: PORT, timestamp: new Date() });
+});
+
+// ১. সকল MCQ ফেচ করা (ফিল্টারিং সুবিধাসহ)
+app.get('/api/mcqs', async (req, res) => {
+  try {
+    const { 
+      chapter, 
+      categoryType, 
+      boardName, 
+      collegeName, 
+      examYear, 
+      testPaperName, 
+      modelTestNo 
+    } = req.query;
+
+    let filter = {};
+
+    if (chapter && chapter.trim()) {
+      filter.chapter = { $regex: buildChapterRegex(chapter) };
+    }
+
+    if (categoryType && categoryType.trim()) {
+      const cat = categoryType.trim();
+      filter.$or = [
+        { categoryTypes: { $in: [cat] } },
+        { categoryType: cat }
+      ];
+    }
+
+    if (boardName && boardName.trim() && boardName.toLowerCase() !== 'all') {
+      filter.boardName = { $regex: new RegExp(boardName.trim(), 'i') };
+    }
+    if (collegeName && collegeName.trim()) filter.collegeName = { $regex: buildCollegeRegex(collegeName) };
+    if (examYear && examYear.trim()) filter.examYear = examYear.trim();
+    if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
+    if (modelTestNo && modelTestNo.trim()) filter.modelTestNo = { $regex: new RegExp(modelTestNo.trim(), 'i') };
+
+    const mcqs = await Mcq.find(filter).sort({ createdAt: -1 });
+
+    res.status(200).json({
+      success: true,
+      count: mcqs.length,
+      filtersApplied: filter,
+      data: mcqs
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'MCQ ফেচ করার সময় সমস্যা হয়েছে',
+      error: error.message
+    });
+  }
+});
+
 // ২. ডাটাবেজে থাকা MCQ চ্যাপ্টারের তালিকা
 app.get('/api/mcqs/chapters', async (req, res) => {
   try {

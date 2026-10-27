@@ -2176,18 +2176,28 @@
       }
     }
 
-    async function checkServerHealth() {
+        async function checkServerHealth() {
       const dot = document.getElementById('serverStatusDot');
       const text = document.getElementById('serverStatusText');
 
       try {
-        const res = await fetch(`${API_BASE}/api/mcqs`, { cache: 'no-cache' });
-        if (res.ok) {
+        let isOnline = false;
+        try {
+          const hRes = await fetch(`${API_BASE}/api/health`, { cache: 'no-cache' });
+          if (hRes.ok) isOnline = true;
+        } catch (hErr) {}
+
+        if (!isOnline) {
+          const res = await fetch(`${API_BASE}/api/mcqs`, { cache: 'no-cache' });
+          if (res.ok) isOnline = true;
+        }
+
+        if (isOnline) {
           dot.className = 'status-dot online';
           text.textContent = 'সার্ভার অনলাইন (port 5000)';
           updateCounts();
         } else {
-          throw new Error('Server returned ' + res.status);
+          throw new Error('Server unreachable');
         }
       } catch (e) {
         dot.className = 'status-dot offline';
