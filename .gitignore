@@ -1,7 +1,14 @@
-# Backup directory
-_backup_old_structure/
+# Dependencies
+node_modules/
+package-lock.json
 
-# OS / Editor files
+# Environment variables
+.env
+
+# Editor & OS files
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Redundant legacy public folder (files are now directly in project root)
+public/

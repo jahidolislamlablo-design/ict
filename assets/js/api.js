@@ -412,8 +412,64 @@ const MOCK_DATA = {
 // ==========================================
 // ৪. API SERVICE METHODS (সঠিক ফিল্টারিং সহ)
 // ==========================================
-const ApiService = {
 
+// ==========================================
+// স্ট্যাটিক JSON ডাটা ফেচ হেল্পার (GitHub Pages ও অফলাইন মোড)
+// ==========================================
+let _staticCache = {};
+async function fetchStaticJson(filename) {
+    if (_staticCache[filename]) return _staticCache[filename];
+    try {
+        const isPages = window.location.pathname.includes('/pages/');
+        const staticUrl = isPages ? `../database/${filename}` : `database/${filename}`;
+        const res = await fetch(staticUrl);
+        if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data)) {
+                _staticCache[filename] = data;
+                return data;
+            }
+        }
+    } catch (e) {
+        console.warn(`Could not load ${filename}:`, e.message);
+    }
+    return [];
+}
+
+function hasCategory(item, catName) {
+    if (!item) return false;
+    if (Array.isArray(item.categoryTypes) && item.categoryTypes.includes(catName)) return true;
+    if (item.categoryType === catName) return true;
+    return false;
+}
+
+function matchesChapter(itemChapter, chapterId) {
+    if (!itemChapter || chapterId === undefined || chapterId === null || chapterId === 'all') return true;
+    const ic = String(itemChapter).toLowerCase();
+    const ch = String(chapterId).toLowerCase().trim();
+
+    if (ic.includes(ch)) return true;
+
+    if (ch === '3.1' || ch.includes('১ম অংশ') || ch.includes('সংখ্যা পদ্ধতি')) {
+        return ic.includes('3.1') || ic.includes('১ম অংশ') || ic.includes('সংখ্যা পদ্ধতি') || 
+               (ic.includes('3') && !ic.includes('ডিজিটাল ডিভাইস') && !ic.includes('২য় অংশ') && !ic.includes('লজিক গেট'));
+    }
+    if (ch === '3.2' || ch.includes('২য় অংশ') || ch.includes('ডিজিটাল ডিভাইস') || ch.includes('লজিক গেট')) {
+        return ic.includes('3.2') || ic.includes('২য় অংশ') || ic.includes('ডিজিটাল ডিভাইস') || ic.includes('লজিক গেট');
+    }
+
+    const banglaToEng = { '০':'0', '১':'1', '২':'2', '৩':'3', '৪':'4', '৫':'5', '৬':'6', '৭':'7', '৮':'8', '৯':'9' };
+    const toEngNum = (s) => String(s).replace(/[০-৯]/g, d => banglaToEng[d]);
+
+    const icNum = (toEngNum(ic).match(/\b([1-6])\b/) || [])[1];
+    const chNum = (toEngNum(ch).match(/\b([1-6])\b/) || [])[1];
+
+    if (icNum && chNum && icNum === chNum) return true;
+
+    return false;
+}
+
+const ApiService = {
     async getChapters() {
         return Promise.resolve(MOCK_DATA.chapters);
     },
@@ -422,8 +478,8 @@ const ApiService = {
         return Promise.resolve(MOCK_DATA.boards);
     },
 
-    async getColleges() {
-        return Promise.resolve(MOCK_DATA.colleges);
+    async getYears() {
+        return Promise.resolve(MOCK_DATA.years);
     },
 
     async getModelTests() {
@@ -434,7 +490,7 @@ const ApiService = {
         return Promise.resolve(MOCK_DATA.pdfSuggestions);
     },
 
-    // ১. বোর্ড প্রশ্ন লোড (MCQ) - শুধুমাত্র নির্বাচিত বোর্ড ও সালের প্রশ্ন
+    // ১. বোর্ড প্রশ্ন লোড (MCQ)
     async getBoardMCQ(boardCode, year) {
         try {
             let endpoint = '/api/mcqs?categoryType=Board Question';
@@ -446,22 +502,35 @@ const ApiService = {
             }
 
             const res = await fetchFromBackend(endpoint);
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendMcqToFrontend);
             }
-            return [];
-        } catch (e) {
-            console.warn("⚠️ Could not fetch from MongoDB, falling back to mock:", e.message);
-            showMixedContentNoticeIfNeeded();
-            return MOCK_DATA.questions.filter(q => {
-                const matchBoard = !boardCode || q.board_id === boardCode;
-                const matchYear = !year || q.year === year;
-                return matchBoard && matchYear;
+        } catch (e) {}
+
+        const allMcqs = await fetchStaticJson('mcqs.json');
+        if (allMcqs.length > 0) {
+            const filtered = allMcqs.filter(item => {
+                if (!hasCategory(item, 'Board Question')) return false;
+                if (boardCode && boardCode !== 'all') {
+                    const b = (item.boardName || '').toLowerCase();
+                    if (!b.includes(boardCode.toLowerCase())) return false;
+                }
+                if (year) {
+                    if (String(item.examYear) !== String(year)) return false;
+                }
+                return true;
             });
+            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
         }
+
+        return MOCK_DATA.questions.filter(q => {
+            const matchBoard = !boardCode || q.board_id === boardCode;
+            const matchYear = !year || q.year === year;
+            return matchBoard && matchYear;
+        });
     },
 
-    // ২. বোর্ড সৃজনশীল প্রশ্ন লোড (CQ) - শুধুমাত্র নির্বাচিত বোর্ড ও সালের প্রশ্ন
+    // ২. বোর্ড সৃজনশীল প্রশ্ন লোড (CQ)
     async getBoardCQ(boardCode, year) {
         try {
             let endpoint = '/api/cqs?categoryType=Board Question';
@@ -473,50 +542,63 @@ const ApiService = {
             }
 
             const res = await fetchFromBackend(endpoint);
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendCqToFrontend);
             }
-            return [];
-        } catch (e) {
-            console.warn("⚠️ Could not fetch CQs from backend:", e.message);
-            showMixedContentNoticeIfNeeded();
-            return [];
+        } catch (e) {}
+
+        const allCqs = await fetchStaticJson('cqs.json');
+        if (allCqs.length > 0) {
+            const filtered = allCqs.filter(item => {
+                if (!hasCategory(item, 'Board Question')) return false;
+                if (boardCode && boardCode !== 'all') {
+                    const b = (item.boardName || '').toLowerCase();
+                    if (!b.includes(boardCode.toLowerCase())) return false;
+                }
+                if (year) {
+                    if (String(item.examYear) !== String(year)) return false;
+                }
+                return true;
+            });
+            return filtered.map(mapBackendCqToFrontend);
         }
+        return [];
     },
 
-    // ৩. অধ্যায়ভিত্তিক MCQ লোড - শুধুমাত্র নির্দিষ্ট অধ্যায়ের অনুশীলন প্রশ্ন
-
-    /**
-     * মডেল টেস্ট নম্বর অনুযায়ী MCQ প্রশ্ন লোড করা
-     */
+    // ৩. মডেল টেস্ট MCQ
     async getModelTestMCQ(testIdentifier) {
-        try {
-            // testIdentifier e.g. "Model Test 01" or "মডেল টেস্ট - ০১"
-            let testKey = testIdentifier;
-            const match = testIdentifier.match(/(?:Model Test\s*|মডেল টেস্ট\s*[-–]?\s*)(\d+)/i);
-            if (match) {
-                const n = parseInt(match[1], 10);
-                const numStr = n < 10 ? '0' + n : '' + n;
-                testKey = 'Model Test ' + numStr;
-            }
+        let testKey = testIdentifier;
+        const match = testIdentifier.match(/(?:Model Test\s*|মডেল টেস্ট\s*[-–]?\s*)(\d+)/i);
+        if (match) {
+            const n = parseInt(match[1], 10);
+            const numStr = n < 10 ? '0' + n : '' + n;
+            testKey = 'Model Test ' + numStr;
+        }
 
+        try {
             const query = `/api/mcqs?categoryType=Model Test&modelTestNo=${encodeURIComponent(testKey)}`;
             const res = await fetchFromBackend(query);
-            if (res && res.success && res.data && res.data.length > 0) {
-                return res.data;
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
+                return res.data.map(mapBackendMcqToFrontend);
             }
-            return [];
-        } catch (e) {
-            console.warn("Failed to load model test questions:", e);
-            return [];
+        } catch (e) {}
+
+        const allMcqs = await fetchStaticJson('mcqs.json');
+        if (allMcqs.length > 0) {
+            const filtered = allMcqs.filter(item => {
+                if (!hasCategory(item, 'Model Test')) return false;
+                if (testKey && item.modelTestNo) {
+                    return item.modelTestNo.toLowerCase().includes(testKey.toLowerCase());
+                }
+                return true;
+            });
+            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
         }
+        return [];
     },
 
-    /**
-     * পিডিএফ সাজেশন ও নোট লোড করা
-     */
+    // ৪. সকল PDF লোড
     async getAllPDFs(category = 'all', chapter = '') {
-        // ১. যদি লাইভ ব্যাকএন্ড চালু থাকে, সেখান থেকে ফেচ করার চেষ্টা
         try {
             let url = '/api/pdfs?';
             if (category && category !== 'all') url += `category=${encodeURIComponent(category)}&`;
@@ -526,135 +608,141 @@ const ApiService = {
             if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data;
             }
-        } catch (e) {
-            // লাইভ ব্যাকএন্ড অফলাইন বা গিটহাব পেজেসে থাকলে ক্যাচ করে পরবর্তী ধাপে যাবে
-        }
+        } catch (e) {}
 
-        // ২. গিটহাব পেজেস বা স্ট্যাটিক হোস্টিংয়ের জন্য database/pdfs.json থেকে লোড
-        try {
-            const isPages = window.location.pathname.includes('/pages/');
-            const staticUrl = isPages ? '../database/pdfs.json' : 'database/pdfs.json';
-            const staticRes = await fetch(staticUrl);
-            if (staticRes.ok) {
-                const staticData = await staticRes.json();
-                if (Array.isArray(staticData) && staticData.length > 0) {
-                    let filtered = staticData;
-                    if (category && category !== 'all') {
-                        filtered = filtered.filter(p => p.category === category);
-                    }
-                    if (chapter && chapter !== 'all') {
-                        filtered = filtered.filter(p => p.chapter && p.chapter.includes(chapter));
-                    }
-                    return filtered;
-                }
+        const allPdfs = await fetchStaticJson('pdfs.json');
+        if (allPdfs.length > 0) {
+            let filtered = allPdfs;
+            if (category && category !== 'all') {
+                filtered = filtered.filter(p => p.category === category);
             }
-        } catch (err) {
-            // স্ট্যাটিক ফেচ ব্যর্থ হলে বিল্ট-ইন মেমোরি অবজেক্ট ব্যবহার হবে
+            if (chapter && chapter !== 'all') {
+                filtered = filtered.filter(p => p.chapter && p.chapter.includes(chapter));
+            }
+            return filtered;
         }
 
-        // ৩. বিল্ট-ইন মেমোরি ফলব্যাক
         let list = (MOCK_DATA && Array.isArray(MOCK_DATA.pdfSuggestions)) ? [...MOCK_DATA.pdfSuggestions] : [];
-        if (category && category !== 'all') {
-            list = list.filter(p => p.category === category);
-        }
-        if (chapter && chapter !== 'all') {
-            list = list.filter(p => p.chapter && p.chapter.includes(chapter));
-        }
+        if (category && category !== 'all') list = list.filter(p => p.category === category);
+        if (chapter && chapter !== 'all') list = list.filter(p => p.chapter && p.chapter.includes(chapter));
         return list;
     },
 
-    /**
-     * পিডিএফ ডাউনলোড রেকর্ড করা
-     */
     async recordPdfDownload(pdfId) {
         try {
             await fetchFromBackend(`/api/pdfs/${pdfId}/download`, { method: 'POST' });
-        } catch (e) {
-            // Silent fail
-        }
+        } catch (e) {}
     },
 
+    // ৫. অধ্যায়ভিত্তিক MCQ
     async getChapterMCQ(chapterId) {
         try {
-            let chapterNum = chapterId;
-
-            const endpoint = `/api/mcqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterNum)}`;
+            const endpoint = `/api/mcqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterId)}`;
             const res = await fetchFromBackend(endpoint);
-
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendMcqToFrontend);
             }
-            return [];
-        } catch (e) {
-            console.warn("⚠️ Chapter MCQ fallback:", e.message);
-            showMixedContentNoticeIfNeeded();
-            return MOCK_DATA.questions.filter(q => q.chapter_id == chapterId);
+        } catch (e) {}
+
+        const allMcqs = await fetchStaticJson('mcqs.json');
+        if (allMcqs.length > 0) {
+            const filtered = allMcqs.filter(item => {
+                if (!hasCategory(item, 'Chapter Practice')) return false;
+                return matchesChapter(item.chapter, chapterId);
+            });
+            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
         }
+
+        return MOCK_DATA.questions.filter(q => q.chapter_id == chapterId);
     },
 
-    // অধ্যায়ভিত্তিক CQ লোড
+    // ৬. অধ্যায়ভিত্তিক CQ
     async getChapterCQ(chapterId) {
         try {
-            let chapterNum = chapterId;
-
-            const endpoint = `/api/cqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterNum)}`;
+            const endpoint = `/api/cqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterId)}`;
             const res = await fetchFromBackend(endpoint);
-
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendCqToFrontend);
             }
-            return [];
-        } catch (e) {
-            console.warn("⚠️ Chapter CQ fallback:", e.message);
-            return [];
+        } catch (e) {}
+
+        const allCqs = await fetchStaticJson('cqs.json');
+        if (allCqs.length > 0) {
+            const filtered = allCqs.filter(item => {
+                if (!hasCategory(item, 'Chapter Practice')) return false;
+                return matchesChapter(item.chapter, chapterId);
+            });
+            return filtered.map(mapBackendCqToFrontend);
         }
+        return [];
     },
 
-    // ৪. টেস্ট পেপার / কলেজ ভিত্তিক MCQ লোড
-        // ৪.২ টেস্ট পেপার / কলেজ ভিত্তিক CQ লোড
+    // ৭. টেস্ট পেপার / কলেজ ভিত্তিক CQ
     async getCollegeCQ(collegeId) {
         try {
             let endpoint = `/api/cqs?categoryType=College Test Paper`;
             if (collegeId) endpoint += `&collegeName=${encodeURIComponent(collegeId)}`;
 
             const res = await fetchFromBackend(endpoint);
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendCqToFrontend);
             }
-            return [];
-        } catch (e) {
-            return [];
+        } catch (e) {}
+
+        const allCqs = await fetchStaticJson('cqs.json');
+        if (allCqs.length > 0) {
+            const filtered = allCqs.filter(item => {
+                if (!hasCategory(item, 'College Test Paper')) return false;
+                if (collegeId && item.collegeName) {
+                    return item.collegeName.toLowerCase().includes(collegeId.toLowerCase());
+                }
+                return true;
+            });
+            return filtered.map(mapBackendCqToFrontend);
         }
+        return [];
     },
 
+    // ৮. টেস্ট পেপার / কলেজ ভিত্তিক MCQ
     async getCollegeMCQ(collegeId) {
         try {
             let endpoint = `/api/mcqs?categoryType=College Test Paper`;
             if (collegeId) endpoint += `&collegeName=${encodeURIComponent(collegeId)}`;
 
             const res = await fetchFromBackend(endpoint);
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendMcqToFrontend);
             }
-            return [];
-        } catch (e) {
-            showMixedContentNoticeIfNeeded();
-            return [];
+        } catch (e) {}
+
+        const allMcqs = await fetchStaticJson('mcqs.json');
+        if (allMcqs.length > 0) {
+            const filtered = allMcqs.filter(item => {
+                if (!hasCategory(item, 'College Test Paper')) return false;
+                if (collegeId && item.collegeName) {
+                    return item.collegeName.toLowerCase().includes(collegeId.toLowerCase());
+                }
+                return true;
+            });
+            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
         }
+        return [];
     },
 
-    // ৫. সকল MCQ লোড (মডেল টেস্ট বা প্র্যাকটিসের জন্য)
+    // ৯. সকল MCQ লোড
     async getAllMCQ() {
         try {
             const res = await fetchFromBackend('/api/mcqs');
-            if (res && res.success && Array.isArray(res.data)) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendMcqToFrontend);
             }
-            return MOCK_DATA.questions;
-        } catch (e) {
-            showMixedContentNoticeIfNeeded();
-            return MOCK_DATA.questions;
+        } catch (e) {}
+
+        const allMcqs = await fetchStaticJson('mcqs.json');
+        if (allMcqs.length > 0) {
+            return allMcqs.map(mapBackendMcqToFrontend);
         }
+        return MOCK_DATA.questions;
     },
 
     async getUserProfile() {
@@ -669,13 +757,11 @@ const ApiService = {
             });
             return res;
         } catch (e) {
-            const results = JSON.parse(localStorage.getItem('ICT_RESULTS') || '[]');
-            results.push({ ...resultData, savedAt: new Date().toISOString() });
-            localStorage.setItem('ICT_RESULTS', JSON.stringify(results));
-            return { success: true, offline: true };
+            return { success: false };
         }
     }
 };
+
 
 // ==========================================
 // ৫. UNIVERSAL RENDERING FUNCTIONS (MCQ & CQ)
@@ -851,43 +937,10 @@ function checkMCQAnswer(element, isCorrect) {
     if (expBox) expBox.style.display = 'block';
 }
 
-function showMixedContentNoticeIfNeeded() {
-    if (window.location.protocol === 'https:' && !localStorage.getItem('ICT_LIVE_API_URL')) {
-        if (document.getElementById('mixed-content-banner')) return;
 
-        const banner = document.createElement('div');
-        banner.id = 'mixed-content-banner';
-        banner.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1E293B;
-            color: #F8FAFC;
-            padding: 14px 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 99999;
-            font-size: 0.88rem;
-            max-width: 90%;
-            width: 520px;
-            border-left: 4px solid #F59E0B;
-            line-height: 1.5;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        `;
-        banner.innerHTML = `
-            <div style="font-size: 1.3rem; line-height: 1;">💡</div>
-            <div style="flex: 1;">
-                <strong>লোকাল ডাটাবেজের প্রশ্ন দেখতে চান?</strong><br>
-                সাইটটি GitHub Pages (HTTPS)-এ রয়েছে। লোকাল MongoDB ডাটা দেখতে ব্রাউজারে <a href="http://localhost:5000" target="_blank" style="color: #60A5FA; font-weight: 600;">http://localhost:5000</a> ওপেন করুন অথবা ব্যাকএন্ডটি Render-এ ডেপ্লয় করুন।
-            </div>
-            <button onclick="this.parentElement.remove()" style="background:transparent; border:none; color:#94A3B8; font-size:1.2rem; cursor:pointer;">&times;</button>
-        `;
-        document.body.appendChild(banner);
-    }
-}
+// পপ-আপ নোটিশ ব্যবহারকারীর অনুরোধ অনুযায়ী স্থায়ীভাবে বন্ধ
+function showMixedContentNoticeIfNeeded() {}
+
 
 window.CONFIG = CONFIG;
 window.ApiService = ApiService;

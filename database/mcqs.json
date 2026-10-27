@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "6adf60c66bd1b438226b9098",
+    "categoryTypes": [
+      "Board Question",
+      "College Test Paper",
+      "Model Test",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+    "collegeName": "Notre Dame College, Dhaka",
+    "boardName": "Dhaka Board",
+    "examYear": "2026",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
+    "modelTestNo": "Model Test 01",
+    "question": "Test MCQ আমার সোনার বাংলা আমি তোমায় ভালোবাসি গানটি কার লেখা?",
+    "options": [
+      "নজরুল",
+      "রবি ঠাকুর",
+      "সুকান্ত",
+      "ফররুখ"
+    ],
+    "correctAnswer": "রবি ঠাকুর",
+    "explanation": "রবি ঠাকুর লিখেছেন",
+    "createdAt": "2026-10-26T14:16:38.147Z",
+    "__v": 0
+  },
+  {
+    "_id": "6adf50966bd1b438226b9097",
+    "categoryTypes": [
+      "Board Question"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "Rajshahi Board",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ppppppp",
+    "options": [
+      "pppppp",
+      "pppppp",
+      "tttttt",
+      "rrrrrrr"
+    ],
+    "correctAnswer": "tttttt",
+    "explanation": "ccccccc",
+    "createdAt": "2026-10-26T13:07:34.524Z",
+    "__v": 0
+  },
+  {
+    "_id": "6adf4ab4956c8de4ae677bc8",
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "অধ্যায় ৪: ওয়েব ডিজাইন পরিচিতি ও HTML",
+    "collegeName": "",
+    "boardName": "Dhaka Board",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এইচটিএমএল কী?",
+    "options": [
+      "মার্কআপ ল্যাঙ্গুয়েজ",
+      "প্রোগ্রামিং ল্যাঙ্গুয়েজ",
+      "হার্ডওয়্যার",
+      "অপারেটিং সিস্টেম"
+    ],
+    "correctAnswer": "মার্কআপ ল্যাঙ্গুয়েজ",
+    "explanation": "HTML হলো HyperText Markup Language",
+    "createdAt": "2026-10-26T12:42:28.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6adf1450baeff1d749bb06a1",
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "Dhaka College",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "amaxo;jpojdlaj",
+    "options": [
+      "akjhflashf",
+      "kjfdkjsdlkjf",
+      "kjhfliasyhf",
+      "kjsofiasyf"
+    ],
+    "correctAnswer": "kjfdkjsdlkjf",
+    "explanation": "o;ifuoiasf",
+    "createdAt": "2026-10-26T08:50:24.050Z",
+    "__v": 0,
+    "categoryTypes": [
+      "Chapter Practice"
+    ]
+  }
+]
