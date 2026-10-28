@@ -8,6 +8,13 @@
     gap: 24px;
     margin-bottom: 28px;
     align-items: start;
+    min-width: 0;
+    width: 100%;
+}
+
+.profile-layout-grid > * {
+    min-width: 0;
+    max-width: 100%;
 }
 
 /* User Card */
@@ -20,6 +27,9 @@
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 90px;
+    min-width: 0;
+    max-width: 100%;
+    word-break: break-word;
 }
 
 .profile-avatar-wrapper {
@@ -60,12 +70,14 @@
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 4px;
+    word-break: break-word;
 }
 
 .profile-role {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 12px;
+    word-break: break-word;
 }
 
 .profile-badges-row {
@@ -73,6 +85,7 @@
     justify-content: center;
     gap: 8px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 /* Stat Metrics Grid */
@@ -81,6 +94,8 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 24px;
+    min-width: 0;
+    width: 100%;
 }
 
 .metric-card {
@@ -93,6 +108,7 @@
     align-items: center;
     gap: 16px;
     transition: var(--transition);
+    min-width: 0;
 }
 
 .metric-card:hover {
@@ -111,17 +127,24 @@
     flex-shrink: 0;
 }
 
+.metric-info {
+    min-width: 0;
+    overflow: hidden;
+}
+
 .metric-info strong {
     display: block;
     font-size: 1.35rem;
     font-weight: 800;
     color: var(--text-primary);
     line-height: 1.2;
+    word-break: break-word;
 }
 
 .metric-info span {
     font-size: 0.82rem;
     color: var(--text-muted);
+    word-break: break-word;
 }
 
 /* Chapter Progress Bar List */
@@ -130,12 +153,14 @@
     flex-direction: column;
     gap: 16px;
     margin-top: 14px;
+    min-width: 0;
 }
 
 .progress-item {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-width: 0;
 }
 
 .progress-info-row {
@@ -144,6 +169,14 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-primary);
+    gap: 10px;
+}
+
+.progress-info-row span:first-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .progress-track {
@@ -161,11 +194,21 @@
     transition: width 0.5s ease;
 }
 
+/* Responsive Table Container */
+.table-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 14px;
+    display: block;
+}
+
 /* Recent History Table */
 .history-table {
     width: 100%;
+    min-width: 440px;
     border-collapse: collapse;
-    margin-top: 14px;
     font-size: 0.92rem;
 }
 
@@ -173,6 +216,7 @@
     padding: 12px 14px;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
 }
 
 .history-table th {
@@ -180,6 +224,12 @@
     color: var(--text-muted);
     font-size: 0.82rem;
     text-transform: uppercase;
+}
+
+.history-table th:nth-child(3),
+.history-table td:nth-child(3) {
+    text-align: center;
+    font-weight: 700;
 }
 
 @media (max-width: 992px) {
@@ -195,57 +245,48 @@
 }
 
 @media (max-width: 640px) {
+    .profile-layout-grid {
+        gap: 16px;
+    }
+    .profile-card {
+        padding: 20px 14px;
+        border-radius: var(--radius-lg);
+    }
     .metrics-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
     .metric-card {
-        padding: 14px;
-        gap: 10px;
+        padding: 10px 10px;
+        gap: 8px;
+        min-width: 0;
     }
     .metric-icon-box {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-    }
-    .metric-info strong {
-        font-size: 1.1rem;
-    }
-}
-
-
-/* Fix for mobile text & score wrapping */
-.history-table th, .history-table td {
-    white-space: nowrap !important;
-}
-
-.history-table th:nth-child(3),
-.history-table td:nth-child(3) {
-    white-space: nowrap !important;
-    text-align: center;
-    font-weight: 700;
-}
-
-@media (max-width: 640px) {
-    .metrics-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-    .metric-card {
-        padding: 10px 12px;
-        gap: 8px;
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        flex-shrink: 0;
     }
     .metric-info strong {
         font-size: 1.05rem;
-        white-space: nowrap;
+        white-space: normal;
+        word-break: break-word;
     }
     .metric-info span {
         font-size: 0.72rem;
-        white-space: nowrap;
+        white-space: normal;
+        line-height: 1.25;
+        word-break: break-word;
+        display: block;
     }
     .history-table th, .history-table td {
         padding: 8px 10px;
         font-size: 0.82rem;
-        white-space: nowrap !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
     }
 }

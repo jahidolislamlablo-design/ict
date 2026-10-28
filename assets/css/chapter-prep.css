@@ -33,7 +33,7 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .chapter-badge-icon {
@@ -47,25 +47,38 @@
     flex-shrink: 0;
 }
 
-.chapter-heading h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.3;
-    margin-bottom: 4px;
+.chapter-heading {
+    min-width: 0;
+    flex: 1;
 }
 
+/* অধ্যায়ের নাম: বড় ও বোল্ড */
 .chapter-heading span {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--primary);
+    display: block;
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
 }
 
-.chapter-desc {
-    font-size: 0.86rem;
+/* অধ্যায়ের নামের নিচে শিরোনাম: কিছুটা ছোট ও সাবটেল */
+.chapter-heading h3 {
+    font-size: 0.90rem;
+    font-weight: 600;
     color: var(--text-secondary);
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* টপিক্স এর নাম: ডেস্কটপে দৃশ্যমান */
+.chapter-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
     line-height: 1.5;
     margin-bottom: 16px;
+    display: block;
 }
 
 .chapter-footer-stats {
@@ -98,8 +111,33 @@
     border-radius: 3px;
 }
 
-@media (max-width: 640px) {
+/* মোবাইল রেসপন্সিভনেস (টপিক্স এর নাম লুকানো থাকবে, কার্ড আরও স্লিম ও কমপ্যাক্ট) */
+@media (max-width: 768px) {
     .chapters-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .chapter-prep-card {
+        padding: 16px 14px;
+        border-radius: var(--radius-md);
+    }
+    .chapter-card-top {
+        margin-bottom: 10px;
+        gap: 12px;
+    }
+    .chapter-badge-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+    .chapter-heading span {
+        font-size: 1.10rem;
+    }
+    .chapter-heading h3 {
+        font-size: 0.86rem;
+    }
+    /* মোবাইল স্ক্রিনে অধ্যায় ও টাইটেলের নিচের টপিক্স নাম হাইড থাকবে */
+    .chapter-desc {
+        display: none !important;
     }
 }

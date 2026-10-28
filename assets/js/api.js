@@ -814,6 +814,10 @@ function renderMCQCardHTML(q, index, options = {}) {
 }
 
 function renderCQCardHTML(cq, index) {
+    const cleanQ = (text, prefix) => {
+        if (!text) return '';
+        return text.replace(new RegExp('^\\s*\\(' + prefix + '\\)\\s*'), '').trim();
+    };
     const banglaDigits = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
     const qNum = (index + 1).toString().replace(/\d/g, d => banglaDigits[d] || d);
 
@@ -827,41 +831,41 @@ function renderCQCardHTML(cq, index) {
             <div class="cq-sub-questions" style="margin-top: 18px;">
                 <div class="cq-accordion">
                     <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(ক) ${cq.q_ka} <span style="color:var(--primary); font-size:0.85rem;">[মান: ১]</span></span>
+                        <span>(ক) ${cleanQ(cq.q_ka, "ক")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ১]</span></span>
                         <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
                     </div>
                     <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cq.a_ka || 'উত্তর সংযুক্ত করা হয়নি।'}
+                        <strong>উত্তর:</strong> ${cleanQ(cq.a_ka, "ক") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
                 <div class="cq-accordion">
                     <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(খ) ${cq.q_kha} <span style="color:var(--primary); font-size:0.85rem;">[মান: ২]</span></span>
+                        <span>(খ) ${cleanQ(cq.q_kha, "খ")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ২]</span></span>
                         <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
                     </div>
                     <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cq.a_kha || 'উত্তর সংযুক্ত করা হয়নি।'}
+                        <strong>উত্তর:</strong> ${cleanQ(cq.a_kha, "খ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
                 <div class="cq-accordion">
                     <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(গ) ${cq.q_ga} <span style="color:var(--primary); font-size:0.85rem;">[মান: ৩]</span></span>
+                        <span>(গ) ${cleanQ(cq.q_ga, "গ")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ৩]</span></span>
                         <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
                     </div>
                     <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cq.a_ga || 'উত্তর সংযুক্ত করা হয়নি।'}
+                        <strong>উত্তর:</strong> ${cleanQ(cq.a_ga, "গ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
                 <div class="cq-accordion">
                     <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(ঘ) ${cq.q_gha} <span style="color:var(--primary); font-size:0.85rem;">[মান: ৪]</span></span>
+                        <span>(ঘ) ${cleanQ(cq.q_gha, "ঘ")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ৪]</span></span>
                         <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
                     </div>
                     <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cq.a_gha || 'উত্তর সংযুক্ত করা হয়নি।'}
+                        <strong>উত্তর:</strong> ${cleanQ(cq.a_gha, "ঘ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
             </div>
