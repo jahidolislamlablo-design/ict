@@ -1,5 +1,19 @@
 [
   {
+    "_id": "6ae197744b23db786a463a51",
+    "title": "HSC 2026 EXAM SUGGESTION",
+    "category": "suggestion",
+    "chapter": "সকল অধ্যায়",
+    "description": "",
+    "pdfUrl": "/uploads/pdfs/1793169268552-834246476-HSC_2026_EXAM_SUGGESTION.pdf",
+    "originalFileName": "HSC 2026 EXAM SUGGESTION.pdf",
+    "fileSize": "0.4 MB",
+    "pagesCount": "১৫ পৃষ্ঠা",
+    "downloadsCount": 0,
+    "createdAt": "2026-10-28T06:34:28.597Z",
+    "__v": 0
+  },
+  {
     "_id": "6ae0844bebe4a8b6b3044d6d",
     "title": "HSC ICT 2027 Exams MCQ Suggestion 6th  Chapter",
     "category": "suggestion",
@@ -37,7 +51,7 @@
     "originalFileName": "HSC ICT 2026 Exam MCQ Suggestion 4th  Chapter   .pdf",
     "fileSize": "0.9 MB",
     "pagesCount": "১৫ পৃষ্ঠা",
-    "downloadsCount": 0,
+    "downloadsCount": 1,
     "createdAt": "2026-10-27T10:59:27.775Z",
     "__v": 0
   },
