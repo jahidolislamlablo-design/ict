@@ -165,7 +165,13 @@ function openChapterInteractiveView(chapterTitle, chapterId = null) {
     if (chapterListView) chapterListView.style.display = 'none';
     if (quizView) quizView.style.display = 'block';
 
-    if (titleEl) titleEl.innerText = activeChapter;
+    if (titleEl) {
+        if (window.innerWidth <= 768) {
+            titleEl.innerText = 'সৃজনশীল প্রশ্ন';
+        } else {
+            titleEl.innerText = activeChapter;
+        }
+    }
     if (backBtnText) backBtnText.innerText = 'অধ্যায়ে ফিরে যান';
 
     switchChapterInteractiveTab('cq'); // Open CQ or MCQ by default
@@ -200,6 +206,20 @@ async function switchChapterInteractiveTab(tab) {
 
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
+    }
+
+    const titleEl = document.getElementById('chapter-interactive-title');
+    if (window.innerWidth <= 768) {
+        if (titleEl) {
+            if (tab === 'cq') titleEl.innerText = 'সৃজনশীল প্রশ্ন';
+            else if (tab === 'model') titleEl.innerText = 'মডেল টেস্ট';
+            else titleEl.innerText = 'MCQ অনুশীলন';
+        }
+    } else {
+        if (titleEl) {
+            const typeLabel = (tab === 'cq') ? 'সৃজনশীল (CQ)' : ((tab === 'model') ? 'মডেল টেস্ট' : 'MCQ');
+            titleEl.innerText = `${activeChapter} - ${typeLabel}`;
+        }
     }
 
     if (tab === 'mcq') {

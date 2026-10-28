@@ -73,7 +73,12 @@ function openCollegeInteractiveView(collegeName, collegeId = '', initialTab = 'm
 
     const titleEl = document.getElementById('college-interactive-title');
     if (titleEl) {
-        titleEl.innerText = selectedCollege;
+        if (window.innerWidth <= 768) {
+            titleEl.innerText = (initialTab === 'cq') ? 'সৃজনশীল প্রশ্ন' : ((initialTab === 'model') ? 'মডেল টেস্ট' : 'MCQ অনুশীলন');
+        } else {
+            const yr = (typeof toBanglaNum === 'function') ? toBanglaNum(selectedTestYear) : selectedTestYear;
+            titleEl.innerText = `${selectedCollege} (${yr})`;
+        }
     }
 
     updateTestPaperStep();
@@ -100,6 +105,21 @@ async function switchCollegeInteractiveTab(tab) {
 
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
+    }
+
+    const titleEl = document.getElementById('college-interactive-title');
+    if (window.innerWidth <= 768) {
+        if (titleEl) {
+            if (tab === 'cq') titleEl.innerText = 'সৃজনশীল প্রশ্ন';
+            else if (tab === 'model') titleEl.innerText = 'মডেল টেস্ট';
+            else titleEl.innerText = 'MCQ অনুশীলন';
+        }
+    } else {
+        if (titleEl) {
+            const yr = (typeof toBanglaNum === 'function') ? toBanglaNum(selectedTestYear) : selectedTestYear;
+            const typeLabel = (tab === 'cq') ? 'সৃজনশীল (CQ)' : ((tab === 'model') ? 'মডেল টেস্ট' : 'MCQ');
+            titleEl.innerText = `${selectedCollege} (${yr}) - ${typeLabel}`;
+        }
     }
 
     const sectionSubtitle = document.getElementById('college-section-subtitle');

@@ -78,7 +78,12 @@ function openBoardInteractiveView(board, code = '', initialTab = 'mcq') {
 
     const titleEl = document.getElementById('board-interactive-title');
     if (titleEl) {
-        titleEl.innerText = `${selectedBoard} - ${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear}`;
+        if (window.innerWidth <= 768) {
+            titleEl.innerText = (initialTab === 'cq') ? 'সৃজনশীল প্রশ্ন' : ((initialTab === 'model') ? 'মডেল টেস্ট' : 'MCQ অনুশীলন');
+        } else {
+            const yr = (typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear;
+            titleEl.innerText = `${selectedBoard} (${yr})`;
+        }
     }
 
     updateStepView();
@@ -105,6 +110,21 @@ async function switchBoardInteractiveTab(tab) {
 
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
+    }
+
+    const titleEl = document.getElementById('board-interactive-title');
+    if (window.innerWidth <= 768) {
+        if (titleEl) {
+            if (tab === 'cq') titleEl.innerText = 'সৃজনশীল প্রশ্ন';
+            else if (tab === 'model') titleEl.innerText = 'মডেল টেস্ট';
+            else titleEl.innerText = 'MCQ অনুশীলন';
+        }
+    } else {
+        if (titleEl) {
+            const yr = (typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear;
+            const typeLabel = (tab === 'cq') ? 'সৃজনশীল (CQ)' : ((tab === 'model') ? 'মডেল টেস্ট' : 'MCQ');
+            titleEl.innerText = `${selectedBoard} (${yr}) - ${typeLabel}`;
+        }
     }
 
     const sectionSubtitle = document.getElementById('board-section-subtitle');
