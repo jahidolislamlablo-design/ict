@@ -496,7 +496,7 @@ function matchesChapter(itemChapter, chapterId) {
     const ic = String(itemChapter).toLowerCase();
     const ch = String(chapterId).toLowerCase().trim();
 
-    if (ic.includes(ch)) return true;
+    if (ic.includes(ch) || ch.includes(ic)) return true;
 
     if (ch === '3.1' || ch.includes('১ম অংশ') || ch.includes('সংখ্যা পদ্ধতি')) {
         return ic.includes('3.1') || ic.includes('১ম অংশ') || ic.includes('সংখ্যা পদ্ধতি') || 
@@ -509,10 +509,15 @@ function matchesChapter(itemChapter, chapterId) {
     const banglaToEng = { '০':'0', '১':'1', '২':'2', '৩':'3', '৪':'4', '৫':'5', '৬':'6', '৭':'7', '৮':'8', '৯':'9' };
     const toEngNum = (s) => String(s).replace(/[০-৯]/g, d => banglaToEng[d]);
 
-    const icNum = (toEngNum(ic).match(/\b([1-6])\b/) || [])[1];
-    const chNum = (toEngNum(ch).match(/\b([1-6])\b/) || [])[1];
+    const icNum = (toEngNum(ic).match(/\b([0-9]+)\b/) || [])[1];
+    const chNum = (toEngNum(ch).match(/\b([0-9]+)\b/) || [])[1];
 
     if (icNum && chNum && icNum === chNum) return true;
+
+    const words = ch.replace(/[^a-zA-Z0-9\u0980-\u09FF\s]/g, ' ').split(/\s+/).filter(w => w.length > 2);
+    for (const w of words) {
+        if (ic.includes(w)) return true;
+    }
 
     return false;
 }
@@ -807,6 +812,38 @@ const ApiService = {
         } catch (e) {
             return { success: false };
         }
+    },
+
+    async getCustomOptions() {
+        try {
+            const res = await fetchFromBackend('/api/custom-options');
+            if (res && res.success && res.data) {
+                return res.data;
+            }
+        } catch (e) {}
+
+        try {
+            const staticData = await fetchStaticJson('custom_options.json');
+            if (staticData && typeof staticData === 'object') {
+                return staticData;
+            }
+        } catch (e) {}
+
+        try {
+            const saved = JSON.parse(localStorage.getItem('custom_meta_options') || '[]');
+            const out = { chapters: [], boards: [], years: [], colleges: [], modelTests: [] };
+            saved.forEach(item => {
+                const key = item.type === 'chapter' ? 'chapters' :
+                            item.type === 'board' ? 'boards' :
+                            item.type === 'year' ? 'years' :
+                            item.type === 'college' ? 'colleges' :
+                            item.type === 'modelTest' ? 'modelTests' : (item.type + 's');
+                if (out[key] && !out[key].includes(item.val)) out[key].push(item.val);
+            });
+            return out;
+        } catch(e) {}
+
+        return { chapters: [], boards: [], years: [], colleges: [], modelTests: [] };
     }
 };
 

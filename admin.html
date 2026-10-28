@@ -2987,7 +2987,7 @@
       addCustomMetaOption(type, cleanVal, true);
     }
 
-    function addCustomMetaOption(type, val, save = true) {
+    async function addCustomMetaOption(type, val, save = true) {
       if (type === 'chapter') {
         appendOptionIfMissing('mcqChapter', val, val);
         appendOptionIfMissing('cqChapter', val, val);
@@ -3013,7 +3013,14 @@
             saved.push({ type, val });
             localStorage.setItem('custom_meta_options', JSON.stringify(saved));
           }
-          showToast('সফল!', `"${val}" সফলভাবে ড্রপডাউনে যুক্ত হয়েছে!`, 'success');
+          // Also sync to backend server API
+          fetch(`${API_BASE}/api/custom-options`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type, val })
+          }).catch(e => console.warn('Sync custom option API warning:', e.message));
+
+          showToast('সফল!', `"${val}" সফলভাবে ড্রপডাউনে যুক্ত ও সেভ হয়েছে!`, 'success');
         } catch(e) {}
       }
     }
@@ -3034,13 +3041,30 @@
       select.appendChild(opt);
     }
 
-    function loadCustomMetaOptions() {
+    async function loadCustomMetaOptions() {
       try {
         const saved = JSON.parse(localStorage.getItem('custom_meta_options') || '[]');
         saved.forEach(item => {
           addCustomMetaOption(item.type, item.val, false);
         });
       } catch(e) {}
+
+      try {
+        const res = await fetch(`${API_BASE}/api/custom-options`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.success && data.data) {
+            const d = data.data;
+            (d.chapters || []).forEach(val => addCustomMetaOption('chapter', val, false));
+            (d.boards || []).forEach(val => addCustomMetaOption('board', val, false));
+            (d.years || []).forEach(val => addCustomMetaOption('year', val, false));
+            (d.colleges || []).forEach(val => addCustomMetaOption('college', val, false));
+            (d.modelTests || []).forEach(val => addCustomMetaOption('modelTest', val, false));
+          }
+        }
+      } catch(e) {
+        console.warn('Backend custom options load error:', e.message);
+      }
     }
 
     // ==============================================

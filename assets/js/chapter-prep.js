@@ -12,7 +12,7 @@ let currentChapterMcqs = [];
 let desktopCurrentView = 'list'; // 'list', 'mcq', 'cq'
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialization
+    syncDynamicChapters();
 });
 
 function getChapterIdFromTitle(title) {
@@ -321,3 +321,64 @@ window.openChapterInteractiveView = openChapterInteractiveView;
 window.switchChapterInteractiveTab = switchChapterInteractiveTab;
 window.goBackChapterPrep = goBackChapterPrep;
 window.toggleDesktopChapterAnswers = toggleDesktopChapterAnswers;
+
+async function syncDynamicChapters() {
+    try {
+        const meta = await ApiService.getCustomOptions();
+        if (!meta || !Array.isArray(meta.chapters)) return;
+
+        const chaptersGrid = document.querySelector('.chapters-grid');
+        if (!chaptersGrid) return;
+
+        const existingCards = Array.from(chaptersGrid.querySelectorAll('.chapter-prep-card'));
+        const existingTexts = existingCards.map(c => c.innerText.toLowerCase());
+
+        meta.chapters.forEach(ch => {
+            const cleanCh = ch.trim();
+            if (!cleanCh || cleanCh === 'সকল অধ্যায়' || cleanCh === 'all') return;
+            const cleanLower = cleanCh.toLowerCase();
+
+            // Match if chapter already exists in default 6 chapters
+            const isPresent = existingTexts.some(et => 
+                et.includes(cleanLower) || 
+                (cleanLower.includes('chapter 1') && et.includes('১ম অধ্যায়')) ||
+                (cleanLower.includes('অধ্যায় ১') && et.includes('১ম অধ্যায়')) ||
+                (cleanLower.includes('chapter 2') && et.includes('২য় অধ্যায়')) ||
+                (cleanLower.includes('chapter 3') && et.includes('৩য় অধ্যায়')) ||
+                (cleanLower.includes('chapter 4') && et.includes('৪র্থ অধ্যায়')) ||
+                (cleanLower.includes('chapter 5') && et.includes('৫ম অধ্যায়')) ||
+                (cleanLower.includes('chapter 6') && et.includes('৬ষ্ঠ অধ্যায়'))
+            );
+
+            if (!isPresent) {
+                const card = document.createElement('div');
+                card.className = 'chapter-prep-card dynamic-chapter-card';
+                const safeCh = cleanCh.replace(/'/g, "\\'");
+                card.setAttribute('onclick', `openChapterModal('${safeCh}')`);
+                card.innerHTML = `
+                    <div class="chapter-card-top">
+                        <div class="chapter-badge-icon" style="background: #F0FDF4; color: #16A34A;">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div class="chapter-heading">
+                            <span>অধ্যায়</span>
+                            <h3>${cleanCh}</h3>
+                        </div>
+                    </div>
+                    <p class="chapter-desc">নতুন অধ্যায়ের প্রশ্ন ও পূর্ণাঙ্গ প্রস্তুতি।</p>
+                    <div class="chapter-footer-stats">
+                        <span><i class="fa-regular fa-circle-question"></i> অধ্যায়ভিত্তিক অনুশীলন</span>
+                        <div class="chapter-progress-wrapper">
+                            <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 0%;"></div></div>
+                            <span class="progress-percent">০%</span>
+                        </div>
+                    </div>
+                `;
+                chaptersGrid.appendChild(card);
+                existingTexts.push(cleanLower);
+            }
+        });
+    } catch(err) {
+        console.warn('syncDynamicChapters warning:', err);
+    }
+}

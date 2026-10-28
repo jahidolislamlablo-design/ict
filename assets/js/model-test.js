@@ -74,6 +74,7 @@ let isExamSubmitted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     initFilterTabs();
+    syncDynamicModelTests();
 });
 
 function initFilterTabs() {
@@ -505,5 +506,56 @@ function exitExam() {
         } else {
             window.location.href = '../index.html';
         }
+    }
+}
+
+async function syncDynamicModelTests() {
+    try {
+        const meta = await ApiService.getCustomOptions();
+        if (!meta || !Array.isArray(meta.modelTests)) return;
+
+        const grid = document.querySelector('.model-tests-grid');
+        if (!grid) return;
+
+        const existingCards = Array.from(grid.querySelectorAll('.test-card'));
+        const existingTitles = existingCards.map(c => {
+            const t = c.querySelector('.test-card-title');
+            return t ? t.innerText.trim().toLowerCase() : '';
+        });
+
+        meta.modelTests.forEach(mt => {
+            const cleanMt = mt.trim();
+            if (!cleanMt) return;
+            const cleanLower = cleanMt.toLowerCase();
+            if (!existingTitles.some(et => et.includes(cleanLower))) {
+                const card = document.createElement('div');
+                card.className = 'test-card dynamic-test-card';
+                card.setAttribute('data-category', 'full');
+                const safeMt = cleanMt.replace(/'/g, "\\'");
+                card.innerHTML = `
+                    <div>
+                        <div class="test-card-header">
+                            <span class="badge badge-primary">মডেল টেস্ট</span>
+                            <span class="badge badge-success"><i class="fa-solid fa-pen-nib"></i> নতুন</span>
+                        </div>
+                        <h3 class="test-card-title">${cleanMt}</h3>
+                        <p class="test-card-desc">পূর্ণাঙ্গ সিলেবাসের উপর ২৫টি বহুনির্বাচনি প্রশ্নের স্পিড টেস্ট।</p>
+                        <div class="test-meta">
+                            <span><i class="fa-regular fa-clock"></i> ২৫ মিনিট</span>
+                            <span><i class="fa-solid fa-list-ol"></i> ২৫টি প্রশ্ন</span>
+                            <span><i class="fa-solid fa-award"></i> ২৫ নম্বর</span>
+                        </div>
+                    </div>
+                    <button class="start-btn" onclick="startExam('${safeMt}', 25)">
+                        <span>পরীক্ষা শুরু করুন</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                `;
+                grid.appendChild(card);
+                existingTitles.push(cleanLower);
+            }
+        });
+    } catch(err) {
+        console.warn('syncDynamicModelTests warning:', err);
     }
 }

@@ -13,6 +13,7 @@ let currentBoardMcqs = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     updateStepView();
+    syncDynamicBoardsAndYears();
 });
 
 function getBoardCode(name) {
@@ -61,19 +62,16 @@ function openTypeModal(board, code = '') {
 
 function selectQuestionType(type) {
     closeTypeModal();
-    openBoardInteractiveView(selectedBoard, selectedBoardCode);
-    if (type === 'CQ') {
-        switchBoardInteractiveTab('cq');
-    } else {
-        switchBoardInteractiveTab('mcq');
-    }
+    const tab = (type === 'CQ' || type === 'cq') ? 'cq' : 'mcq';
+    openBoardInteractiveView(selectedBoard, selectedBoardCode, tab);
 }
 
 function closeTypeModal() {
-    goBackStep();
+    const modal = document.getElementById('typeModal');
+    if (modal) modal.classList.remove('open');
 }
 
-function openBoardInteractiveView(board, code = '') {
+function openBoardInteractiveView(board, code = '', initialTab = 'mcq') {
     selectedBoard = board;
     selectedBoardCode = code || getBoardCode(board);
     currentStep = 'questions';
@@ -84,7 +82,7 @@ function openBoardInteractiveView(board, code = '') {
     }
 
     updateStepView();
-    switchBoardInteractiveTab('mcq');
+    switchBoardInteractiveTab(initialTab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -277,3 +275,69 @@ window.openTypeModal = openTypeModal;
 window.openBoardInteractiveView = openBoardInteractiveView;
 window.switchBoardInteractiveTab = switchBoardInteractiveTab;
 window.goBackStep = goBackStep;
+
+async function syncDynamicBoardsAndYears() {
+    try {
+        const meta = await ApiService.getCustomOptions();
+        if (!meta) return;
+
+        // 1. Sync Years
+        const yearsGrid = document.querySelector('#step-years .years-grid');
+        if (yearsGrid && Array.isArray(meta.years)) {
+            const existingYearCards = Array.from(yearsGrid.querySelectorAll('.year-card'));
+            const existingYears = existingYearCards.map(c => {
+                const numEl = c.querySelector('.year-number');
+                return numEl ? numEl.innerText.trim() : '';
+            });
+
+            meta.years.forEach(yr => {
+                const bYear = (typeof toBanglaNum === 'function') ? toBanglaNum(yr) : yr;
+                if (!existingYears.some(ey => ey === yr || ey === bYear)) {
+                    const card = document.createElement('div');
+                    card.className = 'year-card dynamic-year-card';
+                    card.setAttribute('onclick', `selectYear('${yr}')`);
+                    card.innerHTML = `
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">${bYear}</div>
+                        <div class="year-sub">বোর্ড প্রশ্ন</div>
+                    `;
+                    yearsGrid.appendChild(card);
+                    existingYears.push(bYear);
+                }
+            });
+        }
+
+        // 2. Sync Boards
+        const boardsGrid = document.querySelector('#step-boards .boards-grid');
+        if (boardsGrid && Array.isArray(meta.boards)) {
+            const existingBoardCards = Array.from(boardsGrid.querySelectorAll('.board-card'));
+            const existingNames = existingBoardCards.map(c => {
+                const nameEl = c.querySelector('.board-name');
+                return nameEl ? nameEl.innerText.trim().toLowerCase() : '';
+            });
+
+            meta.boards.forEach(bd => {
+                const cleanBd = bd.trim();
+                const cleanLower = cleanBd.toLowerCase();
+                if (!existingNames.some(en => en.includes(cleanLower) || cleanLower.includes(en))) {
+                    const card = document.createElement('div');
+                    card.className = 'board-card dynamic-board-card';
+                    const code = getBoardCode(cleanBd);
+                    const safeBd = cleanBd.replace(/'/g, "\\'");
+                    card.setAttribute('onclick', `openTypeModal('${safeBd}', '${code}')`);
+                    card.innerHTML = `
+                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div>
+                            <div class="board-name">${cleanBd}</div>
+                            <div class="board-code">BOARD QUESTION</div>
+                        </div>
+                    `;
+                    boardsGrid.appendChild(card);
+                    existingNames.push(cleanLower);
+                }
+            });
+        }
+    } catch(err) {
+        console.warn('syncDynamicBoardsAndYears warning:', err);
+    }
+}

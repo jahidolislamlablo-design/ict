@@ -13,6 +13,7 @@ let currentCollegeMcqs = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     updateTestPaperStep();
+    syncDynamicCollegesAndYears();
 });
 
 function getCollegeIdFromName(name) {
@@ -56,21 +57,18 @@ function openCollegeModal(collegeName, collegeId = '') {
 
 function selectTestQuestionType(type) {
     closeCollegeModal();
-    openCollegeInteractiveView(selectedCollege, selectedCollegeId);
-    if (type === 'CQ') {
-        switchCollegeInteractiveTab('cq');
-    } else {
-        switchCollegeInteractiveTab('mcq');
-    }
+    const tab = (type === 'CQ' || type === 'cq') ? 'cq' : 'mcq';
+    openCollegeInteractiveView(selectedCollege, selectedCollegeId, tab);
 }
 
 function closeCollegeModal() {
-    goBackTestPaper();
+    const modal = document.getElementById('testTypeModal');
+    if (modal) modal.classList.remove('open');
 }
 
-function openCollegeInteractiveView(collegeName, collegeId = '') {
+function openCollegeInteractiveView(collegeName, collegeId = '', initialTab = 'mcq') {
     selectedCollege = collegeName;
-    selectedCollegeId = collegeName;
+    selectedCollegeId = collegeId || collegeName;
     testStep = 'questions';
 
     const titleEl = document.getElementById('college-interactive-title');
@@ -79,7 +77,7 @@ function openCollegeInteractiveView(collegeName, collegeId = '') {
     }
 
     updateTestPaperStep();
-    switchCollegeInteractiveTab('mcq');
+    switchCollegeInteractiveTab(initialTab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -277,3 +275,69 @@ window.openCollegeModal = openCollegeModal;
 window.openCollegeInteractiveView = openCollegeInteractiveView;
 window.switchCollegeInteractiveTab = switchCollegeInteractiveTab;
 window.goBackTestPaper = goBackTestPaper;
+
+async function syncDynamicCollegesAndYears() {
+    try {
+        const meta = await ApiService.getCustomOptions();
+        if (!meta) return;
+
+        // 1. Sync Years
+        const yearsGrid = document.querySelector('#step-years .years-grid');
+        if (yearsGrid && Array.isArray(meta.years)) {
+            const existingCards = Array.from(yearsGrid.querySelectorAll('.year-card'));
+            const existingYears = existingCards.map(c => {
+                const numEl = c.querySelector('.year-number');
+                return numEl ? numEl.innerText.trim() : '';
+            });
+
+            meta.years.forEach(yr => {
+                const bYear = (typeof toBanglaNum === 'function') ? toBanglaNum(yr) : yr;
+                if (!existingYears.some(ey => ey === yr || ey === bYear)) {
+                    const card = document.createElement('div');
+                    card.className = 'year-card dynamic-year-card';
+                    card.setAttribute('onclick', `selectTestYear('${yr}')`);
+                    card.innerHTML = `
+                        <div class="year-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="year-number">${bYear}</div>
+                        <div class="year-sub">শীর্ষ কলেজ প্রশ্ন</div>
+                    `;
+                    yearsGrid.appendChild(card);
+                    existingYears.push(bYear);
+                }
+            });
+        }
+
+        // 2. Sync Colleges
+        const collegesGrid = document.querySelector('#step-colleges .colleges-grid');
+        if (collegesGrid && Array.isArray(meta.colleges)) {
+            const existingCollegeCards = Array.from(collegesGrid.querySelectorAll('.college-card'));
+            const existingNames = existingCollegeCards.map(c => {
+                const tEl = c.querySelector('.college-title');
+                return tEl ? tEl.innerText.trim().toLowerCase() : '';
+            });
+
+            meta.colleges.forEach(col => {
+                const cleanCol = col.trim();
+                const cleanLower = cleanCol.toLowerCase();
+                if (!existingNames.some(en => en.includes(cleanLower) || cleanLower.includes(en))) {
+                    const card = document.createElement('div');
+                    card.className = 'college-card dynamic-college-card';
+                    const cId = getCollegeIdFromName(cleanCol);
+                    const safeCol = cleanCol.replace(/'/g, "\\'");
+                    card.setAttribute('onclick', `openCollegeModal('${safeCol}', '${cId}')`);
+                    card.innerHTML = `
+                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <div class="college-title">${cleanCol}</div>
+                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> শীর্ষ কলেজ টেস্ট পেপার</div>
+                        </div>
+                    `;
+                    collegesGrid.appendChild(card);
+                    existingNames.push(cleanLower);
+                }
+            });
+        }
+    } catch(err) {
+        console.warn('syncDynamicCollegesAndYears warning:', err);
+    }
+}

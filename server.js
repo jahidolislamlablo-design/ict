@@ -626,6 +626,129 @@ async function syncPdfsJson() {
 // ক. হেলথ ও MCQ রাউটস
 // ------------------------------------------
 
+// ==========================================
+// কাস্টম মেটাডেটা অপশন হ্যান্ডলার (অধ্যায়, বোর্ড, সাল, কলেজ, মডেল টেস্ট)
+// ==========================================
+function readCustomOptionsFile() {
+  const filePath = path.join(__dirname, 'database', 'custom_options.json');
+  try {
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    }
+  } catch (e) {}
+  return { chapters: [], boards: [], years: [], colleges: [], modelTests: [] };
+}
+
+function writeCustomOptionsFile(data) {
+  const destDirs = [
+    path.join(__dirname, 'database'),
+    'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+  ];
+  const jsonStr = JSON.stringify(data, null, 2);
+  destDirs.forEach(dir => {
+    try {
+      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, 'custom_options.json'), jsonStr, 'utf8');
+    } catch (e) {}
+  });
+}
+
+// কাস্টম অপশন ফেচ API
+app.get('/api/custom-options', async (req, res) => {
+  try {
+    const custom = readCustomOptionsFile();
+    const chaptersSet = new Set(custom.chapters || []);
+    const boardsSet = new Set(custom.boards || []);
+    const yearsSet = new Set(custom.years || []);
+    const collegesSet = new Set(custom.colleges || []);
+    const modelTestsSet = new Set(custom.modelTests || []);
+
+    try {
+      if (isConnected) {
+        const mcqChapters = await Mcq.distinct('chapter');
+        const cqChapters = await Cq.distinct('chapter');
+        const pdfChapters = await Pdf.distinct('chapter');
+        [...mcqChapters, ...cqChapters, ...pdfChapters].forEach(c => { if (c && c.trim()) chaptersSet.add(c.trim()); });
+
+        const mcqBoards = await Mcq.distinct('boardName');
+        const cqBoards = await Cq.distinct('boardName');
+        [...mcqBoards, ...cqBoards].forEach(b => { if (b && b.trim()) boardsSet.add(b.trim()); });
+
+        const mcqYears = await Mcq.distinct('examYear');
+        const cqYears = await Cq.distinct('examYear');
+        [...mcqYears, ...cqYears].forEach(y => { if (y && y.trim()) yearsSet.add(y.trim()); });
+
+        const mcqColleges = await Mcq.distinct('collegeName');
+        const cqColleges = await Cq.distinct('collegeName');
+        [...mcqColleges, ...cqColleges].forEach(c => { if (c && c.trim()) collegesSet.add(c.trim()); });
+
+        const mcqModel = await Mcq.distinct('modelTestNo');
+        const cqModel = await Cq.distinct('modelTestNo');
+        [...mcqModel, ...cqModel].forEach(m => { if (m && m.trim()) modelTestsSet.add(m.trim()); });
+      } else {
+        ['mcqs.json', 'cqs.json', 'pdfs.json'].forEach(f => {
+          const fp = path.join(__dirname, 'database', f);
+          if (fs.existsSync(fp)) {
+            try {
+              const list = JSON.parse(fs.readFileSync(fp, 'utf8'));
+              list.forEach(item => {
+                if (item.chapter && item.chapter.trim()) chaptersSet.add(item.chapter.trim());
+                if (item.boardName && item.boardName.trim()) boardsSet.add(item.boardName.trim());
+                if (item.examYear && item.examYear.trim()) yearsSet.add(item.examYear.trim());
+                if (item.collegeName && item.collegeName.trim()) collegesSet.add(item.collegeName.trim());
+                if (item.modelTestNo && item.modelTestNo.trim()) modelTestsSet.add(item.modelTestNo.trim());
+              });
+            } catch(e) {}
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('Metadata distinct scan warning:', e.message);
+    }
+
+    res.status(200).json({
+      success: true,
+      data: {
+        chapters: Array.from(chaptersSet),
+        boards: Array.from(boardsSet),
+        years: Array.from(yearsSet),
+        colleges: Array.from(collegesSet),
+        modelTests: Array.from(modelTestsSet)
+      }
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// নতুন কাস্টম অপশন যুক্ত করার API
+app.post('/api/custom-options', (req, res) => {
+  try {
+    const { type, val } = req.body;
+    if (!type || !val || !val.trim()) {
+      return res.status(400).json({ success: false, message: 'Type এবং val প্রদান আবশ্যক' });
+    }
+    const cleanVal = val.trim();
+    const data = readCustomOptionsFile();
+    const map = {
+      chapter: 'chapters',
+      board: 'boards',
+      year: 'years',
+      college: 'colleges',
+      modelTest: 'modelTests'
+    };
+    const key = map[type] || (type + 's');
+    if (!Array.isArray(data[key])) data[key] = [];
+    if (!data[key].includes(cleanVal)) {
+      data[key].push(cleanVal);
+      writeCustomOptionsFile(data);
+    }
+    res.status(200).json({ success: true, option: { type, val: cleanVal } });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 // হেলথ চেক API
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, status: 'online', port: PORT, timestamp: new Date() });

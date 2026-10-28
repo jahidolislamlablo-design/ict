@@ -1919,37 +1919,53 @@ input:checked + .slider:before {
    NEUMORPHIC / SOFT UI FOR MOBILE VIEW (< 768px)
    Exact specifications: #eef2f7, tactile 3D shadows, dark slate #2d3748
    ========================================================================== */
+@media (min-width: 769px) {
+    /* ডেস্কটপ স্ক্রিনে ৩-ট্যাব সেগমেন্টেড বাটন লুকানো থাকবে */
+    .interactive-segmented-wrapper {
+        display: none !important;
+    }
+}
+
 @media (max-width: 768px) {
     /* Mobile Background */
     .interactive-view-container {
         background-color: #eef2f7 !important;
-        padding: 10px 14px 60px 14px !important;
+        padding: 10px 12px 60px 12px !important;
         min-height: 100vh;
+        box-sizing: border-box;
     }
 
-    /* 1. Top Navigation Subheader */
+    /* 1. Top Navigation Subheader: ব্যাক বাটন ও Show answer এর মাঝে কলেজের বা অধ্যায়ের নাম লুকানো */
     .interactive-sub-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 10px 0 16px 0;
-        padding: 0 4px;
-        gap: 12px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin: 8px 0 14px 0 !important;
+        padding: 0 2px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .interactive-sub-header .sub-header-title,
+    #chapter-interactive-title,
+    #board-interactive-title,
+    #college-interactive-title {
+        display: none !important;
     }
 
     .round-back-btn {
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
         border-radius: 50% !important;
         background: #eef2f7 !important;
         box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff !important;
         border: none !important;
         color: #2d3748 !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.1rem;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1rem;
         cursor: pointer;
         transition: all 0.2s ease;
     }
@@ -1958,48 +1974,60 @@ input:checked + .slider:before {
         box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff !important;
     }
 
-    .sub-header-title {
-        font-size: 1.15rem;
-        font-weight: 800;
-        color: #2d3748 !important;
-        margin: 0;
-        text-align: center;
-        flex: 1;
+    .show-answer-toggle-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #eef2f7;
+        padding: 6px 12px;
+        border-radius: 9999px;
+        box-shadow: 3px 3px 6px #d1d9e6, -3px -3px 6px #ffffff;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #2d3748;
     }
 
-    /* 2. Top Segmented Control / Tab Bar */
+    /* 2. Top Segmented Control / Tab Bar (MCQ, CQ, Model Test) - মডেল টেস্ট বাটন যাতে ডানে না সরে যায় */
     .interactive-segmented-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1.15fr 1fr !important;
+        gap: 4px !important;
+        padding: 5px !important;
+        margin: 10px 0 16px 0 !important;
         background: #eef2f7 !important;
-        box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff !important;
+        box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff !important;
         border-radius: 9999px !important;
-        padding: 6px !important;
-        display: flex;
-        gap: 6px;
-        margin: 12px auto 18px auto;
         border: none !important;
     }
 
     .seg-tab-btn {
-        flex: 1;
-        padding: 10px 12px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 8px 2px !important;
         border-radius: 9999px !important;
         border: none !important;
         background: transparent !important;
         color: #718096 !important;
-        font-size: 0.90rem !important;
+        font-size: 0.82rem !important;
         font-weight: 600 !important;
         cursor: pointer;
         transition: all 0.25s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
         box-shadow: none !important;
     }
 
     .seg-tab-btn.active {
         background: #eef2f7 !important;
-        box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff !important;
+        box-shadow: 3px 3px 6px #d1d9e6, -3px -3px 6px #ffffff !important;
         color: #4338ca !important;
         font-weight: 700 !important;
     }
@@ -2007,154 +2035,120 @@ input:checked + .slider:before {
     /* 3. Section Header Title */
     .neumorphic-section-title {
         text-align: center;
-        font-size: 1.18rem;
+        font-size: 1.15rem;
         font-weight: 800;
         color: #2d3748 !important;
-        margin: 14px 0 18px 0;
+        margin: 12px 0 16px 0;
         letter-spacing: -0.2px;
     }
 
-    /* 4. Main Stimulus Cards (উদ্দীপক) */
-    .modern-cq-card {
-        background: #eef2f7 !important;
-        border-radius: 24px !important;
-        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff !important;
-        padding: 22px 18px !important;
-        margin-bottom: 24px !important;
-        border: none !important;
-    }
-
-    .modern-cq-stem-box {
+    /* 4. MCQ Layout (Question Text flat, Option Cards sunken/inset, radio icon on left) */
+    .modern-quiz-card {
         background: transparent !important;
+        box-shadow: none !important;
         border: none !important;
-        padding: 0 0 16px 0 !important;
-        margin-bottom: 12px !important;
+        padding: 4px 0 18px 0 !important;
+        margin-bottom: 22px !important;
+        border-radius: 0 !important;
         border-bottom: 1.5px dashed #cbd5e1 !important;
     }
 
-    .stimulus-label {
-        font-size: 1.05rem;
-        font-weight: 800;
-        color: #4338ca;
-        margin-bottom: 8px;
-    }
-
-    .stimulus-body {
-        font-size: 0.98rem;
-        line-height: 1.75;
-        color: #2d3748 !important;
-        margin: 0;
-    }
-
-    /* 5. Sub-questions (ক, খ, গ, ঘ) Soft Pill Cards */
-    .modern-cq-sub-pill {
-        background: #eef2f7 !important;
-        border-radius: 18px !important;
-        box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #ffffff !important;
+    .modern-quiz-header {
         margin-bottom: 14px !important;
-        border: none !important;
-        overflow: hidden;
-        transition: all 0.2s ease;
-    }
-
-    .modern-cq-sub-header {
-        padding: 14px 16px !important;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: #2d3748 !important;
-        user-select: none;
-        gap: 12px;
-    }
-
-    /* Small circular button with downward arrow icon */
-    .modern-cq-arrow-circle {
-        width: 32px !important;
-        height: 32px !important;
-        min-width: 32px !important;
-        border-radius: 50% !important;
-        background: #eef2f7 !important;
-        box-shadow: 2px 2px 5px #d1d9e6, -2px -2px 5px #ffffff !important;
-        color: #4338ca !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.8rem !important;
-        transition: transform 0.25s ease;
-        border: none !important;
-    }
-
-    .modern-cq-sub-pill.open .modern-cq-arrow-circle {
-        transform: rotate(180deg) !important;
-        box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff !important;
-        color: #10b981 !important;
-    }
-
-    .modern-cq-sub-body {
-        padding: 16px 18px !important;
-        background: #ffffff !important;
-        border-radius: 0 0 18px 18px;
-        color: #000000 !important;
-        font-weight: 500 !important;
-        font-size: 0.96rem;
-        line-height: 1.75;
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.03) !important;
-        border-top: 1px solid #e2e8f0 !important;
-    }
-
-    /* 6. MCQ Cards in Neumorphic Soft UI */
-    .modern-quiz-card {
-        background: #eef2f7 !important;
-        border-radius: 24px !important;
-        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff !important;
-        padding: 22px 18px !important;
-        margin-bottom: 24px !important;
-        border: none !important;
     }
 
     .modern-q-title {
-        font-size: 1.05rem;
-        font-weight: 700;
+        font-size: 1.05rem !important;
+        font-weight: 700 !important;
         color: #2d3748 !important;
-        line-height: 1.6;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+
+    .modern-options-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 11px !important;
+        margin-bottom: 14px !important;
     }
 
     .modern-option-pill {
         background: #eef2f7 !important;
-        border-radius: 18px !important;
-        box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff !important;
+        border-radius: 16px !important;
+        box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff !important;
         border: none !important;
-        padding: 14px 16px !important;
+        padding: 13px 16px !important;
         color: #2d3748 !important;
-        margin-bottom: 12px;
-        transition: all 0.2s ease;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        margin-bottom: 0 !important;
     }
 
-    .modern-option-pill:active:not(.locked) {
-        box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff !important;
+    .modern-option-pill-left {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        flex: 1 !important;
     }
 
     .option-radio-circle {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        border-radius: 50% !important;
         background: #eef2f7 !important;
-        border: none !important;
-        box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff !important;
+        border: 2px solid #a0aec0 !important;
+        box-shadow: inset 1px 1px 2px #d1d9e6 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.2s ease !important;
+        margin-right: 2px !important;
+    }
+
+    .option-text {
+        font-size: 0.95rem !important;
+        line-height: 1.45 !important;
+        color: #2d3748 !important;
     }
 
     .modern-option-pill.correct-selected {
         background: #f0fdf4 !important;
         box-shadow: inset 3px 3px 6px #bbf7d0, inset -3px -3px 6px #ffffff !important;
         color: #15803d !important;
-        border: 1.5px solid #86efac !important;
+    }
+
+    .modern-option-pill.correct-selected .option-radio-circle {
+        border-color: #22c55e !important;
+        background: #22c55e !important;
+        box-shadow: inset 0 0 0 3px #ffffff !important;
     }
 
     .modern-option-pill.wrong-selected {
         background: #fef2f2 !important;
         box-shadow: inset 3px 3px 6px #fecaca, inset -3px -3px 6px #ffffff !important;
         color: #b91c1c !important;
-        border: 1.5px solid #fca5a5 !important;
+    }
+
+    .modern-option-pill.wrong-selected .option-radio-circle {
+        border-color: #ef4444 !important;
+        background: #ef4444 !important;
+        box-shadow: inset 0 0 0 3px #ffffff !important;
+    }
+
+    .modern-option-pill.exam-selected {
+        background: #e0e7ff !important;
+        box-shadow: inset 3px 3px 6px #c7d2fe, inset -3px -3px 6px #ffffff !important;
+        color: #3730a3 !important;
+    }
+
+    .modern-option-pill.exam-selected .option-radio-circle {
+        border-color: #6366f1 !important;
+        background: #6366f1 !important;
+        box-shadow: inset 0 0 0 3px #ffffff !important;
     }
 
     .modern-exp-btn {
@@ -2172,5 +2166,81 @@ input:checked + .slider:before {
         border-radius: 16px !important;
         box-shadow: inset 2px 2px 5px #d1d9e6 !important;
         border: 1px solid #e2e8f0 !important;
+    }
+
+    /* 5. CQ (Creative Question) Layout: Raised Stimulus Container, Inset Sub-questions with dropdown arrow */
+    .modern-cq-card {
+        background: #eef2f7 !important;
+        border-radius: 22px !important;
+        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff !important;
+        padding: 20px 16px !important;
+        margin-bottom: 24px !important;
+        border: none !important;
+    }
+
+    .modern-cq-stem-box {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 0 14px 0 !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1.5px dashed #cbd5e1 !important;
+    }
+
+    .modern-cq-sub-pill {
+        background: #eef2f7 !important;
+        border-radius: 16px !important;
+        box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff !important;
+        margin-top: 12px !important;
+        margin-bottom: 0 !important;
+        border: none !important;
+        overflow: hidden !important;
+        transition: all 0.2s ease;
+    }
+
+    .modern-cq-sub-header {
+        padding: 13px 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        cursor: pointer !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        color: #2d3748 !important;
+        user-select: none !important;
+        gap: 10px !important;
+    }
+
+    .modern-cq-arrow-circle {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        border-radius: 50% !important;
+        background: #eef2f7 !important;
+        box-shadow: 2px 2px 5px #d1d9e6, -2px -2px 5px #ffffff !important;
+        color: #4a5568 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0.72rem !important;
+        transition: transform 0.25s ease;
+        border: none !important;
+    }
+
+    .modern-cq-sub-pill.open .modern-cq-arrow-circle {
+        transform: rotate(180deg) !important;
+        box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff !important;
+        color: #4338ca !important;
+    }
+
+    .modern-cq-sub-body {
+        padding: 14px 16px !important;
+        background: #ffffff !important;
+        border-radius: 0 0 16px 16px !important;
+        color: #000000 !important;
+        font-weight: 500 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.75 !important;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.03) !important;
+        border-top: 1px solid #e2e8f0 !important;
     }
 }
