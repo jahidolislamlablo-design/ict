@@ -253,6 +253,9 @@
                     </div>
                 </div>
 
+                <!-- সেকশন টাইটেল (সৃজনশীল প্রশ্ন / MCQ অনুশীলন) -->
+                <h3 class="neumorphic-section-title" id="board-section-subtitle">MCQ অনুশীলন</h3>
+
                 <!-- প্যানেল ১: MCQ অনুশীলন -->
                 <div id="panel-board-mcq">
                     <div id="board-interactive-mcq-list"></div>
@@ -271,6 +274,42 @@
 
         </div>
     </main>
+
+        <!-- [DESKTOP ONLY MODAL] প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ / বটম শিট -->
+    <div id="typeModal" class="modal-overlay" onclick="if(event.target === this) closeTypeModal()">
+        <div class="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title" id="modal-board-name">Choose Question Type</h3>
+            
+            <div class="sheet-options">
+                <div class="type-option-card" onclick="selectQuestionType('MCQ')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ প্র্যাকটিস</h3>
+                        <p>বহুনির্বাচনি প্রশ্নাবলি সমাধান ও তাৎক্ষণিক ব্যাখ্যাসহ উত্তর</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectQuestionType('CQ')">
+                    <div class="type-icon cq">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের পূর্ণাঙ্গ আদর্শ উত্তর</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeTypeModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
 
     <!-- মোবাইল বটম নেভিগেশন বার -->
     <nav class="bottom-nav">

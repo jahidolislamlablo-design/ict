@@ -39,7 +39,29 @@ function selectTestYear(year) {
 
 // Directly opens questions view without popup modal
 function openCollegeModal(collegeName, collegeId = '') {
-    openCollegeInteractiveView(collegeName, collegeId);
+    selectedCollege = collegeName;
+    selectedCollegeId = collegeId || collegeName;
+
+    if (window.innerWidth <= 768) {
+        // MOBILE VIEW: Directly open Neumorphic 3-tab view!
+        openCollegeInteractiveView(collegeName, selectedCollegeId);
+    } else {
+        // DESKTOP VIEW: Open previous modal
+        const titleEl = document.getElementById('modal-college-title');
+        if (titleEl) titleEl.innerText = `${selectedCollege} (${selectedTestYear})`;
+        const modal = document.getElementById('testTypeModal');
+        if (modal) modal.classList.add('open');
+    }
+}
+
+function selectTestQuestionType(type) {
+    closeCollegeModal();
+    openCollegeInteractiveView(selectedCollege, selectedCollegeId);
+    if (type === 'CQ') {
+        switchCollegeInteractiveTab('cq');
+    } else {
+        switchCollegeInteractiveTab('mcq');
+    }
 }
 
 function closeCollegeModal() {
@@ -80,6 +102,13 @@ async function switchCollegeInteractiveTab(tab) {
 
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
+    }
+
+    const sectionSubtitle = document.getElementById('college-section-subtitle');
+    if (sectionSubtitle) {
+        if (tab === 'cq') sectionSubtitle.innerText = 'সৃজনশীল প্রশ্ন';
+        else if (tab === 'mcq') sectionSubtitle.innerText = 'MCQ অনুশীলন';
+        else if (tab === 'model') sectionSubtitle.innerText = 'মডেল টেস্ট (২৫টি প্রশ্ন)';
     }
 
     const currentBreadcrumb = document.getElementById('breadcrumb-current');

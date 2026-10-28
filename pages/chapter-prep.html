@@ -231,7 +231,7 @@
                 </div>
             </section>
 
-            <!-- ইন্টারেক্টিভ কুইজ ভিউ (MCQ, CQ ও Model Test) -->
+            <!-- [MOBILE VIEW] ইন্টারেক্টিভ নিউমরফিক কুইজ ভিউ (MCQ, CQ ও Model Test) -->
             <section id="interactiveQuizView" class="interactive-view-container" style="display: none;">
                 <!-- ৩টি সেগমেন্টেড বাটন ট্যাব -->
                 <div class="interactive-segmented-wrapper">
@@ -261,6 +261,9 @@
                     </div>
                 </div>
 
+                <!-- সেকশন টাইটেল (যেমন: সৃজনশীল প্রশ্ন / MCQ অনুশীলন) -->
+                <h3 class="neumorphic-section-title" id="chapter-section-subtitle">MCQ অনুশীলন</h3>
+
                 <!-- প্যানেল ১: MCQ অনুশীলন -->
                 <div id="panel-chapter-mcq">
                     <div id="chapter-interactive-mcq-list"></div>
@@ -277,8 +280,73 @@
                 </div>
             </section>
 
+            <!-- [DESKTOP VIEW] কম্পিউটার স্ক্রিনের জন্য আগের মূল MCQ ভিউ -->
+            <section id="mcqView" style="display: none;">
+                <div class="breadcrumb-bar" style="background: #F8FAFC;">
+                    <h2 id="active-mcq-title" style="font-size: 1.15rem; color: var(--primary);">MCQ অনুশীলন</h2>
+                </div>
+
+                <div class="quiz-toolbar">
+                    <span class="quiz-progress-text" id="chapter-mcq-count"><i class="fa-solid fa-list-check"></i> মোট প্রশ্ন: লোড হচ্ছে...</span>
+                    <div class="show-answer-control">
+                        <span>সরাসরি উত্তর দেখুন</span>
+                        <label class="switch">
+                            <input type="checkbox" id="desktopChapterShowAnsToggle" onchange="toggleDesktopChapterAnswers(this)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="chapter-mcq-list"></div>
+            </section>
+
+            <!-- [DESKTOP VIEW] কম্পিউটার স্ক্রিনের জন্য আগের মূল CQ ভিউ -->
+            <section id="cqView" style="display: none;">
+                <div class="breadcrumb-bar" style="background: #F8FAFC;">
+                    <h2 id="active-cq-title" style="font-size: 1.15rem; color: var(--primary);">সৃজনশীল প্রশ্ন (CQ)</h2>
+                </div>
+
+                <div id="chapter-cq-list"></div>
+            </section>
+
         </div>
     </main>
+
+    <!-- [DESKTOP ONLY MODAL] প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ শিট -->
+    <div id="chapterModeModal" class="modal-overlay" onclick="if(event.target === this) closeChapterModal()">
+        <div class="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title" id="modal-chapter-name">Choose Question Type</h3>
+            
+            <div class="sheet-options">
+                <div class="type-option-card" onclick="selectChapterMode('mcq')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ প্র্যাকটিস</h3>
+                        <p>অধ্যায়ের বহুনির্বাচনি প্রশ্নাবলি সমাধান ও সঠিক উত্তর যাচাই</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectChapterMode('cq')">
+                    <div class="type-icon cq">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের প্রশ্ন ও আদর্শ ব্যাখ্যা</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeChapterModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
 
     <!-- মোবাইল বটম নেভিগেশন বার -->
     <nav class="bottom-nav">

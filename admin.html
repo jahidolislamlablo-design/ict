@@ -1039,6 +1039,23 @@
             <span>MCQ প্রশ্ন ও অপশনসমূহ</span>
           </div>
 
+          <!-- সিরিয়াল নম্বর ও ছবি আপলোড -->
+          <div class="grid-2" style="background: #F1F5F9; padding: 12px 14px; border-radius: 8px; margin-bottom: 1.25rem; border: 1px solid #E2E8F0;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="mcqSerialNo" style="font-weight: 700; color: #1E293B;">🔢 সিরিয়াল নম্বর (Serial No)</label>
+              <input type="number" id="mcqSerialNo" placeholder="e.g. 1 (ছোট থেকে বড় সাজাতে)" min="1" style="font-weight: 600; background: #fff;">
+              <span class="hint" style="margin-top: 3px;">ফ্রন্টএন্ডে এই সিরিয়াল অনুযায়ী প্রশ্ন শো করবে</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="mcqImageFile" style="font-weight: 700; color: #1E293B;">🖼️ প্রশ্নের ছবি / চিত্র আপলোড (ঐচ্ছিক)</label>
+              <input type="file" id="mcqImageFile" accept="image/*" onchange="previewImageUpload(this, 'mcqImagePreviewBox')" style="background: #fff; padding: 5px;">
+              <div id="mcqImagePreviewBox" style="display: none; margin-top: 8px;">
+                <img id="mcqImagePreview" src="" alt="প্রিভিউ" style="max-height: 120px; border-radius: 6px; border: 1px solid #CBD5E1;">
+                <button type="button" onclick="clearImageUpload('mcqImageFile', 'mcqImagePreviewBox')" class="btn btn-secondary btn-sm" style="margin-left: 6px; padding: 2px 6px;">✕ মুছুন</button>
+              </div>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="mcqQuestion">প্রশ্ন (Question)<span class="required">*</span></label>
             <textarea id="mcqQuestion" required placeholder="এখানে বহুনির্বাচনি প্রশ্নটি বাংলায় বা ইংরেজিতে লিখুন..."></textarea>
@@ -1307,6 +1324,23 @@
             <span>সৃজনশীল উদ্দীপক (Stem)<span class="required">*</span></span>
           </div>
 
+          <!-- সিরিয়াল নম্বর ও উদ্দীপকের চিত্র আপলোড -->
+          <div class="grid-2" style="background: #F1F5F9; padding: 12px 14px; border-radius: 8px; margin-bottom: 1.25rem; border: 1px solid #E2E8F0;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="cqSerialNo" style="font-weight: 700; color: #1E293B;">🔢 সিরিয়াল নম্বর (Serial No)</label>
+              <input type="number" id="cqSerialNo" placeholder="e.g. 1 (ছোট থেকে বড় সাজাতে)" min="1" style="font-weight: 600; background: #fff;">
+              <span class="hint" style="margin-top: 3px;">ফ্রন্টএন্ডে এই সিরিয়াল অনুযায়ী CQ শো করবে</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="cqImageFile" style="font-weight: 700; color: #1E293B;">🖼️ উদ্দীপকের ডায়াগ্রাম / চিত্র আপলোড (ঐচ্ছিক)</label>
+              <input type="file" id="cqImageFile" accept="image/*" onchange="previewImageUpload(this, 'cqImagePreviewBox')" style="background: #fff; padding: 5px;">
+              <div id="cqImagePreviewBox" style="display: none; margin-top: 8px;">
+                <img id="cqImagePreview" src="" alt="প্রিভিউ" style="max-height: 120px; border-radius: 6px; border: 1px solid #CBD5E1;">
+                <button type="button" onclick="clearImageUpload('cqImageFile', 'cqImagePreviewBox')" class="btn btn-secondary btn-sm" style="margin-left: 6px; padding: 2px 6px;">✕ মুছুন</button>
+              </div>
+            </div>
+          </div>
+
           <div class="form-group">
             <textarea id="cqStem" required placeholder="উদ্দীপকের বিস্তারিত অনুচ্ছেদ, কোড বা চিত্রভিত্তিক বর্ণনা এখানে লিখুন..." style="min-height: 120px;"></textarea>
           </div>
@@ -1497,11 +1531,17 @@
         </div>
 
         <form id="pdfUploadForm" onsubmit="handlePdfSubmit(event)">
-          <div class="grid-2">
+          <div class="grid-3" style="margin-bottom: 0.5rem;">
             <div class="form-group">
+              <label for="pdfSerialNo" style="font-weight: 700; color: #1E293B;">🔢 সিরিয়াল নম্বর (Serial No)</label>
+              <input type="number" id="pdfSerialNo" placeholder="e.g. 1" min="1" style="font-weight: 600;">
+            </div>
+            <div class="form-group" style="grid-column: span 2;">
               <label for="pdfTitle">পিডিএফ শিরোনাম (Title)<span class="required">*</span></label>
               <input type="text" id="pdfTitle" placeholder="e.g. এইচএসসি আইসিটি সুপার সাজেশন ও জ্ঞান-অনুধাবন (২০২৬/২০২৫)" required>
             </div>
+          </div>
+          <div class="grid-2">
 
             <div class="form-group">
               <label for="pdfCategory">ক্যাটাগরি<span class="required">*</span></label>
@@ -1797,6 +1837,15 @@
           return;
         }
 
+        // ছবি আপলোড হ্যান্ডলিং
+        let imageUrl = '';
+        const mcqFile = document.getElementById('mcqImageFile')?.files[0];
+        if (mcqFile) {
+          imageUrl = await uploadImageHelper(mcqFile);
+        }
+
+        const serialNo = parseInt(document.getElementById('mcqSerialNo')?.value, 10) || 0;
+
         const payload = {
           categoryTypes,
           categoryType: categoryTypes[0],
@@ -1813,7 +1862,9 @@
           option3: opt3,
           option4: opt4,
           correctAnswer,
-          explanation
+          explanation,
+          image: imageUrl,
+          serialNo: serialNo
         };
 
         const response = await fetch(`${API_BASE}/api/mcqs`, {
@@ -1894,6 +1945,15 @@
         const q_gha = document.getElementById('cq_q_gha').value.trim();
         const a_gha = document.getElementById('cq_a_gha').value.trim();
 
+        // উদ্দীপকের ছবি আপলোড হ্যান্ডলিং
+        let imageUrl = '';
+        const cqFile = document.getElementById('cqImageFile')?.files[0];
+        if (cqFile) {
+          imageUrl = await uploadImageHelper(cqFile);
+        }
+
+        const serialNo = parseInt(document.getElementById('cqSerialNo')?.value, 10) || 0;
+
         const payload = {
           categoryTypes,
           categoryType: categoryTypes[0],
@@ -1911,7 +1971,9 @@
           q_ga,
           a_ga,
           q_gha,
-          a_gha
+          a_gha,
+          image: imageUrl,
+          serialNo: serialNo
         };
 
         const response = await fetch(`${API_BASE}/api/cqs`, {
@@ -2047,6 +2109,8 @@
           return;
         }
 
+        const serialNo = document.getElementById('pdfSerialNo')?.value || '0';
+
         const formData = new FormData();
         formData.append('title', title);
         formData.append('category', category);
@@ -2054,11 +2118,15 @@
         formData.append('pagesCount', pagesCount || '১০ পৃষ্ঠা');
         formData.append('fileSize', fileSize);
         formData.append('description', description);
+        formData.append('serialNo', serialNo);
         if (directPdfUrl) formData.append('directPdfUrl', directPdfUrl);
         if (fileInput.files[0]) formData.append('pdfFile', fileInput.files[0]);
 
-        const res = await fetch(`${API_BASE}/api/pdfs`, {
-          method: 'POST',
+        const url = editingPdfId ? `${API_BASE}/api/pdfs/${editingPdfId}` : `${API_BASE}/api/pdfs`;
+        const method = editingPdfId ? 'PUT' : 'POST';
+
+        const res = await fetch(url, {
+          method: method,
           body: formData
         });
 
@@ -2130,10 +2198,13 @@
                   <span class="badge" style="background: #ecfdf5; color: #047857;">${pdf.downloadsCount || 0} বার</span>
                 </td>
                 <td>
-                  <div style="display: flex; gap: 6px;">
-                    <a href="${fullUrl}" target="_blank" class="action-btn" title="পড়ুন বা ভিউ করুন" style="color: #4f46e5; text-decoration: none; padding: 4px 8px; border-radius: 4px; border: 1px solid #c7d2fe;">
+                  <div style="display: flex; gap: 6px; align-items: center;">
+                    <a href="${fullUrl}" target="_blank" class="action-btn" title="পড়ুন বা ভিউ করুন" style="color: #4f46e5; text-decoration: none; padding: 4px 8px; border-radius: 4px; border: 1px solid #c7d2fe; font-size: 0.82rem;">
                       👁️ ভিউ
                     </a>
+                    <button type="button" class="action-btn" onclick="editPdf('${pdf._id}')" title="পিডিএফ এডিট করুন" style="color: #0284c7; padding: 4px 8px; border-radius: 4px; border: 1px solid #bae6fd; background: #f0f9ff; cursor: pointer; font-size: 0.82rem; font-weight: 600;">
+                      ✏️ এডিট
+                    </button>
                     <button type="button" class="action-btn" onclick="deletePdf('${pdf._id}')" title="ডিলিট করুন" style="color: #ef4444; padding: 4px 8px; border-radius: 4px; border: 1px solid #fecaca; background: none; cursor: pointer;">
                       🗑️
                     </button>
@@ -2895,6 +2966,184 @@
       checkServerHealth();
       setInterval(checkServerHealth, 15000);
     });
+  
+    // ==============================================
+    // ডায়নামিক মেটাডাটা বিল্ডার (Custom Metadata Builder)
+    // ==============================================
+    function promptAddCustomOption(type) {
+      const typeLabels = {
+        chapter: 'নতুন অধ্যায়ের নাম লিখুন (যেমন: Chapter 7: কৃত্রিম বুদ্ধিমত্তা ও রোবোটিক্স):',
+        board: 'নতুন শিক্ষা বোর্ডের নাম লিখুন (যেমন: কারিগরি শিক্ষা বোর্ড / Technical Board):',
+        year: 'নতুন পরীক্ষার সাল লিখুন (যেমন: 2027):',
+        college: 'নতুন কলেজের নাম লিখুন (যেমন: হলিক্রস কলেজ, ঢাকা):',
+        modelTest: 'নতুন মডেল টেস্টের নাম লিখুন (যেমন: Model Test 51):'
+      };
+
+      const label = typeLabels[type] || 'নতুন মান লিখুন:';
+      const val = window.prompt(label);
+      if (!val || !val.trim()) return;
+
+      const cleanVal = val.trim();
+      addCustomMetaOption(type, cleanVal, true);
+    }
+
+    function addCustomMetaOption(type, val, save = true) {
+      if (type === 'chapter') {
+        appendOptionIfMissing('mcqChapter', val, val);
+        appendOptionIfMissing('cqChapter', val, val);
+        appendOptionIfMissing('pdfChapter', val, val);
+      } else if (type === 'board') {
+        appendOptionIfMissing('mcqBoardName', val, val);
+        appendOptionIfMissing('cqBoardName', val, val);
+      } else if (type === 'year') {
+        appendOptionIfMissing('mcqExamYear', val, val);
+        appendOptionIfMissing('cqExamYear', val, val);
+      } else if (type === 'college') {
+        appendOptionIfMissing('mcqCollegeName', val, val);
+        appendOptionIfMissing('cqCollegeName', val, val);
+      } else if (type === 'modelTest') {
+        appendOptionIfMissing('mcqModelTestNo', val, val);
+        appendOptionIfMissing('cqModelTestNo', val, val);
+      }
+
+      if (save) {
+        try {
+          let saved = JSON.parse(localStorage.getItem('custom_meta_options') || '[]');
+          if (!saved.some(item => item.type === type && item.val === val)) {
+            saved.push({ type, val });
+            localStorage.setItem('custom_meta_options', JSON.stringify(saved));
+          }
+          showToast('সফল!', `"${val}" সফলভাবে ড্রপডাউনে যুক্ত হয়েছে!`, 'success');
+        } catch(e) {}
+      }
+    }
+
+    function appendOptionIfMissing(selectId, val, text) {
+      const select = document.getElementById(selectId);
+      if (!select) return;
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === val) {
+          select.selectedIndex = i;
+          return;
+        }
+      }
+      const opt = document.createElement('option');
+      opt.value = val;
+      opt.text = text;
+      opt.selected = true;
+      select.appendChild(opt);
+    }
+
+    function loadCustomMetaOptions() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('custom_meta_options') || '[]');
+        saved.forEach(item => {
+          addCustomMetaOption(item.type, item.val, false);
+        });
+      } catch(e) {}
+    }
+
+    // ==============================================
+    // চিত্র আপলোড ও প্রিভিউ হেল্পার
+    // ==============================================
+    async function uploadImageHelper(file) {
+      if (!file) return '';
+      const formData = new FormData();
+      formData.append('image', file);
+      const res = await fetch(`${API_BASE}/api/upload-image`, {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        return data.imageUrl;
+      }
+      throw new Error(data.message || 'ছবি আপলোড করতে সমস্যা হয়েছে');
+    }
+
+    function previewImageUpload(input, boxId) {
+      const box = document.getElementById(boxId);
+      if (!box) return;
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = box.querySelector('img');
+          if (img) img.src = e.target.result;
+          box.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        box.style.display = 'none';
+      }
+    }
+
+    function clearImageUpload(inputId, boxId) {
+      const input = document.getElementById(inputId);
+      if (input) input.value = '';
+      const box = document.getElementById(boxId);
+      if (box) box.style.display = 'none';
+    }
+
+    // ==============================================
+    // PDF এডিট ও আপডেট ফাংশনালিটি
+    // ==============================================
+    let editingPdfId = null;
+
+    function editPdf(id) {
+      const item = allPdfItems.find(p => p._id === id);
+      if (!item) return;
+
+      editingPdfId = id;
+      document.getElementById('pdfTitle').value = item.title || '';
+      document.getElementById('pdfCategory').value = item.category || 'suggestion';
+      document.getElementById('pdfChapter').value = item.chapter || 'সকল অধ্যায়';
+      document.getElementById('pdfPages').value = item.pagesCount || '';
+      document.getElementById('pdfFileSize').value = item.fileSize || '';
+      document.getElementById('pdfDescription').value = item.description || '';
+      document.getElementById('directPdfUrl').value = item.directPdfUrl || (item.pdfUrl.startsWith('/uploads/') ? '' : item.pdfUrl);
+      if (document.getElementById('pdfSerialNo')) {
+        document.getElementById('pdfSerialNo').value = item.serialNo || '';
+      }
+
+      const submitBtn = document.getElementById('pdfSubmitBtn');
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span>💾 পিডিএফ আপডেট সংরক্ষণ করুন</span>';
+        submitBtn.style.background = '#059669';
+      }
+
+      let cancelBtn = document.getElementById('pdfCancelEditBtn');
+      if (!cancelBtn) {
+        cancelBtn = document.createElement('button');
+        cancelBtn.id = 'pdfCancelEditBtn';
+        cancelBtn.type = 'button';
+        cancelBtn.className = 'btn btn-secondary';
+        cancelBtn.innerText = '✕ এডিট বাতিল';
+        cancelBtn.onclick = cancelPdfEdit;
+        submitBtn.parentNode.appendChild(cancelBtn);
+      }
+      cancelBtn.style.display = 'inline-flex';
+
+      document.getElementById('pdfUploadForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      showToast('এডিট মোড', 'পিডিএফ তথ্য ফর্মে লোড হয়েছে, পরিবর্তন করে সংরক্ষণ করুন', 'info');
+    }
+
+    function cancelPdfEdit() {
+      editingPdfId = null;
+      resetPdfForm();
+      const submitBtn = document.getElementById('pdfSubmitBtn');
+      if (submitBtn) {
+        submitBtn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg><span>পিডিএফ আপলোড ও প্রকাশ করুন</span>';
+        submitBtn.style.background = '';
+      }
+      const cancelBtn = document.getElementById('pdfCancelEditBtn');
+      if (cancelBtn) cancelBtn.style.display = 'none';
+    }
+
+    // উইন্ডো লোডে মেটাডাটা অপশন ইনজেক্ট
+    window.addEventListener('DOMContentLoaded', () => {
+      loadCustomMetaOptions();
+    });
+
   </script>
 </body>
 </html>

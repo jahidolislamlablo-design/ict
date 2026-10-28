@@ -201,6 +201,9 @@
                     </div>
                 </div>
 
+                <!-- সেকশন টাইটেল (সৃজনশীল প্রশ্ন / MCQ অনুশীলন) -->
+                <h3 class="neumorphic-section-title" id="college-section-subtitle">MCQ অনুশীলন</h3>
+
                 <!-- প্যানেল ১: MCQ অনুশীলন -->
                 <div id="panel-college-mcq">
                     <div id="college-interactive-mcq-list"></div>
@@ -219,6 +222,42 @@
 
         </div>
     </main>
+
+        <!-- [DESKTOP ONLY MODAL] প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ -->
+    <div id="testTypeModal" class="modal-overlay" onclick="if(event.target === this) closeCollegeModal()">
+        <div class="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title" id="modal-college-title">Choose Question Type</h3>
+            
+            <div class="sheet-options">
+                <div class="type-option-card" onclick="selectTestQuestionType('MCQ')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ প্র্যাকটিস</h3>
+                        <p>শীর্ষ কলেজের নির্বাচনী বহুনির্বাচনি প্রশ্নাবলি সমাধান</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectTestQuestionType('CQ')">
+                    <div class="type-icon cq">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের আদর্শ সমাধান</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeCollegeModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
 
     <!-- মোবাইল বটম নেভিগেশন বার -->
     <nav class="bottom-nav">

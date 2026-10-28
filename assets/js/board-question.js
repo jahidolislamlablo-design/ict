@@ -42,7 +42,31 @@ function selectYear(year) {
 
 // Directly opens questions view without popup modal
 function openTypeModal(board, code = '') {
-    openBoardInteractiveView(board, code);
+    selectedBoard = board;
+    selectedBoardCode = code || getBoardCode(board);
+
+    if (window.innerWidth <= 768) {
+        // MOBILE VIEW: Directly open Neumorphic 3-tab view!
+        openBoardInteractiveView(board, selectedBoardCode);
+    } else {
+        // DESKTOP VIEW: Open previous modal
+        const modalBoardName = document.getElementById('modal-board-name');
+        if (modalBoardName) {
+            modalBoardName.innerText = `${selectedBoard} (${selectedYear})`;
+        }
+        const modal = document.getElementById('typeModal');
+        if (modal) modal.classList.add('open');
+    }
+}
+
+function selectQuestionType(type) {
+    closeTypeModal();
+    openBoardInteractiveView(selectedBoard, selectedBoardCode);
+    if (type === 'CQ') {
+        switchBoardInteractiveTab('cq');
+    } else {
+        switchBoardInteractiveTab('mcq');
+    }
 }
 
 function closeTypeModal() {
@@ -83,6 +107,13 @@ async function switchBoardInteractiveTab(tab) {
 
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
+    }
+
+    const sectionSubtitle = document.getElementById('board-section-subtitle');
+    if (sectionSubtitle) {
+        if (tab === 'cq') sectionSubtitle.innerText = 'সৃজনশীল প্রশ্ন';
+        else if (tab === 'mcq') sectionSubtitle.innerText = 'MCQ অনুশীলন';
+        else if (tab === 'model') sectionSubtitle.innerText = 'মডেল টেস্ট (২৫টি প্রশ্ন)';
     }
 
     const currentBreadcrumb = document.getElementById('breadcrumb-current');
