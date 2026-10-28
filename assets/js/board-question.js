@@ -1,14 +1,15 @@
 /**
  * BOARD QUESTION LOGIC
- * Manages steps: Years -> Boards -> MCQ/CQ -> Interactive Questions
- * Fetches dynamic data from Supabase backend via ApiService.
+ * Manages steps: Years -> Boards -> Interactive 3-Tab View [ MCQ, CQ, Model Test ]
+ * Direct access without popup modal!
  */
 
 let currentStep = 'years';
 let selectedYear = '2024';
 let selectedBoard = 'ঢাকা বোর্ড';
 let selectedBoardCode = 'dhaka';
-let selectedType = 'MCQ';
+let currentBoardTab = 'mcq';
+let currentBoardMcqs = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     updateStepView();
@@ -34,54 +35,71 @@ function selectYear(year) {
     selectedYear = year;
     currentStep = 'boards';
     const yearBadge = document.getElementById('current-year-badge');
-    if (yearBadge) yearBadge.innerText = year;
+    if (yearBadge) yearBadge.innerText = (typeof toBanglaNum === 'function') ? toBanglaNum(year) : year;
     updateStepView();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Directly opens questions view without popup modal
 function openTypeModal(board, code = '') {
-    selectedBoard = board;
-    selectedBoardCode = code || getBoardCode(board);
-    const modalBoardName = document.getElementById('modal-board-name');
-    if (modalBoardName) {
-        modalBoardName.innerText = `${selectedBoard} (${selectedYear})`;
-    }
-    const modal = document.getElementById('typeModal');
-    if (modal) modal.classList.add('open');
+    openBoardInteractiveView(board, code);
 }
 
 function closeTypeModal() {
-    const modal = document.getElementById('typeModal');
-    if (modal) modal.classList.remove('open');
+    goBackStep();
 }
 
-async function selectQuestionType(type) {
-    selectedType = type;
-    closeTypeModal();
+function openBoardInteractiveView(board, code = '') {
+    selectedBoard = board;
+    selectedBoardCode = code || getBoardCode(board);
     currentStep = 'questions';
-    
-    const titleEl = document.getElementById('q-view-title');
+
+    const titleEl = document.getElementById('board-interactive-title');
     if (titleEl) {
-        titleEl.innerText = `${selectedBoard} - ${selectedYear} (${selectedType})`;
+        titleEl.innerText = `${selectedBoard} - ${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear}`;
     }
-    
-    if (type === 'MCQ') {
-        document.getElementById('mcq-view-container').style.display = 'block';
-        document.getElementById('cq-view-container').style.display = 'none';
-        await loadBoardMCQQuestions();
-    } else {
-        document.getElementById('mcq-view-container').style.display = 'none';
-        document.getElementById('cq-view-container').style.display = 'block';
-        await loadBoardCQQuestions();
-    }
-    
+
     updateStepView();
+    switchBoardInteractiveTab('mcq');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+async function switchBoardInteractiveTab(tab) {
+    currentBoardTab = tab;
+
+    const tabBtns = document.querySelectorAll('#step-questions .seg-tab-btn');
+    tabBtns.forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById('tab-btn-board-' + tab);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    const panelMcq = document.getElementById('panel-board-mcq');
+    const panelCq = document.getElementById('panel-board-cq');
+    const panelModel = document.getElementById('panel-board-model');
+    const showAnsWrapper = document.getElementById('board-show-answer-wrapper');
+
+    if (panelMcq) panelMcq.style.display = (tab === 'mcq') ? 'block' : 'none';
+    if (panelCq) panelCq.style.display = (tab === 'cq') ? 'block' : 'none';
+    if (panelModel) panelModel.style.display = (tab === 'model') ? 'block' : 'none';
+
+    if (showAnsWrapper) {
+        showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
+    }
+
+    const currentBreadcrumb = document.getElementById('breadcrumb-current');
+    if (tab === 'mcq') {
+        if (currentBreadcrumb) currentBreadcrumb.innerText = `${selectedYear} > ${selectedBoard} > MCQ`;
+        await loadBoardMCQQuestions();
+    } else if (tab === 'cq') {
+        if (currentBreadcrumb) currentBreadcrumb.innerText = `${selectedYear} > ${selectedBoard} > সৃজনশীল (CQ)`;
+        await loadBoardCQQuestions();
+    } else if (tab === 'model') {
+        if (currentBreadcrumb) currentBreadcrumb.innerText = `${selectedYear} > ${selectedBoard} > Model Test`;
+        await loadBoardModelTest();
+    }
+}
+
 async function loadBoardMCQQuestions() {
-    const listContainer = document.getElementById('board-mcq-questions-list');
-    const countDisplay = document.getElementById('board-mcq-count');
+    const listContainer = document.getElementById('board-interactive-mcq-list');
     const toggle = document.getElementById('boardShowAnsToggle');
     if (toggle) toggle.checked = false;
 
@@ -90,33 +108,30 @@ async function loadBoardMCQQuestions() {
     listContainer.innerHTML = `
         <div style="text-align: center; padding: 45px 20px; color: var(--text-secondary);">
             <i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
-            <p style="font-weight: 500;">ডাটাবেজ থেকে প্রশ্ন লোড করা হচ্ছে...</p>
+            <p style="font-weight: 500;">ডাটাবেজ থেকে বোর্ড MCQ লোড করা হচ্ছে...</p>
         </div>
     `;
 
     try {
         const questions = await ApiService.getBoardMCQ(selectedBoardCode, selectedYear);
+        currentBoardMcqs = questions || [];
         
         if (!questions || questions.length === 0) {
             listContainer.innerHTML = `
-                <div style="text-align: center; padding: 40px; background: #fff; border-radius: 12px; border: 1.5px dashed var(--border-color); margin-top: 15px;">
+                <div style="text-align: center; padding: 40px; background: #fff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin-top: 15px;">
                     <i class="fa-regular fa-folder-open fa-3x" style="color: var(--text-muted); margin-bottom: 12px;"></i>
                     <h3 style="color: var(--text-primary); margin-bottom: 6px;">কোনো প্রশ্ন পাওয়া যায়নি</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;">এই বোর্ড ও সালের প্রশ্ন শীঘ্রই সিস্টেমে যুক্ত করা হবে।</p>
                 </div>
             `;
-            if (countDisplay) countDisplay.innerHTML = `<i class="fa-solid fa-circle-question"></i> মোট প্রশ্ন: ০টি`;
             return;
-        }
-
-        if (countDisplay) {
-            const bNum = (typeof toBanglaNum === 'function') ? toBanglaNum(questions.length) : questions.length;
-            countDisplay.innerHTML = `<i class="fa-solid fa-circle-question"></i> মোট প্রশ্ন: ${bNum}টি`;
         }
 
         let html = '';
         questions.forEach((q, idx) => {
-            html += renderMCQCardHTML(q, idx);
+            html += (typeof renderModernMCQCardHTML === 'function') 
+                ? renderModernMCQCardHTML(q, idx, { mode: 'study' }) 
+                : renderMCQCardHTML(q, idx);
         });
         listContainer.innerHTML = html;
 
@@ -126,14 +141,68 @@ async function loadBoardMCQQuestions() {
             <div style="text-align: center; padding: 35px 20px; background: #FEF2F2; border-radius: 12px; color: var(--danger);">
                 <i class="fa-solid fa-circle-exclamation fa-2x" style="margin-bottom: 10px;"></i>
                 <p style="font-weight: 600;">প্রশ্ন লোড করতে সমস্যা হয়েছে।</p>
-                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 4px;">ইন্টারনেট সংযোগ চেক করুন অথবা একটু পর পুনরায় চেষ্টা করুন।</p>
             </div>
         `;
     }
 }
 
+async function loadBoardCQQuestions() {
+    const cqContainer = document.getElementById('board-interactive-cq-list');
+    if (!cqContainer) return;
+    
+    cqContainer.innerHTML = `
+        <div style="text-align: center; padding: 45px 20px; color: var(--text-secondary);">
+            <i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
+            <p style="font-weight: 500;">ডাটাবেজ থেকে বোর্ড সৃজনশীল (CQ) প্রশ্ন লোড করা হচ্ছে...</p>
+        </div>
+    `;
+
+    try {
+        const cqs = await ApiService.getBoardCQ(selectedBoardCode, selectedYear);
+        if (!cqs || cqs.length === 0) {
+            cqContainer.innerHTML = `
+                <div style="text-align: center; padding: 40px; background: #fff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin-top: 15px;">
+                    <i class="fa-regular fa-folder-open fa-3x" style="color: var(--text-muted); margin-bottom: 12px;"></i>
+                    <h3 style="color: var(--text-primary); margin-bottom: 6px;">কোনো সৃজনশীল প্রশ্ন পাওয়া যায়নি</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">এই বোর্ড ও সালের সৃজনশীল প্রশ্ন শীঘ্রই সিস্টেমে যুক্ত করা হবে।</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        cqs.forEach((cq, idx) => {
+            html += (typeof renderModernCQCardHTML === 'function') 
+                ? renderModernCQCardHTML(cq, idx) 
+                : renderCQCardHTML(cq, idx);
+        });
+        cqContainer.innerHTML = html;
+    } catch (err) {
+        console.error("Failed to load CQ:", err);
+    }
+}
+
+async function loadBoardModelTest() {
+    if (!currentBoardMcqs || currentBoardMcqs.length === 0) {
+        try {
+            currentBoardMcqs = await ApiService.getBoardMCQ(selectedBoardCode, selectedYear) || [];
+        } catch (e) {
+            currentBoardMcqs = [];
+        }
+    }
+
+    if (typeof startInteractiveModelTest === 'function') {
+        startInteractiveModelTest(currentBoardMcqs, 'board-interactive-model-container', () => {
+            loadBoardModelTest();
+        });
+    }
+}
+
 function goBackStep() {
     if (currentStep === 'questions') {
+        if (window.currentExamState && window.currentExamState.timerId) {
+            clearInterval(window.currentExamState.timerId);
+        }
         currentStep = 'boards';
     } else if (currentStep === 'boards') {
         currentStep = 'years';
@@ -162,72 +231,18 @@ function updateStepView() {
         if (stepYears) stepYears.style.display = 'none';
         if (stepBoards) stepBoards.style.display = 'block';
         if (stepQuestions) stepQuestions.style.display = 'none';
-        if (breadcrumbStep) breadcrumbStep.innerText = `${selectedYear} > বোর্ড নির্বাচন`;
+        if (breadcrumbStep) breadcrumbStep.innerText = `${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear} > বোর্ড নির্বাচন`;
         if (backBtnText) backBtnText.innerText = 'সাল পরিবর্তনে যান';
     } else if (currentStep === 'questions') {
         if (stepYears) stepYears.style.display = 'none';
         if (stepBoards) stepBoards.style.display = 'none';
         if (stepQuestions) stepQuestions.style.display = 'block';
-        if (breadcrumbStep) breadcrumbStep.innerText = `${selectedYear} > ${selectedBoard} > ${selectedType}`;
+        if (breadcrumbStep) breadcrumbStep.innerText = `${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear} > ${selectedBoard}`;
         if (backBtnText) backBtnText.innerText = 'বোর্ড পরিবর্তনে যান';
     }
 }
 
-// Show Answers Toggle
-function toggleAnswersSwitch(checkbox) {
-    const questions = document.querySelectorAll('#board-mcq-questions-list .question-card, #mcq-view-container .question-card');
-    questions.forEach(card => {
-        const correctOpt = card.querySelector('[data-correct="true"]');
-        if (checkbox.checked) {
-            card.classList.add('show-answers-active');
-            if (correctOpt) {
-                correctOpt.classList.add('correct');
-                const icon = correctOpt.querySelector('.option-status-icon');
-                if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
-            }
-        } else {
-            card.classList.remove('show-answers-active');
-            if (!card.classList.contains('answered')) {
-                if (correctOpt) {
-                    correctOpt.classList.remove('correct');
-                    const icon = correctOpt.querySelector('.option-status-icon');
-                    if (icon) icon.innerHTML = '';
-                }
-            }
-        }
-    });
-}
-
-// CQ Accordion Toggle
-function toggleAccordion(header) {
-    const accordion = header.closest('.cq-accordion');
-    if (accordion) {
-        accordion.classList.toggle('open');
-    }
-}
-
-// বোর্ড সৃজনশীল (CQ) প্রশ্ন লোডার
-async function loadBoardCQQuestions() {
-    const cqContainer = document.getElementById('cq-view-container');
-    if (!cqContainer) return;
-    
-    cqContainer.innerHTML = '<div style="text-align: center; padding: 45px 20px; color: var(--text-secondary);"><i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i><p style="font-weight: 500;">ডাটাবেজ থেকে সৃজনশীল (CQ) প্রশ্ন লোড করা হচ্ছে...</p></div>';
-
-    try {
-        const cqs = await ApiService.getBoardCQ(selectedBoardCode, selectedYear);
-        if (!cqs || cqs.length === 0) {
-            cqContainer.innerHTML = '<div style="text-align: center; padding: 40px; background: #fff; border-radius: 12px; border: 1.5px dashed var(--border-color); margin-top: 15px;"><i class="fa-regular fa-folder-open fa-3x" style="color: var(--text-muted); margin-bottom: 12px;"></i><h3 style="color: var(--text-primary); margin-bottom: 6px;">কোনো সৃজনশীল প্রশ্ন পাওয়া যায়নি</h3><p style="color: var(--text-secondary); font-size: 0.95rem;">এই বোর্ড ও সালের সৃজনশীল প্রশ্ন ডাটাবেজে যুক্ত করা হলে এখানে দেখতে পাবেন।</p></div>';
-            return;
-        }
-
-        let html = '';
-        cqs.forEach((cq, idx) => {
-            html += (typeof renderCQCardHTML === 'function') 
-                ? renderCQCardHTML(cq, idx) 
-                : '<div class="question-card"><p>' + cq.stem + '</p></div>';
-        });
-        cqContainer.innerHTML = html;
-    } catch (err) {
-        console.error("Failed to load CQ:", err);
-    }
-}
+window.openTypeModal = openTypeModal;
+window.openBoardInteractiveView = openBoardInteractiveView;
+window.switchBoardInteractiveTab = switchBoardInteractiveTab;
+window.goBackStep = goBackStep;

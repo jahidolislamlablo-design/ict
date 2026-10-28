@@ -785,6 +785,9 @@
         <a href="index.html" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem; text-decoration: none;">
           🌐 মূল ওয়েবসাইট দেখুন
         </a>
+        <button type="button" id="gitSyncNavBtn" class="btn" onclick="syncToGitHubPages(event)" style="padding: 0.35rem 0.85rem; font-size: 0.82rem; background: #059669; color: white; border-radius: 6px; box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);" title="সর্বশেষ ডাটা ও পিডিএফ GitHub Pages এ লাইভ করুন">
+          🚀 লাইভ সাইটে সিঙ্ক (Git Push)
+        </button>
         <div class="server-status" id="serverStatusBadge">
           <span class="status-dot" id="serverStatusDot"></span>
           <span id="serverStatusText">সার্ভার চেক করা হচ্ছে...</span>
@@ -820,6 +823,24 @@
     <!-- ১. MCQ এন্ট্রি ফরম -->
     <!-- ============================================== -->
     <section id="mcqTab" class="tab-content active">
+      
+      <!-- ডায়নামিক মেটাডেটা বিল্ডার -->
+      <div class="card" id="customMetaBuilderCard" style="background: #F8FAFC; border: 1.5px dashed #CBD5E1; margin-bottom: 1.5rem; padding: 1rem 1.25rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <strong style="color: #1E293B; font-size: 0.95rem;">✨ ডায়নামিক ড্রপডাউন অপশন যোগ করুন (Custom Metadata Builder)</strong>
+            <p style="font-size: 0.82rem; color: #64748B; margin: 0;">নতুন অধ্যায়, বোর্ড, সাল, কলেজ বা মডেল টেস্ট যোগ করুন যা স্বয়ংক্রিয়ভাবে ড্রপডাউনে সেভ থাকবে</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="promptAddCustomOption('chapter')">+ নতুন অধ্যায়</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="promptAddCustomOption('board')">+ নতুন বোর্ড</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="promptAddCustomOption('year')">+ নতুন সাল</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="promptAddCustomOption('college')">+ নতুন কলেজ</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="promptAddCustomOption('modelTest')">+ নতুন মডেল টেস্ট</button>
+          </div>
+        </div>
+      </div>
+  
       <form id="mcqForm" onsubmit="handleMcqSubmit(event)">
 
         <!-- মেটাডেটা বক্স -->
@@ -2140,7 +2161,7 @@
         btn.innerHTML = '⏳ সিঙ্ক হচ্ছে...';
       }
       try {
-        const res = await fetch(`${API_BASE}/api/sync-github`, { method: 'POST' });
+        const res = await fetch(`${API_BASE}/api/git-sync`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'Manual sync from Admin Panel' }) });
         const data = await res.json();
         if (res.ok && data.success) {
           showToast('সফল!', data.message || 'GitHub Pages এ সফলভাবে সিঙ্ক হয়েছে!', 'success');

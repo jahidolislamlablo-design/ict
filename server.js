@@ -310,6 +310,72 @@ const Note = mongoose.model('Note', NoteSchema);
 // ==========================================
 // PDF Upload Configuration (Multer)
 // ==========================================
+
+// ------------------------------------------
+// ছবি আপলোড কনফিগারেশন (Multer Image Storage)
+// ------------------------------------------
+const imageUploadDir = path.join(__dirname, 'uploads', 'images');
+if (!fs.existsSync(imageUploadDir)) {
+  fs.mkdirSync(imageUploadDir, { recursive: true });
+}
+
+const imageStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, imageUploadDir);
+  },
+  filename: function (req, file, cb) {
+    const ext = path.extname(file.originalname) || '.png';
+    const base = path.basename(file.originalname, ext).replace(/[^a-zA-Z0-9.\-_]/g, '_') || 'image';
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, `${uniqueSuffix}-${base}${ext}`);
+  }
+});
+
+const imageFileFilter = (req, file, cb) => {
+  if (file && (file.mimetype.startsWith('image/') || /\.(png|jpe?g|gif|webp|svg)$/i.test(file.originalname))) {
+    cb(null, true);
+  } else {
+    cb(new Error('শুধুমাত্র ছবি ফাইল (.png, .jpg, .jpeg, .webp, .svg) আপলোড করা অনুমোদিত!'), false);
+  }
+};
+
+const uploadImage = multer({
+  storage: imageStorage,
+  limits: { fileSize: 15 * 1024 * 1024 }, // 15MB
+  fileFilter: imageFileFilter
+});
+
+function syncImageFileToFrontend(filename) {
+  const sourcePath = path.join(imageUploadDir, filename);
+  if (!fs.existsSync(sourcePath)) return;
+
+  const targetDirs = [
+    'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/uploads/images'
+  ];
+
+  targetDirs.forEach(dir => {
+    try {
+      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+      fs.copyFileSync(sourcePath, path.join(dir, filename));
+    } catch (e) {}
+  });
+}
+
+// অটোমেটিক গিট সিঙ্ক (GitHub Pages আপডেট)
+const { exec: execGit } = require('child_process');
+let gitSyncTimer = null;
+function triggerGitPushDebounced(commitMsg = 'Auto sync dashboard updates') {
+  if (gitSyncTimer) clearTimeout(gitSyncTimer);
+  gitSyncTimer = setTimeout(() => {
+    const cmd = `git add database/ uploads/ && git commit -m "${commitMsg}" && git -c http.version=HTTP/1.1 push origin main`;
+    execGit(cmd, { cwd: __dirname }, (error, stdout) => {
+      if (!error) {
+        console.log('✅ Git sync auto-completed:', stdout.trim().split('\n').pop());
+      }
+    });
+  }, 4000);
+}
+
 const pdfUploadDir = path.join(__dirname, 'uploads', 'pdfs');
 if (!fs.existsSync(pdfUploadDir)) {
   fs.mkdirSync(pdfUploadDir, { recursive: true });
@@ -377,24 +443,21 @@ function buildCollegeRegex(col) {
     return new RegExp('(residential|রেসিডেনসিয়াল|drmc)', 'i');
   }
   if (str === 'dc' || str === 'dhaka college' || str.includes('ঢাকা কলেজ')) {
-    return new RegExp('(dhaka\\s*college|ঢাকা\\s*কলেজ|\\bdc\\b)', 'i');
+    return new RegExp('(dhaka\\s*college|ঢাকা\\s*কলেজ)', 'i');
   }
-  if (str.includes('সিটি') || str.includes('city college')) {
+  if (str === 'city' || str.includes('সিটি কলেজ') || str.includes('city college')) {
     return new RegExp('(city\\s*college|সিটি\\s*কলেজ)', 'i');
   }
-  if (str === 'ctg_college' || str.includes('চট্টগ্রাম কলেজ') || str.includes('chittagong college')) {
-    return new RegExp('(chittagong|চট্টগ্রাম)', 'i');
+  if (str.includes('চট্টগ্রাম') || str.includes('chattogram') || str.includes('chittagong')) {
+    return new RegExp('(chattogram|chittagong|চট্টগ্রাম)', 'i');
   }
-  if (str === 'raj_college' || str.includes('রাজশাহী কলেজ') || str.includes('rajshahi college')) {
+  if (str.includes('রাজশাহী') || str.includes('rajshahi')) {
     return new RegExp('(rajshahi|রাজশাহী)', 'i');
   }
   if (str.includes('ক্যান্টনমেন্ট') || str.includes('cantonment')) {
     return new RegExp('(cantonment|ক্যান্টনমেন্ট)', 'i');
   }
-  if (str.includes('মুজিব') || str.includes('mujib')) {
-    return new RegExp('(mujib|মুজিব)', 'i');
-  }
-  return new RegExp(col.trim(), 'i');
+  return new RegExp(str, 'i');
 }
 
 const uploadPdf = multer({
@@ -517,7 +580,7 @@ async function syncDatabaseJson(type = 'all') {
     ];
 
     if (type === 'all' || type === 'mcqs') {
-      const allMcqs = await Mcq.find({}).sort({ createdAt: -1 });
+      const allMcqs = await Mcq.find({}).sort({ serialNo: 1, createdAt: -1 });
       const jsonStr = JSON.stringify(allMcqs, null, 2);
       destDirs.forEach(dir => {
         try {
@@ -528,7 +591,7 @@ async function syncDatabaseJson(type = 'all') {
     }
 
     if (type === 'all' || type === 'cqs') {
-      const allCqs = await Cq.find({}).sort({ createdAt: -1 });
+      const allCqs = await Cq.find({}).sort({ serialNo: 1, createdAt: -1 });
       const jsonStr = JSON.stringify(allCqs, null, 2);
       destDirs.forEach(dir => {
         try {
@@ -539,7 +602,7 @@ async function syncDatabaseJson(type = 'all') {
     }
 
     if (type === 'all' || type === 'pdfs') {
-      const allPdfs = await Pdf.find({}).sort({ createdAt: -1 });
+      const allPdfs = await Pdf.find({}).sort({ serialNo: 1, createdAt: -1 });
       const jsonStr = JSON.stringify(allPdfs, null, 2);
       destDirs.forEach(dir => {
         try {
@@ -603,7 +666,7 @@ app.get('/api/mcqs', async (req, res) => {
     if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
     if (modelTestNo && modelTestNo.trim()) filter.modelTestNo = { $regex: new RegExp(modelTestNo.trim(), 'i') };
 
-    const mcqs = await Mcq.find(filter).sort({ createdAt: -1 });
+    const mcqs = await Mcq.find(filter).sort({ serialNo: 1, createdAt: -1 });
 
     res.status(200).json({
       success: true,
@@ -823,7 +886,7 @@ app.get('/api/cqs', async (req, res) => {
     if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
     if (modelTestNo && modelTestNo.trim()) filter.modelTestNo = { $regex: new RegExp(modelTestNo.trim(), 'i') };
 
-    const cqs = await Cq.find(filter).sort({ createdAt: -1 });
+    const cqs = await Cq.find(filter).sort({ serialNo: 1, createdAt: -1 });
 
     res.status(200).json({
       success: true,
@@ -1275,7 +1338,7 @@ app.get('/api/pdfs', async (req, res) => {
       ];
     }
 
-    const pdfs = await Pdf.find(filter).sort({ createdAt: -1 });
+    const pdfs = await Pdf.find(filter).sort({ serialNo: 1, createdAt: -1 });
 
     res.status(200).json({
       success: true,
@@ -1305,6 +1368,96 @@ app.get('/api/pdfs/:id', async (req, res) => {
 });
 
 // ৩. নতুন PDF আপলোড করা (ফাইল আপলোড সহ)
+
+// ------------------------------------------
+// ইমেজ আপলোড এন্ডপয়েন্ট (MCQ & CQ Diagram Image)
+// ------------------------------------------
+app.post('/api/upload-image', (req, res) => {
+  uploadImage.single('image')(req, res, function (err) {
+    if (err) {
+      return res.status(400).json({ success: false, message: err.message || 'ছবি আপলোড ব্যর্থ হয়েছে' });
+    }
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: 'কোনো ছবি নির্বাচন করা হয়নি' });
+    }
+    const imageUrl = '/uploads/images/' + req.file.filename;
+    syncImageFileToFrontend(req.file.filename);
+    triggerGitPushDebounced('Upload image: ' + req.file.filename);
+    res.status(200).json({
+      success: true,
+      message: 'ছবি সফলভাবে আপলোড হয়েছে',
+      imageUrl: imageUrl,
+      filename: req.file.filename
+    });
+  });
+});
+
+// ------------------------------------------
+// লাইভ গিটহাব সিঙ্ক এন্ডপয়েন্ট (Git Push to GitHub Pages)
+// ------------------------------------------
+app.post('/api/git-sync', (req, res) => {
+  const commitMsg = (req.body && req.body.message) || 'Sync latest updates to GitHub Pages';
+  const cmd = `git add database/ uploads/ assets/ pages/ && git commit -m "${commitMsg}" && git -c http.version=HTTP/1.1 push origin main`;
+  execGit(cmd, { cwd: __dirname }, (error, stdout, stderr) => {
+    if (error) {
+      return res.status(500).json({ success: false, message: 'Git sync error: ' + error.message, details: stderr });
+    }
+    res.status(200).json({ success: true, message: 'সফলভাবে গিটহাবে পুশ ও লাইভ করা হয়েছে!', output: stdout });
+  });
+});
+
+// ------------------------------------------
+// পিডিএফ আপডেট / এডিট এন্ডপয়েন্ট (PUT /api/pdfs/:id)
+// ------------------------------------------
+app.put('/api/pdfs/:id', (req, res) => {
+  uploadPdf.single('pdfFile')(req, res, async function (err) {
+    if (err) {
+      return res.status(400).json({ success: false, message: err.message || 'ফাইল আপলোড ব্যর্থ হয়েছে' });
+    }
+    try {
+      const { id } = req.params;
+      const { title, category, chapter, description, pagesCount, directPdfUrl, serialNo } = req.body;
+
+      const pdf = await Pdf.findById(id);
+      if (!pdf) {
+        return res.status(404).json({ success: false, message: 'পিডিএফ খুঁজে পাওয়া যায়নি' });
+      }
+
+      if (title) pdf.title = title.trim();
+      if (category) pdf.category = category.trim();
+      if (chapter !== undefined) pdf.chapter = chapter.trim();
+      if (description !== undefined) pdf.description = description.trim();
+      if (pagesCount !== undefined) pdf.pagesCount = pagesCount.trim();
+      if (serialNo !== undefined && serialNo !== '') pdf.serialNo = parseInt(serialNo, 10) || 0;
+
+      if (req.file) {
+        if (pdf.pdfUrl && pdf.pdfUrl.startsWith('/uploads/pdfs/')) {
+          removePdfFileFromFrontend(path.basename(pdf.pdfUrl));
+        }
+        pdf.pdfUrl = '/uploads/pdfs/' + req.file.filename;
+        pdf.originalFileName = req.file.originalname;
+        const sizeMb = (req.file.size / (1024 * 1024)).toFixed(1);
+        pdf.fileSize = sizeMb > 0 ? `${sizeMb} MB` : `${Math.round(req.file.size / 1024)} KB`;
+        syncPdfFileToFrontend(req.file.filename);
+      } else if (directPdfUrl) {
+        pdf.pdfUrl = directPdfUrl.trim();
+      }
+
+      await pdf.save();
+      await syncDatabaseJson('pdfs');
+      triggerGitPushDebounced('Update PDF: ' + pdf.title);
+
+      res.status(200).json({
+        success: true,
+        message: 'পিডিএফ সফলভাবে আপডেট করা হয়েছে',
+        data: pdf
+      });
+    } catch (e) {
+      res.status(500).json({ success: false, message: 'পিডিএফ আপডেট ব্যর্থ হয়েছে', error: e.message });
+    }
+  });
+});
+
 app.post('/api/pdfs', (req, res) => {
   uploadPdf.single('pdfFile')(req, res, async function (err) {
     if (err) {
@@ -1315,7 +1468,7 @@ app.post('/api/pdfs', (req, res) => {
     }
 
     try {
-      const { title, category, chapter, description, pagesCount, directPdfUrl } = req.body;
+      const { title, category, chapter, description, pagesCount, directPdfUrl, serialNo } = req.body;
 
       if (!title) {
         return res.status(400).json({

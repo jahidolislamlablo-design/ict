@@ -231,77 +231,54 @@
                 </div>
             </section>
 
-            <!-- MCQ ভিউ -->
-            <section id="mcqView" style="display: none;">
-                <div class="breadcrumb-bar" style="background: #F8FAFC;">
-                    <h2 id="active-mcq-title" style="font-size: 1.15rem; color: var(--primary);">MCQ অনুশীলন</h2>
+            <!-- ইন্টারেক্টিভ কুইজ ভিউ (MCQ, CQ ও Model Test) -->
+            <section id="interactiveQuizView" class="interactive-view-container" style="display: none;">
+                <!-- ৩টি সেগমেন্টেড বাটন ট্যাব -->
+                <div class="interactive-segmented-wrapper">
+                    <button class="seg-tab-btn active" id="tab-btn-chapter-mcq" onclick="switchChapterInteractiveTab('mcq')">
+                        <i class="fa-solid fa-list-check"></i> MCQ
+                    </button>
+                    <button class="seg-tab-btn" id="tab-btn-chapter-cq" onclick="switchChapterInteractiveTab('cq')">
+                        <i class="fa-solid fa-pen-nib"></i> সৃজনশীল (CQ)
+                    </button>
+                    <button class="seg-tab-btn" id="tab-btn-chapter-model" onclick="switchChapterInteractiveTab('model')">
+                        <i class="fa-solid fa-stopwatch"></i> Model Test
+                    </button>
                 </div>
 
-                <div class="quiz-toolbar">
-                    <span class="quiz-progress-text" id="chapter-mcq-count"><i class="fa-solid fa-list-check"></i> মোট প্রশ্ন: লোড হচ্ছে...</span>
-                    <div class="show-answer-control">
-                        <span>সরাসরি উত্তর দেখুন</span>
+                <!-- সাব-হেডার (ব্যাক বাটন, মাঝের শিরোনাম ও শো অ্যানসার টগল) -->
+                <div class="interactive-sub-header">
+                    <button class="round-back-btn" onclick="goBackChapterPrep()" title="অধ্যায়ে ফিরে যান">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <h2 class="sub-header-title" id="chapter-interactive-title">এইচএসসি আইসিটি</h2>
+                    <div class="show-answer-toggle-wrapper" id="chapter-show-answer-wrapper">
+                        <span>Show answer</span>
                         <label class="switch">
-                            <input type="checkbox" id="chapterShowAnsToggle" onchange="toggleChapterAnswers(this)">
+                            <input type="checkbox" id="chapterShowAnsToggle" onchange="toggleModernShowAnswers(this, '#chapter-interactive-mcq-list')">
                             <span class="slider"></span>
                         </label>
                     </div>
                 </div>
 
-                <!-- ডাইনামিক অধ্যায়ভিত্তিক MCQ কন্টেইনার -->
-                <div id="chapter-mcq-list">
-                </div>
-            </section>
-
-            <!-- CQ ভিউ -->
-            <section id="cqView" style="display: none;">
-                <div class="breadcrumb-bar" style="background: #F8FAFC;">
-                    <h2 id="active-cq-title" style="font-size: 1.15rem; color: var(--primary);">সৃজনশীল প্রশ্ন (CQ)</h2>
+                <!-- প্যানেল ১: MCQ অনুশীলন -->
+                <div id="panel-chapter-mcq">
+                    <div id="chapter-interactive-mcq-list"></div>
                 </div>
 
-                <div id="chapter-cq-list">
-                    <!-- Dynamic CQ questions loaded from database -->
+                <!-- প্যানেল ২: সৃজনশীল প্রশ্ন (CQ) -->
+                <div id="panel-chapter-cq" style="display: none;">
+                    <div id="chapter-interactive-cq-list"></div>
+                </div>
+
+                <!-- প্যানেল ৩: মডেল টেস্ট (Model Test - ২৫টি রেন্ডম MCQ) -->
+                <div id="panel-chapter-model" style="display: none;">
+                    <div id="chapter-interactive-model-container"></div>
                 </div>
             </section>
 
         </div>
     </main>
-
-    <!-- প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ শিট -->
-    <div id="chapterModeModal" class="modal-overlay" onclick="if(event.target === this) closeChapterModal()">
-        <div class="bottom-sheet">
-            <div class="sheet-handle"></div>
-            <h3 class="sheet-title" id="modal-chapter-name">Choose Question Type</h3>
-            
-            <div class="sheet-options">
-                <div class="type-option-card" onclick="selectChapterMode('mcq')">
-                    <div class="type-icon mcq">
-                        <i class="fa-solid fa-square-check"></i>
-                    </div>
-                    <div class="type-info">
-                        <h3>MCQ প্র্যাকটিস</h3>
-                        <p>অধ্যায়ের বহুনির্বাচনি প্রশ্নাবলি সমাধান ও সঠিক উত্তর যাচাই</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
-                </div>
-
-                <div class="type-option-card" onclick="selectChapterMode('cq')">
-                    <div class="type-icon cq">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <div class="type-info">
-                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
-                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের প্রশ্ন ও আদর্শ ব্যাখ্যা</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
-                </div>
-            </div>
-
-            <div style="margin-top: 18px; text-align: center;">
-                <button class="btn btn-outline btn-sm" onclick="closeChapterModal()">বাতিল করুন</button>
-            </div>
-        </div>
-    </div>
 
     <!-- মোবাইল বটম নেভিগেশন বার -->
     <nav class="bottom-nav">

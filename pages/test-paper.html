@@ -171,122 +171,54 @@
                 </div>
             </section>
 
-            <!-- ধাপ ৩: প্রশ্ন ভিউ (MCQ ও CQ) -->
-            <section id="step-questions" style="display: none;">
-                <div class="breadcrumb-bar" style="background: #F8FAFC;">
-                    <h2 id="test-q-view-title" style="font-size: 1.15rem; color: var(--primary);">কলেজ টেস্ট পেপার অনুশীলন</h2>
+            <!-- ধাপ ৩: প্রশ্ন ভিউ (MCQ, CQ ও Model Test) -->
+            <section id="step-questions" class="interactive-view-container" style="display: none;">
+                <!-- ৩টি সেগমেন্টেড বাটন ট্যাব -->
+                <div class="interactive-segmented-wrapper">
+                    <button class="seg-tab-btn active" id="tab-btn-college-mcq" onclick="switchCollegeInteractiveTab('mcq')">
+                        <i class="fa-solid fa-list-check"></i> MCQ
+                    </button>
+                    <button class="seg-tab-btn" id="tab-btn-college-cq" onclick="switchCollegeInteractiveTab('cq')">
+                        <i class="fa-solid fa-pen-nib"></i> সৃজনশীল (CQ)
+                    </button>
+                    <button class="seg-tab-btn" id="tab-btn-college-model" onclick="switchCollegeInteractiveTab('model')">
+                        <i class="fa-solid fa-stopwatch"></i> Model Test
+                    </button>
                 </div>
 
-                <!-- MCQ ভিউ -->
-                <div id="test-mcq-view">
-                    <div class="quiz-toolbar">
-                        <span class="quiz-progress-text" id="test-mcq-count"><i class="fa-solid fa-circle-question"></i> মোট প্রশ্ন: লোড হচ্ছে...</span>
-                        <div class="show-answer-control">
-                            <span>সরাসরি উত্তর দেখুন</span>
-                            <label class="switch">
-                                <input type="checkbox" id="testPaperShowAns" onchange="toggleCollegeAnswers(this)">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- ডাইনামিক কলেজ MCQ কন্টেইনার -->
-                    <div id="test-mcq-questions-list">
-                    </div>
-                </div>
-
-                <!-- CQ ভিউ -->
-                <div id="test-cq-view" style="display: none;">
-                    <div class="question-card">
-                        <div class="cq-stem">
-                            <span class="cq-tag"><i class="fa-solid fa-feather-pointed"></i> উদ্দীপক [নটর ডেম কলেজ টেস্ট পরীক্ষা]</span>
-                            <p>আরিফ পারমাণবিক স্কেলে উন্নত ন্যানো পার্টিকেল ব্যবহার করে ওষুধ উৎপাদন নিয়ে গবেষণা করেন। অপরদিকে তার বন্ধু তানভীর ভার্চুয়াল রিয়েলিটি প্রযুক্তির সিমুলেটর ব্যবহার করে ফ্লাইট ড্রাইভিং প্রশিক্ষণ গ্রহণ করছেন।</p>
-                        </div>
-
-                        <div class="cq-sub-questions">
-                            <div class="cq-accordion">
-                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                    <span>(ক) টেলিপ্রেজেন্স (Telepresence) কী? [মান: ১]</span>
-                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                                </div>
-                                <div class="cq-accordion-body">
-                                    <strong>উত্তর:</strong> টেলিপ্রেজেন্স হলো এমন একটি উন্নত প্রযুক্তি যার মাধ্যমে ব্যবহারকারী দূরবর্তী কোনো স্থানে শারীরিকভাবে উপস্থিত না থেকেও বাস্তবে উপস্থিত থাকার নিখুঁত অনুভূতি লাভ করেন।
-                                </div>
-                            </div>
-
-                            <div class="cq-accordion">
-                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                    <span>(খ) "ভার্চুয়াল রিয়েলিটির মাধ্যমে ঝুঁকিমুক্ত ড্রাইভিং প্রশিক্ষণ সম্ভব"- ব্যাখ্যা কর। [মান: ২]</span>
-                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                                </div>
-                                <div class="cq-accordion-body">
-                                    <strong>উত্তর:</strong> ভার্চুয়াল রিয়েলিটি হেডসেট ও কম্পিউটার সিমুলেশনের মাধ্যমে রাস্তায় না নেমেই ত্রিমাত্রিক কাল্পনিক পরিবেশে বাস্তবসম্মত গাড়ি বা বিমান চালানোর অভিজ্ঞতা তৈরি করা যায়। ভুল করলেও এতে কোনো দুর্ঘটনা বা আর্থিক ক্ষতির ঝুঁকি থাকে না।
-                                </div>
-                            </div>
-
-                            <div class="cq-accordion">
-                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                    <span>(গ) আরিফের গবেষণার প্রযুক্তিটির কার্যপদ্ধতি বিশ্লেষণ কর। [মান: ৩]</span>
-                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                                </div>
-                                <div class="cq-accordion-body">
-                                    <strong>উত্তর:</strong> আরিফ ন্যানোটেকনোলজি ব্যবহার করে গবেষণা করছেন। ১ থেকে ১০০ ন্যানোমিটার স্কেলের উপাদান নিয়ে কাজ করাই ন্যানোপ্রযুক্তি। চিকিৎসাবিজ্ঞানে এর মাধ্যমে শরীরের নির্দিষ্ট আক্রান্ত কোষে সরাসরি স্মার্ট ড্রাগ ডেলিভারি করা যায়।
-                                </div>
-                            </div>
-
-                            <div class="cq-accordion">
-                                <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                                    <span>(ঘ) মানবকল্যাণে আরিফ ও তানভীরের ব্যবহৃত প্রযুক্তিদ্বয়ের গুরুত্ব মূল্যায়ন কর। [মান: ৪]</span>
-                                    <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                                </div>
-                                <div class="cq-accordion-body">
-                                    <strong>উত্তর:</strong> আরিফের ন্যানোটেকনোলজি ক্যান্সার চিকিৎসা ও টেকসই উৎপাদনে বিপ্লব ঘটিয়েছে, আর তানভীরের ভার্চুয়াল রিয়েলিটি জটিল প্রশিক্ষণ ও শিক্ষায় নিরাপত্তা নিশ্চিত করছে। উভয় প্রযুক্তিই আধুনিক মানবকল্যাণে অপরিহার্য।
-                                </div>
-                            </div>
-                        </div>
+                <!-- সাব-হেডার (ব্যাক বাটন, মাঝের শিরোনাম ও শো অ্যানসার টগল) -->
+                <div class="interactive-sub-header">
+                    <button class="round-back-btn" onclick="goBackTestPaper()" title="কলেজে ফিরে যান">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <h2 class="sub-header-title" id="college-interactive-title">কলেজ টেস্ট পেপার</h2>
+                    <div class="show-answer-toggle-wrapper" id="college-show-answer-wrapper">
+                        <span>Show answer</span>
+                        <label class="switch">
+                            <input type="checkbox" id="testPaperShowAns" onchange="toggleModernShowAnswers(this, '#college-interactive-mcq-list')">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
 
+                <!-- প্যানেল ১: MCQ অনুশীলন -->
+                <div id="panel-college-mcq">
+                    <div id="college-interactive-mcq-list"></div>
+                </div>
+
+                <!-- প্যানেল ২: সৃজনশীল প্রশ্ন (CQ) -->
+                <div id="panel-college-cq" style="display: none;">
+                    <div id="college-interactive-cq-list"></div>
+                </div>
+
+                <!-- প্যানেল ৩: মডেল টেস্ট (Model Test - ২৫টি রেন্ডম MCQ) -->
+                <div id="panel-college-model" style="display: none;">
+                    <div id="college-interactive-model-container"></div>
+                </div>
             </section>
 
         </div>
     </main>
-
-    <!-- প্রশ্ন ধরন (MCQ / CQ) নির্বাচনের পপআপ -->
-    <div id="testTypeModal" class="modal-overlay" onclick="if(event.target === this) closeCollegeModal()">
-        <div class="bottom-sheet">
-            <div class="sheet-handle"></div>
-            <h3 class="sheet-title" id="modal-college-title">Choose Question Type</h3>
-            
-            <div class="sheet-options">
-                <div class="type-option-card" onclick="selectTestQuestionType('MCQ')">
-                    <div class="type-icon mcq">
-                        <i class="fa-solid fa-square-check"></i>
-                    </div>
-                    <div class="type-info">
-                        <h3>MCQ প্র্যাকটিস</h3>
-                        <p>শীর্ষ কলেজের নির্বাচনী বহুনির্বাচনি প্রশ্নাবলি সমাধান</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
-                </div>
-
-                <div class="type-option-card" onclick="selectTestQuestionType('CQ')">
-                    <div class="type-icon cq">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <div class="type-info">
-                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
-                        <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের আদর্শ সমাধান</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
-                </div>
-            </div>
-
-            <div style="margin-top: 18px; text-align: center;">
-                <button class="btn btn-outline btn-sm" onclick="closeCollegeModal()">বাতিল করুন</button>
-            </div>
-        </div>
-    </div>
 
     <!-- মোবাইল বটম নেভিগেশন বার -->
     <nav class="bottom-nav">

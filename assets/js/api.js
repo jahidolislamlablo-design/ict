@@ -124,6 +124,8 @@ function mapBackendMcqToFrontend(item) {
         correct_index: correctIndex,
         correct: correctIndex,
         explanation: item.explanation || '',
+        image: item.image || '',
+        serialNo: item.serialNo || 0,
         chapter: item.chapter || '',
         chapter_id: item.chapter ? (item.chapter.match(/\d+/) ? parseInt(item.chapter.match(/\d+/)[0]) : 1) : 1,
         board_id: item.boardName || '',
@@ -151,6 +153,8 @@ function mapBackendCqToFrontend(item) {
         a_ga: item.a_ga || '',
         q_gha: item.q_gha || '',
         a_gha: item.a_gha || '',
+        image: item.image || '',
+        serialNo: item.serialNo || 0,
         chapter: item.chapter || '',
         board_name: item.boardName || '',
         year: item.examYear || '',
@@ -436,6 +440,50 @@ async function fetchStaticJson(filename) {
     return [];
 }
 
+
+function resolveMediaUrl(rawUrl) {
+    if (!rawUrl) return '';
+    if (/^https?:\/\//i.test(rawUrl)) return rawUrl;
+    if (window.location.port === '5000') {
+        return rawUrl.startsWith('/') ? rawUrl : '/' + rawUrl;
+    }
+    const clean = rawUrl.replace(/^\/+/, '');
+    const inPages = window.location.pathname.includes('/pages/');
+    return inPages ? `../${clean}` : clean;
+}
+
+function matchCollegeName(storedName, targetName) {
+    if (!storedName || !targetName) return true;
+    const a = storedName.toLowerCase();
+    const b = targetName.toLowerCase();
+    if (a.includes(b) || b.includes(a)) return true;
+
+    const groups = [
+        ['notre dame', 'নটর ডেম', 'ndc'],
+        ['viqarunnisa', 'ভিকারুননিসা', 'vnsc'],
+        ['rajuk', 'রাজউক'],
+        ['residential', 'রেসিডেনসিয়াল', 'drmc'],
+        ['dhaka college', 'ঢাকা কলেজ'],
+        ['city college', 'সিটি কলেজ', 'dcc'],
+        ['chattogram', 'chittagong', 'চট্টগ্রাম', 'ctg'],
+        ['rajshahi', 'রাজশাহী'],
+        ['cantonment', 'ক্যান্টনমেন্ট', 'cpsc'],
+        ['ideal', 'আইডিয়াল'],
+        ['mohsin', 'মহসিন'],
+        ['victoria', 'ভিক্টোরিয়া'],
+        ['mc college', 'এম সি কলেজ', 'এমসি কলেজ'],
+        ['bm college', 'বিএম কলেজ', 'বি এম কলেজ'],
+        ['ananda mohan', 'আনন্দ মোহন']
+    ];
+
+    for (const grp of groups) {
+        const matchA = grp.some(term => a.includes(term));
+        const matchB = grp.some(term => b.includes(term));
+        if (matchA && matchB) return true;
+    }
+    return false;
+}
+
 function hasCategory(item, catName) {
     if (!item) return false;
     if (Array.isArray(item.categoryTypes) && item.categoryTypes.includes(catName)) return true;
@@ -694,7 +742,7 @@ const ApiService = {
             const filtered = allCqs.filter(item => {
                 if (!hasCategory(item, 'College Test Paper')) return false;
                 if (collegeId && item.collegeName) {
-                    return item.collegeName.toLowerCase().includes(collegeId.toLowerCase());
+                    return matchCollegeName(item.collegeName, collegeId);
                 }
                 return true;
             });
@@ -720,7 +768,7 @@ const ApiService = {
             const filtered = allMcqs.filter(item => {
                 if (!hasCategory(item, 'College Test Paper')) return false;
                 if (collegeId && item.collegeName) {
-                    return item.collegeName.toLowerCase().includes(collegeId.toLowerCase());
+                    return matchCollegeName(item.collegeName, collegeId);
                 }
                 return true;
             });
@@ -764,12 +812,18 @@ const ApiService = {
 
 
 // ==========================================
-// ৫. UNIVERSAL RENDERING FUNCTIONS (MCQ & CQ)
+// ৫. UNIVERSAL RENDERING FUNCTIONS (MODERN MCQ, CQ & MODEL TEST)
+// Matching User Reference Screenshots
 // ==========================================
 
-function renderMCQCardHTML(q, index, options = {}) {
+function toBanglaNum(num) {
+    if (num === null || num === undefined) return '';
     const banglaDigits = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
-    const qNum = (index + 1).toString().replace(/\d/g, d => banglaDigits[d] || d);
+    return num.toString().replace(/\d/g, d => banglaDigits[d] || d);
+}
+
+function renderModernMCQCardHTML(q, index, options = {}) {
+    const qNum = toBanglaNum(index + 1);
     const markers = ['ক', 'খ', 'গ', 'ঘ'];
     
     let opts = q.options;
@@ -779,93 +833,122 @@ function renderMCQCardHTML(q, index, options = {}) {
     if (!Array.isArray(opts)) opts = [];
 
     const correctIndex = parseInt(q.correct_index !== undefined ? q.correct_index : q.correct, 10) || 0;
-    const clickHandler = options.clickHandler || 'handleMCQOptionClick';
+    const mode = options.mode || 'study'; // 'study' or 'exam'
     const qText = q.question_text || q.question || '';
     const explanation = q.explanation || '';
     
-    const contextHtml = q.context_stem ? `<div class="question-stem" style="background:#F1F5F9; padding:10px 14px; border-radius:8px; margin-bottom:12px; font-size:0.92rem; border-left:3px solid var(--primary);">${q.context_stem}</div>` : '';
-    const explanationHtml = explanation ? `<div class="explanation-box"><div class="explanation-title" style="font-weight:600; margin-bottom:4px; color:var(--text-primary);"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div><p style="margin:0; line-height:1.5;">${explanation}</p></div>` : '';
+    const imageHtml = q.image ? `
+        <div class="question-image-box" style="margin: 12px 0 16px 0; text-align: center;">
+            <img src="${resolveMediaUrl(q.image)}" alt="প্রশ্ন চিত্র" style="max-width: 100%; max-height: 320px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
+        </div>
+    ` : '';
+    const contextHtml = q.context_stem ? `<div class="question-stem" style="background:#F1F5F9; padding:12px 16px; border-radius:12px; margin-bottom:14px; font-size:0.95rem; border-left:4px solid var(--primary); line-height: 1.6;">${q.context_stem}</div>` : '';
 
     let optionsHtml = '';
     opts.forEach((optText, oIdx) => {
         const marker = markers[oIdx] || (oIdx + 1);
-        const isCorrect = (oIdx === correctIndex);
         optionsHtml += `
-            <div class="option-item" data-index="${oIdx}" data-correct="${isCorrect}" onclick="${clickHandler}(this, ${index}, ${oIdx}, ${correctIndex})">
-                <div class="option-left">
-                    <span class="option-marker">${marker}</span>
-                    <span>${optText}</span>
+            <div class="modern-option-pill" data-opt-idx="${oIdx}" onclick="handleModernOptionClick(this, ${index}, ${oIdx}, ${correctIndex}, '${mode}')">
+                <div class="modern-option-pill-left">
+                    <span class="option-radio-circle"></span>
+                    <span class="option-text"><strong>${marker}.</strong> ${optText}</span>
                 </div>
-                <span class="option-status-icon"></span>
+                <span class="modern-status-icon"></span>
             </div>
         `;
     });
 
+    const expBtnAndBox = (mode === 'exam') ? `
+        <div class="modern-exp-box" style="display: none;">
+            <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
+            <p style="margin: 0; line-height: 1.6;">${explanation || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
+        </div>
+    ` : `
+        <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 8px;">
+            <button type="button" class="modern-exp-btn" onclick="toggleModernExp(this)">
+                <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
+            </button>
+            <div class="modern-exp-box">
+                <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
+                <p style="margin: 0; line-height: 1.6;">${explanation || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
+            </div>
+        </div>
+    `;
+
     return `
-        <div class="question-card" id="question-card-${index}" data-q-index="${index}" data-correct-index="${correctIndex}">
+        <div class="modern-quiz-card" id="modern-mcq-card-${index}" data-q-index="${index}" data-correct-index="${correctIndex}">
             ${contextHtml}
-            <div class="question-title">${qNum}. ${qText}</div>
-            <div class="options-grid two-cols">
+            <div class="modern-quiz-header">
+                <h3 class="modern-q-title">${qNum}. ${qText}</h3>
+            </div>
+            ${imageHtml}
+            <div class="modern-options-list">
                 ${optionsHtml}
             </div>
-            ${explanationHtml}
+            ${expBtnAndBox}
         </div>
     `;
 }
 
-function renderCQCardHTML(cq, index) {
+function renderModernCQCardHTML(cq, index) {
     const cleanQ = (text, prefix) => {
         if (!text) return '';
         return text.replace(new RegExp('^\\s*\\(' + prefix + '\\)\\s*'), '').trim();
     };
-    const banglaDigits = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
-    const qNum = (index + 1).toString().replace(/\d/g, d => banglaDigits[d] || d);
+    const qNum = toBanglaNum(index + 1);
 
     return `
-        <div class="question-card" style="margin-bottom: 24px;">
-            <div class="cq-stem">
-                <span class="cq-tag"><i class="fa-solid fa-feather-pointed"></i> সৃজনশীল প্রশ্ন ${qNum} [উদ্দীপক]</span>
-                <p style="margin-top: 10px; line-height: 1.6; font-size: 1rem; color: #1e293b;">${cq.stem}</p>
+        <div class="modern-cq-card" style="margin-bottom: 24px;">
+            <div class="modern-cq-stem-box">
+                <div style="font-weight: 700; color: #4F46E5; margin-bottom: 8px;">
+                    <i class="fa-solid fa-feather-pointed"></i> উদ্দীপক-${qNum}:
+                </div>
+                <p style="margin: 0; line-height: 1.7; font-size: 1rem; color: #1E293B;">${cq.stem}</p>
+                ${cq.image ? `
+                    <div style="margin: 14px 0 10px 0; text-align: center;">
+                        <img src="${resolveMediaUrl(cq.image)}" alt="উদ্দীপক চিত্র" style="max-width: 100%; max-height: 380px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
+                    </div>
+                ` : ''}
             </div>
 
-            <div class="cq-sub-questions" style="margin-top: 18px;">
-                <div class="cq-accordion">
-                    <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(ক) ${cleanQ(cq.q_ka, "ক")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ১]</span></span>
-                        <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+            <div class="modern-cq-sub-questions">
+                <div class="modern-cq-sub-pill">
+                    <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
+                        <span><strong>(ক)</strong> ${cleanQ(cq.q_ka, "ক")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ১]</span></span>
+                        <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cleanQ(cq.a_ka, "ক") || 'উত্তর সংযুক্ত করা হয়নি।'}
-                    </div>
-                </div>
-
-                <div class="cq-accordion">
-                    <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(খ) ${cleanQ(cq.q_kha, "খ")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ২]</span></span>
-                        <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
-                    </div>
-                    <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cleanQ(cq.a_kha, "খ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
+                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_ka, "ক") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
-                <div class="cq-accordion">
-                    <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(গ) ${cleanQ(cq.q_ga, "গ")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ৩]</span></span>
-                        <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                <div class="modern-cq-sub-pill">
+                    <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
+                        <span><strong>(খ)</strong> ${cleanQ(cq.q_kha, "খ")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ২]</span></span>
+                        <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cleanQ(cq.a_ga, "গ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
+                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_kha, "খ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
-                <div class="cq-accordion">
-                    <div class="cq-accordion-header" onclick="toggleAccordion(this)">
-                        <span>(ঘ) ${cleanQ(cq.q_gha, "ঘ")} <span style="color:var(--primary); font-size:0.85rem;">[মান: ৪]</span></span>
-                        <i class="fa-solid fa-chevron-down cq-accordion-arrow"></i>
+                <div class="modern-cq-sub-pill">
+                    <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
+                        <span><strong>(গ)</strong> ${cleanQ(cq.q_ga, "গ")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ৩]</span></span>
+                        <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="cq-accordion-body">
-                        <strong>উত্তর:</strong> ${cleanQ(cq.a_gha, "ঘ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
+                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_ga, "গ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    </div>
+                </div>
+
+                <div class="modern-cq-sub-pill">
+                    <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
+                        <span><strong>(ঘ)</strong> ${cleanQ(cq.q_gha, "ঘ")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ৪]</span></span>
+                        <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
+                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_gha, "ঘ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
             </div>
@@ -873,84 +956,376 @@ function renderCQCardHTML(cq, index) {
     `;
 }
 
-function handleMCQOptionClick(element, qIndex, selectedIndex, correctIndex) {
-    const parentCard = element.closest('.question-card');
+function renderMCQCardHTML(q, index, options = {}) {
+    return renderModernMCQCardHTML(q, index, options);
+}
+
+function renderCQCardHTML(cq, index) {
+    return renderModernCQCardHTML(cq, index);
+}
+
+function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, mode = 'study') {
+    const parentCard = element.closest('.modern-quiz-card');
     if (!parentCard) return;
+
+    if (mode === 'exam') {
+        if (parentCard.classList.contains('locked')) return;
+        const options = parentCard.querySelectorAll('.modern-option-pill');
+        options.forEach(opt => opt.classList.remove('exam-selected'));
+        element.classList.add('exam-selected');
+        
+        if (window.currentExamState) {
+            window.currentExamState.answers[qIndex] = selectedIndex;
+            window.currentExamState.updateStats();
+        }
+        return;
+    }
 
     if (parentCard.classList.contains('answered')) return;
     parentCard.classList.add('answered');
 
-    const options = parentCard.querySelectorAll('.option-item');
-    options.forEach(opt => {
-        opt.style.pointerEvents = 'none';
-        opt.style.cursor = 'default';
-    });
+    const options = parentCard.querySelectorAll('.modern-option-pill');
+    options.forEach(opt => opt.classList.add('locked'));
 
     const isCorrect = (selectedIndex === correctIndex);
 
     if (isCorrect) {
-        element.classList.add('correct');
-        const icon = element.querySelector('.option-status-icon');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
-    } else {
-        element.classList.add('wrong');
-        const icon = element.querySelector('.option-status-icon');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-xmark" style="color: var(--danger); font-size: 1.15rem;"></i>';
-
-        const correctOpt = parentCard.querySelector('[data-correct="true"]') || options[correctIndex];
-        if (correctOpt) {
-            correctOpt.classList.add('correct');
-            const cIcon = correctOpt.querySelector('.option-status-icon');
-            if (cIcon) cIcon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
+        element.classList.add('correct-selected');
+        const icon = element.querySelector('.modern-status-icon');
+        if (icon) {
+            icon.className = 'modern-status-icon check';
+            icon.innerHTML = '<i class="fa-solid fa-check"></i>';
         }
-    }
+    } else {
+        element.classList.add('wrong-selected');
+        const icon = element.querySelector('.modern-status-icon');
+        if (icon) {
+            icon.className = 'modern-status-icon cross';
+            icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        }
 
-    const expBox = parentCard.querySelector('.explanation-box');
-    if (expBox) expBox.style.display = 'block';
+        const correctOpt = parentCard.querySelector(`[data-opt-idx="${correctIndex}"]`);
+        if (correctOpt) {
+            correctOpt.classList.add('correct-selected');
+            const cIcon = correctOpt.querySelector('.modern-status-icon');
+            if (cIcon) {
+                cIcon.className = 'modern-status-icon check';
+                cIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+            }
+        }
+
+        const expBox = parentCard.querySelector('.modern-exp-box');
+        if (expBox) expBox.style.display = 'block';
+        const expBtn = parentCard.querySelector('.modern-exp-btn');
+        if (expBtn) expBtn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা লুকান';
+    }
+}
+
+function handleMCQOptionClick(element, qIndex, selectedIndex, correctIndex) {
+    handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, 'study');
 }
 
 function checkMCQAnswer(element, isCorrect) {
-    const parentCard = element.closest('.question-card');
+    const parentCard = element.closest('.question-card, .modern-quiz-card');
     if (!parentCard || parentCard.classList.contains('answered')) return;
     parentCard.classList.add('answered');
 
-    const options = parentCard.querySelectorAll('.option-item');
-    options.forEach(opt => {
-        opt.style.pointerEvents = 'none';
-        opt.style.cursor = 'default';
-    });
-
     if (isCorrect) {
-        element.classList.add('correct');
-        const icon = element.querySelector('.option-status-icon');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
+        element.classList.add('correct-selected');
     } else {
-        element.classList.add('wrong');
-        const icon = element.querySelector('.option-status-icon');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-xmark" style="color: var(--danger); font-size: 1.15rem;"></i>';
-
-        const correctOpt = parentCard.querySelector('[data-correct="true"]');
-        if (correctOpt) {
-            correctOpt.classList.add('correct');
-            const cIcon = correctOpt.querySelector('.option-status-icon');
-            if (cIcon) cIcon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
-        }
+        element.classList.add('wrong-selected');
     }
-
-    const expBox = parentCard.querySelector('.explanation-box');
-    if (expBox) expBox.style.display = 'block';
 }
 
+function toggleModernExp(btn) {
+    const card = btn.closest('.modern-quiz-card');
+    if (!card) return;
+    const box = card.querySelector('.modern-exp-box');
+    if (!box) return;
+    if (box.style.display === 'block') {
+        box.style.display = 'none';
+        btn.innerHTML = '<i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন';
+    } else {
+        box.style.display = 'block';
+        btn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা লুকান';
+    }
+}
 
-// পপ-আপ নোটিশ ব্যবহারকারীর অনুরোধ অনুযায়ী স্থায়ীভাবে বন্ধ
+function toggleModernCqSubPill(header) {
+    const pill = header.closest('.modern-cq-sub-pill');
+    if (pill) {
+        pill.classList.toggle('open');
+    }
+}
+
+function toggleAccordion(header) {
+    const accordion = header.closest('.cq-accordion, .modern-cq-sub-pill');
+    if (accordion) {
+        accordion.classList.toggle('open');
+    }
+}
+
+function toggleModernShowAnswers(checkbox, containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+    const cards = container.querySelectorAll('.modern-quiz-card');
+    cards.forEach(card => {
+        const correctIdx = card.getAttribute('data-correct-index');
+        const correctOpt = card.querySelector(`[data-opt-idx="${correctIdx}"]`);
+        const expBox = card.querySelector('.modern-exp-box');
+        const expBtn = card.querySelector('.modern-exp-btn');
+
+        if (checkbox.checked) {
+            card.classList.add('show-answers-active');
+            if (correctOpt) {
+                correctOpt.classList.add('correct-selected');
+                const icon = correctOpt.querySelector('.modern-status-icon');
+                if (icon) {
+                    icon.className = 'modern-status-icon check';
+                    icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+                }
+            }
+            if (expBox) expBox.style.display = 'block';
+            if (expBtn) expBtn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা লুকান';
+        } else {
+            card.classList.remove('show-answers-active');
+            if (!card.classList.contains('answered')) {
+                if (correctOpt) {
+                    correctOpt.classList.remove('correct-selected');
+                    const icon = correctOpt.querySelector('.modern-status-icon');
+                    if (icon) {
+                        icon.className = 'modern-status-icon';
+                        icon.innerHTML = '';
+                    }
+                }
+                if (expBox) expBox.style.display = 'none';
+                if (expBtn) expBtn.innerHTML = '<i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন';
+            }
+        }
+    });
+}
+
+// ------------------------------------------
+// ৬. MODEL TEST RUNNER (25 RANDOM MCQS)
+// ------------------------------------------
+function startInteractiveModelTest(allQuestions, containerId, onRetakeCallback) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    if (window.currentExamState && window.currentExamState.timerId) {
+        clearInterval(window.currentExamState.timerId);
+    }
+
+    if (!allQuestions || allQuestions.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 40px; background: #fff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin-top: 15px;">
+                <i class="fa-regular fa-folder-open fa-3x" style="color: var(--text-muted); margin-bottom: 12px;"></i>
+                <h3 style="color: var(--text-primary); margin-bottom: 6px;">মডেল টেস্টের জন্য পর্যাপ্ত প্রশ্ন পাওয়া যায়নি</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">অনুগ্রহ করে অন্য অধ্যায়, বোর্ড বা কলেজ নির্বাচন করুন।</p>
+            </div>
+        `;
+        return;
+    }
+
+    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+    const examQuestions = shuffled.slice(0, 25);
+    const totalCount = examQuestions.length;
+    let timeRemaining = Math.min(25 * 60, totalCount * 60);
+
+    const examState = {
+        questions: examQuestions,
+        answers: {},
+        timerId: null,
+        submitted: false,
+        onRetake: onRetakeCallback,
+        updateStats: () => {
+            const answeredCount = Object.keys(examState.answers).length;
+            const el = document.getElementById('exam-answered-count');
+            if (el) el.innerHTML = `<i class="fa-regular fa-circle-check"></i> উত্তর দিয়েছেন: ${toBanglaNum(answeredCount)}টি`;
+        }
+    };
+    window.currentExamState = examState;
+
+    let cardsHtml = '';
+    examQuestions.forEach((q, idx) => {
+        cardsHtml += renderModernMCQCardHTML(q, idx, { mode: 'exam' });
+    });
+
+    container.innerHTML = `
+        <div class="modern-model-toolbar">
+            <div class="modern-model-stats">
+                <span><i class="fa-solid fa-list-check"></i> মোট প্রশ্ন: ${toBanglaNum(totalCount)}টি</span>
+                <span id="exam-answered-count"><i class="fa-regular fa-circle-check"></i> উত্তর দিয়েছেন: ০টি</span>
+            </div>
+            <div class="modern-model-timer">
+                <i class="fa-solid fa-stopwatch fa-spin-pulse"></i>
+                <span id="exam-timer-display">২৫:০০</span>
+            </div>
+        </div>
+        <div id="exam-result-area"></div>
+        <div id="exam-questions-list">
+            ${cardsHtml}
+        </div>
+        <div id="exam-submit-area" style="margin: 30px 0 20px 0; text-align: center;">
+            <button class="btn btn-primary" id="btn-submit-exam" onclick="submitCurrentModelTest()" style="width: 100%; max-width: 360px; padding: 14px 24px; border-radius: 9999px; font-size: 1.05rem; font-weight: 700; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.35);">
+                <i class="fa-solid fa-paper-plane" style="margin-right: 6px;"></i> পরীক্ষা সমাপ্ত করুন (Submit Exam)
+            </button>
+        </div>
+    `;
+
+    const timerDisplay = document.getElementById('exam-timer-display');
+    const updateTimer = () => {
+        if (timeRemaining <= 0) {
+            clearInterval(examState.timerId);
+            submitCurrentModelTest(true);
+            return;
+        }
+        timeRemaining--;
+        const mins = Math.floor(timeRemaining / 60);
+        const secs = timeRemaining % 60;
+        const pad = (n) => n < 10 ? '0' + n : '' + n;
+        const timeStr = `${pad(mins)}:${pad(secs)}`;
+        if (timerDisplay) timerDisplay.innerText = toBanglaNum(timeStr);
+    };
+
+    updateTimer();
+    examState.timerId = setInterval(updateTimer, 1000);
+}
+
+function submitCurrentModelTest(isAuto = false) {
+    const state = window.currentExamState;
+    if (!state || state.submitted) return;
+    state.submitted = true;
+
+    if (state.timerId) {
+        clearInterval(state.timerId);
+    }
+
+    if (isAuto) {
+        alert("সময় শেষ! আপনার মডেল টেস্ট স্বয়ংক্রিয়ভাবে জমা নেওয়া হয়েছে।");
+    }
+
+    const submitArea = document.getElementById('exam-submit-area');
+    if (submitArea) submitArea.style.display = 'none';
+
+    let correctCount = 0;
+    let wrongCount = 0;
+    let skippedCount = 0;
+
+    state.questions.forEach((q, idx) => {
+        const correctIndex = parseInt(q.correct_index !== undefined ? q.correct_index : q.correct, 10) || 0;
+        const userChoice = state.answers[idx];
+
+        const card = document.getElementById(`modern-mcq-card-${idx}`);
+        if (card) {
+            card.classList.add('locked');
+            const options = card.querySelectorAll('.modern-option-pill');
+            options.forEach(opt => {
+                opt.classList.add('locked');
+                opt.classList.remove('exam-selected');
+            });
+
+            const correctOpt = card.querySelector(`[data-opt-idx="${correctIndex}"]`);
+            if (correctOpt) {
+                correctOpt.classList.add('correct-selected');
+                const icon = correctOpt.querySelector('.modern-status-icon');
+                if (icon) {
+                    icon.className = 'modern-status-icon check';
+                    icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+                }
+            }
+
+            if (userChoice === undefined) {
+                skippedCount++;
+            } else if (userChoice === correctIndex) {
+                correctCount++;
+            } else {
+                wrongCount++;
+                const wrongOpt = card.querySelector(`[data-opt-idx="${userChoice}"]`);
+                if (wrongOpt) {
+                    wrongOpt.classList.add('wrong-selected');
+                    const icon = wrongOpt.querySelector('.modern-status-icon');
+                    if (icon) {
+                        icon.className = 'modern-status-icon cross';
+                        icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                    }
+                }
+            }
+
+            const expBox = card.querySelector('.modern-exp-box');
+            if (expBox) expBox.style.display = 'block';
+        }
+    });
+
+    const total = state.questions.length;
+    const percentage = Math.round((correctCount / total) * 100);
+
+    const resultArea = document.getElementById('exam-result-area');
+    if (resultArea) {
+        resultArea.innerHTML = `
+            <div class="modern-model-result-card">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: #DCFCE7; color: #16A34A; font-size: 1.8rem; margin-bottom: 12px;">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: #1E293B; margin-bottom: 4px;">মডেল টেস্ট সম্পন্ন হয়েছে!</h3>
+                <p style="color: #64748B; font-size: 0.92rem; margin-bottom: 18px;">নিচে আপনার ফলাফল ও প্রতিটি প্রশ্নের সঠিক উত্তরের ব্যাখ্যা দেখুন</p>
+                
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <div style="background: #EEF2FF; border: 1.5px solid #C7D2FE; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
+                        <div style="font-size: 0.80rem; color: #4338CA; font-weight: 600;">প্রাপ্ত নম্বর</div>
+                        <div style="font-size: 1.35rem; font-weight: 800; color: #4338CA;">${toBanglaNum(correctCount)} / ${toBanglaNum(total)}</div>
+                    </div>
+                    <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
+                        <div style="font-size: 0.80rem; color: #16A34A; font-weight: 600;">সঠিক</div>
+                        <div style="font-size: 1.35rem; font-weight: 800; color: #16A34A;">${toBanglaNum(correctCount)}টি</div>
+                    </div>
+                    <div style="background: #FEF2F2; border: 1.5px solid #FCA5A5; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
+                        <div style="font-size: 0.80rem; color: #DC2626; font-weight: 600;">ভুল</div>
+                        <div style="font-size: 1.35rem; font-weight: 800; color: #DC2626;">${toBanglaNum(wrongCount)}টি</div>
+                    </div>
+                    <div style="background: #FFFBEB; border: 1.5px solid #FDE68A; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
+                        <div style="font-size: 0.80rem; color: #D97706; font-weight: 600;">ছেড়ে দিয়েছেন</div>
+                        <div style="font-size: 1.35rem; font-weight: 800; color: #D97706;">${toBanglaNum(skippedCount)}টি</div>
+                    </div>
+                </div>
+
+                <div style="font-size: 1.15rem; font-weight: 700; color: #1E293B; margin-bottom: 18px;">
+                    সঠিকতার হার: <span style="color: ${percentage >= 70 ? '#16A34A' : (percentage >= 40 ? '#D97706' : '#DC2626')};">${toBanglaNum(percentage)}%</span>
+                </div>
+
+                <button class="btn btn-outline" onclick="restartCurrentModelTest()" style="border-radius: 9999px; padding: 10px 24px; font-weight: 700; border-color: #6366F1; color: #4F46E5;">
+                    <i class="fa-solid fa-rotate-right" style="margin-right: 6px;"></i> পুনরায় মডেল টেস্ট দিন (Retake)
+                </button>
+            </div>
+        `;
+        resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function restartCurrentModelTest() {
+    if (window.currentExamState && typeof window.currentExamState.onRetake === 'function') {
+        window.currentExamState.onRetake();
+    }
+}
+
 function showMixedContentNoticeIfNeeded() {}
-
 
 window.CONFIG = CONFIG;
 window.ApiService = ApiService;
 window.MOCK_DATA = MOCK_DATA;
+window.toBanglaNum = toBanglaNum;
 window.renderMCQCardHTML = renderMCQCardHTML;
 window.renderCQCardHTML = renderCQCardHTML;
+window.renderModernMCQCardHTML = renderModernMCQCardHTML;
+window.renderModernCQCardHTML = renderModernCQCardHTML;
 window.handleMCQOptionClick = handleMCQOptionClick;
+window.handleModernOptionClick = handleModernOptionClick;
 window.checkMCQAnswer = checkMCQAnswer;
 window.checkChapterMCQ = checkMCQAnswer;
+window.toggleModernExp = toggleModernExp;
+window.toggleModernCqSubPill = toggleModernCqSubPill;
+window.toggleAccordion = toggleAccordion;
+window.toggleModernShowAnswers = toggleModernShowAnswers;
+window.startInteractiveModelTest = startInteractiveModelTest;
+window.submitCurrentModelTest = submitCurrentModelTest;
+window.restartCurrentModelTest = restartCurrentModelTest;
