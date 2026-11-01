@@ -146,6 +146,15 @@ const McqSchema = new mongoose.Schema({
     default: '',
     trim: true
   },
+  serialNo: {
+    type: Number,
+    default: 0
+  },
+  image: {
+    type: String,
+    default: '',
+    trim: true
+  },
 
   // MCQ à¦®à§‚à¦² à¦«à¦¿à¦²à§à¦¡à¦¸à¦®à§‚à¦¹
   question: {
@@ -214,6 +223,15 @@ const CqSchema = new mongoose.Schema({
     trim: true
   },
   modelTestNo: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  serialNo: {
+    type: Number,
+    default: 0
+  },
+  image: {
     type: String,
     default: '',
     trim: true
@@ -509,6 +527,10 @@ const PdfSchema = new mongoose.Schema({
     default: '১০ পৃষ্ঠা'
   },
   downloadsCount: {
+    type: Number,
+    default: 0
+  },
+  serialNo: {
     type: Number,
     default: 0
   },
@@ -844,6 +866,8 @@ app.post('/api/mcqs', async (req, res) => {
       categoryTypes,
       categoryType,
       chapter,
+      serialNo,
+      image,
       collegeName,
       boardName,
       examYear,
@@ -876,6 +900,8 @@ app.post('/api/mcqs', async (req, res) => {
       examYear: examYear ? String(examYear).trim() : '',
       testPaperName: testPaperName ? testPaperName.trim() : '',
       modelTestNo: modelTestNo ? modelTestNo.trim() : '',
+      serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
+      image: image ? image.trim() : '',
       question: question.trim(),
       options: Array.isArray(options) ? options.map(o => String(o).trim()) : [],
       correctAnswer: String(correctAnswer).trim(),
@@ -903,6 +929,8 @@ app.post('/api/mcqs', async (req, res) => {
 app.put('/api/mcqs/:id', async (req, res) => {
   try {
     const {
+      serialNo,
+      image,
       categoryTypes,
       categoryType,
       chapter,
@@ -933,6 +961,8 @@ app.put('/api/mcqs/:id', async (req, res) => {
     if (examYear !== undefined) updateData.examYear = String(examYear).trim();
     if (testPaperName !== undefined) updateData.testPaperName = testPaperName.trim();
     if (modelTestNo !== undefined) updateData.modelTestNo = modelTestNo.trim();
+    if (serialNo !== undefined && serialNo !== '') updateData.serialNo = parseInt(serialNo, 10) || 0;
+    if (image !== undefined) updateData.image = image.trim();
     if (question) updateData.question = question.trim();
     if (options && Array.isArray(options)) updateData.options = options.map(o => String(o).trim());
     if (correctAnswer) updateData.correctAnswer = String(correctAnswer).trim();
@@ -1061,6 +1091,8 @@ app.get('/api/cqs/:id', async (req, res) => {
 app.post('/api/cqs', async (req, res) => {
   try {
     const {
+      serialNo,
+      image,
       categoryTypes,
       categoryType,
       chapter,
@@ -1102,6 +1134,8 @@ app.post('/api/cqs', async (req, res) => {
       examYear: examYear ? String(examYear).trim() : '',
       testPaperName: testPaperName ? testPaperName.trim() : '',
       modelTestNo: modelTestNo ? modelTestNo.trim() : '',
+      serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
+      image: image ? image.trim() : '',
       stem: stem.trim(),
       q_ka: q_ka.trim(),
       a_ka: a_ka ? a_ka.trim() : '',
@@ -1135,6 +1169,8 @@ app.post('/api/cqs', async (req, res) => {
 app.put('/api/cqs/:id', async (req, res) => {
   try {
     const {
+      serialNo,
+      image,
       categoryTypes,
       categoryType,
       chapter,
@@ -1170,6 +1206,8 @@ app.put('/api/cqs/:id', async (req, res) => {
     if (examYear !== undefined) updateData.examYear = String(examYear).trim();
     if (testPaperName !== undefined) updateData.testPaperName = testPaperName.trim();
     if (modelTestNo !== undefined) updateData.modelTestNo = modelTestNo.trim();
+    if (serialNo !== undefined && serialNo !== '') updateData.serialNo = parseInt(serialNo, 10) || 0;
+    if (image !== undefined) updateData.image = image.trim();
     if (stem) updateData.stem = stem.trim();
     if (q_ka) updateData.q_ka = q_ka.trim();
     if (a_ka !== undefined) updateData.a_ka = a_ka.trim();
@@ -1629,7 +1667,8 @@ app.post('/api/pdfs', (req, res) => {
         originalFileName,
         fileSize: req.body.fileSize || fileSize,
         pagesCount: pagesCount ? pagesCount.trim() : '১০ পৃষ্ঠা',
-        downloadsCount: 0
+        downloadsCount: 0,
+        serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0
       });
 
       const savedPdf = await newPdf.save();

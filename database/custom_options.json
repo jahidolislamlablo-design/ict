@@ -1,9 +1,73 @@
 {
-  "chapters": [],
-  "boards": [
-    "কারিগরি শিক্ষা বোর্ড (Technical Board)"
+  "chapters": [
+    "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+    "Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং",
+    "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
+    "Chapter 3 (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট",
+    "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "Chapter 6: ডাটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)"
   ],
-  "years": [],
-  "colleges": [],
-  "modelTests": []
+  "boards": [
+    "কারিগরি শিক্ষা বোর্ড (Technical Board)",
+    "Dhaka Board",
+    "Rajshahi Board",
+    "Cumilla Board",
+    "Jashore Board",
+    "Chattogram Board",
+    "Barishal Board",
+    "Sylhet Board",
+    "Dinajpur Board",
+    "Mymensingh Board",
+    "Madrasah Board"
+  ],
+  "years": [
+    "2026",
+    "2025",
+    "2024",
+    "2023",
+    "2022",
+    "2021",
+    "2020",
+    "2019",
+    "2018",
+    "2017",
+    "2016"
+  ],
+  "colleges": [
+    "Notre Dame College, Dhaka",
+    "Viqarunnisa Noon School & College",
+    "Dhaka Residential Model College",
+    "Rajuk Uttara Model College",
+    "Dhaka College, Dhaka",
+    "Chattogram College",
+    "Rajshahi College"
+  ],
+  "modelTests": [
+    "Model Test 01",
+    "Model Test 02",
+    "Model Test 03",
+    "Model Test 04",
+    "Model Test 05",
+    "Model Test 06",
+    "Model Test 07",
+    "Model Test 08",
+    "Model Test 09",
+    "Model Test 10",
+    "Model Test 11",
+    "Model Test 12",
+    "Model Test 13",
+    "Model Test 14",
+    "Model Test 15",
+    "Model Test 16",
+    "Model Test 17",
+    "Model Test 18",
+    "Model Test 19",
+    "Model Test 20",
+    "Model Test 21",
+    "Model Test 22",
+    "Model Test 23",
+    "Model Test 24",
+    "Model Test 25"
+  ]
 }
