@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -442,7 +442,8 @@ function buildChapterRegex(ch) {
     }
     return new RegExp('(chapter\\s*' + str + '|অধ্যায়\\s*' + str + '|' + bDigit + 'ম\\s*অধ্যায়|অধ্যায়\\s*' + bDigit + ')', 'i');
   }
-  return new RegExp(str, 'i');
+  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(escaped, 'i');
 }
 
 function buildCollegeRegex(col) {
@@ -475,7 +476,8 @@ function buildCollegeRegex(col) {
   if (str.includes('ক্যান্টনমেন্ট') || str.includes('cantonment')) {
     return new RegExp('(cantonment|ক্যান্টনমেন্ট)', 'i');
   }
-  return new RegExp(str, 'i');
+  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(escaped, 'i');
 }
 
 const uploadPdf = multer({

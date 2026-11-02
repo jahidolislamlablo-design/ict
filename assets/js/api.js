@@ -452,6 +452,13 @@ function resolveMediaUrl(rawUrl) {
     return inPages ? `../${clean}` : clean;
 }
 
+function resolveHtmlMediaUrls(html) {
+    if (!html || typeof html !== 'string') return '';
+    return html.replace(/src=(["'])(\\/?uploads\/[^"']+)\1/gi, (match, quote, p) => {
+        return `src=${quote}${resolveMediaUrl(p)}${quote}`;
+    });
+}
+
 function matchCollegeName(storedName, targetName) {
     if (!storedName || !targetName) return true;
     const a = storedName.toLowerCase();
@@ -930,7 +937,8 @@ function renderModernMCQCardHTML(q, index, options = {}) {
 function renderModernCQCardHTML(cq, index) {
     const cleanQ = (text, prefix) => {
         if (!text) return '';
-        return text.replace(new RegExp('^\\s*\\(' + prefix + '\\)\\s*'), '').trim();
+        const stripped = text.replace(new RegExp('^\\s*\\(' + prefix + '\\)\\s*'), '').trim();
+        return resolveHtmlMediaUrls(stripped);
     };
     const qNum = toBanglaNum(index + 1);
 
@@ -940,7 +948,7 @@ function renderModernCQCardHTML(cq, index) {
                 <div style="font-weight: 700; color: #4F46E5; margin-bottom: 8px;">
                     <i class="fa-solid fa-feather-pointed"></i> উদ্দীপক-${qNum}:
                 </div>
-                <p style="margin: 0; line-height: 1.7; font-size: 1rem; color: #1E293B;">${cq.stem}</p>
+                <p style="margin: 0; line-height: 1.7; font-size: 1rem; color: #1E293B;">${resolveHtmlMediaUrls(cq.stem)}</p>
                 ${cq.image ? `
                     <div style="margin: 14px 0 10px 0; text-align: center;">
                         <img src="${resolveMediaUrl(cq.image)}" alt="উদ্দীপক চিত্র" style="max-width: 100%; max-height: 380px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
@@ -1366,3 +1374,5 @@ window.toggleModernShowAnswers = toggleModernShowAnswers;
 window.startInteractiveModelTest = startInteractiveModelTest;
 window.submitCurrentModelTest = submitCurrentModelTest;
 window.restartCurrentModelTest = restartCurrentModelTest;
+window.resolveMediaUrl = resolveMediaUrl;
+window.resolveHtmlMediaUrls = resolveHtmlMediaUrls;
