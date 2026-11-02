@@ -446,6 +446,49 @@ function buildChapterRegex(ch) {
   return new RegExp(escaped, 'i');
 }
 
+
+function buildBoardRegex(boardStr) {
+  if (!boardStr) return null;
+  const str = boardStr.trim().toLowerCase();
+  if (str === 'all' || str.includes('সকল') || str.includes('all')) return null;
+
+  if (str.includes('dhaka') || str.includes('ঢা')) {
+    return new RegExp('(dhaka|ঢাকা)', 'i');
+  }
+  if (str.includes('rajshahi') || str.includes('রা')) {
+    return new RegExp('(rajshahi|রাজশাহী)', 'i');
+  }
+  if (str.includes('chattogram') || str.includes('chittagong') || str.includes('ctg') || str.includes('চ')) {
+    return new RegExp('(chattogram|chittagong|ctg|চট্টগ্রাম|চট্ট)', 'i');
+  }
+  if (str.includes('comilla') || str.includes('cumilla') || str.includes('কু')) {
+    return new RegExp('(comilla|cumilla|কুমিল্লা)', 'i');
+  }
+  if (str.includes('jashore') || str.includes('jessore') || str.includes('য')) {
+    return new RegExp('(jashore|jessore|যশোর)', 'i');
+  }
+  if (str.includes('barishal') || str.includes('বরিশাল') || (str.includes('ব') && !str.includes('বো'))) {
+    return new RegExp('(barishal|বরিশাল)', 'i');
+  }
+  if (str.includes('sylhet') || str.includes('সি')) {
+    return new RegExp('(sylhet|সিলেট)', 'i');
+  }
+  if (str.includes('dinajpur') || str.includes('দি')) {
+    return new RegExp('(dinajpur|দিনাজপুর)', 'i');
+  }
+  if (str.includes('mymensingh') || str.includes('ময়মনসিংহ') || str.includes('ম.') || str.includes('ম ')) {
+    return new RegExp('(mymensingh|ময়মনসিংহ)', 'i');
+  }
+  if (str.includes('madrasah') || str.includes('madrasa') || str.includes('মা')) {
+    return new RegExp('(madrasah|madrasa|মাদ্রাসা)', 'i');
+  }
+  if (str.includes('technical') || str.includes('কারিগরি')) {
+    return new RegExp('(technical|কারিগরি)', 'i');
+  }
+  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\function buildCollegeRegex(col) {');
+  return new RegExp(escaped, 'i');
+}
+
 function buildCollegeRegex(col) {
   if (!col) return null;
   const str = col.trim().toLowerCase();
@@ -806,7 +849,8 @@ app.get('/api/mcqs', async (req, res) => {
     }
 
     if (boardName && boardName.trim() && boardName.toLowerCase() !== 'all') {
-      filter.boardName = { $regex: new RegExp(boardName.trim(), 'i') };
+      const bRegex = buildBoardRegex(boardName);
+      if (bRegex) filter.boardName = { $regex: bRegex };
     }
     if (collegeName && collegeName.trim()) filter.collegeName = { $regex: buildCollegeRegex(collegeName) };
     if (examYear && examYear.trim()) filter.examYear = examYear.trim();
@@ -1034,7 +1078,8 @@ app.get('/api/cqs', async (req, res) => {
     }
 
     if (boardName && boardName.trim() && boardName.toLowerCase() !== 'all') {
-      filter.boardName = { $regex: new RegExp(boardName.trim(), 'i') };
+      const bRegex = buildBoardRegex(boardName);
+      if (bRegex) filter.boardName = { $regex: bRegex };
     }
     if (collegeName && collegeName.trim()) filter.collegeName = { $regex: buildCollegeRegex(collegeName) };
     if (examYear && examYear.trim()) filter.examYear = examYear.trim();

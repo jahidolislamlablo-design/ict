@@ -454,9 +454,38 @@ function resolveMediaUrl(rawUrl) {
 
 function resolveHtmlMediaUrls(html) {
     if (!html || typeof html !== 'string') return '';
-    return html.replace(/src=(["'])(\\/?uploads\/[^"']+)\1/gi, (match, quote, p) => {
+    return html.replace(/src=(["'])(\/?uploads\/[^"']+)\1/gi, (match, quote, p) => {
         return `src=${quote}${resolveMediaUrl(p)}${quote}`;
     });
+}
+
+
+function matchBoardName(storedName, boardCode) {
+    if (!storedName || !boardCode || boardCode === 'all') return true;
+    const s = storedName.toLowerCase();
+    const c = boardCode.toLowerCase();
+    if (s.includes(c) || c.includes(s)) return true;
+
+    const boardMap = {
+        'dhaka': ['dhaka', 'ঢাকা'],
+        'rajshahi': ['rajshahi', 'রাজশাহী'],
+        'chattogram': ['chattogram', 'chittagong', 'ctg', 'চট্টগ্রাম'],
+        'jashore': ['jashore', 'jessore', 'যশোর'],
+        'comilla': ['comilla', 'cumilla', 'কুমিল্লা'],
+        'barishal': ['barishal', 'বরিশাল'],
+        'sylhet': ['sylhet', 'সিলেট'],
+        'dinajpur': ['dinajpur', 'দিনাজপুর'],
+        'mymensingh': ['mymensingh', 'ময়মনসিংহ'],
+        'madrasah': ['madrasah', 'madrasa', 'মাদ্রাসা']
+    };
+
+    for (const [key, aliases] of Object.entries(boardMap)) {
+        const matchesQuery = aliases.some(a => c.includes(a));
+        if (matchesQuery) {
+            return aliases.some(a => s.includes(a));
+        }
+    }
+    return false;
 }
 
 function matchCollegeName(storedName, targetName) {
@@ -572,8 +601,7 @@ const ApiService = {
             const filtered = allMcqs.filter(item => {
                 if (!hasCategory(item, 'Board Question')) return false;
                 if (boardCode && boardCode !== 'all') {
-                    const b = (item.boardName || '').toLowerCase();
-                    if (!b.includes(boardCode.toLowerCase())) return false;
+                    if (!matchBoardName(item.boardName, boardCode)) return false;
                 }
                 if (year) {
                     if (String(item.examYear) !== String(year)) return false;
@@ -612,8 +640,7 @@ const ApiService = {
             const filtered = allCqs.filter(item => {
                 if (!hasCategory(item, 'Board Question')) return false;
                 if (boardCode && boardCode !== 'all') {
-                    const b = (item.boardName || '').toLowerCase();
-                    if (!b.includes(boardCode.toLowerCase())) return false;
+                    if (!matchBoardName(item.boardName, boardCode)) return false;
                 }
                 if (year) {
                     if (String(item.examYear) !== String(year)) return false;
@@ -1376,3 +1403,4 @@ window.submitCurrentModelTest = submitCurrentModelTest;
 window.restartCurrentModelTest = restartCurrentModelTest;
 window.resolveMediaUrl = resolveMediaUrl;
 window.resolveHtmlMediaUrls = resolveHtmlMediaUrls;
+window.matchBoardName = matchBoardName;
