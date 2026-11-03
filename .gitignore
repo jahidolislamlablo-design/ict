@@ -13,3 +13,4 @@ Thumbs.db
 # Redundant legacy public folder (files are now directly in project root)
 public/
 temp_ch2_docx_extract/
+temp_ch4_docx_extract/

@@ -76,6 +76,32 @@
     "createdAt": "2026-11-03T05:41:45.783Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9e6",
+    "serialNo": 1,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি html ডকুমেন্ট টাইপ ডিক্লারেশনে ব্যবহৃত হয়? [সকল. †ev. Õ26]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;। DOCTYPE html ্‌মঃ;",
+      "্‌ষঃ; DOCTYPE html!্‌মঃ;",
+      "্‌ষঃ;! DOCTYPE html ্‌মঃ;",
+      "্‌ষঃ; DOCTYPE html; ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;! DOCTYPE html ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.323Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9752",
     "serialNo": 2,
     "categoryTypes": [
@@ -125,6 +151,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.791Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9e7",
+    "serialNo": 2,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML ফাইল এডিট করার জন্য টেক্সট এডিটর কোনটি? [সকল. †ev. Õ26]\ni. নোটপ্যাড\nii. নোটপ্যাড++\niii. সাবলাইম টেক্সট\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.341Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9753",
@@ -178,6 +230,32 @@
     "createdAt": "2026-11-03T05:41:45.798Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9e8",
+    "serialNo": 3,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ইন্টারনেট সংযোগের ক্ষেত্রে সবচেয়ে গুরুত্বপূর্ণ হলো-\t[চ. বো. '২৫]",
+    "image": "",
+    "options": [
+      "IP Address",
+      "Domain Name",
+      "Browser",
+      "Search Engine"
+    ],
+    "correctAnswer": "IP Address",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.355Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9754",
     "serialNo": 4,
     "categoryTypes": [
@@ -227,6 +305,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.802Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9e9",
+    "serialNo": 4,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ওয়েব ব্রাউজার?\t[সি. বো. '২৫]",
+    "image": "",
+    "options": [
+      "Imo",
+      "Opera",
+      "Viber",
+      "Google"
+    ],
+    "correctAnswer": "Opera",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.370Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9755",
@@ -280,6 +384,32 @@
     "createdAt": "2026-11-03T05:41:45.809Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9ea",
+    "serialNo": 5,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি সার্চ ইঞ্জিন?\t[ব. বো. '২৫]",
+    "image": "",
+    "options": [
+      "Twitter",
+      "YouTube",
+      "Pipilika",
+      "Wikipedia"
+    ],
+    "correctAnswer": "Pipilika",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.380Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9756",
     "serialNo": 6,
     "categoryTypes": [
@@ -329,6 +459,32 @@
     "correctAnswer": "সিমপ্লেক্স",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.813Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9eb",
+    "serialNo": 6,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML ফাইল এডিট করার জন্য ব্যবহৃত টেক্সট এডিটর হলোু\n[রা. বো. '২৫]\ni. নোটপ্যাড ++\tii. সাবলাইম টেক্সট\niii. নোটপ্যাড\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.402Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9757",
@@ -382,6 +538,32 @@
     "createdAt": "2026-11-03T05:41:45.822Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9ec",
+    "serialNo": 7,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইট নিয়ে প্রথম কে চিন্তাভাবনা করেন?\t[চ. বো. '২৫]",
+    "image": "",
+    "options": [
+      "মার্শাল ম্যাকলুহান",
+      "ডি মরগ্যান",
+      "টিম বার্নাস লি",
+      "লেডি অ্যাডা"
+    ],
+    "correctAnswer": "টিম বার্নাস লি",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.410Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9758",
     "serialNo": 8,
     "categoryTypes": [
@@ -431,6 +613,32 @@
     "correctAnswer": "ডেটা স্থানান্তরের হার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.831Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9ed",
+    "serialNo": 8,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "খরহশ ঞধম কোনটি?\t[ব. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ড়ষ্‌মঃ;.....্‌ষঃ;/ড়ষ্‌মঃ;",
+      "্‌ষঃ;র্ষ‌মঃ;.....্‌ষঃ;/র্ষ‌মঃ;",
+      "্‌ষঃ;ন্‌মঃ;.....্‌ষঃ;/ন্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;.....্‌ষঃ;/ধ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ;.....্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.422Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9759",
@@ -484,6 +692,32 @@
     "createdAt": "2026-11-03T05:41:45.838Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9ee",
+    "serialNo": 9,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML-এ কোন এলিমেন্টের মাধ্যমে অন্য এলিমেন্টের অংশ নির্বাচন করা যায়?\t[ম. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ফর্‌ামঃ;",
+      "্‌ষঃ;ংঢ়ধহ্‌মঃ;",
+      "্‌ষঃ;ংঃুষব্‌মঃ;",
+      "্‌ষঃ;ভড়হঃ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ংঢ়ধহ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.432Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae975a",
     "serialNo": 10,
     "categoryTypes": [
@@ -533,6 +767,32 @@
     "correctAnswer": "0.7 Mbps",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.846Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9ef",
+    "serialNo": 10,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "\"#ঋঋঋঋঋঋ\" কোন রং নির্দেশ করে?\t[ঢা. বো. '২৫]",
+    "image": "",
+    "options": [
+      "সাদা",
+      "নীল",
+      "সায়ান",
+      "লাল"
+    ],
+    "correctAnswer": "সাদা",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.440Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae975b",
@@ -586,6 +846,32 @@
     "createdAt": "2026-11-03T05:41:45.852Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9f0",
+    "serialNo": 11,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড, চট্টগ্রাম বোর্ড, কুমিল্লা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন হেডিং ট্যাগের সাইজ সবচেয়ে ছোট?\n[দি. বো. '২৫; চ. বো. '১৭; কু. বো. '১৬]",
+    "image": "",
+    "options": [
+      "h1",
+      "h3",
+      "h5",
+      "h6"
+    ],
+    "correctAnswer": "h6",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.447Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae975c",
     "serialNo": 12,
     "categoryTypes": [
@@ -635,6 +921,32 @@
     "correctAnswer": "পেন ড্রাইভ হতে সিপিইউ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.864Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9f1",
+    "serialNo": 12,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ক্রমযুক্ত তালিকা প্রকাশের জন্য ব্যবহৃত ট্যাগ কোনটি?\t[য. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ঁষ্‌মঃ;",
+      "্‌ষঃ;ড়ষ্‌মঃ;",
+      "্‌ষঃ;নৎ্‌মঃ;",
+      "্‌ষঃ;ফবষ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ড়ষ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.460Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae975d",
@@ -688,6 +1000,32 @@
     "createdAt": "2026-11-03T05:41:45.873Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9f2",
+    "serialNo": 13,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ol ঃুঢ়ব = \"অ\" ংঃধৎঃ = \"৩\" ্‌মঃ; এর আউটপুট কেমন হবে?\n[সি. বো. '২৫]",
+    "image": "",
+    "options": [
+      "১. ২.",
+      "৩. ৪.",
+      "অ. ই.",
+      "ঈ. উ."
+    ],
+    "correctAnswer": "ঈ. উ.",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.474Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae975e",
     "serialNo": 14,
     "categoryTypes": [
@@ -739,6 +1077,32 @@
     "createdAt": "2026-11-03T05:41:45.883Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9f3",
+    "serialNo": 14,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ধ্‌মঃ; ট্যাগের অ্যাট্রিবিউট হলোু\t[কু. বো. '২৫]",
+    "image": "",
+    "options": [
+      "face",
+      "ঃুঢ়ব",
+      "target",
+      "align"
+    ],
+    "correctAnswer": "target",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.483Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae975f",
     "serialNo": 15,
     "categoryTypes": [
@@ -787,6 +1151,32 @@
     "correctAnswer": "এসএমএস",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.890Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9f4",
+    "serialNo": 15,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "হাইপারলিংক হচ্ছেু\t[সি. বো. '২৫]\ni. একাধিক ফাইলের সংযোগ\tii. একাধিক ওয়েবপেইজের সংযোগ\niii. একাধিক ফিল্ডের সংযোগ\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.506Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9760",
@@ -840,6 +1230,32 @@
     "createdAt": "2026-11-03T05:41:45.896Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9f5",
+    "serialNo": 16,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "হাইপারমিডিয়ার উপাদান হলোু\t[কু. বো. '২৫]\ni. টেক্সট\tii. অডিও\niii. ভিডিও\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.523Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9761",
     "serialNo": 17,
     "categoryTypes": [
@@ -889,6 +1305,32 @@
     "correctAnswer": "সিমপ্লেক্স, ব্রডকাস্ট",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.902Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9f6",
+    "serialNo": 17,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১৫ ও ১৬ নং প্রশ্নের উত্তর দাও:\nসিনথি HTML ব্যবহার করে ওয়েবপেইজ তৈরি করে এবং এক পেইজ থেকে অন্য পেইজ সংযুক্তির জন্য কাজ করে।\nউদ্দীপকে কাজ করতে নিচের কোন ঞধম ব্যবহৃত হয়েছে?\t[য. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ংঃুষব্‌মঃ;",
+      "্‌ষঃ;ষরহশ্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;",
+      "্‌ষঃ;ংঢ়ধহ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.542Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9762",
@@ -942,6 +1384,32 @@
     "createdAt": "2026-11-03T05:41:45.911Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9f7",
+    "serialNo": 18,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নতুন ট্যাবে ওয়েব পেইজ খুলতে উক্ত ট্যাগের এট্রিবিউট কোনটি?\t[য. বো. '২৫]",
+    "image": "",
+    "options": [
+      "target = \"থংবষভ\"",
+      "target = \"থনষধহশ\"",
+      "target = \"থচধৎবহঃ\"",
+      "target = \"থখধনবখ\""
+    ],
+    "correctAnswer": "target = \"থনষধহশ\"",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.552Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9763",
     "serialNo": 19,
     "categoryTypes": [
@@ -991,6 +1459,32 @@
     "correctAnswer": "লেজার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.918Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9f8",
+    "serialNo": 19,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;রসম্‌মঃ; ট্যাগের সাথে মিল রয়েছে কোন ট্যাগের?\t[রা. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;যৎ্‌মঃ;",
+      "্‌ষঃ;ঃৎ্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;",
+      "্‌ষঃ;ফর্‌ামঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;যৎ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.570Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9764",
@@ -1044,6 +1538,32 @@
     "createdAt": "2026-11-03T05:41:45.924Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9f9",
+    "serialNo": 20,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;রসম্‌মঃ; ট্যাগের আবশ্যিক অ্যাট্রিবিউট কোনটি?\t[কু. বো. '২৫]",
+    "image": "",
+    "options": [
+      "src",
+      "href",
+      "title",
+      "border"
+    ],
+    "correctAnswer": "src",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.580Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9765",
     "serialNo": 21,
     "categoryTypes": [
@@ -1093,6 +1613,32 @@
     "correctAnswer": "কো-এক্সিয়াল ক্যাবল",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.932Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9fa",
+    "serialNo": 21,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "src অ্যাট্রিবিউট কোন ট্যাগে ব্যবহৃত হয়?\t[সি. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ফর্‌ামঃ;",
+      "্‌ষঃ;ধ্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ;",
+      "্‌ষঃ;ংঢ়ধহ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;রসম্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.590Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9766",
@@ -1146,6 +1692,32 @@
     "createdAt": "2026-11-03T05:41:45.937Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9fb",
+    "serialNo": 22,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দৈর্ঘ্য 120Px প্রস্থ 150Px আকারের Flag.jpg নামক ছবি সংযুক্তির জন্য নিচের সঠিক HTML কোড কোনটি?\t[য. বো. '২৫]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;img ংৎপ = \"ঋষধম\" height = \"120Px\" width = \"150Px\"্‌মঃ;",
+      "্‌ষঃ;img ংৎপ = \"Flag.jpg\" height = 120Px width = ১৫০চ্‌ীমঃ;",
+      "্‌ষঃ;img ংৎপ = \"Flag.jpg\" height = \"120Px\" width = \"150Px\"্‌মঃ;",
+      "্‌ষঃ;img ংৎপ = \"Flag.jpg\" য = \"120Px\" ি = \"150Px\"্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;img ংৎপ = \"Flag.jpg\" height = \"120Px\" width = \"150Px\"্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.602Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9767",
     "serialNo": 23,
     "categoryTypes": [
@@ -1194,6 +1766,32 @@
     "correctAnswer": "Bluetooth",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.942Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9fc",
+    "serialNo": 23,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এ ইমেজ ফরমেট সাপোর্ট করেু\t[দি. বো. '২৫]\ni. .মরভ\tii. .ঢ়হম\niii. .লঢ়ম\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.623Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9768",
@@ -1247,6 +1845,32 @@
     "createdAt": "2026-11-03T05:41:45.949Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9fd",
+    "serialNo": 24,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ২২ ও ২৩ নং প্রশ্নের উত্তর দাও:\nসুভাষ HTML কোড দিয়ে HSC.jpg নামের একটি ফাইলযুক্ত করে ওয়েবপেজ তৈরি করে। পরবর্তীতে ওয়েবপেজটি সবাইকে প্রদর্শনের জন্য প্রয়োজনীয় পদক্ষেপ গ্রহণ করে।\nউদ্দীপকের ফাইলটির জন্য আবশ্যকীয় অ্যাট্রিবিউট কোনটি?\t[ম. বো. '২৫]",
+    "image": "",
+    "options": [
+      "href",
+      "img",
+      "src",
+      "ধষঃ"
+    ],
+    "correctAnswer": "src",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.639Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9769",
     "serialNo": 25,
     "categoryTypes": [
@@ -1298,6 +1922,32 @@
     "createdAt": "2026-11-03T05:41:45.955Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1e9fe",
+    "serialNo": 25,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সুভাষের গৃহীত পদক্ষেপসমূহ হচ্ছেু\t[ম. বো. '২৫]\ni. পাবলিক আইপির ব্যবহার\tii. ওয়েবপেইজ হোস্টিং\niii. ডোমেইন নেম রেজিস্ট্রেশন\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.659Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae976a",
     "serialNo": 26,
     "categoryTypes": [
@@ -1346,6 +1996,32 @@
     "correctAnswer": "মাইক্রোওয়েব",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.965Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1e9ff",
+    "serialNo": 26,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিলের সেলগুলোতে অবস্থিত লেখার মধ্যে দূরত্ব নিয়ন্ত্রণের জন্য ব্যবহৃত অ্যাট্রিবিউট কোনটি?\t[সি. বো. '২৫]",
+    "image": "",
+    "options": [
+      "rowspan",
+      "colspan",
+      "cellpadding",
+      "cellspacing"
+    ],
+    "correctAnswer": "cellpadding",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.669Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae976b",
@@ -1399,6 +2075,32 @@
     "createdAt": "2026-11-03T05:41:45.975Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea00",
+    "serialNo": 27,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিল বর্ডার থেকে ডেটার দূরত্ব নির্ধারণের অ্যাট্রিবিউট হলোু\t[ম. বো. '২৫]",
+    "image": "",
+    "options": [
+      "cellspacing",
+      "rowspan",
+      "colspan",
+      "cellpadding"
+    ],
+    "correctAnswer": "cellpadding",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.684Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae976c",
     "serialNo": 28,
     "categoryTypes": [
@@ -1448,6 +2150,32 @@
     "correctAnswer": "৫ম",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.983Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea01",
+    "serialNo": 28,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড, ঢাকা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিল সেলের ব্যাকগ্রাউন্ড কালার সবুজ হবে কোন ট্যাগে?\n[ঢা. বো. '২৫; দি. বো. '১৯]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;table bgcolor = \"মৎববহ\"্‌মঃ;",
+      "্‌ষঃ;tr bgcolor = \"মৎববহ\"্‌মঃ;",
+      "্‌ষঃ;td bgcolor = \"মৎববহ\"্‌মঃ;",
+      "্‌ষঃ;tr ঃফ bgcolor = \"মৎববহ\"্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;td bgcolor = \"মৎববহ\"্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.695Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae976d",
@@ -1501,6 +2229,32 @@
     "createdAt": "2026-11-03T05:41:45.989Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea02",
+    "serialNo": 29,
+    "categoryTypes": [
+      "College Test Paper",
+      "Chapter Practice"
+    ],
+    "categoryType": "College Test Paper",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "দি. বো. ২৫; উত্তরা হাই স্কুল এন্ড কলেজ, ঢাকা",
+    "boardName": "দিনাজপুর বোর্ড, ঢাকা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিলে সেল তৈরির জন্য কোন ট্যাগ ব্যবহৃত হয়?\n[দি. বো. '২৫; উত্তরা হাই স্কুল এন্ড কলেজ, ঢাকা]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ঃপ্‌মঃ;",
+      "্‌ষঃ;ঃৎ্‌মঃ;",
+      "্‌ষঃ;ঃফ্‌মঃ;",
+      "্‌ষঃ;পড়ষ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ঃফ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.705Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae976e",
     "serialNo": 30,
     "categoryTypes": [
@@ -1550,6 +2304,32 @@
     "correctAnswer": "LTE",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.994Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea03",
+    "serialNo": 30,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ২৮ নং প্রশ্নের উত্তর দাও:\n| X (colspan=\"4\") | | | |\n| :---: | :---: | :---: | :---: |\n| Y (rowspan=\"3\") | A | B | C |\n| | D | E | F |\n| | G | H | I |\nউদ্দীপকের টেবিলটি তৈরি করতে HTML কোডে colspan  ও rowspan এর মান হবে যথাক্রমেু\t[কু. বো. '২৫]",
+    "image": "",
+    "options": [
+      "২, ৩",
+      "৩, ২",
+      "৪, ৩",
+      "৩, ৪"
+    ],
+    "correctAnswer": "৪, ৩",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.717Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae976f",
@@ -1603,6 +2383,32 @@
     "createdAt": "2026-11-03T05:41:46.000Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea04",
+    "serialNo": 31,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ঞধনষব এর বষবসবহঃ ঞধম-গুলো হতে পারেু\t[য. বো. '২৫]\ni.:ৎ\tii. td\niii. tbody\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.736Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9770",
     "serialNo": 32,
     "categoryTypes": [
@@ -1651,6 +2457,32 @@
     "correctAnswer": "৪র্থ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.010Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea05",
+    "serialNo": 32,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ৩০ ও ৩১ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;font color = \"জবফ\" face = \"অৎরধষ\" ্‌মঃ; ওঈঞ ্‌ষঃ;/ভড়হঃ্‌মঃ;\nউদ্দীপকে কনটেন্ট কোনটি?\t[রা. বো. '২৫]",
+    "image": "",
+    "options": [
+      "ঋড়হঃ",
+      "ঈড়ষড়ৎ",
+      "জবফ",
+      "ওঈঞ"
+    ],
+    "correctAnswer": "ওঈঞ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.747Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9771",
@@ -1704,6 +2536,32 @@
     "createdAt": "2026-11-03T05:41:46.019Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea06",
+    "serialNo": 33,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে অ্যাট্রিবিউট ভ্যালু হলোু\t[রা. বো. '২৫]\ni. পড়ষড়ৎ\tii. ৎবফ\niii. ধৎরধষ\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.765Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9772",
     "serialNo": 34,
     "categoryTypes": [
@@ -1752,6 +2610,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.033Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea07",
+    "serialNo": 34,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফন্টের স্টাইল পরিবর্তন করতে কোন অ্যাট্রিবিউট ব্যবহৃত হয়?\t[ব. বো. '২৫]",
+    "image": "",
+    "options": [
+      "size",
+      "style",
+      "হধসব",
+      "face"
+    ],
+    "correctAnswer": "style",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.776Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9773",
@@ -1805,6 +2689,32 @@
     "createdAt": "2026-11-03T05:41:46.036Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea08",
+    "serialNo": 35,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটির ক্ষেত্রে ডোমেইন নেম ব্যবহার করা হয়?\t[ব. বো. '২৫]",
+    "image": "",
+    "options": [
+      "ওয়েবসাইট",
+      "সার্ভার",
+      "ওয়েব ফাইল",
+      "ফোল্ডার"
+    ],
+    "correctAnswer": "ওয়েবসাইট",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.783Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9774",
     "serialNo": 36,
     "categoryTypes": [
@@ -1854,6 +2764,32 @@
     "correctAnswer": "WLAN",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.045Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea09",
+    "serialNo": 36,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ৩৪ ও ৩৫ নং প্রশ্নের উত্তর দাও:\nকামাল একজন ওয়েব ডেভেলপার। সে ক্লায়েন্টের জন্য িি.িধষষঘবংি.পড়স ওয়েবসাইট তৈরি করেন। ওয়েব সাইটটি ব্যবহার করে দেশ-বিদেশের খবর জানা যায়।\nউদ্দীপকে তৈরিকৃত ওয়েব সাইটটি কোন প্রকৃতির প্রতিষ্ঠান?\t[ঢা. বো. '২৫]",
+    "image": "",
+    "options": [
+      "শিক্ষা",
+      "বাণিজ্যিক",
+      "সরকারি",
+      "আন্তর্জাতিক"
+    ],
+    "correctAnswer": "বাণিজ্যিক",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.792Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9775",
@@ -1907,6 +2843,32 @@
     "createdAt": "2026-11-03T05:41:46.053Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea0a",
+    "serialNo": 37,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের কামালের তৈরিকৃত ওয়েব সাইটটি ভিজিটের জন্য কোন ধরনের প্রটোকল ব্যবহৃত হয়?\t[ঢা. বো. '২৫]",
+    "image": "",
+    "options": [
+      "SMTP",
+      "VOIP",
+      "FTP",
+      "HTTP"
+    ],
+    "correctAnswer": "HTTP",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.802Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9776",
     "serialNo": 38,
     "categoryTypes": [
@@ -1955,6 +2917,32 @@
     "correctAnswer": "LAN",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.060Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea0b",
+    "serialNo": 38,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সবচেয়ে বড় হেডিং ট্যাগ কোনটি? [ঢা.বো.'২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; h1 ্‌মঃ;",
+      "্‌ষঃ; h2 ্‌মঃ;",
+      "্‌ষঃ; h3 ্‌মঃ;",
+      "্‌ষঃ; h6 ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; h1 ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.812Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9777",
@@ -2008,6 +2996,32 @@
     "createdAt": "2026-11-03T05:41:46.072Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea0c",
+    "serialNo": 39,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "তালিকা তৈরির জন্য ব্যবহৃত আবশ্যক ট্যাগ হচ্ছ্তে [ঢা.বো.'২৪]\ni. ্‌ষঃ; ০১ ্‌মঃ;\tii. ্‌ষঃ; ul ্‌মঃ;\niii. ্‌ষঃ; li ্‌মঃ;\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.832Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9778",
     "serialNo": 40,
     "categoryTypes": [
@@ -2056,6 +3070,32 @@
     "correctAnswer": "মডেম",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.078Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea0d",
+    "serialNo": 40,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML কোড [ঢা.বো.'২৪]\n্‌ষঃ;ঢ়্‌মঃ; ধ ্‌ষঃ;ংঁঢ়্‌মঃ;২্‌ষঃ;/ংঁঢ়্‌মঃ; b ্‌ষঃ;ংঁন্‌মঃ;২্‌ষঃ;/ংঁন্‌মঃ;্‌ষঃ;/ঢ়্‌মঃ; এর ফলাফল কোনটি?",
+    "image": "",
+    "options": [
+      "ধক্ষ্ণনক্ষ্ণ",
+      "ধক্ষ্ণন₂",
+      "ধ₂নক্ষ্ণ",
+      "ধ₂ন₂"
+    ],
+    "correctAnswer": "ধক্ষ্ণন₂",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.847Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9779",
@@ -2107,6 +3147,32 @@
     "correctAnswer": "সুইচ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.084Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea0e",
+    "serialNo": 41,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ; ধ ্‌মঃ; ট্যাগের সাথে ব্যবহৃত অ্যাট্রিবিউট্ত [ঢা.বো.'২৪]\ni. যৎবভ\tii. target\niii. নষধহশ\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.866Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae977a",
@@ -2162,6 +3228,32 @@
     "createdAt": "2026-11-03T05:41:46.090Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea0f",
+    "serialNo": 42,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি ওয়েবসাইটের কয়টি অংশ থাকে? [রা.বো. ২৪]",
+    "image": "",
+    "options": [
+      "২",
+      "৩",
+      "৪",
+      "৫"
+    ],
+    "correctAnswer": "২",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.878Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae977b",
     "serialNo": 43,
     "categoryTypes": [
@@ -2211,6 +3303,32 @@
     "correctAnswer": "১",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.096Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea10",
+    "serialNo": 43,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যঃসষ এর ওয়েবপেইজ তৈরির জন্য ফাইলের এক্সটেনশন হল্তো [রা.বো. ২৪]\ni. .যঃসষ\tii. .ঃীঃ\niii. .যঃস\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.895Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae977c",
@@ -2264,6 +3382,32 @@
     "createdAt": "2026-11-03T05:41:46.106Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea11",
+    "serialNo": 44,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিলের বডিতে সারি তৈরি করতে ব্যবহার করা হয়্ত [রা.বো. ২৪]",
+    "image": "",
+    "options": [
+      "th",
+      "ঃঃ",
+      "tr",
+      "td"
+    ],
+    "correctAnswer": "tr",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.904Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae977d",
     "serialNo": 45,
     "categoryTypes": [
@@ -2313,6 +3457,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.117Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea12",
+    "serialNo": 45,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML ফাইল এডিট করার জন্য ব্যবহৃত টেক্সট এডিটর হল্তো [রা.বো. ২৪]\ni. নোডপ্যাড\tii. নোডপ্যাড ++\niii. সাবলাইম টেক্সট\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.921Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae977e",
@@ -2366,6 +3536,32 @@
     "createdAt": "2026-11-03T05:41:46.126Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea13",
+    "serialNo": 46,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েব ক্লায়েন্ট ব্যবহারকারীর কাছ থেকে ইনপুট নিয়ে ওয়েব সার্ভারে পাঠানোকে বল্তে [চ.বো. ২৪]",
+    "image": "",
+    "options": [
+      "আপলোড",
+      "রিকোয়েস্ট",
+      "ব্রাউজ",
+      "রেসপন্স"
+    ],
+    "correctAnswer": "রিকোয়েস্ট",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.929Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae977f",
     "serialNo": 47,
     "categoryTypes": [
@@ -2415,6 +3611,32 @@
     "correctAnswer": "স্টার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.131Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea14",
+    "serialNo": 47,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ৮ ও ৯ নং প্রশ্নের উত্তর দাও:\nরফিক ওঈঞ ল্যাব ক্লাসে একটি টেবিল তৈরির HTML কোড লিখে ওয়েবসাইট তৈরি করে। ব্রাউজারে প্রদর্শন করে দেখালো টেবিলের লাইন দেখাচ্ছে না। রফিক তার ওয়েবপেজটিকে পাবলিশ করার চিন্তা করলো।\nউদ্দীপকে লাইন প্রদর্শন না করার কারণ কী? [চ.বো. ২৪]",
+    "image": "",
+    "options": [
+      "align = ু০চ্",
+      "border = ু০চ্",
+      "border = ুঘড়চ্",
+      "caption = ু০চ্"
+    ],
+    "correctAnswer": "border = ু০চ্",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.940Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9780",
@@ -2468,6 +3690,32 @@
     "createdAt": "2026-11-03T05:41:46.138Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea15",
+    "serialNo": 48,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের ওয়েবসাইটটি পাবলিশ করার জন্য কী করতে হবে? [চ.বো. ২৪]\ni. ওয়েব হোস্টিং\tii. ডোমেইন রেজিস্ট্রেশন\niii. হাইপারলিংক\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.952Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9781",
     "serialNo": 49,
     "categoryTypes": [
@@ -2517,6 +3765,32 @@
     "correctAnswer": "৪৫",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.144Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea16",
+    "serialNo": 49,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবপেইজের এক পেইজ থেকে অন্য পেইজে যাওয়ার জন্য কোন ট্যাগ ব্যবহার করা হয়? [চ.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; ধ ্‌মঃ; ৃ ্‌ষঃ; /ধ ্‌মঃ;",
+      "্‌ষঃ; b ্‌মঃ; ৃ ্‌ষঃ; /b ্‌মঃ;",
+      "্‌ষঃ; li ্‌মঃ; ৃ ্‌ষঃ; /li ্‌মঃ;",
+      "্‌ষঃ; ol ্‌মঃ; ৃ ্‌ষঃ; /ol ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; ধ ্‌মঃ; ৃ ্‌ষঃ; /ধ ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.958Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9782",
@@ -2570,6 +3844,32 @@
     "createdAt": "2026-11-03T05:41:46.152Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea17",
+    "serialNo": 50,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ১ ও ২ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;চ্‌মঃ;্‌ষঃ;ট্‌মঃ;্‌ষঃ;ফবষ্‌মঃ; HSC Exam ্‌ষঃ;/ফবষ্‌মঃ;্‌ষঃ;/ট্‌মঃ;্‌ষঃ;/চ্‌মঃ;\nউদ্দীপকের আউপুট কোনটি? [য. বো. ২৪]",
+    "image": "",
+    "options": [
+      "HSC Exam",
+      "HSC Exam",
+      "HSC Exam",
+      "ঐঝঈঊীধস"
+    ],
+    "correctAnswer": "HSC Exam",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.965Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9783",
     "serialNo": 51,
     "categoryTypes": [
@@ -2619,6 +3919,32 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.162Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea18",
+    "serialNo": 51,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোডটিতে HSC Exam এর স্থলে Pen.jpg ছবিকে খরহশ ঞবীঃ আকারে উপস্থান করতে নিচের কোন কোডটি ব্যবহৃত হবে? [য. বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ধ href = ুিি.িচবহ.ঈড়সচ্‌মঃ; Pen.Jpg ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ধ href = ুিি.িচবহ.ঈড়সচ্‌মঃ; img ংৎপ = ুPen.Jpg” ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ধ href = ুিি.িচবহ.ঈড়সচ্‌মঃ; ্‌ষঃ;img ংৎপ = ুPen.Jpg”্‌মঃ; ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ধ href = ুিি.িচবহ.ঈড়সচ্ img ংৎপ = ুPen.Jpg”্‌মঃ; ্‌ষঃ;/ধ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ href = ুিি.িচবহ.ঈড়সচ্‌মঃ; ্‌ষঃ;img ংৎপ = ুPen.Jpg”্‌মঃ; ্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.971Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9784",
@@ -2672,6 +3998,32 @@
     "createdAt": "2026-11-03T05:41:46.169Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea19",
+    "serialNo": 52,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নতুন ট্যাবে ওয়েবপেইজ খুলতে ব্যবহৃত অ্যাট্রিবিউট কোনটি? [য. বো. ২৪]",
+    "image": "",
+    "options": [
+      "ইষধহশ",
+      "ঐৎবভ",
+      "ঞধৎমবঃ",
+      "ঞরঃষব"
+    ],
+    "correctAnswer": "ঞধৎমবঃ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.976Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9785",
     "serialNo": 53,
     "categoryTypes": [
@@ -2721,6 +4073,32 @@
     "correctAnswer": "ফাইবার অপটিক ক্যাবল",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.175Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea1a",
+    "serialNo": 53,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিল ঈবষষ এর বর্ডার থেকে টেবিলের ডেটা 50Px দূরত্বে রাখার জন্য নিচের সঠিক যঃসষ কোড কোনটি? [য. বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;table border = ু১চ্ cellpadding = ু৫০চ্‌মঃ;",
+      "্‌ষঃ;table border = ু১চ্ cellspacing = ু৫০চ্‌মঃ;",
+      "্‌ষঃ;table border = ু০চ্ cellspacing = ু৫০চ্‌মঃ;",
+      "্‌ষঃ;table border = ১ cellpadding = ৫০্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;table border = ু১চ্ cellpadding = ু৫০চ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.983Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9786",
@@ -2774,6 +4152,32 @@
     "createdAt": "2026-11-03T05:41:46.182Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea1b",
+    "serialNo": 54,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ঊসঢ়ঃু ঞধম? [য. বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ন্‌মঃ;",
+      "্‌ষঃ;ফবষ্‌মঃ;",
+      "্‌ষঃ;যৎ্‌মঃ;",
+      "্‌ষঃ;ংঁঢ়্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;যৎ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:58.990Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9787",
     "serialNo": 55,
     "categoryTypes": [
@@ -2823,6 +4227,32 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.190Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea1c",
+    "serialNo": 55,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্ট্যাটিক ওয়েব পেজ তৈরিতে প্রয়োজন্ত [কু.বো. ২৪]\ni. ঐঞগখ\tii. PHP\niii. CSS\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.004Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9788",
@@ -2876,6 +4306,32 @@
     "createdAt": "2026-11-03T05:41:46.196Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea1d",
+    "serialNo": 56,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এক লাইন নিচে নামানোর জন্য ব্যবহৃত ট্যাগ কোনটি? [কু.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; td ্‌মঃ;",
+      "্‌ষঃ; tr ্‌মঃ;",
+      "্‌ষঃ; br ্‌মঃ;",
+      "্‌ষঃ; th ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; br ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.012Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9789",
     "serialNo": 57,
     "categoryTypes": [
@@ -2925,6 +4381,32 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.204Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea1e",
+    "serialNo": 57,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দুইটি HTML ডকুমেন্টের সংযোগকে কী বলে? [কু.বো. ২৪]",
+    "image": "",
+    "options": [
+      "হাইপারলিঙ্ক",
+      "অ্যাট্রিবিউট",
+      "কানেকশন",
+      "ইমেজিং"
+    ],
+    "correctAnswer": "হাইপারলিঙ্ক",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.019Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae978a",
@@ -2978,6 +4460,32 @@
     "createdAt": "2026-11-03T05:41:46.210Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea1f",
+    "serialNo": 58,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এর সম্পূর্ণ কনটেন্ট কোন ট্যাগে থাকে? [কু.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; title ্‌মঃ; ৃৃৃ ্‌ষঃ; /title ্‌মঃ;",
+      "্‌ষঃ; যঃসষ ্‌মঃ; ৃৃৃ ্‌ষঃ; /যঃসষ ্‌মঃ;",
+      "্‌ষঃ; body ্‌মঃ; ৃৃৃ ্‌ষঃ; /body ্‌মঃ;",
+      "্‌ষঃ; head ্‌মঃ; ৃৃৃ ্‌ষঃ; /head ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; যঃসষ ্‌মঃ; ৃৃৃ ্‌ষঃ; /যঃসষ ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.025Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae978b",
     "serialNo": 59,
     "categoryTypes": [
@@ -3027,6 +4535,32 @@
     "correctAnswer": "৫ম",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.216Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea20",
+    "serialNo": 59,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইটকে নিদির্ষ্ট কোনো সার্ভারে স্থাপন করাকে কী বলে? [কু.বো. ২৪]",
+    "image": "",
+    "options": [
+      "ওয়েব ডকুমেন্ট",
+      "ওয়েব ডিজাইন",
+      "ডোমেইন নেইম রেজিস্ট্রেশন",
+      "ওয়েব হোস্টিং"
+    ],
+    "correctAnswer": "ওয়েব হোস্টিং",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.031Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae978c",
@@ -3080,6 +4614,32 @@
     "createdAt": "2026-11-03T05:41:46.221Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea21",
+    "serialNo": 60,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি লক্ষ্য কর এবং ৯ নং প্রশ্নের উত্তর দাও:\n| Index/ |\n| :--- |\n| HSCHSCHSCHSC |\nউদ্দীপকের ৩নং লাইনের লেখাটির জন্য সিনট্যাক্স কোনটি? [ম.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; h4 ্‌মঃ; ঐঝঈ ্‌ষঃ; /h4 ্‌মঃ;",
+      "্‌ষঃ; h2 ্‌মঃ; ঐঝঈ ্‌ষঃ; /h2 ্‌মঃ;",
+      "্‌ষঃ; h3 ্‌মঃ; ঐঝঈ ্‌ষঃ; /h3 ্‌মঃ;",
+      "্‌ষঃ; h1 ্‌মঃ; ঐঝঈ ্‌ষঃ; /h1 ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; h3 ্‌মঃ; ঐঝঈ ্‌ষঃ; /h3 ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.037Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae978d",
     "serialNo": 61,
     "categoryTypes": [
@@ -3129,6 +4689,32 @@
     "correctAnswer": "আইসোক্রোনাস",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.227Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea22",
+    "serialNo": 61,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইটকে দৃষ্টিনন্দন করার জন্য নিচের কোনটি ব্যবহার করা হয়? [ম.বো. ২৪]",
+    "image": "",
+    "options": [
+      "HTML",
+      "CSS",
+      "PHP",
+      "ঔঅঠঅ"
+    ],
+    "correctAnswer": "CSS",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.042Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae978e",
@@ -3182,6 +4768,32 @@
     "createdAt": "2026-11-03T05:41:46.232Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea23",
+    "serialNo": 62,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ২৪ ও ২৫ নং প্রশ্নের উত্তর দাও:\nহাসি HTML ভাষা শিখেছে। বর্তমানে যে ওয়েব পেজে ছবি যুক্ত করা শিখছে।\nহাসি এখন ওয়েব পেইজে কোন ট্যাগের ব্যবহার শিখছে? [ম.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; img ংৎপ = ুimg.png” ্‌মঃ;",
+      "্‌ষঃ; ধযৎবভ = ুimg.png” ্‌মঃ;",
+      "্‌ষঃ; img border = ুimg.png” ্‌মঃ;",
+      "্‌ষঃ; img = ুimg.png” ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; img ংৎপ = ুimg.png” ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.049Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae978f",
     "serialNo": 63,
     "categoryTypes": [
@@ -3231,6 +4843,32 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.242Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea24",
+    "serialNo": 63,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "হাসি ওয়েবপেজে ছবি যুক্ত করল্তে [ম.বো. ২৪]\ni. টেক্সট এর পরিমাণ কমিয়ে আনা যাবে\nii. ব্যবহারকারীর নিকট পেজটি দৃষ্টিনন্দন হবে\niii. ছবি দ্রুত ডাউনলোড হবে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.062Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9790",
@@ -3284,6 +4922,32 @@
     "createdAt": "2026-11-03T05:41:46.249Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea25",
+    "serialNo": 64,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি এম্পটি ট্যাগ? [ম.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; hr ্‌মঃ;",
+      "্‌ষঃ; h1 ্‌মঃ;",
+      "্‌ষঃ; tr ্‌মঃ;",
+      "্‌ষঃ; td ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; hr ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.070Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9791",
     "serialNo": 65,
     "categoryTypes": [
@@ -3333,6 +4997,32 @@
     "correctAnswer": "৪র্থ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.255Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea26",
+    "serialNo": 65,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি সঠিক চলক্ত [ম.বো. ২৪]",
+    "image": "",
+    "options": [
+      "HSC Exam",
+      "Final_Result",
+      "int main",
+      "our@college"
+    ],
+    "correctAnswer": "Final_Result",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.077Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9792",
@@ -3386,6 +5076,32 @@
     "createdAt": "2026-11-03T05:41:46.261Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea27",
+    "serialNo": 66,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সঠিক HTML ঝুহঃধী কোনটি? [দি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;বস্‌মঃ; বসঢ়যধংরুব ্‌ষঃ;em/্‌মঃ;",
+      "্‌ষঃ;ন্‌মঃ; ইড়ষফ:বীঃ ্‌ষঃ;ন্‌মঃ;",
+      "্‌ষঃ;র্‌মঃ; ওঃধষরপ ্‌ষঃ;/র্‌মঃ;",
+      "্‌ষঃ;্‌ঁমঃ; টহফবৎষরহব ্‌ষঃ;্‌ঁমঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;র্‌মঃ; ওঃধষরপ ্‌ষঃ;/র্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.083Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9793",
     "serialNo": 67,
     "categoryTypes": [
@@ -3435,6 +5151,32 @@
     "correctAnswer": "মেশ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.267Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea28",
+    "serialNo": 67,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এ একাধিক রোকে মার্জ করতে কোন এট্রিবিউট ব্যবহৃত হয়? [দি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "colspan",
+      "cellpadding",
+      "rowspan",
+      "cellspacing"
+    ],
+    "correctAnswer": "rowspan",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.089Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9794",
@@ -3488,6 +5230,32 @@
     "createdAt": "2026-11-03T05:41:46.275Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea29",
+    "serialNo": 68,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি ওয়েবসাইটের অংশ হল্ত [দি.বো. ২৪]\ni. সার্ভার\tii. ক্লায়েন্ট\niii. ডকুমেন্ট\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.102Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9795",
     "serialNo": 69,
     "categoryTypes": [
@@ -3537,6 +5305,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.283Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea2a",
+    "serialNo": 69,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি ওয়েবসাইটকে পাবলিশ করার জন্য ওয়েব সার্ভারে ওয়েবসাইটটি আপলোড করার পদ্ধতিকে কী বলা হয়? [দি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "ডোমেইন",
+      "হোস্টিং",
+      "আইপি এড্রেস",
+      "প্রোটোকল"
+    ],
+    "correctAnswer": "হোস্টিং",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.108Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9796",
@@ -3590,6 +5384,32 @@
     "createdAt": "2026-11-03T05:41:46.290Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea2b",
+    "serialNo": 70,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ২৫ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ; ul ঃুঢ়ব = ুcircle” ্‌মঃ;\n্‌ষঃ; li ্‌মঃ; রপঃ ্‌ষঃ; /li ্‌মঃ;\n্‌ষঃ; /ul ্‌মঃ;\nউদ্দীপকটির আউটপুট হব্তে [দি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "● ict",
+      "■ ict",
+      "□ ict",
+      "○ ict"
+    ],
+    "correctAnswer": "○ ict",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.111Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9797",
     "serialNo": 71,
     "categoryTypes": [
@@ -3639,6 +5459,32 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.299Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea2c",
+    "serialNo": 71,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ol ঃুঢ়ব = ুধচ্ ংঃধৎঃ = ু৪চ্‌মঃ; এর আউটপুট কেমন হবে? [ব.বো. ২৪]",
+    "image": "",
+    "options": [
+      "১. ২. ৩.",
+      "৪. ৫. ৬.",
+      "ধ. b. প.",
+      "ফ. ব. ভ."
+    ],
+    "correctAnswer": "ফ. ব. ভ.",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.118Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9798",
@@ -3692,6 +5538,32 @@
     "createdAt": "2026-11-03T05:41:46.304Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea2d",
+    "serialNo": 72,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি টেক্সট ফরমেটিং এলিমেন্ট? [ব.বো. ২৪]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ন্‌মঃ;",
+      "্‌ষঃ;নৎ্‌মঃ;",
+      "্‌ষঃ;ড়ষ্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ন্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.128Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9799",
     "serialNo": 73,
     "categoryTypes": [
@@ -3741,6 +5613,32 @@
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.309Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea2e",
+    "serialNo": 73,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপক হতে ১৫ ও ১৬ নং প্রশ্নের উত্তর দাও:\nরাসেল যঃসষ ব্যবহারিক ক্লাসে লিখ ্‌ষঃ;ঢ়্‌মঃ; ্‌ষঃ;img ংৎপ = ুPicture.jpg” width = ু৩০০চ্ height = ু২০০চ্‌মঃ; ্‌ষঃ;/ঢ়্‌মঃ; কিন্তু আউটপুট তার ফলাফল আসেনি।\nউদ্দীপকে অঃঃৎরনঁঃব কোনটি? [ব.বো. ২৪]",
+    "image": "",
+    "options": [
+      "চ",
+      "img",
+      "width",
+      "ঢ়রপঃঁৎব"
+    ],
+    "correctAnswer": "width",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.140Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae979a",
@@ -3794,6 +5692,32 @@
     "createdAt": "2026-11-03T05:41:46.314Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea2f",
+    "serialNo": 74,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রাসেল সঠিক ফলাফল না পাওয়ার কারণ্ত [ব.বো. ২৪]\ni. ফাইলের নাম লিখতে ভুল\nii. ব্রাউজারে সাপোর্ট না করা\niii. সঠিক লোকেশন ব্যবহার না করা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.161Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae979b",
     "serialNo": 75,
     "categoryTypes": [
@@ -3843,6 +5767,32 @@
     "correctAnswer": "সিমপ্লেক্স",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.320Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea30",
+    "serialNo": 75,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১৫ ও ১৬ নং প্রশ্নের উত্তর দাও:\nদৃশ্যকল্প-১: রুমি কলেজে ভর্তিও আবেদনের জন্য একটি সাইবার ক্যাফেতে গিয়ে একটি ইলেকট্রনিক ফরম পূরণ করে। সেখানে বসেই সে তার মোবাইলে পূরণকৃত ফরমের আলোকে নির্দেশনামূলক একটি মেসেজ পায়।\nদৃশ্যকল্প-২:\n্‌ষঃ; যঃসষ ্‌মঃ;\n্‌ষঃ; body ্‌মঃ;\nCricket board\n্‌ষঃ; /body ্‌মঃ;\n্‌ষঃ;/ যঃসষ ্‌মঃ;\nদৃশ্যকল্প-১ এ তথ্য প্রযুক্তির কোন সেবাটি গ্রহণ করা হয়েছে? [সি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "ওয়েব হোস্টিং",
+      "ওয়েব সাইট",
+      "ই-কমার্স",
+      "ইলেকট্রনিক মেইলিং"
+    ],
+    "correctAnswer": "ওয়েব সাইট",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.178Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae979c",
@@ -3896,6 +5846,32 @@
     "createdAt": "2026-11-03T05:41:46.326Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea31",
+    "serialNo": 76,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দৃশ্যকল্প-২ এর জন্য ব্যবহৃত হতে পার্তে [সি.বো. ২৪]\ni. HTML সিনটেক্স\tii. টেক্সট এডিটর\niii. ব্রাউজার সফটওয়্যার\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.197Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae979d",
     "serialNo": 77,
     "categoryTypes": [
@@ -3945,6 +5921,32 @@
     "correctAnswer": "রিং",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.334Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea32",
+    "serialNo": 77,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "CSS এর পূর্ণরূপ কী? [সি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "ঈধংধফরহম ঝঃুষব ঝযববঃ",
+      "ঈধংধফরহম ঝঃুষব ঝযরঃ",
+      "ঈধংব ঝঃুষব ঝযববঃ",
+      "ঈধংধফরহম ঝঃুষরহম ঝযববঃ"
+    ],
+    "correctAnswer": "ঈধংধফরহম ঝঃুষব ঝযববঃ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.207Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae979e",
@@ -3998,6 +6000,32 @@
     "createdAt": "2026-11-03T05:41:46.338Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea33",
+    "serialNo": 78,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML ট্যাগের চিহ্ন কোনটি? [সি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "{ }",
+      "্‌ষঃ; ্‌মঃ;",
+      "( )",
+      "[ ]"
+    ],
+    "correctAnswer": "্‌ষঃ; ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.217Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae979f",
     "serialNo": 79,
     "categoryTypes": [
@@ -4047,6 +6075,32 @@
     "correctAnswer": "পিকোনেট",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.344Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea34",
+    "serialNo": 79,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ২১ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ; ul ঃুঢ়ব = ুcircle” ্‌মঃ;\n্‌ষঃ; li ্‌মঃ; রপঃ ্‌ষঃ; /li ্‌মঃ;\n্‌ষঃ; /ul ্‌মঃ;\nউদ্দীপকটির আউটপুট হব্তে [সি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "● ict",
+      "■ ict",
+      "□ ict",
+      "○ ict"
+    ],
+    "correctAnswer": "○ ict",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.221Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a0",
@@ -4100,6 +6154,32 @@
     "createdAt": "2026-11-03T05:41:46.350Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea35",
+    "serialNo": 80,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2024",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Google.পড়স কী? [সি.বো. ২৪]",
+    "image": "",
+    "options": [
+      "Browser",
+      "ঝবধৎপয বহমরহব",
+      "চৎড়ঃড়পড়ষ",
+      "ঊ-সধরষ ধফফৎবংং"
+    ],
+    "correctAnswer": "ঝবধৎপয বহমরহব",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.231Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97a1",
     "serialNo": 81,
     "categoryTypes": [
@@ -4149,6 +6229,32 @@
     "correctAnswer": "থিকনেট",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.357Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea36",
+    "serialNo": 81,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "CERN কোথায় অবস্থিত?\t[ঢা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "ইতালি",
+      "আমেরিকা",
+      "ইংল্যান্ড",
+      "সুইজারল্যান্ড"
+    ],
+    "correctAnswer": "সুইজারল্যান্ড",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.240Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a2",
@@ -4202,6 +6308,32 @@
     "createdAt": "2026-11-03T05:41:46.363Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea37",
+    "serialNo": 82,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি ওয়েবসাইটে কয়টি অংশ থাকে?\t[দি.বো.'২৩]",
+    "image": "",
+    "options": [
+      "২",
+      "৩",
+      "৪",
+      "৫"
+    ],
+    "correctAnswer": "২",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.250Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97a3",
     "serialNo": 83,
     "categoryTypes": [
@@ -4251,6 +6383,32 @@
     "correctAnswer": "ফিঙ্গারপ্রিন্ট",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.371Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea38",
+    "serialNo": 83,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড, কুমিল্লা বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইটের একক ঠিকানাু\t[ঢা.বো.'১৯; কু.বো.'১৯, ২৩]",
+    "image": "",
+    "options": [
+      "IP Address",
+      "URL",
+      "HTTP",
+      "HTML"
+    ],
+    "correctAnswer": "URL",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.259Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a4",
@@ -4304,6 +6462,32 @@
     "createdAt": "2026-11-03T05:41:46.380Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea39",
+    "serialNo": 84,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সারা বিশ্বের সকল আইপি এড্রেস ও ডোমেইন নেম নিয়ন্ত্রণ করে কোন প্রতিষ্ঠান?\t[রা.বো.'১৯]",
+    "image": "",
+    "options": [
+      "গওঈজঙঝঙঋঞ",
+      "ICANN",
+      "এঙঙএখঊ",
+      "ণঅঐঙঙ"
+    ],
+    "correctAnswer": "ICANN",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.270Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97a5",
     "serialNo": 85,
     "categoryTypes": [
@@ -4353,6 +6537,32 @@
     "correctAnswer": "গেটওয়ে",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.386Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea3a",
+    "serialNo": 85,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ওয়েবসাইট কাঠামোতে যে কোনো পেইজ থেকে সরাসরি হোম পেইজে যাওয়া যায়?\t[রা.বো.'১৯]",
+    "image": "",
+    "options": [
+      "ঐরবৎৎধধৎপযরপধষ",
+      "Network",
+      "Linear",
+      "Combination"
+    ],
+    "correctAnswer": "Network",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.280Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a6",
@@ -4406,6 +6616,32 @@
     "createdAt": "2026-11-03T05:41:46.392Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea3b",
+    "serialNo": 86,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "আইপি এড্রেস (ওচঠ৪) কত বিটের?\t[চ.বো.'১৯]",
+    "image": "",
+    "options": [
+      "৮",
+      "৩২",
+      "৬৪",
+      "১২৮"
+    ],
+    "correctAnswer": "৩২",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.290Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97a7",
     "serialNo": 87,
     "categoryTypes": [
@@ -4455,6 +6691,32 @@
     "correctAnswer": "ভিডিও কনফারেন্সিং HD",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.400Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea3c",
+    "serialNo": 87,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি আইপি অ্যাড্রেসকে প্রকাশের জন্য মোট কতটি বিটের প্রয়োজন?\t[সি.বো.'১৯]",
+    "image": "",
+    "options": [
+      "২",
+      "৪",
+      "৮",
+      "৩২"
+    ],
+    "correctAnswer": "৩২",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.300Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a8",
@@ -4508,6 +6770,32 @@
     "createdAt": "2026-11-03T05:41:46.409Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea3d",
+    "serialNo": 88,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্ট্যাটিক ওয়েব সাইটের বৈশিষ্ট্য কোনটি?\t[ব.বো.'১৯]",
+    "image": "",
+    "options": [
+      "ওয়েব পেইজগুলোতে কন্টেন্ট অনিদির্ষ্ট থাকে",
+      "ব্রাউজারে দ্রুত লোড হয়",
+      "ডেটাবেজ ব্যবহার করা যায়",
+      "ইপুট দেওয়ার ব্যবস্থা থাকে"
+    ],
+    "correctAnswer": "ব্রাউজারে দ্রুত লোড হয়",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.310Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97a9",
     "serialNo": 89,
     "categoryTypes": [
@@ -4557,6 +6845,32 @@
     "correctAnswer": "জয়স্টিক",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.415Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea3e",
+    "serialNo": 89,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "URL হলো ওয়েবপেজেরু\t[দি.বো.'১৯]",
+    "image": "",
+    "options": [
+      "লিংক",
+      "অ্যাড্রেস",
+      "হোম পেজ",
+      "সার্ভার"
+    ],
+    "correctAnswer": "অ্যাড্রেস",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.318Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97aa",
@@ -4610,6 +6924,32 @@
     "createdAt": "2026-11-03T05:41:46.424Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea3f",
+    "serialNo": 90,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "URL দ্বারা কোনটি প্রকাশ করা হয়?\t[সি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ইন্টারনেট",
+      "ডোমেইন নেম",
+      "ইয়াহু",
+      "গুগল"
+    ],
+    "correctAnswer": "ডোমেইন নেম",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.328Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ab",
     "serialNo": 91,
     "categoryTypes": [
@@ -4659,6 +6999,32 @@
     "correctAnswer": "ব্রডকাস্ট",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.431Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea40",
+    "serialNo": 91,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ISP এর পূর্ণ নাম কী?\t[দি.বো.'১৭]",
+    "image": "",
+    "options": [
+      "Internet ঝঁঢ়বৎ চড়বিৎ",
+      "Internet ঝবৎাবৎ চৎড়ারফবৎ",
+      "Internet ঝবৎাবৎ চৎড়মৎধসসব",
+      "Internet ঝবৎারপব চৎড়ারফবৎ"
+    ],
+    "correctAnswer": "Internet ঝবৎারপব চৎড়ারফবৎ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.337Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97ac",
@@ -4712,6 +7078,32 @@
     "createdAt": "2026-11-03T05:41:46.441Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea41",
+    "serialNo": 92,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DNS এর পূর্ণরূপ কী?\t[দি.বো.'১৭]",
+    "image": "",
+    "options": [
+      "Domain Name ঝবৎাবৎ",
+      "Domain Name System",
+      "উড়সধরহ ঘঁসনবৎ ঝুংঃবস",
+      "উড়সধরহ ঘঁসনবৎ ড়ভ Server"
+    ],
+    "correctAnswer": "Domain Name System",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.344Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ad",
     "serialNo": 93,
     "categoryTypes": [
@@ -4761,6 +7153,32 @@
     "correctAnswer": "বিরতিহীন ডেটা ট্রান্সমিশন",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.447Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea42",
+    "serialNo": 93,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইটের হায়ারারকিক্যাল কাঠামো কী?\t[রা.বো.'১৬]",
+    "image": "",
+    "options": [
+      "হোমপেজ নির্ভর ওয়েবসাইট",
+      "প্রতি পেজের সাথে লিঙ্কড",
+      "ওয়েবভিত্তিক যোগাযোগ",
+      "দুটি পেজের মধ্যে লিঙ্কড"
+    ],
+    "correctAnswer": "হোমপেজ নির্ভর ওয়েবসাইট",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.352Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97ae",
@@ -4814,6 +7232,32 @@
     "createdAt": "2026-11-03T05:41:46.453Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea43",
+    "serialNo": 94,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTTP-এর পূর্ণরূপ কী?\t[কু.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ঐরমযবৎ ঞবীঃ ঞৎধহংভবৎ চৎড়ঃড়পড়ষ",
+      "ঐুঢ়বৎ ঞবীঃ ঞৎধহংভবৎ চৎড়ঃড়পড়ষ",
+      "ঐরমযবৎ ঞৎধহংভবৎ ঞবীঃ চৎড়ঃড়পড়ষ",
+      "ঐুঢ়বৎ ঞৎধহংভবৎ ঞবীঃ চৎড়ঃড়পড়ষ"
+    ],
+    "correctAnswer": "ঐুঢ়বৎ ঞবীঃ ঞৎধহংভবৎ চৎড়ঃড়পড়ষ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.362Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97af",
     "serialNo": 95,
     "categoryTypes": [
@@ -4862,6 +7306,32 @@
     "correctAnswer": "মেশ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.458Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea44",
+    "serialNo": 95,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি আইপি অ্যাড্রেসকে প্রকাশের জন্য মোট কয়টি অকটেড প্রয়োজন?\t[চ.বো.'১৬]",
+    "image": "",
+    "options": [
+      "২",
+      "৪",
+      "৮",
+      "৩২"
+    ],
+    "correctAnswer": "৪",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.374Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b0",
@@ -4915,6 +7385,32 @@
     "createdAt": "2026-11-03T05:41:46.466Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea45",
+    "serialNo": 96,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি ওয়েব ব্রাউজার?\t[দি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ফায়ারফক্স",
+      "মাইক্রোসফট আউটলুক",
+      "ইয়াহু ম্যাসেঞ্জার",
+      "গুগল ড্রপ বক্স"
+    ],
+    "correctAnswer": "ফায়ারফক্স",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.385Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97b1",
     "serialNo": 97,
     "categoryTypes": [
@@ -4964,6 +7460,32 @@
     "correctAnswer": "২টি",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.472Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea46",
+    "serialNo": 97,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফাঁকা ট্যাগ কোনটি?\t[রা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ন্‌মঃ;",
+      "্‌ষঃ;র্ষ‌মঃ;",
+      "্‌ষঃ;নৎ্‌মঃ;",
+      "্‌ষঃ;উবষ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;নৎ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.397Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b2",
@@ -5017,6 +7539,32 @@
     "createdAt": "2026-11-03T05:41:46.479Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea47",
+    "serialNo": 98,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি এম্পটি এলিমেন্ট?\t[চ.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; চ ্‌মঃ;",
+      "্‌ষঃ; ধযৎবভ ্‌মঃ;",
+      "্‌ষঃ; ০১ ্‌মঃ;",
+      "্‌ষঃ; img ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; img ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.409Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97b3",
     "serialNo": 99,
     "categoryTypes": [
@@ -5066,6 +7614,32 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.489Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea48",
+    "serialNo": 99,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড, ময়মনসিংহ বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML ফাইনের এক্সটেনশন হলোু\t[ম.বো.'২৩; সি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "যঃসষ",
+      "ড়",
+      "ঃীঃ",
+      "ফড়প"
+    ],
+    "correctAnswer": "যঃসষ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.422Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b4",
@@ -5119,6 +7693,32 @@
     "createdAt": "2026-11-03T05:41:46.494Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea49",
+    "serialNo": 100,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি এম্পটি ট্যাগ?\t[ব.বো.'১৯]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;যৎ্‌মঃ;",
+      "্‌ষঃ;ঃফ্‌মঃ;",
+      "্‌ষঃ;ড়ষ্‌মঃ;",
+      "্‌ষঃ;বস্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;যৎ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.433Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97b5",
     "serialNo": 101,
     "categoryTypes": [
@@ -5170,6 +7770,32 @@
     "createdAt": "2026-11-03T05:41:46.498Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea4a",
+    "serialNo": 101,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড, যশোর বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এইচটিএমএল ট্যাগের চিহ্ন কোনটি?\t[রঢা.বো.'১৭; য.বো.'১৬]",
+    "image": "",
+    "options": [
+      "্‌ষঃ; ্‌মঃ;",
+      "{ }",
+      "( )",
+      "[ ]"
+    ],
+    "correctAnswer": "্‌ষঃ; ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.445Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97b6",
     "serialNo": 102,
     "categoryTypes": [
@@ -5218,6 +7844,32 @@
     "correctAnswer": "ব্যান্ডউইথ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.502Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea4b",
+    "serialNo": 102,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এর উদ্ভাবক হলেনু\t[ম.বো.'১৭]",
+    "image": "",
+    "options": [
+      "টিম বার্নাস লি",
+      "স্টিভ জবস",
+      "মার্ক জুকারবার্গ",
+      "বিল গেটস"
+    ],
+    "correctAnswer": "টিম বার্নাস লি",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.456Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b7",
@@ -5271,6 +7923,32 @@
     "createdAt": "2026-11-03T05:41:46.507Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea4c",
+    "serialNo": 103,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবপেজ তৈরিতে কোন ভাষা ব্যবহৃত হয়?\t[রা.বো.'১৬]",
+    "image": "",
+    "options": [
+      "চণঞঐঙঘ",
+      "HTML",
+      "ঈঙইঙখ",
+      "ঋঙজঞজঅঘ"
+    ],
+    "correctAnswer": "HTML",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.468Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97b8",
     "serialNo": 104,
     "categoryTypes": [
@@ -5320,6 +7998,32 @@
     "correctAnswer": "ভয়েস ব্যান্ড",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.511Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea4d",
+    "serialNo": 104,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওপেনিং ট্যাগ থেকে ক্লোজিং ট্যাগ পযর্ন্ত সকল কিছুকে বলেু\t[য.বো.'১৬]",
+    "image": "",
+    "options": [
+      "টাইটেল",
+      "হেড",
+      "বডি",
+      "কন্‌ধসঢ়;টেন্ট"
+    ],
+    "correctAnswer": "কন্‌ধসঢ়;টেন্ট",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.480Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b9",
@@ -5373,6 +8077,32 @@
     "createdAt": "2026-11-03T05:41:46.516Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea4e",
+    "serialNo": 105,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওপেনিং ট্যাগ থেকে ক্লোজিং ট্যাগ পযর্ন্ত সকল কিছুকে কি বলে?\t[চ.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ট্যাগ",
+      "ঐবধফ",
+      "ইড়ফু",
+      "HTML উপাদান"
+    ],
+    "correctAnswer": "HTML উপাদান",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.493Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ba",
     "serialNo": 106,
     "categoryTypes": [
@@ -5422,6 +8152,32 @@
     "correctAnswer": "300 bps",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.521Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea4f",
+    "serialNo": 106,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এর ফাইল নামের এক্সটেনশন কোনটি হবে?\t[সি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ঃীঃ",
+      "হবঃ",
+      "যঃসষ",
+      "ঢ়যঢ়"
+    ],
+    "correctAnswer": "যঃসষ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.504Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97bb",
@@ -5475,6 +8231,32 @@
     "createdAt": "2026-11-03T05:41:46.526Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea50",
+    "serialNo": 107,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েব পেজ তৈরিতে ব্যবহৃত আবশ্যক ট্যাগ কোনটি?\t[সি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;যঃসষ্‌মঃ; ............. ্‌ষঃ;/যঃসষ্‌মঃ;",
+      "্‌ষঃ;ধ href = ''URL''্‌মঃ; ............. ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;font face = ''ঝঁঃড়হু গল'' ............. ্‌ষঃ;/ভড়হঃ্‌মঃ;",
+      "্‌ষঃ;ওসম ঝৎপ = ''ইড়ধৎফ ঔচম'' width ''১০০ যরমযঃ = ২০০''"
+    ],
+    "correctAnswer": "্‌ষঃ;যঃসষ্‌মঃ; ............. ্‌ষঃ;/যঃসষ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.517Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97bc",
     "serialNo": 108,
     "categoryTypes": [
@@ -5524,6 +8306,32 @@
     "correctAnswer": "১০০০০ bps",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.530Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea51",
+    "serialNo": 108,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন যঃসষ:ধম এর ক্লোজিং ট্যাগ থাকে না?\t[দি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;র্য‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ;",
+      "্‌ষঃ;ঃৎ্‌মঃ;",
+      "্‌ষঃ;নৎ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;নৎ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.529Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97bd",
@@ -5577,6 +8385,32 @@
     "createdAt": "2026-11-03T05:41:46.535Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea52",
+    "serialNo": 109,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এ বড় হেডিং এলিমেন্ট কোনটি?\t[ঢা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;যষ্‌মঃ;",
+      "্‌ষঃ;য২্‌মঃ;",
+      "্‌ষঃ;য৫্‌মঃ;",
+      "্‌ষঃ;য৬্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;যষ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.540Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97be",
     "serialNo": 110,
     "categoryTypes": [
@@ -5626,6 +8460,32 @@
     "correctAnswer": "9600 bps",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.540Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea53",
+    "serialNo": 110,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড, কুমিল্লা বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন হেডিং ট্যাগের সাইজ সবচেয়ে ছোট?\t[চ.বো.'১৭; কু.বো.'১৬]",
+    "image": "",
+    "options": [
+      "যষ",
+      "h3",
+      "h5",
+      "h6"
+    ],
+    "correctAnswer": "h6",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.552Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97bf",
@@ -5679,6 +8539,32 @@
     "createdAt": "2026-11-03T05:41:46.545Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea54",
+    "serialNo": 111,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "হেডিং ট্যাগ কয়টি?\t[ব.বো.'১৬]",
+    "image": "",
+    "options": [
+      "২",
+      "৪",
+      "৬",
+      "৮"
+    ],
+    "correctAnswer": "৬",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.564Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97c0",
     "serialNo": 112,
     "categoryTypes": [
@@ -5728,6 +8614,32 @@
     "correctAnswer": "১ mbps বা অধিক",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.553Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea55",
+    "serialNo": 112,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন ট্যাগে অ্যাট্রিবিউট থাকে?\t[ঢা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "শুরুর ট্যাগে",
+      "শেষ ট্যাগে",
+      "দুই ট্যাগে মাঝে",
+      "উভয় ট্যাগে"
+    ],
+    "correctAnswer": "শুরুর ট্যাগে",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.581Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97c1",
@@ -5781,6 +8693,32 @@
     "createdAt": "2026-11-03T05:41:46.560Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea56",
+    "serialNo": 113,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি দেখ এবং ৩৩ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;font size = ''৭''্‌মঃ; ইধহমষধফবংয্‌ষঃ;/ভড়হঃ্‌মঃ;\t[রা.বো.'২৩]\nউদ্দীপকের অ্যাট্রিবিউট কোনটি?",
+    "image": "",
+    "options": [
+      "font",
+      "size",
+      "৭",
+      "Bangladesh"
+    ],
+    "correctAnswer": "size",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.595Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97c2",
     "serialNo": 114,
     "categoryTypes": [
@@ -5830,6 +8768,32 @@
     "correctAnswer": "অ্যাসিনক্রোনাস",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.565Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea57",
+    "serialNo": 114,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML কোড ্‌ষঃ;চ align = ''পবহঃবৎ''্‌মঃ;ওঈঞ্‌ষঃ;/চ্‌মঃ; এ অ্যাট্রিউিট ভ্যালু কোনটি?\t[দি.বো.'২৩]",
+    "image": "",
+    "options": [
+      "চ",
+      "align",
+      "পবহঃবৎ",
+      "ওঈঞ"
+    ],
+    "correctAnswer": "পবহঃবৎ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.606Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97c3",
@@ -5883,6 +8847,32 @@
     "createdAt": "2026-11-03T05:41:46.569Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea58",
+    "serialNo": 115,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি ফরমেটিং ট্যাগ?\t[রা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ঙখ্‌মঃ; ুুুুু ্‌ষঃ;/ঙখ্‌মঃ;",
+      "্‌ষঃ;যষ্‌মঃ; ুুুুু ্‌ষঃ;/যষ্‌মঃ;",
+      "্‌ষঃ;নরম্‌মঃ; ুুুুু ্‌ষঃ;/নরম্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ; ুুুুু ্‌ষঃ;/ধ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;নরম্‌মঃ; ুুুুু ্‌ষঃ;/নরম্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.618Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97c4",
     "serialNo": 116,
     "categoryTypes": [
@@ -5932,6 +8922,32 @@
     "correctAnswer": "72.73%",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.573Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea59",
+    "serialNo": 116,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এইচটিএমএল কোড ্‌ষঃ; p ্‌মঃ; ঐ ্‌ষঃ; sup ্‌মঃ; ২ ্‌ষঃ; /sup ্‌মঃ; ঙ ্‌ষঃ; / p ্‌মঃ; এর ফলাফল কোনটি?\t[ঢা.বো.'১৭]",
+    "image": "",
+    "options": [
+      "ঐ২ঙ",
+      "ঐ২ঙ",
+      "ঐ২ঙ",
+      "ঐঙ২"
+    ],
+    "correctAnswer": "ঐ২ঙ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.634Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97c5",
@@ -5985,6 +9001,32 @@
     "createdAt": "2026-11-03T05:41:46.577Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea5a",
+    "serialNo": 117,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "লিস্ট তৈরিতে ব্যবহৃত হয় কোনটি?\t[রা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;টখ্‌মঃ;",
+      "্‌ষঃ;ঃৎ্‌মঃ;",
+      "্‌ষঃ;ঃফ্‌মঃ;",
+      "্‌ষঃ;যৎ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;টখ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.646Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97c6",
     "serialNo": 118,
     "categoryTypes": [
@@ -6034,6 +9076,32 @@
     "correctAnswer": "এমএমএস",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.583Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea5b",
+    "serialNo": 118,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "লিস্টে আইটেম যুক্ত করার ট্যাগ কোনটি?\t[ম.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ড়ষ্‌মঃ;",
+      "্‌ষঃ;র্ষ‌মঃ;",
+      "্‌ষঃ;ঁষ্‌মঃ;",
+      "্‌ষঃ;ফঃ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;র্ষ‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.659Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97c7",
@@ -6087,6 +9155,31 @@
     "createdAt": "2026-11-03T05:41:46.591Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea5c",
+    "serialNo": 119,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি দেখ এবং ৩৯ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;ul ঃুঢ়ব=''ফরংব''্‌মঃ;্‌ষঃ;র্ষ‌মঃ;ইড়ড়শ্‌ষঃ;/র্ষ‌মঃ;্‌ষঃ;/ঁষ্‌মঃ;\nউদ্দীপকটির আউটপুট হবেু",
+    "image": "",
+    "options": [
+      "Book",
+      "Book",
+      "Book",
+      "Book"
+    ],
+    "correctAnswer": "Book",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.673Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97c8",
     "serialNo": 120,
     "categoryTypes": [
@@ -6136,6 +9229,32 @@
     "correctAnswer": "সিমপ্লেক্স",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.597Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea5d",
+    "serialNo": 120,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি সঠিক যঃসষ কোড?\t[য.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;width = ২০০, height = ১০০্‌মঃ;",
+      "্‌ষঃ;p size = ''৫'' ্‌মঃ; গু ফড়পঁসবহঃ ্‌ষঃ;/ঢ়্‌মঃ;",
+      "্‌ষঃ;ধ href = ''ফড়পঁসবহঃ ১.যঃসষ''্‌মঃ; ফড়পঁসবহঃ ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;table rowspan = ''২''্‌মঃ; অনপ ্‌ষঃ;/ঃধনষব্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ href = ''ফড়পঁসবহঃ ১.যঃসষ''্‌মঃ; ফড়পঁসবহঃ ্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.685Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97c9",
@@ -6189,6 +9308,32 @@
     "createdAt": "2026-11-03T05:41:46.601Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea5e",
+    "serialNo": 121,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এর লিংক ট্যাগ নিচের কোনটি?\t\t[দি.বো.'২৩; দি.বো.'১৯; সকল বোর্ড'১৮; রা.বো.'১৭]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;র্ষ‌মঃ; ু ্‌ষঃ;/র্ষ‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ; ু ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;চ্‌মঃ; ু ্‌ষঃ;/চ্‌মঃ;",
+      "্‌ষঃ;্‌ঁমঃ; ু ্‌ষঃ;/্‌ঁমঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ; ু ্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.697Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ca",
     "serialNo": 122,
     "categoryTypes": [
@@ -6238,6 +9383,32 @@
     "correctAnswer": "রেডিও ওয়েব",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.607Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea5f",
+    "serialNo": 122,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ব্রাউজকারীর সময় বাঁচে কোন ট্যাগে?\t[ঢা.বো.'১৯]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;নৎ্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;",
+      "্‌ষঃ;র্ষ‌মঃ;",
+      "্‌ষঃ;ষ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.708Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97cb",
@@ -6291,6 +9462,32 @@
     "createdAt": "2026-11-03T05:41:46.615Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea60",
+    "serialNo": 123,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এইটি পেইজের সাথে অন্য পেইজের সংযোগকে HTML ভাষায় কী বলে?\t[দি.বো.'১৭]",
+    "image": "",
+    "options": [
+      "ঈড়হহবপঃরড়হ",
+      "ঐুঢ়বৎষরহশ",
+      "খরহশ",
+      "অফফরঃরড়হ"
+    ],
+    "correctAnswer": "ঐুঢ়বৎষরহশ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.720Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97cc",
     "serialNo": 124,
     "categoryTypes": [
@@ -6340,6 +9537,32 @@
     "correctAnswer": "মাল্টিকাস্ট",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.621Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea61",
+    "serialNo": 124,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML-এ লিঙ্ক সিনটেক্স হলোু\t[কু.বো.'১৬]্‌ষঃ;ধ নৎবভ = ুঁৎষচ্ ্‌মঃ; খরহশ:বীঃ ্‌ষঃ;/ধ্‌মঃ;\tএখানে ধ নৎবভ এর অর্থ হচ্ছেু",
+    "image": "",
+    "options": [
+      "ধ যড়ঃ ৎবভবৎবহপব",
+      "ধ যুঢ়বৎষরহশ ৎবঢ়ষধপব",
+      "ধ যুঢ়বৎষরহশ ৎবভবৎবহপব",
+      "ধ যড়সব ৎবভবৎবহপব"
+    ],
+    "correctAnswer": "ধ যুঢ়বৎষরহশ ৎবভবৎবহপব",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.734Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97cd",
@@ -6393,6 +9616,32 @@
     "createdAt": "2026-11-03T05:41:46.628Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea62",
+    "serialNo": 125,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ওয়েবপৃষ্ঠার পূর্ণ ঠিকানা?\t[দি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ধ href = ''িি'ি' ষরহশ:বীঃ ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ধ href = ''ঁৎষ'' ষরহশ:বীঃ ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ধ href = ''িি.িঁৎষ'' ষরহশ:বীঃ ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ধ href = ''িিি ষরহশ:বীঃ.পড়স'' ্‌ষঃ;/ধ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ href = ''ঁৎষ'' ষরহশ:বীঃ ্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.746Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ce",
     "serialNo": 126,
     "categoryTypes": [
@@ -6442,6 +9691,32 @@
     "correctAnswer": "সিমপ্লেক্স",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.637Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea63",
+    "serialNo": 126,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দিপু তার ওয়েবসাইটে লেখার সাথে ছবিও যুক্ত করেছে। এতে করে তার সাইটটি সুন্দর ও আকর্ষণীয় হয়েছে। উদ্দীপকের দিপু কোন ট্যাগটি ব্যবহার করে ছবিটি যুক্ত করেছে?\t[কু.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;পধঢ়ঃরড়হ্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ;",
+      "্‌ষঃ;যবধফ্‌মঃ;",
+      "্‌ষঃ;যঃসষ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;রসম্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.758Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97cf",
@@ -6495,6 +9770,32 @@
     "createdAt": "2026-11-03T05:41:46.642Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea64",
+    "serialNo": 127,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ছবি প্রদর্শনের ট্যাগ কোনটি?\t[ব.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ঁষ্‌মঃ;",
+      "্‌ষঃ;ড়ষ্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ;",
+      "্‌ষঃ;র্ষ‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;রসম্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.770Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97d0",
     "serialNo": 128,
     "categoryTypes": [
@@ -6544,6 +9845,32 @@
     "correctAnswer": "টুইস্টেড পেয়ার ক্যাবল",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.646Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea65",
+    "serialNo": 128,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি সঠিক ট্যাগ?\t[দি.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;রসধমব ংৎব = ''image.jpg''্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ; src = img.লঢ়ম",
+      "্‌ষঃ;src img.লঢ়ম্‌মঃ;",
+      "্‌ষঃ;img ংৎপ = ''image.jpg''্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;img ংৎপ = ''image.jpg''্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.782Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97d1",
@@ -6597,6 +9924,32 @@
     "createdAt": "2026-11-03T05:41:46.650Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea66",
+    "serialNo": 129,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড, সিলেট বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ব্রাউজার যদি কোনো কারণে ইমেজ লোড করতে ব্যর্থ হয় তখন ইমেজের পরিবর্তে কোনো টেক্সট প্রদর্শনের জন্য ব্যবহৃত অ্যাট্রিবিউট কোনটি?\t[সি.বো.'২৩; চ.বো.'১৯]",
+    "image": "",
+    "options": [
+      "src",
+      "title",
+      "ধষঃ",
+      "align"
+    ],
+    "correctAnswer": "ধষঃ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.793Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97d2",
     "serialNo": 130,
     "categoryTypes": [
@@ -6646,6 +9999,32 @@
     "correctAnswer": "সাদা",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.655Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea67",
+    "serialNo": 130,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি সঠিক?\t[কু.বো.'১৯]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;রসম্‌মঃ; src = ''rose.jpg'' ্‌ষঃ;ষরসম্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ; src = 'rose.jpg' ্‌ষঃ;ষরসম্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ; src = ''rose.jpg'' ্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ; ্‌ষঃ;src = ''rose.jpg'' ্‌মঃ; ্‌ষঃ;ষরসম)"
+    ],
+    "correctAnswer": "্‌ষঃ;রসম্‌মঃ; src = ''rose.jpg'' ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.806Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97d3",
@@ -6699,6 +10078,32 @@
     "createdAt": "2026-11-03T05:41:46.662Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea68",
+    "serialNo": 131,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েব পেজে 1000 বাই 800 পিক্সেলের nature.jpg ইমেজটি যুক্ত করার জন্য ্‌ষঃ;img ংৎপ = ''nature.jpg''্‌মঃ; এর কোন নির্দেশনা যুক্ত হবে?\t[দি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ডরফঃয = ''1000'' height = ''800''",
+      "চরীবষি = ''1000'' ঢ়রীবষয = ''800''",
+      "ড = ''1000'' য = ''800''",
+      "চরীডরফঃয = ''1000'' চরীযবরমযঃ = ''৮''"
+    ],
+    "correctAnswer": "ডরফঃয = ''1000'' height = ''800''",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.844Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97d4",
     "serialNo": 132,
     "categoryTypes": [
@@ -6747,6 +10152,32 @@
     "correctAnswer": "200 Mbps",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.666Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea69",
+    "serialNo": 132,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ঃধনষব্‌মঃ; ট্যাগের ব্যবহৃত অ্যাট্রিবিউট হলোু\t[দি.বো.'২৩]",
+    "image": "",
+    "options": [
+      "src",
+      "face",
+      "ধষঃ",
+      "border"
+    ],
+    "correctAnswer": "border",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.855Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97d5",
@@ -6800,6 +10231,32 @@
     "createdAt": "2026-11-03T05:41:46.670Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea6a",
+    "serialNo": 133,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিল সেলের ব্যাকগ্রাউন্ট কালার সুবজ হবে কোন ট্যাগে?\t[দি.বো.'১৯]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;table bgcolor = ''মৎববহ''্‌মঃ;",
+      "্‌ষঃ;tr bgcolor = ''মৎববহ''্‌মঃ;",
+      "্‌ষঃ;td bgcolor = ''মৎববহ''্‌মঃ;",
+      "্‌ষঃ;tr ঃফ bgcolor = ''মৎববহ''্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;td bgcolor = ''মৎববহ''্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.868Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97d6",
     "serialNo": 134,
     "categoryTypes": [
@@ -6849,6 +10306,32 @@
     "correctAnswer": "2.45 GHz",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.675Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea6b",
+    "serialNo": 134,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ঃধনষব্‌মঃ; ্‌ষঃ;ঃৎ্‌মঃ; ্‌ষঃ;ঃফ্‌মঃ; অ ্‌ষঃ;/ঃফ্‌মঃ; ্‌ষঃ;ঃফ্‌মঃ; ই ্‌ষঃ;/ঃফ্‌মঃ; ্‌ষঃ;/ঃৎ্‌মঃ; ্‌ষঃ;ঃৎ্‌মঃ; ্‌ষঃ;ঃফ্‌মঃ; ঈ ্‌ষঃ;/ঃফ্‌মঃ; ্‌ষঃ;ঃফ্‌মঃ; উ ্‌ষঃ;/ঃফ্‌মঃ; ্‌ষঃ;/ঃৎ্‌মঃ; ্‌ষঃ;/ঃধনষব্‌মঃ;\t[রা.বো.'১৭]উদ্দীপকের এ কোডের আউটপুট কোনটি?",
+    "image": "/uploads/images/mcq_ch4_image1.png",
+    "options": [
+      "চিত্র - K",
+      "চিত্র - L",
+      "চিত্র - M",
+      "চিত্র - N"
+    ],
+    "correctAnswer": "চিত্র - N",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.870Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97d7",
@@ -6902,6 +10385,32 @@
     "createdAt": "2026-11-03T05:41:46.679Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea6c",
+    "serialNo": 135,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিলের সেলের ব্যাকগ্রাউন্ড কালার কোন ট্যাগে হলুদ হবে?\t[সি.বো.'১৭]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;table নম color = ''ণবষষড়'্‌মিঃ;",
+      "্‌ষঃ;tr নম color = ''ণবষষড়'্‌মিঃ;",
+      "্‌ষঃ;td নম color = ''ণবষষড়'্‌মিঃ;",
+      "্‌ষঃ;td tr নম color = ''ণবষষড়'্‌মিঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;td নম color = ''ণবষষড়'্‌মিঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.882Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97d8",
     "serialNo": 136,
     "categoryTypes": [
@@ -6951,6 +10460,32 @@
     "correctAnswer": "কৃত্রিম উপগ্রহ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.683Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea6d",
+    "serialNo": 136,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্টাইল অ্যাট্রিবিউট এর ক্ষেত্রে নিচের কোনটি সঠিক?\t[রা.বো.'২৩]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;div style = ''color : ৎবফ, ভষড়ধঃ : ষবভঃ''্‌মঃ;",
+      "্‌ষঃ;div style = ''color : ৎবফ; ভষড়ধঃ = ষবভঃ''্‌মঃ;",
+      "্‌ষঃ;div style = ''color : ৎবফ; ভষড়ধঃ : ষবভঃ''্‌মঃ;",
+      "্‌ষঃ;div style = ''color : ৎবফ'' ''ভষড়ধঃ : ষবভঃ''্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;div style = ''color : ৎবফ; ভষড়ধঃ : ষবভঃ''্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.894Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97d9",
@@ -7004,6 +10539,32 @@
     "createdAt": "2026-11-03T05:41:46.687Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea6e",
+    "serialNo": 137,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইট হোস্টিং করে কোথায় রাখা হয়?\t[ম.বো.'২৩]",
+    "image": "",
+    "options": [
+      "র্যামে",
+      "হোমপেজে",
+      "হার্ডডিস্কে",
+      "সার্ভারে"
+    ],
+    "correctAnswer": "সার্ভারে",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.906Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97da",
     "serialNo": 138,
     "categoryTypes": [
@@ -7053,6 +10614,32 @@
     "correctAnswer": "36000 km",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.691Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea6f",
+    "serialNo": 138,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড, সিলেট বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফন্টের নাম পরিবর্তন করতে কোন অ্যাট্রিবিউট ব্যবহৃত হয়?\t\t[চ.বো.'১৭; সি.বো.'১৭]",
+    "image": "",
+    "options": [
+      "size",
+      "font",
+      "face",
+      "হধসব"
+    ],
+    "correctAnswer": "face",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.917Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97db",
@@ -7106,6 +10693,32 @@
     "createdAt": "2026-11-03T05:41:46.695Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea70",
+    "serialNo": 139,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML-এ বাংলা ফন্ট ব্যবহারের জন্য কোন এট্রিবিউট প্রয়োজন?\t[ব.বো.'১৬]",
+    "image": "",
+    "options": [
+      "font",
+      "href",
+      "face",
+      "src"
+    ],
+    "correctAnswer": "face",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.929Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97dc",
     "serialNo": 140,
     "categoryTypes": [
@@ -7155,6 +10768,32 @@
     "correctAnswer": "802.16 GHz",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.699Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea71",
+    "serialNo": 140,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "RGB (২৫৫, ২৫৫, ২৫৫) দ্বারা কোন রং নির্দেশ করে?\t[চ.বো.'১৯]",
+    "image": "",
+    "options": [
+      "লাল",
+      "সবুজ",
+      "সাদা",
+      "নীল"
+    ],
+    "correctAnswer": "সাদা",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.940Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97dd",
@@ -7208,6 +10847,32 @@
     "createdAt": "2026-11-03T05:41:46.703Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea72",
+    "serialNo": 141,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন যঃসষ ট্যাগটি ড্রপ ডাউন বক্স তৈরিতে ব্যবহৃত হয়?\t[দি.বো.'১৬]",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ড়ঢ়ঃরড়হ্‌মঃ;",
+      "্‌ষঃ;ভৎধসব্‌মঃ;",
+      "্‌ষঃ;ংবষবপঃ্‌মঃ;",
+      "্‌ষঃ;রহঢ়ঁঃ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ড়ঢ়ঃরড়হ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.952Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97de",
     "serialNo": 142,
     "categoryTypes": [
@@ -7257,6 +10922,32 @@
     "correctAnswer": "802.11",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.708Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea73",
+    "serialNo": 142,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েব পেইজ ডিজাইন কোনটি?\t[ঢা.বো.'১৬]",
+    "image": "",
+    "options": [
+      "ওয়েবসার্ভারে তথ্য রাখা",
+      "HTML ডকুমেন্ট তৈরি",
+      "বিশ্বব্যাপী নেটওয়ার্ক",
+      "ডোমেইন রেজিস্ট্রেশন"
+    ],
+    "correctAnswer": "HTML ডকুমেন্ট তৈরি",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.962Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97df",
@@ -7310,6 +11001,32 @@
     "createdAt": "2026-11-03T05:41:46.712Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea74",
+    "serialNo": 143,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Google.পড়স কী?\t[য.বো.'১৬]",
+    "image": "",
+    "options": [
+      "Browser",
+      "ঝবধৎপয বহমরহব",
+      "চৎড়ঃড়পড়ষ",
+      "ঊ-সধরষ ধফফৎবংং"
+    ],
+    "correctAnswer": "ঝবধৎপয বহমরহব",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.973Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97e0",
     "serialNo": 144,
     "categoryTypes": [
@@ -7359,6 +11076,32 @@
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.718Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea75",
+    "serialNo": 144,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কম্পিউটার নেটওয়ার্কে ডেটা গ্রহণ ও প্রদানের নিয়মকে কী বলে?\t[য.বো.'২৩]",
+    "image": "",
+    "options": [
+      "URL",
+      "IP ধফফৎবংং",
+      "Browser",
+      "চৎড়ঃড়পড়ষ"
+    ],
+    "correctAnswer": "চৎড়ঃড়পড়ষ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.985Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e1",
@@ -7412,6 +11155,32 @@
     "createdAt": "2026-11-03T05:41:46.722Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea76",
+    "serialNo": 145,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড, যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডোমেইন নাম (উড়সধরহ হধসব) হলোু\t[কু.বো.'১৬; য.বো.'১৭]",
+    "image": "",
+    "options": [
+      "ওয়েব ফাইলের নাম",
+      "সার্ভারের নাম",
+      "ওয়েবসাইটের একটি স্বতন্ত্র নাম",
+      "ফোল্ডারের নাম"
+    ],
+    "correctAnswer": "ওয়েবসাইটের একটি স্বতন্ত্র নাম",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:15:59.998Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97e2",
     "serialNo": 146,
     "categoryTypes": [
@@ -7461,6 +11230,32 @@
     "correctAnswer": "৪র্থ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.730Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea77",
+    "serialNo": 146,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "শিক্ষা প্রতিষ্ঠানে ব্যবহৃত টপ লেভেল ডোমেইনের নাম কি?\t[ব.বো.'১৯]",
+    "image": "",
+    "options": [
+      "মড়া",
+      "পড়স",
+      "বফঁ",
+      "ড়ৎম"
+    ],
+    "correctAnswer": "বফঁ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.010Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e3",
@@ -7514,6 +11309,32 @@
     "createdAt": "2026-11-03T05:41:46.739Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea78",
+    "serialNo": 147,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যঃঃঢ়://িি.িসড়বফঁ.মড়া/যড়সব/ঃধম এখানে টপ ডোমেইন কোনটি?\t[দি.বো.'১৯]",
+    "image": "",
+    "options": [
+      "িি.িসড়বফঁ.মড়া",
+      "িিি",
+      "িি.িসড়বফঁ",
+      "মড়া"
+    ],
+    "correctAnswer": "মড়া",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.022Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97e4",
     "serialNo": 148,
     "categoryTypes": [
@@ -7563,6 +11384,32 @@
     "correctAnswer": "তৃতীয়",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.748Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea79",
+    "serialNo": 148,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডোমেইন নাম হলোু\t[য.বো.'১৭]",
+    "image": "",
+    "options": [
+      "ওয়েবসাইটের একটি স্বতন্ত্র নাম",
+      "সার্ভারের নাম",
+      "ওয়েব ফাইলের নাম",
+      "ফোল্ডারের নাম"
+    ],
+    "correctAnswer": "ওয়েবসাইটের একটি স্বতন্ত্র নাম",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.040Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e5",
@@ -7616,6 +11463,32 @@
     "createdAt": "2026-11-03T05:41:46.755Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea7a",
+    "serialNo": 149,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": ".বফঁ দ্বারা কোন ধরনের ডোমেনকে বোঝায়?\t[ব.বো.'১৭]",
+    "image": "",
+    "options": [
+      "সামরিক",
+      "সাংগঠনিক",
+      "শিক্ষামূলক",
+      "ব্যবসায়িক"
+    ],
+    "correctAnswer": "শিক্ষামূলক",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.052Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97e6",
     "serialNo": 150,
     "categoryTypes": [
@@ -7665,6 +11538,32 @@
     "correctAnswer": "4G",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.761Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea7b",
+    "serialNo": 150,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যঃঃঢ়://িি.িুধযড়ড়.পড়স এর সর্বশেষ অংশটির নাম কী?\t[ঢা.বো.'১৬]",
+    "image": "",
+    "options": [
+      "প্রোটোকল",
+      "ডোমেইন নেইম",
+      "ফাইল প্রভৃতি",
+      "ডোমেইন প্রভৃতি"
+    ],
+    "correctAnswer": "ডোমেইন প্রভৃতি",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.065Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e7",
@@ -7718,6 +11617,32 @@
     "createdAt": "2026-11-03T05:41:46.765Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea7c",
+    "serialNo": 151,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ময়মনসিংহ বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সার্চ ইঞ্জিন হলোু\t[ম.বো.'২৩]\ni. মড়ড়মষব\tii. সড়ুরষষধ\niii. ুধযড়ড়\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.090Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97e8",
     "serialNo": 152,
     "categoryTypes": [
@@ -7767,6 +11692,32 @@
     "correctAnswer": "আইপি নির্ভর ওয়ারলেস নেটওয়ার্ক",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.772Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea7d",
+    "serialNo": 152,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এখানে HTML ফাইলেু\t[কু.বো.'২৩]\ni. শুধু ট্যাগ হিসেবে ্‌ষঃ;যঃসষ্‌মঃ; থাকে\nii. প্রতি জোড়া শুরু ও শেষ ট্যাগ থাকে\niii. অ্যাট্রিবিউট শুরু ট্যাগে থাকে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.115Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e9",
@@ -7820,6 +11771,32 @@
     "createdAt": "2026-11-03T05:41:46.777Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea7e",
+    "serialNo": 153,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি ওঃধষরপ:ধম?\t[চ.বো.'২৩]\ni. ্‌ষঃ; i ্‌মঃ;\tii. ্‌ষঃ; em ্‌মঃ;\niii. ্‌ষঃ; ওঃধষরপ ্‌মঃ;\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "i ও ii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.136Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ea",
     "serialNo": 154,
     "categoryTypes": [
@@ -7869,6 +11846,32 @@
     "correctAnswer": "২য়",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.783Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea7f",
+    "serialNo": 154,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;নড়ফুমঃ;্‌ষঃ;ঢ়্‌মঃ; ্‌ষঃ;র্‌মঃ; গু ঢ়ধমব ্‌ষঃ;/র্‌মঃ; ্‌ষঃ;/ঢ়্‌মঃ;\t্‌ষঃ;ধযৎবভ = ''pic.html''্‌মঃ;ঢ়রপঃঁৎব ্‌ষঃ;/ধ্‌মঃ;\t্‌ষঃ;নড়ফুমঃ;\t[চ.বো.'২৩]কোডটিতে ব্যবহৃত ট্যাগের ধরন হলোু\ni. টেবিল\tii. হাইপার লিংক\niii. ফরমেটিং\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "ii ও iii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.159Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97eb",
@@ -7922,6 +11925,32 @@
     "createdAt": "2026-11-03T05:41:46.789Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea80",
+    "serialNo": 155,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ভড়হঃ্‌মঃ; ট্যাগের কাজ হলো ওয়েবসাইটেরু\t[সি.বো.'২৩]\ni. টেক্সটের ফন্ট ঠিক করা\tii. টেক্সটকে লিস্ট আকারে সাজানো\niii. টেক্সটির রং ঠিক করা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.183Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ec",
     "serialNo": 156,
     "categoryTypes": [
@@ -7973,6 +12002,32 @@
     "createdAt": "2026-11-03T05:41:46.794Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea81",
+    "serialNo": 156,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যঃঃঢ়://িি.িধনপ.পড়স এড্রেসটিতে ব্যবহৃত বিভিন্ন অংশু\t[য.বো.'২৩]\ni. ঢ়ৎড়ঃড়পড়ষ\tii. ফড়সধরহ হধসব\niii. ফরৎবপঃড়ৎু ঢ়ধঃয\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.205Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ed",
     "serialNo": 157,
     "categoryTypes": [
@@ -8021,6 +12076,32 @@
     "correctAnswer": "MAN",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.800Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea82",
+    "serialNo": 157,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইট পাবলিশ করার জন্য এমন একটি সার্ভার কম্পিউটার রাখতে হয় যাুু\t[দি.বো.'২৩]\ni. সবর্ক্ষণ সচল থাকতে হয়\nii. সাবর্ক্ষণিক ইন্টারনেটের সাথে যুক্ত থাকতে হয়\niii. পাবলিক আইপি অ্যাড্রেস থাকতে হয়\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.229Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97ee",
@@ -8074,6 +12155,32 @@
     "createdAt": "2026-11-03T05:41:46.806Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea83",
+    "serialNo": 158,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইট পাবলিশিং-এ গৃহীত পদক্ষেপসমূহ হচ্ছেু\t[য.বো.'১৯]\ni. ডোমেন নেইম রেজিস্ট্রেশন করা\nii. ওয়েব পেজ ডিজাইন করা\niii. ওয়েবসাইট হোস্টিং করা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.253Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ef",
     "serialNo": 159,
     "categoryTypes": [
@@ -8123,6 +12230,32 @@
     "correctAnswer": "PAN",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.810Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea84",
+    "serialNo": 159,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টিম বার্নার্স লি-i সাথে সম্পর্কযুক্তু\t[কু.বো.'১৯]\ni. িিি ও গষঞ এর অধ্যাপক\nii. Google এর জনক ও তড়িৎ প্রকৌশল\niii. HTML ও জেনেভার সার্ন\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.279Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f0",
@@ -8176,6 +12309,32 @@
     "createdAt": "2026-11-03T05:41:46.815Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea85",
+    "serialNo": 160,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;ঃফ্‌মঃ; ট্যাগের সাথে ব্যবহৃত অ্যাট্রিবিউটু\t[চ.বো.'১৯]\ni. ধষরমহ\tii. face\niii. colspan\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.302Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97f1",
     "serialNo": 161,
     "categoryTypes": [
@@ -8225,6 +12384,32 @@
     "correctAnswer": "LAN",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.820Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea86",
+    "serialNo": 161,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ঞধনষব তৈরি করতে প্রয়োজনীয় ঞধমু\t[ব.বো.'১৯, ১৬]\ni. ্‌ষঃ;ঃয্‌মঃ; ... ্‌ষঃ;/ঃয্‌মঃ;\tii. ্‌ষঃ;ঃৎ্‌মঃ; ... ্‌ষঃ;/ঃৎ্‌মঃ;\niii. ্‌ষঃ;ঃফ্‌মঃ; ... ্‌ষঃ;/ঃফ্‌মঃ;\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.327Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f2",
@@ -8278,6 +12463,32 @@
     "createdAt": "2026-11-03T05:41:46.826Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea87",
+    "serialNo": 162,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "'br' এর HTML ঃধম এ থাকে নাু\t[দি.বো.'১৯]\ni. ওপেনিং ট্যাগ\tii. ক্লোজিং ট্যাগ\niii. টেক্সট ফিন্ড\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "ii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.348Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97f3",
     "serialNo": 163,
     "categoryTypes": [
@@ -8327,6 +12538,32 @@
     "correctAnswer": "রাউটার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.832Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea88",
+    "serialNo": 163,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2018",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন ট্যাগের এলিমেন্ট থাকে না?\t[সকল বোর্ড ২০১৮]\ni. ্‌ষঃ;নৎ্‌মঃ;\tii. ্‌ষঃ;রসম্‌মঃ;\niii. ্‌ষঃ;্‌ঁমঃ;\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.372Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f4",
@@ -8380,6 +12617,32 @@
     "createdAt": "2026-11-03T05:41:46.837Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea89",
+    "serialNo": 164,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "URL এর অংশগুলো হলোু\t[রা.বো.'১৭]\ni. প্রোটকল নেম\tii. হোস্ট নেম\niii. ডাইরেক্টরি নেম\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.396Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97f5",
     "serialNo": 165,
     "categoryTypes": [
@@ -8429,6 +12692,32 @@
     "correctAnswer": "রাউটার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.842Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea8a",
+    "serialNo": 165,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যঃসষ ওয়েবপেজ তৈরির জন্য ফাইলের এক্সটেনশন হচ্ছেু\t[কু.বো.'১৭]\ni. .যঃসষ\tii. .যঃস\niii. .ফড়প\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.419Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f6",
@@ -8482,6 +12771,32 @@
     "createdAt": "2026-11-03T05:41:46.848Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea8b",
+    "serialNo": 166,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েব ব্রাউজার হলোু\t[কু.বো.'১৭]\ni. গুগল ক্রোম\tii. সাফারি\niii. ইউটিউব\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.443Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97f7",
     "serialNo": 167,
     "categoryTypes": [
@@ -8530,6 +12845,32 @@
     "correctAnswer": "সুইচ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.854Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea8c",
+    "serialNo": 167,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "কুমিল্লা বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কনটেইনার ট্যাগ হলোু\t[কু.বো.'১৭]\ni. ্‌ষঃ; br ্‌মঃ;\tii. ্‌ষঃ; ড়খ ্‌মঃ;\niii. ্‌ষঃ;রসম্‌মঃ;\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "ii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.462Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f8",
@@ -8583,6 +12924,32 @@
     "createdAt": "2026-11-03T05:41:46.860Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea8d",
+    "serialNo": 168,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েবসাইটে ছবি সংযুক্ত করার উপযুক্ত ফরমেট হলোু\t[ব.বো.'১৭]\ni. .লঢ়ম\tii. .img\niii. .ঢ়হম\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.485Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97f9",
     "serialNo": 169,
     "categoryTypes": [
@@ -8631,6 +12998,32 @@
     "correctAnswer": "কেন্দ্রিয় হাবের মাধ্যমে",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.866Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea8e",
+    "serialNo": 169,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "হোমপেজ দেখার জন্য আবশ্যকু\t[চ.বো.'১৬]\ni. ওয়েব ব্রাউজার\tii. সার্চ ইঞ্জিন\niii. ইন্টারনেট\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.500Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97fa",
@@ -8684,6 +13077,32 @@
     "createdAt": "2026-11-03T05:41:46.871Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea8f",
+    "serialNo": 170,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফন্ট ট্যাগে অ্যাট্রিবিউট হিসাবে ব্যবহৃত হয়ু\t[সি.বো.'১৬]\ni. ংরুব\tii. color\niii. face\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.513Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97fb",
     "serialNo": 171,
     "categoryTypes": [
@@ -8732,6 +13151,32 @@
     "correctAnswer": "স্টার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.876Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea90",
+    "serialNo": 171,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML হচ্ছেু\t[ব.বো.'১৬]\ni. শেখা সহজ\tii. কেস সেনসিটিভ\niii. রক্ষণাবেক্ষণ সহজ\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.527Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97fc",
@@ -8785,6 +13230,32 @@
     "createdAt": "2026-11-03T05:41:46.883Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea91",
+    "serialNo": 172,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "্‌ষঃ;যঃসষ্‌মঃ;্‌ষঃ;নড়ফুমঃ;্‌ষঃ;ঢ়্‌মঃ; ্‌ষঃ;ন্‌মঃ; First Program ্‌ষঃ;/ন্‌মঃ; ্‌ষঃ;/ঢ়্‌মঃ;\t্‌ষঃ;ধ href = ''ঃবংঃ. যঃসষ'' ্‌মঃ; Test Website ্‌ষঃ;/ধ্‌মঃ;\t্‌ষঃ;/নড়ফুমঃ;\t্‌ষঃ;/যঃসষ্‌মঃ;কোডটিতে কোন ধরনের ট্যাগ ব্যবহৃত হয়েছে?\t[ব.বো.'১৬]\ni. ফরমেটিং\tii. হাইপার লিঙ্ক\niii. ইমেজ লিঙ্ক\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.541Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97fd",
     "serialNo": 173,
     "categoryTypes": [
@@ -8833,6 +13304,32 @@
     "correctAnswer": "স্টার",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.892Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea92",
+    "serialNo": 173,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "দিনাজপুর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "HTML এর body অংশ থাকেু\t[দি.বো.'১৬]\ni. ছবি\tii. টেবিল\niii. ওয়েব পেজ টাইটেল\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.558Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97fe",
@@ -8886,6 +13383,32 @@
     "createdAt": "2026-11-03T05:41:46.901Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea93",
+    "serialNo": 174,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড়ে ৯৪ ও ৯৫ নং প্রশ্নের উত্তর দাও:\nকেয়া ও দিয়া প্রায়ই পরস্পরের ওয়েবসাইটে ঢুকে প্রয়োজনীয় তথ্য সংগ্রহ করে। বিষয়টি তাদের কাছে বেশ সময়-সাপেক্ষে বলে মনে হয়। তারা সমস্যাটির কথা তাদের ওঈঞ শিক্ষককে জানালে তিনি তাদেরকে এক বিশেষ ধরনের ট্যাগ ব্যবহারের পরামর্শ দেন।\t \t\t\t\t\t\t[ব.বো.'২৩]\nউদ্দীপকে ওঈঞ শিক্ষকের নির্দেশিত ট্যাগ কোনটি?",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ঢ়্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;",
+      "্‌ষঃ;ংঁঢ়্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.572Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae97ff",
     "serialNo": 175,
     "categoryTypes": [
@@ -8934,6 +13457,32 @@
     "correctAnswer": "৬",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.909Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea94",
+    "serialNo": 175,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে ওঈঞ শিক্ষকের নির্দেশিত ট্যাগ ব্যবহার করলেু\ni. ভিন্ন অবস্থানের ভিন্ন কোনো পেইজে যাওয়া যায়\nii. সম্পর্কিত তথ্য দ্রুত প্রদর্শিত হয়\niii. ব্রাউজকারীর সময় কম লাগে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.587Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9800",
@@ -8987,6 +13536,32 @@
     "createdAt": "2026-11-03T05:41:46.923Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea95",
+    "serialNo": 176,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড়ে ১০৭ নং প্রশ্নের উত্তর দাও:\nআফরা যঃসষ ব্যবহারিক ক্লাসে হধঃঁৎব.ঔঢ়ম নামে 700 দ্ধ 500 সাইজের একটি ছবি যুক্ত করে।\t \t\t\t\t\t\t[য.বো.'২৩]\nআফরার যঃসষ কোড হবেু",
+    "image": "",
+    "options": [
+      "্‌ষঃ;img ংৎপ = ''nature.jpg, ডরফঃয = 700, height = 500''্‌মঃ;",
+      "্‌ষঃ;img ংৎপ = 'nature.jpg, ডরফঃয = ''700'' height = ''500''্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ; nature.jpg, ডরফঃয = 700, height = ৫০০্‌মঃ;",
+      "্‌ষঃ;রসম্‌মঃ; ''nature.jpg'', ''ডরফঃয = 700'', ''height = 500''্‌ষঃ;/রসম্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;img ংৎপ = 'nature.jpg, ডরফঃয = ''700'' height = ''500''্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.596Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9801",
     "serialNo": 177,
     "categoryTypes": [
@@ -9035,6 +13610,32 @@
     "correctAnswer": "STAR",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.931Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea96",
+    "serialNo": 177,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড়ে ৯৭ ও ৯৮ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;span style = ''color : ৎবফ'' ্‌মঃ; ঞবীঃ ্‌ষঃ;/ংঢ়ধহ্‌মঃ; []\nউদ্দীপকে এলিমেন্ট কন্টেন্ট কোনটি?",
+    "image": "",
+    "options": [
+      "ঝঃুষব",
+      "ঈড়ষড়ৎ : ৎবফ",
+      "ঝঢ়ধহ",
+      "ঞবীঃ"
+    ],
+    "correctAnswer": "ঞবীঃ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.610Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9802",
@@ -9088,6 +13689,31 @@
     "createdAt": "2026-11-03T05:41:46.940Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea97",
+    "serialNo": 178,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে এট্রিবিউট কোনটি?",
+    "image": "",
+    "options": [
+      "ঝঃুষব",
+      "ঈড়ষড়ৎ : ৎবফ",
+      "ঝঢ়ধহ",
+      "ঞবীঃ"
+    ],
+    "correctAnswer": "ঝঃুষব",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.621Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9803",
     "serialNo": 179,
     "categoryTypes": [
@@ -9136,6 +13762,32 @@
     "correctAnswer": "মেশ",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.948Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea98",
+    "serialNo": 179,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ৯৯ ও ১০০ নং প্রশ্নের উত্তর দাও:\nরাজু ইন্টারনেট হতে ছবি ও ফাইল নিজের কম্পিউটারে সংরক্ষণ করে আবার মাঝে মাঝে প্রিন্টও করে।\t\t\t[য.বো.'২৩]\nরাজুর ফাইল সংরক্ষণে কোন প্রটোকল কাজ করে?",
+    "image": "",
+    "options": [
+      "যঃঃঢ়",
+      "FTP",
+      "ঠঙষচ",
+      "SMTP"
+    ],
+    "correctAnswer": "FTP",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.634Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9804",
@@ -9189,6 +13841,32 @@
     "createdAt": "2026-11-03T05:41:46.960Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea99",
+    "serialNo": 180,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2023",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রাজুর প্রিন্টের কাজে ট্রান্সমিশন মোডটির বৈশিষ্ট্যু\ni. প্রেরক ও প্রাপক যেকোনো সময় ডেটা প্রেরণ ও গ্রহণ করে\nii. জটিল সার্কিট ছাড়াই বাস্তবায়ন করা যায়\niii. ট্রান্সমিশন দক্ষতা বেশি\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.660Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9805",
     "serialNo": 181,
     "categoryTypes": [
@@ -9237,6 +13915,32 @@
     "correctAnswer": "সশ্রয়ী ও সহজলভ্য",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.970Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea9a",
+    "serialNo": 181,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০১ ও ১০২ নং প্রশ্নের উত্তর দাও:\nতমালের তৈরিকৃত ওয়েব পেজটি লোডিং করার পরও ডেটার মান পরিবর্তন করতে পারছে না। এ সমস্যা সমাধানের জন্য তার শিক্ষক তাকে কয়েকটি ভাষা ব্যবহারের পরামর্শ দিলেন।\t[ঢা.বো.'১৯]\nতমালের তৈরিকৃত ওয়েবপেজটি কোন ধরনের?",
+    "image": "",
+    "options": [
+      "ডায়নামিক ওয়েবপেইজ",
+      "স্ট্যাটিক ওয়েবপেইজ",
+      "লোকাল ওয়েবপেইজ",
+      "রিমোট ওয়েবপেইজ"
+    ],
+    "correctAnswer": "স্ট্যাটিক ওয়েবপেইজ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.680Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9806",
@@ -9290,6 +13994,32 @@
     "createdAt": "2026-11-03T05:41:46.989Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea9b",
+    "serialNo": 182,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ওয়েব পেজের সমস্যা সমাধানের জন্য উপযোগী ভাষা হলোু\ni. অঝচ\tii. PHP\niii. JSP\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.703Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9807",
     "serialNo": 183,
     "categoryTypes": [
@@ -9340,6 +14070,32 @@
     "createdAt": "2026-11-03T05:41:47.009Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea9c",
+    "serialNo": 183,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2018",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৩ ও ১০৪ নং প্রশ্নের উত্তর দাও:\nমি. কামাল তার ওয়েব পেজে ইমেজ সংযোজন করলেন। কিন্তু কোনভাবেই ব্রাউজারে তার সংযোজিত ইমেজটি প্রদর্শিত হচ্ছে না।\n[রা.বো.'১৮]\nমি. কামাল যে প্রকারের ট্যাগ ব্যবহার করেছেন তার সাথে সঙ্গটিপূর্ণ ট্যাগ কোনটি?",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ই্‌মঃ;",
+      "্‌ষঃ;অ্‌মঃ;",
+      "্‌ষঃ;ইৎ্‌মঃ;",
+      "্‌ষঃ;ট্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ইৎ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.718Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9808",
     "serialNo": 184,
     "categoryTypes": [
@@ -9388,6 +14144,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.029Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1ea9d",
+    "serialNo": 184,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "রাজশাহী বোর্ড",
+    "examYear": "2018",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "মি. কালাম এর সঠিক ফলাফল না পাওয়ার কারণগুলো হলোু\ni. ফাইলের নাম লিখতে ভুল করা\nii. ব্রাউজার সাপোর্ট না করা\niii. সঠিক লোকেশন ব্যবহার না করা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.742Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9809",
@@ -9441,6 +14223,32 @@
     "createdAt": "2026-11-03T05:41:47.051Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea9e",
+    "serialNo": 185,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৫ ও ১০৬ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;p align = ''পবহঃবৎ'' ্‌মঃ; Bangladesh ্‌ষঃ;/চ্‌মঃ;\t [য.বো.'১৬]\nউদ্দীপকে এলিমেন্ট কন্টেন্ট কোনটি?",
+    "image": "",
+    "options": [
+      "align",
+      "পবহঃবৎ",
+      "Bangladesh",
+      "p"
+    ],
+    "correctAnswer": "Bangladesh",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.755Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae980a",
     "serialNo": 186,
     "categoryTypes": [
@@ -9492,6 +14300,32 @@
     "createdAt": "2026-11-03T05:41:47.070Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1ea9f",
+    "serialNo": 186,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে এট্রিবিউট ভেলু কোনটি?",
+    "image": "",
+    "options": [
+      "align",
+      "পবহঃবৎ",
+      "Bangladesh",
+      "p"
+    ],
+    "correctAnswer": "পবহঃবৎ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.766Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae980b",
     "serialNo": 187,
     "categoryTypes": [
@@ -9540,6 +14374,32 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.088Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaa0",
+    "serialNo": 187,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৭ ও ১০৮ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;যঃসষ্‌মঃ;্‌ষঃ;নড়ফুমঃ;্‌ষঃ;font color = ''ৎবফ'' ্‌মঃ; HSC Exam ্‌ষঃ;/ভড়হঃ্‌মঃ;্‌ষঃ;নড়ফুমঃ;্‌ষঃ;যঃসষ্‌মঃ; \t\t\t\t\t\t[সি.বো.'১৯]\nউদ্দীপকে ব্যবহৃত রঙের সমতুল্য হেক্সাডেসিমেল কোড হচ্ছেু",
+    "image": "",
+    "options": [
+      "#ঋঋ ঙঙঙঙ",
+      "# ঙঙ ঋঋ ঙঙ",
+      "# ঙঙঙঙ ঋঋ",
+      "# ঋঋঋ ঙঙঙ"
+    ],
+    "correctAnswer": "#ঋঋ ঙঙঙঙ",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.779Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae980c",
@@ -9593,6 +14453,32 @@
     "createdAt": "2026-11-03T05:41:47.106Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaa1",
+    "serialNo": 188,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সিলেট বোর্ড",
+    "examYear": "2019",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে ঐঝঈ ঊঢধস শব্দের জন্য ব্যবহৃত ট্যাগের অ্যাট্রিবিউট হতে পারেু\ni. যৎবভ\tii. face\niii. size\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.803Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae980d",
     "serialNo": 189,
     "categoryTypes": [
@@ -9641,6 +14527,32 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.125Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaa2",
+    "serialNo": 189,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2018",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৯ ও ১১০ নং প্রশ্নের উত্তর দাও:\nদিদার ও তার বন্ধুরা মিলে একটি ওয়েবসাইট তৈরি করল, যেখানে ওয়েব পেইজসমূহ বহুস্তরে বিন্যস্ত। পরবতীের্ত ওয়েবসাইটটিকে ইন্টারনেটে প্রদর্শনের জন্য প্রয়োজনীয় পদক্ষেপ গ্রহণ করল।\t [সকল বোর্ড ২০১৮]\nওয়েবসাইটির স্ট্রাকচার কোনটি?",
+    "image": "",
+    "options": [
+      "লিনিয়ার",
+      "হায়ারকির্ক্যাল",
+      "হাইব্রিড",
+      "নেটওয়ার্ক"
+    ],
+    "correctAnswer": "হায়ারকির্ক্যাল",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.817Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae980e",
@@ -9693,6 +14605,32 @@
     "createdAt": "2026-11-03T05:41:47.142Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaa3",
+    "serialNo": 190,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2018",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "গৃহীত পদক্ষেপসমূহ হচ্ছেু\ni. ডোমেইন নেইম রেজিস্ট্রেশন করা\nii. ওয়েবপেইজসমূহ সমান করা\niii. ওয়েবসাইট হোস্টিং করা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.841Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae980f",
     "serialNo": 191,
     "categoryTypes": [
@@ -9741,6 +14679,32 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.160Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaa4",
+    "serialNo": 191,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড, সিলেট বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১২২ ও ১২৩ নং প্রশ্নের উত্তর দাও:\nনীরব নতুন ওয়েব ডেভেলপারসে HTML ব্যবহার করে ওয়েব পেজ তৈরি করে এবং হাইপারলিঙ্ক এর কাজ করে।\t [চ.বো., সি.বো.'১৭]\nনীরব উদ্দীপকের কাজ করতে কোন ট্যাগ ব্যবহার করে?",
+    "image": "",
+    "options": [
+      "্‌ষঃ;পধঢ়ঃরড়হ্‌মঃ;",
+      "্‌ষঃ;ধ্‌মঃ;",
+      "্‌ষঃ;যবধফ্‌মঃ;",
+      "্‌ষঃ;নড়ফুমঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.856Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9810",
@@ -9794,6 +14758,32 @@
     "createdAt": "2026-11-03T05:41:47.178Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaa5",
+    "serialNo": 192,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড, সিলেট বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নীরব সম্প্রতি যে পদ্ধতিতে কাজ করছে তার সুবিধাু\ni. এক পেজ থেকে অন্য পেজে যাওয়া\nii. একটা পেজের এক অংশের সাথে অন্য অংশ লিঙ্ক করা\niii. ভিন্ন সার্ভারের সাথে লিঙ্ক না হওয়া\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.881Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9811",
     "serialNo": 193,
     "categoryTypes": [
@@ -9842,6 +14832,32 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.195Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaa6",
+    "serialNo": 193,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি অনুসারে ১১৩ ও ১১৪ নং প্রশ্নের উত্তর দাও:\nএকটি ওয়েবসাইটের ৪ নম্বর পেইজে ৩০০ দ্ধ ৩০০ সাইজের Pic.jpg নামের একটি ছবি সংযুক্ত রয়েছে। তবে সমস্যা হলো সাইটটির এক পেইজ হতে অন্য পেইজে যাওয়া যাচ্ছে না। \t\t\t[ব.বো.'১৭]\nসাইটির সমস্যা সমাধানে প্রয়োজনীয় ট্যাগু",
+    "image": "",
+    "options": [
+      "্‌ষঃ; ধ ্‌মঃ; ...... ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ন্‌মঃ; ...... ্‌ষঃ;/ন্‌মঃ;",
+      "্‌ষঃ;র্‌মঃ; ...... ্‌ষঃ;/র্‌মঃ;",
+      "্‌ষঃ;র্ষ‌মঃ; ...... ্‌ষঃ;/র্ষ‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; ধ ্‌মঃ; ...... ্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.895Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9812",
@@ -9895,6 +14911,32 @@
     "createdAt": "2026-11-03T05:41:47.214Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaa7",
+    "serialNo": 194,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "বরিশাল বোর্ড",
+    "examYear": "2017",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "৪ নম্বর পেইজের জন্য প্রযোজ্য HTML কোডটি হলোু",
+    "image": "",
+    "options": [
+      "্‌ষঃ; img ংৎব ''ঢ়রপ.লঢ়ম'' height = ৩০০ width = ৩০০্‌মঃ;",
+      "্‌ষঃ; img ংৎব ''ঢ়রপ.লঢ়ম'', height = ''৩০০'' width = ''৩০০''্‌মঃ;",
+      "্‌ষঃ; img ংৎব ''ঢ়রপ.লঢ়ম'' height = ''৩০০'' width = ''৩০০''্‌মঃ;",
+      "্‌ষঃ; img ংৎব ''ঢ়রপ.লঢ়ম'' height = ৩০০ width = ৩০০ ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; img ংৎব ''ঢ়রপ.লঢ়ম'' height = ''৩০০'' width = ''৩০০''্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.907Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9813",
     "serialNo": 195,
     "categoryTypes": [
@@ -9943,6 +14985,32 @@
     "correctAnswer": "i",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.231Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaa8",
+    "serialNo": 195,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোডটি লক্ষ কর এবং ১২৬ নং প্রশ্নের উত্তর দাও:\n```html\n&lt;html&gt;&lt;body&gt;&lt;h&gt; ICT &lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;\n```\nপ্রাপ্ত আউটপুটে কী দেখাবে?\t[ঢা.বো.'১৬]",
+    "image": "",
+    "options": [
+      "টেক্সটটি বড় হরফে হবে",
+      "লেখাটি টাইটেল হিসাবে দেখাবে",
+      "টেক্সটটি স্ক্রল করতে থাকবে",
+      "আউটপুট লিঙ্ক দেখাবে"
+    ],
+    "correctAnswer": "টেক্সটটি বড় হরফে হবে",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.920Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9814",
@@ -9996,6 +15064,32 @@
     "createdAt": "2026-11-03T05:41:47.247Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaa9",
+    "serialNo": 196,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ১১৬ ও ১১৭ নং প্রশ্নের উত্তর দাও:\nদৃশ্যকল্প ১ : শুভ কলেজে ভর্তির আবেদনের জন্য একটি সাইবার ক্যাফেতে গিয়ে একটি ইলেকট্রনিক ফরম পূরণ করে। সেখানে বসেই সে তার মোবাইলে পূরণকৃত ফরমের আলোকে নির্দেশনামূলক একটি মেসেজ পায়।\nদৃশ্যকল্প ২ :\n```html\n&lt;html&gt;&lt;body&gt;This is first website&lt;/body&gt;&lt;/html&gt;\n```\n[ঢা.বো.'১৬]\nদৃশ্যকল্প ১ এ তথ্য প্রযুক্তির কোন সেবাটি গ্রহণ করা হয়েছে?",
+    "image": "",
+    "options": [
+      "ওয়েবসাইট",
+      "ওয়েব হোস্টিং",
+      "ই-কমার্স",
+      "ইলেকট্রনিক মেইলিং"
+    ],
+    "correctAnswer": "ওয়েবসাইট",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.936Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9815",
     "serialNo": 197,
     "categoryTypes": [
@@ -10044,6 +15138,32 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.266Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaaa",
+    "serialNo": 197,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "ঢাকা বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দৃশ্যকল্প ২ এর জন্য ব্যবহৃত হতে পারেু\ni. HTML সিনটেক্স\tii. টেক্ট এডিটর\niii. ব্রাউজার সফটওয়্যার\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.960Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9816",
@@ -10097,6 +15217,31 @@
     "createdAt": "2026-11-03T05:41:47.280Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaab",
+    "serialNo": 198,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১১৮ ও ১১৯ নং প্রশ্নের উত্তর দাও:\n[চধমবু১]→[চধমবু২]→[চধমবু৩] [চধমবু৪] [চধমবু৫] \t\t\t\t\t\t[রা.বো.'১৬]\nউদ্দীপকের চিত্রটি ওয়েবসাইটের কোন কাঠামোর সাথে মিল রয়েছে?",
+    "image": "",
+    "options": [
+      "হায়ারারকিক্যাল",
+      "ওয়েব লিঙ্কড",
+      "লিনিয়ার",
+      "হাইব্রিড"
+    ],
+    "correctAnswer": "লিনিয়ার",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.972Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9817",
     "serialNo": 199,
     "categoryTypes": [
@@ -10145,6 +15290,31 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.294Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaac",
+    "serialNo": 199,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "চধমবু৪ ও চধমবু৫ কে চধমবু২ এর সাথে যুক্ত করলেু\ni. ওয়েবসাইটের কাঠামো পরিবতীর্ত হবে\nii. নতুন করে HTML কোড লিখতে হবে\niii. মেমোরি স্পেস কম লাগবে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:00.996Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9818",
@@ -10198,6 +15368,32 @@
     "createdAt": "2026-11-03T05:41:47.307Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaad",
+    "serialNo": 200,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১২০ ও ১২১ নং প্রশ্নের উত্তর দাও:\nলিমার তৈরিকৃত ওয়েব পেজে একটি নতুন ছবি সংযুক্ত করল। এর ফলে তার পেইজটি আরও দৃষ্টিনন্দন হলো।\t\t[য.বো.'১৬]\nলিমা যে ট্যাগ ব্যবহার করে ছবি যুক্ত করল সেই ট্যাগের প্রকারভেদের সাথে নিচের কোন ট্যাগের মিল রয়েছে?",
+    "image": "",
+    "options": [
+      "্‌ষঃ; যঃসষ ্‌মঃ;",
+      "্‌ষঃ; br ্‌মঃ;",
+      "্‌ষঃ; body ্‌মঃ;",
+      "্‌ষঃ; ঢ়ৎব ্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ; br ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:01.010Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae9819",
     "serialNo": 201,
     "categoryTypes": [
@@ -10246,6 +15442,32 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.320Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eaae",
+    "serialNo": 201,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "যশোর বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "লিমা যে ছবিটি সংযুক্ত করেছে তা হতে পারেু\ni. লঢ়ম\tii. নসঢ়\niii. ঢ়হম\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:01.034Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae981a",
@@ -10299,6 +15521,32 @@
     "createdAt": "2026-11-03T05:41:47.331Z"
   },
   {
+    "_id": "6ae97c2101567b3984b1eaaf",
+    "serialNo": 202,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১২২ ও ১২৩ নং প্রশ্নের উত্তর দাও:\n্‌ষঃ;যঃসষ্‌মঃ;্‌ষঃ;যবধফ্‌মঃ;্‌ষঃ;ঃরঃষব্‌মঃ; ঞযরং রং গু ঋরৎংঃ Web page ্‌ষঃ;ঃরঃষব্‌মঃ;্‌ষঃ;/যবধফ্‌মঃ;্‌ষঃ;নড়ফুমঃ;্‌ষঃ;য১্‌মঃ; ঞযরং রং গু Website ্‌ষঃ;/য১্‌মঃ;্‌ষঃ;চ্‌মঃ;্‌ষঃ;ট্‌মঃ; ঞযরং রং গু চবৎংড়হধষ ডবনংরঃব্‌ষঃ;/ট্‌মঃ;্‌ষঃ;/চ্‌মঃ;্‌ষঃ;/নড়ফুমঃ;্‌ষঃ;/যঃসষ্‌মঃ;\t\t\t\t\t[চ.বো.'১৬]\nউদ্দীপকের ঞযরং রং গু চবৎংড়হধষ Website লাইনটির আউটপুটের ধরন কিরূপ হবে?",
+    "image": "",
+    "options": [
+      "বোল্ড",
+      "ইটালিক",
+      "আন্ডারলাইন",
+      "রোল্ড আন্ডারলাইন"
+    ],
+    "correctAnswer": "আন্ডারলাইন",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:01.045Z"
+  },
+  {
     "_id": "6ae8b3fc04ce40b2c4ae981b",
     "serialNo": 203,
     "categoryTypes": [
@@ -10347,6 +15595,32 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:47.347Z"
+  },
+  {
+    "_id": "6ae97c2101567b3984b1eab0",
+    "serialNo": 203,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
+    "collegeName": "",
+    "boardName": "চট্টগ্রাম বোর্ড",
+    "examYear": "2016",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের ৭ম লাইনটিতে ঢ়বৎংড়হধষ শব্দের ওপর ক্লিক করলে জীবন বৃত্তান্তের পেইজটি ওপেন করার জন্য কোন ধরনের ট্যাগ ব্যবহার করতে হবে?",
+    "image": "",
+    "options": [
+      "্‌ষঃ;ধ্‌মঃ; ....... ্‌ষঃ;/ধ্‌মঃ;",
+      "্‌ষঃ;ন্‌মঃ; ....... ্‌ষঃ;/ন্‌মঃ;",
+      "্‌ষঃ;ঢ়্‌মঃ; ....... ্‌ষঃ;/ঢ়্‌মঃ;",
+      "্‌ষঃ;র্‌মঃ; ....... ্‌ষঃ;/র্‌মঃ;"
+    ],
+    "correctAnswer": "্‌ষঃ;ধ্‌মঃ; ....... ্‌ষঃ;/ধ্‌মঃ;",
+    "explanation": "",
+    "createdAt": "2026-11-03T06:16:01.058Z"
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae981c",
