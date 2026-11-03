@@ -485,7 +485,7 @@ function buildBoardRegex(boardStr) {
   if (str.includes('technical') || str.includes('কারিগরি')) {
     return new RegExp('(technical|কারিগরি)', 'i');
   }
-  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\function buildCollegeRegex(col) {');
+  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return new RegExp(escaped, 'i');
 }
 
