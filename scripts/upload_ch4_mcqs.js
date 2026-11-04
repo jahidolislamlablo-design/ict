@@ -14,71 +14,19 @@ if (!fs.existsSync(DOCX_XML)) {
 
 const xml = fs.readFileSync(DOCX_XML, 'utf8');
 
-const ENGLISH_WORDS = [
-    'HTML', 'CSS', 'PHP', 'ASP', 'JSP', 'XML', 'URL', 'IP', 'IPv4', 'IPv6', 'DNS', 'ISP',
-    'HTTP', 'HTTPS', 'FTP', 'SMTP', 'VOIP', 'ICANN', 'W3C', 'CERN', 'RGB',
-    'Google', 'Yahoo', 'Twitter', 'YouTube', 'Pipilika', 'Wikipedia', 'Mozilla', 'Opera',
-    'Safari', 'Imo', 'Viber', 'Chrome',
-    'DOCTYPE', 'DOCTYPE html', 'Internet', 'Browser', 'Search Engine',
-    'Domain Name', 'Domain Name System', 'IP Address',
-    'Server', 'Client', 'Web Server', 'Web Client', 'Website', 'Web page', 'Webpage',
-    'Hosting', 'Publishing', 'Static', 'Dynamic', 'Linear', 'Hierarchical', 'Network', 'Combination', 'Hybrid',
-    'Index', 'Cricket board', 'Bangladesh', 'Book', 'First Program', 'Test Website',
-    'Pen.Jpg', 'Pen.jpg', 'Flag.jpg', 'HSC.jpg', 'Picture.jpg', 'rose.jpg', 'image.jpg', 'img.png', 'nature.jpg', 'Pic.jpg', 'pic.html', 'test.html',
-    'table', 'tr', 'td', 'th', 'col', 'caption', 'tbody',
-    'ul', 'ol', 'li', 'dt', 'dl', 'dd',
-    'img', 'src', 'href', 'target', 'align', 'border', 'cellpadding', 'cellspacing', 'rowspan', 'colspan',
-    'bgcolor', 'color', 'face', 'size', 'style', 'width', 'height',
-    'font', 'span', 'div', 'p', 'b', 'i', 'u', 'sub', 'sup', 'del', 'em', 'big', 'small', 'br', 'hr', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-    'circle', 'disc', 'square', 'none',
-    'head', 'title', 'body',
-    'HSC Exam', 'Final_Result', 'int main', 'our@college',
-    '120Px', '150Px', '50Px', '300Px', '200Px', '700', '500', '1000', '800'
-];
+const ENGLISH_FONTS = new Set([
+    'Times New Roman', 'Algerian', 'Cambria Math', 'Yu Gothic UI Semibold',
+    'Arial', 'Calibri', 'Segoe UI', 'Consolas', 'Courier New', 'Math', 'Symbol'
+]);
 
-function smartConvert(text) {
-    if (!text) return '';
-
-    // Check if already predominantly Unicode Bengali
-    const bnChars = (text.match(/[\u0980-\u09FF]/g) || []).length;
-    if (bnChars > 0 && bnChars >= (text.replace(/\s+/g, '').length * 0.35)) {
-        return text;
-    }
-
-    const puaMap = new Map();
-    let puaIndex = 0;
-
-    // 1. Word EQ fields eq \x(Page-X) -> [Page-X]
-    text = text.replace(/eq\s*\\x\(([^)]+)\)/gi, '[$1]');
-
-    // 2. Roman numerals: i, ii, iii
-    text = text.replace(/(^|[\s\t\(\[])(i{1,3})([\.\)\,\s\t]|$)/g, (m, p1, roman, p2) => {
-        const token = String.fromCharCode(0xE000 + (puaIndex++));
-        puaMap.set(token, p1 + roman.toLowerCase() + p2);
-        return token;
-    });
-
-    // 3. English keywords (exact case, safe boundaries)
-    const sortedWords = [...ENGLISH_WORDS].sort((a, b) => b.length - a.length);
-    const DELIM_PRE = '(?<=^|[\\s\\t\\(\\[\\{\\<\\>\\,\\.\\;\\:\\?\\!\\-\\+\\=\\*\\/\\\'\\"‘\\’“”|])';
-    const DELIM_POST = '($|[\\s\\t\\)\\]\\}\\<\\>\\,\\.\\;\\:\\?\\!\\-\\+\\=\\*\\/\\\'\\"‘\\’“”|])';
-
-    sortedWords.forEach(word => {
-        const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(DELIM_PRE + escaped + DELIM_POST, 'g');
-        text = text.replace(regex, (match) => {
-            const token = String.fromCharCode(0xE000 + (puaIndex++));
-            puaMap.set(token, match);
-            return token;
-        });
-    });
-
-    let converted = convertBijoyToUnicode(text);
-    puaMap.forEach((orig, token) => {
-        converted = converted.split(token).join(orig);
-    });
-
-    return converted;
+function decodeXmlEntities(str) {
+    if (!str) return '';
+    return str
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'")
+        .replace(/&amp;/g, '&');
 }
 
 function parseMathToText(mXml) {
@@ -107,6 +55,108 @@ function parseMathToText(mXml) {
     });
     res = res.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
     return res;
+}
+
+const ENGLISH_WORDS = [
+    'HTML', 'CSS', 'PHP', 'ASP', 'JSP', 'XML', 'URL', 'IP', 'IPv4', 'IPv6', 'DNS', 'ISP',
+    'HTTP', 'HTTPS', 'FTP', 'SMTP', 'VOIP', 'ICANN', 'W3C', 'CERN', 'RGB',
+    'Google', 'Yahoo', 'Twitter', 'YouTube', 'Pipilika', 'Wikipedia', 'Mozilla', 'Opera',
+    'Safari', 'Imo', 'Viber', 'Chrome',
+    'DOCTYPE', 'DOCTYPE html', 'Internet', 'Browser', 'Search Engine',
+    'Domain Name', 'Domain Name System', 'IP Address',
+    'Server', 'Client', 'Web Server', 'Web Client', 'Website', 'Web page', 'Webpage',
+    'Hosting', 'Publishing', 'Static', 'Dynamic', 'Linear', 'Hierarchical', 'Network', 'Combination', 'Hybrid',
+    'Index', 'Cricket board', 'Bangladesh', 'Book', 'First Program', 'Test Website',
+    'Pen.Jpg', 'Pen.jpg', 'Flag.jpg', 'HSC.jpg', 'Picture.jpg', 'rose.jpg', 'image.jpg', 'img.png', 'nature.jpg', 'Pic.jpg', 'pic.html', 'test.html',
+    'Link Tag', 'table', 'tr', 'td', 'th', 'col', 'caption', 'tbody',
+    'ul', 'ol', 'li', 'dt', 'dl', 'dd',
+    'img', 'src', 'href', 'target', 'align', 'border', 'cellpadding', 'cellspacing', 'rowspan', 'colspan',
+    'bgcolor', 'color', 'face', 'size', 'style', 'width', 'height',
+    'font', 'span', 'div', 'p', 'b', 'i', 'u', 'sub', 'sup', 'del', 'em', 'big', 'small', 'br', 'hr', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+    'circle', 'disc', 'square', 'none',
+    'head', 'title', 'body',
+    'HSC Exam', 'Final_Result', 'int main', 'our@college',
+    '120Px', '150Px', '50Px', '300Px', '200Px', '700', '500', '1000', '800'
+];
+
+function convertBijoyText(text) {
+    if (!text) return '';
+    text = text.replace(/eq\s*\\x\(([^)]+)\)/gi, '[$1]');
+
+    const puaMap = new Map();
+    let puaIndex = 0;
+
+    // Protect HTML tags <...>
+    text = text.replace(/<[^>]+>/g, (m) => {
+        const token = String.fromCharCode(0xE000 + (puaIndex++));
+        puaMap.set(token, m);
+        return token;
+    });
+
+    // Protect Roman numerals: i, ii, iii
+    text = text.replace(/(^|[\s\t\(\[])(i{1,3})([\.\)\,\s\t]|$)/g, (m, p1, roman, p2) => {
+        const token = String.fromCharCode(0xE000 + (puaIndex++));
+        puaMap.set(token, p1 + roman.toLowerCase() + p2);
+        return token;
+    });
+
+    // Protect English keywords
+    const sortedWords = [...ENGLISH_WORDS].sort((a, b) => b.length - a.length);
+    const DELIM_PRE = '(?<=^|[\\s\\t\\(\\[\\{\\<\\>\\,\\.\\;\\:\\?\\!\\-\\+\\=\\*\\/\\\'\\"‘\\’“”|])';
+    const DELIM_POST = '($|[\\s\\t\\)\\]\\}\\<\\>\\,\\.\\;\\:\\?\\!\\-\\+\\=\\*\\/\\\'\\"‘\\’“”|])';
+
+    sortedWords.forEach(word => {
+        const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(DELIM_PRE + escaped + DELIM_POST, 'g');
+        text = text.replace(regex, (match) => {
+            const token = String.fromCharCode(0xE000 + (puaIndex++));
+            puaMap.set(token, match);
+            return token;
+        });
+    });
+
+    let converted = convertBijoyToUnicode(text);
+    puaMap.forEach((orig, token) => {
+        converted = converted.split(token).join(orig);
+    });
+
+    return converted;
+}
+
+function mergeAndConvertRuns(runs) {
+    if (!runs || runs.length === 0) return '';
+
+    const classified = runs.map(r => {
+        let text = decodeXmlEntities(r.text);
+        if (r.isMath || r.font === 'Math') {
+            return { type: 'math', text: r.text };
+        }
+        if (ENGLISH_FONTS.has(r.font)) {
+            return { type: 'english', text };
+        }
+        const bnChars = (text.match(/[\u0980-\u09FF]/g) || []).length;
+        if (bnChars > 0 && bnChars >= (text.replace(/\s+/g, '').length * 0.4)) {
+            return { type: 'unicode', text };
+        }
+        return { type: 'bijoy', text };
+    });
+
+    const merged = [];
+    for (const c of classified) {
+        if (!c.text) continue;
+        if (merged.length > 0 && merged[merged.length - 1].type === c.type) {
+            merged[merged.length - 1].text += c.text;
+        } else {
+            merged.push({ ...c });
+        }
+    }
+
+    return merged.map(m => {
+        if (m.type === 'math' || m.type === 'english' || m.type === 'unicode') {
+            return m.text;
+        }
+        return convertBijoyText(m.text);
+    }).join('');
 }
 
 function parseBoard(text) {
@@ -308,14 +358,13 @@ function formatStemTable(rawXml) {
     const trMatches = [...rawXml.matchAll(/<w:tr[\s>].*?<\/w:tr>/gs)];
     if (trMatches.length === 1) {
         const text = [...trMatches[0][0].matchAll(/<w:t(?:\s+[^>]*)?>(.*?)<\/w:t>/gs)].map(m => m[1]).join('').trim();
-        return `\`\`\`html\n${text}\n\`\`\``;
+        return `\`\`\`html\n${decodeXmlEntities(text)}\n\`\`\``;
     }
     
-    // Check if Table 1 (Row 1 X, Row 2 Y A B C...)
     const rows = trMatches.map(tr => {
         const tcMatches = [...tr[0].matchAll(/<w:tc[\s>].*?<\/w:tc>/gs)];
         return tcMatches.map(tc => {
-            return [...tc[0].matchAll(/<w:t(?:\s+[^>]*)?>(.*?)<\/w:t>/gs)].map(m => m[1]).join('').trim();
+            return [...tc[0].matchAll(/<w:t(?:\s+[^>]*)?>(.*?)<\/w:t>/gs)].map(m => decodeXmlEntities(m[1])).join('').trim();
         });
     });
 
@@ -344,7 +393,6 @@ function extractOptionsAndAnswer(b) {
     const optTableEl = b.optEls.find(el => el.type === 'opt_table');
     if (optTableEl) {
         const raw = optTableEl.raw;
-        const tcMatches = [...raw.matchAll(/<w:tc[\s>].*?<\/w:tc>/gs)];
         const images = [...raw.matchAll(/<a:blip[^>]*r:embed="([^"]+)"/g)].map(m => m[1]);
 
         // Table 5: 2x2 table outputs (rId21, 22, 23, 24)
@@ -369,7 +417,7 @@ function extractOptionsAndAnswer(b) {
         if (el.runs) el.runs.forEach(r => allRuns.push(r));
     });
 
-    const optTexts = ['', '', '', ''];
+    const optRuns = [[], [], [], []];
     let currentOpt = -1;
     let correctOpt = -1;
 
@@ -403,13 +451,15 @@ function extractOptionsAndAnswer(b) {
         }
 
         if (currentOpt >= 0) {
-            const convertedPart = smartConvert(run.text);
-            optTexts[currentOpt] += convertedPart;
+            optRuns[currentOpt].push(run);
             if (run.isGreen) correctOpt = currentOpt;
         }
     }
 
-    const cleanOptions = optTexts.map(o => o.trim().replace(/^[\s\t\.\)\-]+/, '').trim());
+    const cleanOptions = optRuns.map(runsArr => {
+        const text = mergeAndConvertRuns(runsArr);
+        return text.trim().replace(/^[\s\t\.\)\-]+/, '').trim();
+    });
     return { options: cleanOptions, correctIndex: correctOpt, image: '' };
 }
 
@@ -419,7 +469,7 @@ async function uploadToDatabase() {
 
     const Mcq = mongoose.connection.collection('mcqs');
 
-    // 1. Delete previous Chapter 4 items if any
+    // 1. Delete previous Chapter 4 items
     const delRes = await Mcq.deleteMany({ chapter: { $regex: 'Chapter 4|ওয়েব ডিজাইন', $options: 'i' } });
     console.log(`Deleted ${delRes.deletedCount} old Chapter 4 MCQ items.`);
 
@@ -432,7 +482,8 @@ async function uploadToDatabase() {
         const b = blocks[idx];
         const qLines = b.qEls.map(el => {
             if (el.type === 'stem_table') return formatStemTable(el.raw);
-            return smartConvert(el.fullText);
+            if (!el.runs || el.runs.length === 0) return '';
+            return mergeAndConvertRuns(el.runs).trim();
         }).filter(Boolean);
         const fullQText = qLines.join('\n');
 
