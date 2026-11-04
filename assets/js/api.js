@@ -53,7 +53,14 @@ function getApiBaseUrl() {
 window.BACKEND_URL = getApiBaseUrl();
 
 // জেনেরিক ফেচ হেল্পার যা ব্যাকএন্ডের সাথে যোগাযোগ করে
+function isGitHubPagesWithoutBackend() {
+    return window.location.host.includes('github.io') && (!CONFIG.LIVE_API_URL || CONFIG.LIVE_API_URL.trim() === '');
+}
+
 async function fetchFromBackend(endpoint, options = {}) {
+    if (isGitHubPagesWithoutBackend()) {
+        throw new Error('Running on GitHub Pages without live backend; using static JSON fallback.');
+    }
     const baseUrl = getApiBaseUrl();
     const url = `${baseUrl}${endpoint.startsWith('/') ? endpoint : '/' + endpoint}`;
 
@@ -425,7 +432,7 @@ async function fetchStaticJson(filename) {
     if (_staticCache[filename]) return _staticCache[filename];
     try {
         const isPages = window.location.pathname.includes('/pages/');
-        const staticUrl = isPages ? `../database/${filename}` : `database/${filename}`;
+        const staticUrl = (isPages ? `../database/${filename}` : `database/${filename}`) + `?v=2.3`;
         const res = await fetch(staticUrl);
         if (res.ok) {
             const data = await res.json();
