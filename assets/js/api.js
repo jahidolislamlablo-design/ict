@@ -893,6 +893,107 @@ function toBanglaNum(num) {
     return num.toString().replace(/\d/g, d => banglaDigits[d] || d);
 }
 
+function escapeModernMCQOption(str) {
+    if (!str) return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function formatModernMCQContent(text) {
+    if (!text) return '';
+
+    // 1. Extract markdown code blocks
+    const codeBlocks = [];
+    let processed = text.replace(/```(?:html|css|javascript|js)?\r?\n([\s\S]*?)\r?\n```/g, (match, code) => {
+        const id = `__MCQ_CODE_${codeBlocks.length}__`;
+        const escapedCode = code
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+        codeBlocks.push(`<pre style="background: #1E293B; color: #38BDF8; padding: 12px 16px; border-radius: 10px; font-family: Consolas, monospace; font-size: 0.95rem; overflow-x: auto; margin: 10px 0; border: 1px solid #334155; line-height: 1.5;"><code>${escapedCode}</code></pre>`);
+        return id;
+    });
+
+    // 2. Extract markdown tables
+    const tableBlocks = [];
+    if (processed.includes('|') && processed.includes('\n|')) {
+        const lines = processed.split('\n');
+        let inTable = false;
+        let tableRows = [];
+        let outputLines = [];
+
+        for (let line of lines) {
+            const trimmed = line.trim();
+            if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+                if (/^\|[\s\-:]+\|/.test(trimmed)) {
+                    continue;
+                }
+                const cells = trimmed.slice(1, -1).split('|').map(c => c.trim());
+                tableRows.push(cells);
+                inTable = true;
+            } else {
+                if (inTable && tableRows.length > 0) {
+                    const id = `__MCQ_TABLE_${tableBlocks.length}__`;
+                    tableBlocks.push(renderHtmlTable(tableRows));
+                    outputLines.push(id);
+                    tableRows = [];
+                    inTable = false;
+                }
+                outputLines.push(line);
+            }
+        }
+        if (inTable && tableRows.length > 0) {
+            const id = `__MCQ_TABLE_${tableBlocks.length}__`;
+            tableBlocks.push(renderHtmlTable(tableRows));
+            outputLines.push(id);
+        }
+        processed = outputLines.join('\n');
+    }
+
+    function renderHtmlTable(rows) {
+        let h = '<div style="overflow-x:auto; margin:12px 0;"><table style="border-collapse:collapse; width:100%; max-width:480px; margin:0 auto; background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.95rem; text-align:center;">';
+        rows.forEach((r, rIdx) => {
+            h += `<tr style="${rIdx === 0 ? 'background:#E2E8F0; font-weight:700;' : ''}">`;
+            r.forEach(c => {
+                const escapedCell = c
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+                h += `<td style="border:1px solid #CBD5E1; padding:8px 12px;">${escapedCell || '&nbsp;'}</td>`;
+            });
+            h += '</tr>';
+        });
+        h += '</table></div>';
+        return h;
+    }
+
+    // 3. Escape normal text
+    processed = processed
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
+        .replace(/\r?\n/g, '<br>');
+
+    // 4. Restore code blocks and tables
+    codeBlocks.forEach((block, i) => {
+        processed = processed.replace(`__MCQ_CODE_${i}__`, block);
+    });
+    tableBlocks.forEach((block, i) => {
+        processed = processed.replace(`__MCQ_TABLE_${i}__`, block);
+    });
+
+    return processed;
+}
+
 function renderModernMCQCardHTML(q, index, options = {}) {
     const qNum = toBanglaNum(index + 1);
     const markers = ['ক', 'খ', 'গ', 'ঘ'];
@@ -913,7 +1014,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
             <img src="${resolveMediaUrl(q.image)}" alt="প্রশ্ন চিত্র" style="max-width: 100%; max-height: 320px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
         </div>
     ` : '';
-    const contextHtml = q.context_stem ? `<div class="question-stem" style="background:#F1F5F9; padding:12px 16px; border-radius:12px; margin-bottom:14px; font-size:0.95rem; border-left:4px solid var(--primary); line-height: 1.6;">${q.context_stem}</div>` : '';
+    const contextHtml = q.context_stem ? `<div class="question-stem" style="background:#F1F5F9; padding:12px 16px; border-radius:12px; margin-bottom:14px; font-size:0.95rem; border-left:4px solid var(--primary); line-height: 1.6;">${formatModernMCQContent(q.context_stem)}</div>` : '';
 
     let optionsHtml = '';
     opts.forEach((optText, oIdx) => {
@@ -922,7 +1023,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
             <div class="modern-option-pill" data-opt-idx="${oIdx}" onclick="handleModernOptionClick(this, ${index}, ${oIdx}, ${correctIndex}, '${mode}')">
                 <div class="modern-option-pill-left">
                     <span class="option-radio-circle"></span>
-                    <span class="option-text"><strong>${marker}.</strong> ${optText}</span>
+                    <span class="option-text"><strong>${marker}.</strong> ${escapeModernMCQOption(optText)}</span>
                 </div>
                 <span class="modern-status-icon"></span>
             </div>
@@ -932,7 +1033,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     const expBtnAndBox = (mode === 'exam') ? `
         <div class="modern-exp-box" style="display: none;">
             <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
-            <p style="margin: 0; line-height: 1.6;">${explanation || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
+            <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
         </div>
     ` : `
         <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 8px;">
@@ -941,7 +1042,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
             </button>
             <div class="modern-exp-box">
                 <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
-                <p style="margin: 0; line-height: 1.6;">${explanation || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
+                <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
             </div>
         </div>
     `;
@@ -950,7 +1051,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
         <div class="modern-quiz-card" id="modern-mcq-card-${index}" data-q-index="${index}" data-correct-index="${correctIndex}">
             ${contextHtml}
             <div class="modern-quiz-header">
-                <h3 class="modern-q-title">${qNum}. ${qText}</h3>
+                <h3 class="modern-q-title">${qNum}. ${formatModernMCQContent(qText)}</h3>
             </div>
             ${imageHtml}
             <div class="modern-options-list">
