@@ -7,7 +7,7 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Universal Design System -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=3.0">
     <style>
         /* Hero Automatic Image Slider Styles */
         .hero-slider-wrapper {
@@ -569,6 +569,51 @@
                 width: 100%;
             }
         }
+    
+        /* Special Tools Grid (Favorite Questions & Code Compiler) */
+        .special-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .feature-box.fav-feature {
+            border-color: #FBCFE8;
+        }
+        .feature-box.fav-feature:hover {
+            border-color: #DB2777;
+        }
+        .feature-box.fav-feature .feature-icon-wrapper {
+            background: #FDF2F8;
+            color: #DB2777;
+        }
+        .feature-box.fav-feature .feature-badge {
+            color: #DB2777;
+            background: #FDF2F8;
+        }
+
+        .feature-box.compiler-feature {
+            border-color: #A7F3D0;
+        }
+        .feature-box.compiler-feature:hover {
+            border-color: #059669;
+        }
+        .feature-box.compiler-feature .feature-icon-wrapper {
+            background: #ECFDF5;
+            color: #059669;
+        }
+        .feature-box.compiler-feature .feature-badge {
+            color: #059669;
+            background: #ECFDF5;
+        }
+
+        @media (max-width: 640px) {
+            .special-tools-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -594,13 +639,13 @@
             <!-- নেভিগেশন লিংক বার -->
             <div class="header-nav-wrapper">
                 <ul class="desktop-nav">
-                    <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
-                    <li><a href="pages/board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
-                    <li><a href="pages/test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
-                    <li><a href="pages/chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
-                    <li><a href="pages/model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
-                    <li><a href="pages/pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
-                                    </ul>
+                                        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                                        <li><a href="pages/board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                                        <li><a href="pages/test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                                        <li><a href="pages/chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                                        <li><a href="pages/model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                                        <li><a href="pages/pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
             </div>
 
             <!-- হেডার ডানপাশের অ্যাকশন / প্রোফাইল -->
@@ -912,6 +957,29 @@
                 </a>
             </div>
 
+            <!-- বিশেষ ফিচার কার্ড: ফেভারিট প্রশ্ন ও কোড কম্পাইলার (Test Paper ও PDF Suggestions এর নিচে) -->
+            <div class="special-tools-grid">
+                <!-- ফেভারিট প্রশ্ন -->
+                <a href="pages/favorite-question.html" class="feature-box fav-feature">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Favorite Question</h3>
+                    <p>অধ্যায়, বোর্ড, কলেজ ও মডেল টেস্টের প্রিয় সংরক্ষিত প্রশ্নাবলি</p>
+                    <span class="feature-badge"><i class="fa-solid fa-bookmark"></i> ৪টি ক্যাটাগরি</span>
+                </a>
+
+                <!-- কোড কম্পাইলার -->
+                <a href="pages/compiler.html" class="feature-box compiler-feature">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Code Compiler</h3>
+                    <p>HTML, CSS, JS, Python ও C প্রোগ্রাম সরাসরি রান ও সেভ করুন</p>
+                    <span class="feature-badge"><i class="fa-solid fa-play"></i> অনলাইন আইডিই</span>
+                </a>
+            </div>
+
             <!-- অতিরিক্ত দ্রুত অ্যাকশন কার্ড (মডেল টেস্ট ও কুইজ) -->
             <div class="promo-grid">
                 <a href="pages/model-test.html" class="promo-card">
@@ -950,6 +1018,8 @@
                 <a href="pages/board-question.html">বোর্ড প্রশ্ন</a>
                 <a href="pages/test-paper.html">টেস্ট পেপার</a>
                 <a href="pages/model-test.html">মডেল টেস্ট</a>
+                <a href="pages/favorite-question.html">ফেভারিট প্রশ্ন</a>
+                <a href="pages/compiler.html">কোড কম্পাইলার</a>
                 <a href="pages/profile.html">প্রোফাইল</a>
             </div>
         </div>
@@ -976,7 +1046,7 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="assets/js/api.js?v=2.3"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js?v=3.0"></script>
+    <script src="assets/js/main.js?v=3.0"></script>
 </body>
 </html>

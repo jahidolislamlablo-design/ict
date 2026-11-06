@@ -33,16 +33,11 @@ function openChapterModal(chapterTitle, chapterId = null) {
     activeChapter = chapterTitle;
     activeChapterId = chapterId || getChapterIdFromTitle(chapterTitle);
 
-    if (window.innerWidth <= 768) {
-        // MOBILE VIEW: Directly open Neumorphic 3-tab view!
-        openChapterInteractiveView(chapterTitle, chapterId);
-    } else {
-        // DESKTOP VIEW: Open previous modal
-        const modalTitle = document.getElementById('modal-chapter-name');
-        if (modalTitle) modalTitle.innerText = activeChapter;
-        const modal = document.getElementById('chapterModeModal');
-        if (modal) modal.classList.add('open');
-    }
+    // মোবাইল ও কম্পিউটার উভয় স্ক্রিনেই পপআপ মডাল শো করবে (CQ, MCQ, Model Test)
+    const modalTitle = document.getElementById('modal-chapter-name');
+    if (modalTitle) modalTitle.innerText = activeChapter;
+    const modal = document.getElementById('chapterModeModal');
+    if (modal) modal.classList.add('open');
 }
 
 function closeChapterModal() {
@@ -53,40 +48,10 @@ function closeChapterModal() {
 // ----------------------------------------------------
 // DESKTOP MODE SELECTION
 // ----------------------------------------------------
-async function selectChapterMode(mode) {
+function selectChapterMode(mode) {
     closeChapterModal();
-    const chapterListView = document.getElementById('chapterListView');
-    const mcqView = document.getElementById('mcqView');
-    const cqView = document.getElementById('cqView');
-    const currentBreadcrumb = document.getElementById('breadcrumb-current');
-    const backBtnText = document.getElementById('back-btn-text');
-
-    if (chapterListView) chapterListView.style.display = 'none';
-
-    if (mode === 'mcq') {
-        desktopCurrentView = 'mcq';
-        if (mcqView) mcqView.style.display = 'block';
-        if (cqView) cqView.style.display = 'none';
-        
-        const titleEl = document.getElementById('active-mcq-title');
-        if (titleEl) titleEl.innerText = activeChapter + ' - MCQ অনুশীলন';
-        if (currentBreadcrumb) currentBreadcrumb.innerText = activeChapter + ' > MCQ';
-
-        await loadDesktopChapterMCQs();
-    } else {
-        desktopCurrentView = 'cq';
-        if (mcqView) mcqView.style.display = 'none';
-        if (cqView) cqView.style.display = 'block';
-        
-        const titleEl = document.getElementById('active-cq-title');
-        if (titleEl) titleEl.innerText = activeChapter + ' - সৃজনশীল (CQ)';
-        if (currentBreadcrumb) currentBreadcrumb.innerText = activeChapter + ' > CQ';
-
-        await loadDesktopChapterCQs();
-    }
-
-    if (backBtnText) backBtnText.innerText = 'অধ্যায়ে ফিরে যান';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // выбранный режим (cq, mcq, model) откроет соответствующий вид
+    openChapterInteractiveView(activeChapter, activeChapterId, mode);
 }
 
 async function loadDesktopChapterMCQs() {
@@ -153,7 +118,7 @@ function toggleDesktopChapterAnswers(checkbox) {
 // ----------------------------------------------------
 // MOBILE NEUMORPHIC 3-TAB VIEW
 // ----------------------------------------------------
-function openChapterInteractiveView(chapterTitle, chapterId = null) {
+function openChapterInteractiveView(chapterTitle, chapterId = null, initialTab = 'cq') {
     activeChapter = chapterTitle;
     activeChapterId = chapterId || getChapterIdFromTitle(chapterTitle);
     
@@ -167,14 +132,14 @@ function openChapterInteractiveView(chapterTitle, chapterId = null) {
 
     if (titleEl) {
         if (window.innerWidth <= 768) {
-            titleEl.innerText = 'সৃজনশীল প্রশ্ন';
+            titleEl.innerText = (initialTab === 'cq') ? 'সৃজনশীল প্রশ্ন' : ((initialTab === 'model') ? 'মডেল টেস্ট' : 'MCQ অনুশীলন');
         } else {
             titleEl.innerText = activeChapter;
         }
     }
     if (backBtnText) backBtnText.innerText = 'অধ্যায়ে ফিরে যান';
 
-    switchChapterInteractiveTab('cq'); // Open CQ or MCQ by default
+    switchChapterInteractiveTab(initialTab); // Open CQ or MCQ by default
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 

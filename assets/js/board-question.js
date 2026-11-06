@@ -46,23 +46,19 @@ function openTypeModal(board, code = '') {
     selectedBoard = board;
     selectedBoardCode = code || getBoardCode(board);
 
-    if (window.innerWidth <= 768) {
-        // MOBILE VIEW: Directly open Neumorphic 3-tab view!
-        openBoardInteractiveView(board, selectedBoardCode);
-    } else {
-        // DESKTOP VIEW: Open previous modal
-        const modalBoardName = document.getElementById('modal-board-name');
-        if (modalBoardName) {
-            modalBoardName.innerText = `${selectedBoard} (${selectedYear})`;
-        }
-        const modal = document.getElementById('typeModal');
-        if (modal) modal.classList.add('open');
+    // ডেস্কটপ ও মোবাইল উভয় স্ক্রিনেই পপআপ মডাল শো করবে (CQ, MCQ, Model Test)
+    const modalBoardName = document.getElementById('modal-board-name');
+    if (modalBoardName) {
+        modalBoardName.innerText = `${selectedBoard} (${selectedYear})`;
     }
+    const modal = document.getElementById('typeModal');
+    if (modal) modal.classList.add('open');
 }
 
 function selectQuestionType(type) {
     closeTypeModal();
-    const tab = (type === 'CQ' || type === 'cq') ? 'cq' : 'mcq';
+    const lower = (type || '').toLowerCase();
+    const tab = (lower === 'cq') ? 'cq' : ((lower === 'model') ? 'model' : 'mcq');
     openBoardInteractiveView(selectedBoard, selectedBoardCode, tab);
 }
 

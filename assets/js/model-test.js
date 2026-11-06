@@ -206,7 +206,7 @@ function renderAllQuestions() {
                      id="opt-${qIdx}-${oIdx}"
                      data-q-idx="${qIdx}"
                      data-opt-idx="${oIdx}"
-                     style="${isSelected ? 'background-color: var(--primary-light) !important; border-color: var(--primary) !important; color: var(--primary) !important; font-weight: 600;' : ''}" 
+                     style="${isSelected ? 'background-color: var(--primary-light) !important; border-color: var(--primary) !important; color: var(--primary) !important; ' : ''}" 
                      onclick="selectExamOption(${qIdx}, ${oIdx})">
                     <div class="option-left">
                         <span class="option-marker" style="${isSelected ? 'background: var(--primary); border-color: var(--primary); color: #fff;' : ''}">${markers[oIdx]}</span>
@@ -259,7 +259,7 @@ function selectExamOption(qIndex, optionIndex) {
                 opt.style.backgroundColor = 'var(--primary-light)';
                 opt.style.borderColor = 'var(--primary)';
                 opt.style.color = 'var(--primary)';
-                opt.style.fontWeight = '600';
+                
                 if (marker) {
                     marker.style.background = 'var(--primary)';
                     marker.style.borderColor = 'var(--primary)';
@@ -446,9 +446,7 @@ function submitExam() {
             }
         }
 
-        // ব্যাখ্যা ওপেন করা
-        const expBox = card.querySelector('.explanation-box');
-        if (expBox) expBox.style.display = 'block';
+        // ব্যাখ্যা শুধুমাত্র 'ব্যাখ্যা দেখুন' বাটনে ক্লিক করলে শো করবে
     });
 
     const skippedCount = activeExamQuestions.length - (correctCount + wrongCount);
@@ -559,3 +557,18 @@ async function syncDynamicModelTests() {
         console.warn('syncDynamicModelTests warning:', err);
     }
 }
+
+
+function toggleModelTestExp(qIdx) {
+    const box = document.getElementById('explanation-' + qIdx);
+    const btn = document.getElementById('exp-btn-' + qIdx);
+    if (!box) return;
+    if (box.style.display === 'block') {
+        box.style.display = 'none';
+        if (btn) btn.innerHTML = '<i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন';
+    } else {
+        box.style.display = 'block';
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা লুকান';
+    }
+}
+window.toggleModelTestExp = toggleModelTestExp;

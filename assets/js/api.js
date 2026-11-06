@@ -506,8 +506,8 @@ function matchCollegeName(storedName, targetName) {
         ['viqarunnisa', 'ভিকারুননিসা', 'vnsc'],
         ['rajuk', 'রাজউক'],
         ['residential', 'রেসিডেনসিয়াল', 'drmc'],
-        ['dhaka college', 'ঢাকা কলেজ'],
-        ['city college', 'সিটি কলেজ', 'dcc'],
+        ['dhaka college', 'ঢাকা কলেজ', 'dc'],
+        ['city college', 'সিটি কলেজ', 'dcc', 'dc', 'ঢাকা সিটি কলেজ'],
         ['chattogram', 'chittagong', 'চট্টগ্রাম', 'ctg'],
         ['rajshahi', 'রাজশাহী'],
         ['cantonment', 'ক্যান্টনমেন্ট', 'cpsc'],
@@ -521,7 +521,7 @@ function matchCollegeName(storedName, targetName) {
 
     for (const grp of groups) {
         const matchA = grp.some(term => a.includes(term));
-        const matchB = grp.some(term => b.includes(term));
+        const matchB = grp.some(term => b.includes(term) || term.includes(b));
         if (matchA && matchB) return true;
     }
     return false;
@@ -660,35 +660,39 @@ const ApiService = {
     },
 
     // ৩. মডেল টেস্ট MCQ
-    async getModelTestMCQ(testIdentifier) {
-        let testKey = testIdentifier;
-        const match = testIdentifier.match(/(?:Model Test\s*|মডেল টেস্ট\s*[-–]?\s*)(\d+)/i);
-        if (match) {
-            const n = parseInt(match[1], 10);
-            const numStr = n < 10 ? '0' + n : '' + n;
-            testKey = 'Model Test ' + numStr;
-        }
-
+    async getModelTestMCQ(testIdentifier = '') {
         try {
-            const query = `/api/mcqs?categoryType=Model Test&modelTestNo=${encodeURIComponent(testKey)}`;
+            let testKey = testIdentifier || '';
+            const match = String(testIdentifier).match(/(?:Model Test\s*|মডেল টেস্ট\s*[-–]?\s*)(\d+)/i);
+            if (match) {
+                const n = parseInt(match[1], 10);
+                const numStr = n < 10 ? '0' + n : '' + n;
+                testKey = 'Model Test ' + numStr;
+            }
+
+            const query = `/api/mcqs?categoryType=Model Test` + (testKey ? `&modelTestNo=${encodeURIComponent(testKey)}` : '');
             const res = await fetchFromBackend(query);
-            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length >= 25) {
                 return res.data.map(mapBackendMcqToFrontend);
             }
         } catch (e) {}
 
         const allMcqs = await fetchStaticJson('mcqs.json');
         if (allMcqs.length > 0) {
-            const filtered = allMcqs.filter(item => {
-                if (!hasCategory(item, 'Model Test')) return false;
-                if (testKey && item.modelTestNo) {
-                    return item.modelTestNo.toLowerCase().includes(testKey.toLowerCase());
+            let matched = allMcqs.filter(item => hasCategory(item, 'Model Test'));
+            // Always ensure at least 25 questions for full model test
+            if (matched.length < 25) {
+                const pool = [...allMcqs].sort(() => 0.5 - Math.random());
+                for (const item of pool) {
+                    if (matched.length >= 25) break;
+                    if (!matched.some(m => m._id === item._id)) {
+                        matched.push(item);
+                    }
                 }
-                return true;
-            });
-            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
+            }
+            return matched.slice(0, 25).map(mapBackendMcqToFrontend);
         }
-        return [];
+        return MOCK_DATA.questions;
     },
 
     // ৪. সকল PDF লোড
@@ -1001,6 +1005,151 @@ function formatModernMCQContent(text) {
     return processed;
 }
 
+// ==========================================
+// FAVORITE QUESTIONS SYSTEM (localStorage)
+// ==========================================
+const FAVORITES_STORAGE_KEY = 'ict_favorite_questions';
+
+function getFavoriteQuestions(category = null) {
+    try {
+        const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+        const list = raw ? JSON.parse(raw) : [];
+        if (!Array.isArray(list)) return [];
+        if (category) {
+            return list.filter(item => item.category === category);
+        }
+        return list;
+    } catch (e) {
+        return [];
+    }
+}
+
+function isQuestionFavorite(questionId) {
+    if (!questionId) return false;
+    const list = getFavoriteQuestions();
+    return list.some(item => String(item.id) === String(questionId));
+}
+
+function generateMCQUniqueId(q, index) {
+    if (q.id) return String(q.id);
+    const text = q.question_text || q.question || '';
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+        hash = ((hash << 5) - hash) + text.charCodeAt(i);
+        hash |= 0;
+    }
+    return `q_${Math.abs(hash)}_${index}`;
+}
+
+function detectCurrentMCQCategory() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('chapter')) return 'chapter';
+    if (path.includes('board')) return 'board';
+    if (path.includes('test-paper') || path.includes('test_paper') || path.includes('college')) return 'college';
+    if (path.includes('model-test') || path.includes('model_test')) return 'model_test';
+    return 'chapter';
+}
+
+function toggleFavoriteQuestion(btn, qDataStr) {
+    let qData = null;
+    try {
+        qData = (typeof qDataStr === 'string') ? JSON.parse(decodeURIComponent(qDataStr)) : qDataStr;
+    } catch(e) {
+        console.error("Error parsing fav data", e);
+        return;
+    }
+
+    if (!qData || !qData.id) return;
+
+    let list = getFavoriteQuestions();
+    const existingIndex = list.findIndex(item => String(item.id) === String(qData.id));
+
+    if (existingIndex >= 0) {
+        list.splice(existingIndex, 1);
+        localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
+        if (btn) {
+            btn.classList.remove('active');
+            btn.innerHTML = '<i class="fa-regular fa-bookmark"></i> <span>ফেভারিট</span>';
+            btn.title = 'ফেভারিটে যোগ করুন';
+        }
+        showToastNotification('প্রশ্নটি ফেভারিট থেকে সরানো হয়েছে');
+    } else {
+        list.push({
+            id: qData.id,
+            category: qData.category || detectCurrentMCQCategory(),
+            source_title: qData.source_title || '',
+            question_text: qData.question_text || qData.question || '',
+            options: qData.options || [],
+            correct_index: qData.correct_index !== undefined ? qData.correct_index : 0,
+            explanation: qData.explanation || '',
+            context_stem: qData.context_stem || '',
+            image: qData.image || '',
+            added_at: Date.now()
+        });
+        localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
+        if (btn) {
+            btn.classList.add('active');
+            btn.innerHTML = '<i class="fa-solid fa-bookmark" style="color: #4F46E5;"></i> <span>সংরক্ষিত</span>';
+            btn.title = 'ফেভারিট থেকে সরান';
+        }
+        showToastNotification('প্রশ্নটি ফেভারিটে যোগ করা হয়েছে!');
+    }
+
+    document.querySelectorAll(`.modern-fav-btn[data-q-id="${qData.id}"]`).forEach(otherBtn => {
+        if (otherBtn !== btn) {
+            const isFavNow = isQuestionFavorite(qData.id);
+            if (isFavNow) {
+                otherBtn.classList.add('active');
+                otherBtn.innerHTML = '<i class="fa-solid fa-bookmark" style="color: #4F46E5;"></i> <span>সংরক্ষিত</span>';
+            } else {
+                otherBtn.classList.remove('active');
+                otherBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> <span>ফেভারিট</span>';
+            }
+        }
+    });
+
+    if (typeof refreshFavoriteQuestionsList === 'function') {
+        refreshFavoriteQuestionsList();
+    }
+}
+
+function showToastNotification(message) {
+    let toast = document.getElementById('ict-toast-notify');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'ict-toast-notify';
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #1E293B;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 99999;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        `;
+        document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#10B981;"></i> ${message}`;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 2400);
+}
+
 function renderModernMCQCardHTML(q, index, options = {}) {
     const qNum = toBanglaNum(index + 1);
     const markers = ['ক', 'খ', 'গ', 'ঘ'];
@@ -1015,6 +1164,32 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     const mode = options.mode || 'study'; // 'study' or 'exam'
     const qText = q.question_text || q.question || '';
     const explanation = q.explanation || '';
+    
+    const category = options.category || (mode === 'exam' ? 'model_test' : detectCurrentMCQCategory());
+    const qId = q.id ? String(q.id) : generateMCQUniqueId(q, index);
+    const isFav = isQuestionFavorite(qId);
+
+    let sourceTitle = options.source_title || '';
+    if (!sourceTitle) {
+        if (typeof activeChapter !== 'undefined' && activeChapter) sourceTitle = activeChapter;
+        else if (typeof selectedBoard !== 'undefined' && selectedBoard) sourceTitle = `${selectedBoard} (${typeof selectedYear !== 'undefined' ? selectedYear : ''})`;
+        else if (typeof selectedCollege !== 'undefined' && selectedCollege) sourceTitle = selectedCollege;
+        else if (mode === 'exam') sourceTitle = 'মডেল টেস্ট';
+        else sourceTitle = 'আইসিটি প্রশ্নব্যাংক';
+    }
+
+    const favDataObj = {
+        id: qId,
+        category: category,
+        source_title: sourceTitle,
+        question_text: qText,
+        options: opts,
+        correct_index: correctIndex,
+        explanation: explanation,
+        context_stem: q.context_stem || '',
+        image: q.image || ''
+    };
+    const favDataEncoded = encodeURIComponent(JSON.stringify(favDataObj));
     
     const imageHtml = q.image ? `
         <div class="question-image-box" style="margin: 12px 0 16px 0; text-align: center;">
@@ -1037,25 +1212,41 @@ function renderModernMCQCardHTML(q, index, options = {}) {
         `;
     });
 
+    const favButtonHtml = `
+        <button type="button" class="modern-fav-btn ${isFav ? 'active' : ''}" data-q-id="${qId}" onclick="toggleFavoriteQuestion(this, '${favDataEncoded}')" title="${isFav ? 'ফেভারিট থেকে সরান' : 'ফেভারিটে যোগ করুন'}">
+            <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+            <span>${isFav ? 'সংরক্ষিত' : 'ফেভারিট'}</span>
+        </button>
+    `;
+
     const expBtnAndBox = (mode === 'exam') ? `
-        <div class="modern-exp-box" style="display: none;">
+        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
+            <button type="button" class="modern-exp-btn" style="display: none;" onclick="toggleModernExp(this)">
+                <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
+            </button>
+            ${favButtonHtml}
+        </div>
+        <div class="modern-exp-box" style="display: none; width: 100%; margin-top: 12px;">
             <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
             <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
         </div>
     ` : `
-        <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 8px;">
+        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
             <button type="button" class="modern-exp-btn" onclick="toggleModernExp(this)">
                 <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
             </button>
-            <div class="modern-exp-box">
-                <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
-                <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
-            </div>
+            ${favButtonHtml}
+        </div>
+        <div class="modern-exp-box" style="display: none; width: 100%; margin-top: 12px;">
+            <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
+            <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
         </div>
     `;
 
+    const cardId = (mode === 'exam') ? `model-mcq-card-${index}` : `modern-mcq-card-${index}`;
+
     return `
-        <div class="modern-quiz-card" id="modern-mcq-card-${index}" data-q-index="${index}" data-correct-index="${correctIndex}">
+        <div class="modern-quiz-card" id="${cardId}" data-q-index="${index}" data-correct-index="${correctIndex}" data-q-id="${qId}">
             ${contextHtml}
             <div class="modern-quiz-header">
                 <h3 class="modern-q-title">${qNum}. ${formatModernMCQContent(qText)}</h3>
@@ -1094,7 +1285,7 @@ function renderModernCQCardHTML(cq, index) {
             <div class="modern-cq-sub-questions">
                 <div class="modern-cq-sub-pill">
                     <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
-                        <span><strong>(ক)</strong> ${cleanQ(cq.q_ka, "ক")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ১]</span></span>
+                        <span><strong>(ক)</strong> ${cleanQ(cq.q_ka, "ক")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
@@ -1104,7 +1295,7 @@ function renderModernCQCardHTML(cq, index) {
 
                 <div class="modern-cq-sub-pill">
                     <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
-                        <span><strong>(খ)</strong> ${cleanQ(cq.q_kha, "খ")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ২]</span></span>
+                        <span><strong>(খ)</strong> ${cleanQ(cq.q_kha, "খ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
@@ -1114,7 +1305,7 @@ function renderModernCQCardHTML(cq, index) {
 
                 <div class="modern-cq-sub-pill">
                     <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
-                        <span><strong>(গ)</strong> ${cleanQ(cq.q_ga, "গ")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ৩]</span></span>
+                        <span><strong>(গ)</strong> ${cleanQ(cq.q_ga, "গ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
@@ -1124,7 +1315,7 @@ function renderModernCQCardHTML(cq, index) {
 
                 <div class="modern-cq-sub-pill">
                     <div class="modern-cq-sub-header" onclick="toggleModernCqSubPill(this)">
-                        <span><strong>(ঘ)</strong> ${cleanQ(cq.q_gha, "ঘ")} <span style="color:#6366F1; font-size:0.85rem; font-weight:600;">[মান: ৪]</span></span>
+                        <span><strong>(ঘ)</strong> ${cleanQ(cq.q_gha, "ঘ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
@@ -1149,9 +1340,17 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
     if (!parentCard) return;
 
     if (mode === 'exam') {
-        if (parentCard.classList.contains('locked')) return;
+        // মডেল টেস্টে একটি প্রশ্নে একবারই ক্লিক করা যাবে (একবার উত্তর দিলে লক হয়ে যাবে)
+        if (parentCard.classList.contains('locked') || parentCard.classList.contains('answered')) return;
+        parentCard.classList.add('locked');
+        parentCard.classList.add('answered');
+
         const options = parentCard.querySelectorAll('.modern-option-pill');
-        options.forEach(opt => opt.classList.remove('exam-selected'));
+        options.forEach(opt => {
+            opt.classList.remove('exam-selected');
+            opt.classList.add('locked');
+            opt.style.pointerEvents = 'none';
+        });
         element.classList.add('exam-selected');
         
         if (window.currentExamState) {
@@ -1165,7 +1364,10 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
     parentCard.classList.add('answered');
 
     const options = parentCard.querySelectorAll('.modern-option-pill');
-    options.forEach(opt => opt.classList.add('locked'));
+    options.forEach(opt => {
+        opt.classList.add('locked');
+        opt.style.pointerEvents = 'none';
+    });
 
     const isCorrect = (selectedIndex === correctIndex);
 
@@ -1193,11 +1395,8 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
                 cIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
             }
         }
-
-        const expBox = parentCard.querySelector('.modern-exp-box');
-        if (expBox) expBox.style.display = 'block';
-        const expBtn = parentCard.querySelector('.modern-exp-btn');
-        if (expBtn) expBtn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা লুকান';
+        // ক্লিক করার সাথে সাথে ব্যাখ্যা শো হবে না।
+        // শুধুমাত্র "ব্যাখ্যা দেখুন" বাটনে ক্লিক করলে ব্যাখ্যা শো করবে।
     }
 }
 
@@ -1396,7 +1595,7 @@ function submitCurrentModelTest(isAuto = false) {
         const correctIndex = parseInt(q.correct_index !== undefined ? q.correct_index : q.correct, 10) || 0;
         const userChoice = state.answers[idx];
 
-        const card = document.getElementById(`modern-mcq-card-${idx}`);
+        const card = document.getElementById(`model-mcq-card-${idx}`) || document.getElementById(`modern-mcq-card-${idx}`);
         if (card) {
             card.classList.add('locked');
             const options = card.querySelectorAll('.modern-option-pill');
@@ -1512,3 +1711,47 @@ window.restartCurrentModelTest = restartCurrentModelTest;
 window.resolveMediaUrl = resolveMediaUrl;
 window.resolveHtmlMediaUrls = resolveHtmlMediaUrls;
 window.matchBoardName = matchBoardName;
+
+window.getFavoriteQuestions = getFavoriteQuestions;
+window.isQuestionFavorite = isQuestionFavorite;
+window.toggleFavoriteQuestion = toggleFavoriteQuestion;
+
+// Aliases for favorite management
+function saveQuestionToFavorites(qData, category) {
+    if (!qData) return;
+    const cat = category || (qData.category || detectCurrentMCQCategory());
+    let list = getFavoriteQuestions();
+    const existingIndex = list.findIndex(item => String(item.id) === String(qData.id));
+    const entry = {
+        id: qData.id,
+        category: cat,
+        source_title: qData.source_title || '',
+        question_text: qData.question_text || qData.question || '',
+        options: qData.options || [],
+        correct_index: qData.correct_index !== undefined ? qData.correct_index : (qData.correct || 0),
+        explanation: qData.explanation || '',
+        context_stem: qData.context_stem || '',
+        image: qData.image || '',
+        added_at: Date.now()
+    };
+    if (existingIndex >= 0) {
+        list[existingIndex] = entry;
+    } else {
+        list.push(entry);
+    }
+    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
+}
+
+function removeQuestionFromFavorites(qId) {
+    let list = getFavoriteQuestions();
+    list = list.filter(item => String(item.id) !== String(qId));
+    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
+}
+
+function getFavoriteQuestionsByCategory(cat) {
+    return getFavoriteQuestions(cat);
+}
+
+window.saveQuestionToFavorites = saveQuestionToFavorites;
+window.removeQuestionFromFavorites = removeQuestionFromFavorites;
+window.getFavoriteQuestionsByCategory = getFavoriteQuestionsByCategory;

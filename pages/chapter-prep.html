@@ -7,8 +7,8 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/chapter-prep.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=3.0">
+    <link rel="stylesheet" href="../assets/css/chapter-prep.css?v=3.0">
 </head>
 <body>
 
@@ -39,12 +39,12 @@
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
                 <ul class="desktop-nav">
-                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
-                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
-                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
-                    <li><a href="chapter-prep.html" class="active"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
-                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
-                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                                        <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                                        <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                                        <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                                        <li><a href="chapter-prep.html" class="active"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                                        <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                                        <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
                 </ul>
             </div>
 
@@ -316,31 +316,48 @@
     <div id="chapterModeModal" class="modal-overlay" onclick="if(event.target === this) closeChapterModal()">
         <div class="bottom-sheet">
             <div class="sheet-handle"></div>
-            <h3 class="sheet-title" id="modal-chapter-name">Choose Question Type</h3>
+            <h3 class="sheet-title" id="modal-chapter-name">প্রশ্ন ধরন নির্বাচন করুন</h3>
             
             <div class="sheet-options">
-                <div class="type-option-card" onclick="selectChapterMode('mcq')">
-                    <div class="type-icon mcq">
-                        <i class="fa-solid fa-square-check"></i>
-                    </div>
-                    <div class="type-info">
-                        <h3>MCQ প্র্যাকটিস</h3>
-                        <p>অধ্যায়ের বহুনির্বাচনি প্রশ্নাবলি সমাধান ও সঠিক উত্তর যাচাই</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
-                </div>
-
                 <div class="type-option-card" onclick="selectChapterMode('cq')">
                     <div class="type-icon cq">
                         <i class="fa-solid fa-pen-nib"></i>
                     </div>
                     <div class="type-info">
-                        <h3>CQ (সৃজনশীল) প্রশ্ন</h3>
+                        <h3>সৃজনশীল (CQ)</h3>
                         <p>উদ্দীপক সহ ক, খ, গ, ঘ অংশের প্রশ্ন ও আদর্শ ব্যাখ্যা</p>
                     </div>
                     <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
                 </div>
+
+                <div class="type-option-card" onclick="selectChapterMode('mcq')">
+                    <div class="type-icon mcq">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>MCQ</h3>
+                        <p>অধ্যায়ের বহুনির্বাচনি প্রশ্নাবলি সমাধান ও সঠিক উত্তর অনুশীলন</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
+
+                <div class="type-option-card" onclick="selectChapterMode('model')">
+                    <div class="type-icon model">
+                        <i class="fa-solid fa-stopwatch"></i>
+                    </div>
+                    <div class="type-info">
+                        <h3>Model Test</h3>
+                        <p>২৫টি প্রশ্নের নির্দিষ্ট সময়ের লাইভ স্পিড টেস্ট ও ফলাফল</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: var(--text-muted);"></i>
+                </div>
             </div>
+
+            <div style="margin-top: 18px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeChapterModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
 
             <div style="margin-top: 18px; text-align: center;">
                 <button class="btn btn-outline btn-sm" onclick="closeChapterModal()">বাতিল করুন</button>
@@ -369,8 +386,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=2.3"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/chapter-prep.js"></script>
+    <script src="../assets/js/api.js?v=3.0"></script>
+    <script src="../assets/js/main.js?v=3.0"></script>
+    <script src="../assets/js/chapter-prep.js?v=3.0"></script>
 </body>
 </html>

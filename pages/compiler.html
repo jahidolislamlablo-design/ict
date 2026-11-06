@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এইচএসসি আইসিটি অনলাইন কম্পাইলার - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=3.0">
+    <style>
+        /* Unified Single-Screen Compiler Styles */
+        .unified-compiler-card {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .compiler-main-toolbar {
+            background: #F8FAFC;
+            border-bottom: 1.5px solid #E2E8F0;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .lang-pills {
+            display: flex;
+            background: #E2E8F0;
+            padding: 3px;
+            border-radius: 9999px;
+            gap: 3px;
+        }
+
+        .lang-pill-btn {
+            border: none;
+            background: transparent;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-pill-btn.active {
+            background: #FFFFFF;
+            color: #4F46E5;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        /* Screen Toggle Pills (Code / Output) */
+        .screen-toggle-pills {
+            display: flex;
+            background: #E0E7FF;
+            padding: 4px;
+            border-radius: 9999px;
+            gap: 4px;
+            border: 1.5px solid #C7D2FE;
+        }
+
+        .screen-toggle-btn {
+            border: none;
+            background: transparent;
+            padding: 6px 18px;
+            border-radius: 9999px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #4338CA;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .screen-toggle-btn.active {
+            background: #4F46E5;
+            color: #FFFFFF;
+            box-shadow: 0 3px 10px rgba(79, 70, 229, 0.35);
+        }
+
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn-run {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 9999px;
+            font-size: 0.90rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-run:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-save-code {
+            background: #EEF2FF;
+            color: #4F46E5;
+            border: 1.5px solid #C7D2FE;
+            padding: 8px 14px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-save-code:hover {
+            background: #E0E7FF;
+            border-color: #818CF8;
+        }
+
+        .btn-my-codes {
+            background: #F1F5F9;
+            color: #334155;
+            border: 1.5px solid #CBD5E1;
+            padding: 8px 14px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-my-codes:hover {
+            background: #E2E8F0;
+        }
+
+        .template-select {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1.5px solid #CBD5E1;
+            background: #FFFFFF;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Single Unified Screen Container */
+        .compiler-screen-container {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            background: #1E293B;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .compiler-view-panel {
+            width: 100%;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .editor-wrapper {
+            position: relative;
+            flex: 1;
+            display: flex;
+            background: #1E293B;
+            min-height: 460px;
+        }
+
+        .line-numbers {
+            width: 48px;
+            background: #0F172A;
+            color: #64748B;
+            padding: 16px 8px 16px 0;
+            text-align: right;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            user-select: none;
+            border-right: 1px solid #334155;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .code-textarea {
+            flex: 1;
+            background: #1E293B;
+            color: #F8FAFC;
+            border: none;
+            padding: 16px 18px;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            resize: none;
+            outline: none;
+            white-space: pre;
+            overflow-wrap: normal;
+            overflow-x: auto;
+            tab-size: 4;
+            box-sizing: border-box;
+            min-height: 460px;
+        }
+
+        .stdin-box-wrapper {
+            background: #0F172A;
+            border-top: 1px solid #334155;
+            padding: 12px 18px;
+        }
+
+        .stdin-header {
+            font-size: 0.80rem;
+            font-weight: 700;
+            color: #94A3B8;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stdin-input {
+            width: 100%;
+            background: #1E293B;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #38BDF8;
+            padding: 8px 12px;
+            font-family: Consolas, monospace;
+            font-size: 0.88rem;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        /* Output View Styles */
+        .output-inner-toolbar {
+            background: #0F172A;
+            border-bottom: 1px solid #334155;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .output-inner-tabs {
+            display: flex;
+            gap: 8px;
+        }
+
+        .out-tab-btn {
+            border: none;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #94A3B8;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .out-tab-btn.active {
+            background: #334155;
+            color: #38BDF8;
+        }
+
+        .console-screen {
+            flex: 1;
+            background: #090D16;
+            color: #F1F5F9;
+            padding: 20px;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 0.94rem;
+            line-height: 1.6;
+            overflow-y: auto;
+            min-height: 450px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .preview-iframe {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            min-height: 480px;
+            border: none;
+            background: #FFFFFF;
+        }
+
+        .console-status-bar {
+            background: #0F172A;
+            border-top: 1px solid #334155;
+            padding: 10px 18px;
+            font-size: 0.80rem;
+            font-weight: 600;
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Saved Codes Modal */
+        .saved-code-item {
+            border: 1.5px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            background: #FFFFFF;
+        }
+
+        .saved-code-item:hover {
+            border-color: #4F46E5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .saved-code-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #1E293B;
+        }
+
+        .saved-code-info span {
+            font-size: 0.78rem;
+            color: #64748B;
+        }
+
+        .saved-code-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .compiler-main-toolbar {
+                padding: 10px 12px;
+                gap: 8px;
+            }
+            .screen-toggle-btn {
+                padding: 5px 12px;
+                font-size: 0.80rem;
+            }
+            .lang-pill-btn {
+                padding: 5px 10px;
+                font-size: 0.78rem;
+            }
+            .editor-wrapper, .code-textarea, .console-screen, .preview-iframe {
+                min-height: 380px;
+            }
+            .compiler-screen-container {
+                min-height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <button class="nav-back-btn desktop-back-btn" onclick="window.location.href='../index.html'" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>হোমে ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="window.location.href='../index.html'" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                                        <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                                        <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                                        <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                                        <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                                        <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                                        <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব বার -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current">অনলাইন কোড কম্পাইলার</span>
+                </div>
+            </div>
+
+            <!-- ব্যানার -->
+            <div class="page-header-banner" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%);">
+                <div class="page-header-text">
+                    <h1>এইচএসসি আইসিটি অনলাইন কোড কম্পাইলার</h1>
+                    <p>এইচটিএমএল (HTML), সিএসএস (CSS), জাভাস্ক্রিপ্ট (JavaScript), পাইথন (Python) এবং সি প্রোগ্রাম (C Program) লিখে সরাসরি রান করুন ও কোড সংরক্ষণ করুন।</p>
+                </div>
+            </div>
+
+            <!-- মূল একক স্ক্রিন কম্পাইলার (Single-Screen Editor & Output Toggle) -->
+            <div class="unified-compiler-card">
+
+                <!-- মূল কম্পাইলার টুলবার -->
+                <div class="compiler-main-toolbar">
+                    <!-- ১. ল্যাঙ্গুয়েজ পিলস -->
+                    <div class="lang-pills">
+                        <button type="button" class="lang-pill-btn active" id="pill-c" onclick="switchLanguage('c')">
+                            <i class="fa-solid fa-c"></i> C Program
+                        </button>
+                        <button type="button" class="lang-pill-btn" id="pill-python" onclick="switchLanguage('python')">
+                            <i class="fa-brands fa-python"></i> Python
+                        </button>
+                        <button type="button" class="lang-pill-btn" id="pill-html" onclick="switchLanguage('html')">
+                            <i class="fa-brands fa-html5"></i> HTML/CSS/JS
+                        </button>
+                    </div>
+
+                    <!-- ২. Code ও Output স্ক্রিন টগল বাটন (User Specified) -->
+                    <div class="screen-toggle-pills">
+                        <button type="button" class="screen-toggle-btn active" id="btn-toggle-code" onclick="toggleCompilerScreen('code')">
+                            <i class="fa-solid fa-code"></i> Code
+                        </button>
+                        <button type="button" class="screen-toggle-btn" id="btn-toggle-output" onclick="toggleCompilerScreen('output')">
+                            <i class="fa-solid fa-terminal"></i> Output
+                        </button>
+                    </div>
+
+                    <!-- ৩. অ্যাকশন বাটনস -->
+                    <div class="toolbar-actions">
+                        <select class="template-select" id="templateSelect" onchange="loadTemplate(this.value)">
+                            <option value="">-- নমুনা কোড নির্বাচন --</option>
+                        </select>
+
+                        <button type="button" class="btn-run" onclick="runCode()">
+                            <i class="fa-solid fa-play"></i> রান করুন
+                        </button>
+
+                        <button type="button" class="btn-save-code" onclick="openSaveModal()">
+                            <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ
+                        </button>
+
+                        <button type="button" class="btn-my-codes" onclick="openSavedCodesModal()">
+                            <i class="fa-solid fa-folder-open"></i> আমার কোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- একক স্ক্রিন এরিয়া (Single Screen Container) -->
+                <div class="compiler-screen-container">
+
+                    <!-- স্ক্রিন ১: কোড এডিটর ভিউ (Code Tab) -->
+                    <div class="compiler-view-panel" id="view-code">
+                        <div class="editor-wrapper">
+                            <div class="line-numbers" id="lineNumbers">1</div>
+                            <textarea class="code-textarea" id="codeEditor" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
+                        </div>
+
+                        <!-- ইনপুট (STDIN) বক্স -->
+                        <div class="stdin-box-wrapper" id="stdinWrapper">
+                            <div class="stdin-header">
+                                <i class="fa-solid fa-keyboard"></i> ইনপুট মান (STDIN - scanf / input এর জন্য, স্পেস বা নতুন লাইনে লিখুন):
+                            </div>
+                            <input type="text" class="stdin-input" id="stdinInput" placeholder="যেমন: 5 10 অথবা 25">
+                        </div>
+                    </div>
+
+                    <!-- স্ক্রিন ২: আউটপুট ভিউ (Output Tab) -->
+                    <div class="compiler-view-panel" id="view-output" style="display: none;">
+                        <div class="output-inner-toolbar">
+                            <div class="output-inner-tabs">
+                                <button type="button" class="out-tab-btn active" id="tab-btn-console" onclick="switchOutputTab('console')">
+                                    <i class="fa-solid fa-terminal"></i> কনসোল আউটপুট
+                                </button>
+                                <button type="button" class="out-tab-btn" id="tab-btn-preview" onclick="switchOutputTab('preview')" style="display: none;">
+                                    <i class="fa-solid fa-globe"></i> লাইভ ওয়েব প্রিভিউ
+                                </button>
+                            </div>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="clearConsole()" style="padding: 4px 10px; font-size: 0.78rem; color: #E2E8F0; border-color: #475569;">
+                                <i class="fa-solid fa-trash-can"></i> ক্লিয়ার
+                            </button>
+                        </div>
+
+                        <!-- টার্মিনাল কনসোল স্ক্রিন -->
+                        <div class="console-screen" id="consoleScreen">কম্পাইলার প্রস্তুত। কোড লিখে "রান করুন" বাটনে ক্লিক করুন...</div>
+
+                        <!-- ওয়েব প্রিভিউ আইফ্রেম (HTML/CSS/JS এর জন্য) -->
+                        <iframe class="preview-iframe" id="previewIframe" sandbox="allow-scripts" style="display: none;"></iframe>
+
+                        <!-- স্ট্যাটাস বার -->
+                        <div class="console-status-bar">
+                            <span id="execStatus">স্ট্যাটাস: রেডি</span>
+                            <span id="execTime">সময়: ০ ms</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- সেভ প্রোগ্রাম মডাল -->
+    <div id="saveCodeModal" class="modal-overlay" onclick="if(event.target === this) closeSaveModal()">
+        <div class="bottom-sheet" style="max-width: 440px;">
+            <div class="sheet-handle"></div>
+            <h3 class="sheet-title">প্রোগ্রাম সংরক্ষণ করুন</h3>
+            
+            <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #1E293B; margin-bottom: 6px;">প্রোগ্রামের শিরোনাম / নাম:</label>
+                <input type="text" id="saveTitleInput" class="form-control" placeholder="যেমন: দুটি সংখ্যার যোগফল" style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1.5px solid #CBD5E1; box-sizing: border-box; font-size: 0.95rem;">
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                <button type="button" class="btn btn-outline" onclick="closeSaveModal()">বাতিল</button>
+                <button type="button" class="btn btn-primary" onclick="confirmSaveCode()">
+                    <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- আমার সংরক্ষিত কোডসমূহ মডাল -->
+    <div id="myCodesModal" class="modal-overlay" onclick="if(event.target === this) closeSavedCodesModal()">
+        <div class="bottom-sheet" style="max-width: 580px; max-height: 85vh; display: flex; flex-direction: column;">
+            <div class="sheet-handle"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 class="sheet-title" style="margin: 0;">আমার সংরক্ষিত প্রোগ্রামসমূহ</h3>
+                <span class="badge badge-primary" id="savedCodesCountBadge">০টি</span>
+            </div>
+            
+            <div id="savedCodesListContainer" style="flex: 1; overflow-y: auto; padding-right: 4px; min-height: 200px;">
+                <!-- সংরক্ষিত কোডের তালিকা লোড হবে -->
+            </div>
+
+            <div style="margin-top: 16px; text-align: center;">
+                <button class="btn btn-outline btn-sm" onclick="closeSavedCodesModal()">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- প্ল্যাটফর্ম ফুটার -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div>
+                <strong style="color: var(--primary);">ICT EASY LEARNING</strong> &copy; ২০২৬ । সর্বস্বত্ব সংরক্ষিত।
+            </div>
+            <div class="footer-links">
+                <a href="board-question.html">বোর্ড প্রশ্ন</a>
+                <a href="test-paper.html">টেস্ট পেপার</a>
+                <a href="chapter-prep.html">অধ্যায়ভিত্তিক</a>
+                <a href="model-test.html">মডেল টেস্ট</a>
+                <a href="favorite-question.html">ফেভারিট প্রশ্ন</a>
+                <a href="compiler.html">কোড কম্পাইলার</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js?v=3.0"></script>
+    <script src="../assets/js/main.js?v=3.0"></script>
+    <script>
+
+        // =======================================================
+        // এইচএসসি আইসিটি কম্পাইলার - C, Python, HTML/CSS/JS
+        // =======================================================
+
+        let currentLang = 'c'; // 'c', 'python', 'html'
+        const SAVED_CODES_KEY = 'ict_saved_programs';
+
+        // HSC ICT সিলেবাসের আদর্শ কোড টেমপ্লেট
+        const CODE_TEMPLATES = {
+            c: {
+                hello: {
+                    title: '১. Hello World (সি প্রোগ্রাম)',
+                    code: `#include <stdio.h>\n\nint main() {\n    printf("Hello World! Welcome to HSC ICT.\\n");\n    return 0;\n}`
+                },
+                sum: {
+                    title: '২. দুটি সংখ্যার যোগফল ও গড়',
+                    code: `#include <stdio.h>\n\nint main() {\n    int a = 15, b = 25, sum;\n    float avg;\n    \n    sum = a + b;\n    avg = sum / 2.0;\n    \n    printf("First Number = %d\\n", a);\n    printf("Second Number = %d\\n", b);\n    printf("Sum = %d\\n", sum);\n    printf("Average = %.2f\\n", avg);\n    \n    return 0;\n}`
+                },
+                even_odd: {
+                    title: '৩. জোড় নাকি বিজোড় সংখ্যা নির্ণয়',
+                    code: `#include <stdio.h>\n\nint main() {\n    int num = 14;\n    \n    if (num % 2 == 0) {\n        printf("%d is an EVEN number (জোড় সংখ্যা)\\n", num);\n    } else {\n        printf("%d is an ODD number (বিজোড় সংখ্যা)\\n", num);\n    }\n    \n    return 0;\n}`
+                },
+                series: {
+                    title: '৪. ১ থেকে N পর্যন্ত সংখ্যার যোগফল',
+                    code: `#include <stdio.h>\n\nint main() {\n    int n = 10, sum = 0;\n    \n    printf("1 + 2 + 3 + ... + %d এর যোগফল:\\n", n);\n    for (int i = 1; i <= n; i++) {\n        sum += i;\n    }\n    \n    printf("Total Sum = %d\\n", sum);\n    return 0;\n}`
+                },
+                leap_year: {
+                    title: '৫. লিপ ইয়ার (Leap Year) নির্ণয়',
+                    code: `#include <stdio.h>\n\nint main() {\n    int year = 2024;\n    \n    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {\n        printf("%d is a LEAP YEAR (অধিবর্ষ)\\n", year);\n    } else {\n        printf("%d is NOT a leap year\\n", year);\n    }\n    \n    return 0;\n}`
+                },
+                factorial: {
+                    title: '৬. একটি সংখ্যার ফ্যাক্টোরিয়াল নির্ণয়',
+                    code: `#include <stdio.h>\n\nint main() {\n    int n = 5;\n    long long fact = 1;\n    \n    for (int i = 1; i <= n; i++) {\n        fact *= i;\n    }\n    \n    printf("Factorial of %d = %lld\\n", n, fact);\n    return 0;\n}`
+                }
+            },
+            python: {
+                hello: {
+                    title: '১. Hello World (Python)',
+                    code: `# HSC ICT Python Programming\nprint("Hello, World!")\nprint("স্বাগতম এইচএসসি আইসিটি পাইথনে!")`
+                },
+                sum: {
+                    title: '২. দুটি সংখ্যার যোগফল ও গড়',
+                    code: `a = 20\nb = 30\ns = a + b\navg = s / 2\n\nprint("a =", a)\nprint("b =", b)\nprint("Sum =", s)\nprint("Average =", avg)`
+                },
+                loop: {
+                    title: '৩. ১ থেকে ১০ পর্যন্ত জোড় সংখ্যা',
+                    code: `print("১ থেকে ১০ পর্যন্ত জোড় সংখ্যাগুলো:")\nfor i in range(1, 11):\n    if i % 2 == 0:\n        print(f"Number {i} is Even")`
+                },
+                list_ops: {
+                    title: '৪. লিস্ট ও সামেশন',
+                    code: `numbers = [10, 20, 30, 40, 50]\ntotal = sum(numbers)\navg = total / len(numbers)\n\nprint("Numbers:", numbers)\nprint("Total Sum:", total)\nprint("Average:", avg)`
+                }
+            },
+            html: {
+                basic: {
+                    title: '১. বেসিক এইচএসসি এইচটিএমএল পেজ',
+                    code: `<!DOCTYPE html>\n<html>\n<head>\n    <title>My Web Page</title>\n    <style>\n        body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; background: #F8FAFC; color: #1E293B; }\n        h1 { color: #4F46E5; }\n        .card { background: white; padding: 20px; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }\n        .btn { background: #4F46E5; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }\n    </style>\n</head>\n<body>\n    <div class="card">\n        <h1>এইচএসসি আইসিটি ৪র্থ অধ্যায়</h1>\n        <p>এটি এইচটিএমএল এবং সিএসএস দিয়ে তৈরি একটি ডেমো ওয়েবপেজ।</p>\n        <button class="btn" onclick="alert('ওয়েবপেজে আপনাকে স্বাগতম!')">ক্লিক করুন</button>\n    </div>\n</body>\n</html>`
+                },
+                table: {
+                    title: '২. এইচটিএমএল টেবিল ডিজাইন',
+                    code: `<!DOCTYPE html>\n<html>\n<head>\n    <style>\n        table {\n            width: 100%;\n            border-collapse: collapse;\n            font-family: sans-serif;\n        }\n        th, td {\n            border: 1px solid #CBD5E1;\n            padding: 10px 12px;\n            text-align: left;\n        }\n        th {\n            background: #EEF2FF;\n            color: #4F46E5;\n        }\n        tr:nth-child(even) { background: #F8FAFC; }\n    </style>\n</head>\n<body>\n    <h3>ছাত্র-ছাত্রীদের রোল ও প্রাপ্ত নম্বর</h3>\n    <table>\n        <tr>\n            <th>রোল</th>\n            <th>নাম</th>\n            <th>আইসিটি নম্বর</th>\n        </tr>\n        <tr>\n            <td>১০১</td>\n            <td>রাফি ইসলাম</td>\n            <td>৯৫</td>\n        </tr>\n        <tr>\n            <td>১০২</td>\n            <td>সুমাইয়া হক</td>\n            <td>৯৮</td>\n        </tr>\n        <tr>\n            <td>১০৩</td>\n            <td>তানভীর আহমেদ</td>\n            <td>৯২</td>\n        </tr>\n    </table>\n</body>\n</html>`
+                }
+            }
+        };
+
+        const editor = document.getElementById('codeEditor');
+        const lineNumbers = document.getElementById('lineNumbers');
+        const stdinWrapper = document.getElementById('stdinWrapper');
+        const templateSelect = document.getElementById('templateSelect');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initEditor();
+            switchLanguage('c');
+        });
+
+        function initEditor() {
+            // Update line numbers on input and scroll
+            editor.addEventListener('input', updateLineNumbers);
+            editor.addEventListener('scroll', () => {
+                lineNumbers.scrollTop = editor.scrollTop;
+            });
+
+            // Tab key support
+            editor.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    const start = editor.selectionStart;
+                    const end = editor.selectionEnd;
+                    editor.value = editor.value.substring(0, start) + '    ' + editor.value.substring(end);
+                    editor.selectionStart = editor.selectionEnd = start + 4;
+                    updateLineNumbers();
+                }
+            });
+        }
+
+        function updateLineNumbers() {
+            const lines = editor.value.split('\n').length;
+            let nums = '';
+            for (let i = 1; i <= lines; i++) {
+                nums += i + '\n';
+            }
+            lineNumbers.innerText = nums;
+        }
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+
+            document.querySelectorAll('.lang-pill-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('pill-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Populate template dropdown
+            templateSelect.innerHTML = '<option value="">-- নমুনা কোড নির্বাচন --</option>';
+            const templates = CODE_TEMPLATES[lang] || {};
+            for (let key in templates) {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.innerText = templates[key].title;
+                templateSelect.appendChild(opt);
+            }
+
+            // Preview tab visibility
+            const previewTabBtn = document.getElementById('tab-btn-preview');
+            if (lang === 'html') {
+                if (previewTabBtn) previewTabBtn.style.display = 'inline-block';
+                stdinWrapper.style.display = 'none';
+                loadTemplate('basic');
+                switchOutputTab('preview');
+            } else {
+                if (previewTabBtn) previewTabBtn.style.display = 'none';
+                stdinWrapper.style.display = 'block';
+                loadTemplate('hello');
+                switchOutputTab('console');
+            }
+        }
+
+        function loadTemplate(key) {
+            if (!key) return;
+            const t = CODE_TEMPLATES[currentLang] && CODE_TEMPLATES[currentLang][key];
+            if (t) {
+                editor.value = t.code;
+                updateLineNumbers();
+            }
+        }
+
+        function switchOutputTab(tab) {
+            const consoleScreen = document.getElementById('consoleScreen');
+            const previewIframe = document.getElementById('previewIframe');
+            const tabConsole = document.getElementById('tab-btn-console');
+            const tabPreview = document.getElementById('tab-btn-preview');
+
+            if (tab === 'console') {
+                if (consoleScreen) consoleScreen.style.display = 'block';
+                if (previewIframe) previewIframe.style.display = 'none';
+                if (tabConsole) tabConsole.classList.add('active');
+                if (tabPreview) tabPreview.classList.remove('active');
+            } else {
+                if (consoleScreen) consoleScreen.style.display = 'none';
+                if (previewIframe) previewIframe.style.display = 'block';
+                if (tabConsole) tabConsole.classList.remove('active');
+                if (tabPreview) tabPreview.classList.add('active');
+            }
+        }
+
+        function clearConsole() {
+            document.getElementById('consoleScreen').innerText = '';
+            document.getElementById('execStatus').innerText = 'স্ট্যাটাস: রেডি';
+            document.getElementById('execTime').innerText = 'সময়: ০ ms';
+        }
+
+        // ==========================================
+        // কোড এক্সিকিউশন ইঞ্জিন (C, Python, HTML/JS)
+        // ==========================================
+
+        async function runCode() {
+            const code = editor.value;
+            const stdin = document.getElementById('stdinInput').value;
+            const consoleScreen = document.getElementById('consoleScreen');
+            const statusEl = document.getElementById('execStatus');
+            const timeEl = document.getElementById('execTime');
+
+            statusEl.innerText = 'স্ট্যাটাস: এক্সিকিউট হচ্ছে...';
+            consoleScreen.innerText = 'কম্পাইল ও রান করা হচ্ছে...\n';
+
+            const startTime = performance.now();
+
+            if (currentLang === 'html') {
+                runHTMLPreview(code);
+                const elapsed = Math.round(performance.now() - startTime);
+                statusEl.innerText = 'স্ট্যাটাস: সফলভাবে রেন্ডার হয়েছে';
+                timeEl.innerText = `সময়: ${elapsed} ms`;
+                switchOutputTab('preview');
+                return;
+            }
+
+            if (currentLang === 'python') {
+                runPythonCode(code, stdin, startTime);
+                return;
+            }
+
+            if (currentLang === 'c') {
+                runCCode(code, stdin, startTime);
+                return;
+            }
+        }
+
+        function runHTMLPreview(code) {
+            const iframe = document.getElementById('previewIframe');
+            const consoleScreen = document.getElementById('consoleScreen');
+            consoleScreen.innerText = 'HTML প্রিভিউ রেন্ডার করা হয়েছে। লাইভ রেজাল্ট দেখতে "লাইভ ওয়েব প্রিভিউ" ট্যাবে যান।';
+
+            // Catch console.log inside iframe
+            const injectedCode = `
+                <script>
+                    (function(){
+                        const oldLog = console.log;
+                        console.log = function(...args) {
+                            window.parent.postMessage({ type: 'iframe_log', text: args.join(' ') }, '*');
+                            oldLog.apply(console, args);
+                        };
+                    })();
+                <\/script>
+                ${code}
+            `;
+            iframe.srcdoc = injectedCode;
+        }
+
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'iframe_log') {
+                const consoleScreen = document.getElementById('consoleScreen');
+                if (consoleScreen) {
+                    consoleScreen.innerText += '[Console] ' + e.data.text + '\n';
+                }
+            }
+        });
+
+        // ------------------------------------------
+        // C PROGRAM INTERPRETER FOR HSC ICT
+        // ------------------------------------------
+        function runCCode(source, stdin, startTime) {
+            const consoleScreen = document.getElementById('consoleScreen');
+            const statusEl = document.getElementById('execStatus');
+            const timeEl = document.getElementById('execTime');
+
+            let output = '';
+            const print = (text) => { output += text; };
+
+            try {
+                const result = executeCProgram(source, stdin, print);
+                const elapsed = Math.round(performance.now() - startTime);
+                consoleScreen.innerText = output || '(প্রোগ্রামটি সফলভাবে রান করেছে, কিন্তু কোনো কিছু প্রিন্ট করেনি)';
+                statusEl.innerHTML = '<span style="color:#10B981;"><i class="fa-solid fa-check"></i> এক্সিকিউশন সফল (Exited with code 0)</span>';
+                timeEl.innerText = `সময়: ${elapsed} ms`;
+            } catch (err) {
+                const elapsed = Math.round(performance.now() - startTime);
+                consoleScreen.innerText = output + '\n\n[কম্পাইলেশন / রানটাইম এরর]:\n' + err.message;
+                statusEl.innerHTML = '<span style="color:#EF4444;"><i class="fa-solid fa-triangle-exclamation"></i> এরর পাওয়া গেছে</span>';
+                timeEl.innerText = `সময়: ${elapsed} ms`;
+            }
+            switchOutputTab('console');
+        }
+
+        function executeCProgram(source, stdin, print) {
+            // Check for basic main function
+            if (!source.includes('main')) {
+                throw new Error("সি প্রোগ্রামে 'main' ফাংশন পাওয়া যায়নি! (main function is required)");
+            }
+
+            // Extract main body
+            const mainMatch = source.match(/(?:int|void)\s+main\s*\([^)]*\)\s*\{([\s\S]*)\}/);
+            if (!mainMatch) {
+                throw new Error("main() ফাংশনের গঠন সঠিক নয়। দয়া করে int main() { ... } ফরম্যাট ব্যবহার করুন।");
+            }
+
+            const body = mainMatch[1];
+            const lines = body.split('\n');
+
+            // Stdin token scanner
+            let stdinTokens = (stdin || '').trim().split(/\s+/).filter(Boolean);
+            let tokenIndex = 0;
+
+            const nextToken = () => {
+                if (tokenIndex < stdinTokens.length) {
+                    return stdinTokens[tokenIndex++];
+                }
+                const val = prompt("scanf() ইনপুট প্রদান করুন:");
+                return val !== null ? val : '0';
+            };
+
+            // Program Memory Scope
+            const memory = {};
+
+            // Helper to evaluate simple C expressions using current memory
+            const evalExpr = (expr) => {
+                let clean = expr.trim();
+                if (clean.endsWith(';')) clean = clean.slice(0, -1).trim();
+
+                // Replace memory variable names with memory values
+                let jsExpr = clean;
+                // Sort var names by length descending to prevent substring collisions
+                const varNames = Object.keys(memory).sort((a,b) => b.length - a.length);
+                for (let v of varNames) {
+                    const regex = new RegExp('\\b' + v + '\\b', 'g');
+                    jsExpr = jsExpr.replace(regex, memory[v]);
+                }
+                try {
+                    return Function('"use strict"; return (' + jsExpr + ')')();
+                } catch(e) {
+                    return 0;
+                }
+            };
+
+            // Custom C Interpreter for HSC standard constructs
+            // We run a line-by-line / block runner
+            let i = 0;
+            const totalLines = lines.length;
+
+            const executeBlock = (blockStr) => {
+                // Handle printf statements
+                const printfRegex = /printf\s*\(\s*(".*?"|'.*?')(.*?)\);/g;
+                let processedBlock = blockStr;
+
+                // Execute JavaScript-transpiled C subset
+                let jsCode = blockStr
+                    // remove headers and return
+                    .replace(/return\s+.*?;/g, '')
+                    // C data types -> let
+                    .replace(/\b(?:int|float|double|char|long|short)\s+/g, 'let ')
+                    // scanf handler: scanf("%d", &var)
+                    .replace(/scanf\s*\(\s*"[^"]*"\s*,\s*&?([a-zA-Z0-9_]+)\s*\);/g, (m, varName) => {
+                        return `${varName} = Number(nextToken());`;
+                    })
+                    // printf handler: printf("Sum = %d\n", sum);
+                    .replace(/printf\s*\(\s*(".*?")\s*(?:,\s*(.*?))?\s*\);/g, (m, fmt, args) => {
+                        let fmtStr = fmt.slice(1, -1)
+                            .replace(/\\n/g, '\n')
+                            .replace(/\\t/g, '\t');
+                        if (!args) {
+                            return `print(${JSON.stringify(fmtStr)});`;
+                        }
+                        return `
+                            (function() {
+                                let f = ${JSON.stringify(fmtStr)};
+                                let argList = [${args}];
+                                let aIdx = 0;
+                                let res = f.replace(/%d|%i|%f|%s|%c|%\\.[0-9]+f/g, function(spec) {
+                                    let val = argList[aIdx++];
+                                    if (spec.includes('.')) {
+                                        let digits = parseInt(spec.split('.')[1]);
+                                        return Number(val).toFixed(digits);
+                                    }
+                                    if (spec === '%f') return Number(val).toFixed(6);
+                                    return val;
+                                });
+                                print(res);
+                            })();
+                        `;
+                    });
+
+                // Wrap in scoped function
+                const runFn = new Function('print', 'nextToken', jsCode);
+                runFn(print, nextToken);
+            };
+
+            executeBlock(body);
+        }
+
+        // ------------------------------------------
+        // PYTHON INTERPRETER (Browser Client-Side)
+        // ------------------------------------------
+        function runPythonCode(source, stdin, startTime) {
+            const consoleScreen = document.getElementById('consoleScreen');
+            const statusEl = document.getElementById('execStatus');
+            const timeEl = document.getElementById('execTime');
+
+            let output = '';
+            const print = (...args) => { output += args.join(' ') + '\n'; };
+
+            // Stdin token scanner
+            let stdinTokens = (stdin || '').trim().split(/\s+/).filter(Boolean);
+            let tokenIndex = 0;
+            const input = (promptText = '') => {
+                if (promptText) output += promptText;
+                if (tokenIndex < stdinTokens.length) {
+                    return stdinTokens[tokenIndex++];
+                }
+                const val = prompt(promptText || "input() প্রদান করুন:");
+                return val !== null ? val : '';
+            };
+
+            try {
+                // If Pyodide is loaded, use it; otherwise run robust JS Python transpiler
+                executePythonSubset(source, print, input);
+                const elapsed = Math.round(performance.now() - startTime);
+                consoleScreen.innerText = output || '(প্রোগ্রামটি সফলভাবে রান করেছে)';
+                statusEl.innerHTML = '<span style="color:#10B981;"><i class="fa-solid fa-check"></i> পাইথন এক্সিকিউশন সফল</span>';
+                timeEl.innerText = `সময়: ${elapsed} ms`;
+            } catch (err) {
+                const elapsed = Math.round(performance.now() - startTime);
+                consoleScreen.innerText = output + '\n\n[Python Traceback/Error]:\n' + err.message;
+                statusEl.innerHTML = '<span style="color:#EF4444;"><i class="fa-solid fa-triangle-exclamation"></i> পাইথন এরর</span>';
+                timeEl.innerText = `সময়: ${elapsed} ms`;
+            }
+            switchOutputTab('console');
+        }
+
+        function executePythonSubset(pyCode, print, input) {
+            // Transpiles common HSC ICT Python code to JS
+            let js = pyCode
+                .split('\n')
+                .map(line => {
+                    // Comments
+                    if (line.trim().startsWith('#')) return '';
+                    // f-strings
+                    line = line.replace(/f"([^"]*)"/g, (m, p1) => {
+                        let templated = p1.replace(/\{([^}]+)\}/g, '${$1}');
+                        return `\`${templated}\``;
+                    });
+                    // print(...)
+                    line = line.replace(/\bprint\s*\(/g, 'print(');
+                    // input(...)
+                    line = line.replace(/\binput\s*\(/g, 'input(');
+                    // range(1, 11)
+                    line = line.replace(/\brange\s*\(([^)]+)\)/g, (m, args) => {
+                        let parts = args.split(',').map(s => s.trim());
+                        if (parts.length === 1) return `Array.from({length: ${parts[0]}}, (_, i) => i)`;
+                        if (parts.length === 2) return `Array.from({length: (${parts[1]}) - (${parts[0]})}, (_, i) => (${parts[0]}) + i)`;
+                        return `[]`;
+                    });
+                    // sum(...)
+                    line = line.replace(/\bsum\s*\(([^)]+)\)/g, '($1.reduce((a,b)=>a+b, 0))');
+                    // len(...)
+                    line = line.replace(/\blen\s*\(([^)]+)\)/g, '($1.length)');
+                    return line;
+                })
+                .join('\n');
+
+            // Handle indentation -> JS braces
+            let convertedJs = convertPythonIndentToJs(js);
+            const fn = new Function('print', 'input', convertedJs);
+            fn(print, input);
+        }
+
+        function convertPythonIndentToJs(code) {
+            const rawLines = code.split('\n');
+            let out = [];
+            let indentStack = [0];
+
+            for (let raw of rawLines) {
+                if (!raw.trim()) continue;
+                let indent = raw.match(/^\s*/)[0].length;
+                let line = raw.trim();
+
+                while (indent < indentStack[indentStack.length - 1]) {
+                    indentStack.pop();
+                    out.push('}');
+                }
+
+                // If line ends with ':'
+                if (line.endsWith(':')) {
+                    line = line.slice(0, -1);
+                    if (line.startsWith('if ')) {
+                        line = `if (${line.slice(3).trim()}) {`;
+                    } else if (line.startsWith('elif ')) {
+                        line = `} else if (${line.slice(5).trim()}) {`;
+                    } else if (line === 'else') {
+                        line = `} else {`;
+                    } else if (line.startsWith('for ') && line.includes(' in ')) {
+                        let parts = line.slice(4).split(' in ');
+                        let v = parts[0].trim();
+                        let iter = parts[1].trim();
+                        line = `for (let ${v} of ${iter}) {`;
+                    } else if (line.startsWith('while ')) {
+                        line = `while (${line.slice(6).trim()}) {`;
+                    } else if (line.startsWith('def ')) {
+                        line = `function ${line.slice(4).trim()} {`;
+                    } else {
+                        line = line + ' {';
+                    }
+                    indentStack.push(indent + 4);
+                    out.push(line);
+                } else {
+                    if (!line.endsWith(';') && !line.endsWith('{') && !line.endsWith('}')) {
+                        line += ';';
+                    }
+                    out.push(line);
+                }
+            }
+
+            while (indentStack.length > 1) {
+                indentStack.pop();
+                out.push('}');
+            }
+
+            return out.join('\n');
+        }
+
+        // ==========================================
+        // প্রোগ্রাম সংরক্ষণ ও লোড করার ব্যবস্থা (LocalStorage)
+        // ==========================================
+
+        function getSavedPrograms() {
+            try {
+                const raw = localStorage.getItem(SAVED_CODES_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch(e) {
+                return [];
+            }
+        }
+
+        function openSaveModal() {
+            const input = document.getElementById('saveTitleInput');
+            if (input) input.value = '';
+            document.getElementById('saveCodeModal').classList.add('open');
+            setTimeout(() => { if (input) input.focus(); }, 100);
+        }
+
+        function closeSaveModal() {
+            document.getElementById('saveCodeModal').classList.remove('open');
+        }
+
+        function confirmSaveCode() {
+            const titleInput = document.getElementById('saveTitleInput');
+            const title = (titleInput && titleInput.value.trim()) ? titleInput.value.trim() : 'নামহীন প্রোগ্রাম';
+            const code = editor.value;
+
+            const programs = getSavedPrograms();
+            programs.unshift({
+                id: 'code_' + Date.now(),
+                title: title,
+                language: currentLang,
+                code: code,
+                date: new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+                timestamp: Date.now()
+            });
+
+            localStorage.setItem(SAVED_CODES_KEY, JSON.stringify(programs));
+            closeSaveModal();
+            showToastNotification('প্রোগ্রামটি সফলভাবে সংরক্ষণ করা হয়েছে!');
+        }
+
+        function openSavedCodesModal() {
+            renderSavedCodesList();
+            document.getElementById('myCodesModal').classList.add('open');
+        }
+
+        function closeSavedCodesModal() {
+            document.getElementById('myCodesModal').classList.remove('open');
+        }
+
+        function renderSavedCodesList() {
+            const container = document.getElementById('savedCodesListContainer');
+            const badge = document.getElementById('savedCodesCountBadge');
+            const programs = getSavedPrograms();
+
+            if (badge) badge.innerText = toBanglaNum(programs.length) + 'টি';
+
+            if (!programs || programs.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px 10px; color: #94A3B8;">
+                        <i class="fa-regular fa-folder-open fa-3x" style="margin-bottom: 10px;"></i>
+                        <p style="font-weight: 600; color: #64748B;">এখনও কোনো প্রোগ্রাম সংরক্ষণ করেননি</p>
+                        <p style="font-size: 0.85rem;">কোড এডিটরে প্রোগ্রাম লিখে "সংরক্ষণ" বাটনে ক্লিক করুন।</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            programs.forEach(item => {
+                const langLabels = { c: 'C Program', python: 'Python', html: 'HTML' };
+                const langBadgeColor = (item.language === 'c') ? '#4F46E5' : ((item.language === 'python') ? '#0284C7' : '#10B981');
+                html += `
+                    <div class="saved-code-item">
+                        <div class="saved-code-info">
+                            <h4>${escapeModernMCQOption(item.title)}</h4>
+                            <div>
+                                <span style="background: ${langBadgeColor}; color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; margin-right: 6px;">${langLabels[item.language] || item.language}</span>
+                                <span><i class="fa-regular fa-clock"></i> ${item.date}</span>
+                            </div>
+                        </div>
+                        <div class="saved-code-actions">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="loadSavedProgram('${item.id}')" title="এডিটরে ওপেন করুন">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> লোড
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="downloadProgram('${item.id}')" title="ডাউনলোড করুন">
+                                <i class="fa-solid fa-download"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="deleteSavedProgram('${item.id}')" title="মুছে ফেলুন" style="color: #EF4444; border-color: #FECACA;">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function loadSavedProgram(id) {
+            const programs = getSavedPrograms();
+            const item = programs.find(p => p.id === id);
+            if (!item) return;
+
+            switchLanguage(item.language);
+            editor.value = item.code;
+            updateLineNumbers();
+            closeSavedCodesModal();
+            showToastNotification(`"${item.title}" এডিটরে লোড করা হয়েছে`);
+        }
+
+        function deleteSavedProgram(id) {
+            if (!confirm('আপনি কি এই প্রোগ্রামটি মুছে ফেলতে চান?')) return;
+            let programs = getSavedPrograms();
+            programs = programs.filter(p => p.id !== id);
+            localStorage.setItem(SAVED_CODES_KEY, JSON.stringify(programs));
+            renderSavedCodesList();
+            showToastNotification('প্রোগ্রামটি মুছে ফেলা হয়েছে');
+        }
+
+        function downloadProgram(id) {
+            const programs = getSavedPrograms();
+            const item = programs.find(p => p.id === id);
+            if (!item) return;
+
+            const extMap = { c: '.c', python: '.py', html: '.html' };
+            const ext = extMap[item.language] || '.txt';
+            const filename = (item.title.replace(/[^a-zA-Z0-9_\-\u0980-\u09FF]/g, '_') || 'program') + ext;
+
+            const blob = new Blob([item.code], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToastNotification('কোড ফাইল ডাউনলোড সম্পন্ন হয়েছে');
+        }
+    
+
+        // Code / Output Screen Toggle Implementation
+        function toggleCompilerScreen(view) {
+            const codePanel = document.getElementById('view-code');
+            const outputPanel = document.getElementById('view-output');
+            const btnCode = document.getElementById('btn-toggle-code');
+            const btnOutput = document.getElementById('btn-toggle-output');
+
+            if (view === 'code') {
+                if (codePanel) codePanel.style.display = 'flex';
+                if (outputPanel) outputPanel.style.display = 'none';
+                if (btnCode) btnCode.classList.add('active');
+                if (btnOutput) btnOutput.classList.remove('active');
+                updateLineNumbers();
+                if (editor) editor.focus();
+            } else {
+                if (codePanel) codePanel.style.display = 'none';
+                if (outputPanel) outputPanel.style.display = 'flex';
+                if (btnCode) btnCode.classList.remove('active');
+                if (btnOutput) btnOutput.classList.add('active');
+            }
+        }
+
+        // Hook into runCode to automatically toggle to Output screen
+        const _origRunCode = window.runCode;
+        window.runCode = async function() {
+            // First switch to output tab so user immediately sees execution
+            toggleCompilerScreen('output');
+            if (typeof _origRunCode === 'function') {
+                await _origRunCode();
+            }
+        };
+    </script>
+</body>
+</html>

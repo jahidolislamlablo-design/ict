@@ -331,3 +331,74 @@
         font-size: 1rem;
     }
 }
+
+
+/* Mobile Responsive Enhancements for Live Exam View */
+@media (max-width: 768px) {
+    .exam-topbar {
+        padding: 10px 12px !important;
+        gap: 8px !important;
+        top: 0 !important;
+        border-radius: 12px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+    .exam-topbar > div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .exam-topbar .exam-timer {
+        font-size: 0.95rem !important;
+        padding: 4px 10px !important;
+        align-self: center;
+    }
+    .exam-topbar .btn {
+        width: 100% !important;
+    }
+    .exam-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .exam-questions-scroll-area {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .question-card {
+        padding: 14px 12px !important;
+        border-radius: 14px !important;
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    .options-grid.two-cols {
+        grid-template-columns: 1fr !important;
+    }
+    .option-item {
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        font-size: 0.90rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .option-left {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        gap: 8px !important;
+        word-break: break-word !important;
+    }
+    .option-left span:last-child {
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+}

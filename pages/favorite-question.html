@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফেভারিট প্রশ্নাবলি - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=3.0">
+    <style>
+        .fav-filter-wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .fav-tab-btn {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 14px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .fav-tab-btn i {
+            font-size: 1.35rem;
+            color: var(--primary);
+            transition: transform 0.2s ease;
+        }
+
+        .fav-tab-btn span.tab-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .fav-tab-btn span.tab-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--bg-page);
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            color: var(--text-muted);
+        }
+
+        .fav-tab-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .fav-tab-btn:hover i {
+            transform: scale(1.1);
+        }
+
+        .fav-tab-btn.active {
+            background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+            border-color: #4F46E5;
+            color: #FFFFFF;
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+        }
+
+        .fav-tab-btn.active i {
+            color: #FFFFFF;
+        }
+
+        .fav-tab-btn.active span.tab-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+        }
+
+        .fav-source-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #EEF2FF;
+            color: #4F46E5;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            margin-bottom: 8px;
+        }
+
+        .fav-empty-state {
+            background: #FFFFFF;
+            border: 2px dashed #CBD5E1;
+            border-radius: var(--radius-xl);
+            padding: 50px 20px;
+            text-align: center;
+            margin: 20px 0 40px 0;
+        }
+
+        .fav-empty-state i {
+            color: #94A3B8;
+            margin-bottom: 14px;
+        }
+
+        .fav-empty-state h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .fav-empty-state p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            max-width: 480px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .fav-filter-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .fav-tab-btn {
+                padding: 10px 8px;
+                border-radius: 14px;
+            }
+            .fav-tab-btn i {
+                font-size: 1.15rem;
+            }
+            .fav-tab-btn span.tab-title {
+                font-size: 0.82rem;
+            }
+            .fav-tab-btn span.tab-badge {
+                font-size: 0.70rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <button class="nav-back-btn desktop-back-btn" onclick="window.location.href='../index.html'" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>হোমে ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="window.location.href='../index.html'" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                                        <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                                        <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                                        <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                                        <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                                        <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                                        <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
+                    <span class="header-user-name">তানভীর</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব বার -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current">ফেভারিট প্রশ্নব্যাংক</span>
+                </div>
+            </div>
+
+            <!-- ব্যানার -->
+            <div class="page-header-banner" style="background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);">
+                <div class="page-header-text">
+                    <h1>সংরক্ষিত ফেভারিট প্রশ্নাবলি (Favorite Questions)</h1>
+                    <p>অধ্যায়ভিত্তিক, বোর্ড, টেস্ট পেপার ও মডেল টেস্ট থেকে আপনার ফেভারিটে যোগ করা বহুনির্বাচনি প্রশ্নাবলি এক জায়গায় অনুশীলন ও সংশোধন করুন।</p>
+                </div>
+            </div>
+
+            <!-- ৪টি ক্যাটাগরি বাটন -->
+            <div class="fav-filter-wrapper">
+                <!-- ১. অধ্যায় এর ফেবারিট প্রশ্ন -->
+                <button type="button" class="fav-tab-btn active" id="btn-fav-chapter" onclick="switchFavoriteCategory('chapter')">
+                    <i class="fa-solid fa-cubes-stacked"></i>
+                    <span class="tab-title">অধ্যায় এর ফেবারিট প্রশ্ন</span>
+                    <span class="tab-badge" id="count-fav-chapter">০টি প্রশ্ন</span>
+                </button>
+
+                <!-- ২. বোর্ড এর ফেবারিট প্রশ্ন -->
+                <button type="button" class="fav-tab-btn" id="btn-fav-board" onclick="switchFavoriteCategory('board')">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span class="tab-title">বোর্ড এর ফেবারিট প্রশ্ন</span>
+                    <span class="tab-badge" id="count-fav-board">০টি প্রশ্ন</span>
+                </button>
+
+                <!-- ৩. মডেল টেস্ট এর ফেবারিট প্রশ্ন -->
+                <button type="button" class="fav-tab-btn" id="btn-fav-model" onclick="switchFavoriteCategory('model_test')">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span class="tab-title">মডেল টেস্ট এর ফেবারিট প্রশ্ন</span>
+                    <span class="tab-badge" id="count-fav-model">০টি প্রশ্ন</span>
+                </button>
+
+                <!-- ৪. কলেজ এর ফেবারিট প্রশ্ন -->
+                <button type="button" class="fav-tab-btn" id="btn-fav-college" onclick="switchFavoriteCategory('college')">
+                    <i class="fa-solid fa-school"></i>
+                    <span class="tab-title">কলেজ এর ফেবারিট প্রশ্ন</span>
+                    <span class="tab-badge" id="count-fav-college">০টি প্রশ্ন</span>
+                </button>
+            </div>
+
+            <!-- টুলবার -->
+            <div class="quiz-toolbar" style="margin-bottom: 20px;">
+                <span class="quiz-progress-text" id="fav-total-heading"><i class="fa-solid fa-list-check"></i> অধ্যায় এর ফেভারিট প্রশ্ন: ০টি</span>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <button class="btn btn-outline btn-sm" onclick="clearCurrentCategoryFavorites()" title="এই ক্যাটাগরির সকল ফেভারিট মুছুন" style="color: #EF4444; border-color: #FECACA;">
+                        <i class="fa-solid fa-trash-can"></i> ক্যাটাগরি খালি করুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- প্রশ্নের কন্টেইনার -->
+            <div id="favorites-questions-container">
+                <!-- ডায়নামিকভাবে ফেভারিট প্রশ্ন লোড হবে -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- প্ল্যাটফর্ম ফুটার -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div>
+                <strong style="color: var(--primary);">ICT EASY LEARNING</strong> &copy; ২০২৬ । সর্বস্বত্ব সংরক্ষিত।
+            </div>
+            <div class="footer-links">
+                <a href="board-question.html">বোর্ড প্রশ্ন</a>
+                <a href="test-paper.html">টেস্ট পেপার</a>
+                <a href="chapter-prep.html">অধ্যায়ভিত্তিক</a>
+                <a href="model-test.html">মডেল টেস্ট</a>
+                <a href="favorite-question.html">ফেভারিট প্রশ্ন</a>
+                <a href="compiler.html">কোড কম্পাইলার</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+        <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js?v=3.0"></script>
+    <script src="../assets/js/main.js?v=3.0"></script>
+    <script>
+        let currentFavCategory = 'chapter'; // 'chapter', 'board', 'model_test', 'college'
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateAllCategoryCounts();
+            renderFavoritesList();
+        });
+
+        function updateAllCategoryCounts() {
+            const chapterCount = getFavoriteQuestions('chapter').length;
+            const boardCount = getFavoriteQuestions('board').length;
+            const modelCount = getFavoriteQuestions('model_test').length;
+            const collegeCount = getFavoriteQuestions('college').length;
+
+            const cEl = document.getElementById('count-fav-chapter');
+            const bEl = document.getElementById('count-fav-board');
+            const mEl = document.getElementById('count-fav-model');
+            const colEl = document.getElementById('count-fav-college');
+
+            if (cEl) cEl.innerText = toBanglaNum(chapterCount) + 'টি প্রশ্ন';
+            if (bEl) bEl.innerText = toBanglaNum(boardCount) + 'টি প্রশ্ন';
+            if (mEl) mEl.innerText = toBanglaNum(modelCount) + 'টি প্রশ্ন';
+            if (colEl) colEl.innerText = toBanglaNum(collegeCount) + 'টি প্রশ্ন';
+        }
+
+        function switchFavoriteCategory(category) {
+            currentFavCategory = category;
+
+            // বাটনের অ্যাক্টিভ স্টেট আপডেট
+            document.querySelectorAll('.fav-tab-btn').forEach(btn => btn.classList.remove('active'));
+            const btnId = (category === 'chapter') ? 'btn-fav-chapter' : 
+                          ((category === 'board') ? 'btn-fav-board' : 
+                          ((category === 'model_test') ? 'btn-fav-model' : 'btn-fav-college'));
+            const activeBtn = document.getElementById(btnId);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            renderFavoritesList();
+        }
+
+        function renderFavoritesList() {
+            const container = document.getElementById('favorites-questions-container');
+            const headingEl = document.getElementById('fav-total-heading');
+            if (!container) return;
+
+            const questions = getFavoriteQuestions(currentFavCategory);
+            updateAllCategoryCounts();
+
+            const categoryLabels = {
+                'chapter': 'অধ্যায় এর ফেবারিট প্রশ্ন',
+                'board': 'বোর্ড এর ফেবারিট প্রশ্ন',
+                'model_test': 'মডেল টেস্ট এর ফেবারিট প্রশ্ন',
+                'college': 'কলেজ এর ফেবারিট প্রশ্ন'
+            };
+
+            const targetPageLinks = {
+                'chapter': { url: 'chapter-prep.html', text: 'অধ্যায়ভিত্তিক প্রস্তুতিতে যান' },
+                'board': { url: 'board-question.html', text: 'বোর্ড প্রশ্ন অনুশীলনে যান' },
+                'model_test': { url: 'model-test.html', text: 'মডেল টেস্টে যান' },
+                'college': { url: 'test-paper.html', text: 'টেস্ট পেপারে যান' }
+            };
+
+            const label = categoryLabels[currentFavCategory] || 'ফেভারিট প্রশ্ন';
+            if (headingEl) {
+                headingEl.innerHTML = `<i class="fa-solid fa-list-check"></i> ${label}: ${toBanglaNum(questions.length)}টি`;
+            }
+
+            if (questions.length === 0) {
+                const target = targetPageLinks[currentFavCategory] || { url: '../index.html', text: 'অনুশীলন শুরু করুন' };
+                container.innerHTML = `
+                    <div class="fav-empty-state">
+                        <i class="fa-regular fa-bookmark fa-3x"></i>
+                        <h3>এই ক্যাটাগরিতে কোনো ফেভারিট প্রশ্ন নেই</h3>
+                        <p>আপনি এখনও ${label} ক্যাটাগরিতে কোনো প্রশ্ন সংরক্ষণ করেননি। প্রশ্ন পড়ার সময় "ফেভারিট" বাটনে ক্লিক করে সহজে এখানে সংরক্ষণ করে রাখতে পারবেন।</p>
+                        <a href="${target.url}" class="btn btn-primary" style="padding: 10px 24px; border-radius: 9999px;">
+                            <i class="fa-solid fa-play"></i> ${target.text}
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            questions.forEach((q, idx) => {
+                const sourceTag = q.source_title ? `<div class="fav-source-tag"><i class="fa-solid fa-tag"></i> ${q.source_title}</div>` : '';
+                html += `
+                    <div style="margin-bottom: 20px;">
+                        ${sourceTag}
+                        ${renderModernMCQCardHTML(q, idx, { mode: 'study', category: currentFavCategory, source_title: q.source_title })}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Global refresh callback called when toggleFavoriteQuestion removes or adds
+        window.refreshFavoriteQuestionsList = function() {
+            updateAllCategoryCounts();
+            renderFavoritesList();
+        };
+
+        function clearCurrentCategoryFavorites() {
+            const list = getFavoriteQuestions(currentFavCategory);
+            if (list.length === 0) {
+                alert('এই ক্যাটাগরিতে কোনো ফেভারিট প্রশ্ন নেই!');
+                return;
+            }
+
+            if (!confirm('আপনি কি এই ক্যাটাগরির সকল ফেভারিট প্রশ্ন মুছে ফেলতে চান?')) {
+                return;
+            }
+
+            let all = getFavoriteQuestions();
+            all = all.filter(item => item.category !== currentFavCategory);
+            localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(all));
+
+            updateAllCategoryCounts();
+            renderFavoritesList();
+            showToastNotification('ক্যাটাগরির প্রশ্নসমূহ মুছে ফেলা হয়েছে');
+        }
+    </script>
+</body>
+</html>
