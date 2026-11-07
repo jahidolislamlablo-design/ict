@@ -33674,5 +33674,5445 @@
     "_id": "6aef62db441e8a8634d0ca20",
     "createdAt": "2026-11-07T17:41:47.492Z",
     "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314af",
+    "serialNo": 1,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ৫ ও ৬ নং প্রশ্নের উত্তর দাও:\nfor (C = 15; C <= 25; C = C + 2)\n{\nprint f (\"Apple\");\nif (C == 21)\nbreak;\n}\nApple লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "২",
+      "৩",
+      "৪",
+      "৫"
+    ],
+    "correctAnswer": "৪",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.749Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b0",
+    "serialNo": 2,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "[উদ্দীপক:\nfor (C = 15; C <= 25; C = C + 2)\n{\n    print f (\"Apple\");\n    if (C == 21)\n        break;\n}]\nif শর্তটি বাদ দিলে Apple লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "৪",
+      "৫",
+      "৬",
+      "৭"
+    ],
+    "correctAnswer": "৬",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b1",
+    "serialNo": 3,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি প্রোগ্রামে int a [5] = {10, 20, 30, 40, 50}; থাকলে—\ni. a [0] এর মান 10     ii. a [2] এর মান 30\niii. a [5] এর মান 50\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b2",
+    "serialNo": 4,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি-প্রোগ্রামের ক্ষেত্রে লজিক্যাল অপারেটর কোনটি?",
+    "image": "",
+    "options": [
+      "্‌",
+      "<=",
+      "!=",
+      "=="
+    ],
+    "correctAnswer": "্‌",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b3",
+    "serialNo": 5,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি-ভাষায় উপাত্ত গ্রহণের কমান্ড কোনটি?",
+    "image": "",
+    "options": [
+      "main ( )",
+      "printf ( )",
+      "scanf ( )",
+      "getch ( )"
+    ],
+    "correctAnswer": "scanf ( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b4",
+    "serialNo": 6,
+    "categoryTypes": [
+      "Board Question",
+      "Chapter Practice"
+    ],
+    "categoryType": "Board Question",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "সকল বোর্ড",
+    "examYear": "2026",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "মেশিন লার্নিং ব্যবহার করে তৈরিকৃত NLP সফটওয়্যার কোনটি?",
+    "image": "",
+    "options": [
+      "রপৎড়ংড়ভঃ অুঁৎব",
+      "রপৎড়ংড়ভঃ ঈড়ঢ়রষড়ঃ",
+      "রপৎড়ংড়ভঃ ইধৎফ",
+      "রপৎড়ংড়ভঃ ঐঁন"
+    ],
+    "correctAnswer": "রপৎড়ংড়ভঃ ঈড়ঢ়রষড়ঃ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b5",
+    "serialNo": 7,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি মধ্যমস্তরের প্রোগ্রামিং ভাষা-",
+    "image": "",
+    "options": [
+      "C",
+      "python",
+      "PHP",
+      "FORTRAN"
+    ],
+    "correctAnswer": "C",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b6",
+    "serialNo": 8,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "মেশিনের ভাষায় রূপান্তরিত প্রোগ্রামকে কী বলা হয়?",
+    "image": "",
+    "options": [
+      "অ্যাসেম্বলার",
+      "ম্পাইলার",
+      "ইন্টারপ্রেটার",
+      "অবজেক্ট প্রোগ্রাম"
+    ],
+    "correctAnswer": "অবজেক্ট প্রোগ্রাম",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b7",
+    "serialNo": 9,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "পলিমরফিজম নিচের কোন ভাষার বৈশিষ্ট্য?",
+    "image": "",
+    "options": [
+      "সি++",
+      "ভিজ্যুয়াল বেসিক",
+      "জাভা",
+      "ওরাকল"
+    ],
+    "correctAnswer": "সি++",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b8",
+    "serialNo": 10,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "পাইথন কোন ধরনের ভাষা?",
+    "image": "",
+    "options": [
+      "মেশিন ভাষা",
+      "হাই লেভেল ভাষা",
+      "মিড লেভেল ভাষা",
+      "অ্যাসেম্বলী ভাষা"
+    ],
+    "correctAnswer": "হাই লেভেল ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314b9",
+    "serialNo": 11,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ভাষায় লিখা প্রোগ্রাম সবচেয়ে দ্রুত কার্যকর?",
+    "image": "",
+    "options": [
+      "মেশিন ভাষা",
+      "অ্যাসেম্বলি ভাষা",
+      "ইন্টারপ্রেটার",
+      "ম্পাইলার"
+    ],
+    "correctAnswer": "মেশিন ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ba",
+    "serialNo": 12,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রাম লিখার সাংকেতিক ভাষা কোনটি?",
+    "image": "",
+    "options": [
+      "মেশিন ভাষা",
+      "অ্যাসেম্বলি ভাষা",
+      "মধ্যস্তরের ভাষা",
+      "উচ্চস্তরের ভাষা"
+    ],
+    "correctAnswer": "অ্যাসেম্বলি ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314bb",
+    "serialNo": 13,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন প্রোগ্রাম ভাষা প্রোগ্রাম নির্বাহে কম সময় নেয়?",
+    "image": "",
+    "options": [
+      "মেশিন ভাষা",
+      "অ্যাসেম্বলি ভাষা",
+      "উচ্চস্তরের ভাষা",
+      "4 জি এল"
+    ],
+    "correctAnswer": "মেশিন ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314bc",
+    "serialNo": 14,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ভাষায় লিখিত প্রোগ্রামের জন্য অনুবাদক এর দরকার হয় না?",
+    "image": "",
+    "options": [
+      "atural",
+      "achine",
+      "Assambly",
+      "Very High"
+    ],
+    "correctAnswer": "achine",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314bd",
+    "serialNo": 15,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ভাষা মেমোরি অ্যাড্রেস নিয়ে সরাসরি কাজ করে?",
+    "image": "",
+    "options": [
+      "যন্ত্র ভাষা",
+      "অ্যাসেম্বলী ভাষা",
+      "উচ্চস্তরের ভাষা",
+      "অনুবাদক ভাষা"
+    ],
+    "correctAnswer": "যন্ত্র ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314be",
+    "serialNo": 16,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যে ভাষায় লিখিত প্রোগ্রাম কম্পিউটার সরাসরি বুঝতে পারে-",
+    "image": "",
+    "options": [
+      "১ম প্রজন্মের ভাষা",
+      "২য় প্রজন্মের ভাষা",
+      "উচ্চস্তরের ভাষা",
+      "অতি উচ্চস্তরের ভাষা"
+    ],
+    "correctAnswer": "১ম প্রজন্মের ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314bf",
+    "serialNo": 17,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন অনুবাদক প্রোগ্রাম দ্রুত ডিবাগ করে?",
+    "image": "",
+    "options": [
+      "ম্পাইলার",
+      "ইন্টারপ্রেটার",
+      "অ্যাসেম্বলার",
+      "ডিবাগার"
+    ],
+    "correctAnswer": "ইন্টারপ্রেটার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c0",
+    "serialNo": 18,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যাসেম্বলি ভাষায় লিখিত প্রোগ্রামকে মেশিন ভাষায় বস্তু প্রোগ্রামে অনুবাদ করে কোনটি?",
+    "image": "",
+    "options": [
+      "অ্যাসেম্বলার",
+      "ইন্টারপ্রেটার",
+      "ম্পাইলার",
+      "ডিবাগার"
+    ],
+    "correctAnswer": "অ্যাসেম্বলার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c1",
+    "serialNo": 19,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যাসেম্বলি ভাষার নির্দেশে কয়টি অংশ থাকে?",
+    "image": "",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "4",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c2",
+    "serialNo": 20,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি প্রোগ্রামের সব ভুলগুলো একসাথে প্রদর্শন করে কোনটি?",
+    "image": "",
+    "options": [
+      "ম্পাইলার",
+      "এসেম্বলার",
+      "ইন্টারপ্রেটার",
+      "ডিবাগিং"
+    ],
+    "correctAnswer": "ম্পাইলার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c3",
+    "serialNo": 21,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামের ভুলকে কী বলে?",
+    "image": "",
+    "options": [
+      "বাগ",
+      "ফ্লোচার্ট",
+      "সুডোকোড",
+      "ডিবাগ"
+    ],
+    "correctAnswer": "বাগ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c4",
+    "serialNo": 22,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যাসেম্বলি ভাষায় LDA কোড দ্বারা কি বুঝায়?",
+    "image": "",
+    "options": [
+      "অ্যাকিউমুলেটরে ডেটা সংরক্ষণ",
+      "প্রোগ্রাম থামানো",
+      "আউটপুট",
+      "ইনপুট"
+    ],
+    "correctAnswer": "অ্যাকিউমুলেটরে ডেটা সংরক্ষণ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c5",
+    "serialNo": 23,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অসীম লুপ হলে প্রোগ্রামে কোন ধরনের ভুল হবে?",
+    "image": "",
+    "options": [
+      "ব্যাকরণগত ভুল",
+      "যুক্তিগত ভুল",
+      "এক্সিকিউশন ভুল",
+      "ড্রাইরান ভুল"
+    ],
+    "correctAnswer": "ব্যাকরণগত ভুল",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c6",
+    "serialNo": 24,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যদি তুমি PRINT এর জায়গায় PRIMT টাইপ কর, তাহলে কোন ধরনের ভুল সংঘটিত হয়?",
+    "image": "",
+    "options": [
+      "লজিক্যাল ভুল",
+      "সিনট্যাক্স ভুল",
+      "এক্সিকিউশন ভুল",
+      "রানটাইম ভুল"
+    ],
+    "correctAnswer": "সিনট্যাক্স ভুল",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c7",
+    "serialNo": 25,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামে কোন ধরনের ভুলের জন্য কম্পিউটার বার্তা দেয়?",
+    "image": "",
+    "options": [
+      "সিনট্যাক্স ভুল",
+      "লজিক্যাল ভুল",
+      "ডেটা ভুল",
+      "যে কোনো ভুল"
+    ],
+    "correctAnswer": "সিনট্যাক্স ভুল",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.771Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c8",
+    "serialNo": 26,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যে ভাষায় প্রোগ্রাম লেখা হয় সেই ভাষার ব্যাকরণগত ভুলকে কী বলে?",
+    "image": "",
+    "options": [
+      "যুক্তিগত ভুল",
+      "সিনট্যাক্স ভুল",
+      "ডেটা ভুল",
+      "সাধারণ ভুল"
+    ],
+    "correctAnswer": "সিনট্যাক্স ভুল",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.771Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314c9",
+    "serialNo": 27,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "চিহ্ন দ্বারা প্রোগ্রামের কি বুঝানো হয়?",
+    "image": "/uploads/images/mcq_ch5_image3.png",
+    "options": [
+      "শুরু",
+      "ইনপুট",
+      "সিদ্ধান্ত",
+      "প্রক্রিয়াকরণ"
+    ],
+    "correctAnswer": "প্রক্রিয়াকরণ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.771Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ca",
+    "serialNo": 28,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সংযুক্তির জন্য ব্যবহৃত ফ্লোচার্ট কোনটি?",
+    "image": "",
+    "options": [
+      "রম্বস",
+      "বৃত্ত",
+      "সামান্তরিক",
+      "আয়তক্ষেত্র"
+    ],
+    "correctAnswer": "বৃত্ত",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.771Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314cb",
+    "serialNo": 29,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যালগরিদমের চিত্ররূপকে কী বলা হয়?",
+    "image": "",
+    "options": [
+      "Bar Chart",
+      "Chart",
+      "Pie Chart",
+      "Flow Chart"
+    ],
+    "correctAnswer": "Flow Chart",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.771Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314cc",
+    "serialNo": 30,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি Relationship এর Symbol?",
+    "image": "",
+    "options": [
+      "<img src=\"/uploads/images/mcq_ch5_image4.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch5_image5.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch5_image6.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch5_image7.png\" style=\"max-height: 48px; vertical-align: middle;\">"
+    ],
+    "correctAnswer": "<img src=\"/uploads/images/mcq_ch5_image7.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314cd",
+    "serialNo": 31,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনো ভেরিয়েবেলে ডেটা এবং ইন্সট্রাকশন একত্রিত অবস্থায় থাকাকে বলা হয়-",
+    "image": "",
+    "options": [
+      "পলিমরফিজম",
+      "এনক্যাপসুলেশন",
+      "ইনহেরিটেন্স",
+      "ইভেন্ট ড্রাইভেন"
+    ],
+    "correctAnswer": "এনক্যাপসুলেশন",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ce",
+    "serialNo": 32,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি একটি Parent class এর সকল বৈশিষ্ট্য child class ব্যবহার করে?",
+    "image": "",
+    "options": [
+      "Polymorphism",
+      "Inheritance",
+      "Encapsulation",
+      "Thread"
+    ],
+    "correctAnswer": "Inheritance",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314cf",
+    "serialNo": 33,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং ল্যাংগুয়েজ?",
+    "image": "",
+    "options": [
+      "BASIC",
+      "HTML",
+      "C",
+      "Java"
+    ],
+    "correctAnswer": "Java",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d0",
+    "serialNo": 34,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ভিজ্যুয়াল বেসিক তৈরি করেন কে?",
+    "image": "",
+    "options": [
+      "ডেনিস রিচি",
+      "অ্যালান কুপার",
+      "মরি টারফ",
+      "বিল গেঁস"
+    ],
+    "correctAnswer": "অ্যালান কুপার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d1",
+    "serialNo": 35,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "(C) প্রোগ্রামে run করার কমান্ড কোনটি?",
+    "image": "",
+    "options": [
+      "Ctrl + F6",
+      "Ctrl + F9",
+      "Ctrl + F10",
+      "Alt + Ctrl + F9"
+    ],
+    "correctAnswer": "Ctrl + F10",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d2",
+    "serialNo": 36,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "C ভাষায় লিখিত প্রোগ্রামের কোডকে কি বলা হয়?",
+    "image": "",
+    "options": [
+      "অ্যাসকি",
+      "সোর্স",
+      "অবজেক্ট",
+      "ইউনিকোড"
+    ],
+    "correctAnswer": "সোর্স",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d3",
+    "serialNo": 37,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "'সি' নামক ভাষার জন্ম কোন ভাষা থেকে?",
+    "image": "",
+    "options": [
+      "সি",
+      "ডি",
+      "এ",
+      "বি"
+    ],
+    "correctAnswer": "বি",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d4",
+    "serialNo": 38,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "‘C’ ভাষাটি কোন অপারেটিং সিস্টেমে ব্যবহার করে উদ্ভাবন করা হয়?",
+    "image": "",
+    "options": [
+      "Unix",
+      "inux",
+      "ac",
+      "Android"
+    ],
+    "correctAnswer": "Unix",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d5",
+    "serialNo": 39,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি কম্পাইল করে নির্বাহ করলে প্রোগ্রামের ফলাফল পাওয়া যায়?",
+    "image": "",
+    "options": [
+      "সোর্স প্রোগ্রাম",
+      "অ্যালগরিদম",
+      "ফ্লোচার্ট",
+      "সুডো কোড"
+    ],
+    "correctAnswer": "সোর্স প্রোগ্রাম",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.772Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d6",
+    "serialNo": 40,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় তৈরি করা প্রোগ্রাম ফাইলের এক্সটেনশন কোনটি?",
+    "image": "",
+    "options": [
+      "doc",
+      "txt",
+      "cpp",
+      "xls"
+    ],
+    "correctAnswer": "cpp",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d7",
+    "serialNo": 41,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামের কোন অংশে লোকাল ভেরিয়েবল ডিক্লেয়ার করা হয়?",
+    "image": "",
+    "options": [
+      "প্রোগ্রামের বাইরে",
+      "প্রোগ্রামের ভিতরে",
+      "লিংক সেকশনে",
+      "হেডার ফাইলে"
+    ],
+    "correctAnswer": "প্রোগ্রামের ভিতরে",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d8",
+    "serialNo": 42,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় চলকের নাম হিসেবে কোনটি ভুল?",
+    "image": "",
+    "options": [
+      "mark27",
+      "275N",
+      "275ICT",
+      "ict275"
+    ],
+    "correctAnswer": "275ICT",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314d9",
+    "serialNo": 43,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "চলকের নাম হিসাবে নিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "F_Name",
+      "Fname!",
+      "College number",
+      "got"
+    ],
+    "correctAnswer": "F_Name",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314da",
+    "serialNo": 44,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় ৪৬৩ কোন ধরনের ডেটা?",
+    "image": "",
+    "options": [
+      "int",
+      "char",
+      "double",
+      "float"
+    ],
+    "correctAnswer": "int",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314db",
+    "serialNo": 45,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "int ডেটা টাইপের রেঞ্জ কোনটি?",
+    "image": "",
+    "options": [
+      "– ১২৮ হতে + ১২৭",
+      "– ২৭৬৮ হতে + ৩২৭৬৭",
+      "– ৬৫৫২৬ হতে + ৬৫৫৩৫",
+      "– ২১৪৭৪৮৩৬৪৮ হতে + ২১৪৭৪৮৩৬৪৭"
+    ],
+    "correctAnswer": "– ২১৪৭৪৮৩৬৪৮ হতে + ২১৪৭৪৮৩৬৪৭",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314dc",
+    "serialNo": 46,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় ব্যবহৃত সঠিক চলক কোনটি?",
+    "image": "",
+    "options": [
+      "1-x",
+      "_ X",
+      "main",
+      "if"
+    ],
+    "correctAnswer": "_ X",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314dd",
+    "serialNo": 47,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "C language এ \\n, \\t, \\a সাধারণত কোন নামে পরিচিত?",
+    "image": "",
+    "options": [
+      "eyword",
+      "Data type",
+      "Statement",
+      "Escape sequence"
+    ],
+    "correctAnswer": "Escape sequence",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314de",
+    "serialNo": 48,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "x চলকটি int হলে এর ডেটা ইনপুট করার C ভাষার স্টেটমেন্ট কোনটি?",
+    "image": "",
+    "options": [
+      "scanf (“%f”, &x);",
+      "scanf (“%d”, &n);",
+      "scanf (“%d”, &C);",
+      "scanf (“%d”, &x);"
+    ],
+    "correctAnswer": "scanf (“%d”, &x);",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314df",
+    "serialNo": 49,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Signed number ডেটার রেঞ্জক কত?",
+    "image": "",
+    "options": [
+      "– 128 থেকে 127",
+      "– 127 থেকে 128",
+      "128 থেকে – 127",
+      "127 থেকে – 128"
+    ],
+    "correctAnswer": "– 128 থেকে 127",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e0",
+    "serialNo": 50,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "float ডেটার ফরম্যাট স্পেসিফায়ার কোনটি?",
+    "image": "",
+    "options": [
+      "%f",
+      "%d",
+      "%x",
+      "%c"
+    ],
+    "correctAnswer": "%f",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e1",
+    "serialNo": 51,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "float টাইপ ডেটা ভেরিয়েবলের জন্য কম্পাইলার মেমোরিতে কত বিট জায়গা সংরক্ষণ করে?",
+    "image": "",
+    "options": [
+      "8",
+      "16",
+      "32",
+      "64"
+    ],
+    "correctAnswer": "32",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e2",
+    "serialNo": 52,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি সংরক্ষিত শব্দ নয়?",
+    "image": "",
+    "options": [
+      "break",
+      "if",
+      "else",
+      "function"
+    ],
+    "correctAnswer": "function",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e3",
+    "serialNo": 53,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for (a = 1; a < = 10; a + +) statement টিতে কয়টি রিলেশনাল অপারেটন রয়েছে?",
+    "image": "",
+    "options": [
+      "১",
+      "২",
+      "৩",
+      "৪"
+    ],
+    "correctAnswer": "১",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e4",
+    "serialNo": 54,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রামিং এ লাইন ব্রেকের কাজ করে-",
+    "image": "",
+    "options": [
+      "/n",
+      "\\t",
+      "\\a",
+      "\\n"
+    ],
+    "correctAnswer": "\\n",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e5",
+    "serialNo": 55,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় কোনটি কী ওয়ার্ড?",
+    "image": "",
+    "options": [
+      "stdio",
+      "conio",
+      "double",
+      "again"
+    ],
+    "correctAnswer": "double",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e6",
+    "serialNo": 56,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এর C ভাষায় এক্সপ্রেশন কোনটি?",
+    "image": "",
+    "options": [
+      "5*x2 + 3*x + 4",
+      "5*x2 + 3x + 4",
+      "5*x*x + 3*x + 4",
+      "5*x2 + 3^x + 4"
+    ],
+    "correctAnswer": "5*x*x + 3*x + 4",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e7",
+    "serialNo": 57,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "C ভাষার রিলেশন অপারেটর কোনটি?",
+    "image": "",
+    "options": [
+      "+",
+      "&&",
+      "||",
+      "<"
+    ],
+    "correctAnswer": "<",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e8",
+    "serialNo": 58,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "y* = x/5; x এবং y এর মান যথাক্রমে 5 ও 30 হলে y এর নতুন মান কত?",
+    "image": "",
+    "options": [
+      "5",
+      "6",
+      "30",
+      "35"
+    ],
+    "correctAnswer": "30",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314e9",
+    "serialNo": 59,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি রিলেশনাল অপারেটর হচ্ছে-",
+    "image": "",
+    "options": [
+      "+",
+      "==",
+      "AND",
+      "OR"
+    ],
+    "correctAnswer": "==",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ea",
+    "serialNo": 60,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "pow(12/4 + 1), (10% 4) – 3*4 Statement টির value কত হবে?",
+    "image": "",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "4",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314eb",
+    "serialNo": 61,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় বিপ/এলার্ম তৈরির ব্যাকস্লাস ক্যারেক্টার কোনটি?",
+    "image": "",
+    "options": [
+      "\\a",
+      "\\b",
+      "\\n",
+      "\\r"
+    ],
+    "correctAnswer": "\\a",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ec",
+    "serialNo": 62,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "(14% 3) – 4 + 2 * 3 + 7 রাশিটির মান সি ভাষায় কত হবে?",
+    "image": "",
+    "options": [
+      "11",
+      "9",
+      "9",
+      "11"
+    ],
+    "correctAnswer": "11",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ed",
+    "serialNo": 63,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "MOD 3 = কত?",
+    "image": "",
+    "options": [
+      "4.66",
+      "0",
+      "4",
+      "2"
+    ],
+    "correctAnswer": "2",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ee",
+    "serialNo": 64,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় || কে কোন ধরনের অপারেটর বলা হয়?",
+    "image": "",
+    "options": [
+      "Arithmetic",
+      "Relational",
+      "ogical",
+      "Assignment"
+    ],
+    "correctAnswer": "ogical",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ef",
+    "serialNo": 65,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "main()\n{\nint a, b, c, d;\na = 7;\nb = a++;\nc = ++a;\nd = a–-;\nprintf(“%d %d %d %d”, a, b, c, d);\n}\nউপরের statement এর ফলাফল কোনটি?",
+    "image": "",
+    "options": [
+      "7, 7, 8, 9",
+      "7, 8, 8, 9",
+      "8, 7, 8, 9",
+      "8, 7, 9, 9"
+    ],
+    "correctAnswer": "8, 7, 9, 9",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f0",
+    "serialNo": 66,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ইনপুট স্টেটমেন্ট?",
+    "image": "",
+    "options": [
+      "scanf ( )",
+      "Puts ( )",
+      "if – else",
+      "for ....."
+    ],
+    "correctAnswer": "scanf ( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f1",
+    "serialNo": 67,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "X চলকটি integer type হলে ডেটা ইনপুট করার জন্য সি ভাষায় স্টেটমেন্ট কোনটি?",
+    "image": "",
+    "options": [
+      "scanf(“%f” &x)",
+      "scanf(“d”, n)",
+      "scanf(“%d” *x)",
+      "scanf(“%d”,&x)"
+    ],
+    "correctAnswer": "scanf(“%d”,&x)",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f2",
+    "serialNo": 68,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রামিং-এর ভাষায় বহুল ব্যবহৃত স্টেটমেন্ট কোনটি?",
+    "image": "",
+    "options": [
+      "Control Statement",
+      "Assignment Statement",
+      "Conditional Statement",
+      "if-else-statement"
+    ],
+    "correctAnswer": "Control Statement",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f3",
+    "serialNo": 69,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "তিনটি পূর্ণসংখ্যা (x, y, z) এর মান ইনপুট নেওয়ার জন্য ইনপুট ফাংশনের সঠিক ব্যবহার নিচের কোনটি?",
+    "image": "",
+    "options": [
+      "scanf (“%d, %d, %d”, &x, &y, &z);",
+      "scanf (“%d %d %d”, &x, &y, &z);",
+      "scanf (“%d, %d d d”, &x, &y, &z);",
+      "scanf (“%d, %d, %d”, x, y, z);"
+    ],
+    "correctAnswer": "scanf (“%d %d %d”, &x, &y, &z);",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f4",
+    "serialNo": 70,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "C ভাষায় ‘\\n’ এর কাজ কী?",
+    "image": "",
+    "options": [
+      "২টি শব্দের মাঝে ফাঁকা করা",
+      "২টি লাইনের মাঝে জায়গা বাড়ানো",
+      "নতুন লাইন শুরু করা",
+      "োনো লাইনকে ইন অ্যাকটিভ করা"
+    ],
+    "correctAnswer": "নতুন লাইন শুরু করা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f5",
+    "serialNo": 71,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for (i = 1, i < 10; i + = 4)\nprintf (“%d”,i);\nকোনটি উপরের প্রোগ্রামের ফলাফল?",
+    "image": "",
+    "options": [
+      "১ ৪ ৯",
+      "১ ৫ ৯",
+      "২ ৪ ৮",
+      "১ ৫ ৮"
+    ],
+    "correctAnswer": "১ ৫ ৯",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f6",
+    "serialNo": 72,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for(i = 0; i<=10; i = i + 2) লুপটি কোন স্টেটমেন্টের উপর প্রয়োগ হলে সেই স্টেটমেন্ট কতবার নির্বাহ হবে?",
+    "image": "",
+    "options": [
+      "১০",
+      "১১",
+      "৫",
+      "৬"
+    ],
+    "correctAnswer": "৬",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f7",
+    "serialNo": 73,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Expression এর শেষে একটি সেমিকোলন থাকলে তাকে কী বলে?",
+    "image": "",
+    "options": [
+      "ফাংশন",
+      "ধ্রুবক",
+      "স্টেটমেন্ট",
+      "চলক"
+    ],
+    "correctAnswer": "স্টেটমেন্ট",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f8",
+    "serialNo": 74,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামে কোনো স্টেটমেন্ট বার বার নির্বাহের জন্য নিচের কোনটি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "লুপ",
+      "অ্যারে",
+      "ফাংশন",
+      "ন্ডিশনাল স্টেটমেন্ট"
+    ],
+    "correctAnswer": "লুপ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314f9",
+    "serialNo": 75,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কন্ডিশনাল কন্ট্রোল স্টেটমেন্ট?",
+    "image": "",
+    "options": [
+      "2টি",
+      "3টি",
+      "4টি",
+      "5টি"
+    ],
+    "correctAnswer": "4টি",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314fa",
+    "serialNo": 76,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for (i=2; i<10; i=i+4) এর printf(“%d”, i) ধারা কোনটি?",
+    "image": "",
+    "options": [
+      "2, 4, 8, 10",
+      "1, 2, 3, 4, 10",
+      "2, 6, 10",
+      "2, 6"
+    ],
+    "correctAnswer": "2, 6",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314fb",
+    "serialNo": 77,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for(i=2;i<=10;i=i+2) printf(“%d”, i) এর আউটপুট কোনটি?",
+    "image": "",
+    "options": [
+      "2, 3, 4, 5, 6, 7, 8, 9, 10",
+      "2, 4, 6, 8, 10",
+      "2, 3, 5, 7, 9, 10",
+      "2, 3, 4, 5, 6, 7, 8, 9"
+    ],
+    "correctAnswer": "2, 4, 6, 8, 10",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314fc",
+    "serialNo": 78,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "বড় বড় প্রোগ্রামকে ছোট অংশে ভাগ করার পদ্ধতিকে কী বলে?",
+    "image": "",
+    "options": [
+      "অ্যারে",
+      "পয়েন্টার",
+      "লুপ",
+      "ফাংশন"
+    ],
+    "correctAnswer": "ফাংশন",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314fd",
+    "serialNo": 79,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি পুনরাবৃত্তিমূলক স্টেটমেন্ট?",
+    "image": "",
+    "options": [
+      "FOR-THEN",
+      "DO",
+      "FOR-LOOP",
+      "IF-THEN"
+    ],
+    "correctAnswer": "FOR-LOOP",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314fe",
+    "serialNo": 80,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Pow ( ) ফাংশনের হেডার ফাইল কোনটি?",
+    "image": "",
+    "options": [
+      "stdio.h",
+      "conio.h",
+      "math.h",
+      "ctype.h"
+    ],
+    "correctAnswer": "math.h",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e314ff",
+    "serialNo": 81,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি সি ভাষার ফাংশন?",
+    "image": "",
+    "options": [
+      "int",
+      "stdio.h",
+      "printf",
+      "for"
+    ],
+    "correctAnswer": "printf",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31500",
+    "serialNo": 82,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিকার্সিব ফাংশন কী?",
+    "image": "",
+    "options": [
+      "একটি ইউজার ডিফাইন্ড ফাংশন",
+      "একটি ফাংশন অন্য কোনো ফাংশনকে যেকোনো সংখ্যক বার কল করতে পারে",
+      "ফাংশনের রিটান টাইপ",
+      "লাইব্রেরি ফাংশন"
+    ],
+    "correctAnswer": "একটি ইউজার ডিফাইন্ড ফাংশন",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31501",
+    "serialNo": 83,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "printf() ফাংশনের হেডার ফাইল কোনটি?",
+    "image": "",
+    "options": [
+      "#include<conio.h>",
+      "#include<stdio.h>",
+      "#include<math.h>",
+      "#include<string.h>"
+    ],
+    "correctAnswer": "#include<stdio.h>",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31502",
+    "serialNo": 84,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্ট্রিং আউটপুট পাওয়ার জন্য কোনটি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "scanf ()",
+      "puts ()",
+      "getchar ()",
+      "putchar ()"
+    ],
+    "correctAnswer": "puts ()",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31503",
+    "serialNo": 85,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় নিচের কোন ফাংশন দ্বারা বর্গমূল নির্ণয় করা যায়?",
+    "image": "",
+    "options": [
+      "printf ( )",
+      "abs ( )",
+      "sqrt ( )",
+      "scanf ( )"
+    ],
+    "correctAnswer": "sqrt ( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31504",
+    "serialNo": 86,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ত্রিমাত্রিক অ্যারের উদাহরণ-",
+    "image": "",
+    "options": [
+      "int a [5] [3]",
+      "int a [2]",
+      "int a [3] [3] [8]",
+      "int a [3, 3]"
+    ],
+    "correctAnswer": "int a [3] [3] [8]",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31505",
+    "serialNo": 87,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ফাংশনটি সি প্রোগ্রামিং ভাষার আউটপুট দেওয়ার বহুল ব্যবহৃত লাইব্রেরি ফাংশন?",
+    "image": "",
+    "options": [
+      "scanf( )",
+      "printf( )",
+      "scan( )",
+      "print( )"
+    ],
+    "correctAnswer": "printf( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31506",
+    "serialNo": 88,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "লাইব্রেরি ফাংশনের প্রোটোটাইপ কোন ফাইলে বর্ণিত থাকে?",
+    "image": "",
+    "options": [
+      "Source File",
+      "Object File",
+      "Header File",
+      "Exe File"
+    ],
+    "correctAnswer": "Header File",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31507",
+    "serialNo": 89,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "‘C’ প্রোগ্রামের লুপ স্টেটমেন্ট-\ni. For\tii. do.......while\niii. While\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31508",
+    "serialNo": 90,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রামিং ল্যাঙ্গুয়েজের কী ওয়ার্ড হলো-\ni. auto\tii. double\niii. union\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31509",
+    "serialNo": 91,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনো প্রোগ্রাম রচনার পূর্বে-\ni. অ্যালগরিদম তৈরি করতে হয়\nii. ফ্লোচার্ট তৈরি করতে হয়\niii. ডিবাগিং করতে হয়\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "i ও ii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3150a",
+    "serialNo": 92,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রাম ++i অপারেটরকে বলা হয়-\ni. ইনক্রিমেন্ট অপারেটর\tii. ডিক্রিমেন্ট অপারেটর\niii. Prefix\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3150b",
+    "serialNo": 93,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় ধ্রুবক ঘোষণার ফরমেট হলো-\ni. const constname=value\nii. const datatype constname=value;\niii. #define constant = constvalue\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3150c",
+    "serialNo": 94,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যারে হচ্ছে-\ni. একই ধরনের ডেটা সমষ্টি\nii. কিছু ভেরিয়েবল সেট\niii. ০.১ এর সমাবেশ\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3150d",
+    "serialNo": 95,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্ট্রাকচার্ড প্রোগ্রামের গঠন-\ni. পর্যায়ক্রমিক\tii. সিদ্ধান্তমূলক\niii. লুপ\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3150e",
+    "serialNo": 96,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রামে নিচের কোনগুলো লাইব্রেরি ফাংশন-\ni. printf\tii. scanf\niii. gets\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3150f",
+    "serialNo": 97,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "য় শুদ্ধ চলক হতে পারে-\ni. MyName\tii. My-Name\niii. My$Name\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31510",
+    "serialNo": 98,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "For লুপ এর গুরুত্বপূর্ণ অংশ-\ni. Counter initialization\nii. Condition\niii. Counter update\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31511",
+    "serialNo": 99,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "For লুপ এর গুরুত্বপূর্ণ অংশ-\ni. Counter initialization\nii. Condition\niii. Counter update\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.775Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31512",
+    "serialNo": 100,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ৯৪ ও ৯৫ নং প্রশ্নের উত্তর দাও:\nmain()\n{\nfloat n;\nscanf (“%f”,&n);\nprintf(“%f”,sqrt(n));\ngetch();\n}\nউদ্দীপকে ব্যবহৃত ডেটা টাইপের জন্য কত বাইট মেমোরি প্রয়োজন?",
+    "image": "",
+    "options": [
+      "১",
+      "২",
+      "৪",
+      "৮"
+    ],
+    "correctAnswer": "৪",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31513",
+    "serialNo": 101,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের আউটপুট দেখার জন্য আবশ্যকীয় হেডার ফাইল হলো-\ni. stdio.h\tii. Conio.h\niii. math.h\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31514",
+    "serialNo": 102,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "5, D, 15 ----- ধারাটির পরবর্তী সংখ্যা কোনটি?",
+    "image": "",
+    "options": [
+      "20",
+      "29",
+      "1C",
+      "1D"
+    ],
+    "correctAnswer": "1D",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31515",
+    "serialNo": 103,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং প্রশ্নের উত্তর দাও:\nmain()\n{int a = 5, b = 4;\na + = b;\nprintf(“%d”, sqrt(a));}\nউপরের কোডে কোন ধরনের অপারেটর ব্যবহতৃ হয়েছে?",
+    "image": "",
+    "options": [
+      "অ্যাসাইনমেন্ট অপারেটর",
+      "টারনারি অপারেটর",
+      "বিটওয়াইজ অপারেটর",
+      "রিলেশনাল অপারেটর"
+    ],
+    "correctAnswer": "অ্যাসাইনমেন্ট অপারেটর",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31516",
+    "serialNo": 104,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উপরের কোডে কোন ধরনের হেডার ফাইল আবশ্যক-\ni. stdio.h\tii. conio.h\niii. math.h\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31517",
+    "serialNo": 105,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ৯৯ ও ১০০ নং প্রশ্নের উত্তর দাও:\n#include<stdio.h>\nint main ()\n{\tfloat a, b, sum;\nscanf (“%f%f”, &a, &b);\nsum = a + b;\nprintf(“sum=%f”, sum);\nreturn 0;\n}\nভ্যারিয়েবলগুলো মেমোরিতে মোট কত বিট স্থান দখল করবে?",
+    "image": "",
+    "options": [
+      "৯৬",
+      "৬৪",
+      "৩২",
+      "১২"
+    ],
+    "correctAnswer": "৩২",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31518",
+    "serialNo": 106,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামে ফরম্যাট স্পেসিফায়ার কয়বার ব্যবহার হয়েছে?",
+    "image": "",
+    "options": [
+      "১",
+      "২",
+      "৩",
+      "৪"
+    ],
+    "correctAnswer": "৩",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31519",
+    "serialNo": 107,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের তথ্যের আলোকে ১০১ ও ১০২ নং প্রশ্নের উত্তর দাও:\n#include<stdio.h>\nmain ( ){\nint i, s = 0\nfor (i=1; i<=6; i ++)\n{\ns=s+i;\n}\nPrintf(“%d”,S);\n}\nপ্রোগ্রামটির Output কত?",
+    "image": "",
+    "options": [
+      "6",
+      "15",
+      "19",
+      "21"
+    ],
+    "correctAnswer": "21",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3151a",
+    "serialNo": 108,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "“i” এর মানের কী পরিবর্তনে Output 12 হবে-",
+    "image": "",
+    "options": [
+      "i = 0, i = i + 1",
+      "i = 1, i = i + 2",
+      "i =2, i = i + 1",
+      "i = 2, i = i + 2"
+    ],
+    "correctAnswer": "i = 2, i = i + 2",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3151b",
+    "serialNo": 109,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৩ ও ১০৪ নং প্রশ্নের উত্তর দাও:\nint main()\n{\nfloat x;\nprintf(“Enter the number.”);\nscanf(“%d”,&x);\nreturn 0;\n}\nউদ্দীপকে X হলো-",
+    "image": "",
+    "options": [
+      "vairable",
+      "constant",
+      "statement",
+      "keyword"
+    ],
+    "correctAnswer": "vairable",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3151c",
+    "serialNo": 110,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামে উলিস্নখিত ভুল %d এর পরিবর্তে কি ব্যবহার করা যায়?",
+    "image": "",
+    "options": [
+      "%f",
+      "%s",
+      "%c",
+      "%x"
+    ],
+    "correctAnswer": "%f",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3151d",
+    "serialNo": 111,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের প্রোগ্রামটি দেখে ১০৫ ও ১০৬ নং প্রশ্নের উত্তর দাও:\nmain( )\n{ int a = 1;\ndo {\nif (a = = 6 || a = =9)\ncontinue;\nprintf (“%f”, a);\na = a + 2;\n}while (a < – 10)}\nপ্রোগ্রামটিতে কয়টি Syntax ভুল রয়েছে?",
+    "image": "",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "3",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3151e",
+    "serialNo": 112,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সংশোষিত প্রোগ্রামটির আউটপুট কোনটি?",
+    "image": "",
+    "options": [
+      "1, 3, 7",
+      "3, 5, 7",
+      "1, 7, 9",
+      "1, 3, 5, 7, 9"
+    ],
+    "correctAnswer": "1, 3, 7",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.776Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3151f",
+    "serialNo": 113,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৭ ও ১০৮ নং প্রশ্নের উত্তর দাও:\n#include<stdio.h>\nvoid main ( )\n{\nint x, a = 18, b = 15;\nx = (a>b)? a : b;\nprintf “%d”, x);\n}\nউদ্দীপকটির আউটপুট কি হবে?",
+    "image": "",
+    "options": [
+      "0",
+      "1",
+      "15",
+      "18"
+    ],
+    "correctAnswer": "18",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31520",
+    "serialNo": 114,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে ব্যবহৃত অপারেটর হচ্ছে-\ni. Assignment\tii. Relational\niii. Condtional\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31521",
+    "serialNo": 115,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১০৯ ও ১১০ নং প্রশ্নের উত্তর দাও:\nmain( )\n{\nint n;\nscanf(“%d”, &n);\nprintf(“%d”, abs(n));\ngetch ( );\n}\nপ্রসেসরের সবচেয়ে কাছে থাকে কোন মেমরি?",
+    "image": "",
+    "options": [
+      "্যাশ মেমরি",
+      "RAM",
+      "ROM",
+      "রেজিস্টার"
+    ],
+    "correctAnswer": "রেজিস্টার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31522",
+    "serialNo": 116,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে উলিস্নখিত প্রোগ্রামের হেডার ফাইল কোনটি?\ni. stdio.h\tii. Conio.h\niii. math.h\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31523",
+    "serialNo": 117,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে ব্যবহৃত  হলে প্রোগ্রামের আউটপুট কী হবে?",
+    "image": "",
+    "options": [
+      "–5",
+      "5",
+      "25",
+      "52"
+    ],
+    "correctAnswer": "5",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31524",
+    "serialNo": 118,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের ফ্লোচার্ট থেকে ১১২ ও ১১৩ নং প্রশ্নের উত্তর দাও:\nউপরের ফ্লোচার্টে 3 নং ধাপের প্রতীকটির অর্থ কী?",
+    "image": "/uploads/images/mcq_ch5_image8.png",
+    "options": [
+      "ইনপুট",
+      "আউটপুট",
+      "সিদ্ধান্ত",
+      "প্রক্রিয়াকরণ"
+    ],
+    "correctAnswer": "প্রক্রিয়াকরণ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31525",
+    "serialNo": 119,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উক্ত ফ্লোচার্টে N এর মান 5 হলে Output কত হবে?",
+    "image": "/uploads/images/mcq_ch5_image8.png",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "21"
+    ],
+    "correctAnswer": "10",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31526",
+    "serialNo": 120,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১১৪ ও ১১৫ নং প্রশ্নের উত্তর দাও:\n#include<stdio.h>\nint main0\n{\nint j;\nint i = 1;\nj=i++;\nprint(“i=%d”, i,j);\nreturn 0;}\nউদ্দীপকের i ও j দ্বারা কী বুঝায়?",
+    "image": "",
+    "options": [
+      "i = 1 ও j = 2",
+      "i = 2 ও j = 2",
+      "i = 2 ও j = 1",
+      "i = 1 ও j = 1"
+    ],
+    "correctAnswer": "i = 2 ও j = 1",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31527",
+    "serialNo": 121,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামে i = 2 ও j = 2 পেতে কি পরিবর্তন আনতে হবে?",
+    "image": "",
+    "options": [
+      "j = i + 2",
+      "j = ++i",
+      "j = i + 1",
+      "j = i ++"
+    ],
+    "correctAnswer": "j = ++i",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31528",
+    "serialNo": 122,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড়ে ১১৬ ও ১১৭ নং প্রশ্নের উত্তর দাও:\n#include<stdio.h>\nmain ()\n{\nfloat n;\nprintf (“Give input”)\nscanf (“%d”, %n)\nprintf (“%f”, n);\n}\nউদ্দীপকে n এর জন্য কত বাইট জায়গ্রা প্রয়োজন?",
+    "image": "",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "correctAnswer": "4",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31529",
+    "serialNo": 123,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের কোন স্টেটমেন্টটি ভুল?",
+    "image": "",
+    "options": [
+      "float n;",
+      "printf (“Give input”)",
+      "scanf (“%d”, &n)",
+      "printf(“%f”, n);"
+    ],
+    "correctAnswer": "scanf (“%d”, &n)",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3152a",
+    "serialNo": 124,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ১১৮ ও ১১৯ নং প্রশ্নের উত্তর দাও:\nmain ( )\n{\nfloat a;\nprintf(“Enter three Integers”);\nscanf (“%d”, &a);\nউদ্দীপকের “float a” তে a হচ্ছে-",
+    "image": "",
+    "options": [
+      "ধ্রুবক",
+      "চলক",
+      "্ষেত্রফল",
+      "ী-ওয়ার্ড"
+    ],
+    "correctAnswer": "চলক",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3152b",
+    "serialNo": 125,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে %d এর পরিবর্তে ব্যবহার করতে হবে-\ni. %f\tii. %x\niii. %3f\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3152c",
+    "serialNo": 126,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১২০ ও ১২১ নং প্রশ্নের উত্তর দাও:\n# include <stdio.h>\nmain ( ) {\nint i;\nfor (i = 1; i < = 6; i = i + 1)\n{\nif(i = = 4)\nContinue;\nprint f (“HTML”);\n}\n}\nউদ্দীপকের প্রোগ্রামটিতে “HTML” কতকবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctAnswer": "5",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3152d",
+    "serialNo": 127,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামটিতে ব্যবহৃত অপারেটরগুলো হচ্ছে—\ni. Arithmetic\tii. Logical\niii. Relational\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3152e",
+    "serialNo": 128,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্থায়ী মেমোরি হচ্ছে\ni. RAM\tii. Hard disks\niii. DVD\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3152f",
+    "serialNo": 129,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রাম ফ্লোচার্টে প্রক্রিয়াকরণে কোন প্রতীকটি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "বৃত্ত",
+      "সামান্তরিক",
+      "রম্বস",
+      "আয়তক্ষেত্র"
+    ],
+    "correctAnswer": "আয়তক্ষেত্র",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31530",
+    "serialNo": 130,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি টেক্সট এডিটর?",
+    "image": "",
+    "options": [
+      "নোটপ্যাড",
+      "জাভা",
+      "পাইথন",
+      "ওরাকল"
+    ],
+    "correctAnswer": "নোটপ্যাড",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31531",
+    "serialNo": 131,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রসেসরের সবচেয়ে কাছে থাকে কোনটি?",
+    "image": "",
+    "options": [
+      "রেজিস্টার",
+      "্যাশ মেমোরি",
+      "র্যাম",
+      "ভাচুর্য়াল মেমোরি"
+    ],
+    "correctAnswer": "রেজিস্টার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31532",
+    "serialNo": 132,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ে ২০%—৪০% সময় ব্যায় করা হয় কোনটিতে?",
+    "image": "",
+    "options": [
+      "রক্ষণাবেক্ষণ",
+      "নিরীক্ষণ",
+      "বিশ্লেষণ",
+      "ডিজাইন"
+    ],
+    "correctAnswer": "বিশ্লেষণ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31533",
+    "serialNo": 133,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামের ভুলত্রুটি সংশোধনের পদ্ধতিকে বলা হয়",
+    "image": "",
+    "options": [
+      "ডিকোডিং",
+      "এনকোডিং",
+      "ডিবাগিং",
+      "ারেকশন"
+    ],
+    "correctAnswer": "ডিবাগিং",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31534",
+    "serialNo": 134,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নট (!) অপারেটরের ক্ষেত্রে হতে পারে\ni. অপারেটরের পরে কেবল একটি শর্ত থাকবে\nii. শর্তটি মিথ্যা হলে পুরো শর্তটি সত্য হবে\niii. শর্তটি সত্য হলে পুরো শর্তটি মিথ্যা হবে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31535",
+    "serialNo": 135,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for (i = 1; i < = 6; i ++)\n{\nif (i = = 4)\ncontinue;\nprintf (“HSC Exam”);\n}\nউদ্দীপকের প্রোগ্রামটিতে “HSC Exam” কতবার প্রদর্শিত হবে—",
+    "image": "",
+    "options": [
+      "2",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctAnswer": "5",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31536",
+    "serialNo": 136,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি দেখ এবং ১৩ নং প্রশ্নের উত্তর দাও:\n# include <stdio.h>\nmain ( ){\nint a, b;\nb = 10;\na = b% 5;\nprintf (“%d”, a);\n}\nপ্রোগ্রামটির আউটপুট কত?",
+    "image": "",
+    "options": [
+      "0",
+      "2",
+      "5",
+      "10"
+    ],
+    "correctAnswer": "0",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31537",
+    "serialNo": 137,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "'সি' প্রোগ্রামিং ভাষা হলো\ni. 'সি' একটি কেস সেনসিটিভ ভাষা\nii. 'সি' একটি মধ্যম স্তরের ভাষা\niii. 'সি' একটি উচ্চ স্তরের ভাষা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31538",
+    "serialNo": 138,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামের লুপে i এর মান 1 বৃদ্ধি করতে ব্যবহৃত হয়\ni. i ++\tii. i = i + 1\niii. i + =1\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31539",
+    "serialNo": 139,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি লক্ষ্য কর এবং ১৩৩ ও ১৩৪ নং প্রশ্নের উত্তর দাও:\nfor ( i = 10; i < = 15; i + = 2)\n{\nif (i > 12)\nprint f (“%d”, i + 1);\nelse\nprint f (“%d”, i – 1);\n}\nউদ্দীপকের প্রোগ্রামটির আউটপুট কোনটি?",
+    "image": "",
+    "options": [
+      "9 11 15",
+      "10 11 15",
+      "10 12 15",
+      "9 11 14"
+    ],
+    "correctAnswer": "9 11 15",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3153a",
+    "serialNo": 140,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে i > 12 এর পরিবর্তে i < 12 হলে আউটপুট হবে",
+    "image": "",
+    "options": [
+      "11 13 15",
+      "11 11 13",
+      "11 13 13",
+      "10 12 14"
+    ],
+    "correctAnswer": "11 11 13",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3153b",
+    "serialNo": 141,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি অস্থায়ী মেমোরি?",
+    "image": "",
+    "options": [
+      "ROM",
+      "RAM",
+      "USB Drive",
+      "Hard disk"
+    ],
+    "correctAnswer": "RAM",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3153c",
+    "serialNo": 142,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি সঠিক চলক?",
+    "image": "",
+    "options": [
+      "1num",
+      "2  num",
+      "char",
+      "num2"
+    ],
+    "correctAnswer": "num2",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3153d",
+    "serialNo": 143,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ৫ ও ৬ নং প্রশ্নের উত্তর দাও:\nint I;\nfor (i = 3; i<=20; i = i + 3)\nPrintf(“ICT”);\nপ্রোগ্রামটি রান করলে ICT লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "৩",
+      "৬",
+      "১০",
+      "১৫"
+    ],
+    "correctAnswer": "৬",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3153e",
+    "serialNo": 144,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে Printf (“ICT”) স্টেটম্যান্ট এর পূর্বে if (i = = 12 || i = = 18) continue; ব্যবহার করা হলে ICT লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "4",
+      "5",
+      "12",
+      "18"
+    ],
+    "correctAnswer": "4",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3153f",
+    "serialNo": 145,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "for (i = 1; i < = 9; i + = 2) prit f (“%d,”, i);\nকোনটি উপরের স্টেটমেন্টের ফলাফল?",
+    "image": "",
+    "options": [
+      "1, 2, 3, 4, 5, 6, 7, 8, 9",
+      "1, 2, 3, 4, 5, 6, 7, 8",
+      "1, 3, 5, 7, 9",
+      "2, 4, 6, 8"
+    ],
+    "correctAnswer": "1, 3, 5, 7, 9",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31540",
+    "serialNo": 146,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামের ভুলত্রুটি খুঁজে বের করে, তা সংশোধনের পদ্ধতিকে কী বলে?",
+    "image": "",
+    "options": [
+      "োডিং",
+      "এনকোডিং",
+      "ডিকোডিং",
+      "ডিবাগিং"
+    ],
+    "correctAnswer": "ডিবাগিং",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31541",
+    "serialNo": 147,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় সমজাতীয় ডেটা সংরক্ষণ করে কোনটি?",
+    "image": "",
+    "options": [
+      "ফাংশন",
+      "অ্যারে",
+      "পয়েন্টার",
+      "স্ট্রাকচার"
+    ],
+    "correctAnswer": "অ্যারে",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31542",
+    "serialNo": 148,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রামে ডেটা আউটপুট এর জন্য ব্যবহৃত ফাংশন কোনটি?",
+    "image": "",
+    "options": [
+      "print f ( )",
+      "scan f ( )",
+      "float ( )",
+      "getch ( )"
+    ],
+    "correctAnswer": "print f ( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31543",
+    "serialNo": 149,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড় এবং ১৪৩ ও ১৪৪ নং প্রশ্নের উত্তর দাও:\n{\nS = 2;\nfor ( i = 1; i  10; i = i + 1)\ns = s + i;\nprintf (“%d”, s);\n}\nসি ভাষায় লেখা উদ্দীপকটির আউটপুট কত হবে?",
+    "image": "",
+    "options": [
+      "7",
+      "50",
+      "54",
+      "57"
+    ],
+    "correctAnswer": "57",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31544",
+    "serialNo": 150,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "‘i’ এর কোন মানের পরিবর্তনের জন্য আউটপুট 32 হবে?",
+    "image": "",
+    "options": [
+      "i = 2, i = i + 2",
+      "i = 1, i = i + 2",
+      "i = 2, i = i + 1",
+      "i = 0, i = i + 1"
+    ],
+    "correctAnswer": "i = 2, i = i + 2",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31545",
+    "serialNo": 151,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি লজিক্যাল অপারেটর?",
+    "image": "",
+    "options": [
+      "= =",
+      "| |",
+      "! =",
+      "> ="
+    ],
+    "correctAnswer": "| |",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31546",
+    "serialNo": 152,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "C + + ভাষাটি উদ্ভাবন করেন কে?",
+    "image": "",
+    "options": [
+      "ডেনিস রিচি",
+      "িডো ডান রসাম",
+      "জন স্ট্রাউস্ট্রপ",
+      "অ্যাডা লাভলেস"
+    ],
+    "correctAnswer": "জন স্ট্রাউস্ট্রপ",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31547",
+    "serialNo": 153,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডাটা টাইপ ডাবল এর ফরম্যাট স্পেসিফায়ার কোনটি?",
+    "image": "",
+    "options": [
+      "%i",
+      "%d",
+      "%lf",
+      "%C"
+    ],
+    "correctAnswer": "%lf",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31548",
+    "serialNo": 154,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কৃত্রিম বুদ্ধিমত্তার ক্ষেত্রগুলো হলো\ni. ন্যাচারাল ল্যাংগুয়েজ প্রসেসিং\tii. স্প্রেডশিট প্রসেসিং\niii. স্পিচ প্রসেসিং\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31549",
+    "serialNo": 155,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের অনুচ্ছেদটি পড় এবং ১৪৯ ও ১৫০ নং প্রশ্নের উত্তর দাও:\nখুশির নতুন মোবাইলটি দ্রুতগতিতে ডেটা ট্রান্সফার করতে পারে।\nসে এর মাধ্যমে 4k সমর্থিত টিভি প্রোগ্রাম উপভোগ করে।\nখুশি যে প্রজন্মের মোবাইল ফোন ব্যবহার করে",
+    "image": "",
+    "options": [
+      "১ম",
+      "৩য়",
+      "৪র্থ",
+      "৫ম"
+    ],
+    "correctAnswer": "৫ম",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3154a",
+    "serialNo": 156,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উক্ত প্রজন্মের মোবাইল ফোনের বৈশিষ্ট্য হচ্ছে\ni. world wide wireless web\nii. radio access technology\niii. Multiple input and multiple output\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3154b",
+    "serialNo": 157,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি রিলেশনাল অপারেটর?",
+    "image": "",
+    "options": [
+      "## =",
+      "! =",
+      "<<",
+      ">>"
+    ],
+    "correctAnswer": "! =",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3154c",
+    "serialNo": 158,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দুটি স্ট্রিং এর মাঝে তুলনা করার জন্য C প্রোগ্রামিং ল্যাঙ্গুয়েজে কোন লাইব্রেরি ফাংশন ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "Strcmp ( )",
+      "Strlen ( )",
+      "Stin ( )",
+      "Strpn ( )"
+    ],
+    "correctAnswer": "Strcmp ( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3154d",
+    "serialNo": 159,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১৫৩ ও ১৫৪ নং প্রশ্নের উত্তর দাও:\n# include <stdio.h>\nmain ( )\n{ float A = 21.5;\nfloat B = 9.7;\nfloat sum = A + B;\nprint f (“summation %2f”, sum);\n}\nপ্রোগ্রামটির আউটপুট কত হবে?",
+    "image": "",
+    "options": [
+      "31",
+      "31.20",
+      "32",
+      "32.20"
+    ],
+    "correctAnswer": "31.20",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3154e",
+    "serialNo": 160,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামটির ভ্যারিয়েবলগুলো মেমোরিতে মোট কত বাইট জায়গা দখল করবে?",
+    "image": "",
+    "options": [
+      "৮",
+      "১২",
+      "১৬",
+      "২০"
+    ],
+    "correctAnswer": "১২",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3154f",
+    "serialNo": 161,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ডেটা টাইপ?",
+    "image": "",
+    "options": [
+      "main",
+      "double",
+      "prinf",
+      "scanf"
+    ],
+    "correctAnswer": "double",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31550",
+    "serialNo": 162,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় “%” কোন ধরনের অপারেটর?",
+    "image": "",
+    "options": [
+      "অ্যারিথমেটিক",
+      "লজিক্যাল",
+      "রিলেশনাল",
+      "অ্যাসাইনমেন্ট"
+    ],
+    "correctAnswer": "অ্যারিথমেটিক",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31551",
+    "serialNo": 163,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "scanf ( ); এর জন্য কোন হেডার ফাইল সংযুক্ত করতে হয়?",
+    "image": "",
+    "options": [
+      "stdio.h",
+      "conio.h",
+      "math.h",
+      "string.h"
+    ],
+    "correctAnswer": "stdio.h",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31552",
+    "serialNo": 164,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কৃত্রিম বুদ্ধিমত্তার প্রোগ্রামিং ভাষা কোনটি?",
+    "image": "",
+    "options": [
+      "Basic",
+      "Cobol",
+      "PROLOG",
+      "C#"
+    ],
+    "correctAnswer": "PROLOG",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31553",
+    "serialNo": 165,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সফটওয়্যার তৈরির জন্য কী প্রয়োজন?",
+    "image": "",
+    "options": [
+      "হার্ডওয়্যার",
+      "প্রোগ্রাম",
+      "ম্পিউটার ভাষা",
+      "ফার্মওয়্যার"
+    ],
+    "correctAnswer": "ম্পিউটার ভাষা",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31554",
+    "serialNo": 166,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "}\nICT লেখাটি কতবার প্রিন্ট হবে?",
+    "image": "",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "3",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31555",
+    "serialNo": 167,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে M = M + 1; এর পরিবর্তে M = M + 2; স্টেটমেন্টটি ব্যবহার করলে “ICT” লেখাটি কতবার দেখাবে?",
+    "image": "",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "2",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31556",
+    "serialNo": 168,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১৯ নং প্রশ্নের উত্তর দাও:\n# include <stdio.h>\nmain ( ){\nint a = 3, b;\nb = 2 * a;\nprintf (“%d”, b);\n}\nউদ্দীপকের প্রোগ্রামটি রান করলে b এর মান কত হবে?",
+    "image": "",
+    "options": [
+      "৩",
+      "৪",
+      "৫",
+      "৬"
+    ],
+    "correctAnswer": "৬",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31557",
+    "serialNo": 169,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "( ? ) চিহ্নিত স্থানে কী হবে?",
+    "image": "/uploads/images/mcq_ch5_image9.png",
+    "options": [
+      "অ্যাসেম্বলার",
+      "ইন্টারপ্রেটার",
+      "ম্পাইলার",
+      "লিংকার"
+    ],
+    "correctAnswer": "ম্পাইলার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31558",
+    "serialNo": 170,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফ্লোটিং ডেটার ফরমেট স্পেসিফায়ার কোনটি?",
+    "image": "",
+    "options": [
+      "% f",
+      "% d",
+      "% c",
+      "% s"
+    ],
+    "correctAnswer": "% f",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31559",
+    "serialNo": 171,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কম্পিউটার সংশ্লিষ্ট যন্ত্রপাতিকে সঠিকভাবে পরিচালনার জন্য নিচের কোনটি প্রয়োজন?",
+    "image": "",
+    "options": [
+      "হার্ডওয়্যার",
+      "সফটওয়্যার",
+      "ইন্টারনেট",
+      "মানুষের জ্ঞান"
+    ],
+    "correctAnswer": "সফটওয়্যার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3155a",
+    "serialNo": 172,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি Volatile মেমোরি?",
+    "image": "",
+    "options": [
+      "হার্ডডিস্ক",
+      "রম",
+      "র্যাম",
+      "ডিভিডি"
+    ],
+    "correctAnswer": "র্যাম",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3155b",
+    "serialNo": 173,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিম্নগতি থেকে উচ্চ গতির সঠিক ক্রম কোনটি?",
+    "image": "",
+    "options": [
+      "ভাচুর্য়াল মেমোরি  রেজিষ্ট্রার  র্যাম",
+      "ভাচুর্য়াল মেমোরি  র্যাম  রেজিষ্ট্রার",
+      "রেজিস্টার  র্যাম  ভাচুর্য়াল মেমোরি",
+      "রেজিস্টার  ভাচুর্য়াল মেমোরি  র্যাম"
+    ],
+    "correctAnswer": "ভাচুর্য়াল মেমোরি  র্যাম  রেজিষ্ট্রার",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3155c",
+    "serialNo": 174,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "IEE কতৃর্ক কোন প্রোগ্রামিং ভাষা সর্বশ্রেষ্ঠ হিসাবে স্বীকৃতি পেয়েছে?",
+    "image": "",
+    "options": [
+      "সি",
+      "পাইথন",
+      "জাভা",
+      "ফোরট্রান"
+    ],
+    "correctAnswer": "পাইথন",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3155d",
+    "serialNo": 175,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "স্ট্রাকচার্ড প্রোগ্রাম হলো-\ni. বেসিক\tii. ভিজুয়াল বেসিক\niii. সি\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3155e",
+    "serialNo": 176,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যাসেম্বলি ভাষায় নেমোনিক কোড কোনটি?",
+    "image": "",
+    "options": [
+      "main",
+      "DIV",
+      "return",
+      "int"
+    ],
+    "correctAnswer": "DIV",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3155f",
+    "serialNo": 177,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অ্যাসেম্বলি ভাষার অপারেশন কোডগুলো হলো-\ni. MUL\tii. SUP\niii. ADD\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31560",
+    "serialNo": 178,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উচ্চ স্তরের ভাষায় লেখা কোডকে মেশিন কোডে রূপান্তর করার জন্য প্রয়োজনীয় অনুবাদক প্রোগ্রাম হলো-\ni. অ্যাসেম্বলার\tii. কম্পাইলার\niii. ইন্টারপ্রেটার\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31561",
+    "serialNo": 179,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি সার্বজনীন ভাষা?",
+    "image": "",
+    "options": [
+      "সি",
+      "জাভা",
+      "ওরাকল",
+      "পাইথন"
+    ],
+    "correctAnswer": "সি",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31562",
+    "serialNo": 180,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": ", ধ্রুবক এবং চলক\nক্যারেক্টার ইনপুট দেয়া যায় কোনটি দিয়ে?",
+    "image": "",
+    "options": [
+      "%c",
+      "%f",
+      "%lf",
+      "%d"
+    ],
+    "correctAnswer": "%c",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31563",
+    "serialNo": 181,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নতুন লাইনের শুরুতে আউটপুট প্রদর্শনের জন্য নিচের কোন escape sequence টি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "//n",
+      "\\\\n",
+      "/n",
+      "\\n"
+    ],
+    "correctAnswer": "\\n",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31564",
+    "serialNo": 182,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "পূর্ণসংখ্যার ফরম্যাট স্পেসিফায়ার কোনটি?",
+    "image": "",
+    "options": [
+      "%c",
+      "%f",
+      "%lf",
+      "%d"
+    ],
+    "correctAnswer": "%d",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31565",
+    "serialNo": 183,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Double টাইপ ডাটা নির্ধারণে মেমোরিতে কত বাইট জায়গা প্রয়োজন?",
+    "image": "",
+    "options": [
+      "২",
+      "৪",
+      "৮",
+      "১৬"
+    ],
+    "correctAnswer": "৮",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31566",
+    "serialNo": 184,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফরম্যাট স্পেসিফায়ার হলো-\ni. %d\tii. %if\niii. %c\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31567",
+    "serialNo": 185,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি রিলেশনাল অপারেটর?",
+    "image": "",
+    "options": [
+      "! =",
+      "= +",
+      "/=",
+      "% ="
+    ],
+    "correctAnswer": "! =",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31568",
+    "serialNo": 186,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি রিলেশনাল অপারেটর?",
+    "image": "",
+    "options": [
+      "=",
+      "&&",
+      "= =",
+      "!"
+    ],
+    "correctAnswer": "= =",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31569",
+    "serialNo": 187,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "'সি' প্রোগ্রামিং ভাষায় ভাগশেষ নির্ণয় করার জন্য অপারেটর হল-",
+    "image": "",
+    "options": [
+      "%",
+      "/",
+      "&",
+      "!"
+    ],
+    "correctAnswer": "%",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3156a",
+    "serialNo": 188,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "'C' ভাষায় লজিক্যাল অপারেটর কোনটি?",
+    "image": "",
+    "options": [
+      "&",
+      "!",
+      "=",
+      ">"
+    ],
+    "correctAnswer": "!",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3156b",
+    "serialNo": 189,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "C ভাষায় F = POW (5, (7 MOD 3))+(6/3) * 2 + 5 হলে F এর সরলীকৃত মান কত?",
+    "image": "",
+    "options": [
+      "14",
+      "31",
+      "34",
+      "40"
+    ],
+    "correctAnswer": "14",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3156c",
+    "serialNo": 190,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনগুলো সঠিক Keyword?\ni. scan\tii. double\niii. float\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3156d",
+    "serialNo": 191,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ১৮৫ ও ১৮৬ নং প্রশ্নের উত্তর দাও:\n#include <stdio.h>\nmain ()\nint a, b;\nb = 125\na=b%25;\nprint f(\"%d\",a);\nপ্রোগ্রামটির আউটপুট কত?",
+    "image": "",
+    "options": [
+      "0",
+      "5",
+      "25",
+      "50"
+    ],
+    "correctAnswer": "0",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3156e",
+    "serialNo": 192,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকে ব্যবহৃত প্রোগ্রামিং ভাষাটি হচ্ছে-\ni. general purpose language\nii. mid-level language\niii. case sensitive language\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3156f",
+    "serialNo": 193,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ১৮৭ ও ১৮৮ নং প্রশ্নের উত্তর দাও:\nmain ()\n}\nint x = 100;\nx/= 20;\nprint f(\"%d\", pow (x, 2));\n}\nউদ্দীপকের কোডের আউটপুট কত হবে?",
+    "image": "",
+    "options": [
+      "5",
+      "20",
+      "25",
+      "100"
+    ],
+    "correctAnswer": "25",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31570",
+    "serialNo": 194,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের কোডে আবশ্যকীয় হেডার ফাইল হলো-\ni. stodio.h\tii. conio.h\niii. math.h\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31571",
+    "serialNo": 195,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ১৮৯ ও ১৯০ নং প্রশ্নের উত্তর দাও:\nint i;\nfor(i = 1; i ≤ 5; i++);\n{\nif(i == 3);\n{\ncontinue;\n}\nprintf(\"%d\",i);\nসিনটেক্সগুলোতে কয়টি ভুল রয়েছে?",
+    "image": "",
+    "options": [
+      "২",
+      "৩",
+      "৪",
+      "৫"
+    ],
+    "correctAnswer": "৫",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31572",
+    "serialNo": 196,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "গ্রোগ্রামটি সি ভাষায় সঠিকভাবে লেখা হলে এর আউটপুট কী হবে?",
+    "image": "",
+    "options": [
+      "11",
+      "15",
+      "1245",
+      "12345"
+    ],
+    "correctAnswer": "1245",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31573",
+    "serialNo": 197,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ১৯১ ও ১৯২ নং প্রশ্নের উত্তর দাও:\n#include <stdio.h>\nvoid main()\n{int i, n = 10;\nfor (i = 1 ; i < = n ; i + =3)\n{if (i == 4) continue;\nprint f(\"\\nGood\");\n}\n}\nউদ্দপিকের কোডটির আউটপুটে \"Good\" লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "10"
+    ],
+    "correctAnswer": "3",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31574",
+    "serialNo": 198,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের কোডে \"i + = 3\" এর পরিবর্তে \"i ++ বসালে \"Good\" লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "4",
+      "5",
+      "9",
+      "10"
+    ],
+    "correctAnswer": "9",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31575",
+    "serialNo": 199,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "While লুপের শর্ত কখন পরীক্ষা করা হয়?",
+    "image": "",
+    "options": [
+      "লুপের শুরুতে",
+      "লুপের শেষে",
+      "লুপের মাঝখানে",
+      "যেকোনো সময়"
+    ],
+    "correctAnswer": "লুপের শুরুতে",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31576",
+    "serialNo": 200,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ১৯৪ ও ১৯৫ নং প্রশ্নের উত্তর দাও:\n#include <stdio.h>\nmain(){\nint C, S = 1;\nfor (C=2; C<= 10; C+= 3) {\nS=S+C; }\nprintf(\"%d\", S); }\nপ্রোগ্রামটি রান করালে আউটপুট কত হবে?",
+    "image": "",
+    "options": [
+      "15",
+      "16",
+      "18",
+      "19"
+    ],
+    "correctAnswer": "16",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31577",
+    "serialNo": 201,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রোগ্রামটির আউটপুট 127 পেতে হলে কী পরিবর্তন করতে হবে?",
+    "image": "",
+    "options": [
+      "C = 1, S = S + C * C;",
+      "C = 2, S = S + C * C;",
+      "C = 3, S = S + C * C;",
+      "C = 4, S = S + C * C;"
+    ],
+    "correctAnswer": "C = 3, S = S + C * C;",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31578",
+    "serialNo": 202,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ৩৬ ও ৩৭ নং প্রশ্নের উত্তর দাও:\nint k\nfor(k = 7; k<49; k=k+7)\nprintf(\"Exam\\n\");\nপ্রোগ্রামটি রান করলে \"Exam\" লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "6",
+      "7",
+      "25",
+      "49"
+    ],
+    "correctAnswer": "6",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e31579",
+    "serialNo": 203,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Printf (\"Exam\\n\") statement এর পূর্বে if (k = = 35) break; ব্যবহার করা হলে \"Exam\" লেখাটি কতবার প্রদর্শিত হবে?",
+    "image": "",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "7"
+    ],
+    "correctAnswer": "4",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3157a",
+    "serialNo": 204,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকের আলোকে ১৯৮ ও ১৯৯ নং প্রশ্নের উত্তর দাও:\n#include <stdio.h> main ()\n{\nint i, s = 0;\nfor (i = 1; i <= 6; i++)\n{\ns=s+i;\n}\nprint f(\"%d\", s);\n}\nপ্রোগ্রামটির আউটপুট কত?",
+    "image": "",
+    "options": [
+      "10",
+      "15",
+      "21",
+      "28"
+    ],
+    "correctAnswer": "21",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3157b",
+    "serialNo": 205,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "\"i\" এর মানের কোন কোন পরিবর্তনে আউটপুট 10 হবে?",
+    "image": "",
+    "options": [
+      "i = 0, i = i + 1",
+      "i = 2, i = i + 1",
+      "i = 3, i = i + 1",
+      "i = 4, i = i + 2"
+    ],
+    "correctAnswer": "i = 4, i = i + 2",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3157c",
+    "serialNo": 206,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি ভাষায় সমজাতীয় ডেটা সংরক্ষণের জন্য কোনটি ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "ফাংশন",
+      "পয়েন্টার",
+      "স্ট্রাকচার",
+      "অ্যারে"
+    ],
+    "correctAnswer": "অ্যারে",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3157d",
+    "serialNo": 207,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "sয়rt ( ) এর জন্য প্রয়োজনীয় হেডার ফাইল হলো-",
+    "image": "",
+    "options": [
+      "<stodio.h>",
+      "<conio.h>",
+      "<string.h>",
+      "<math.h>"
+    ],
+    "correctAnswer": "<math.h>",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3157e",
+    "serialNo": 208,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "লাইব্রেরী ফাংশনে getch( ) এর হেডার ফাইল-",
+    "image": "",
+    "options": [
+      "graphics.h",
+      "math.h",
+      "stdio.h",
+      "conio.h"
+    ],
+    "correctAnswer": "conio.h",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aef756a0264256038e3157f",
+    "serialNo": 209,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সি প্রোগ্রামিংয়ে একটি স্ট্রিংয়ের দৈঘ্যর্ বের করার জন্য কোন ফাংশনটি ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "String ( )",
+      "Strlen ( )",
+      "Strcmp ( )",
+      "Charlen ( )"
+    ],
+    "correctAnswer": "Strlen ( )",
+    "explanation": "",
+    "createdAt": "2026-11-07T19:00:58.780Z",
+    "__v": 0
   }
 ]
