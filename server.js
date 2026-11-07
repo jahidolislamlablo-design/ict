@@ -1019,6 +1019,9 @@ app.put('/api/mcqs/:id', async (req, res) => {
       return res.status(404).json({ success: false, message: 'MCQ প্রশ্নটি পাওয়া যায়নি' });
     }
 
+    await syncDatabaseJson('mcqs');
+    autoPushToGitHub('Update MCQ: ' + (updatedMcq.question ? updatedMcq.question.slice(0, 30) : req.params.id));
+
     res.status(200).json({
       success: true,
       message: '✅ MCQ সফলভাবে আপডেট করা হয়েছে!',
@@ -1040,6 +1043,8 @@ app.delete('/api/mcqs/:id', async (req, res) => {
     if (!deletedMcq) {
       return res.status(404).json({ success: false, message: 'MCQ প্রশ্নটি পাওয়া যায়নি' });
     }
+    await syncDatabaseJson('mcqs');
+    autoPushToGitHub('Delete MCQ: ' + req.params.id);
     res.status(200).json({ success: true, message: 'MCQ প্রশ্নটি সফলভাবে মুছে ফেলা হয়েছে' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -1270,6 +1275,9 @@ app.put('/api/cqs/:id', async (req, res) => {
       return res.status(404).json({ success: false, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿' });
     }
 
+    await syncDatabaseJson('cqs');
+    autoPushToGitHub('Update CQ: ' + req.params.id);
+
     res.status(200).json({
       success: true,
       message: 'âœ… CQ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡!',
@@ -1291,6 +1299,8 @@ app.delete('/api/cqs/:id', async (req, res) => {
     if (!deletedCq) {
       return res.status(404).json({ success: false, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿' });
     }
+    await syncDatabaseJson('cqs');
+    autoPushToGitHub('Delete CQ: ' + req.params.id);
     res.status(200).json({ success: true, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦®à§à¦›à§‡ à¦«à§‡à¦²à¦¾ à¦¹à§Ÿà§‡à¦›à§‡' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
