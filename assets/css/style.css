@@ -1138,53 +1138,55 @@ input:checked + .slider:before {
    ========================================================================== */
 
 /* ==========================================================================
-   FOOTER (Developer Branding & Copyright)
+   FOOTER (Centered Developer Branding & Copyright)
    ========================================================================== */
 .site-footer {
     background-color: #FFFFFF;
     border-top: 1px solid #E2E8F0;
     margin-top: auto;
-    padding: 32px 24px 85px 24px; /* space for mobile bottom nav */
+    padding: 36px 20px 90px 20px; /* space for mobile bottom nav */
     box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.02);
+    text-align: center;
 }
 
 .footer-container {
-    max-width: var(--container-max);
+    max-width: 600px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-/* বাম পাশে ডেভেলপার প্রোফাইল */
-.footer-developer-card {
-    display: inline-flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
 
+/* কেন্দ্রে সারিবদ্ধ ডেভেলপার প্রোফাইল কার্ড */
+.footer-developer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
 .developer-avatar-wrapper {
-    width: 68px;
-    height: 68px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
-    border: 2.5px solid #4F46E5;
-    padding: 2px;
+    border: 3px solid #4F46E5;
+    padding: 2.5px;
     background: #FFFFFF;
-    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.18);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.22);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-bottom: 6px;
+    margin: 0 auto 10px auto;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .footer-developer-card:hover .developer-avatar-wrapper {
-    transform: scale(1.05);
-    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.28);
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.32);
 }
 
 .developer-avatar-img {
@@ -1200,39 +1202,46 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    text-align: center;
+    gap: 4px;
+    width: 100%;
 }
 
 .developer-role {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #4F46E5;
-    letter-spacing: 0.3px;
-    text-transform: capitalize;
+    letter-spacing: 0.4px;
+    margin: 0;
 }
 
 .developer-name {
-    font-size: 0.96rem;
+    font-size: 1.10rem;
     font-weight: 800;
     color: #0F172A;
-    margin: 0;
-    letter-spacing: 0.4px;
+    margin: 2px 0;
+    letter-spacing: 0.5px;
     font-family: inherit;
 }
 
 .developer-degree {
-    font-size: 0.80rem;
-    font-weight: 500;
-    color: #64748B;
-}
-
-/* ডান পাশে কপিরাইট নোটিশ */
-.footer-copyright-text {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 500;
     color: #475569;
-    text-align: right;
-    margin-left: auto;
+    margin: 0 0 8px 0;
+}
+
+/* কপিরাইট নোটিশ (সেন্টারে অ্যালাইন করা) */
+.footer-copyright-text {
+    font-size: 0.90rem;
+    font-weight: 500;
+    color: #64748B;
+    text-align: center;
+    margin: 6px auto 0 auto;
+    padding-top: 10px;
+    border-top: 1px dashed #E2E8F0;
+    width: 100%;
+    max-width: 440px;
 }
 
 .footer-copyright-text .brand-copy-name {
@@ -1243,18 +1252,20 @@ input:checked + .slider:before {
 
 @media (max-width: 768px) {
     .site-footer {
-        padding: 24px 16px 95px 16px;
+        padding: 26px 16px 95px 16px;
     }
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 18px;
+    .developer-avatar-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    .developer-name {
+        font-size: 1.02rem;
+    }
+    .developer-degree {
+        font-size: 0.84rem;
     }
     .footer-copyright-text {
-        text-align: center;
-        margin-left: 0;
-        font-size: 0.88rem;
+        font-size: 0.86rem;
     }
 }
 
