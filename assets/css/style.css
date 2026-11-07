@@ -1096,39 +1096,47 @@ input:checked + .slider:before {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 65px;
+    height: 66px;
     background-color: var(--bg-card);
     border-top: 1px solid var(--border-color);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.05);
+    padding: 0 4px;
+    box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.06);
     z-index: 1000;
 }
 
 .nav-item {
+    flex: 1 1 0;
+    min-width: 0;
     text-decoration: none;
     color: var(--text-muted);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    padding: 6px 16px;
+    gap: 3px;
+    padding: 6px 2px;
     border-radius: var(--radius-md);
     transition: var(--transition);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .nav-item i {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
 
-.nav-item:hover {
-    color: var(--primary);
+.nav-item .nav-label-multiline {
+    line-height: 1.12;
+    text-align: center;
+    font-size: 0.67rem;
+    display: inline-block;
 }
 
+.nav-item:hover,
 .nav-item.active {
     color: var(--primary);
 }

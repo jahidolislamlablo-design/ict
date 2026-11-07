@@ -49,9 +49,12 @@ async function loadRankingsData() {
             }
         }
 
+        // টপে "আপনার প্রোফাইল" কার্ড ফিক্সড রেন্ডার
+        renderCurrentUserProfileCard(currentLoggedInUser);
+
+        // শীর্ষ ৩ জনের পোডিয়াম ও সম্পূর্ণ র‍্যাংকিং
         renderPodium(allStudentsData.slice(0, 3));
         renderRankingList(allStudentsData);
-        renderCurrentUserStickyBar(currentLoggedInUser);
 
     } catch (err) {
         console.error('Failed to load rankings:', err);
@@ -66,7 +69,57 @@ async function loadRankingsData() {
     }
 }
 
-// ১. পোডিয়াম রেন্ডার (Top 3 Students)
+// ১. টপে "আপনার প্রোফাইল" ফিক্সড কার্ড রেন্ডার
+function renderCurrentUserProfileCard(user) {
+    const card = document.getElementById('currentUserProfileCard');
+    if (!card) return;
+
+    if (!user) {
+        card.style.display = 'none';
+        return;
+    }
+
+    const toBn = (n) => (window.toBanglaNum ? window.toBanglaNum(n) : n);
+
+    card.style.display = 'flex';
+    card.innerHTML = `
+        <div class="user-top-info-group">
+            <div class="user-top-avatar-box">
+                <img src="${resolveAvatar(user.avatar)}" alt="${escapeHtml(user.name)}" class="user-top-avatar" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'">
+                <div class="user-top-online-dot" title="সক্রিয় শিক্ষার্থী"></div>
+            </div>
+            <div class="user-top-meta">
+                <div class="user-top-badge">
+                    <i class="fa-solid fa-id-badge"></i> আপনার প্রোফাইল
+                </div>
+                <h3 class="user-top-name">${escapeHtml(user.name)}</h3>
+                <p class="user-top-college"><i class="fa-solid fa-graduation-cap"></i> ${escapeHtml(user.college || 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল')}</p>
+            </div>
+        </div>
+
+        <div class="user-top-stats-group">
+            <div class="top-stat-pill position-pill">
+                <i class="fa-solid fa-ranking-star"></i>
+                <div class="top-stat-text">
+                    <span class="stat-label">বর্তমান স্থান</span>
+                    <strong class="stat-value">${toBn(user.position || 4)}ম</strong>
+                </div>
+            </div>
+            <div class="top-stat-pill points-pill-top">
+                <i class="fa-solid fa-trophy"></i>
+                <div class="top-stat-text">
+                    <span class="stat-label">অর্জিত পয়েন্ট</span>
+                    <strong class="stat-value">${toBn(user.points || 0)}</strong>
+                </div>
+            </div>
+            <a href="model-test.html" class="top-action-btn" title="পয়েন্ট বাড়াতে টেস্ট দিন">
+                <i class="fa-solid fa-play"></i> মডেল টেস্ট দিন
+            </a>
+        </div>
+    `;
+}
+
+// ২. পোডিয়াম রেন্ডার (Top 3 Students)
 function renderPodium(top3) {
     const podiumContainer = document.getElementById('podiumContainer');
     if (!podiumContainer) return;
@@ -128,7 +181,7 @@ function renderPodium(top3) {
     `;
 }
 
-// ২. সম্পূর্ণ র‍্যাংকিং তালিকা রেন্ডার
+// ৩. সম্পূর্ণ র‍্যাংকিং তালিকা রেন্ডার
 function renderRankingList(students) {
     const listContainer = document.getElementById('rankingListContainer');
     const countDisplay = document.getElementById('rankingTotalCount');
@@ -195,43 +248,6 @@ function renderRankingList(students) {
     });
 
     listContainer.innerHTML = html;
-}
-
-// ৩. স্টিকি বর্তমান ইউজার বার
-function renderCurrentUserStickyBar(user) {
-    const bar = document.getElementById('currentUserStickyBar');
-    if (!bar) return;
-
-    if (!user) {
-        bar.style.display = 'none';
-        return;
-    }
-
-    const toBn = (n) => (window.toBanglaNum ? window.toBanglaNum(n) : n);
-
-    bar.style.display = 'flex';
-    bar.innerHTML = `
-        <div class="user-sticky-info">
-            <img src="${resolveAvatar(user.avatar)}" alt="${escapeHtml(user.name)}" class="user-sticky-avatar" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'">
-            <div class="user-sticky-text">
-                <h4>${escapeHtml(user.name)} (আপনার প্রোফাইল)</h4>
-                <p>${escapeHtml(user.college || 'সরকারি মুজিব কলেজ, সখিপুর')}</p>
-            </div>
-        </div>
-        <div class="user-sticky-stats">
-            <div class="sticky-stat-item">
-                <strong>${toBn(user.position || 4)}ম</strong>
-                <span>বর্তমান স্থান</span>
-            </div>
-            <div class="sticky-stat-item">
-                <strong>${toBn(user.points || 0)}</strong>
-                <span>অর্জিত পয়েন্ট</span>
-            </div>
-            <a href="model-test.html" class="sticky-action-btn" title="পয়েন্ট বাড়াতে টেস্ট দিন">
-                <i class="fa-solid fa-play"></i> মডেল টেস্ট দিন
-            </a>
-        </div>
-    `;
 }
 
 // ৪. সার্চ ফিল্টারিং

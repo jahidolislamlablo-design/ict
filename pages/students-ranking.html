@@ -7,8 +7,8 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=4.5">
-    <link rel="stylesheet" href="../assets/css/ranking.css?v=4.5">
+    <link rel="stylesheet" href="../assets/css/style.css?v=4.6">
+    <link rel="stylesheet" href="../assets/css/ranking.css?v=4.6">
 </head>
 <body>
 
@@ -48,7 +48,7 @@
                 </ul>
             </div>
 
-            <!-- হেডার অ্যাকশন: ডান পাশে প্রোফাইল আইকনের বাম পাশে Students Rangking বাটন -->
+            <!-- হেডার অ্যাকশন: প্রোফাইল বাটন -->
             <div class="header-actions">
                 <a href="profile.html" class="header-user-btn" title="আমার প্রোফাইল">
                     <img src="../assets/images/developer.jpg" alt="ইউজার প্রোফাইল" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'">
@@ -71,17 +71,21 @@
                 </div>
             </div>
 
-            <!-- হিরো সেকশন -->
-            <div class="ranking-hero">
-                <div class="ranking-hero-badge">
-                    <i class="fa-solid fa-award"></i> লাইভ লিডারবোর্ড
-                </div>
+            <!-- হিরো টাইটেল সেকশন -->
+            <div class="ranking-hero-header">
                 <h1 class="ranking-hero-title">
                     <i class="fa-solid fa-trophy" style="color: #F59E0B;"></i> Students Rangking
                 </h1>
                 <p class="ranking-hero-subtitle">
                     মডেল টেস্ট পরীক্ষায় ২০ এর উপরে স্কোর অর্জনকারী শিক্ষার্থীদের তালিকা। প্রতিবার ২০-এর বেশি নম্বর পেলে প্রোফাইলে <strong>+১ পয়েন্ট</strong> যোগ হয়!
                 </p>
+            </div>
+
+            <!-- "আপনার প্রোফাইল" ফিক্সড কার্ড (লাইভ লিডারবোর্ড কেটে দিয়ে এখানে ফিক্সড করা হয়েছে) -->
+            <div id="currentUserProfileCard" class="user-profile-top-card">
+                <div style="text-align: center; width: 100%; padding: 10px; color: rgba(255,255,255,0.7);">
+                    <i class="fa-solid fa-spinner fa-spin"></i> আপনার প্রোফাইল তথ্য লোড হচ্ছে...
+                </div>
             </div>
 
             <!-- শীর্ষ ৩ জনের পোডিয়াম -->
@@ -106,9 +110,6 @@
                 </div>
             </div>
 
-            <!-- স্টিকি নিজের অবস্থান বার -->
-            <div id="currentUserStickyBar" class="current-user-sticky-bar" style="display: none;"></div>
-
         </div>
     </main>
 
@@ -131,7 +132,7 @@
         </div>
     </footer>
 
-        <!-- মোবাইল বটম নেভিগেশন বার -->
+    <!-- মোবাইল বটম নেভিগেশন বার (সবসময় ৫টি বাটন ফিক্সড) -->
     <nav class="bottom-nav">
         <a href="../index.html" class="nav-item">
             <i class="fa-solid fa-house"></i>
@@ -149,11 +150,15 @@
             <i class="fa-solid fa-trophy"></i>
             <span class="nav-label-multiline">Students<br>Rangking</span>
         </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=4.5"></script>
-    <script src="../assets/js/main.js?v=4.5"></script>
-    <script src="../assets/js/students-ranking.js?v=4.5"></script>
+    <script src="../assets/js/api.js?v=4.6"></script>
+    <script src="../assets/js/main.js?v=4.6"></script>
+    <script src="../assets/js/students-ranking.js?v=4.6"></script>
 </body>
 </html>
