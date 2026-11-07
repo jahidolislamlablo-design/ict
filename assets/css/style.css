@@ -2770,3 +2770,11 @@ input:checked + .slider:before {
         font-size: 0.72rem;
     }
 }
+
+.nav-item .nav-label-multiline {
+    line-height: 1.15;
+    text-align: center;
+    font-size: 0.72rem;
+    display: inline-block;
+    word-break: break-word;
+}
