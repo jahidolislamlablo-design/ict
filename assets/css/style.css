@@ -1137,38 +1137,125 @@ input:checked + .slider:before {
    FOOTER (Desktop & Platform Branding)
    ========================================================================== */
 
+/* ==========================================================================
+   FOOTER (Developer Branding & Copyright)
+   ========================================================================== */
 .site-footer {
-    background-color: var(--bg-card);
-    border-top: 1px solid var(--border-color);
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
     margin-top: auto;
-    padding: 30px 20px 80px 20px; /* space for mobile bottom nav */
+    padding: 32px 24px 85px 24px; /* space for mobile bottom nav */
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.02);
 }
 
 .footer-container {
     max-width: var(--container-max);
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
-.footer-links {
+/* বাম পাশে ডেভেলপার প্রোফাইল */
+.footer-developer-card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.developer-avatar-wrapper {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2.5px solid #4F46E5;
+    padding: 2px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.18);
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: var(--transition);
+.footer-developer-card:hover .developer-avatar-wrapper {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.28);
 }
 
-.footer-links a:hover {
-    color: var(--primary);
+.developer-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.developer-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.developer-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #4F46E5;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+}
+
+.developer-name {
+    font-size: 0.96rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: 0.4px;
+    font-family: inherit;
+}
+
+.developer-degree {
+    font-size: 0.80rem;
+    font-weight: 500;
+    color: #64748B;
+}
+
+/* ডান পাশে কপিরাইট নোটিশ */
+.footer-copyright-text {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #475569;
+    text-align: right;
+    margin-left: auto;
+}
+
+.footer-copyright-text .brand-copy-name {
+    color: #4F46E5;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 24px 16px 95px 16px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+    }
+    .footer-copyright-text {
+        text-align: center;
+        margin-left: 0;
+        font-size: 0.88rem;
+    }
 }
 
 /* ==========================================================================
