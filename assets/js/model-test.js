@@ -202,7 +202,8 @@ function renderAllQuestions() {
             html += renderModernMCQCardHTML(q, qIdx, {
                 mode: 'study',
                 category: 'model_test',
-                source_title: currentExamTitle
+                source_title: currentExamTitle,
+                hideExplanation: true
             });
         }
     });

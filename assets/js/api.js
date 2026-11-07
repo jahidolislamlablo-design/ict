@@ -1042,6 +1042,7 @@ function isQuestionFavorite(questionId) {
 
 function generateMCQUniqueId(q, index) {
     if (q.id) return String(q.id);
+    if (q._id) return String(q._id);
     const text = q.question_text || q.question || '';
     let hash = 0;
     for (let i = 0; i < text.length; i++) {
@@ -1063,13 +1064,21 @@ function detectCurrentMCQCategory() {
 function toggleFavoriteQuestion(btn, qDataStr) {
     let qData = null;
     try {
-        qData = (typeof qDataStr === 'string') ? JSON.parse(decodeURIComponent(qDataStr)) : qDataStr;
+        if (!qDataStr && btn) {
+            qDataStr = btn.getAttribute('data-fav-payload') || (btn.dataset ? btn.dataset.favPayload : null);
+        }
+        if (typeof qDataStr === 'string') {
+            qData = JSON.parse(decodeURIComponent(qDataStr));
+        } else {
+            qData = qDataStr;
+        }
     } catch(e) {
         console.error("Error parsing fav data", e);
         return;
     }
 
-    if (!qData || !qData.id) return;
+    if (!qData) return;
+    if (!qData.id) qData.id = generateMCQUniqueId(qData, 0);
 
     let list = getFavoriteQuestions();
     const existingIndex = list.findIndex(item => String(item.id) === String(qData.id));
@@ -1199,7 +1208,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
         context_stem: q.context_stem || '',
         image: q.image || ''
     };
-    const favDataEncoded = encodeURIComponent(JSON.stringify(favDataObj));
+    const favDataEncoded = encodeURIComponent(JSON.stringify(favDataObj)).replace(/'/g, "%27");
     
     const imageHtml = q.image ? `
         <div class="question-image-box" style="margin: 12px 0 16px 0; text-align: center;">
@@ -1223,22 +1232,17 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     });
 
     const favButtonHtml = `
-        <button type="button" class="modern-fav-btn ${isFav ? 'active' : ''}" data-q-id="${qId}" onclick="toggleFavoriteQuestion(this, '${favDataEncoded}')" title="${isFav ? 'ফেভারিট থেকে সরান' : 'ফেভারিটে যোগ করুন'}">
+        <button type="button" class="modern-fav-btn ${isFav ? 'active' : ''}" data-q-id="${qId}" data-fav-payload="${favDataEncoded}" onclick="toggleFavoriteQuestion(this)" title="${isFav ? 'ফেভারিট থেকে সরান' : 'ফেভারিটে যোগ করুন'}">
             <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
             <span>${isFav ? 'সংরক্ষিত' : 'ফেভারিট'}</span>
         </button>
     `;
 
-    const expBtnAndBox = (mode === 'exam') ? `
-        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
-            <button type="button" class="modern-exp-btn" style="display: none;" onclick="toggleModernExp(this)">
-                <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
-            </button>
+    const isModelTest = (category === 'model_test') || (options.hideExplanation === true) || (mode === 'exam');
+
+    const expBtnAndBox = isModelTest ? `
+        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: flex-end; width: 100%; margin-top: 12px;">
             ${favButtonHtml}
-        </div>
-        <div class="modern-exp-box" style="display: none; width: 100%; margin-top: 12px;">
-            <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
-            <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
         </div>
     ` : `
         <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">

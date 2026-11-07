@@ -149,6 +149,10 @@
 .exam-questions-scroll-area {
     display: flex;
     flex-direction: column;
+    background-color: #eef2f7 !important;
+    border-radius: 20px !important;
+    padding: 16px 20px !important;
+    box-sizing: border-box !important;
 }
 
 .exam-nav-sidebar {

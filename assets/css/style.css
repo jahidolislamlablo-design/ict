@@ -1624,14 +1624,25 @@ input:checked + .slider:before {
     white-space: nowrap;
 }
 
-/* Modern MCQ Card matching Image 1 & 3 */
+/* Universal Tactile Neumorphic MCQ & CQ Design (Applied on ALL screens: Desktop, Tablet, Mobile) */
+.interactive-view-container {
+    background-color: #eef2f7 !important;
+    min-height: 100vh;
+    box-sizing: border-box !important;
+    width: 100%;
+}
+
+/* 1. Modern MCQ Card: Transparent with clean tactile dashed divider */
 .modern-quiz-card {
-    background: #FFFFFF;
-    border-radius: 22px;
-    padding: 24px 20px;
-    margin-bottom: 22px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-    border: 1.5px solid #EEF2F6;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 6px 4px 22px 4px !important;
+    margin-bottom: 24px !important;
+    border-radius: 0 !important;
+    border-bottom: 1.5px dashed #cbd5e1 !important;
     position: relative;
     transition: all 0.2s ease;
 }
@@ -1641,223 +1652,279 @@ input:checked + .slider:before {
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .modern-q-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #0F172A;
-    line-height: 1.55;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #2d3748 !important;
+    line-height: 1.6 !important;
     margin: 0;
     flex: 1;
 }
 
 .modern-options-list {
+    width: 100% !important;
+    box-sizing: border-box !important;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
+/* 2. Inset Neumorphic Option Pill */
 .modern-option-pill {
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 16px;
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 0.95rem;
-    color: #1E293B;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #eef2f7 !important;
+    border-radius: 16px !important;
+    box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff !important;
+    border: 1.5px solid transparent !important;
+    padding: 13px 16px !important;
+    color: #2d3748 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    font-size: 0.95rem !important;
     user-select: none;
+    margin-bottom: 0 !important;
 }
 
 .modern-option-pill:hover:not(.locked) {
-    border-color: #CBD5E1;
-    background: #F1F5F9;
+    background: #e8eef5 !important;
+    box-shadow: inset 5px 5px 10px #c5cfdf, inset -5px -5px 10px #ffffff !important;
+}
+
+.modern-option-pill:active:not(.locked) {
+    box-shadow: inset 6px 6px 12px #bcc7d8, inset -6px -6px 12px #ffffff !important;
 }
 
 .modern-option-pill-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 1;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
 }
 
 .option-radio-circle {
-    width: 22px;
-    height: 22px;
-    min-width: 22px;
-    border-radius: 50%;
-    border: 2px solid #CBD5E1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border-radius: 50% !important;
+    background: #eef2f7 !important;
+    border: 2px solid #a0aec0 !important;
+    box-shadow: inset 1px 1px 2px #d1d9e6 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    margin-right: 2px !important;
+    flex-shrink: 0 !important;
+}
+
+.option-text {
+    font-size: 0.95rem !important;
+    line-height: 1.45 !important;
+    color: #2d3748 !important;
+    word-break: break-word !important;
+    flex: 1 1 auto !important;
 }
 
 /* Exam Selected (Model Test active choice) */
 .modern-option-pill.exam-selected {
-    border: 2px solid #6366F1 !important;
-    background: #EEF2FF !important;
-    color: #312E81 !important;
+    background: #e0e7ff !important;
+    border-color: #a5b4fc !important;
+    box-shadow: inset 3px 3px 6px #c7d2fe, inset -3px -3px 6px #ffffff !important;
+    color: #3730a3 !important;
 }
 
 .modern-option-pill.exam-selected .option-radio-circle {
-    border-color: #6366F1 !important;
-    background: #6366F1 !important;
-    box-shadow: inset 0 0 0 3px #FFFFFF !important;
+    border-color: #6366f1 !important;
+    background: #6366f1 !important;
+    box-shadow: inset 0 0 0 3px #ffffff !important;
 }
 
-/* Correct option state (Image 3) */
+/* Correct option state */
 .modern-option-pill.correct-selected {
-    border: 2px solid #86EFAC !important;
-    background: #F0FDF4 !important;
-    color: #15803D !important;
-    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+    background: #f0fdf4 !important;
+    border-color: #86efac !important;
+    box-shadow: inset 3px 3px 6px #bbf7d0, inset -3px -3px 6px #ffffff !important;
+    color: #15803d !important;
 }
 
 .modern-option-pill.correct-selected .option-radio-circle {
-    border-color: #22C55E;
-    background: #22C55E;
-    box-shadow: inset 0 0 0 3px #FFFFFF;
+    border-color: #22c55e !important;
+    background: #22c55e !important;
+    box-shadow: inset 0 0 0 3px #ffffff !important;
 }
 
-/* Wrong option state (Image 3) */
+/* Wrong option state */
 .modern-option-pill.wrong-selected {
-    border: 2px solid #FCA5A5 !important;
-    background: #FEF2F2 !important;
-    color: #B91C1C !important;
-    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+    background: #fef2f2 !important;
+    border-color: #fca5a5 !important;
+    box-shadow: inset 3px 3px 6px #fecaca, inset -3px -3px 6px #ffffff !important;
+    color: #b91c1c !important;
 }
 
 .modern-option-pill.wrong-selected .option-radio-circle {
-    border-color: #EF4444;
-    background: #EF4444;
-    box-shadow: inset 0 0 0 3px #FFFFFF;
+    border-color: #ef4444 !important;
+    background: #ef4444 !important;
+    box-shadow: inset 0 0 0 3px #ffffff !important;
 }
 
 /* Status icons on right (✓ and ✕) */
 .modern-status-icon {
     font-weight: 800;
-    font-size: 1.15rem;
+    font-size: 1.10rem;
     display: none;
 }
 .modern-status-icon.check {
-    display: inline-block;
-    color: #16A34A;
+    display: inline-block !important;
+    color: #16A34A !important;
 }
 .modern-status-icon.cross {
-    display: inline-block;
-    color: #DC2626;
+    display: inline-block !important;
+    color: #DC2626 !important;
 }
 
-/* Explanation Pill Button (Image 1 & 3) */
+/* Explanation Pill Button */
 .modern-exp-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
-    border-radius: 9999px;
-    background: #EEF2FF;
-    border: 1px solid #E0E7FF;
-    color: #4338CA;
-    font-size: 0.85rem;
-    font-weight: 600;
+    padding: 8px 16px !important;
+    border-radius: 9999px !important;
+    background: #eef2f7 !important;
+    box-shadow: 3px 3px 6px #d1d9e6, -3px -3px 6px #ffffff !important;
+    border: none !important;
+    color: #4338ca !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
     cursor: pointer;
-    margin-top: 6px;
     transition: all 0.2s ease;
 }
 
 .modern-exp-btn:hover {
-    background: #E0E7FF;
+    box-shadow: 4px 4px 8px #c5cfdf, -4px -4px 8px #ffffff !important;
     transform: translateY(-1px);
 }
 
+.modern-exp-btn:active {
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff !important;
+    transform: none;
+}
+
 .modern-exp-box {
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 14px;
-    padding: 14px 18px;
-    margin-top: 12px;
-    font-size: 0.90rem;
-    color: #334155;
-    line-height: 1.65;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    box-shadow: inset 2px 2px 5px #d1d9e6 !important;
+    padding: 14px 18px !important;
+    margin-top: 12px !important;
+    font-size: 0.90rem !important;
+    color: #334155 !important;
+    line-height: 1.65 !important;
     display: none;
 }
 
-/* Modern CQ Card matching Image 2 */
+/* 3. Modern CQ Card: Raised Tactile Neumorphic Container */
 .modern-cq-card {
-    background: #FFFFFF;
-    border-radius: 22px;
-    padding: 22px 18px;
-    margin-bottom: 24px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-    border: 1.5px solid #EEF2F6;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #eef2f7 !important;
+    border-radius: 20px !important;
+    box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff !important;
+    padding: 18px 16px !important;
+    margin-bottom: 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
 
 .modern-cq-stem-box {
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 16px;
-    padding: 18px;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 2px 14px 2px !important;
     font-size: 0.96rem;
     line-height: 1.7;
-    color: #1E293B;
-    margin-bottom: 18px;
+    color: #1e293b;
+    margin-bottom: 12px !important;
+    border-bottom: 1.5px dashed #cbd5e1 !important;
+}
+
+.modern-cq-sub-questions {
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .modern-cq-sub-pill {
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 16px;
-    margin-bottom: 12px;
-    overflow: hidden;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #eef2f7 !important;
+    border-radius: 14px !important;
+    box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
     transition: all 0.2s ease;
 }
 
 .modern-cq-sub-pill:hover {
-    border-color: #CBD5E1;
+    background: #e8eef5 !important;
 }
 
 .modern-cq-sub-header {
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #1E293B;
-    user-select: none;
-    gap: 12px;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 10px 12px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: pointer !important;
+    font-size: 0.94rem !important;
+    font-weight: 600 !important;
+    color: #2d3748 !important;
+    user-select: none !important;
+    gap: 8px !important;
+}
+
+.modern-cq-sub-header > span:first-child {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
+    line-height: 1.5 !important;
+    padding-right: 4px !important;
 }
 
 .modern-cq-arrow-circle {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    border-radius: 50%;
-    background: #EFF6FF;
-    color: #3B82F6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    border-radius: 50% !important;
+    background: #eef2f7 !important;
+    box-shadow: 2px 2px 4px #d1d9e6, -2px -2px 4px #ffffff !important;
+    color: #4a5568 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
     transition: transform 0.25s ease;
 }
 
 .modern-cq-sub-pill.open .modern-cq-arrow-circle {
-    transform: rotate(180deg);
-    background: #3B82F6;
-    color: #FFFFFF;
+    transform: rotate(180deg) !important;
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff !important;
 }
 
 .modern-cq-sub-body {
-    padding: 16px 20px;
+    padding: 14px 18px;
     font-size: 0.95rem;
     line-height: 1.75;
     color: #000000 !important;
@@ -1954,11 +2021,13 @@ input:checked + .slider:before {
    Exact specifications: #eef2f7, tactile 3D shadows, dark slate #2d3748
    ========================================================================== */
 @media (min-width: 769px) {
-    /* ডেস্কটপে বোর্ড ও টেস্ট পেপারের প্রশ্নাবলি ১০০% ফুল উয়িথ */
+    /* ডেস্কটপে বোর্ড, টেস্ট পেপার ও অধ্যায় অনুশীলনের কন্টেইনার - সেন্টার্ড ক্যানভাস */
     .interactive-view-container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding-bottom: 40px !important;
+        max-width: 880px !important;
+        margin: 0 auto !important;
+        padding: 24px 28px 60px 28px !important;
+        border-radius: 28px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
     }
 
     .modern-quiz-card,
@@ -1980,24 +2049,31 @@ input:checked + .slider:before {
         box-sizing: border-box !important;
     }
 
-    /* ডেস্কটপ স্ক্রিনে ৩-ট্যাব সেগমেন্টেড বাটন দৃশ্যমান থাকবে */
+    /* ডেস্কটপ স্ক্রিনে ৩-ট্যাব সেগমেন্টেড বাটন */
     .interactive-segmented-wrapper {
         display: grid !important;
-        grid-template-columns: 1fr 1fr 1fr !important;
+        grid-template-columns: 1fr 1.15fr 1fr !important;
+        gap: 6px !important;
         max-width: 520px !important;
         margin: 16px auto 24px auto !important;
+        background: #eef2f7 !important;
+        box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff !important;
+        border-radius: 9999px !important;
+        padding: 6px !important;
+        border: none !important;
     }
 
     .interactive-sub-header {
         width: 100% !important;
+        max-width: 880px !important;
+        margin: 16px auto 20px auto !important;
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        margin: 16px 0 24px 0 !important;
     }
 
     .interactive-sub-header .sub-header-title {
-        font-size: 1.30rem !important;
+        font-size: 1.25rem !important;
         font-weight: 800 !important;
         color: #1e293b !important;
     }
