@@ -150,10 +150,14 @@ async function startExam(testTitle, durationMins = 25) {
                 }
                 return {
                     id: q.id || (idx + 1),
+                    question_text: q.question_text || q.question || '',
                     question: q.question_text || q.question || '',
                     options: Array.isArray(opts) ? opts : [],
                     correct: parseInt(q.correct_index !== undefined ? q.correct_index : q.correct, 10) || 0,
-                    explanation: q.explanation || ''
+                    correct_index: parseInt(q.correct_index !== undefined ? q.correct_index : q.correct, 10) || 0,
+                    explanation: q.explanation || '',
+                    image: q.image || '',
+                    context_stem: q.context_stem || ''
                 };
             });
         } else {
@@ -196,7 +200,7 @@ function renderAllQuestions() {
     activeExamQuestions.forEach((q, qIdx) => {
         if (typeof renderModernMCQCardHTML === 'function') {
             html += renderModernMCQCardHTML(q, qIdx, {
-                mode: 'exam',
+                mode: 'study',
                 category: 'model_test',
                 source_title: currentExamTitle
             });
@@ -210,13 +214,13 @@ function renderAllQuestions() {
  */
 function selectExamOption(qIndex, optionIndex) {
     if (isExamSubmitted) return;
-    const card = document.getElementById(`model-mcq-card-${qIndex}`) || document.getElementById(`question-card-${qIndex}`);
+    const card = document.getElementById(`modern-mcq-card-${qIndex}`) || document.getElementById(`model-mcq-card-${qIndex}`) || document.getElementById(`question-card-${qIndex}`);
     if (card) {
         const opt = card.querySelector(`[data-opt-idx="${optionIndex}"]`);
         if (opt) {
             const correctIndex = activeExamQuestions[qIndex] ? (activeExamQuestions[qIndex].correct !== undefined ? activeExamQuestions[qIndex].correct : activeExamQuestions[qIndex].correct_index) : 0;
             if (typeof handleModernOptionClick === 'function') {
-                handleModernOptionClick(opt, qIndex, optionIndex, correctIndex, 'exam');
+                handleModernOptionClick(opt, qIndex, optionIndex, correctIndex, 'study');
             }
         }
     }
@@ -245,7 +249,7 @@ function renderQuestionPalette() {
  * যেকোনো প্রশ্নে সরাসরি স্ক্রল করে যাওয়া
  */
 function jumpToQuestion(index) {
-    const card = document.getElementById(`model-mcq-card-${index}`) || document.getElementById(`question-card-${index}`);
+    const card = document.getElementById(`modern-mcq-card-${index}`) || document.getElementById(`model-mcq-card-${index}`) || document.getElementById(`question-card-${index}`);
     if (card) {
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         card.classList.add('highlight-focus');
@@ -339,7 +343,7 @@ function submitExam() {
     let wrongCount = 0;
 
     activeExamQuestions.forEach((q, idx) => {
-        const card = document.getElementById(`model-mcq-card-${idx}`) || document.getElementById(`question-card-${idx}`);
+        const card = document.getElementById(`modern-mcq-card-${idx}`) || document.getElementById(`model-mcq-card-${idx}`) || document.getElementById(`question-card-${idx}`);
         if (!card) return;
 
         card.classList.add('locked', 'answered');

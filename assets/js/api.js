@@ -70,9 +70,12 @@ async function fetchFromBackend(endpoint, options = {}) {
     try {
         const response = await fetch(url, {
             ...options,
+            cache: 'no-cache',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
                 ...options.headers
             },
             signal: controller.signal
@@ -432,8 +435,15 @@ async function fetchStaticJson(filename) {
     if (_staticCache[filename]) return _staticCache[filename];
     try {
         const isPages = window.location.pathname.includes('/pages/');
-        const staticUrl = (isPages ? `../database/${filename}` : `database/${filename}`) + `?v=2.3`;
-        const res = await fetch(staticUrl);
+        const cacheBuster = Date.now();
+        const staticUrl = (isPages ? `../database/${filename}` : `database/${filename}`) + `?t=${cacheBuster}`;
+        const res = await fetch(staticUrl, {
+            cache: 'no-cache',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache'
+            }
+        });
         if (res.ok) {
             const data = await res.json();
             if (Array.isArray(data)) {
@@ -1371,6 +1381,15 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
 
     if (parentCard.classList.contains('answered')) return;
     parentCard.classList.add('answered');
+
+    if (typeof userAnswers !== 'undefined') {
+        userAnswers[qIndex] = selectedIndex;
+    }
+    if (typeof updateExamProgress === 'function') {
+        updateExamProgress();
+    }
+    const palBtn = document.getElementById(`palette-btn-${qIndex}`);
+    if (palBtn) palBtn.classList.add('answered');
 
     const options = parentCard.querySelectorAll('.modern-option-pill');
     options.forEach(opt => {

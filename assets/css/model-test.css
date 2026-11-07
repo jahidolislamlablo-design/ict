@@ -371,6 +371,9 @@
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        background-color: #eef2f7 !important;
+        border-radius: 20px !important;
+        padding: 8px 6px !important;
     }
     .question-card {
         padding: 14px 12px !important;
