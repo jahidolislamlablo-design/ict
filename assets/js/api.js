@@ -1015,6 +1015,9 @@ function toBanglaNum(num) {
 
 function escapeModernMCQOption(str) {
     if (!str) return '';
+    if (typeof str === 'string' && str.includes('<img')) {
+        return resolveHtmlMediaUrls(str);
+    }
     return str
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
