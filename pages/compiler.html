@@ -448,7 +448,7 @@
             <div class="page-header-banner" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%);">
                 <div class="page-header-text">
                     <h1>এইচএসসি আইসিটি অনলাইন কোড কম্পাইলার</h1>
-                    <p>এইচটিএমএল (HTML), সিএসএস (CSS), জাভাস্ক্রিপ্ট (JavaScript), পাইথন (Python) এবং সি প্রোগ্রাম (C Program) লিখে সরাসরি রান করুন ও কোড সংরক্ষণ করুন।</p>
+                    <p>এইচটিএমএল (HTML), পাইথন (Python) এবং সি প্রোগ্রাম (C Program) লিখে সরাসরি রান করুন ও কোড সংরক্ষণ করুন।</p>
                 </div>
             </div>
 
@@ -457,45 +457,35 @@
 
                 <!-- মূল কম্পাইলার টুলবার -->
                 <div class="compiler-main-toolbar">
-                    <!-- ১. ল্যাঙ্গুয়েজ পিলস -->
+                    <!-- ১. ল্যাঙ্গুয়েজ পিলস ও My Code বাটন -->
                     <div class="lang-pills">
                         <button type="button" class="lang-pill-btn active" id="pill-c" onclick="switchLanguage('c')">
-                            <i class="fa-solid fa-c"></i> C Program
+                            <i class="fa-solid fa-code"></i> C Program
                         </button>
                         <button type="button" class="lang-pill-btn" id="pill-python" onclick="switchLanguage('python')">
                             <i class="fa-brands fa-python"></i> Python
                         </button>
                         <button type="button" class="lang-pill-btn" id="pill-html" onclick="switchLanguage('html')">
-                            <i class="fa-brands fa-html5"></i> HTML/CSS/JS
+                            <i class="fa-brands fa-html5"></i> HTML
+                        </button>
+                        <button type="button" class="btn-my-codes" onclick="openSavedCodesModal()" title="সংরক্ষিত কোড দেখুন">
+                            <i class="fa-solid fa-folder-open"></i> My Code
                         </button>
                     </div>
 
-                    <!-- ২. Code ও Output স্ক্রিন টগল বাটন (User Specified) -->
-                    <div class="screen-toggle-pills">
-                        <button type="button" class="screen-toggle-btn active" id="btn-toggle-code" onclick="toggleCompilerScreen('code')">
-                            <i class="fa-solid fa-code"></i> Code
-                        </button>
-                        <button type="button" class="screen-toggle-btn" id="btn-toggle-output" onclick="toggleCompilerScreen('output')">
-                            <i class="fa-solid fa-terminal"></i> Output
-                        </button>
-                    </div>
-
-                    <!-- ৩. অ্যাকশন বাটনস -->
+                    <!-- ২. Code ও Output স্ক্রিন টগল বাটন এবং সংরক্ষণ বাটন -->
                     <div class="toolbar-actions">
-                        <select class="template-select" id="templateSelect" onchange="loadTemplate(this.value)">
-                            <option value="">-- নমুনা কোড নির্বাচন --</option>
-                        </select>
+                        <div class="screen-toggle-pills">
+                            <button type="button" class="screen-toggle-btn active" id="btn-toggle-code" onclick="toggleCompilerScreen('code')">
+                                <i class="fa-solid fa-code"></i> Code
+                            </button>
+                            <button type="button" class="screen-toggle-btn" id="btn-toggle-output" onclick="toggleCompilerScreen('output')">
+                                <i class="fa-solid fa-terminal"></i> Output
+                            </button>
+                        </div>
 
-                        <button type="button" class="btn-run" onclick="runCode()">
-                            <i class="fa-solid fa-play"></i> রান করুন
-                        </button>
-
-                        <button type="button" class="btn-save-code" onclick="openSaveModal()">
-                            <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ
-                        </button>
-
-                        <button type="button" class="btn-my-codes" onclick="openSavedCodesModal()">
-                            <i class="fa-solid fa-folder-open"></i> আমার কোড
+                        <button type="button" class="btn-save-code" onclick="openSaveModal()" title="কোড সংরক্ষণ করুন">
+                            <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ করুন
                         </button>
                     </div>
                 </div>
@@ -536,7 +526,7 @@
                         </div>
 
                         <!-- টার্মিনাল কনসোল স্ক্রিন -->
-                        <div class="console-screen" id="consoleScreen">কম্পাইলার প্রস্তুত। কোড লিখে "রান করুন" বাটনে ক্লিক করুন...</div>
+                        <div class="console-screen" id="consoleScreen">কম্পাইলার প্রস্তুত। কোড লিখে "Output" ট্যাবে ক্লিক করুন...</div>
 
                         <!-- ওয়েব প্রিভিউ আইফ্রেম (HTML/CSS/JS এর জন্য) -->
                         <iframe class="preview-iframe" id="previewIframe" sandbox="allow-scripts" style="display: none;"></iframe>
@@ -691,12 +681,8 @@
             },
             html: {
                 basic: {
-                    title: '১. বেসিক এইচএসসি এইচটিএমএল পেজ',
-                    code: `<!DOCTYPE html>\n<html>\n<head>\n    <title>My Web Page</title>\n    <style>\n        body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; background: #F8FAFC; color: #1E293B; }\n        h1 { color: #4F46E5; }\n        .card { background: white; padding: 20px; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }\n        .btn { background: #4F46E5; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }\n    </style>\n</head>\n<body>\n    <div class="card">\n        <h1>এইচএসসি আইসিটি ৪র্থ অধ্যায়</h1>\n        <p>এটি এইচটিএমএল এবং সিএসএস দিয়ে তৈরি একটি ডেমো ওয়েবপেজ।</p>\n        <button class="btn" onclick="alert('ওয়েবপেজে আপনাকে স্বাগতম!')">ক্লিক করুন</button>\n    </div>\n</body>\n</html>`
-                },
-                table: {
-                    title: '২. এইচটিএমএল টেবিল ডিজাইন',
-                    code: `<!DOCTYPE html>\n<html>\n<head>\n    <style>\n        table {\n            width: 100%;\n            border-collapse: collapse;\n            font-family: sans-serif;\n        }\n        th, td {\n            border: 1px solid #CBD5E1;\n            padding: 10px 12px;\n            text-align: left;\n        }\n        th {\n            background: #EEF2FF;\n            color: #4F46E5;\n        }\n        tr:nth-child(even) { background: #F8FAFC; }\n    </style>\n</head>\n<body>\n    <h3>ছাত্র-ছাত্রীদের রোল ও প্রাপ্ত নম্বর</h3>\n    <table>\n        <tr>\n            <th>রোল</th>\n            <th>নাম</th>\n            <th>আইসিটি নম্বর</th>\n        </tr>\n        <tr>\n            <td>১০১</td>\n            <td>রাফি ইসলাম</td>\n            <td>৯৫</td>\n        </tr>\n        <tr>\n            <td>১০২</td>\n            <td>সুমাইয়া হক</td>\n            <td>৯৮</td>\n        </tr>\n        <tr>\n            <td>১০৩</td>\n            <td>তানভীর আহমেদ</td>\n            <td>৯২</td>\n        </tr>\n    </table>\n</body>\n</html>`
+                    title: '১. বেসিক এইচটিএমএল স্ট্রাকচার',
+                    code: `<!DOCTYPE html>\n<html>\n<head>\n    <title>HSC ICT</title>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>Welcome to HSC ICT Web Programming.</p>\n</body>\n</html>`
                 }
             }
         };
@@ -704,7 +690,6 @@
         const editor = document.getElementById('codeEditor');
         const lineNumbers = document.getElementById('lineNumbers');
         const stdinWrapper = document.getElementById('stdinWrapper');
-        const templateSelect = document.getElementById('templateSelect');
 
         document.addEventListener('DOMContentLoaded', () => {
             initEditor();
@@ -747,26 +732,16 @@
             const activeBtn = document.getElementById('pill-' + lang);
             if (activeBtn) activeBtn.classList.add('active');
 
-            // Populate template dropdown
-            templateSelect.innerHTML = '<option value="">-- নমুনা কোড নির্বাচন --</option>';
-            const templates = CODE_TEMPLATES[lang] || {};
-            for (let key in templates) {
-                const opt = document.createElement('option');
-                opt.value = key;
-                opt.innerText = templates[key].title;
-                templateSelect.appendChild(opt);
-            }
-
             // Preview tab visibility
             const previewTabBtn = document.getElementById('tab-btn-preview');
             if (lang === 'html') {
                 if (previewTabBtn) previewTabBtn.style.display = 'inline-block';
-                stdinWrapper.style.display = 'none';
+                if (stdinWrapper) stdinWrapper.style.display = 'none';
                 loadTemplate('basic');
                 switchOutputTab('preview');
             } else {
                 if (previewTabBtn) previewTabBtn.style.display = 'none';
-                stdinWrapper.style.display = 'block';
+                if (stdinWrapper) stdinWrapper.style.display = 'block';
                 loadTemplate('hello');
                 switchOutputTab('console');
             }
@@ -1295,18 +1270,10 @@
                 if (outputPanel) outputPanel.style.display = 'flex';
                 if (btnCode) btnCode.classList.remove('active');
                 if (btnOutput) btnOutput.classList.add('active');
+                // Output বাটনে ক্লিক করলেই কোড স্বয়ংক্রিয়ভাবে রান হবে
+                runCode();
             }
         }
-
-        // Hook into runCode to automatically toggle to Output screen
-        const _origRunCode = window.runCode;
-        window.runCode = async function() {
-            // First switch to output tab so user immediately sees execution
-            toggleCompilerScreen('output');
-            if (typeof _origRunCode === 'function') {
-                await _origRunCode();
-            }
-        };
     </script>
 </body>
 </html>

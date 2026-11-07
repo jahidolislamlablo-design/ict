@@ -189,94 +189,37 @@ function retakeExam() {
  */
 function renderAllQuestions() {
     const container = document.getElementById('questionsListContainer');
+    if (!container) return;
     container.innerHTML = '';
-    const markers = ['ক', 'খ', 'গ', 'ঘ'];
 
+    let html = '';
     activeExamQuestions.forEach((q, qIdx) => {
-        const card = document.createElement('div');
-        card.className = 'question-card';
-        card.id = `question-card-${qIdx}`;
-        card.style.scrollMarginTop = '150px';
-
-        let optionsHtml = '';
-        q.options.forEach((opt, oIdx) => {
-            const isSelected = userAnswers[qIdx] === oIdx;
-            optionsHtml += `
-                <div class="option-item ${isSelected ? 'selected-option' : ''}" 
-                     id="opt-${qIdx}-${oIdx}"
-                     data-q-idx="${qIdx}"
-                     data-opt-idx="${oIdx}"
-                     style="${isSelected ? 'background-color: var(--primary-light) !important; border-color: var(--primary) !important; color: var(--primary) !important; ' : ''}" 
-                     onclick="selectExamOption(${qIdx}, ${oIdx})">
-                    <div class="option-left">
-                        <span class="option-marker" style="${isSelected ? 'background: var(--primary); border-color: var(--primary); color: #fff;' : ''}">${markers[oIdx]}</span>
-                        <span>${opt}</span>
-                    </div>
-                    <span class="option-status-icon">
-                        ${isSelected ? '<i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>' : ''}
-                    </span>
-                </div>
-            `;
-        });
-
-        const explanationHtml = q.explanation ? `
-            <div class="explanation-box" id="explanation-${qIdx}" style="display: none; margin-top: 14px; padding: 12px 16px; background: #F8FAFC; border-left: 4px solid var(--info); border-radius: 6px; font-size: 0.9rem;">
-                <strong><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</strong> ${q.explanation}
-            </div>
-        ` : '';
-
-        card.innerHTML = `
-            <div class="question-title" style="display: flex; align-items: flex-start; gap: 10px;">
-                <span style="display: inline-flex; align-items: center; justify-content: center; background: var(--primary-light); color: var(--primary); min-width: 30px; height: 30px; border-radius: 50%; font-weight: 700; font-size: 0.9rem; flex-shrink: 0;">${qIdx + 1}</span>
-                <span style="padding-top: 2px;">${q.question}</span>
-            </div>
-            <div class="options-grid two-cols">${optionsHtml}</div>
-            ${explanationHtml}
-        `;
-        container.appendChild(card);
+        if (typeof renderModernMCQCardHTML === 'function') {
+            html += renderModernMCQCardHTML(q, qIdx, {
+                mode: 'exam',
+                category: 'model_test',
+                source_title: currentExamTitle
+            });
+        }
     });
+    container.innerHTML = html;
 }
 
 /**
  * অপশন সিলেক্ট করার লজিক (Single Choice Locking per Question)
  */
 function selectExamOption(qIndex, optionIndex) {
-    if (isExamSubmitted) return; // পরীক্ষা সাবমিট হওয়ার পর অপশন পরিবর্তন বন্ধ
-    // যেকোনো একটি অপশনে একবারই ক্লিক করা যাবে (একবার উত্তর দিলে লক হয়ে যাবে)
-    if (userAnswers[qIndex] !== undefined) return;
-
-    userAnswers[qIndex] = optionIndex;
-
-    const card = document.getElementById(`question-card-${qIndex}`);
+    if (isExamSubmitted) return;
+    const card = document.getElementById(`model-mcq-card-${qIndex}`) || document.getElementById(`question-card-${qIndex}`);
     if (card) {
-        const options = card.querySelectorAll('.option-item');
-        options.forEach((opt, oIdx) => {
-            const marker = opt.querySelector('.option-marker');
-            const icon = opt.querySelector('.option-status-icon');
-
-            opt.style.pointerEvents = 'none'; // আর ক্লিক করা যাবে না
-            if (oIdx === optionIndex) {
-                opt.style.backgroundColor = 'var(--primary-light)';
-                opt.style.borderColor = 'var(--primary)';
-                opt.style.color = 'var(--primary)';
-                
-                if (marker) {
-                    marker.style.background = 'var(--primary)';
-                    marker.style.borderColor = 'var(--primary)';
-                    marker.style.color = '#fff';
-                }
-                if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>';
-            } else {
-                opt.style.opacity = '0.65';
-                opt.style.cursor = 'not-allowed';
+        const opt = card.querySelector(`[data-opt-idx="${optionIndex}"]`);
+        if (opt) {
+            const correctIndex = activeExamQuestions[qIndex] ? (activeExamQuestions[qIndex].correct !== undefined ? activeExamQuestions[qIndex].correct : activeExamQuestions[qIndex].correct_index) : 0;
+            if (typeof handleModernOptionClick === 'function') {
+                handleModernOptionClick(opt, qIndex, optionIndex, correctIndex, 'exam');
             }
-        });
+        }
     }
-    // প্যালেট বাটনে সবুজ স্ট্যাটাস যুক্ত করা
-    const palBtn = document.getElementById(`palette-btn-${qIndex}`);
-    if (palBtn) palBtn.classList.add('answered');
-
-    updateExamProgress();
 }
 
 /**
@@ -302,7 +245,7 @@ function renderQuestionPalette() {
  * যেকোনো প্রশ্নে সরাসরি স্ক্রল করে যাওয়া
  */
 function jumpToQuestion(index) {
-    const card = document.getElementById(`question-card-${index}`);
+    const card = document.getElementById(`model-mcq-card-${index}`) || document.getElementById(`question-card-${index}`);
     if (card) {
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         card.classList.add('highlight-focus');
@@ -322,13 +265,13 @@ function updateExamProgress() {
 
     const counter = document.getElementById('exam-q-counter');
     if (counter) {
-        counter.innerHTML = `<i class="fa-solid fa-circle-check"></i> উত্তর সম্পন্ন: ${answeredCount} / ${total}`;
+        counter.innerHTML = `<i class="fa-solid fa-circle-check"></i> উত্তর সম্পন্ন: ${toBanglaNum(answeredCount)} / ${toBanglaNum(total)}`;
     }
 
     const bottomStatus = document.getElementById('bottomSubmitStatus');
     if (bottomStatus) {
         if (remaining > 0) {
-            bottomStatus.innerText = `আপনি ${answeredCount}টি প্রশ্নের উত্তর দিয়েছেন (এখনও ${remaining}টি বাকি)`;
+            bottomStatus.innerText = `আপনি ${toBanglaNum(answeredCount)}টি প্রশ্নের উত্তর দিয়েছেন (এখনও ${toBanglaNum(remaining)}টি বাকি)`;
         } else {
             bottomStatus.innerText = `অভিনন্দন! আপনি সকল প্রশ্নের উত্তর প্রদান সম্পন্ন করেছেন।`;
         }
@@ -396,67 +339,63 @@ function submitExam() {
     let wrongCount = 0;
 
     activeExamQuestions.forEach((q, idx) => {
-        const card = document.getElementById(`question-card-${idx}`);
+        const card = document.getElementById(`model-mcq-card-${idx}`) || document.getElementById(`question-card-${idx}`);
         if (!card) return;
 
-        const options = card.querySelectorAll('.option-item');
-        // সকল অপশন লক করে দেওয়া
+        card.classList.add('locked', 'answered');
+        const options = card.querySelectorAll('.modern-option-pill, .option-item');
         options.forEach(opt => {
+            opt.classList.add('locked');
             opt.style.pointerEvents = 'none';
-            opt.style.cursor = 'default';
+            opt.classList.remove('exam-selected');
         });
 
         const userSelected = userAnswers[idx];
-        const correctOptIndex = q.correct;
+        const correctOptIndex = (q.correct !== undefined) ? parseInt(q.correct, 10) : parseInt(q.correct_index, 10) || 0;
+
+        // সঠিক উত্তরটি সবুজ
+        const correctOpt = card.querySelector(`[data-opt-idx="${correctOptIndex}"]`);
+        if (correctOpt) {
+            correctOpt.classList.add('correct-selected');
+            const icon = correctOpt.querySelector('.modern-status-icon');
+            if (icon) {
+                icon.className = 'modern-status-icon check';
+                icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+            }
+        }
 
         if (userSelected !== undefined) {
             if (userSelected === correctOptIndex) {
                 correctCount++;
-                // নির্বাচিত সঠিক অপশন সবুজ
-                const optEl = options[userSelected];
-                if (optEl) {
-                    optEl.classList.add('correct');
-                    const icon = optEl.querySelector('.option-status-icon');
-                    if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
-                }
             } else {
                 wrongCount++;
-                // নির্বাচিত ভুল অপশন লাল
-                const wrongOptEl = options[userSelected];
-                if (wrongOptEl) {
-                    wrongOptEl.classList.add('wrong');
-                    const icon = wrongOptEl.querySelector('.option-status-icon');
-                    if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-xmark" style="color: var(--danger); font-size: 1.15rem;"></i>';
+                const wrongOpt = card.querySelector(`[data-opt-idx="${userSelected}"]`);
+                if (wrongOpt) {
+                    wrongOpt.classList.add('wrong-selected');
+                    const icon = wrongOpt.querySelector('.modern-status-icon');
+                    if (icon) {
+                        icon.className = 'modern-status-icon cross';
+                        icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                    }
                 }
-                // সঠিক উত্তরটি সবুজ
-                const correctOptEl = options[correctOptIndex];
-                if (correctOptEl) {
-                    correctOptEl.classList.add('correct');
-                    const cIcon = correctOptEl.querySelector('.option-status-icon');
-                    if (cIcon) cIcon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
-                }
-            }
-        } else {
-            // যদি উত্তর না দেওয়া হয়ে থাকে, সঠিকটি সবুজ করে দেওয়া
-            const correctOptEl = options[correctOptIndex];
-            if (correctOptEl) {
-                correctOptEl.classList.add('correct');
-                const cIcon = correctOptEl.querySelector('.option-status-icon');
-                if (cIcon) cIcon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 1.15rem;"></i>';
             }
         }
 
-        // ব্যাখ্যা শুধুমাত্র 'ব্যাখ্যা দেখুন' বাটনে ক্লিক করলে শো করবে
+        // প্রতিটি প্রশ্নে ব্যাখ্যা দেখুন বাটন উন্মুক্ত করা
+        const expBtn = card.querySelector('.modern-exp-btn');
+        if (expBtn) {
+            expBtn.style.display = 'inline-flex';
+        }
     });
 
     const skippedCount = activeExamQuestions.length - (correctCount + wrongCount);
     const scorePercentage = Math.round((correctCount / activeExamQuestions.length) * 100);
 
     // রেজাল্ট মডাল আপডেট
-    document.getElementById('modal-score-percentage').innerText = `${scorePercentage}%`;
-    document.getElementById('modal-correct-count').innerText = `${correctCount}টি`;
-    document.getElementById('modal-wrong-count').innerText = `${wrongCount}টি`;
-    document.getElementById('modal-skipped-count').innerText = `${skippedCount}টি`;
+    document.getElementById('modal-score-percentage').innerText = `${toBanglaNum(scorePercentage)}%`;
+    document.getElementById('modal-correct-count').innerText = `${toBanglaNum(correctCount)}টি`;
+    document.getElementById('modal-wrong-count').innerText = `${toBanglaNum(wrongCount)}টি`;
+    document.getElementById('modal-skipped-count').innerText = `${toBanglaNum(skippedCount)}টি`;
 
     document.getElementById('examResultModal').classList.add('open');
 }

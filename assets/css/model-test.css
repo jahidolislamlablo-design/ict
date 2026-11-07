@@ -173,7 +173,8 @@
     box-shadow: var(--shadow-sm);
 }
 
-.question-card.highlight-focus {
+.question-card.highlight-focus,
+.modern-quiz-card.highlight-focus {
     border-color: var(--primary) !important;
     box-shadow: 0 0 0 4px var(--primary-light) !important;
     transition: all 0.3s ease;

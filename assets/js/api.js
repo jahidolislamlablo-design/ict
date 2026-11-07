@@ -1353,6 +1353,15 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
         });
         element.classList.add('exam-selected');
         
+        if (typeof userAnswers !== 'undefined') {
+            userAnswers[qIndex] = selectedIndex;
+        }
+        if (typeof updateExamProgress === 'function') {
+            updateExamProgress();
+        }
+        const palBtn = document.getElementById(`palette-btn-${qIndex}`);
+        if (palBtn) palBtn.classList.add('answered');
+
         if (window.currentExamState) {
             window.currentExamState.answers[qIndex] = selectedIndex;
             window.currentExamState.updateStats();
