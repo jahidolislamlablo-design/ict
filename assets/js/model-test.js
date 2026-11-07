@@ -402,6 +402,26 @@ function submitExam() {
     document.getElementById('modal-wrong-count').innerText = `${toBanglaNum(wrongCount)}টি`;
     document.getElementById('modal-skipped-count').innerText = `${toBanglaNum(skippedCount)}টি`;
 
+    // ২০ এর উপরে পেলে ১ পয়েন্ট যোগ হবে
+    const pointAwardEl = document.getElementById('modal-point-award');
+    if (pointAwardEl) pointAwardEl.style.display = 'none';
+
+    if (correctCount > 20) {
+        if (window.ApiService && typeof ApiService.addModelTestPoint === 'function') {
+            ApiService.addModelTestPoint({ score: correctCount, examName: currentExamTitle || 'মডেল টেস্ট' })
+                .then(res => {
+                    if (res && res.pointsAwarded && pointAwardEl) {
+                        pointAwardEl.style.display = 'flex';
+                        pointAwardEl.innerHTML = `<i class="fa-solid fa-trophy" style="color: #F59E0B; font-size: 1.35rem;"></i> <span>অভিনন্দন! ২০-এর উপরে (${toBanglaNum(correctCount)}) স্কোর করায় আপনার প্রোফাইলে <strong>+১ পয়েন্ট</strong> যোগ হয়েছে! মোট পয়েন্ট: <strong>${toBanglaNum(res.newPoints)}</strong></span>`;
+                        if (window.showToast) {
+                            window.showToast('🎉 অভিনন্দন! মডেল টেস্টে ২০ এর উপরে স্কোর করায় ১ পয়েন্ট অর্জিত হয়েছে!', 'success');
+                        }
+                    }
+                })
+                .catch(() => {});
+        }
+    }
+
     document.getElementById('examResultModal').classList.add('open');
 }
 

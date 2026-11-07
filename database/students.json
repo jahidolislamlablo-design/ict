@@ -1,0 +1,112 @@
+[
+  {
+    "_id": "6af000000000000000000001",
+    "name": "সাদিয়া আফরিন",
+    "college": "ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+    "points": 35,
+    "testsCompleted": 38,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-20T10:00:00.000Z",
+    "updatedAt": "2026-11-07T12:00:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000002",
+    "name": "ফারহান জামিল",
+    "college": "নটর ডেম কলেজ, ঢাকা",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+    "points": 32,
+    "testsCompleted": 35,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-21T10:00:00.000Z",
+    "updatedAt": "2026-11-07T12:30:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000003",
+    "name": "তাহমিদ হাসান",
+    "college": "রাজউক উত্তরা মডেল কলেজ",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+    "points": 30,
+    "testsCompleted": 33,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-22T10:00:00.000Z",
+    "updatedAt": "2026-11-07T13:00:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000004",
+    "name": "জাহিদুল ইসলাম লাভলু",
+    "college": "সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল",
+    "avatar": "/assets/images/developer.jpg",
+    "points": 25,
+    "testsCompleted": 27,
+    "isCurrentUser": true,
+    "createdAt": "2026-10-20T08:00:00.000Z",
+    "updatedAt": "2026-11-07T14:00:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000005",
+    "name": "আফিফা তাসনিম",
+    "college": "হলিক্রস কলেজ, ঢাকা",
+    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
+    "points": 22,
+    "testsCompleted": 25,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-23T10:00:00.000Z",
+    "updatedAt": "2026-11-07T14:30:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000006",
+    "name": "রিফাত মাহমুদ",
+    "college": "ঢাকা কলেজ",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80",
+    "points": 19,
+    "testsCompleted": 22,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-24T10:00:00.000Z",
+    "updatedAt": "2026-11-07T15:00:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000007",
+    "name": "মারুফ আহমেদ",
+    "college": "চট্টগ্রাম কলেজ",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80",
+    "points": 16,
+    "testsCompleted": 18,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-25T10:00:00.000Z",
+    "updatedAt": "2026-11-07T15:30:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000008",
+    "name": "সুমাইয়া আক্তার",
+    "college": "রাজশাহী কলেজ",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+    "points": 14,
+    "testsCompleted": 16,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-26T10:00:00.000Z",
+    "updatedAt": "2026-11-07T16:00:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000009",
+    "name": "নাঈমুল ইসলাম",
+    "college": "কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80",
+    "points": 12,
+    "testsCompleted": 14,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-27T10:00:00.000Z",
+    "updatedAt": "2026-11-07T16:30:00.000Z"
+  },
+  {
+    "_id": "6af000000000000000000010",
+    "name": "আনিকা তাবাসসুম",
+    "college": "বিএএফ শাহীন কলেজ, কুর্মিটোলা",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80",
+    "points": 10,
+    "testsCompleted": 12,
+    "isCurrentUser": false,
+    "createdAt": "2026-10-28T10:00:00.000Z",
+    "updatedAt": "2026-11-07T17:00:00.000Z"
+  }
+]

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিক্ষার্থীদের র‍্যাংকিং (Students Rangking) - ICT Easy Learning</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=4.4">
+    <link rel="stylesheet" href="../assets/css/ranking.css?v=4.4">
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <!-- ডেস্কটপে লোগোর বামে গোল ব্যাক বাটন -->
+                <button class="nav-back-btn desktop-back-btn" onclick="window.navigateBack('../index.html')" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>হোমে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- নেভিগেশন বার (মোবাইলে এর বামে গোল ব্যাক বাটন থাকবে) -->
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="window.navigateBack('../index.html')" title="ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                </ul>
+            </div>
+
+            <!-- হেডার অ্যাকশন: ডান পাশে প্রোফাইল আইকনের বাম পাশে Students Rangking বাটন -->
+            <div class="header-actions">
+                <a href="students-ranking.html" class="header-ranking-btn active" title="শিক্ষার্থীদের র‍্যাংকিং">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Students Rangking</span>
+                </a>
+                <a href="profile.html" class="header-user-btn" title="আমার প্রোফাইল">
+                    <img src="../assets/images/developer.jpg" alt="ইউজার প্রোফাইল" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'">
+                    <span class="header-user-name">জাহিদুল</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- মূল কনটেন্ট -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ব্রেডক্রাম্ব -->
+            <div class="breadcrumb-bar">
+                <div class="breadcrumbs">
+                    <a href="../index.html"><i class="fa-solid fa-house"></i> হোম</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                    <span class="current">Students Rangking</span>
+                </div>
+            </div>
+
+            <!-- হিরো সেকশন -->
+            <div class="ranking-hero">
+                <div class="ranking-hero-badge">
+                    <i class="fa-solid fa-award"></i> লাইভ লিডারবোর্ড
+                </div>
+                <h1 class="ranking-hero-title">
+                    <i class="fa-solid fa-trophy" style="color: #F59E0B;"></i> Students Rangking
+                </h1>
+                <p class="ranking-hero-subtitle">
+                    মডেল টেস্ট পরীক্ষায় ২০ এর উপরে স্কোর অর্জনকারী শিক্ষার্থীদের তালিকা। প্রতিবার ২০-এর বেশি নম্বর পেলে প্রোফাইলে <strong>+১ পয়েন্ট</strong> যোগ হয়!
+                </p>
+            </div>
+
+            <!-- শীর্ষ ৩ জনের পোডিয়াম -->
+            <div id="podiumContainer" class="podium-container"></div>
+
+            <!-- সম্পূর্ণ র‍্যাংকিং টেবিল ও সার্চ -->
+            <div class="ranking-table-card">
+                <div class="ranking-table-header">
+                    <div class="ranking-table-title">
+                        <i class="fa-solid fa-ranking-star" style="color: var(--primary);"></i>
+                        <span>মেধাতালিকা</span>
+                        <span id="rankingTotalCount" style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); background: var(--bg-card); padding: 3px 10px; border-radius: var(--radius-full); border: 1px solid var(--border-color);">লোড হচ্ছে...</span>
+                    </div>
+                    <div class="ranking-search-box">
+                        <i class="fa-solid fa-magnifying-glass ranking-search-icon"></i>
+                        <input type="text" id="rankingSearchInput" class="ranking-search-input" placeholder="নাম বা কলেজ দিয়ে খুঁজুন...">
+                    </div>
+                </div>
+
+                <div id="rankingListContainer" class="ranking-list">
+                    <!-- ডাইনামিকালি লোড হবে -->
+                </div>
+            </div>
+
+            <!-- স্টিকি নিজের অবস্থান বার -->
+            <div id="currentUserStickyBar" class="current-user-sticky-bar" style="display: none;"></div>
+
+        </div>
+    </main>
+
+    <!-- প্ল্যাটফর্ম ফুটার -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-developer-card">
+                <div class="developer-avatar-wrapper">
+                    <img src="../assets/images/developer.jpg" alt="Jahidul Islam Lablo" class="developer-avatar-img">
+                </div>
+                <div class="developer-info-text">
+                    <span class="developer-role">Developer &amp; Owner</span>
+                    <h4 class="developer-name">JAHIDUL ISLAM LABLO</h4>
+                    <span class="developer-degree">BSc in CSE ( Uttara University)</span>
+                    <div class="footer-copyright-text">
+                        <span class="brand-copy-name">ICT EASY LEARNING</span> &copy; 2026. সর্বস্ত্ব সংরক্ষিত।
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- মোবাইল বটম নেভিগেশন বার -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="students-ranking.html" class="nav-item active">
+            <i class="fa-solid fa-trophy"></i>
+            <span>র‍্যাংকিং</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="../assets/js/api.js?v=4.4"></script>
+    <script src="../assets/js/main.js?v=4.4"></script>
+    <script src="../assets/js/students-ranking.js?v=4.4"></script>
+</body>
+</html>

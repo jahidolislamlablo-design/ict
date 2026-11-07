@@ -7,8 +7,8 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=4.3">
-    <link rel="stylesheet" href="../assets/css/profile.css?v=4.3">
+    <link rel="stylesheet" href="../assets/css/style.css?v=4.4">
+    <link rel="stylesheet" href="../assets/css/profile.css?v=4.4">
 </head>
 <body>
 
@@ -49,6 +49,10 @@
             </div>
 
             <div class="header-actions">
+                <a href="students-ranking.html" class="header-ranking-btn" title="শিক্ষার্থীদের র‍্যাংকিং">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Students Rangking</span>
+                </a>
                 <a href="profile.html" class="header-user-btn" style="border-color: var(--primary); background: var(--primary-light);" title="প্রোফাইল">
                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
                     <span class="header-user-name" style="color: var(--primary);">তানভীর</span>
@@ -101,6 +105,26 @@
                 <div>
                     <!-- স্ট্যাট মেট্রিক্স কার্ড গ্রিড -->
                     <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon-box" style="background: #FEF3C7; color: #D97706;">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div class="metric-info">
+                                <strong id="profileEarnedPoints">২৫ পয়েন্ট</strong>
+                                <span>অর্জিত পয়েন্ট (মডেল টেস্ট)</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon-box" style="background: #F3E8FF; color: #9333EA;">
+                                <i class="fa-solid fa-ranking-star"></i>
+                            </div>
+                            <div class="metric-info">
+                                <strong id="profileRankingPos">৪র্থ স্থান</strong>
+                                <span><a href="students-ranking.html" style="color: inherit; text-decoration: underline;">Students Rangking</a></span>
+                            </div>
+                        </div>
+
                         <div class="metric-card">
                             <div class="metric-icon-box" style="background: #EEF2FF; color: #4F46E5;">
                                 <i class="fa-solid fa-stopwatch"></i>
@@ -305,8 +329,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=4.3"></script>
-    <script src="../assets/js/main.js?v=4.3"></script>
-    <script src="../assets/js/profile.js?v=4.3"></script>
+    <script src="../assets/js/api.js?v=4.4"></script>
+    <script src="../assets/js/main.js?v=4.4"></script>
+    <script src="../assets/js/profile.js?v=4.4"></script>
 </body>
 </html>

@@ -325,6 +325,39 @@ const NoteSchema = new mongoose.Schema({
 
 const Note = mongoose.model('Note', NoteSchema);
 
+// ৫. Student / Ranking Schema & Model
+const StudentSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    default: 'জাহিদুল ইসলাম লাভলু'
+  },
+  college: {
+    type: String,
+    default: 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
+    trim: true
+  },
+  avatar: {
+    type: String,
+    default: '/assets/images/developer.jpg'
+  },
+  points: {
+    type: Number,
+    default: 0
+  },
+  testsCompleted: {
+    type: Number,
+    default: 0
+  },
+  isCurrentUser: {
+    type: Boolean,
+    default: false
+  }
+}, { timestamps: true });
+
+const Student = mongoose.model('Student', StudentSchema);
+
 // ==========================================
 // PDF Upload Configuration (Multer)
 // ==========================================
@@ -675,6 +708,17 @@ async function syncDatabaseJson(type = 'all') {
         try {
           if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
           fs.writeFileSync(path.join(dir, 'pdfs.json'), jsonStr, 'utf8');
+        } catch (e) {}
+      });
+    }
+
+    if (type === 'all' || type === 'students') {
+      const allStudents = await Student.find({}).sort({ points: -1, updatedAt: -1 });
+      const jsonStr = JSON.stringify(allStudents, null, 2);
+      destDirs.forEach(dir => {
+        try {
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'students.json'), jsonStr, 'utf8');
         } catch (e) {}
       });
     }
@@ -1820,6 +1864,154 @@ app.post('/api/sync-github', async (req, res) => {
 });
 
 // ==========================================
+
+// ==========================================
+// ৭. Students Ranking & Profile APIs
+// ==========================================
+
+// ১. শিক্ষার্থীদের র‍্যাংকিং তালিকা (Students Ranking List)
+app.get('/api/rankings', async (req, res) => {
+  try {
+    let students = [];
+    if (mongoose.connection.readyState === 1) {
+      students = await Student.find({}).sort({ points: -1, updatedAt: -1 }).lean();
+    }
+    if (!students || students.length === 0) {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        students = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        students.sort((a, b) => (b.points || 0) - (a.points || 0));
+      }
+    }
+    const ranked = students.map((s, idx) => ({
+      ...s,
+      position: idx + 1
+    }));
+    const currentUser = ranked.find(s => s.isCurrentUser) || ranked[0] || null;
+    res.json({
+      success: true,
+      data: ranked,
+      currentUser
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// ২. মডেল টেস্টে ২০ এর উপরে পেলে ১ পয়েন্ট যোগ (Award +1 Point if score > 20)
+app.post('/api/students/point', async (req, res) => {
+  try {
+    const { score, studentName, college, avatar } = req.body || {};
+    const scoreNum = Number(score) || 0;
+    
+    if (scoreNum <= 20) {
+      return res.json({
+        success: true,
+        pointsAwarded: false,
+        message: 'স্কোর ২০ এর বেশি হলে পয়েন্ট যোগ হয়।'
+      });
+    }
+
+    let student = null;
+    if (mongoose.connection.readyState === 1) {
+      student = await Student.findOne({ isCurrentUser: true });
+      if (!student && studentName) {
+        student = await Student.findOne({ name: studentName });
+      }
+      if (!student) {
+        student = new Student({
+          name: studentName || 'জাহিদুল ইসলাম লাভলু',
+          college: college || 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
+          avatar: avatar || '/assets/images/developer.jpg',
+          points: 1,
+          testsCompleted: 1,
+          isCurrentUser: true
+        });
+        await student.save();
+      } else {
+        student.points = (student.points || 0) + 1;
+        student.testsCompleted = (student.testsCompleted || 0) + 1;
+        await student.save();
+      }
+      await syncDatabaseJson('students');
+    } else {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      let list = [];
+      if (fs.existsSync(fallbackPath)) {
+        list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+      }
+      student = list.find(s => s.isCurrentUser) || list[0];
+      if (student) {
+        student.points = (student.points || 0) + 1;
+        student.testsCompleted = (student.testsCompleted || 0) + 1;
+        fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+      }
+    }
+
+    res.json({
+      success: true,
+      pointsAwarded: true,
+      newPoints: student ? student.points : 1,
+      message: 'অভিনন্দন! আপনার প্রোফাইলে ১ পয়েন্ট যোগ হয়েছে।'
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// ৩. প্রোফাইল তথ্য আনা (Get Profile)
+app.get('/api/profile', async (req, res) => {
+  try {
+    let student = null;
+    if (mongoose.connection.readyState === 1) {
+      student = await Student.findOne({ isCurrentUser: true }).lean();
+    }
+    if (!student) {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        student = list.find(s => s.isCurrentUser) || list[0];
+      }
+    }
+    res.json({ success: true, data: student });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// ৪. প্রোফাইল তথ্য আপডেট (Update Profile)
+app.post('/api/profile', async (req, res) => {
+  try {
+    const { name, college, avatar } = req.body || {};
+    let student = null;
+    if (mongoose.connection.readyState === 1) {
+      student = await Student.findOne({ isCurrentUser: true });
+      if (student) {
+        if (name) student.name = name;
+        if (college) student.college = college;
+        if (avatar) student.avatar = avatar;
+        await student.save();
+        await syncDatabaseJson('students');
+      }
+    } else {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        student = list.find(s => s.isCurrentUser) || list[0];
+        if (student) {
+          if (name) student.name = name;
+          if (college) student.college = college;
+          if (avatar) student.avatar = avatar;
+          fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+        }
+      }
+    }
+    res.json({ success: true, data: student });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
 app.use((req, res) => {
   res.status(404).json({
     success: false,

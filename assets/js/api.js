@@ -899,7 +899,106 @@ const ApiService = {
         } catch(e) {}
 
         return { chapters: [], boards: [], years: [], colleges: [], modelTests: [] };
+    },
+
+    // ১২. শিক্ষার্থীদের র‍্যাংকিং তালিকা (Students Ranking)
+    async getRankings() {
+        try {
+            const res = await fetchFromBackend('/api/rankings');
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
+                return res;
+            }
+        } catch (e) {}
+
+        let students = await fetchStaticJson('students.json');
+        if (!students || students.length === 0) {
+            try {
+                students = JSON.parse(localStorage.getItem('ict_cached_students') || '[]');
+            } catch (e) {}
+        }
+
+        const localProfile = JSON.parse(localStorage.getItem('ict_student_profile') || 'null');
+        if (localProfile && Array.isArray(students)) {
+            const myIdx = students.findIndex(s => s.isCurrentUser || s.name === localProfile.name);
+            if (myIdx >= 0) {
+                students[myIdx] = { ...students[myIdx], ...localProfile };
+            }
+        }
+
+        students.sort((a, b) => (b.points || 0) - (a.points || 0));
+        const ranked = students.map((s, idx) => ({ ...s, position: idx + 1 }));
+        const currentUser = ranked.find(s => s.isCurrentUser) || ranked[0] || null;
+
+        return {
+            success: true,
+            data: ranked,
+            currentUser
+        };
+    },
+
+    // ১৩. মডেল টেস্টে ২০ এর উপরে পেলে ১ পয়েন্ট যোগ করা (Add +1 Point if score > 20)
+    async addModelTestPoint(data) {
+        const { score } = data || {};
+        if (Number(score) <= 20) {
+            return { success: true, pointsAwarded: false, message: 'স্কোর ২০ এর বেশি হলে পয়েন্ট যোগ হয়।' };
+        }
+
+        try {
+            const res = await fetchFromBackend('/api/students/point', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res && res.success) {
+                const profile = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
+                profile.points = res.newPoints;
+                profile.testsCompleted = (profile.testsCompleted || 0) + 1;
+                localStorage.setItem('ict_student_profile', JSON.stringify(profile));
+                return res;
+            }
+        } catch (e) {}
+
+        const profile = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
+        profile.points = (profile.points || 24) + 1;
+        profile.testsCompleted = (profile.testsCompleted || 18) + 1;
+        localStorage.setItem('ict_student_profile', JSON.stringify(profile));
+
+        return {
+            success: true,
+            pointsAwarded: true,
+            newPoints: profile.points,
+            message: 'অভিনন্দন! আপনার প্রোফাইলে ১ পয়েন্ট যোগ হয়েছে।'
+        };
+    },
+
+    // ১৪. বর্তমান ইউজারের প্রোফাইল তথ্য আনা
+    async getStudentProfile() {
+        try {
+            const res = await fetchFromBackend('/api/profile');
+            if (res && res.success && res.data) {
+                localStorage.setItem('ict_student_profile', JSON.stringify(res.data));
+                return res.data;
+            }
+        } catch (e) {}
+
+        const cached = localStorage.getItem('ict_student_profile');
+        if (cached) {
+            try { return JSON.parse(cached); } catch (e) {}
+        }
+
+        const students = await fetchStaticJson('students.json');
+        const curr = (Array.isArray(students) && students.find(s => s.isCurrentUser)) || {
+            name: 'জাহিদুল ইসলাম লাভলু',
+            college: 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
+            avatar: '../assets/images/developer.jpg',
+            points: 25,
+            testsCompleted: 26,
+            isCurrentUser: true
+        };
+        localStorage.setItem('ict_student_profile', JSON.stringify(curr));
+        return curr;
     }
+
 };
 
 

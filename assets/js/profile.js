@@ -1,38 +1,118 @@
 /**
- * PROFILE & SETTINGS SCRIPT
+ * PROFILE & SETTINGS SCRIPT (profile.js)
+ * ICT Easy Learning
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initial profile setup
+document.addEventListener('DOMContentLoaded', async () => {
+    await initUserProfile();
 });
 
+async function initUserProfile() {
+    try {
+        let user = null;
+        if (window.ApiService && typeof ApiService.getStudentProfile === 'function') {
+            user = await ApiService.getStudentProfile();
+        }
+
+        if (!user) {
+            const cached = localStorage.getItem('ict_student_profile');
+            if (cached) user = JSON.parse(cached);
+        }
+
+        if (user) {
+            updateProfileUI(user);
+        }
+
+        // Fetch rankings to determine current position
+        if (window.ApiService && typeof ApiService.getRankings === 'function') {
+            const rankRes = await ApiService.getRankings();
+            if (rankRes && rankRes.currentUser) {
+                const posEl = document.getElementById('profileRankingPos');
+                if (posEl) {
+                    const toBn = (n) => (window.toBanglaNum ? window.toBanglaNum(n) : n);
+                    posEl.innerText = `${toBn(rankRes.currentUser.position || 4)}র্থ স্থান`;
+                }
+            }
+        }
+    } catch (e) {
+        console.warn('Profile load error:', e);
+    }
+}
+
+function updateProfileUI(user) {
+    const toBn = (n) => (window.toBanglaNum ? window.toBanglaNum(n) : n);
+
+    if (user.name) {
+        const nameEl = document.getElementById('profileDisplayName');
+        if (nameEl) nameEl.innerText = user.name;
+        const inputName = document.getElementById('editNameInput');
+        if (inputName) inputName.value = user.name;
+    }
+
+    if (user.college) {
+        const collegeEl = document.getElementById('profileDisplayCollege');
+        if (collegeEl) collegeEl.innerText = user.college;
+        const inputCollege = document.getElementById('editCollegeInput');
+        if (inputCollege) inputCollege.value = user.college;
+    }
+
+    if (user.points !== undefined) {
+        const pointsEl = document.getElementById('profileEarnedPoints');
+        if (pointsEl) pointsEl.innerText = `${toBn(user.points)} পয়েন্ট`;
+    }
+
+    if (user.avatar) {
+        const avatarImgs = document.querySelectorAll('.profile-avatar-img');
+        avatarImgs.forEach(img => { img.src = user.avatar; });
+    }
+}
+
 function openEditProfileModal() {
-    document.getElementById('editProfileModal').classList.add('open');
+    const modal = document.getElementById('editProfileModal');
+    if (modal) modal.classList.add('open');
 }
 
 function closeEditProfileModal() {
-    document.getElementById('editProfileModal').classList.remove('open');
+    const modal = document.getElementById('editProfileModal');
+    if (modal) modal.classList.remove('open');
 }
 
-function saveProfile(event) {
-    event.preventDefault();
-    const nameInput = document.getElementById('editNameInput').value;
-    const collegeInput = document.getElementById('editCollegeInput').value;
+async function saveProfile(event) {
+    if (event) event.preventDefault();
+    const nameInput = document.getElementById('editNameInput').value.trim();
+    const collegeInput = document.getElementById('editCollegeInput').value.trim();
 
-    if (nameInput) {
-        document.getElementById('profileDisplayName').innerText = nameInput;
-    }
-    if (collegeInput) {
-        document.getElementById('profileDisplayCollege').innerText = collegeInput;
-    }
+    const profile = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
+    if (nameInput) profile.name = nameInput;
+    if (collegeInput) profile.college = collegeInput;
+
+    localStorage.setItem('ict_student_profile', JSON.stringify(profile));
+    updateProfileUI(profile);
+
+    // Call backend API if available
+    try {
+        if (window.ApiService && typeof ApiService.updateProfile === 'function') {
+            await ApiService.updateProfile(profile);
+        } else {
+            fetch('/api/profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(profile)
+            }).catch(() => {});
+        }
+    } catch (e) {}
 
     closeEditProfileModal();
-    window.showToast("প্রোফাইল তথ্য সফলভাবে আপডেট করা হয়েছে!", "success");
+    if (window.showToast) {
+        window.showToast("প্রোফাইল তথ্য সফলভাবে আপডেট করা হয়েছে!", "success");
+    }
 }
 
 function confirmLogout() {
     if (confirm("আপনি কি নিশ্চিতভাবে লগ আউট করতে চান?")) {
-        window.showToast("লগ আউট সম্পন্ন হয়েছে", "info");
+        if (window.showToast) {
+            window.showToast("লগ আউট সম্পন্ন হয়েছে", "info");
+        }
         setTimeout(() => {
             window.location.href = "../index.html";
         }, 1000);

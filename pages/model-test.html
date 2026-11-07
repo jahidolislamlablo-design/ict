@@ -7,8 +7,8 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=4.3">
-    <link rel="stylesheet" href="../assets/css/model-test.css?v=4.3">
+    <link rel="stylesheet" href="../assets/css/style.css?v=4.4">
+    <link rel="stylesheet" href="../assets/css/model-test.css?v=4.4">
 </head>
 <body>
 
@@ -49,6 +49,11 @@
             </div>
 
             <div class="header-actions">
+                <a href="students-ranking.html" class="header-ranking-btn" title="শিক্ষার্থীদের র‍্যাংকিং">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Students Rangking</span>
+                </a>
+
                 <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল">
                     <span class="header-user-name">তানভীর</span>
@@ -1077,6 +1082,10 @@
                 </div>
             </div>
 
+            <!-- ২০ এর বেশি স্কোর করলে অর্জিত পয়েন্ট ব্যানার -->
+            <div id="modal-point-award" class="point-award-banner" style="display:none; margin: 18px 0; padding: 12px 16px; border-radius: 12px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(251, 191, 36, 0.08)); border: 1.5px solid rgba(245, 158, 11, 0.4); align-items: center; justify-content: center; gap: 12px; text-align: left; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);">
+            </div>
+
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
                 <button class="btn btn-primary" onclick="reviewExamAnswers()">
                     <i class="fa-solid fa-list-check"></i> সমাধান ও ব্যাখ্যা দেখুন
@@ -1133,8 +1142,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=4.3"></script>
-    <script src="../assets/js/main.js?v=4.3"></script>
-    <script src="../assets/js/model-test.js?v=4.3"></script>
+    <script src="../assets/js/api.js?v=4.4"></script>
+    <script src="../assets/js/main.js?v=4.4"></script>
+    <script src="../assets/js/model-test.js?v=4.4"></script>
 </body>
 </html>

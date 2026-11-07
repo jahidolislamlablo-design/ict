@@ -1,0 +1,543 @@
+/* ============================================================
+   STUDENTS RANKING PAGE STYLES (ranking.css)
+   ICT Easy Learning - Student Leaderboard & Points System
+   ============================================================ */
+
+.ranking-hero {
+    text-align: center;
+    padding: 30px 20px 20px;
+    background: linear-gradient(180deg, rgba(79, 70, 229, 0.08) 0%, rgba(245, 158, 11, 0.04) 100%);
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.ranking-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: var(--radius-full);
+    color: #B45309;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.ranking-hero-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.ranking-hero-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   TOP 3 PODIUM SECTION
+   ============================================================ */
+.podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 20px 0 32px;
+    padding: 20px 10px;
+}
+
+.podium-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px 14px 16px;
+    width: 220px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.podium-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* 1st Place Champion */
+.podium-card.rank-1 {
+    order: 2;
+    width: 240px;
+    padding-top: 26px;
+    border-color: #F59E0B;
+    background: linear-gradient(180deg, #FFFBEB 0%, var(--bg-card) 60%);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.18);
+    transform: translateY(-10px);
+}
+
+.podium-card.rank-1:hover {
+    transform: translateY(-14px);
+}
+
+/* 2nd Place */
+.podium-card.rank-2 {
+    order: 1;
+    border-color: #94A3B8;
+    background: linear-gradient(180deg, #F8FAFC 0%, var(--bg-card) 60%);
+}
+
+/* 3rd Place */
+.podium-card.rank-3 {
+    order: 3;
+    border-color: #D97706;
+    background: linear-gradient(180deg, #FEF3C7 0%, var(--bg-card) 60%);
+}
+
+.podium-crown {
+    position: absolute;
+    top: -16px;
+    color: #F59E0B;
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.5));
+    animation: floatCrown 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatCrown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-4px); }
+}
+
+.podium-avatar-wrapper {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.podium-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.podium-card.rank-1 .podium-avatar {
+    width: 88px;
+    height: 88px;
+    border-color: #F59E0B;
+}
+
+.podium-medal-badge {
+    position: absolute;
+    bottom: -6px;
+    right: -4px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.podium-medal-badge.gold {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.podium-medal-badge.silver {
+    background: linear-gradient(135deg, #94A3B8, #64748B);
+}
+
+.podium-medal-badge.bronze {
+    background: linear-gradient(135deg, #D97706, #B45309);
+}
+
+.podium-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.podium-college {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    line-height: 1.35;
+    max-height: 2.7em;
+    overflow: hidden;
+}
+
+.podium-points-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #B45309;
+}
+
+/* ============================================================
+   RANKING TABLE & LIST SECTION
+   ============================================================ */
+.ranking-table-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.ranking-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--bg-card-subtle);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ranking-table-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+.ranking-search-box {
+    position: relative;
+    width: 260px;
+}
+
+.ranking-search-input {
+    width: 100%;
+    padding: 7px 12px 7px 34px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    outline: none;
+    transition: var(--transition);
+    background: var(--bg-card);
+}
+
+.ranking-search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.ranking-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+/* Ranking Row */
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking-row {
+    display: grid;
+    grid-template-columns: 70px 60px 1fr 140px;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.ranking-row:last-child {
+    border-bottom: none;
+}
+
+.ranking-row:hover {
+    background-color: var(--bg-card-subtle);
+}
+
+.ranking-row.current-user-row {
+    background: rgba(79, 70, 229, 0.05);
+    border-left: 4px solid var(--primary);
+}
+
+.rank-pos-col {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.rank-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.rank-badge.top-1 {
+    background: #FEF3C7;
+    color: #D97706;
+    border: 1.5px solid #F59E0B;
+}
+
+.rank-badge.top-2 {
+    background: #F1F5F9;
+    color: #475569;
+    border: 1.5px solid #94A3B8;
+}
+
+.rank-badge.top-3 {
+    background: #FFF7ED;
+    color: #C2410C;
+    border: 1.5px solid #F97316;
+}
+
+.rank-badge.general {
+    color: var(--text-muted);
+}
+
+.rank-avatar-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}
+
+.rank-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 0 10px;
+}
+
+.rank-user-name {
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.you-tag {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+}
+
+.rank-user-college {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.rank-points-col {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.points-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-full);
+    color: #B45309;
+    font-weight: 800;
+    font-size: 0.92rem;
+}
+
+/* ============================================================
+   CURRENT USER STICKY BANNER
+   ============================================================ */
+.current-user-sticky-bar {
+    position: sticky;
+    bottom: 16px;
+    z-index: 40;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 24px rgba(30, 27, 75, 0.28);
+    border: 1.5px solid rgba(245, 158, 11, 0.4);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.user-sticky-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-sticky-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #F59E0B;
+}
+
+.user-sticky-text h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+}
+
+.user-sticky-text p {
+    font-size: 0.78rem;
+    color: #CBD5E1;
+    margin: 2px 0 0;
+}
+
+.user-sticky-stats {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sticky-stat-item {
+    text-align: center;
+}
+
+.sticky-stat-item strong {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #FCD34D;
+}
+
+.sticky-stat-item span {
+    font-size: 0.72rem;
+    color: #E2E8F0;
+}
+
+.sticky-action-btn {
+    padding: 7px 16px;
+    background: #F59E0B;
+    color: #1E1B4B;
+    border: none;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.sticky-action-btn:hover {
+    background: #FBBF24;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN FOR RANKING PAGE
+   ============================================================ */
+@media (max-width: 768px) {
+    .podium-container {
+        gap: 10px;
+        padding: 10px 4px;
+    }
+    .podium-card {
+        width: 32%;
+        padding: 14px 8px 12px;
+    }
+    .podium-card.rank-1 {
+        width: 36%;
+        padding-top: 20px;
+    }
+    .podium-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .podium-card.rank-1 .podium-avatar {
+        width: 70px;
+        height: 70px;
+    }
+    .podium-name {
+        font-size: 0.85rem;
+    }
+    .podium-college {
+        font-size: 0.7rem;
+    }
+    .podium-points-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .ranking-row {
+        grid-template-columns: 50px 48px 1fr 100px;
+        padding: 12px 14px;
+    }
+    .rank-avatar-img {
+        width: 38px;
+        height: 38px;
+    }
+    .rank-user-name {
+        font-size: 0.88rem;
+    }
+    .rank-user-college {
+        font-size: 0.74rem;
+    }
+    .points-pill {
+        padding: 4px 10px;
+        font-size: 0.82rem;
+    }
+
+    .current-user-sticky-bar {
+        padding: 10px 14px;
+        bottom: 74px; /* Above mobile bottom-nav */
+    }
+}
