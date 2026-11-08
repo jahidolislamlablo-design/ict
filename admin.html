@@ -1981,23 +1981,34 @@
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-      if (tabId === 'mcqTab') {
-        document.querySelectorAll('.tab-btn')[0].classList.add('active');
-      } else if (tabId === 'cqTab') {
-        document.querySelectorAll('.tab-btn')[1].classList.add('active');
-      } else if (tabId === 'previewTab') {
-        document.querySelectorAll('.tab-btn')[2].classList.add('active');
-        loadDatabaseItems();
-      } else if (tabId === 'pdfTab') {
-        document.querySelectorAll('.tab-btn')[3].classList.add('active');
-        loadPdfItems();
-      } else if (tabId === 'liveExamTab') {
-        const btns = document.querySelectorAll('.tab-btn');
-        if (btns[4]) btns[4].classList.add('active');
-        loadLiveExamItems();
+      const tabBtnMap = {
+        'mcqTab': 0,
+        'cqTab': 1,
+        'previewTab': 2,
+        'pdfTab': 3,
+        'liveExamTab': 4
+      };
+
+      const btnIndex = tabBtnMap[tabId];
+      const allBtns = document.querySelectorAll('.tab-btn');
+      if (btnIndex !== undefined && allBtns[btnIndex]) {
+        allBtns[btnIndex].classList.add('active');
       }
 
-      document.getElementById(tabId).classList.add('active');
+      // Show the selected section immediately
+      const activeSection = document.getElementById(tabId);
+      if (activeSection) {
+        activeSection.classList.add('active');
+      }
+
+      // Load section data
+      if (tabId === 'previewTab') {
+        try { loadDatabaseItems(); } catch(e) { console.error('loadDatabaseItems error:', e); }
+      } else if (tabId === 'pdfTab') {
+        try { loadPdfItems(); } catch(e) { console.error('loadPdfItems error:', e); }
+      } else if (tabId === 'liveExamTab') {
+        try { loadLiveExamItems(); } catch(e) { console.error('loadLiveExamItems error:', e); }
+      }
     }
 
     function showToast(title, message, type = 'success') {
@@ -3448,9 +3459,342 @@
       if (cancelBtn) cancelBtn.style.display = 'none';
     }
 
+
+    // ==========================================
+    // লাইভ এক্সাম ও মডেল টেস্ট কন্ট্রোল প্যানেল স্ক্রিপ্ট
+    // ==========================================
+    let allModelTests = [];
+
+    async function loadLiveExamItems() {
+      const tableBody = document.getElementById('liveExamTableBody');
+      if (tableBody) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="10" style="text-align: center; padding: 2rem; color: #64748b;">
+              ⏳ মডেল টেস্ট ও লাইভ এক্সাম তালিকা লোড হচ্ছে...
+            </td>
+          </tr>
+        `;
+      }
+
+      try {
+        let list = [];
+        // First try backend API
+        try {
+          const res = await fetch(`${API_BASE}/api/model-tests`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success && Array.isArray(data.data) && data.data.length > 0) {
+              list = data.data;
+            }
+          }
+        } catch(apiErr) {
+          console.warn('Backend /api/model-tests error, trying fallback:', apiErr.message);
+        }
+
+        // Fallback to static JSON file
+        if (!list || list.length === 0) {
+          const fb = await fetch('database/model_tests.json?t=' + Date.now());
+          if (fb.ok) {
+            list = await fb.json();
+          }
+        }
+
+        if (Array.isArray(list) && list.length > 0) {
+          allModelTests = list.sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
+        }
+
+        const badge = document.getElementById('liveExamCountBadge');
+        if (badge) badge.textContent = allModelTests.length;
+
+        renderLiveExamTable(allModelTests);
+      } catch (err) {
+        console.error('loadLiveExamItems error:', err);
+        if (tableBody) {
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="10" style="text-align: center; padding: 2rem; color: #ef4444;">
+                ❌ তালিকা লোড করা যায়নি: ${escapeHtml(err.message)}
+              </td>
+            </tr>
+          `;
+        }
+      }
+    }
+
+    function isExamLiveNow(item) {
+      if (item.isLive === true || item.isLive === 'true') return true;
+      if (!item.startTime || !item.endTime) return false;
+      const now = new Date();
+      const start = new Date(item.startTime);
+      const end = new Date(item.endTime);
+      return now >= start && now <= end;
+    }
+
+    function isExamUpcoming(item) {
+      if (!item.startTime) return false;
+      const now = new Date();
+      const start = new Date(item.startTime);
+      return now < start;
+    }
+
+    function renderLiveExamTable(list) {
+      const tableBody = document.getElementById('liveExamTableBody');
+      if (!tableBody) return;
+
+      if (!list || list.length === 0) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="10" style="text-align: center; padding: 2rem; color: #64748b;">
+              কোনো মডেল টেস্ট বা লাইভ এক্সাম পাওয়া যায়নি।
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tableBody.innerHTML = list.map(item => {
+        const isLive = isExamLiveNow(item);
+        const isUpcoming = !isLive && isExamUpcoming(item);
+
+        let statusBadge = '<span class="badge" style="background:#f1f5f9; color:#64748b; padding:4px 8px; border-radius:12px; font-weight:600;">🏁 পূর্ববর্তী</span>';
+        if (isLive) {
+          statusBadge = '<span class="badge" style="background:#fee2e2; color:#dc2626; padding:4px 8px; border-radius:12px; font-weight:700;">🔴 LIVE</span>';
+        } else if (isUpcoming) {
+          statusBadge = '<span class="badge" style="background:#fef3c7; color:#d97706; padding:4px 8px; border-radius:12px; font-weight:600;">🕒 শিঘ্রই</span>';
+        }
+
+        let scheduleText = '<span style="color:#94a3b8; font-size:0.82rem;">সাধারণ মডেল টেস্ট</span>';
+        if (item.startTime || item.endTime) {
+          const sStr = item.startTime ? new Date(item.startTime).toLocaleString('bn-BD', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' }) : '-';
+          const eStr = item.endTime ? new Date(item.endTime).toLocaleString('bn-BD', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' }) : '-';
+          scheduleText = `<div style="font-size:0.8rem; line-height:1.4;">
+            <div><span style="color:#059669; font-weight:600;">শুরু:</span> ${sStr}</div>
+            <div><span style="color:#dc2626; font-weight:600;">শেষ:</span> ${eStr}</div>
+          </div>`;
+        }
+
+        const examNoVal = escapeHtml(item.examNo || '');
+        const itemKey = item._id || item.examNo;
+
+        return `
+          <tr>
+            <td style="font-weight: 700; color: #4338ca; text-align: center;">${item.serialNo || 0}</td>
+            <td style="font-weight: 800; font-size: 0.95rem; color: #0f172a;">Exam No: ${examNoVal}</td>
+            <td>
+              <span style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #1e293b; display: inline-block;">
+                Date: ${escapeHtml(item.date || '01-11-26')}
+              </span>
+            </td>
+            <td>
+              <strong style="color: #1e293b; font-size: 0.95rem;">Chapters: ${escapeHtml(item.chapters || 'সকল অধ্যায়')}</strong>
+              <div style="font-size: 0.78rem; color: #64748b;">${escapeHtml(item.title || '')}</div>
+            </td>
+            <td style="font-size: 0.84rem; color: #475569;">
+              <div>❓ ${item.totalQuestions || 25}টি প্রশ্ন</div>
+              <div>🕒 ${item.duration || 25} মিনিট</div>
+            </td>
+            <td>
+              <span style="background: #ecfdf5; color: #059669; font-weight: 600; padding: 3px 8px; border-radius: 12px; font-size: 0.82rem;">
+                👥 ${item.participants || 547} জন
+              </span>
+            </td>
+            <td>${scheduleText}</td>
+            <td>${statusBadge}</td>
+            <td>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #4f46e5; background: #eef2ff; padding: 3px 8px; border-radius: 6px; display: inline-block;">
+                ${escapeHtml(item.buttonText || 'Start Previous Live Exam')}
+              </span>
+            </td>
+            <td>
+              <div style="display: flex; gap: 6px; justify-content: center;">
+                <button type="button" class="btn btn-secondary" onclick="editLiveExamItem('${itemKey}')" style="padding: 4px 8px; font-size: 0.8rem;" title="সম্পাদনা করুন">
+                  ✏️
+                </button>
+                <button type="button" class="btn btn-danger" onclick="deleteLiveExamItem('${itemKey}')" style="padding: 4px 8px; font-size: 0.8rem;" title="মুছে ফেলুন">
+                  🗑️
+                </button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterLiveExamList() {
+      const q = (document.getElementById('liveExamSearchInput')?.value || '').toLowerCase().trim();
+      const status = document.getElementById('liveExamStatusFilter')?.value || 'all';
+
+      const filtered = allModelTests.filter(item => {
+        const matchesQuery = !q || 
+          (item.examNo && String(item.examNo).toLowerCase().includes(q)) ||
+          (item.title && item.title.toLowerCase().includes(q)) ||
+          (item.chapters && item.chapters.toLowerCase().includes(q)) ||
+          (item.date && item.date.toLowerCase().includes(q));
+
+        if (!matchesQuery) return false;
+
+        if (status === 'live') return isExamLiveNow(item);
+        if (status === 'upcoming') return isExamUpcoming(item);
+        if (status === 'previous') return !isExamLiveNow(item) && !isExamUpcoming(item);
+
+        return true;
+      });
+
+      renderLiveExamTable(filtered);
+    }
+
+    function openNewLiveExamModal() {
+      document.getElementById('liveExamModalTitle').textContent = '➕ নতুন লাইভ এক্সাম / মডেল টেস্ট যোগ করুন';
+      document.getElementById('leFormId').value = '';
+      const nextSerial = allModelTests.length > 0 ? Math.max(...allModelTests.map(t => parseInt(t.serialNo, 10) || 0)) + 1 : 1;
+      const nextExamNo = nextSerial < 10 ? '0' + nextSerial : '' + nextSerial;
+
+      document.getElementById('leSerialNo').value = nextSerial;
+      document.getElementById('leExamNo').value = nextExamNo;
+      document.getElementById('leTitle').value = 'Model Test ' + nextExamNo;
+      document.getElementById('leDate').value = '01-11-26';
+      document.getElementById('leChapters').value = 'প্রথম অধ্যায়';
+      document.getElementById('leCategory').value = 'full';
+      document.getElementById('leQuestions').value = 25;
+      document.getElementById('leDuration').value = 25;
+      document.getElementById('leMarks').value = 25;
+      document.getElementById('leParticipants').value = 547;
+      document.getElementById('leButtonText').value = 'Start Live Exam';
+      document.getElementById('leStartTime').value = '';
+      document.getElementById('leEndTime').value = '';
+      document.getElementById('leIsLiveDirect').checked = false;
+
+      document.getElementById('liveExamEditModal').classList.add('open');
+    }
+
+    function editLiveExamItem(id) {
+      const item = allModelTests.find(t => String(t._id) === String(id) || String(t.examNo) === String(id));
+      if (!item) {
+        showToast('ত্রুটি', 'মডেল টেস্টটি খুঁজে পাওয়া যায়নি', 'error');
+        return;
+      }
+
+      document.getElementById('liveExamModalTitle').textContent = `✏️ Model Test ${item.examNo || ''} সম্পাদনা`;
+      document.getElementById('leFormId').value = item._id || item.examNo;
+      document.getElementById('leSerialNo').value = item.serialNo || 1;
+      document.getElementById('leExamNo').value = item.examNo || '';
+      document.getElementById('leTitle').value = item.title || '';
+      document.getElementById('leDate').value = item.date || '';
+      document.getElementById('leChapters').value = item.chapters || '';
+      document.getElementById('leCategory').value = item.category || 'full';
+      document.getElementById('leQuestions').value = item.totalQuestions || 25;
+      document.getElementById('leDuration').value = item.duration || 25;
+      document.getElementById('leMarks').value = item.totalMarks || 25;
+      document.getElementById('leParticipants').value = item.participants || 547;
+      document.getElementById('leButtonText').value = item.buttonText || 'Start Previous Live Exam';
+
+      function formatDateTimeLocal(dtStr) {
+        if (!dtStr) return '';
+        try {
+          const d = new Date(dtStr);
+          if (isNaN(d.getTime())) return '';
+          const pad = n => (n < 10 ? '0' + n : n);
+          return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+        } catch(e) { return ''; }
+      }
+
+      document.getElementById('leStartTime').value = formatDateTimeLocal(item.startTime);
+      document.getElementById('leEndTime').value = formatDateTimeLocal(item.endTime);
+      document.getElementById('leIsLiveDirect').checked = item.isLive === true || item.isLive === 'true';
+
+      document.getElementById('liveExamEditModal').classList.add('open');
+    }
+
+    function closeLiveExamModal() {
+      const m = document.getElementById('liveExamEditModal');
+      if (m) m.classList.remove('open');
+    }
+
+    async function handleLiveExamFormSubmit(e) {
+      e.preventDefault();
+      const saveBtn = document.getElementById('saveLiveExamBtn');
+      const originalText = saveBtn ? saveBtn.innerHTML : 'সংরক্ষণ করুন';
+
+      try {
+        if (saveBtn) {
+          saveBtn.disabled = true;
+          saveBtn.innerHTML = '⏳ সংরক্ষণ করা হচ্ছে...';
+        }
+
+        const id = document.getElementById('leFormId').value.trim();
+        const payload = {
+          serialNo: parseInt(document.getElementById('leSerialNo').value, 10) || 1,
+          examNo: document.getElementById('leExamNo').value.trim(),
+          title: document.getElementById('leTitle').value.trim(),
+          date: document.getElementById('leDate').value.trim(),
+          chapters: document.getElementById('leChapters').value.trim(),
+          category: document.getElementById('leCategory').value,
+          totalQuestions: parseInt(document.getElementById('leQuestions').value, 10) || 25,
+          duration: parseInt(document.getElementById('leDuration').value, 10) || 25,
+          totalMarks: parseInt(document.getElementById('leMarks').value, 10) || 25,
+          participants: parseInt(document.getElementById('leParticipants').value, 10) || 547,
+          buttonText: document.getElementById('leButtonText').value.trim(),
+          startTime: document.getElementById('leStartTime').value ? new Date(document.getElementById('leStartTime').value).toISOString() : '',
+          endTime: document.getElementById('leEndTime').value ? new Date(document.getElementById('leEndTime').value).toISOString() : '',
+          isLive: document.getElementById('leIsLiveDirect').checked
+        };
+
+        let res;
+        if (id) {
+          res = await fetch(`${API_BASE}/api/model-tests/${encodeURIComponent(id)}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } else {
+          res = await fetch(`${API_BASE}/api/model-tests`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        const data = await res.json();
+        if (data.success) {
+          showToast('সফলতা', data.message || 'মডেল টেস্ট তথ্য সফলভাবে সংরক্ষিত হয়েছে!', 'success');
+          closeLiveExamModal();
+          await loadLiveExamItems();
+        } else {
+          showToast('ত্রুটি', data.message || 'সংরক্ষণে ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', 'সার্ভার যোগাযোগে সমস্যা হয়েছে: ' + err.message, 'error');
+      } finally {
+        if (saveBtn) {
+          saveBtn.disabled = false;
+          saveBtn.innerHTML = originalText;
+        }
+      }
+    }
+
+    async function deleteLiveExamItem(id) {
+      if (!confirm('আপনি কি নিশ্চিত যে এই মডেল টেস্টটি মুছে ফেলতে চান?')) return;
+      try {
+        const res = await fetch(`${API_BASE}/api/model-tests/${encodeURIComponent(id)}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('সফলতা', 'মডেল টেস্ট সফলভাবে মুছে ফেলা হয়েছে', 'success');
+          await loadLiveExamItems();
+        } else {
+          showToast('ত্রুটি', data.message || 'মুছে ফেলতে ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', 'ডিলিট করতে সমস্যা হয়েছে: ' + err.message, 'error');
+      }
+    }
+
     // উইন্ডো লোডে মেটাডাটা অপশন ইনজেক্ট
     window.addEventListener('DOMContentLoaded', () => {
       loadCustomMetaOptions();
+      loadLiveExamItems();
     });
 
   </script>
