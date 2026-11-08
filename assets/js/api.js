@@ -689,7 +689,7 @@ const ApiService = {
 
         const allMcqs = await fetchStaticJson('mcqs.json');
         if (allMcqs.length > 0) {
-            let matched = allMcqs.filter(item => hasCategory(item, 'Model Test'));
+            let matched = allMcqs.filter(item => hasCategory(item, 'Live Exam') || hasCategory(item, 'Model Test'));
             // Always ensure at least 25 questions for full model test
             if (matched.length < 25) {
                 const pool = [...allMcqs].sort(() => 0.5 - Math.random());

@@ -72,9 +72,29 @@ let currentExamTitle = 'পূর্ণাঙ্গ চূড়ান্ত মড
 let currentExamDuration = 25;
 let isExamSubmitted = false;
 
+let allModelTestsData = [];
+let liveCountdownInterval = null;
+let currentFilterCategory = 'all';
+
+function toBanglaNum(num) {
+    if (typeof window.toBanglaNum === 'function') return window.toBanglaNum(num);
+    const bDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    return String(num).replace(/\d/g, d => bDigits[d] || d);
+}
+
+function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initFilterTabs();
-    syncDynamicModelTests();
+    loadAllModelTests();
 });
 
 function initFilterTabs() {
@@ -85,20 +105,156 @@ function initFilterTabs() {
             tab.classList.add('active');
             
             const filter = tab.getAttribute('data-filter');
+            currentFilterCategory = filter;
             filterTests(filter);
         });
     });
 }
 
 function filterTests(filter) {
-    const cards = document.querySelectorAll('.test-card');
+    currentFilterCategory = filter || 'all';
+    const cards = document.querySelectorAll('.model-tests-grid .test-card');
     cards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        if (currentFilterCategory === 'all' || card.getAttribute('data-category') === currentFilterCategory) {
             card.style.display = 'flex';
         } else {
             card.style.display = 'none';
         }
     });
+}
+
+function isExamLiveNow(item) {
+    if (item.isLive === true || item.isLive === 'true') return true;
+    if (!item.startTime || !item.endTime) return false;
+    const now = new Date();
+    const start = new Date(item.startTime);
+    const end = new Date(item.endTime);
+    return now >= start && now <= end;
+}
+
+function getRemainingLiveTimeText(item) {
+    if (!item.endTime) return '';
+    const now = new Date();
+    const end = new Date(item.endTime);
+    const diffMs = end - now;
+    if (diffMs <= 0) return 'সময় সমাপ্ত';
+
+    const totalSeconds = Math.floor(diffMs / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const pad = n => (n < 10 ? '0' + n : '' + n);
+    if (hours > 0) {
+        return 'সময় বাকি: ' + toBanglaNum(pad(hours)) + ':' + toBanglaNum(pad(minutes)) + ':' + toBanglaNum(pad(seconds));
+    }
+    return 'সময় বাকি: ' + toBanglaNum(pad(minutes)) + ' মি. ' + toBanglaNum(pad(seconds)) + ' সে.';
+}
+
+function renderModelTestCards(list) {
+    const grid = document.getElementById('modelTestsGrid') || document.querySelector('.model-tests-grid');
+    if (!grid) return;
+
+    grid.innerHTML = list.map(item => {
+        const isLive = isExamLiveNow(item);
+        const examNoStr = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+        const dateStr = item.date || '01-11-26';
+        const chaptersStr = item.chapters || 'প্রথম অধ্যায়';
+        const participantsCount = item.participants || 547;
+        const totalQ = item.totalQuestions || 25;
+        const duration = item.duration || 25;
+        const totalM = item.totalMarks || 25;
+        const titleSafe = (item.title || ('Model Test ' + examNoStr)).replace(/'/g, "\\'");
+
+        let btnText = item.buttonText || (isLive ? 'Start Live Exam' : 'Start Previous Live Exam');
+        if (isLive) btnText = 'Start Live Exam';
+
+        return `
+            <div class="test-card model-test-card" data-category="${item.category || 'full'}" id="card-mt-${item._id || examNoStr}">
+                <div>
+                    <!-- Top Row -->
+                    <div class="mt-top-row">
+                        <div class="mt-date-pill">Date: ${escapeHtml(dateStr)}</div>
+                        <div class="mt-top-right">
+                            <div class="mt-badges-row">
+                                <div class="mt-participants-pill">
+                                    <i class="fa-solid fa-users"></i> ${toBanglaNum(participantsCount)} জন
+                                </div>
+                                <div class="mt-live-badge" id="live-badge-${item._id || examNoStr}" style="${isLive ? '' : 'display:none;'}">
+                                    <span class="mt-live-dot"></span> LIVE
+                                </div>
+                            </div>
+                            <!-- Live Remaining Time below LIVE badge -->
+                            <div class="mt-live-countdown" id="live-countdown-${item._id || examNoStr}" style="${isLive ? '' : 'display:none;'}">
+                                ${isLive ? getRemainingLiveTimeText(item) : ''}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heading & Chapters -->
+                    <h3 class="mt-exam-no">Exam No: ${escapeHtml(examNoStr)}</h3>
+                    <div class="mt-chapters">Chapters: <span>${escapeHtml(chaptersStr)}</span></div>
+
+                    <!-- Meta info row -->
+                    <div class="mt-meta-row">
+                        <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ${toBanglaNum(totalQ)}টি প্রশ্ন</span>
+                        <span class="mt-meta-item"><i class="fa-solid fa-clock"></i> ${toBanglaNum(duration)} মিনিট</span>
+                        <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ${toBanglaNum(totalM)} নম্বর</span>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <button class="mt-start-btn" onclick="startExam('${titleSafe}', ${duration})">
+                    <i class="fa-solid fa-play"></i> <span>${escapeHtml(btnText)}</span>
+                </button>
+            </div>
+        `;
+    }).join('');
+
+    filterTests(currentFilterCategory);
+}
+
+function startLiveCountdowns() {
+    if (liveCountdownInterval) clearInterval(liveCountdownInterval);
+    liveCountdownInterval = setInterval(() => {
+        allModelTestsData.forEach(item => {
+            const isLive = isExamLiveNow(item);
+            const badge = document.getElementById('live-badge-' + (item._id || item.examNo));
+            const timer = document.getElementById('live-countdown-' + (item._id || item.examNo));
+            if (badge) badge.style.display = isLive ? 'inline-flex' : 'none';
+            if (timer) {
+                if (isLive) {
+                    timer.style.display = 'block';
+                    timer.innerText = getRemainingLiveTimeText(item);
+                } else {
+                    timer.style.display = 'none';
+                }
+            }
+        });
+    }, 1000);
+}
+
+async function loadAllModelTests() {
+    try {
+        let list = [];
+        if (typeof ApiService !== 'undefined' && ApiService.getModelTests) {
+            list = await ApiService.getModelTests();
+        }
+        if (!list || list.length === 0) {
+            const resp = await fetch('../database/model_tests.json');
+            if (resp.ok) list = await resp.json();
+        }
+
+        if (list && list.length > 0) {
+            allModelTestsData = list.sort((a, b) => (a.serialNo || 0) - (b.serialNo || 0));
+            renderModelTestCards(allModelTestsData);
+            startLiveCountdowns();
+        } else {
+            startLiveCountdowns();
+        }
+    } catch (err) {
+        console.warn('loadAllModelTests warning:', err);
+    }
 }
 
 /**

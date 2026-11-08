@@ -567,14 +567,14 @@
                 <div class="compiler-main-toolbar">
                     <!-- ১. ল্যাঙ্গুয়েজ পিলস ও My Code বাটন -->
                     <div class="lang-pills">
-                        <button type="button" class="lang-pill-btn active" id="pill-c" onclick="switchLanguage('c')">
-                            C Program
+                        <button type="button" class="lang-pill-btn active" id="pill-html" onclick="switchLanguage('html')">
+                            <i class="fa-brands fa-html5"></i> HTML
                         </button>
                         <button type="button" class="lang-pill-btn" id="pill-python" onclick="switchLanguage('python')">
                             <i class="fa-brands fa-python"></i> Python
                         </button>
-                        <button type="button" class="lang-pill-btn" id="pill-html" onclick="switchLanguage('html')">
-                            <i class="fa-brands fa-html5"></i> HTML
+                        <button type="button" class="lang-pill-btn" id="pill-c" onclick="switchLanguage('c')">
+                            C Program
                         </button>
                         <button type="button" class="btn-my-codes" onclick="openSavedCodesModal()" title="সংরক্ষিত কোড দেখুন">
                             <i class="fa-solid fa-folder-open"></i> My Code
@@ -611,28 +611,28 @@
                         <!-- কোডিং শর্টকাট চিহ্ন টুলবার (Keyboard Accessory Bar) -->
                         <div class="code-shortcuts-bar">
                             <div class="shortcuts-scroll">
-                                <button type="button" class="sc-btn" data-sym="<" onclick="insertSymbol(this.dataset.sym)" title="<">&lt;</button>
-                                <button type="button" class="sc-btn" data-sym="</" onclick="insertSymbol(this.dataset.sym)" title="</">&lt;/</button>
-                                <button type="button" class="sc-btn" data-sym=">" onclick="insertSymbol(this.dataset.sym)" title=">">&gt;</button>
-                                <button type="button" class="sc-btn" data-sym='="' onclick="insertSymbol(this.dataset.sym)" title="=&quot;">=&quot;</button>
-                                <button type="button" class="sc-btn" data-sym="=" onclick="insertSymbol(this.dataset.sym)" title="=">=</button>
-                                <button type="button" class="sc-btn" data-sym='"' onclick="insertSymbol(this.dataset.sym)" title="&quot;">&quot;</button>
-                                <button type="button" class="sc-btn" data-sym="'" onclick="insertSymbol(this.dataset.sym)" title="'">'</button>
-                                <button type="button" class="sc-btn" data-sym="/" onclick="insertSymbol(this.dataset.sym)" title="/">/</button>
-                                <button type="button" class="sc-btn" data-sym=":" onclick="insertSymbol(this.dataset.sym)" title=":">:</button>
-                                <button type="button" class="sc-btn" data-sym=";" onclick="insertSymbol(this.dataset.sym)" title=";">;</button>
-                                <button type="button" class="sc-btn" data-sym="," onclick="insertSymbol(this.dataset.sym)" title=",">,</button>
-                                <button type="button" class="sc-btn" data-sym="(" onclick="insertSymbol(this.dataset.sym)" title="(">(</button>
-                                <button type="button" class="sc-btn" data-sym=")" onclick="insertSymbol(this.dataset.sym)" title=")">)</button>
-                                <button type="button" class="sc-btn" data-sym="{" onclick="insertSymbol(this.dataset.sym)" title="{">{</button>
-                                <button type="button" class="sc-btn" data-sym="}" onclick="insertSymbol(this.dataset.sym)" title="}">}</button>
-                                <button type="button" class="sc-btn" data-sym="[" onclick="insertSymbol(this.dataset.sym)" title="[">[</button>
-                                <button type="button" class="sc-btn" data-sym="]" onclick="insertSymbol(this.dataset.sym)" title="]">]</button>
-                                <button type="button" class="sc-btn" data-sym="!" onclick="insertSymbol(this.dataset.sym)" title="!">!</button>
-                                <button type="button" class="sc-btn" data-sym="&" onclick="insertSymbol(this.dataset.sym)" title="&amp;">&amp;</button>
-                                <button type="button" class="sc-btn" data-sym="|" onclick="insertSymbol(this.dataset.sym)" title="|">|</button>
-                                <button type="button" class="sc-btn" data-sym="+" onclick="insertSymbol(this.dataset.sym)" title="+">+</button>
-                                <button type="button" class="sc-btn" data-sym="-" onclick="insertSymbol(this.dataset.sym)" title="-">-</button>
+                                <button type="button" class="sc-btn" data-sym="<" title="<">&lt;</button>
+                                <button type="button" class="sc-btn" data-sym="</" title="</">&lt;/</button>
+                                <button type="button" class="sc-btn" data-sym=">" title=">">&gt;</button>
+                                <button type="button" class="sc-btn" data-sym='="' title="=&quot;">=&quot;</button>
+                                <button type="button" class="sc-btn" data-sym="=" title="=">=</button>
+                                <button type="button" class="sc-btn" data-sym='"' title="&quot;">&quot;</button>
+                                <button type="button" class="sc-btn" data-sym="'" title="'">'</button>
+                                <button type="button" class="sc-btn" data-sym="/" title="/">/</button>
+                                <button type="button" class="sc-btn" data-sym=":" title=":">:</button>
+                                <button type="button" class="sc-btn" data-sym=";" title=";">;</button>
+                                <button type="button" class="sc-btn" data-sym="," title=",">,</button>
+                                <button type="button" class="sc-btn" data-sym="(" title="(">(</button>
+                                <button type="button" class="sc-btn" data-sym=")" title=")">)</button>
+                                <button type="button" class="sc-btn" data-sym="{" title="{">{</button>
+                                <button type="button" class="sc-btn" data-sym="}" title="}">}</button>
+                                <button type="button" class="sc-btn" data-sym="[" title="[">[</button>
+                                <button type="button" class="sc-btn" data-sym="]" title="]">]</button>
+                                <button type="button" class="sc-btn" data-sym="!" title="!">!</button>
+                                <button type="button" class="sc-btn" data-sym="&" title="&amp;">&amp;</button>
+                                <button type="button" class="sc-btn" data-sym="|" title="|">|</button>
+                                <button type="button" class="sc-btn" data-sym="+" title="+">+</button>
+                                <button type="button" class="sc-btn" data-sym="-" title="-">-</button>
                             </div>
                         </div>
 
@@ -837,11 +837,17 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             initEditor();
-            switchLanguage('c');
+            switchLanguage('html');
         });
 
-
+        let lastInsertTime = 0;
         function insertSymbol(symbol) {
+            const now = Date.now();
+            if (now - lastInsertTime < 200) {
+                return; // Prevent duplicate rapid insertion
+            }
+            lastInsertTime = now;
+
             const editor = document.getElementById('codeEditor');
             if (!editor) return;
 
@@ -1036,6 +1042,11 @@
             document.querySelectorAll('.lang-pill-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById('pill-' + lang);
             if (activeBtn) activeBtn.classList.add('active');
+
+            // ডিফল্ট স্ক্রিন সবসময় কোড সিলেক্ট করা থাকবে
+            if (typeof toggleCompilerScreen === 'function') {
+                toggleCompilerScreen('code');
+            }
 
             // Preview tab visibility
             const previewTabBtn = document.getElementById('tab-btn-preview');

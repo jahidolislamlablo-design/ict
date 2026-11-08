@@ -72,6 +72,7 @@ let isConnected = false;
 mongoose.connection.on('connected', () => {
   isConnected = true;
   console.log('----------------------------------------------------');
+  seedInitialModelTestsIfEmpty();
   console.log('âœ… ICT Easy Learning Database Connected Successfully!');
   console.log(`ðŸ“¡ Database URI: ${MONGO_URI}`);
   console.log('----------------------------------------------------');
@@ -620,6 +621,82 @@ const PdfSchema = new mongoose.Schema({
 
 const Pdf = mongoose.model('Pdf', PdfSchema);
 
+// ------------------------------------------
+// ৪.১ Model Test & Live Exam Model (মডেল টেস্ট ও লাইভ এক্সাম)
+// ------------------------------------------
+const ModelTestSchema = new mongoose.Schema({
+  serialNo: {
+    type: Number,
+    default: 0
+  },
+  examNo: {
+    type: String,
+    required: [true, 'এক্সাম নম্বর আবশ্যক'],
+    trim: true
+  },
+  title: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  date: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  chapters: {
+    type: String,
+    default: 'সকল অধ্যায়',
+    trim: true
+  },
+  category: {
+    type: String,
+    default: 'full', // 'full', 'chapter', 'live'
+    trim: true
+  },
+  totalQuestions: {
+    type: Number,
+    default: 25
+  },
+  duration: {
+    type: Number,
+    default: 25 // in minutes
+  },
+  totalMarks: {
+    type: Number,
+    default: 25
+  },
+  participants: {
+    type: Number,
+    default: 547
+  },
+  startTime: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  endTime: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  isLive: {
+    type: Boolean,
+    default: false
+  },
+  buttonText: {
+    type: String,
+    default: 'Start Previous Live Exam',
+    trim: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+const ModelTest = mongoose.model('ModelTest', ModelTestSchema);
+
 // অটো গিট পুশ হেল্পার (GitHub Pages এ অটোমেটিক সিঙ্ক করার জন্য)
 function autoPushToGitHub(commitMsg = 'Update ICT learning data & PDFs') {
   const repoDir = __dirname;
@@ -722,9 +799,48 @@ async function syncDatabaseJson(type = 'all') {
         } catch (e) {}
       });
     }
+
+    if (type === 'all' || type === 'modelTests' || type === 'model_tests') {
+      const allModelTests = await ModelTest.find({}).sort({ serialNo: 1, createdAt: 1 });
+      const jsonStr = JSON.stringify(allModelTests, null, 2);
+      destDirs.forEach(dir => {
+        try {
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'model_tests.json'), jsonStr, 'utf8');
+        } catch (e) {}
+      });
+    }
     console.log(`✅ [Database Sync] ${type} JSON সিঙ্ক সম্পন্ন হয়েছে!`);
   } catch (err) {
     console.warn('syncDatabaseJson warning:', err.message);
+  }
+}
+
+
+// প্রাথমিক মডেল টেস্ট সিডিং (যদি ডাটাবেজে মডেল টেস্ট না থাকে)
+async function seedInitialModelTestsIfEmpty() {
+  try {
+    if (!isConnected) return;
+    const count = await ModelTest.countDocuments();
+    if (count === 0) {
+      const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+      if (fs.existsSync(jsonPath)) {
+        const raw = fs.readFileSync(jsonPath, 'utf8');
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          const toInsert = list.map(item => {
+            const copy = { ...item };
+            delete copy._id;
+            return copy;
+          });
+          await ModelTest.insertMany(toInsert);
+          console.log(`✅ [Model Test Seed] ${toInsert.length}টি মডেল টেস্ট সফলভাবে MongoDB ডাটাবেজে যুক্ত করা হয়েছে!`);
+          await syncDatabaseJson('modelTests');
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('seedInitialModelTestsIfEmpty warning:', err.message);
   }
 }
 
@@ -1866,6 +1982,248 @@ app.post('/api/sync-github', async (req, res) => {
 // ==========================================
 
 // ==========================================
+
+// ==========================================
+// ৪.২ Model Test & Live Exam APIs (মডেল টেস্ট ও লাইভ এক্সাম)
+// ==========================================
+
+// ১. সকল মডেল টেস্ট ও লাইভ এক্সাম ফেচ করা
+app.get('/api/model-tests', async (req, res) => {
+  try {
+    let tests = [];
+    if (isConnected) {
+      tests = await ModelTest.find({}).sort({ serialNo: 1, createdAt: 1 });
+      if (!tests || tests.length === 0) {
+        const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+        if (fs.existsSync(jsonPath)) {
+          tests = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        }
+      }
+    } else {
+      const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+      if (fs.existsSync(jsonPath)) {
+        tests = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      }
+    }
+
+    res.status(200).json({
+      success: true,
+      count: tests.length,
+      data: tests
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'মডেল টেস্ট তালিকা ফেচ করার সময় সমস্যা হয়েছে',
+      error: error.message
+    });
+  }
+});
+
+// ২. নির্দিষ্ট মডেল টেস্ট ফেচ করা
+app.get('/api/model-tests/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    let test = null;
+    if (isConnected && mongoose.Types.ObjectId.isValid(id)) {
+      test = await ModelTest.findById(id);
+    }
+    if (!test) {
+      const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+      if (fs.existsSync(jsonPath)) {
+        const list = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        test = list.find(item => String(item._id) === String(id) || String(item.examNo) === String(id));
+      }
+    }
+    if (!test) {
+      return res.status(404).json({ success: false, message: 'মডেল টেস্ট পাওয়া যায়নি' });
+    }
+    res.status(200).json({ success: true, data: test });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// ৩. নতুন মডেল টেস্ট / লাইভ এক্সাম তৈরি করা
+app.post('/api/model-tests', async (req, res) => {
+  try {
+    const {
+      serialNo,
+      examNo,
+      title,
+      date,
+      chapters,
+      category,
+      totalQuestions,
+      duration,
+      totalMarks,
+      participants,
+      startTime,
+      endTime,
+      isLive,
+      buttonText
+    } = req.body;
+
+    const testDoc = new ModelTest({
+      serialNo: parseInt(serialNo, 10) || 1,
+      examNo: examNo || '01',
+      title: title || `Model Test ${examNo || '01'}`,
+      date: date || '',
+      chapters: chapters || 'সকল অধ্যায়',
+      category: category || 'full',
+      totalQuestions: parseInt(totalQuestions, 10) || 25,
+      duration: parseInt(duration, 10) || 25,
+      totalMarks: parseInt(totalMarks, 10) || 25,
+      participants: parseInt(participants, 10) || 547,
+      startTime: startTime || '',
+      endTime: endTime || '',
+      isLive: isLive === true || isLive === 'true',
+      buttonText: buttonText || 'Start Previous Live Exam'
+    });
+
+    let saved = null;
+    if (isConnected) {
+      saved = await testDoc.save();
+      await syncDatabaseJson('modelTests');
+    }
+
+    // JSON ফাইল ব্যাকআপ আপডেট
+    const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+    if (fs.existsSync(jsonPath)) {
+      const fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      fileData.push(saved ? saved.toObject() : testDoc.toObject());
+      const destDirs = [
+        path.join(__dirname, 'database'),
+        'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+      ];
+      destDirs.forEach(dir => {
+        try {
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'model_tests.json'), JSON.stringify(fileData, null, 2), 'utf8');
+        } catch(e) {}
+      });
+    }
+
+    res.status(201).json({
+      success: true,
+      message: 'নতুন মডেল টেস্ট সফলভাবে সংরক্ষিত হয়েছে!',
+      data: saved || testDoc
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'মডেল টেস্ট সংরক্ষণে সমস্যা হয়েছে',
+      error: error.message
+    });
+  }
+});
+
+// ৪. মডেল টেস্ট / লাইভ এক্সাম আপডেট বা এডিট করা
+app.put('/api/model-tests/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = { ...req.body };
+    delete updateData._id;
+
+    if (updateData.serialNo !== undefined) updateData.serialNo = parseInt(updateData.serialNo, 10) || 0;
+    if (updateData.totalQuestions !== undefined) updateData.totalQuestions = parseInt(updateData.totalQuestions, 10) || 25;
+    if (updateData.duration !== undefined) updateData.duration = parseInt(updateData.duration, 10) || 25;
+    if (updateData.totalMarks !== undefined) updateData.totalMarks = parseInt(updateData.totalMarks, 10) || 25;
+    if (updateData.participants !== undefined) updateData.participants = parseInt(updateData.participants, 10) || 0;
+    if (updateData.isLive !== undefined) updateData.isLive = updateData.isLive === true || updateData.isLive === 'true';
+
+    let updated = null;
+    if (isConnected && mongoose.Types.ObjectId.isValid(id)) {
+      updated = await ModelTest.findByIdAndUpdate(id, updateData, { new: true, runValidators: true });
+    }
+    if (isConnected && !updated && updateData.examNo) {
+      updated = await ModelTest.findOneAndUpdate({ examNo: updateData.examNo }, updateData, { new: true });
+    }
+
+    // JSON ফাইলেও আপডেট রাখা
+    const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+    if (fs.existsSync(jsonPath)) {
+      let fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      const idx = fileData.findIndex(item => 
+        String(item._id) === String(id) || 
+        String(item.examNo) === String(updateData.examNo) ||
+        (updateData.serialNo && item.serialNo === updateData.serialNo)
+      );
+      if (idx !== -1) {
+        fileData[idx] = { ...fileData[idx], ...updateData };
+        if (!updated) updated = fileData[idx];
+      }
+      const destDirs = [
+        path.join(__dirname, 'database'),
+        'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+      ];
+      destDirs.forEach(dir => {
+        try {
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'model_tests.json'), JSON.stringify(fileData, null, 2), 'utf8');
+        } catch(e) {}
+      });
+    }
+
+    if (isConnected) {
+      await syncDatabaseJson('modelTests');
+    }
+
+    res.status(200).json({
+      success: true,
+      message: 'মডেল টেস্ট তথ্য সফলভাবে আপডেট হয়েছে!',
+      data: updated
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'মডেল টেস্ট আপডেট করতে সমস্যা হয়েছে',
+      error: error.message
+    });
+  }
+});
+
+// ৫. মডেল টেস্ট মুছে ফেলা
+app.delete('/api/model-tests/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (isConnected && mongoose.Types.ObjectId.isValid(id)) {
+      await ModelTest.findByIdAndDelete(id);
+    }
+
+    const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+    if (fs.existsSync(jsonPath)) {
+      let fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      fileData = fileData.filter(item => String(item._id) !== String(id) && String(item.examNo) !== String(id));
+      const destDirs = [
+        path.join(__dirname, 'database'),
+        'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+      ];
+      destDirs.forEach(dir => {
+        try {
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'model_tests.json'), JSON.stringify(fileData, null, 2), 'utf8');
+        } catch(e) {}
+      });
+    }
+
+    if (isConnected) {
+      await syncDatabaseJson('modelTests');
+    }
+
+    res.status(200).json({
+      success: true,
+      message: 'মডেল টেস্ট সফলভাবে মুছে ফেলা হয়েছে'
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'মডেল টেস্ট ডিলিট করতে সমস্যা হয়েছে',
+      error: error.message
+    });
+  }
+});
+
 // ৭. Students Ranking & Profile APIs
 // ==========================================
 
@@ -2042,6 +2400,6 @@ if (require.main === module) {
 }
 
 
-module.exports = { app, Mcq, Cq, Note, Pdf };
+module.exports = { app, Mcq, Cq, Note, Pdf, ModelTest };
 
 
