@@ -1,3 +1,37 @@
+
+// লাইভ পরীক্ষা ইউজারের সাবমিশন ট্র্যাকিং (লাইভ চলাকালীন একবারই দিতে পারবে)
+const SUBMITTED_LIVE_EXAMS_KEY = 'ict_submitted_live_exams';
+
+function getSubmittedLiveExams() {
+    try {
+        return JSON.parse(localStorage.getItem(SUBMITTED_LIVE_EXAMS_KEY) || '{}');
+    } catch(e) {
+        return {};
+    }
+}
+
+function hasUserSubmittedLiveExam(examKey) {
+    if (!examKey) return false;
+    const submitted = getSubmittedLiveExams();
+    return !!submitted[String(examKey).trim()];
+}
+
+function recordLiveExamSubmission(examKey, score, total) {
+    if (!examKey) return;
+    const submitted = getSubmittedLiveExams();
+    submitted[String(examKey).trim()] = {
+        submittedAt: new Date().toISOString(),
+        score,
+        total
+    };
+    try {
+        localStorage.setItem(SUBMITTED_LIVE_EXAMS_KEY, JSON.stringify(submitted));
+    } catch(e) {}
+}
+
+let currentExamKey = '';
+let currentExamIsLive = false;
+
 /**
  * MODEL TEST SYSTEM SCRIPT
  * Complete interactive exam engine with vertical scrollable questions, live timer, scoring, and question navigator.
@@ -130,12 +164,19 @@ function filterTests(filter) {
 
 function isExamLiveNow(item) {
     if (!item) return false;
-    if (item.isLive === true || item.isLive === 'true') return true;
-    if (!item.startTime || !item.endTime) return false;
+    const flagLive = (item.isLive === true || item.isLive === 'true');
+    if (!flagLive) return false;
+
     const now = new Date();
-    const start = new Date(item.startTime);
-    const end = new Date(item.endTime);
-    return now >= start && now <= end;
+    if (item.endTime) {
+        const end = new Date(item.endTime);
+        if (now > end) return false; // লাইভ সময় শেষ
+    }
+    if (item.startTime) {
+        const start = new Date(item.startTime);
+        if (now < start) return false; // এখনও শুরু হয়নি
+    }
+    return true;
 }
 
 function getRemainingLiveTimeText(item) {
@@ -173,9 +214,20 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
     const duration = item.duration || 25;
     const totalM = item.totalMarks || 25;
     const titleSafe = (item.title || ('Model Test ' + examKey)).replace(/'/g, "\\'");
+    const hasSubmittedLive = isLive && hasUserSubmittedLiveExam(examKey);
 
     let btnText = item.buttonText || (isLive ? 'Start Live Exam' : 'Start Previous Live Exam');
-    if (isLive) btnText = 'Start Live Exam';
+    if (isLive) {
+        if (hasSubmittedLive) {
+            btnText = 'পরীক্ষা সম্পন্ন হয়েছে';
+        } else {
+            btnText = 'Start Live Exam';
+        }
+    } else {
+        btnText = 'Start Previous Live Exam';
+    }
+
+    const btnClass = hasSubmittedLive ? 'mt-start-btn submitted-live-btn' : 'mt-start-btn';
 
     return `
         <div class="test-card model-test-card ${isLive ? 'is-live-active' : ''}" 
@@ -215,40 +267,15 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
             </div>
 
             <!-- Action Button -->
-            <button class="mt-start-btn" onclick="startExam('${titleSafe}', ${duration})">
-                <i class="fa-solid fa-play"></i> <span>${escapeHtml(btnText)}</span>
+            <button class="${btnClass}" onclick="startExam('${titleSafe}', ${duration}, '${examKey}')">
+                <i class="fa-solid ${hasSubmittedLive ? 'fa-circle-check' : 'fa-play'}"></i> <span>${escapeHtml(btnText)}</span>
             </button>
         </div>
     `;
 }
 
 function renderModelTestCards(list) {
-    // ১. চলমান লাইভ পরীক্ষাগুলো খুঁজে বের করা
-    const liveItems = list.filter(isExamLiveNow);
-    const featuredContainer = document.getElementById('featuredLiveSection');
-    if (featuredContainer) {
-        if (liveItems.length > 0) {
-            featuredContainer.style.display = 'block';
-            featuredContainer.innerHTML = `
-                <div class="featured-live-header">
-                    <div class="featured-live-title">
-                        <span class="badge-live-pulse"><span class="mt-live-dot" style="background:#fff;"></span> LIVE</span>
-                        <span>চলমান লাইভ এক্সাম (Active Live Exam)</span>
-                    </div>
-                    <span style="font-size: 0.9rem; color: #BE123C; font-weight: 600;">
-                        নির্ধারিত সময়ের মধ্যে পরীক্ষায় অংশ নিন
-                    </span>
-                </div>
-                <div class="featured-live-grid">
-                    ${liveItems.map(item => generateSingleCardHtml(item, 'featured-live-')).join('')}
-                </div>
-            `;
-        } else {
-            featuredContainer.style.display = 'none';
-        }
-    }
-
-    // ২. মডেল টেস্ট গ্রিডে লাইভ এক্সামগুলো আগে রেখে সাজানো
+    // মডেল টেস্ট গ্রিডে লাইভ এক্সামগুলো আগে রেখে সাজানো
     const sortedList = [...list].sort((a, b) => {
         const liveA = isExamLiveNow(a) ? 1 : 0;
         const liveB = isExamLiveNow(b) ? 1 : 0;
@@ -272,6 +299,7 @@ function startLiveCountdowns() {
             const examKey = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
             
             // গ্রিড কার্ড টাইমার
+            const card = document.getElementById('card-mt-' + examKey);
             const badge = document.getElementById('live-badge-' + examKey);
             const timer = document.getElementById('live-countdown-' + examKey);
             if (badge) badge.style.display = isLive ? 'inline-flex' : 'none';
@@ -284,16 +312,21 @@ function startLiveCountdowns() {
                 }
             }
 
-            // ফিচারড লাইভ কার্ড টাইমার
-            const fBadge = document.getElementById('live-badge-featured-live-' + examKey);
-            const fTimer = document.getElementById('live-countdown-featured-live-' + examKey);
-            if (fBadge) fBadge.style.display = isLive ? 'inline-flex' : 'none';
-            if (fTimer) {
+            if (card) {
                 if (isLive) {
-                    fTimer.style.display = 'block';
-                    fTimer.innerText = getRemainingLiveTimeText(item);
+                    if (!card.classList.contains('is-live-active')) {
+                        card.classList.add('is-live-active');
+                        card.setAttribute('data-is-live', 'true');
+                    }
                 } else {
-                    fTimer.style.display = 'none';
+                    if (card.classList.contains('is-live-active')) {
+                        card.classList.remove('is-live-active');
+                        card.setAttribute('data-is-live', 'false');
+                        const btn = card.querySelector('.mt-start-btn');
+                        if (btn && !btn.classList.contains('submitted-live-btn')) {
+                            btn.innerHTML = '<i class="fa-solid fa-play"></i> <span>Start Previous Live Exam</span>';
+                        }
+                    }
                 }
             }
         });
@@ -326,9 +359,37 @@ async function loadAllModelTests() {
 /**
  * পরীক্ষা শুরু করা
  */
-async function startExam(testTitle, durationMins = 25) {
+async function startExam(testTitle, durationMins = 25, examNo = '') {
+    let examKey = examNo || '';
+    if (!examKey && testTitle) {
+        const match = String(testTitle).match(/(\d+)/);
+        if (match) {
+            const n = parseInt(match[1], 10);
+            examKey = n < 10 ? '0' + n : '' + n;
+        }
+    }
+
+    const examItem = allModelTestsData.find(e => {
+        const k = e.examNo || (e.serialNo < 10 ? '0' + e.serialNo : '' + e.serialNo);
+        return k === examKey || (e.title && e.title.trim() === String(testTitle).trim());
+    });
+
+    const isLive = examItem ? isExamLiveNow(examItem) : false;
+
+    // লাইভ চলাকালীন সময় একজন ইউজার ২ বার দিতে পারবে না
+    if (isLive && hasUserSubmittedLiveExam(examKey)) {
+        if (typeof window.showToast === 'function') {
+            window.showToast('❌ আপনি ইতিমধ্যে এই লাইভ পরীক্ষায় অংশগ্রহণ করেছেন! লাইভ চলাকালীন সময়ে একবারের বেশি পরীক্ষা দেওয়া যাবে না।', 'error');
+        } else {
+            alert('❌ আপনি ইতিমধ্যে এই লাইভ পরীক্ষায় অংশগ্রহণ করেছেন!\n\nলাইভ চলাকালীন সময়ে একজন শিক্ষার্থী একবারই পরীক্ষা দিতে পারবেন। লাইভ সময় শেষ হয়ে পূর্ববর্তী লাইভ পরীক্ষা (Previous Live Exam) হলে যতবার ইচ্ছে পুনরায় দিতে পারবেন।');
+        }
+        return;
+    }
+
     currentExamTitle = testTitle;
     currentExamDuration = durationMins;
+    currentExamKey = examKey;
+    currentExamIsLive = isLive;
     isExamSubmitted = false;
 
     // ফলাফল পপআপ মডাল খোলা থাকলে বন্ধ করা
@@ -346,7 +407,7 @@ async function startExam(testTitle, durationMins = 25) {
         container.innerHTML = `
             <div style="text-align: center; padding: 50px 20px; color: var(--text-secondary);">
                 <i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
-                <p style="font-weight: 500;">ডাটাবেজ থেকে প্রশ্নপত্র তৈরি করা হচ্ছে...</p>
+                <p style="font-weight: 500;">ডাটাবেজ থেকে প্রশ্নপত্র লোড করা হচ্ছে...</p>
             </div>
         `;
     }
@@ -355,14 +416,11 @@ async function startExam(testTitle, durationMins = 25) {
     userAnswers = {};
     remainingSeconds = durationMins * 60;
 
-    // ডাটাবেজ থেকে প্রশ্ন লোড (নির্দিষ্ট মডেল টেস্ট অনুযায়ী)
+    // ডাটাবেজ থেকে প্রশ্ন লোড (লাইভ এক্সামের প্রশ্ন অটো আসবে না, শুধুমাত্র আপলোডকৃত প্রশ্ন আসবে)
     try {
         let dbQuestions = null;
         if (typeof ApiService !== 'undefined' && ApiService.getModelTestMCQ) {
-            dbQuestions = await ApiService.getModelTestMCQ(testTitle);
-        }
-        if (!dbQuestions || dbQuestions.length === 0) {
-            dbQuestions = await ApiService.getAllMCQ(25);
+            dbQuestions = await ApiService.getModelTestMCQ(testTitle, examKey);
         }
         if (dbQuestions && dbQuestions.length > 0) {
             activeExamQuestions = dbQuestions.map((q, idx) => {
@@ -383,11 +441,33 @@ async function startExam(testTitle, durationMins = 25) {
                 };
             });
         } else {
-            activeExamQuestions = [...FALLBACK_EXAM_QUESTIONS];
+            // কোনো অটো বা ডামি প্রশ্ন আসবে না!
+            activeExamQuestions = [];
         }
     } catch (e) {
-        console.warn("Failed to load live questions for exam, using fallback:", e);
-        activeExamQuestions = [...FALLBACK_EXAM_QUESTIONS];
+        console.warn("Failed to load questions for exam:", e);
+        activeExamQuestions = [];
+    }
+
+    // যদি এখনও কোনো প্রশ্ন আপলোড করা না হয়ে থাকে
+    if (activeExamQuestions.length === 0) {
+        if (container) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 60px 20px; background: #FFF; border-radius: 16px; border: 1px solid #E2E8F0; margin: 20px 0;">
+                    <i class="fa-solid fa-clipboard-question" style="font-size: 3rem; color: #94A3B8; margin-bottom: 16px;"></i>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #1E293B; margin-bottom: 8px;">এই লাইভ পরীক্ষার জন্য এখনও কোনো প্রশ্ন আপলোড করা হয়নি।</h3>
+                    <p style="color: #64748B; font-size: 0.95rem; margin-bottom: 24px;">অ্যাডমিন প্যানেল থেকে প্রশ্ন আপলোড করার পর এখানে প্রদর্শিত হবে।</p>
+                    <button class="btn btn-primary" onclick="exitExam()" style="display: inline-flex; align-items: center; gap: 8px; margin: 0 auto;">
+                        <i class="fa-solid fa-arrow-left"></i> <span>মডেল টেস্ট তালিকায় ফিরে যান</span>
+                    </button>
+                </div>
+            `;
+        }
+        const palette = document.getElementById('questionPalette');
+        if (palette) palette.innerHTML = '';
+        const counter = document.getElementById('exam-q-counter');
+        if (counter) counter.innerHTML = '';
+        return;
     }
 
     // সকল প্রশ্ন ক্রমানুসারে স্ক্রলে রেন্ডার করা
@@ -403,11 +483,15 @@ async function startExam(testTitle, durationMins = 25) {
  * পরীক্ষা পুনরায় শুরু করা (Retake Exam)
  */
 function retakeExam() {
+    if (currentExamIsLive && hasUserSubmittedLiveExam(currentExamKey)) {
+        alert('❌ লাইভ পরীক্ষা চলাকালীন সময়ে একজন শিক্ষার্থী একবারই পরীক্ষা দিতে পারবেন। লাইভ শেষ হলে যতবার ইচ্ছে পুনরায় দিতে পারবেন।');
+        return;
+    }
     const resultModal = document.getElementById('examResultModal');
     if (resultModal) {
         resultModal.classList.remove('open');
     }
-    startExam(currentExamTitle, currentExamDuration);
+    startExam(currentExamTitle, currentExamDuration, currentExamKey);
 }
 
 /**
@@ -422,7 +506,7 @@ function renderAllQuestions() {
     activeExamQuestions.forEach((q, qIdx) => {
         if (typeof renderModernMCQCardHTML === 'function') {
             html += renderModernMCQCardHTML(q, qIdx, {
-                mode: 'study',
+                mode: 'exam',
                 category: 'model_test',
                 source_title: currentExamTitle,
                 hideExplanation: true
@@ -443,7 +527,7 @@ function selectExamOption(qIndex, optionIndex) {
         if (opt) {
             const correctIndex = activeExamQuestions[qIndex] ? (activeExamQuestions[qIndex].correct !== undefined ? activeExamQuestions[qIndex].correct : activeExamQuestions[qIndex].correct_index) : 0;
             if (typeof handleModernOptionClick === 'function') {
-                handleModernOptionClick(opt, qIndex, optionIndex, correctIndex, 'study');
+                handleModernOptionClick(opt, qIndex, optionIndex, correctIndex, 'exam');
             }
         }
     }
@@ -615,14 +699,37 @@ function submitExam() {
         }
     });
 
-    const skippedCount = activeExamQuestions.length - (correctCount + wrongCount);
-    const scorePercentage = Math.round((correctCount / activeExamQuestions.length) * 100);
+    const totalQuestions = activeExamQuestions.length;
+    const skippedCount = totalQuestions - (correctCount + wrongCount);
+    const scorePercentage = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
 
-    // রেজাল্ট মডাল আপডেট
-    document.getElementById('modal-score-percentage').innerText = `${toBanglaNum(scorePercentage)}%`;
+    // রেজাল্ট মডাল স্কোর আপডেট: বাম পাশে কত এর মধ্যে কত পেলো (যেমন ২০/২৫) এবং ডান পাশে শতকরা হার
+    const marksEl = document.getElementById('modal-score-marks');
+    if (marksEl) {
+        marksEl.innerText = `${toBanglaNum(correctCount)} / ${toBanglaNum(totalQuestions)}`;
+    }
+    const percEl = document.getElementById('modal-score-percentage');
+    if (percEl) {
+        percEl.innerText = `${toBanglaNum(scorePercentage)}%`;
+    }
+
     document.getElementById('modal-correct-count').innerText = `${toBanglaNum(correctCount)}টি`;
     document.getElementById('modal-wrong-count').innerText = `${toBanglaNum(wrongCount)}টি`;
     document.getElementById('modal-skipped-count').innerText = `${toBanglaNum(skippedCount)}টি`;
+
+    // যদি চলমান লাইভ পরীক্ষা হয়, ইউজারের সাবমিশন রেকর্ড করা
+    if (currentExamIsLive && currentExamKey) {
+        recordLiveExamSubmission(currentExamKey, correctCount, totalQuestions);
+        if (allModelTestsData && allModelTestsData.length > 0) {
+            renderModelTestCards(allModelTestsData);
+        }
+    }
+
+    // লাইভ চলাকালীন পুনরায় পরীক্ষা দেওয়ার বাটন বন্ধ রাখা
+    const retakeBtn = document.getElementById('modal-retake-btn');
+    if (retakeBtn) {
+        retakeBtn.style.display = currentExamIsLive ? 'none' : 'inline-flex';
+    }
 
     // ২০ এর উপরে পেলে ১ পয়েন্ট যোগ হবে
     const pointAwardEl = document.getElementById('modal-point-award');

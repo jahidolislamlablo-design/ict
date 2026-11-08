@@ -2786,3 +2786,11 @@ input:checked + .slider:before {
     display: inline-block;
     word-break: break-word;
 }
+
+
+/* Disable pull-to-refresh on non-home pages */
+html.no-pull-refresh,
+body.no-pull-refresh {
+    overscroll-behavior-y: contain !important;
+    overscroll-behavior: contain !important;
+}

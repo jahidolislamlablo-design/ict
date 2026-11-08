@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initPreventPullToRefresh();
     initNavigation();
     initGlobalHelpers();
     initHeroSlider();
@@ -235,4 +236,53 @@ function initHeroSlider() {
 
     // স্বয়ংক্রিয় স্লাইডার চালু
     startAutoSlide();
+}
+
+
+/**
+ * হোম পেজ ছাড়া অন্য কোনো পেইজে থাকলে ওপর থেকে টেনে রিলোড (Pull-to-refresh) বন্ধ করা
+ */
+function initPreventPullToRefresh() {
+    const currentPath = (window.location.pathname || '').toLowerCase();
+    const isHome = currentPath === '' || 
+                   currentPath === '/' || 
+                   currentPath.endsWith('/') || 
+                   currentPath.endsWith('/index.html') || 
+                   currentPath.endsWith('\\index.html') || 
+                   (!currentPath.includes('/pages/') && !currentPath.includes('\\pages\\') && currentPath.includes('index.html'));
+
+    if (!isHome) {
+        document.documentElement.classList.add('no-pull-refresh');
+        document.body.classList.add('no-pull-refresh');
+        document.documentElement.style.overscrollBehaviorY = 'contain';
+        document.body.style.overscrollBehaviorY = 'contain';
+
+        let touchStartY = 0;
+        let isTouching = false;
+
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length === 1) {
+                touchStartY = e.touches[0].clientY;
+                isTouching = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isTouching || !e.touches || e.touches.length !== 1) return;
+            const currentY = e.touches[0].clientY;
+            const deltaY = currentY - touchStartY;
+
+            // যদি পেজের একদম উপরে থাকা অবস্থায় ওপর থেকে নিচে টানা হয় (Pull down)
+            const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            if (scrollTop <= 0 && deltaY > 0) {
+                if (e.cancelable) {
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => {
+            isTouching = false;
+        }, { passive: true });
+    }
 }

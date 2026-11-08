@@ -768,6 +768,7 @@
       margin-top: auto;
     }
   </style>
+  <style>html, body { overscroll-behavior-y: contain !important; }</style>
 </head>
 <body>
 
@@ -1093,6 +1094,16 @@
                   <option value="Live Exam 48">Live Exam 48 (লাইভ এক্সাম 48 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
                   <option value="Live Exam 49">Live Exam 49 (লাইভ এক্সাম 49 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
                   <option value="Live Exam 50">Live Exam 50 (লাইভ এক্সাম 50 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
+                  <option value="Live Exam 51">Live Exam 51 (লাইভ এক্সাম 51)</option>
+                  <option value="Live Exam 52">Live Exam 52 (লাইভ এক্সাম 52)</option>
+                  <option value="Live Exam 53">Live Exam 53 (লাইভ এক্সাম 53)</option>
+                  <option value="Live Exam 54">Live Exam 54 (লাইভ এক্সাম 54)</option>
+                  <option value="Live Exam 55">Live Exam 55 (লাইভ এক্সাম 55)</option>
+                  <option value="Live Exam 56">Live Exam 56 (লাইভ এক্সাম 56)</option>
+                  <option value="Live Exam 57">Live Exam 57 (লাইভ এক্সাম 57)</option>
+                  <option value="Live Exam 58">Live Exam 58 (লাইভ এক্সাম 58)</option>
+                  <option value="Live Exam 59">Live Exam 59 (লাইভ এক্সাম 59)</option>
+                  <option value="Live Exam 60">Live Exam 60 (লাইভ এক্সাম 60)</option>
             </select>
             <span class="hint" style="color: #9f1239; font-size: 0.8rem; margin-top: 5px; display: block; font-weight: 500;">
               💡 এখান থেকে লাইভ এক্সাম সিলেক্ট করলে প্রশ্নটি সরাসরি ঐ লাইভ এক্সামে যুক্ত হবে এবং স্বয়ংক্রিয়ভাবে "Live Exam" ক্যাটাগরি নির্বাচিত হবে।
@@ -3008,7 +3019,7 @@
           </label>
           <select id="editLiveExamNo" style="font-weight: 600; border-color: #fda4af; margin-top: 4px;">
             <option value="">-- কোনো লাইভ এক্সাম নয় (প্রযোজ্য নয়) --</option>
-            ${Array.from({length: 50}, (_, i) => {
+            ${Array.from({length: 60}, (_, i) => {
               const n = (i + 1) < 10 ? '0' + (i + 1) : '' + (i + 1);
               const sel = (currentEditingItem && currentEditingItem.liveExamNo === ('Live Exam ' + n)) ? 'selected' : '';
               return `<option value="Live Exam ${n}" ${sel}>Live Exam ${n} (লাইভ এক্সাম ${n})</option>`;

@@ -31,34 +31,6 @@
   },
   {
     "liveExamNo": "",
-    "_id": "6af02eba53d25d27dee076b0",
-    "categoryTypes": [
-      "Chapter Practice",
-      "Live Exam"
-    ],
-    "categoryType": "Chapter Practice",
-    "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "",
-    "boardName": "Dhaka Board",
-    "examYear": "2026",
-    "testPaperName": "",
-    "modelTestNo": "",
-    "serialNo": 1,
-    "image": "",
-    "question": "cc",
-    "options": [
-      "ccc",
-      "ccc",
-      "cc",
-      "cc"
-    ],
-    "correctAnswer": "cc",
-    "explanation": "",
-    "createdAt": "2026-11-08T08:11:38.628Z",
-    "__v": 0
-  },
-  {
-    "liveExamNo": "",
     "_id": "6af01cbf268cb6b55a18cbe9",
     "serialNo": 1,
     "categoryTypes": [

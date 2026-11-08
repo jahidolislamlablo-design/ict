@@ -598,8 +598,9 @@
    লাইভ এক্সাম স্পেশাল স্টাইল ও হাইলাইটেড সেকশন
    ========================================================================== */
 .model-test-card.is-live-active {
-    border: 2px solid #FCA5A5;
-    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.18), 0 8px 10px -6px rgba(239, 68, 68, 0.12);
+    background: #FFF1F2 !important;
+    border: 2px solid #FDA4AF !important;
+    box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.18), 0 8px 10px -6px rgba(244, 63, 94, 0.12) !important;
     position: relative;
 }
 
@@ -653,5 +654,74 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
+}
+
+
+
+/* রেজাল্ট স্কোরকার্ড: বামে প্রাপ্ত নম্বর এবং ডানে শতকরা হার */
+.result-score-summary-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    max-width: 400px;
+}
+
+.result-score-box {
+    flex: 1;
+    padding: 16px 12px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.result-score-marks-box {
+    background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+    border: 2px solid #86EFAC;
+}
+
+.result-score-marks-box .result-score-box-label {
+    color: #15803D;
+}
+
+.result-score-marks-box .result-score-box-val {
+    color: #166534;
+}
+
+.result-score-perc-box {
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    border: 2px solid #A5B4FC;
+}
+
+.result-score-perc-box .result-score-box-label {
+    color: #4338CA;
+}
+
+.result-score-perc-box .result-score-box-val {
+    color: #3730A3;
+}
+
+.result-score-box-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.result-score-box-val {
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.mt-start-btn.submitted-live-btn {
+    background: #64748B !important;
+    cursor: not-allowed !important;
+    opacity: 0.9;
 }
 

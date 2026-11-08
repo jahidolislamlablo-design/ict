@@ -1587,39 +1587,66 @@ const ApiService = {
     },
 
     // ৩. মডেল টেস্ট MCQ
-    async getModelTestMCQ(testIdentifier = '') {
-        try {
-            let testKey = testIdentifier || '';
-            const match = String(testIdentifier).match(/(?:Model Test\s*|মডেল টেস্ট\s*[-–]?\s*)(\d+)/i);
+        async getModelTestMCQ(testIdentifier = '', examNo = '') {
+        let numStr = '';
+        if (examNo) {
+            const n = parseInt(examNo, 10);
+            if (!isNaN(n)) numStr = n < 10 ? '0' + n : '' + n;
+        }
+        if (!numStr && testIdentifier) {
+            const match = String(testIdentifier).match(/(\d+)/);
             if (match) {
                 const n = parseInt(match[1], 10);
-                const numStr = n < 10 ? '0' + n : '' + n;
-                testKey = 'Model Test ' + numStr;
+                numStr = n < 10 ? '0' + n : '' + n;
+            }
+        }
+
+        // ১. ব্যাকেন্ড থেকে শুধুমাত্র এই পরীক্ষার জন্য আপলোডকৃত প্রশ্ন ফেচ করা
+        try {
+            const params = [];
+            if (numStr) {
+                params.push(`examIdentifier=${encodeURIComponent(numStr)}`);
+            } else if (testIdentifier) {
+                params.push(`modelTestNo=${encodeURIComponent(testIdentifier)}`);
             }
 
-            const query = `/api/mcqs?categoryType=Model Test` + (testKey ? `&modelTestNo=${encodeURIComponent(testKey)}` : '');
+            const query = `/api/mcqs?` + params.join('&');
             const res = await fetchFromBackend(query);
-            if (res && res.success && Array.isArray(res.data) && res.data.length >= 25) {
+            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
                 return res.data.map(mapBackendMcqToFrontend);
             }
-        } catch (e) {}
+        } catch (e) {
+            console.warn('Backend getModelTestMCQ error:', e);
+        }
 
-        const allMcqs = await fetchStaticJson('mcqs.json');
-        if (allMcqs.length > 0) {
-            let matched = allMcqs.filter(item => hasCategory(item, 'Live Exam') || hasCategory(item, 'Model Test'));
-            // Always ensure at least 25 questions for full model test
-            if (matched.length < 25) {
-                const pool = [...allMcqs].sort(() => 0.5 - Math.random());
-                for (const item of pool) {
-                    if (matched.length >= 25) break;
-                    if (!matched.some(m => m._id === item._id)) {
-                        matched.push(item);
+        // ২. স্ট্যাটিক mcqs.json ব্যাকআপ থেকে নির্দিষ্ট পরীক্ষার প্রশ্ন খোঁজা
+        try {
+            const allMcqs = await fetchStaticJson('mcqs.json');
+            if (Array.isArray(allMcqs) && allMcqs.length > 0) {
+                const matched = allMcqs.filter(item => {
+                    const itemLiveNo = String(item.liveExamNo || '').trim();
+                    const itemModelNo = String(item.modelTestNo || '').trim();
+                    if (numStr) {
+                        return (itemLiveNo && itemLiveNo.includes(numStr)) ||
+                               (itemModelNo && itemModelNo.includes(numStr));
                     }
+                    if (testIdentifier) {
+                        return itemLiveNo.toLowerCase() === testIdentifier.toLowerCase() ||
+                               itemModelNo.toLowerCase() === testIdentifier.toLowerCase();
+                    }
+                    return false;
+                });
+
+                if (matched.length > 0) {
+                    return matched.sort((a, b) => (a.serialNo || 0) - (b.serialNo || 0)).map(mapBackendMcqToFrontend);
                 }
             }
-            return matched.slice(0, 25).map(mapBackendMcqToFrontend);
+        } catch (e) {
+            console.warn('Static getModelTestMCQ error:', e);
         }
-        return MOCK_DATA.questions;
+
+        // লাইভ এক্সামে অটো বা অন্য চ্যাপ্টারের প্রশ্ন আসবে না। কোনো প্রশ্ন না থাকলে ফাঁকা অ্যারে রিটার্ন হবে।
+        return [];
     },
 
     // ৪. সকল PDF লোড
@@ -2259,13 +2286,9 @@ function renderModernMCQCardHTML(q, index, options = {}) {
 
     const isModelTest = (category === 'model_test') || (options.hideExplanation === true) || (mode === 'exam');
 
-    const expBtnAndBox = isModelTest ? `
-        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: flex-end; width: 100%; margin-top: 12px;">
-            ${favButtonHtml}
-        </div>
-    ` : `
-        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
-            <button type="button" class="modern-exp-btn" onclick="toggleModernExp(this)">
+    const expBtnAndBox = `
+        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: ${isModelTest ? 'flex-end' : 'space-between'}; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
+            <button type="button" class="modern-exp-btn" onclick="toggleModernExp(this)" style="${isModelTest ? 'display: none;' : ''}">
                 <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
             </button>
             ${favButtonHtml}

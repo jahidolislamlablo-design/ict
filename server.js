@@ -997,16 +997,48 @@ app.get('/api/mcqs', async (req, res) => {
       examYear, 
       testPaperName, 
       modelTestNo,
-      liveExamNo
+      liveExamNo,
+      examIdentifier
     } = req.query;
 
     let filter = {};
+
+    if (examIdentifier && examIdentifier.trim()) {
+      const idStr = examIdentifier.trim();
+      const numMatch = idStr.match(/\d+/);
+      const num = numMatch ? numMatch[0] : idStr;
+      const paddedNum = num.length === 1 ? '0' + num : num;
+      
+      filter.$or = [
+        { liveExamNo: { $regex: new RegExp(paddedNum, 'i') } },
+        { modelTestNo: { $regex: new RegExp(paddedNum, 'i') } },
+        { liveExamNo: { $regex: new RegExp(idStr, 'i') } },
+        { modelTestNo: { $regex: new RegExp(idStr, 'i') } }
+      ];
+    } else {
+      if (modelTestNo && modelTestNo.trim()) {
+        const numMatch = modelTestNo.match(/\d+/);
+        const numStr = numMatch ? (numMatch[0].length === 1 ? '0' + numMatch[0] : numMatch[0]) : modelTestNo.trim();
+        filter.$or = [
+          { modelTestNo: { $regex: new RegExp(numStr, 'i') } },
+          { liveExamNo: { $regex: new RegExp(numStr, 'i') } }
+        ];
+      } else if (liveExamNo && liveExamNo.trim()) {
+        const numMatch = liveExamNo.match(/\d+/);
+        const numStr = numMatch ? (numMatch[0].length === 1 ? '0' + numMatch[0] : numMatch[0]) : liveExamNo.trim();
+        filter.$or = [
+          { liveExamNo: { $regex: new RegExp(numStr, 'i') } },
+          { modelTestNo: { $regex: new RegExp(numStr, 'i') } }
+        ];
+      }
+    }
 
     if (chapter && chapter.trim()) {
       filter.chapter = { $regex: buildChapterRegex(chapter) };
     }
 
-    if (categoryType && categoryType.trim()) {
+    // Only filter by categoryType if no specific exam was queried
+    if (!filter.$or && categoryType && categoryType.trim()) {
       const cat = categoryType.trim();
       filter.$or = [
         { categoryTypes: { $in: [cat] } },
@@ -1021,10 +1053,8 @@ app.get('/api/mcqs', async (req, res) => {
     if (collegeName && collegeName.trim()) filter.collegeName = { $regex: buildCollegeRegex(collegeName) };
     if (examYear && examYear.trim()) filter.examYear = examYear.trim();
     if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
-    if (modelTestNo && modelTestNo.trim()) filter.modelTestNo = { $regex: new RegExp(modelTestNo.trim(), 'i') };
-    if (liveExamNo && liveExamNo.trim()) filter.liveExamNo = { $regex: new RegExp(liveExamNo.trim(), 'i') };
 
-    const mcqs = await Mcq.find(filter).sort({ serialNo: 1, createdAt: -1 });
+    const mcqs = await Mcq.find(filter).sort({ serialNo: 1, createdAt: 1 });
 
     res.status(200).json({
       success: true,

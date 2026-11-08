@@ -82,8 +82,6 @@
                 </div>
 
                 <!-- ফিল্টার ট্যাব -->
-                <!-- চলমান লাইভ এক্সাম হাইলাইট সেকশন -->
-                <section id="featuredLiveSection" class="featured-live-section" style="display:none;"></section>
 
                 <!-- ফিল্টার ট্যাব -->
                 <div class="filter-tabs">
@@ -1640,9 +1638,15 @@
     <!-- পরীক্ষার ফলাফল পপআপ মডাল -->
     <div id="examResultModal" class="modal-overlay" onclick="if(event.target === this) exitExam()">
         <div class="modal-window" style="text-align: center;">
-            <div class="score-badge-circle">
-                <strong id="modal-score-percentage">৮০%</strong>
-                <span>স্কোর হার</span>
+            <div class="result-score-summary-row">
+                <div class="result-score-box result-score-marks-box">
+                    <span class="result-score-box-label"><i class="fa-solid fa-award"></i> প্রাপ্ত নম্বর</span>
+                    <strong class="result-score-box-val" id="modal-score-marks">০ / ২৫</strong>
+                </div>
+                <div class="result-score-box result-score-perc-box">
+                    <span class="result-score-box-label"><i class="fa-solid fa-percent"></i> শতকরা হার</span>
+                    <strong class="result-score-box-val" id="modal-score-percentage">০%</strong>
+                </div>
             </div>
 
             <h3 style="font-size: 1.3rem; margin-bottom: 6px;">পরীক্ষা সফলভাবে সম্পন্ন হয়েছে!</h3>
@@ -1671,7 +1675,7 @@
                 <button class="btn btn-primary" onclick="reviewExamAnswers()">
                     <i class="fa-solid fa-list-check"></i> সমাধান ও ব্যাখ্যা দেখুন
                 </button>
-                <button class="btn btn-outline" onclick="retakeExam()">
+                <button class="btn btn-outline" id="modal-retake-btn" onclick="retakeExam()">
                     <i class="fa-solid fa-rotate-right"></i> পুনরায় দিন
                 </button>
                 <button class="btn btn-outline" onclick="exitExam()">
