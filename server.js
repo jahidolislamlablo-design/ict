@@ -147,6 +147,11 @@ const McqSchema = new mongoose.Schema({
     default: '',
     trim: true
   },
+  liveExamNo: {
+    type: String,
+    default: '',
+    trim: true
+  },
   serialNo: {
     type: Number,
     default: 0
@@ -991,7 +996,8 @@ app.get('/api/mcqs', async (req, res) => {
       collegeName, 
       examYear, 
       testPaperName, 
-      modelTestNo 
+      modelTestNo,
+      liveExamNo
     } = req.query;
 
     let filter = {};
@@ -1016,6 +1022,7 @@ app.get('/api/mcqs', async (req, res) => {
     if (examYear && examYear.trim()) filter.examYear = examYear.trim();
     if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
     if (modelTestNo && modelTestNo.trim()) filter.modelTestNo = { $regex: new RegExp(modelTestNo.trim(), 'i') };
+    if (liveExamNo && liveExamNo.trim()) filter.liveExamNo = { $regex: new RegExp(liveExamNo.trim(), 'i') };
 
     const mcqs = await Mcq.find(filter).sort({ serialNo: 1, createdAt: -1 });
 
@@ -1079,6 +1086,7 @@ app.post('/api/mcqs', async (req, res) => {
       examYear,
       testPaperName,
       modelTestNo,
+      liveExamNo,
       question,
       options,
       correctAnswer,
@@ -1106,6 +1114,7 @@ app.post('/api/mcqs', async (req, res) => {
       examYear: examYear ? String(examYear).trim() : '',
       testPaperName: testPaperName ? testPaperName.trim() : '',
       modelTestNo: modelTestNo ? modelTestNo.trim() : '',
+      liveExamNo: liveExamNo ? liveExamNo.trim() : '',
       serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
       image: image ? image.trim() : '',
       question: question.trim(),
@@ -1145,6 +1154,7 @@ app.put('/api/mcqs/:id', async (req, res) => {
       examYear,
       testPaperName,
       modelTestNo,
+      liveExamNo,
       question,
       options,
       correctAnswer,
@@ -1167,6 +1177,7 @@ app.put('/api/mcqs/:id', async (req, res) => {
     if (examYear !== undefined) updateData.examYear = String(examYear).trim();
     if (testPaperName !== undefined) updateData.testPaperName = testPaperName.trim();
     if (modelTestNo !== undefined) updateData.modelTestNo = modelTestNo.trim();
+    if (liveExamNo !== undefined) updateData.liveExamNo = liveExamNo.trim();
     if (serialNo !== undefined && serialNo !== '') updateData.serialNo = parseInt(serialNo, 10) || 0;
     if (image !== undefined) updateData.image = image.trim();
     if (question) updateData.question = question.trim();

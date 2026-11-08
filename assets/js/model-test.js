@@ -157,20 +157,20 @@ function renderModelTestCards(list) {
 
     grid.innerHTML = list.map(item => {
         const isLive = isExamLiveNow(item);
-        const examNoStr = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+        const examKey = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
         const dateStr = item.date || '01-11-26';
         const chaptersStr = item.chapters || 'প্রথম অধ্যায়';
         const participantsCount = item.participants || 547;
         const totalQ = item.totalQuestions || 25;
         const duration = item.duration || 25;
         const totalM = item.totalMarks || 25;
-        const titleSafe = (item.title || ('Model Test ' + examNoStr)).replace(/'/g, "\\'");
+        const titleSafe = (item.title || ('Model Test ' + examKey)).replace(/'/g, "\\'");
 
         let btnText = item.buttonText || (isLive ? 'Start Live Exam' : 'Start Previous Live Exam');
         if (isLive) btnText = 'Start Live Exam';
 
         return `
-            <div class="test-card model-test-card" data-category="${item.category || 'full'}" id="card-mt-${item._id || examNoStr}">
+            <div class="test-card model-test-card" data-category="${item.category || 'full'}" id="card-mt-${examKey}">
                 <div>
                     <!-- Top Row -->
                     <div class="mt-top-row">
@@ -180,19 +180,19 @@ function renderModelTestCards(list) {
                                 <div class="mt-participants-pill">
                                     <i class="fa-solid fa-users"></i> ${toBanglaNum(participantsCount)} জন
                                 </div>
-                                <div class="mt-live-badge" id="live-badge-${item._id || examNoStr}" style="${isLive ? '' : 'display:none;'}">
+                                <div class="mt-live-badge" id="live-badge-${examKey}" style="${isLive ? '' : 'display:none;'}">
                                     <span class="mt-live-dot"></span> LIVE
                                 </div>
                             </div>
                             <!-- Live Remaining Time below LIVE badge -->
-                            <div class="mt-live-countdown" id="live-countdown-${item._id || examNoStr}" style="${isLive ? '' : 'display:none;'}">
+                            <div class="mt-live-countdown" id="live-countdown-${examKey}" style="${isLive ? '' : 'display:none;'}">
                                 ${isLive ? getRemainingLiveTimeText(item) : ''}
                             </div>
                         </div>
                     </div>
 
                     <!-- Heading & Chapters -->
-                    <h3 class="mt-exam-no">Exam No: ${escapeHtml(examNoStr)}</h3>
+                    <h3 class="mt-exam-no">Exam No: ${escapeHtml(examKey)}</h3>
                     <div class="mt-chapters">Chapters: <span>${escapeHtml(chaptersStr)}</span></div>
 
                     <!-- Meta info row -->
@@ -219,8 +219,9 @@ function startLiveCountdowns() {
     liveCountdownInterval = setInterval(() => {
         allModelTestsData.forEach(item => {
             const isLive = isExamLiveNow(item);
-            const badge = document.getElementById('live-badge-' + (item._id || item.examNo));
-            const timer = document.getElementById('live-countdown-' + (item._id || item.examNo));
+            const examKey = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+            const badge = document.getElementById('live-badge-' + examKey);
+            const timer = document.getElementById('live-countdown-' + examKey);
             if (badge) badge.style.display = isLive ? 'inline-flex' : 'none';
             if (timer) {
                 if (isLive) {

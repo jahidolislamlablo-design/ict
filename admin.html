@@ -817,6 +817,10 @@
         <span>📄 PDF আপলোড ও নোট</span>
         <span class="badge" id="pdfCountBadge">0</span>
       </button>
+      <button type="button" class="tab-btn" onclick="switchTab('liveExamTab')">
+        <span>🔴 লাইভ এক্সাম ও মডেল টেস্ট</span>
+        <span class="badge" id="liveExamCountBadge">50</span>
+      </button>
     </div>
 
     <!-- ============================================== -->
@@ -874,6 +878,10 @@
                 <label class="multiselect-item">
                   <input type="checkbox" name="mcqCategory" value="Chapter Practice" checked onchange="syncMultiSelectDisplay('mcq')">
                   <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
+                </label>
+                <label class="multiselect-item" style="background: #fef2f2; border-left: 3px solid #dc2626;">
+                  <input type="checkbox" name="mcqCategory" value="Live Exam" id="mcqCatLiveExam" onchange="syncMultiSelectDisplay('mcq')">
+                  <span style="font-weight: 700; color: #dc2626;">🔴 Live Exam (লাইভ এক্সাম)</span>
                 </label>
               </div>
             </div>
@@ -1024,6 +1032,71 @@
                 <option value="Model Test 50">Model Test 50 (মডেল টেস্ট ৫০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
               </select>
             </div>
+          </div>
+
+
+          <!-- লাইভ এক্সাম নির্বাচন ফিল্ড -->
+          <div class="form-group" id="mcqLiveExamGroup" style="margin-top: 1rem; background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 8px; padding: 12px;">
+            <label for="mcqLiveExamNo" style="font-weight: 700; color: #dc2626; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 0.95rem;">🔴 লাইভ এক্সাম নির্বাচন (Live Exam Selection Field)</span>
+              <span class="badge" style="background: #dc2626; color: #fff; font-size: 0.75rem; padding: 3px 8px; border-radius: 10px;">লাইভ এক্সাম ফিল্ড</span>
+            </label>
+            <select id="mcqLiveExamNo" onchange="onLiveExamSelect(this.value)" style="font-weight: 600; border-color: #fda4af; margin-top: 4px;">
+<option value="">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</option>
+                  <option value="Live Exam 01">Live Exam 01 (লাইভ এক্সাম 01 - প্রথম অধ্যায়)</option>
+                  <option value="Live Exam 02">Live Exam 02 (লাইভ এক্সাম 02 - দ্বিতীয় অধ্যায়)</option>
+                  <option value="Live Exam 03">Live Exam 03 (লাইভ এক্সাম 03 - ৩য় অধ্যায় (১ম অংশ))</option>
+                  <option value="Live Exam 04">Live Exam 04 (লাইভ এক্সাম 04 - ৩য় অধ্যায় (২য় অংশ))</option>
+                  <option value="Live Exam 05">Live Exam 05 (লাইভ এক্সাম 05 - ৪র্থ অধ্যায়)</option>
+                  <option value="Live Exam 06">Live Exam 06 (লাইভ এক্সাম 06 - ৫ম অধ্যায়)</option>
+                  <option value="Live Exam 07">Live Exam 07 (লাইভ এক্সাম 07 - ৬ষ্ঠ অধ্যায়)</option>
+                  <option value="Live Exam 08">Live Exam 08 (লাইভ এক্সাম 08 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 09">Live Exam 09 (লাইভ এক্সাম 09 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 10">Live Exam 10 (লাইভ এক্সাম 10 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 11">Live Exam 11 (লাইভ এক্সাম 11 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 12">Live Exam 12 (লাইভ এক্সাম 12 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 13">Live Exam 13 (লাইভ এক্সাম 13 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 14">Live Exam 14 (লাইভ এক্সাম 14 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 15">Live Exam 15 (লাইভ এক্সাম 15 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 16">Live Exam 16 (লাইভ এক্সাম 16 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 17">Live Exam 17 (লাইভ এক্সাম 17 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 18">Live Exam 18 (লাইভ এক্সাম 18 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 19">Live Exam 19 (লাইভ এক্সাম 19 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 20">Live Exam 20 (লাইভ এক্সাম 20 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 21">Live Exam 21 (লাইভ এক্সাম 21 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 22">Live Exam 22 (লাইভ এক্সাম 22 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 23">Live Exam 23 (লাইভ এক্সাম 23 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 24">Live Exam 24 (লাইভ এক্সাম 24 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 25">Live Exam 25 (লাইভ এক্সাম 25 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 26">Live Exam 26 (লাইভ এক্সাম 26 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 27">Live Exam 27 (লাইভ এক্সাম 27 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 28">Live Exam 28 (লাইভ এক্সাম 28 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 29">Live Exam 29 (লাইভ এক্সাম 29 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 30">Live Exam 30 (লাইভ এক্সাম 30 - পূর্ণাঙ্গ সিলেবাস)</option>
+                  <option value="Live Exam 31">Live Exam 31 (লাইভ এক্সাম 31 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
+                  <option value="Live Exam 32">Live Exam 32 (লাইভ এক্সাম 32 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
+                  <option value="Live Exam 33">Live Exam 33 (লাইভ এক্সাম 33 - অধ্যায়ভিত্তিক স্পেশাল (4ম অধ্যায়))</option>
+                  <option value="Live Exam 34">Live Exam 34 (লাইভ এক্সাম 34 - অধ্যায়ভিত্তিক স্পেশাল (5ম অধ্যায়))</option>
+                  <option value="Live Exam 35">Live Exam 35 (লাইভ এক্সাম 35 - অধ্যায়ভিত্তিক স্পেশাল (6ম অধ্যায়))</option>
+                  <option value="Live Exam 36">Live Exam 36 (লাইভ এক্সাম 36 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
+                  <option value="Live Exam 37">Live Exam 37 (লাইভ এক্সাম 37 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
+                  <option value="Live Exam 38">Live Exam 38 (লাইভ এক্সাম 38 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
+                  <option value="Live Exam 39">Live Exam 39 (লাইভ এক্সাম 39 - অধ্যায়ভিত্তিক স্পেশাল (4ম অধ্যায়))</option>
+                  <option value="Live Exam 40">Live Exam 40 (লাইভ এক্সাম 40 - অধ্যায়ভিত্তিক স্পেশাল (5ম অধ্যায়))</option>
+                  <option value="Live Exam 41">Live Exam 41 (লাইভ এক্সাম 41 - অধ্যায়ভিত্তিক স্পেশাল (6ম অধ্যায়))</option>
+                  <option value="Live Exam 42">Live Exam 42 (লাইভ এক্সাম 42 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
+                  <option value="Live Exam 43">Live Exam 43 (লাইভ এক্সাম 43 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
+                  <option value="Live Exam 44">Live Exam 44 (লাইভ এক্সাম 44 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
+                  <option value="Live Exam 45">Live Exam 45 (লাইভ এক্সাম 45 - অধ্যায়ভিত্তিক স্পেশাল (4ম অধ্যায়))</option>
+                  <option value="Live Exam 46">Live Exam 46 (লাইভ এক্সাম 46 - অধ্যায়ভিত্তিক স্পেশাল (5ম অধ্যায়))</option>
+                  <option value="Live Exam 47">Live Exam 47 (লাইভ এক্সাম 47 - অধ্যায়ভিত্তিক স্পেশাল (6ম অধ্যায়))</option>
+                  <option value="Live Exam 48">Live Exam 48 (লাইভ এক্সাম 48 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
+                  <option value="Live Exam 49">Live Exam 49 (লাইভ এক্সাম 49 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
+                  <option value="Live Exam 50">Live Exam 50 (লাইভ এক্সাম 50 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
+            </select>
+            <span class="hint" style="color: #9f1239; font-size: 0.8rem; margin-top: 5px; display: block; font-weight: 500;">
+              💡 এখান থেকে লাইভ এক্সাম সিলেক্ট করলে প্রশ্নটি সরাসরি ঐ লাইভ এক্সামে যুক্ত হবে এবং স্বয়ংক্রিয়ভাবে "Live Exam" ক্যাটাগরি নির্বাচিত হবে।
+            </span>
           </div>
 
           <label class="metadata-toggle">
@@ -1895,6 +1968,15 @@
     let currentEditingItem = null;
     let currentEditingType = null;
 
+    
+    function onLiveExamSelect(val) {
+      const cb = document.getElementById('mcqCatLiveExam');
+      if (cb && val) {
+        cb.checked = true;
+        syncMultiSelectDisplay('mcq');
+      }
+    }
+
     function switchTab(tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
@@ -1909,6 +1991,10 @@
       } else if (tabId === 'pdfTab') {
         document.querySelectorAll('.tab-btn')[3].classList.add('active');
         loadPdfItems();
+      } else if (tabId === 'liveExamTab') {
+        const btns = document.querySelectorAll('.tab-btn');
+        if (btns[4]) btns[4].classList.add('active');
+        loadLiveExamItems();
       }
 
       document.getElementById(tabId).classList.add('active');
@@ -1989,6 +2075,8 @@
         const examYear = document.getElementById('mcqExamYear').value;
         const testPaperName = document.getElementById('mcqTestPaperName').value;
         const modelTestNo = document.getElementById('mcqModelTestNo').value;
+        const liveExamNo = document.getElementById('mcqLiveExamNo')?.value || '';
+        if (liveExamNo && !categoryTypes.includes('Live Exam')) { categoryTypes.push('Live Exam'); }
 
         const question = document.getElementById('mcqQuestion').value.trim();
         const opt1 = document.getElementById('mcqOpt1').value.trim();
@@ -2028,6 +2116,7 @@
           examYear,
           testPaperName,
           modelTestNo,
+          liveExamNo,
           question,
           options: [opt1, opt2, opt3, opt4],
           option1: opt1,
@@ -2750,6 +2839,10 @@
                 <input type="checkbox" name="editCategory" value="Chapter Practice" ${isChapter ? 'checked' : ''} onchange="syncMultiSelectDisplay('edit')">
                 <span>📖 Chapter Practice (অধ্যায়ভিত্তিক)</span>
               </label>
+              <label class="multiselect-item" style="background: #fef2f2; border-left: 3px solid #dc2626;">
+                <input type="checkbox" name="editCategory" value="Live Exam" ${isLiveExam ? 'checked' : ''} onchange="syncMultiSelectDisplay('edit')">
+                <span style="font-weight: 700; color: #dc2626;">🔴 Live Exam (লাইভ এক্সাম)</span>
+              </label>
             </div>
           </div>
         </div>
@@ -2895,6 +2988,21 @@
                 <option value="Model Test 50">Model Test 50 (মডেল টেস্ট ৫০ - অধ্যায়ভিত্তিক স্পেশাল)</option>
             </select>
           </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 0.75rem; background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 8px; padding: 10px;">
+          <label for="editLiveExamNo" style="font-weight: 700; color: #dc2626; display: flex; align-items: center; justify-content: space-between;">
+            <span>🔴 লাইভ এক্সাম নির্বাচন (Live Exam Selection Field)</span>
+            <span class="badge" style="background: #dc2626; color: #fff; font-size: 0.72rem; padding: 2px 7px; border-radius: 10px;">লাইভ এক্সাম</span>
+          </label>
+          <select id="editLiveExamNo" style="font-weight: 600; border-color: #fda4af; margin-top: 4px;">
+            <option value="">-- কোনো লাইভ এক্সাম নয় (প্রযোজ্য নয়) --</option>
+            ${Array.from({length: 50}, (_, i) => {
+              const n = (i + 1) < 10 ? '0' + (i + 1) : '' + (i + 1);
+              const sel = (currentEditingItem && currentEditingItem.liveExamNo === ('Live Exam ' + n)) ? 'selected' : '';
+              return `<option value="Live Exam ${n}" ${sel}>Live Exam ${n} (লাইভ এক্সাম ${n})</option>`;
+            }).join('')}
+          </select>
         </div>
       `;
 
@@ -3050,6 +3158,8 @@
         const examYear = document.getElementById('editExamYear').value;
         const testPaperName = document.getElementById('editTestPaperName').value;
         const modelTestNo = document.getElementById('editModelTestNo').value;
+        const liveExamNo = document.getElementById('editLiveExamNo')?.value || '';
+        if (liveExamNo && !categoryTypes.includes('Live Exam')) { categoryTypes.push('Live Exam'); }
 
         let payload = {
           categoryTypes,
