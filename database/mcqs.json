@@ -28,6 +28,32 @@
     "__v": 0
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbe9",
+    "serialNo": 1,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন কমান্ডটি টেবিল থেকে সব ডেটা নেয়ার জন্য ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "SELECT ALL",
+      "SELECT ALL *",
+      "SELECT *",
+      "SELECT **"
+    ],
+    "correctAnswer": "SELECT *",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.446Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f55",
     "serialNo": 1,
     "categoryTypes": [
@@ -189,6 +215,32 @@
     "correctAnswer": "বটম-আপ",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.277Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbea",
+    "serialNo": 2,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Student টেবিল থেকে Class Five এবং Morning Section এর শিক্ষার্থীদের তথ্য পাওয়ার কুয়েরী কোনটি?",
+    "image": "",
+    "options": [
+      "Select * From Student Where Class = 5 OR Section = 'morning';",
+      "Select * From Student Where Class = 5 AND Section = 'morning';",
+      "Select * From Student Where Class = '5' OR Section = morning;",
+      "Select * From Student Where Class = '5' AND Section = morning;"
+    ],
+    "correctAnswer": "Select * From Student Where Class = 5 AND Section = 'morning';",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.450Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f56",
@@ -354,6 +406,32 @@
     "createdAt": "2026-11-02T16:02:03.285Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbeb",
+    "serialNo": 3,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের টেবিল দুটি লক্ষ্য কর এবং ১৫ ও ১৬ নং প্রশ্নের উত্তর দাও:\n| ID | Name | City |\n| --- | --- | --- |\n| S01 | Mim | Dhaka |\n| S02 | Arif | Khulna |\n| S03 | Tinni | Sylhet |\nTable: Student              Table: Result\n| ID | Sub | Marks |\n| --- | --- | --- |\n| S01 | ICT | ৮৫ |\n| S02 | ICT | ৭৮ |\n| S03 | Math | ৯৫ |\n​ Result টেবিলে 'ID' ফিল্ডটি কোন ধরনের?",
+    "image": "",
+    "options": [
+      "প্রাইমারী কি",
+      "ফরেন কি",
+      "কম্পোজিট কি",
+      "ক্যান্ডিডেট কি"
+    ],
+    "correctAnswer": "ফরেন কি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.450Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f57",
     "serialNo": 3,
     "categoryTypes": [
@@ -476,7 +554,7 @@
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 01",
-    "question": "নিচের উদ্দীপকের আলোকে ২৪ ও ২৫ নং প্রশ্নের উত্তর দাও:\nএই ধরনের নেটওয়ার্কে মোট তারের সংখ্যা হবে  [সকল. বো. '২৬]",
+    "question": "নিচের উদ্দীপকের আলোকে  প্রশ্নের উত্তর দাও:\nএই ধরনের নেটওয়ার্কে মোট তারের সংখ্যা হবে  [সকল. বো. '২৬]",
     "image": "/uploads/images/mcq_ch2_image1.png",
     "options": [
       "n",
@@ -516,6 +594,32 @@
     "correctAnswer": "আপওয়ার্ক",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.294Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbec",
+    "serialNo": 4,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের টেবিল দুটির মধ্যে বিদ্যমান রিলেশনশিপের ধরন কোনটি?",
+    "image": "",
+    "options": [
+      "One to one",
+      "One to many",
+      "Many to one",
+      "Many to many"
+    ],
+    "correctAnswer": "One to one",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f58",
@@ -677,6 +781,32 @@
     "correctAnswer": "ভার্চুয়াল রিয়েলিটি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.296Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbed",
+    "serialNo": 5,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Record কী?",
+    "image": "",
+    "options": [
+      "File এর সমষ্টি",
+      "Database এর সমষ্টি",
+      "Field এর সমষ্টি",
+      "Query এর সমষ্টি"
+    ],
+    "correctAnswer": "Field এর সমষ্টি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f59",
@@ -842,6 +972,32 @@
     "createdAt": "2026-11-02T16:02:03.298Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbee",
+    "serialNo": 6,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL বাণিজ্যিকভাবে ব্যবহার শুরু হয় কত সালে?",
+    "image": "",
+    "options": [
+      "১৯৭০",
+      "১৯৭৭",
+      "১৯৭৯",
+      "১৯৮৯"
+    ],
+    "correctAnswer": "১৯৭০",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f5a",
     "serialNo": 6,
     "categoryTypes": [
@@ -1003,6 +1159,32 @@
     "correctAnswer": "কৃত্রিম বুদ্ধিমত্তা",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.300Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbef",
+    "serialNo": 7,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের সারিকে কি বলা হয়?",
+    "image": "",
+    "options": [
+      "রেকর্ড",
+      "ফিল্ড",
+      "ফাইল",
+      "এনটিটি"
+    ],
+    "correctAnswer": "রেকর্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f5b",
@@ -1167,6 +1349,32 @@
     "createdAt": "2026-11-02T16:02:03.303Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbf0",
+    "serialNo": 8,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DML এর পূর্ণনাম-",
+    "image": "",
+    "options": [
+      "Data Multiple langauge",
+      "Data Mediam language",
+      "Data Manipulation language",
+      "Data Multiplification language"
+    ],
+    "correctAnswer": "Data Manipulation language",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f5c",
     "serialNo": 8,
     "categoryTypes": [
@@ -1327,6 +1535,32 @@
     "correctAnswer": "৩",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.306Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbf1",
+    "serialNo": 9,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ টেবিলে প্রত্যেকটি এট্রিবিউটে যে মান থাকে তাকে কী বলে?",
+    "image": "",
+    "options": [
+      "ভ্যালু",
+      "রেকর্ড",
+      "ফিল্ড",
+      "ডেটা"
+    ],
+    "correctAnswer": "ভ্যালু",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f5d",
@@ -1491,6 +1725,32 @@
     "createdAt": "2026-11-02T16:02:03.310Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbf2",
+    "serialNo": 10,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেস কথার সহজ অর্থ হলো-",
+    "image": "",
+    "options": [
+      "তথ্য ভান্ডার",
+      "তথ্য ইনপুট",
+      "তথ্য আউটপুট",
+      "তথ্য প্রদর্শন"
+    ],
+    "correctAnswer": "তথ্য ভান্ডার",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f5e",
     "serialNo": 10,
     "categoryTypes": [
@@ -1647,6 +1907,32 @@
     "correctAnswer": "মেশিন লার্নিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.314Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbf3",
+    "serialNo": 11,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিপোর্ট কী?",
+    "image": "",
+    "options": [
+      "একটি ভাষা",
+      "তথ্য খোঁজার পদ্ধতি",
+      "টেবিল তৈরি",
+      "মুদ্রিত ডেটা"
+    ],
+    "correctAnswer": "মুদ্রিত ডেটা",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f5f",
@@ -1808,6 +2094,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbf4",
+    "serialNo": 12,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ডেটাবেজ ম্যানেজমেন্ট সফটওয়্যার?",
+    "image": "",
+    "options": [
+      "Ms-power point",
+      "Ms-Word",
+      "Ms-Excel",
+      "Ms-Access"
+    ],
+    "correctAnswer": "Ms-Access",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f60",
     "serialNo": 12,
     "categoryTypes": [
@@ -1964,6 +2276,32 @@
     "correctAnswer": "মরিটারফ",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.322Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbf5",
+    "serialNo": 13,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ডেটাবেজ প্রোগ্রাম নয়?",
+    "image": "",
+    "options": [
+      "Oracle",
+      "Dbase",
+      "Fortran",
+      "Foxpro"
+    ],
+    "correctAnswer": "Fortran",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f61",
@@ -2125,6 +2463,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbf6",
+    "serialNo": 14,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেইজ এর ভিত্তি হলো?",
+    "image": "",
+    "options": [
+      "ভ্যালু",
+      "ফিল্ড",
+      "এনটিটি",
+      "রেকর্ড"
+    ],
+    "correctAnswer": "ফিল্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f62",
     "serialNo": 14,
     "categoryTypes": [
@@ -2280,6 +2644,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.334Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbf7",
+    "serialNo": 15,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একই ধরনের ডেটা থাকে কোনটিতে?",
+    "image": "",
+    "options": [
+      "ফিল্ডে",
+      "ডেটা টেবিলে",
+      "রেকর্ডে",
+      "সম্পর্কযুক্ত ফিল্ডে"
+    ],
+    "correctAnswer": "সম্পর্কযুক্ত ফিল্ডে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f63",
@@ -2441,6 +2831,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbf8",
+    "serialNo": 16,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ডেটাবেজ প্রোগ্রাম?",
+    "image": "",
+    "options": [
+      "ওরাকল",
+      "ফরট্রান",
+      "প্যাসকেল",
+      "লেটাস"
+    ],
+    "correctAnswer": "ওরাকল",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f64",
     "serialNo": 16,
     "categoryTypes": [
@@ -2597,6 +3013,32 @@
     "createdAt": "2026-11-02T16:02:03.343Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbf9",
+    "serialNo": 17,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DBMS এর পূর্ণরূপ কোনটি?",
+    "image": "",
+    "options": [
+      "Member of Database System",
+      "Data Based Mangaging System",
+      "Database Management System",
+      "Database Management Software"
+    ],
+    "correctAnswer": "Database Management System",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.451Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f65",
     "serialNo": 17,
     "categoryTypes": [
@@ -2751,6 +3193,32 @@
     "correctAnswer": "অক্সিজেন গ্যাস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.345Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbfa",
+    "serialNo": 18,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Entity & Entity sets এর symbol কোনটি?",
+    "image": "",
+    "options": [
+      "<img src=\"/uploads/images/mcq_ch6_image3.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch6_image4.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch6_image5.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch6_image6.png\" style=\"max-height: 48px; vertical-align: middle;\">"
+    ],
+    "correctAnswer": "<img src=\"/uploads/images/mcq_ch6_image3.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.452Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f66",
@@ -2910,6 +3378,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbfb",
+    "serialNo": 19,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি আরডিবিএমএস এর কাজ নয়?",
+    "image": "",
+    "options": [
+      "ডেটা সংরক্ষণ করা",
+      "ডেটার নিরাপত্তা রক্ষা করা",
+      "তথ্যের বিশুদ্ধতা রক্ষা করা",
+      "একই সময়ে একাধিক ব্যবহারকারী প্রতিরোধ করা"
+    ],
+    "correctAnswer": "তথ্যের বিশুদ্ধতা রক্ষা করা",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.452Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f67",
     "serialNo": 19,
     "categoryTypes": [
@@ -3065,6 +3559,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.350Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbfc",
+    "serialNo": 20,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ ডেটাগুলো কিরূপে থাকে?",
+    "image": "",
+    "options": [
+      "স্বীকৃতিবিন্যস্ত",
+      "স্বাধীনভাবে বিন্যস্ত",
+      "অবিন্যস্ত",
+      "সারিবদ্ধভাবে বিন্যস্ত"
+    ],
+    "correctAnswer": "সারিবদ্ধভাবে বিন্যস্ত",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.452Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f68",
@@ -3223,6 +3743,32 @@
     "createdAt": "2026-11-02T16:02:03.351Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbfd",
+    "serialNo": 21,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সম্পর্কযুক্ত ডেটাবেজ গঠিত হয় কতকগুলো-",
+    "image": "",
+    "options": [
+      "টেবিল নিয়ে",
+      "ফিল্ড নিয়ে",
+      "রেকর্ড নিয়ে",
+      "কী (Key) নিয়ে"
+    ],
+    "correctAnswer": "টেবিল নিয়ে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.452Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f69",
     "serialNo": 21,
     "categoryTypes": [
@@ -3378,6 +3924,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.354Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cbfe",
+    "serialNo": 22,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ফিল্ডটি প্রাইমারি কি হতে পারে?",
+    "image": "",
+    "options": [
+      "নাম",
+      "মোবাইল",
+      "পরীক্ষার ফি",
+      "ঠিকানা"
+    ],
+    "correctAnswer": "মোবাইল",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.452Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f6a",
@@ -3538,6 +4110,32 @@
     "createdAt": "2026-11-02T16:02:03.358Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cbff",
+    "serialNo": 23,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন RDBMS সফটওয়্যার ওয়েবসাইট ডিজাইনে বেশি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "MS-Access",
+      "MySQL",
+      "DB2",
+      "ORACLE"
+    ],
+    "correctAnswer": "MS-Access",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f6b",
     "serialNo": 23,
     "categoryTypes": [
@@ -3692,6 +4290,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.363Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc00",
+    "serialNo": 24,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের প্রত্যেকটি রেকর্ড পৃথকভাবে খুঁজে বের করার জন্য ব্যবহার করা হয়-",
+    "image": "",
+    "options": [
+      "প্রাইমারি কি",
+      "বিশেষ কি",
+      "ফরেন কি",
+      "সাধারণ কি"
+    ],
+    "correctAnswer": "প্রাইমারি কি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f6c",
@@ -3850,6 +4474,32 @@
     "createdAt": "2026-11-02T16:02:03.372Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc01",
+    "serialNo": 25,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি টেবিলে কয়টি ফরেন কি থাকতে পারে?",
+    "image": "",
+    "options": [
+      "একটি",
+      "দুইটি",
+      "তিনটি",
+      "একাধিক"
+    ],
+    "correctAnswer": "একাধিক",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f6d",
     "serialNo": 25,
     "categoryTypes": [
@@ -4006,6 +4656,32 @@
     "createdAt": "2026-11-02T16:02:03.374Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc02",
+    "serialNo": 26,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "RDBMS-এ কী নিয়ে আলোচনা করা হয়?",
+    "image": "",
+    "options": [
+      "একাধিক ডেটা টেবিল",
+      "রিপোর্ট",
+      "কুয়েরি",
+      "সবগুলোই"
+    ],
+    "correctAnswer": "সবগুলোই",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f6e",
     "serialNo": 26,
     "categoryTypes": [
@@ -4159,6 +4835,32 @@
     "correctAnswer": "বায়োইনফরমেটিক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.377Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc03",
+    "serialNo": 27,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Foreign key এর সাথে Foreign key এর সম্পর্ক কী?",
+    "image": "",
+    "options": [
+      "one to one",
+      "one to many",
+      "many to one",
+      "many to many"
+    ],
+    "correctAnswer": "many to many",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f6f",
@@ -4320,6 +5022,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc04",
+    "serialNo": 28,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের রিলেশনকে কয়ভাবে ভাগ করা যায়?",
+    "image": "",
+    "options": [
+      "চার",
+      "পাঁচ",
+      "ছঢ",
+      "সাত"
+    ],
+    "correctAnswer": "চার",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f70",
     "serialNo": 28,
     "categoryTypes": [
@@ -4474,6 +5202,32 @@
     "correctAnswer": "জিনোম",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.385Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc05",
+    "serialNo": 29,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি সর্বাধিক ব্যবহৃত অবাণিজ্যিক RDMBS সফটওয়্যার?",
+    "image": "",
+    "options": [
+      "DB-2",
+      "MYSQL",
+      "MS Access",
+      "SQL Server"
+    ],
+    "correctAnswer": "MYSQL",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f71",
@@ -4633,6 +5387,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc06",
+    "serialNo": 30,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রাইমারি কি ফিল্ড কোনটি?",
+    "image": "",
+    "options": [
+      "Name",
+      "Address",
+      "Class",
+      "Id No"
+    ],
+    "correctAnswer": "Id No",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f72",
     "serialNo": 30,
     "categoryTypes": [
@@ -4788,6 +5568,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.392Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc07",
+    "serialNo": 31,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দুটি টেবিলে One to one রিলেশন স্থাপন করতে হলে-",
+    "image": "",
+    "options": [
+      "টেবিল দুটির প্রাইমারি কী একই হবে",
+      "টেবিল দুটির প্রাইমারি কী ও ফরেন কী একই হবে",
+      "টেবিল দুটির কোনো কমন ফিল্ড থাকবে না",
+      "টেবিল দুটির কমন ফিল্ডের বৈশিষ্ট্য ভিন্ন হবে"
+    ],
+    "correctAnswer": "টেবিল দুটির প্রাইমারি কী একই হবে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f73",
@@ -4946,6 +5752,32 @@
     "createdAt": "2026-11-02T16:02:03.396Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc08",
+    "serialNo": 32,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "many to many রিলেশন তৈরি করতে কতটি টেবিল প্রয়োজন হয়?",
+    "image": "",
+    "options": [
+      "2টি",
+      "3টি",
+      "1টি",
+      "4টি"
+    ],
+    "correctAnswer": "3টি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f74",
     "serialNo": 32,
     "categoryTypes": [
@@ -5102,6 +5934,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc09",
+    "serialNo": 33,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি রেকর্ডের সাথে অনেকগুলো রেকর্ড সম্পর্কযুক্ত হয় কোনটিতে?",
+    "image": "",
+    "options": [
+      "One to One",
+      "One to Many",
+      "Many to One",
+      "Many to Many"
+    ],
+    "correctAnswer": "One to Many",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f75",
     "serialNo": 33,
     "categoryTypes": [
@@ -5256,6 +6114,32 @@
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.405Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc0a",
+    "serialNo": 34,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "তৃতীয় ডেটা টেবিল তৈরি করার প্রয়োজন হয় কোন রিলেশনে?",
+    "image": "",
+    "options": [
+      "Many to Many",
+      "One to One",
+      "One to Many",
+      "Many to One"
+    ],
+    "correctAnswer": "Many to Many",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f76",
@@ -5417,6 +6301,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc0b",
+    "serialNo": 35,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি Relationship এর Symbol?",
+    "image": "",
+    "options": [
+      "<img src=\"/uploads/images/mcq_ch6_image5.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch6_image4.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch6_image3.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+      "<img src=\"/uploads/images/mcq_ch6_image6.png\" style=\"max-height: 48px; vertical-align: middle;\">"
+    ],
+    "correctAnswer": "<img src=\"/uploads/images/mcq_ch6_image6.png\" style=\"max-height: 48px; vertical-align: middle;\">",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f77",
     "serialNo": 35,
     "categoryTypes": [
@@ -5573,6 +6483,32 @@
     "createdAt": "2026-11-02T16:02:03.414Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc0c",
+    "serialNo": 36,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "লজিক্যাল ডেটা টাইপে মেমোরিতে কত বাইট জায়গা লাগে?",
+    "image": "",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "1",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f78",
     "serialNo": 36,
     "categoryTypes": [
@@ -5727,6 +6663,32 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.416Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc0d",
+    "serialNo": 37,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "বিভিন্ন প্রোগ্রামের অবজেক্টকে ডেটাবেজ সংযোজনের জন্য কোন ধরনের ডেটা টাইপ ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "Logical",
+      "Memo",
+      "OLE",
+      "Hyperlink"
+    ],
+    "correctAnswer": "OLE",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f79",
@@ -5887,6 +6849,32 @@
     "createdAt": "2026-11-02T16:02:03.420Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc0e",
+    "serialNo": 38,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "মূল ডেটাকে অন্য ফরমেটে পরিবর্তনের পদ্ধতি কোনটি?",
+    "image": "",
+    "options": [
+      "ম্যানিপুলেশন",
+      "ভ্যালিডেশন",
+      "এনক্রিপশন",
+      "ডিক্রিপশন"
+    ],
+    "correctAnswer": "এনক্রিপশন",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f7a",
     "serialNo": 38,
     "categoryTypes": [
@@ -6041,6 +7029,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.424Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc0f",
+    "serialNo": 39,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন এক্সটেনশনটি কম্পাউন্ড ইনডেক্স ফাইল ফরম্যাট নির্দেশ করে?",
+    "image": "",
+    "options": [
+      ".db",
+      ".idx",
+      ".cdx",
+      ".docx"
+    ],
+    "correctAnswer": ".cdx",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f7b",
@@ -6201,6 +7215,32 @@
     "createdAt": "2026-11-02T16:02:03.429Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc10",
+    "serialNo": 40,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন ধরনের ডেটাটাইপের মাধ্যমে ডেটাবেজ হতে ওয়েব পেজের লিংক করা যায়?",
+    "image": "",
+    "options": [
+      "OLE Object",
+      "Memo",
+      "Hyperlink",
+      "Look up wizard"
+    ],
+    "correctAnswer": "Hyperlink",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f7c",
     "serialNo": 40,
     "categoryTypes": [
@@ -6355,6 +7395,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.432Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc11",
+    "serialNo": 41,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "জন্মতারিখ কী?",
+    "image": "",
+    "options": [
+      "ফিল্ড",
+      "ফাইল",
+      "ডেটাবেজ",
+      "রেকর্ড"
+    ],
+    "correctAnswer": "ফিল্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f7d",
@@ -6513,6 +7579,32 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.435Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc12",
+    "serialNo": 42,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডাটাবেজে logical ডেটা টাইপের ফিল্ডের সাইজ কত?",
+    "image": "",
+    "options": [
+      "২ বাইট",
+      "৩ বাইট",
+      "১ বাইট",
+      "৪ বাইট"
+    ],
+    "correctAnswer": "১ বাইট",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f7e",
@@ -6674,6 +7766,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc13",
+    "serialNo": 43,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিলেশনের জন্য 3টি টেবিল প্রয়োজন কোনটি ক্ষেত্রে?",
+    "image": "",
+    "options": [
+      "One to One",
+      "One to Many",
+      "Many to One",
+      "Many ot Many"
+    ],
+    "correctAnswer": "Many ot Many",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f7f",
     "serialNo": 43,
     "categoryTypes": [
@@ -6831,6 +7949,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc14",
+    "serialNo": 44,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি OLE এর পূর্ণরূপ?",
+    "image": "",
+    "options": [
+      "Object Linking and Encripting",
+      "Object Line Enrichment",
+      "Object Linking and Embedding",
+      "Object Linked Evaluation"
+    ],
+    "correctAnswer": "Object Linking and Embedding",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f80",
     "serialNo": 44,
     "categoryTypes": [
@@ -6985,6 +8129,32 @@
     "correctAnswer": "রোবটিক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.448Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc15",
+    "serialNo": 45,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Entity মূলত কিসের সমষ্টি?",
+    "image": "",
+    "options": [
+      "File",
+      "Record",
+      "Field",
+      "Character"
+    ],
+    "correctAnswer": "Field",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f81",
@@ -7144,6 +8314,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc16",
+    "serialNo": 46,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিপোর্ট কী?",
+    "image": "",
+    "options": [
+      "প্রতিবেদন আকারে উপস্থাপন",
+      "অফিস ডকুমেন্ট",
+      "এফ প্রোগ্রাম",
+      "প্রিন্ট করা"
+    ],
+    "correctAnswer": "প্রতিবেদন আকারে উপস্থাপন",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.453Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f82",
     "serialNo": 46,
     "categoryTypes": [
@@ -7298,6 +8494,32 @@
     "correctAnswer": "PROLOG",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.453Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc17",
+    "serialNo": 47,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কতকগুলো ফিল্ডের সমন্বিত তথ্যকে কী বলে?",
+    "image": "",
+    "options": [
+      "রেকর্ড",
+      "ফাইল",
+      "কী",
+      "ডেটাবেজ"
+    ],
+    "correctAnswer": "রেকর্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f83",
@@ -7456,6 +8678,32 @@
     "createdAt": "2026-11-02T16:02:03.456Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc18",
+    "serialNo": 48,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ থেকে কোন তথ্য খোঁজার জন্য কোনটি ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "HTML",
+      "SQL",
+      "XML",
+      "DHTML"
+    ],
+    "correctAnswer": "SQL",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f84",
     "serialNo": 48,
     "categoryTypes": [
@@ -7610,6 +8858,32 @@
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.459Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc19",
+    "serialNo": 49,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ থেকে টেবিল মুছে ফেলতে কোন এক্সপ্রেশন ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "ALTER TABLE",
+      "RENAME TABLE",
+      "DROP TABLE",
+      "MODIFY TABLE"
+    ],
+    "correctAnswer": "DROP TABLE",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f85",
@@ -7769,6 +9043,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc1a",
+    "serialNo": 50,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Query Design কমান্ডটি কোন রিবনে পাওয়া যায়?",
+    "image": "",
+    "options": [
+      "Home",
+      "External Date",
+      "Create",
+      "Database Tools"
+    ],
+    "correctAnswer": "Create",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f86",
     "serialNo": 50,
     "categoryTypes": [
@@ -7923,6 +9223,32 @@
     "correctAnswer": "CAD",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.466Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc1b",
+    "serialNo": 51,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ প্রোগ্রামে সর্টিং-এর মাধ্যমে কী করা হয়?",
+    "image": "",
+    "options": [
+      "তথ্য ইনপুট দেওয়া হয়",
+      "তথ্য মুছে ফেলা হয়",
+      "তথ্য বাছাই করা হয়",
+      "তথ্য প্রদর্শন করা হয়"
+    ],
+    "correctAnswer": "তথ্য বাছাই করা হয়",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f87",
@@ -8082,6 +9408,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc1c",
+    "serialNo": 52,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কুয়েরি কমান্ড দিলে কি দেখাবে?",
+    "image": "",
+    "options": [
+      "সকল তথ্য",
+      "শর্তানুযায়ী ফিল্ড",
+      "পরপর ফিল্ড",
+      "ডায়ালগ বক্স"
+    ],
+    "correctAnswer": "শর্তানুযায়ী ফিল্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f88",
     "serialNo": 52,
     "categoryTypes": [
@@ -8236,6 +9588,32 @@
     "correctAnswer": "নিউরাল নেটওয়ার্ক",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.474Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc1d",
+    "serialNo": 53,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL কী?",
+    "image": "",
+    "options": [
+      "DBMS",
+      "OAK",
+      "OOP",
+      "RDBMS"
+    ],
+    "correctAnswer": "RDBMS",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f89",
@@ -8394,6 +9772,32 @@
     "createdAt": "2026-11-02T16:02:03.477Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc1e",
+    "serialNo": 54,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রাইমারি কী হিসেবে কোন ফিল্ডকে বিবেচনা করা যাবে?",
+    "image": "",
+    "options": [
+      "Name",
+      "Roll",
+      "Address",
+      "Date of Birth"
+    ],
+    "correctAnswer": "Roll",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f8a",
     "serialNo": 54,
     "categoryTypes": [
@@ -8548,6 +9952,32 @@
     "correctAnswer": "রিইনফোর্সমেন্ট লার্নিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.480Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc1f",
+    "serialNo": 55,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SELECT এর পরে SQL Query তে কী লিখতে হয়?",
+    "image": "",
+    "options": [
+      "Entity",
+      "Table name",
+      "Field",
+      "Condtion"
+    ],
+    "correctAnswer": "Field",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f8b",
@@ -8706,6 +10136,32 @@
     "createdAt": "2026-11-02T16:02:03.483Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc20",
+    "serialNo": 56,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিলের ডেটা বা ফিল্ড নির্বাচন করে কুয়েরি করা হলে তাকে কী বলে?",
+    "image": "",
+    "options": [
+      "অ্যাকশন কুয়েরি",
+      "প্যারামিটার কুয়েরি",
+      "ক্রসট্যাব কুয়েরি",
+      "সিলেক্ট কুয়েরি"
+    ],
+    "correctAnswer": "সিলেক্ট কুয়েরি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f8c",
     "serialNo": 56,
     "categoryTypes": [
@@ -8860,6 +10316,32 @@
     "correctAnswer": "ডি.এন.এ ম্যাপিং I অ্যানালাইসিস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.485Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc21",
+    "serialNo": 57,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটা টেবিলকে সারাংশ আকারে প্রকাশ করা কোন ধরনের কুয়েরির কাজ?",
+    "image": "",
+    "options": [
+      "Action",
+      "Cross tab",
+      "Append",
+      "Select"
+    ],
+    "correctAnswer": "Cross tab",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f8d",
@@ -9019,6 +10501,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc22",
+    "serialNo": 58,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের রেকর্ড মুছে ফেলার অপশন কোনটি?",
+    "image": "",
+    "options": [
+      "delet row",
+      "delet column",
+      "delet field",
+      "delete record"
+    ],
+    "correctAnswer": "delete record",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f8e",
     "serialNo": 58,
     "categoryTypes": [
@@ -9174,6 +10682,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.496Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc23",
+    "serialNo": 59,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটা এনক্রিপশন পদ্ধতি হলো-",
+    "image": "",
+    "options": [
+      "DES",
+      "Plain Text",
+      "Cipher Text",
+      "Security Key"
+    ],
+    "correctAnswer": "DES",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f8f",
@@ -9332,6 +10866,32 @@
     "createdAt": "2026-11-02T16:02:03.497Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc24",
+    "serialNo": 60,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এনক্রিপ্টকৃত ডেটাকে মূল অবস্থায় ফিরিয়ে আনতে কী করা হয়?",
+    "image": "",
+    "options": [
+      "ডিবাগিং",
+      "মাইনিং",
+      "ডিক্রিপ্টিং",
+      "কোডিং"
+    ],
+    "correctAnswer": "ডিক্রিপ্টিং",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f90",
     "serialNo": 60,
     "categoryTypes": [
@@ -9486,6 +11046,32 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.501Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc25",
+    "serialNo": 61,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটার গোপনীয়তা রক্ষা করাকে বলা হয়?",
+    "image": "",
+    "options": [
+      "ডেটা কুয়েরি",
+      "ডেটা সর্টিং",
+      "ডেটা ইনডেক্স",
+      "ডেটা এনক্রিপ্ট"
+    ],
+    "correctAnswer": "ডেটা এনক্রিপ্ট",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f91",
@@ -9645,6 +11231,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc26",
+    "serialNo": 62,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Data Encryption কীভাবে করা হয়?",
+    "image": "",
+    "options": [
+      "ডেটাকে Password এর মধ্যে লুকিয়ে রাখে",
+      "ডেটাকে কোনো নামে সংরক্ষণ করে",
+      "নিজের তৈরি প্রোগ্রামে ডেটাবেজ তৈরি করে",
+      "ডেটাকে Password এর মাধ্যমে পরিবর্তন করে"
+    ],
+    "correctAnswer": "ডেটাকে Password এর মাধ্যমে পরিবর্তন করে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f92",
     "serialNo": 62,
     "categoryTypes": [
@@ -9800,6 +11412,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.511Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc27",
+    "serialNo": 63,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ডেটা সিকিউরিটি লাইফ সাইকেলের ধাপ নয়?",
+    "image": "",
+    "options": [
+      "Education",
+      "Data sharing",
+      "Monitoring",
+      "Strategy and Policy"
+    ],
+    "correctAnswer": "Education",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f93",
@@ -9958,6 +11596,32 @@
     "createdAt": "2026-11-02T16:02:03.514Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc28",
+    "serialNo": 64,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাকে এনক্রিপশন ও ডিক্রিপশন করার পদ্ধতিকে কি বলে?",
+    "image": "",
+    "options": [
+      "ক্রিপ্টোগ্রাফি",
+      "ক্রিপ্টোলজি",
+      "এনক্রিপ্টোগ্রাফি",
+      "ডিক্রিপ্টোগ্রাফি"
+    ],
+    "correctAnswer": "ক্রিপ্টোগ্রাফি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f94",
     "serialNo": 64,
     "categoryTypes": [
@@ -10112,6 +11776,32 @@
     "correctAnswer": "তরল ফসফরাস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.517Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc29",
+    "serialNo": 65,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "এলোমেলো ডাটাকে বলে-",
+    "image": "",
+    "options": [
+      "প্লেইন ট্যাক্সট",
+      "সাইফার ট্যাক্সট",
+      "ফিল্ড",
+      "রেকর্ড"
+    ],
+    "correctAnswer": "সাইফার ট্যাক্সট",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f95",
@@ -10271,6 +11961,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc2a",
+    "serialNo": 66,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটা এনক্রিপট করার পরের অবস্থাকে কী বলে?",
+    "image": "",
+    "options": [
+      "প্লেইনটেক্সট",
+      "এনক্রিপশন এলগরিদম",
+      "সাইফার টেক্সট",
+      "ডেটা সিকিউরিটি"
+    ],
+    "correctAnswer": "সাইফার টেক্সট",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f96",
     "serialNo": 66,
     "categoryTypes": [
@@ -10428,6 +12144,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc2b",
+    "serialNo": 67,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটা এনক্রিপশনের প্রচলিত নিয়ম কোনটি?",
+    "image": "",
+    "options": [
+      "সিজার কোড",
+      "নেপোলিয়ান কোড",
+      "ক্লিওপেট্রা কোড",
+      "সাইফার কোড"
+    ],
+    "correctAnswer": "সিজার কোড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f97",
     "serialNo": 67,
     "categoryTypes": [
@@ -10582,6 +12324,32 @@
     "correctAnswer": "কার্বন মনো অক্সাইড",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.525Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc2c",
+    "serialNo": 68,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সিজার কোডে A অক্ষরকে এনক্রিপ্ট করা হলে তা হবে-",
+    "image": "",
+    "options": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "correctAnswer": "D",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f98",
@@ -10741,6 +12509,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc2d",
+    "serialNo": 69,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডাটা এনক্রিপশন ব্যবহৃত হয়-",
+    "image": "",
+    "options": [
+      "ম্যানেজমেন্ট",
+      "সর্টিং-এ",
+      "ভেল্যু পরিবর্তনে",
+      "সিকিউরিটিতে"
+    ],
+    "correctAnswer": "সিকিউরিটিতে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f99",
     "serialNo": 69,
     "categoryTypes": [
@@ -10896,6 +12690,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.533Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc2e",
+    "serialNo": 70,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "– ফিল্ডগুলোকে প্রাইমারি key হিসেবে ব্যবহার করা যাবে।\ni. Street\tii. Register number\niii. Dept_id\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "ii ও iii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f9a",
@@ -11055,6 +12875,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc2f",
+    "serialNo": 71,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ থেকে নিদির্ষ্ট কোনো তথ্য খুঁজে বের করার জন্য কোনটি সুবিধাজনক?\ni. সর্টিং\tii. কুয়েরি\niii. রিপোর্ট\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "ii",
+      "i ও ii",
+      "iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f9b",
     "serialNo": 71,
     "categoryTypes": [
@@ -11211,6 +13057,32 @@
     "createdAt": "2026-11-02T16:02:03.540Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc30",
+    "serialNo": 72,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডিস্ট্রিবিউটেড ডেটাবেজ সিস্টেমের প্রধান বৈশিষ্ট্য হলো-\ni. ডিস্ট্রিবিউশন\tii. লজিক্যাল কো-রিলেশন\niii. অপটিমাইজেশন\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.454Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f9c",
     "serialNo": 72,
     "categoryTypes": [
@@ -11365,6 +13237,32 @@
     "correctAnswer": "বায়োমেট্রিক",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.545Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc31",
+    "serialNo": 73,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি DBMS এর সুবিধা?\ni. ডেটার অসংগতি রোধ করে\tii. ডেটাবেসের নিরাপত্তা বিধান করে\niii. বাস্তবায়ন ব্যয়বহুল\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "i ও ii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2f9d",
@@ -11524,6 +13422,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc32",
+    "serialNo": 74,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "RDBMS ব্যবহৃত হতে পারে কোথায়?\ni. অফিস\tii. শিক্ষা প্রতিষ্ঠান\niii. বাসায়\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "i ও ii",
+      "ii ও iii",
+      "i ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f9e",
     "serialNo": 74,
     "categoryTypes": [
@@ -11680,6 +13604,32 @@
     "createdAt": "2026-11-02T16:02:03.552Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc33",
+    "serialNo": 75,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফর্মে সংযুক্ত থাকতে পারে-\ni. গ্রাফিক্স          ii. চিত্র   iii. টেক্সট\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2f9f",
     "serialNo": 75,
     "categoryTypes": [
@@ -11834,6 +13784,32 @@
     "correctAnswer": "মাধ্যম",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.554Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc34",
+    "serialNo": 76,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাকে Sorting করার উদ্দেশ্য হচ্ছে-\ni. ছোট থেকে বড় আকারে সাজানো\nii. বড় থেকে ছোট আকারে সাজানো\niii. শব্দ বা সংখ্যার দৈর্ঘ্য অনুসারে সাজানো\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fa0",
@@ -11993,6 +13969,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc35",
+    "serialNo": 77,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ইনডেক্সিংয়ের সুবিধা হলো-\ni. ডেটাবেজ থেকে সহজে ডেটা খোঁজ করা যায়\nii. ইনডেক্স সংরক্ষণের জন্য বেশি জায়গার প্রয়োজন হয়\niii. কুয়েরির ক্ষেত্রে দ্রুত কাজ করে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fa1",
     "serialNo": 77,
     "categoryTypes": [
@@ -12147,6 +14149,32 @@
     "correctAnswer": "ই-লার্নিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.561Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc36",
+    "serialNo": 78,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রাইমারি কি হচ্ছে-\ni. বিভিন্ন টেবিলের মধ্যে সম্পর্ক\nii. কোন ডেটা ফিল্ডের অদ্বিতীয়তা\niii. ডেটা প্রদান নিয়ন্ত্রণের কৌশল\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fa2",
@@ -12306,6 +14334,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc37",
+    "serialNo": 79,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "RDBMS এর বৈশিষ্ট্য হচ্ছে-\ni. নানা ধরনের চার্ট ব্যবহার করা যায়\nii. অ্যাপ্লিকেশন প্রোগ্রাম তৈরি করা যায়\niii. অবজেক্টের জন্য OLE টাইপ ব্যবহার করা যায়\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fa3",
     "serialNo": 79,
     "categoryTypes": [
@@ -12461,6 +14515,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.565Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc38",
+    "serialNo": 80,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Roll ফিল্ডের ডেটা টাইপ হতে পারে-\ni. byte\tii. text\niii. integer\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fa4",
@@ -12619,6 +14699,32 @@
     "createdAt": "2026-11-02T16:02:03.568Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc39",
+    "serialNo": 81,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ফরমেটেড রিপোর্টের অংশ নয়-\ni. Report Header\tii. Report Style\niii. Report Footer\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "i ও ii",
+      "ii",
+      "iii"
+    ],
+    "correctAnswer": "ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fa5",
     "serialNo": 81,
     "categoryTypes": [
@@ -12775,6 +14881,32 @@
     "createdAt": "2026-11-02T16:02:03.570Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc3a",
+    "serialNo": 82,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "সর্টিং হলো-\ni. ফর্মুলা\tii. বাছাই করা\niii. ছোট করা\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i",
+      "ii",
+      "iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fa6",
     "serialNo": 82,
     "categoryTypes": [
@@ -12929,6 +15061,32 @@
     "correctAnswer": "ইন্টারনেট",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.573Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc3b",
+    "serialNo": 83,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিপোর্ট ফাইল তৈরি করা যায়-\ni. ডেটা ফাইল ব্যবহার করে\tii. ফর্ম ফাইল ব্যবহার করে\niii. কুয়েরি ফাইল ব্যবহার করে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fa7",
@@ -13088,6 +15246,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc3c",
+    "serialNo": 84,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি RDBMS নয়?",
+    "image": "",
+    "options": [
+      "Oracle",
+      "MySQL",
+      "Visual FoxPro",
+      "Java"
+    ],
+    "correctAnswer": "Java",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fa8",
     "serialNo": 84,
     "categoryTypes": [
@@ -13243,6 +15427,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.579Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc3d",
+    "serialNo": 85,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ Field Property এর বিভিন্ন অংশ হলো-\ni. Field Size\tii. Formate\niii. Caption\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fa9",
@@ -13401,6 +15611,32 @@
     "createdAt": "2026-11-02T16:02:03.581Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc3e",
+    "serialNo": 86,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL এর সংগঠনের অংশ-\ni. Select\tii. Form\niii. Where\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i, ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2faa",
     "serialNo": 86,
     "categoryTypes": [
@@ -13555,6 +15791,32 @@
     "correctAnswer": "Iডেক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.583Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc3f",
+    "serialNo": 87,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "RDBMS ব্যবহার করা হয়-\ni. ওয়েবসাইট তৈরিতে\tii. ইলেকট্রনিক কমার্সে\niii. কম্পাইলার তৈরিতে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও ii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fab",
@@ -13714,6 +15976,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc40",
+    "serialNo": 88,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের টেবিলটি লক্ষ কর এবং ৮৩ ও ৮৪ নং প্রশ্নের উত্তর দাও:\n| Name | Designation | J-Date |\n| --- | --- | --- |\n| Mr. X | Manager | 10/18/2012 |\n| Mr. Y | S-Officer | 12/12/2014 |\n| Mr. Z | S-Officer | 12/15/2014 |\n| Mr. S | Manager | 05/25/2016 |\n| Mr. T | Manager | 05/25/2016 |\n| Mr. P | Manager | 11/20/2018 |\nউদ্দীপকের টেবিলটির Designation ফিল্ডে ডেটা এন্ট্রিতে কোন ধরনের ডেটা টাইড বেশি সুবিধাজনক?",
+    "image": "",
+    "options": [
+      "Text",
+      "Memo",
+      "OLE Object",
+      "Lookup Wizard"
+    ],
+    "correctAnswer": "Text",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fac",
     "serialNo": 88,
     "categoryTypes": [
@@ -13868,6 +16156,32 @@
     "correctAnswer": "ই-কমার্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.589Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc41",
+    "serialNo": 89,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের টেবিলটির ৩ নং ফিল্ডের জন্য মেমোরিতে কত বাইট জায়গা প্রয়োজন?",
+    "image": "",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "correctAnswer": "8",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fad",
@@ -14026,6 +16340,32 @@
     "createdAt": "2026-11-02T16:02:03.594Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc42",
+    "serialNo": 90,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড়ে ৮৫ ও ৮৬ নং প্রশ্নের উত্তর দাও:\n| E-ID | NAME | ADDRESS | MOBILE NO. | SALARY(TK.) |\n| --- | --- | --- | --- | --- |\n| 1001 | BIR | SYLHET | 01712673 | 20,000 |\n| 1002 | RAJ | DHAKA | 0152390 | 30,000 |\n| 1003 | RICHI | SYLHET | 0182341 | 35,000 |\n| 1004 | ARJUN | SUNAMGANJ | 0192311 | 40,000 |\nউদ্দীপকে যাদের বেতন 30,000 টাকার উপরে তাদের দ্রুত খুঁজে বের করা যায় কোন পদ্ধতিতে?",
+    "image": "",
+    "options": [
+      "সার্চিং",
+      "সর্টিং",
+      "ইনডেক্সিং",
+      "কুয়েরি"
+    ],
+    "correctAnswer": "কুয়েরি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fae",
     "serialNo": 90,
     "categoryTypes": [
@@ -14180,6 +16520,32 @@
     "correctAnswer": "ভার্চুয়াল রিয়েলিটি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.597Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc43",
+    "serialNo": 91,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপক টেবিলের ফিল্ড রিলেশনে ভূমিকা রাখতে পারে?\ni. E_ID\tii. NAME\niii. MOBILE NO.\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2faf",
@@ -14338,6 +16704,32 @@
     "createdAt": "2026-11-02T16:02:03.600Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc44",
+    "serialNo": 92,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের উদ্দীপকটি পড়ে ৮৮ নং প্রশ্নের উত্তর দাও:\nএকটি ডেটাবেজে চারশত ছাত্রের তথ্য সংরক্ষিত আছে। প্রতিটি ছাত্রের নাম, রোল নম্বর, জন্মতারিখ ও জিপিএ সংবলিত ৪টি করে ফিল্ড আছে।\nউলিস্নখিত ডেটাবেজে সংখ্যা কয়টি?",
+    "image": "",
+    "options": [
+      "৪টি",
+      "২৫টি",
+      "২০০টি",
+      "৪০০টি"
+    ],
+    "correctAnswer": "৪০০টি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.455Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fb0",
     "serialNo": 92,
     "categoryTypes": [
@@ -14492,6 +16884,32 @@
     "correctAnswer": "ত্রি-মাত্রিক",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.603Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc45",
+    "serialNo": 93,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ৮৮ নং প্রশ্নের উত্তর দাও:\n| ফিল্ড |\n| --- |\n| রোল নং |\n| ছবি |\n| ঠিকানা |\nফিল্ডসমূহের ডেটা টাইপ হচ্ছে যথাক্রমে-\ni. number, text, date and time\nii. number, OLE, Memo\niii. auto number, OLE, text\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fb1",
@@ -14650,6 +17068,32 @@
     "createdAt": "2026-11-02T16:02:03.605Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc46",
+    "serialNo": 94,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ৮৯ ও ৯০ নং প্রশ্নের উত্তর দাও:\n| Em-ID | Salary |  | Em-ID | Address | DOB |\n| --- | --- | --- | --- | --- | --- |\n| E-101 | 40000 |  | E-101 | Ctg | 01/10/88 |\n| E-102 | 50000 |  | E-102 | Dha | 01/02/88 |\n| E-103 | 35000 |  | E-103 | Com | 02/03/89 |\n| E-104 | 30000 |  | E-104 | Raj | 05/10/87 |\n| Table-1 |  | Table-2 |  |  |  |\nটেবিল দুটির মধ্যে কি ধরনের রিলেশন?",
+    "image": "",
+    "options": [
+      "One to one",
+      "One to many",
+      "Many to one",
+      "Many to many"
+    ],
+    "correctAnswer": "One to one",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fb2",
     "serialNo": 94,
     "categoryTypes": [
@@ -14806,6 +17250,32 @@
     "createdAt": "2026-11-02T16:02:03.609Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc47",
+    "serialNo": 95,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "table-1 এর শেষ ফিল্ডের ডেটা টাইপ হতে পারে-\ni. text\tii. Number\niii. Currency\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "i ও iii",
+      "ii ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "ii ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fb3",
     "serialNo": 95,
     "categoryTypes": [
@@ -14959,6 +17429,32 @@
     "correctAnswer": "বিশেষ চশমা",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.612Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc48",
+    "serialNo": 96,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের ছকটি লক্ষ কর এবং ৯১ ও ৯২ নং প্রশ্নের উত্তর দাও:\n| Name | Roll | Section | GPA |\n| --- | --- | --- | --- |\n| Atik | 1001 | A | 5.00 |\n| Abir | 1002 | B | 4.83 |\n| Asif | 1003 | C | 4.50 |\nউপরের ছকে কোন ফিল্ডটি প্রাইমারি কী হতে পারে?",
+    "image": "",
+    "options": [
+      "Name",
+      "Roll",
+      "Section",
+      "GAP"
+    ],
+    "correctAnswer": "Roll",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fb4",
@@ -15117,6 +17613,32 @@
     "createdAt": "2026-11-02T16:02:03.614Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc49",
+    "serialNo": 97,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উপরের ডেটাবেজ Name ফিলে ডেটাটাইম কোনটি?",
+    "image": "",
+    "options": [
+      "টেক্সট",
+      "নাম্বার",
+      "তারিখ ও সময়",
+      "কারেন্সী"
+    ],
+    "correctAnswer": "টেক্সট",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fb5",
     "serialNo": 97,
     "categoryTypes": [
@@ -15271,6 +17793,32 @@
     "correctAnswer": "PROLOG",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.616Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc4a",
+    "serialNo": 98,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকটি পড়ে ৯৩ ও ৯৪ নং প্রশ্নের উত্তর দাও:\nSELECT*\nFROM emp\nWHERE Job = ‘Clerk’\nউদ্দীপকটিতে * চিহ্ন দ্বারা কি বুঝানো হয়েছে?",
+    "image": "",
+    "options": [
+      "টেবিলের একটি ফিল্ডকে",
+      "টেবিলের * চিহ্নিত ফিল্ডকে",
+      "টেবিলের সব ফিল্ডকে",
+      "কোনো ফিল্ডকেই নয়"
+    ],
+    "correctAnswer": "টেবিলের সব ফিল্ডকে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fb6",
@@ -15429,6 +17977,32 @@
     "createdAt": "2026-11-02T16:02:03.619Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc4b",
+    "serialNo": 99,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "উদ্দীপকের SQL কুয়েরির WHERE ক্লজে-\ni. এক বা একাধিক Condition থাকতে পারে\nii. কোনো শর্ত নাও থাকতে পারে\niii. ইহা সরাসরি FROM ক্লজকে অনুসরন করে\nনিচের কোনটি সঠিক?",
+    "image": "",
+    "options": [
+      "i ও ii",
+      "ii ও iii",
+      "i ও iii",
+      "i, ii ও iii"
+    ],
+    "correctAnswer": "i ও iii",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fb7",
     "serialNo": 99,
     "categoryTypes": [
@@ -15583,6 +18157,32 @@
     "correctAnswer": "বোবট বিজ্ঞান",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.621Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc4c",
+    "serialNo": 100,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি Citizen Database-এ কোনটি প্রাইমারি-কী হতে পারে?",
+    "image": "",
+    "options": [
+      "নাম",
+      "বয়স",
+      "ঠিকানা",
+      "NID নম্বর"
+    ],
+    "correctAnswer": "NID নম্বর",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fb8",
@@ -15741,6 +18341,32 @@
     "createdAt": "2026-11-02T16:02:03.624Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc4d",
+    "serialNo": 101,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি DBMS এর উদাহরণ?",
+    "image": "",
+    "options": [
+      "MS DOS",
+      "MS EXCEL",
+      "C++",
+      "MS ACCESS"
+    ],
+    "correctAnswer": "MS ACCESS",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fb9",
     "serialNo": 101,
     "categoryTypes": [
@@ -15897,6 +18523,32 @@
     "createdAt": "2026-11-02T16:02:03.629Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc4e",
+    "serialNo": 102,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একসেস ডেটাবেজের প্রধান অবজেক্ট কোনটি?",
+    "image": "",
+    "options": [
+      "ফিল্ড",
+      "রেকর্ড",
+      "টেবিল",
+      "ফর্ম"
+    ],
+    "correctAnswer": "টেবিল",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fba",
     "serialNo": 102,
     "categoryTypes": [
@@ -16050,6 +18702,32 @@
     "correctAnswer": "রোবটিক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.632Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc4f",
+    "serialNo": 103,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনো ডেটাবেজ রেকর্ডের ক্ষুদ্রতম অংশকে কী বলে?",
+    "image": "",
+    "options": [
+      "ডেটা",
+      "টেবিল",
+      "ফিল্ড",
+      "টেক্সট"
+    ],
+    "correctAnswer": "ফিল্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fbb",
@@ -16209,6 +18887,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc50",
+    "serialNo": 104,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DBMS এর সাথে সম্পর্কযুক্ত নয়-",
+    "image": "",
+    "options": [
+      "End Users",
+      "Data",
+      "Application Request",
+      "HTML"
+    ],
+    "correctAnswer": "HTML",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fbc",
     "serialNo": 104,
     "categoryTypes": [
@@ -16364,6 +19068,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.637Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc51",
+    "serialNo": 105,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন সফ্‌টওয়্যারটি ডেটাবেজ তৈরিতে ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "Microsoft Access 2013",
+      "Microsoft Excel 2013",
+      "Microsoft Word 2013",
+      "Microsoft Visio 203"
+    ],
+    "correctAnswer": "Microsoft Access 2013",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fbd",
@@ -16522,6 +19252,32 @@
     "createdAt": "2026-11-02T16:02:03.639Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc52",
+    "serialNo": 106,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের ভিত্তি বলা হয় কাকে?",
+    "image": "",
+    "options": [
+      "রেকর্ড (Record)",
+      "ফিল্ড (Field)",
+      "টেবিল (Table)",
+      "ফাইল (File)"
+    ],
+    "correctAnswer": "ফিল্ড (Field)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fbe",
     "serialNo": 106,
     "categoryTypes": [
@@ -16676,6 +19432,32 @@
     "correctAnswer": "নাইট্রোজেন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.642Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc53",
+    "serialNo": 107,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি প্রাইমারি 'কী'?",
+    "image": "",
+    "options": [
+      "Primary address",
+      "Mobile number",
+      "Exam fee",
+      "Name"
+    ],
+    "correctAnswer": "Mobile number",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fbf",
@@ -16834,6 +19616,32 @@
     "createdAt": "2026-11-02T16:02:03.646Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc54",
+    "serialNo": 108,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটার সুসংগঠিত সংগ্রহ, সংরক্ষণ ও উপস্থাপন পদ্ধতিকে কী বলা হয়?",
+    "image": "",
+    "options": [
+      "ডেটা প্রসেসিং",
+      "ইনফরমেশন সিস্টেম",
+      "ডেটা কোডিং",
+      "সিস্টেম উন্নয়ন চক্র"
+    ],
+    "correctAnswer": "ডেটা প্রসেসিং",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc0",
     "serialNo": 108,
     "categoryTypes": [
@@ -16990,6 +19798,32 @@
     "createdAt": "2026-11-02T16:02:03.649Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc55",
+    "serialNo": 109,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "পরস্পর সম্পর্কযুক্ত এক বা একাধিক ফাইল নিয়ে কী তৈরি হয়?",
+    "image": "",
+    "options": [
+      "লজিক",
+      "ফিল্ড",
+      "রেকর্ড",
+      "ডেটাবেজ"
+    ],
+    "correctAnswer": "ডেটাবেজ",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc1",
     "serialNo": 109,
     "categoryTypes": [
@@ -17144,6 +19978,32 @@
     "correctAnswer": "আর্গন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.651Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc56",
+    "serialNo": 110,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটা প্রসেসিং বলতে বোঝায়-",
+    "image": "",
+    "options": [
+      "তথ্যকে উপাত্তে পরিণত করার উপায়",
+      "উপাত্তকে তথ্যে পরিণত করার উপায়",
+      "তথ্যকে ক্ষুদ্রতম অংশে বিভক্ত করার উপায়",
+      "তথ্য প্রদর্শনের উপায়"
+    ],
+    "correctAnswer": "উপাত্তকে তথ্যে পরিণত করার উপায়",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fc2",
@@ -17303,6 +20163,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc57",
+    "serialNo": 111,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Data এর একবচন শব্দ কী?",
+    "image": "",
+    "options": [
+      "Datum",
+      "Datium",
+      "Datam",
+      "Data"
+    ],
+    "correctAnswer": "Datum",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc3",
     "serialNo": 111,
     "categoryTypes": [
@@ -17457,6 +20343,32 @@
     "correctAnswer": "বায়োমেটিক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.657Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc58",
+    "serialNo": 112,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি Database সফ্‌টওয়্যার?",
+    "image": "",
+    "options": [
+      "ORACLE",
+      "MySQL",
+      "Microsoft ACCESS",
+      "উপরের সবগুলো"
+    ],
+    "correctAnswer": "উপরের সবগুলো",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fc4",
@@ -17616,6 +20528,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc59",
+    "serialNo": 113,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোনটি ডাটাবেজের বড় ডাটা টাইপ?",
+    "image": "",
+    "options": [
+      "টেক্সট",
+      "নম্বর",
+      "কারেন্সি",
+      "মেমো"
+    ],
+    "correctAnswer": "মেমো",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc5",
     "serialNo": 113,
     "categoryTypes": [
@@ -17772,6 +20710,32 @@
     "createdAt": "2026-11-02T16:02:03.663Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc5a",
+    "serialNo": 114,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "'জাংশন ডেটা টেবিল' কোন রিলেশনে গঠিত হয়?",
+    "image": "",
+    "options": [
+      "One to one",
+      "One to many",
+      "Many to one",
+      "Many to many"
+    ],
+    "correctAnswer": "Many to many",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc6",
     "serialNo": 114,
     "categoryTypes": [
@@ -17926,6 +20890,32 @@
     "correctAnswer": "বায়োইনফরমেটিকস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.666Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc5b",
+    "serialNo": 115,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "Address কোন ধরনের ডেটা টাইপ?",
+    "image": "",
+    "options": [
+      "text",
+      "number",
+      "data/time",
+      "currency"
+    ],
+    "correctAnswer": "text",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fc7",
@@ -18085,6 +21075,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc5c",
+    "serialNo": 116,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "UPDATE এবং ALTER কমান্ডদ্বয় যথাক্রমে কোন ধরনের স্টেটমেন্ট?",
+    "image": "",
+    "options": [
+      "DML ও DDL",
+      "DDL ও DDL",
+      "DDL  ও DML",
+      "DML ও DML"
+    ],
+    "correctAnswer": "DML ও DDL",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc8",
     "serialNo": 116,
     "categoryTypes": [
@@ -18241,6 +21257,32 @@
     "createdAt": "2026-11-02T16:02:03.670Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc5d",
+    "serialNo": 117,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন পদ্ধতিটি ডাটাবেজ থেকে ডাটা খুঁজে বের করতে ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "সর্টিং",
+      "সিলেক্টিং",
+      "জয়েনিং",
+      "ইনডেক্সিং"
+    ],
+    "correctAnswer": "সিলেক্টিং",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.456Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fc9",
     "serialNo": 117,
     "categoryTypes": [
@@ -18395,6 +21437,32 @@
     "correctAnswer": "বায়োমেট্রিক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.672Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc5e",
+    "serialNo": 118,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন কমান্ডটি একটি টেবিল থেকে সব ডাটা নেওয়ার জন্য ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "SELECT ALL",
+      "SELECT ALL *",
+      "SELECT *",
+      "SELECT **"
+    ],
+    "correctAnswer": "SELECT *",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fca",
@@ -18554,6 +21622,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc5f",
+    "serialNo": 119,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "........ একটি বৈধ SQL টাইপ নয়।",
+    "image": "",
+    "options": [
+      "DECIMAL",
+      "FLOAT",
+      "NUMERIC",
+      "CHARACTER"
+    ],
+    "correctAnswer": "DECIMAL",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fcb",
     "serialNo": 119,
     "categoryTypes": [
@@ -18707,6 +21801,32 @@
     "correctAnswer": "বাযোইনফরমেটিকস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.677Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc60",
+    "serialNo": 120,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "কোন প্রোগ্রামটি ডেটাবেজ ব্যবস্থাপনার জন্য বেশি উপযোগী?",
+    "image": "",
+    "options": [
+      "C++",
+      "Fortan",
+      "SQL",
+      "HTML"
+    ],
+    "correctAnswer": "SQL",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fcc",
@@ -18866,6 +21986,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc61",
+    "serialNo": 121,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL এর পূর্ণরূপ হলো Structured——language,",
+    "image": "",
+    "options": [
+      "Question",
+      "Query",
+      "Quotient",
+      "Quiet"
+    ],
+    "correctAnswer": "Query",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fcd",
     "serialNo": 121,
     "categoryTypes": [
@@ -19020,6 +22166,32 @@
     "correctAnswer": "বায়োইনফরমেটিকস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.680Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc62",
+    "serialNo": 122,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "শর্ত সাপেক্ষে ডেটা অনুসন্ধান করাকে কী বলে?",
+    "image": "",
+    "options": [
+      "সার্চিং",
+      "সর্টিং",
+      "কুয়েরি",
+      "ইনডেক্সিং"
+    ],
+    "correctAnswer": "কুয়েরি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fce",
@@ -19178,6 +22350,32 @@
     "createdAt": "2026-11-02T16:02:03.681Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc63",
+    "serialNo": 123,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "বিশ্ববিদ্যালয়ের ডেটাবেজ সফ্‌টওয়্যার থেকে যে সকল ছাত্রের রক্তের গ্রুপ এ+ তাদের পৃথক করে বের করতে কী ব্যবহার করা হয়?",
+    "image": "",
+    "options": [
+      "টেবিল",
+      "কুয়েরি",
+      "ফরম",
+      "রিপোর্ট"
+    ],
+    "correctAnswer": "কুয়েরি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fcf",
     "serialNo": 123,
     "categoryTypes": [
@@ -19332,6 +22530,32 @@
     "correctAnswer": "বায়োইনফরমেটিক্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.682Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc64",
+    "serialNo": 124,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL-এর পূর্ণরূপ কোনটি?",
+    "image": "",
+    "options": [
+      "Standard Query Language",
+      "Standard Query Language",
+      "Select Query Language",
+      "Serial Query Language"
+    ],
+    "correctAnswer": "Standard Query Language",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fd0",
@@ -19491,6 +22715,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc65",
+    "serialNo": 125,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "বাছাইয়ের মাধ্যমে সর্ট করাকে কী বলে?",
+    "image": "",
+    "options": [
+      "Insertion sort",
+      "Selection sort",
+      "Quick sort",
+      "Bubble sort"
+    ],
+    "correctAnswer": "Selection sort",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fd1",
     "serialNo": 125,
     "categoryTypes": [
@@ -19645,6 +22895,32 @@
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.686Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc66",
+    "serialNo": 126,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটার গোপনীয়তা রক্ষায় নিচের কোনটি নিশ্চিত করা জরুরি?",
+    "image": "",
+    "options": [
+      "ডেটা সর্টিং",
+      "ডেটা কুয়েরি",
+      "ডেটা ইনডেক্সিং",
+      "ডেটা এনক্রিপশন"
+    ],
+    "correctAnswer": "ডেটা এনক্রিপশন",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fd2",
@@ -19803,6 +23079,32 @@
     "createdAt": "2026-11-02T16:02:03.688Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc67",
+    "serialNo": 127,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডাটার গোপনীয়তা নিশ্চিতে কোন প্রযুক্তি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "ইনডেক্সিং",
+      "এনক্রিপশন",
+      "ডিক্রিপশন",
+      "ইনফরমাটিক্স"
+    ],
+    "correctAnswer": "এনক্রিপশন",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fd3",
     "serialNo": 127,
     "categoryTypes": [
@@ -19957,6 +23259,32 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.689Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc68",
+    "serialNo": 128,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটার গোপনীয়তা রক্ষায় গৃহীত ব্যবস্থা কোনটি?",
+    "image": "",
+    "options": [
+      "সর্টিং",
+      "সার্চিং",
+      "এনক্রিপশন",
+      "প্রেসক্রিপশন"
+    ],
+    "correctAnswer": "এনক্রিপশন",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fd4",
@@ -20115,6 +23443,32 @@
     "createdAt": "2026-11-02T16:02:03.693Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc69",
+    "serialNo": 129,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটা এনক্রিপশন কীসের সাথে জড়িত?",
+    "image": "",
+    "options": [
+      "Data management",
+      "Data encoding",
+      "Data Security",
+      "Data sorting"
+    ],
+    "correctAnswer": "Data Security",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fd5",
     "serialNo": 129,
     "categoryTypes": [
@@ -20269,6 +23623,32 @@
     "correctAnswer": "১০-৯",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.697Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc6a",
+    "serialNo": 130,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DBMS এর পূর্ণরূপ কী?",
+    "image": "",
+    "options": [
+      "Data Business Management System",
+      "Database Management System",
+      "Database Marketing System",
+      "Data Building Management System"
+    ],
+    "correctAnswer": "Database Management System",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fd6",
@@ -20427,6 +23807,32 @@
     "createdAt": "2026-11-02T16:02:03.700Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc6b",
+    "serialNo": 131,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের ক্ষুদ্রতম একক কোনটি?",
+    "image": "",
+    "options": [
+      "রেকর্ড (Record)",
+      "ফাইল (File)",
+      "ফিল্ড (Field)",
+      "ডেটাবেজ"
+    ],
+    "correctAnswer": "ফিল্ড (Field)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fd7",
     "serialNo": 131,
     "categoryTypes": [
@@ -20583,6 +23989,32 @@
     "createdAt": "2026-11-02T16:02:03.702Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc6c",
+    "serialNo": 132,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "পরস্পর সম্পর্কিত একগুচ্ছ ফিল্ড মিলে কী তৈরি হয়?",
+    "image": "",
+    "options": [
+      "ক্যারেক্টার",
+      "ফাইল",
+      "রেকর্ড",
+      "ডেটাবেজ"
+    ],
+    "correctAnswer": "রেকর্ড",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fd8",
     "serialNo": 132,
     "categoryTypes": [
@@ -20736,6 +24168,32 @@
     "correctAnswer": "২টি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.705Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc6d",
+    "serialNo": 133,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি DBMS এর প্রধান কাজ নয়?",
+    "image": "",
+    "options": [
+      "ডেটা সংরক্ষণ করা",
+      "ডেটা নিরাপত্তা নিশ্চিত করা",
+      "হার্ডওয়্যার তৈরি করা",
+      "ডেটা পুনরুদ্ধার করা"
+    ],
+    "correctAnswer": "হার্ডওয়্যার তৈরি করা",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fd9",
@@ -20894,6 +24352,32 @@
     "createdAt": "2026-11-02T16:02:03.707Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc6e",
+    "serialNo": 134,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের টেবিলের কলামগুলোকে কী বলা হয়?",
+    "image": "",
+    "options": [
+      "অ্যাট্রিবিউট (Attribute)",
+      "টাপল (Tuple)",
+      "এন্টিটি (Entity)",
+      "ডোমেইন"
+    ],
+    "correctAnswer": "অ্যাট্রিবিউট (Attribute)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fda",
     "serialNo": 134,
     "categoryTypes": [
@@ -21048,6 +24532,32 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.711Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc6f",
+    "serialNo": 135,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি একটি জনপ্রিয় DBMS সফটওয়্যার?",
+    "image": "",
+    "options": [
+      "গঝ ডড়ৎফ",
+      "Oracle",
+      "চযড়ঃড়ংযড়ঢ়",
+      "ঠখঈ চষধুবৎ"
+    ],
+    "correctAnswer": "Oracle",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fdb",
@@ -21206,6 +24716,32 @@
     "createdAt": "2026-11-02T16:02:03.714Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc70",
+    "serialNo": 136,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ আর্কিটেকচারের কয়টি স্তর বা লেভেল থাকে?",
+    "image": "",
+    "options": [
+      "২টি",
+      "৩টি",
+      "৪টি",
+      "৫টি"
+    ],
+    "correctAnswer": "৩টি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fdc",
     "serialNo": 136,
     "categoryTypes": [
@@ -21360,6 +24896,32 @@
     "correctAnswer": "মলিকুলার কম্পেনেন্ট থেকে",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.716Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc71",
+    "serialNo": 137,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ব্যবহারকারী সরাসরি ডেটাবেজের কোন লেভেলের সাথে যুক্ত থাকে?",
+    "image": "",
+    "options": [
+      "ইন্টারনাল লেভেল",
+      "কনসেপচুয়াল লেভেল",
+      "এক্সটারনাল বা ভিউ লেভেল",
+      "ফিজিক্যাল লেভেল"
+    ],
+    "correctAnswer": "এক্সটারনাল বা ভিউ লেভেল",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fdd",
@@ -21518,6 +25080,32 @@
     "createdAt": "2026-11-02T16:02:03.719Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc72",
+    "serialNo": 138,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজে একই ডেটার বারবার পুনরাবৃত্তিকে কী বলে?",
+    "image": "",
+    "options": [
+      "Data Integrity",
+      "Data Redundancy",
+      "Data Consistency",
+      "Data Security"
+    ],
+    "correctAnswer": "Data Redundancy",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fde",
     "serialNo": 138,
     "categoryTypes": [
@@ -21672,6 +25260,32 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.721Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc73",
+    "serialNo": 139,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটার নির্ভুলতা এবং সামঞ্জস্যতাকে কী বলা হয়?",
+    "image": "",
+    "options": [
+      "Data Redundancy",
+      "Data Integrity",
+      "Data Security",
+      "Data Mining"
+    ],
+    "correctAnswer": "Data Integrity",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fdf",
@@ -21830,6 +25444,32 @@
     "createdAt": "2026-11-02T16:02:03.726Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc74",
+    "serialNo": 140,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DBMS-এ ডেটা ডিকশনারি (Data Dictionary) কী ধারণ করে?",
+    "image": "",
+    "options": [
+      "ব্যবহারকারীর পাসওয়ার্ড",
+      "ডেটাবেজের গঠন ও মেটাডেটা",
+      "শুধুমাত্র টেক্সট ফাইল",
+      "ব্যাকআপ ডেটা"
+    ],
+    "correctAnswer": "ডেটাবেজের গঠন ও মেটাডেটা",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fe0",
     "serialNo": 140,
     "categoryTypes": [
@@ -21984,6 +25624,32 @@
     "correctAnswer": "১০",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.729Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc75",
+    "serialNo": 141,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি ওপেন সোর্স (Open Source) ডেটাবেজ?",
+    "image": "",
+    "options": [
+      "MS Access",
+      "Oracle",
+      "MySQL",
+      "DB2"
+    ],
+    "correctAnswer": "MySQL",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fe1",
@@ -22142,6 +25808,32 @@
     "createdAt": "2026-11-02T16:02:03.731Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc76",
+    "serialNo": 142,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ থেকে নির্দিষ্ট শর্তসাপেক্ষে ডেটা খুঁজে বের করার প্রক্রিয়াকে\nকী বলে?",
+    "image": "",
+    "options": [
+      "কোয়েরি (Query)",
+      "সর্টিং (Sorting)",
+      "ইনডেক্সিং (Indexing)",
+      "রিপোর্টিং"
+    ],
+    "correctAnswer": "কোয়েরি (Query)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fe2",
     "serialNo": 142,
     "categoryTypes": [
@@ -22296,6 +25988,32 @@
     "correctAnswer": "হ্যাকিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.733Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc77",
+    "serialNo": 143,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ মডেল প্রধানত কয় প্রকার?",
+    "image": "",
+    "options": [
+      "২ প্রকার",
+      "৩ প্রকার",
+      "৪ প্রকার",
+      "৫ প্রকার"
+    ],
+    "correctAnswer": "৪ প্রকার",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fe3",
@@ -22455,6 +26173,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc78",
+    "serialNo": 144,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "অবজেক্ট বা বাস্তব কোনো উপাদানকে ই-আর মডেলে কী বলা হয়?",
+    "image": "",
+    "options": [
+      "অ্যাট্রিবিউট",
+      "এন্টিটি (Entity)",
+      "রিলেশন",
+      "লিংক"
+    ],
+    "correctAnswer": "এন্টিটি (Entity)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fe4",
     "serialNo": 144,
     "categoryTypes": [
@@ -22610,6 +26354,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.739Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc79",
+    "serialNo": 145,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "E-R ডায়াগ্রামে এন্টিটিকে কোন প্রতীক দ্বারা প্রকাশ করা হয়?",
+    "image": "",
+    "options": [
+      "বৃত্ত",
+      "ওভাল বা ডিম্বাকৃতি",
+      "আয়তক্ষেত্র (Rectangle)",
+      "রম্বস"
+    ],
+    "correctAnswer": "আয়তক্ষেত্র (Rectangle)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fe5",
@@ -22769,6 +26539,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc7a",
+    "serialNo": 146,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "E-R ডায়াগ্রামে অ্যাট্রিবিউটকে কোন প্রতীক দ্বারা প্রকাশ করা হয়?",
+    "image": "",
+    "options": [
+      "আয়তক্ষেত্র",
+      "ওভাল বা ডিম্বাকৃতি (Oval)",
+      "রম্বস",
+      "ত্রিভুজ"
+    ],
+    "correctAnswer": "ওভাল বা ডিম্বাকৃতি (Oval)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fe6",
     "serialNo": 146,
     "categoryTypes": [
@@ -22924,6 +26720,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.748Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc7b",
+    "serialNo": 147,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "E-R ডায়াগ্রামে রিলেশনশিপ বা সম্পর্ককে কোন প্রতীক দ্বারা প্রকাশ করা হয়?",
+    "image": "",
+    "options": [
+      "ডায়মন্ড বা রম্বস (Diamond)",
+      "বৃত্ত",
+      "চতুর্ভুজ",
+      "তীর চিহ্ন"
+    ],
+    "correctAnswer": "ডায়মন্ড বা রম্বস (Diamond)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fe7",
@@ -23083,6 +26905,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc7c",
+    "serialNo": 148,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিলেশনাল ডেটা মডেলের জনক কে?",
+    "image": "",
+    "options": [
+      "চার্লস বাবেজ",
+      "ই. এফ. কড (E. F. Codd)",
+      "ডেনিস রিচি",
+      "জেমস গোসলিং"
+    ],
+    "correctAnswer": "ই. এফ. কড (E. F. Codd)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fe8",
     "serialNo": 148,
     "categoryTypes": [
@@ -23238,6 +27086,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.756Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc7d",
+    "serialNo": 149,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "রিলেশনাল মডেলে ডেটা কীভাবে সংরক্ষিত থাকে?",
+    "image": "",
+    "options": [
+      "গ্রাফ আকারে",
+      "টেবিল বা রিলেশন আকারে (Table)",
+      "ট্রি আকারে",
+      "কুয়েরি আকারে"
+    ],
+    "correctAnswer": "টেবিল বা রিলেশন আকারে (Table)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fe9",
@@ -23397,6 +27271,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc7e",
+    "serialNo": 150,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একজন শিক্ষক অনেক শিক্ষার্থীকে পড়ান—এটি কোন ধরনের রিলেশনশিপ?",
+    "image": "",
+    "options": [
+      "One-to-One\t(",
+      ") One-to-Many",
+      "Many-to-One",
+      "Many-to-Many"
+    ],
+    "correctAnswer": ") One-to-Many",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fea",
     "serialNo": 150,
     "categoryTypes": [
@@ -23552,6 +27452,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.767Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc7f",
+    "serialNo": 151,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "দেশের নাগরিক এবং জাতীয় পরিচয়পত্রের মধ্যে সম্পর্কটি কী ধরনের?",
+    "image": "",
+    "options": [
+      "One-to-One",
+      "One-to-Many",
+      "Many-to-One",
+      "Many-to-Many"
+    ],
+    "correctAnswer": "One-to-One",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.457Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2feb",
@@ -23711,6 +27637,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc80",
+    "serialNo": 152,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "প্রাইমারি কি-এর ক্ষেত্রে নিচের কোনটি সত্য?",
+    "image": "",
+    "options": [
+      "এটি Null বা খালি হতে পারে",
+      "এটি কখনই Null হতে পারে না এবং সর্বদা ইউনিক হয়",
+      "একটি টেবিলে একাধিক প্রাইমারি কি থাকতে পারে",
+      "এটি শুধুমাত্র টেক্সট ডেটা হতে পারে"
+    ],
+    "correctAnswer": "এটি কখনই Null হতে পারে না এবং সর্বদা ইউনিক হয়",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fec",
     "serialNo": 152,
     "categoryTypes": [
@@ -23866,6 +27818,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.775Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc81",
+    "serialNo": 153,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি টেবিলের প্রাইমারি কি যখন অন্য টেবিলে ব্যবহৃত হয়ে দুটি\nটেবিলের মধ্যে সম্পর্ক তৈরি করে, তখন তাকে কী বলে?",
+    "image": "",
+    "options": [
+      "সুপার কি",
+      "ক্যান্ডিডেট কি",
+      "ফরেন কি (Foreign Key)",
+      "অল্টারনেট কি"
+    ],
+    "correctAnswer": "ফরেন কি (Foreign Key)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fed",
@@ -24025,6 +28003,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc82",
+    "serialNo": 154,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একাধিক ফিল্ড বা কলাম মিলে যদি একটি প্রাইমারি কি গঠিত হয়,\nতবে তাকে কী বলে?",
+    "image": "",
+    "options": [
+      "সুপার কি",
+      "কম্পোজিট প্রাইমারি কি (Composite Primary Key)",
+      "ফরেন কি",
+      "সেকেন্ডারি কি"
+    ],
+    "correctAnswer": "কম্পোজিট প্রাইমারি কি (Composite Primary Key)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fee",
     "serialNo": 154,
     "categoryTypes": [
@@ -24180,6 +28184,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.784Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc83",
+    "serialNo": 155,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ফরেন কি-এর মান কি Null বা খালি হতে পারে?",
+    "image": "",
+    "options": [
+      "হ্যাঁ, পারে",
+      "না, কখনোই না",
+      "শুধু প্রথম সারির জন্য পারে",
+      "ডাটাবেজ ডিলিট হয়ে যাবে"
+    ],
+    "correctAnswer": "হ্যাঁ, পারে",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2fef",
@@ -24339,6 +28369,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc84",
+    "serialNo": 156,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি টেবিলে কয়টি প্রাইমারি কি থাকতে পারে?",
+    "image": "",
+    "options": [
+      "১টি",
+      "২টি",
+      "যেকোনো সংখ্যক",
+      "একটিও না"
+    ],
+    "correctAnswer": "১টি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ff0",
     "serialNo": 156,
     "categoryTypes": [
@@ -24496,6 +28552,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc85",
+    "serialNo": 157,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL এর পূর্ণরূপ কী?",
+    "image": "",
+    "options": [
+      "Simple Query Language",
+      "Structured Query Language",
+      "Sequential Query Language",
+      "Standard Query Language"
+    ],
+    "correctAnswer": "Structured Query Language",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ff1",
     "serialNo": 157,
     "categoryTypes": [
@@ -24650,6 +28732,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.799Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc86",
+    "serialNo": 158,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL প্রধানত কোন ধরনের ডেটাবেজের জন্য ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "হায়ারার্কিকাল ডেটাবেজ",
+      "নেটওয়ার্ক ডেটাবেজ",
+      "রিলেশনাল ডেটাবেজ (RDBMS)",
+      "নো-এসকিউএল ডেটাবেজ"
+    ],
+    "correctAnswer": "রিলেশনাল ডেটাবেজ (RDBMS)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ff2",
@@ -24809,6 +28917,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc87",
+    "serialNo": 159,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL কমান্ডসমূহকে প্রধানত কয়টি ভাগে ভাগ করা যায়?",
+    "image": "",
+    "options": [
+      "২টি",
+      "৩টি",
+      "৪টি",
+      "৫টি"
+    ],
+    "correctAnswer": "৪টি",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ff3",
     "serialNo": 159,
     "categoryTypes": [
@@ -24964,6 +29098,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.808Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc88",
+    "serialNo": 160,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DDL এর পূর্ণরূপ কী?",
+    "image": "",
+    "options": [
+      "Data Definition Language",
+      "Data Derivation Language",
+      "Data Design Language",
+      "Detail Data Language"
+    ],
+    "correctAnswer": "Data Definition Language",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ff4",
@@ -25123,6 +29283,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc89",
+    "serialNo": 161,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DML এর পূর্ণরূপ কী?",
+    "image": "",
+    "options": [
+      "Data Management Language",
+      "Data Manipulation Language",
+      "Data Definition Language",
+      "Data Mining Language"
+    ],
+    "correctAnswer": "Data Manipulation Language",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ff5",
     "serialNo": 161,
     "categoryTypes": [
@@ -25278,6 +29464,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.815Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc8a",
+    "serialNo": 162,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি DDL কমান্ড?",
+    "image": "",
+    "options": [
+      "SELECT",
+      "INSERT",
+      "CREATE",
+      "UPDATE"
+    ],
+    "correctAnswer": "CREATE",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ff6",
@@ -25437,6 +29649,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc8b",
+    "serialNo": 163,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোনটি DML কমান্ড?",
+    "image": "",
+    "options": [
+      "DROP",
+      "ALTER",
+      "UPDATE",
+      "TRUNCATE"
+    ],
+    "correctAnswer": "UPDATE",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ff7",
     "serialNo": 163,
     "categoryTypes": [
@@ -25592,6 +29830,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.822Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc8c",
+    "serialNo": 164,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ থেকে সম্পূর্ণ একটি টেবিল ও তার কাঠামো মুছে ফেলার জন্য\nকোন কমান্ড ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "DELETE",
+      "REMOVE",
+      "DROP",
+      "TRUNCATE"
+    ],
+    "correctAnswer": "DROP",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ff8",
@@ -25751,6 +30015,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc8d",
+    "serialNo": 165,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি টেবিলের কাঠামো পরিবর্তন বা নতুন কলাম যোগ করার জন্য\nকোন DDL কমান্ড ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "UPDATE",
+      "ALTER",
+      "CHANGE",
+      "RENAME"
+    ],
+    "correctAnswer": "ALTER",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ff9",
     "serialNo": 165,
     "categoryTypes": [
@@ -25906,6 +30196,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.832Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc8e",
+    "serialNo": 166,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ থেকে ডেটা কুয়েরি বা তুলে আনার জন্য কোন স্টেটমেন্ট\nব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "GET",
+      "SEARCH",
+      "SELECT",
+      "EXTRACT"
+    ],
+    "correctAnswer": "SELECT",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ffa",
@@ -26064,6 +30380,32 @@
     "createdAt": "2026-11-02T16:02:03.836Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc8f",
+    "serialNo": 167,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL-এ কোনো শর্ত আরোপ করার জন্য কোন ক্লজ (Clause)\nব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "WHERE",
+      "ঐঅঠওঘএ",
+      "GROUP BY",
+      "ORDER BY"
+    ],
+    "correctAnswer": "WHERE",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ffb",
     "serialNo": 167,
     "categoryTypes": [
@@ -26218,6 +30560,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.840Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc90",
+    "serialNo": 168,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজের ফলাফলকে ঊর্ধ্বক্রম (Ascending) বা\nনিম্নক্রমে (Descending) সাজাতে কোনটি ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "SORT BY",
+      "GROUP BY",
+      "ORDER BY",
+      "ARRANGE BY"
+    ],
+    "correctAnswer": "ORDER BY",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ffc",
@@ -26376,6 +30744,32 @@
     "createdAt": "2026-11-02T16:02:03.844Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc91",
+    "serialNo": 169,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL কোয়েরিতে ডুপ্লিকেট বা একই মান বাদ দিয়ে ইউনিক মান\nদেখানোর জন্য কোন কিওয়ার্ড ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "UNIQUE",
+      "DISTINCT(",
+      ") উওঋঋঊজঊঘঞ",
+      "ঝওঘএখঊ"
+    ],
+    "correctAnswer": "DISTINCT(",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2ffd",
     "serialNo": 169,
     "categoryTypes": [
@@ -26530,6 +30924,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.847Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc92",
+    "serialNo": 170,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "টেবিলের মোট রেকর্ডের সংখ্যা গণনার জন্য কোন ফাংশন ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "TOTAL()",
+      "COUNT()",
+      "SUM()",
+      "ADD()"
+    ],
+    "correctAnswer": "COUNT()",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb2ffe",
@@ -26688,6 +31108,32 @@
     "createdAt": "2026-11-02T16:02:03.850Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc93",
+    "serialNo": 171,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL-এ আংশিক মিল বা প্যাটার্ন খোঁজার জন্য (Pattern Matching)\nকোন অপারেটর ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "SIMILAR",
+      "EQUAL",
+      "LIKE",
+      "BETWEEN"
+    ],
+    "correctAnswer": "LIKE",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb2fff",
     "serialNo": 171,
     "categoryTypes": [
@@ -26842,6 +31288,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.852Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc94",
+    "serialNo": 172,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "LIKE অপারেটরের সাথে যেকোনো সংখ্যক ক্যারেক্টার বোঝাতে\nকোন ওয়াইল্ডকার্ড (Wildcard) ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "?",
+      "_ (ন্ডারস্কোর)",
+      "% (পার্সেন্ট)",
+      "*"
+    ],
+    "correctAnswer": "% (পার্সেন্ট)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb3000",
@@ -27000,6 +31472,32 @@
     "createdAt": "2026-11-02T16:02:03.855Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc95",
+    "serialNo": 173,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একটি নির্দিষ্ট সীমার মধ্যকার মান (Range) খোঁজার জন্য কোন\nঅপারেটর ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "ওঘ",
+      "BETWEEN",
+      "ডওঞঐওঘ",
+      "LIKE"
+    ],
+    "correctAnswer": "BETWEEN",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb3001",
     "serialNo": 173,
     "categoryTypes": [
@@ -27154,6 +31652,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.857Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc96",
+    "serialNo": 174,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "একাধিক টেবিল থেকে ডেটা একত্রিত করে দেখানোর প্রক্রিয়াকে কী বলে?",
+    "image": "",
+    "options": [
+      "সাবকোয়েরি",
+      "জয়েন (Join)",
+      "ইউনিয়ন",
+      "মার্জ"
+    ],
+    "correctAnswer": "জয়েন (Join)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb3002",
@@ -27312,6 +31836,32 @@
     "createdAt": "2026-11-02T16:02:03.861Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc97",
+    "serialNo": 175,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "যে জয়েন শুধুমাত্র দুটি টেবিলের মধ্যকার মিল থাকা ডেটাগুলো\nপ্রদর্শন করে, তাকে কী বলে?",
+    "image": "",
+    "options": [
+      "Outer Join",
+      "Inner Join",
+      "Left Join",
+      "Right Join"
+    ],
+    "correctAnswer": "Inner Join",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb3003",
     "serialNo": 175,
     "categoryTypes": [
@@ -27466,6 +32016,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.864Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc98",
+    "serialNo": 176,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "TCL এর পূর্ণরূপ কী?",
+    "image": "",
+    "options": [
+      "Transaction Control Language",
+      "Total Control Language",
+      "Table Control Language",
+      "ঞৎধহংভবৎ ঈড়সসধহফ খধহমঁধমব"
+    ],
+    "correctAnswer": "Transaction Control Language",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb3004",
@@ -27624,6 +32200,32 @@
     "createdAt": "2026-11-02T16:02:03.866Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc99",
+    "serialNo": 177,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজ নরমালাইজেশন (Normalization) এর মূল উদ্দেশ্য কী?",
+    "image": "",
+    "options": [
+      "ডেটার অনুলিপি বা Redundancy কমানো",
+      "ডেটার আকার বৃদ্ধি করা",
+      "কুয়েরির গতি ধীর করা",
+      "সিকিউরিটি নষ্ট করা"
+    ],
+    "correctAnswer": "ডেটার অনুলিপি বা Redundancy কমানো",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb3005",
     "serialNo": 177,
     "categoryTypes": [
@@ -27778,6 +32380,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.870Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc9a",
+    "serialNo": 178,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নরমালাইজেশনের ধারণাটি কে প্রবর্তন করেন?",
+    "image": "",
+    "options": [
+      "ডেনিস রিচি",
+      "ই. এফ. কড (E. F. Codd)",
+      "বিল গেটস",
+      "ল্যারি এলিসন"
+    ],
+    "correctAnswer": "ই. এফ. কড (E. F. Codd)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb3006",
@@ -27936,6 +32564,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc9b",
+    "serialNo": 179,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ডেটাবেজে 'Null' মান বলতে কী বোঝায়?",
+    "image": "",
+    "options": [
+      "শূন্য (0)",
+      "স্পেস (Space)",
+      "অজানা বা অনুপস্থিত মান (Unknown / Missing value)",
+      "নেতিবাচক মান"
+    ],
+    "correctAnswer": "অজানা বা অনুপস্থিত মান (Unknown / Missing value)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb3007",
     "serialNo": 179,
     "categoryTypes": [
@@ -28090,6 +32744,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.880Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc9c",
+    "serialNo": 180,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL কুয়েরিতে ORDER BY ক্লজে ডিফল্টভাবে ডেটা কীভাবে\nসাজানো হয়?",
+    "image": "",
+    "options": [
+      "আরোহী বা ঊর্ধ্বক্রমে (Ascending)",
+      "অবরোহী বা নিম্নক্রমে (Descending)",
+      "কোনোটিই নয়",
+      "র্যান্ডমলি"
+    ],
+    "correctAnswer": "আরোহী বা ঊর্ধ্বক্রমে (Ascending)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb3008",
@@ -28249,6 +32929,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc9d",
+    "serialNo": 181,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "DESC কিওয়ার্ডটি ORDER BY এর সাথে ব্যবহার করলে কী হয়?",
+    "image": "",
+    "options": [
+      "বর্ণনা দেখায়",
+      "নিম্নক্রমে সাজায় (Descending)",
+      "ঊর্ধ্বক্রমে সাজায়",
+      "টেবিল ডিলিট করে"
+    ],
+    "correctAnswer": "নিম্নক্রমে সাজায় (Descending)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb3009",
     "serialNo": 181,
     "categoryTypes": [
@@ -28403,6 +33109,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.888Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cc9e",
+    "serialNo": 182,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL-এ দুটি শর্তই সত্য হতে হবে—এমন ক্ষেত্রে কোন লজিক্যাল\nঅপারেটর ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "OR",
+      "AND",
+      "NOT",
+      "ওঘ"
+    ],
+    "correctAnswer": "AND",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb300a",
@@ -28561,6 +33293,32 @@
     "createdAt": "2026-11-02T16:02:03.893Z"
   },
   {
+    "_id": "6af01cbf268cb6b55a18cc9f",
+    "serialNo": 183,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL-এ যেকোনো একটি শর্ত সত্য হলেই হবে—এমন ক্ষেত্রে কোনটি\nব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "AND",
+      "OR",
+      "ওঘ",
+      "LIKE"
+    ],
+    "correctAnswer": "OR",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb300b",
     "serialNo": 183,
     "categoryTypes": [
@@ -28714,6 +33472,32 @@
     "correctAnswer": "ক্রায়োসার্জারি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.895Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cca0",
+    "serialNo": 184,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL কুয়েরিতে কোনো নির্দিষ্ট সেটের অন্তর্ভুক্ত মানসমূহ খুঁজতে\nকোন অপারেটর ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "BETWEEN",
+      "ওঘ",
+      "LIKE",
+      "ঊঢওঝঞঝ"
+    ],
+    "correctAnswer": "ওঘ",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb300c",
@@ -28870,6 +33654,32 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.899Z",
     "__v": 1
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cca1",
+    "serialNo": 185,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "ট্রানজেকশনের 'Savepoint' কমান্ডটি কেন ব্যবহৃত হয়?",
+    "image": "",
+    "options": [
+      "ট্রানজেকশনের একটি নির্দিষ্ট বিন্দুতে রোলব্যাক করার জন্য",
+      "ডেটাবেজ চিরতরে বন্ধ করার জন্য",
+      "মেমোরি খালি করার জন্য",
+      "নতুন টেবিল তৈরি করতে"
+    ],
+    "correctAnswer": "ট্রানজেকশনের একটি নির্দিষ্ট বিন্দুতে রোলব্যাক করার জন্য",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb300d",
@@ -29029,6 +33839,32 @@
     "__v": 1
   },
   {
+    "_id": "6af01cbf268cb6b55a18cca2",
+    "serialNo": 186,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "SQL-এ নিচের কোনটি সঠিক টেবিল তৈরির সিনট্যাক্স?",
+    "image": "",
+    "options": [
+      "CREATE TABLE table_name (column_name datatype);",
+      "MAKE TABLE table_name;",
+      "NEW TABLE table_name;",
+      "ADD TABLE table_name;​"
+    ],
+    "correctAnswer": "CREATE TABLE table_name (column_name datatype);",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
+  },
+  {
     "_id": "6af015f629f22f72f1eb300e",
     "serialNo": 186,
     "categoryTypes": [
@@ -29183,6 +34019,32 @@
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.905Z"
+  },
+  {
+    "_id": "6af01cbf268cb6b55a18cca3",
+    "serialNo": 187,
+    "categoryTypes": [
+      "Chapter Practice"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "",
+    "question": "নিচের কোন ডেটাবেজ মডেলটি সবচেয়ে আধুনিক ও বর্তমানে বহুল ব্যবহৃত?",
+    "image": "",
+    "options": [
+      "রিলেশনাল মডেল (Relational Model)",
+      "হায়ারার্কিকাল মডেল",
+      "নেটওয়ার্ক মডেল",
+      "ফ্ল্যাট ফাইল মডেল​"
+    ],
+    "correctAnswer": "রিলেশনাল মডেল (Relational Model)",
+    "explanation": "",
+    "createdAt": "2026-11-08T06:54:55.458Z",
+    "__v": 0
   },
   {
     "_id": "6af015f629f22f72f1eb300f",
