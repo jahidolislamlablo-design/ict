@@ -13,7 +13,7 @@
     "participants": 547,
     "startTime": "2026-11-08T11:00:00.000Z",
     "endTime": "2026-11-09T16:05:00.000Z",
-    "isLive": false,
+    "isLive": true,
     "buttonText": "Start Live Exam",
     "createdAt": "2026-11-08T07:44:20.023Z",
     "__v": 0,
