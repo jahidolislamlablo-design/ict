@@ -2198,8 +2198,12 @@ app.put('/api/model-tests/:id', async (req, res) => {
 app.delete('/api/model-tests/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    if (isConnected && mongoose.Types.ObjectId.isValid(id)) {
-      await ModelTest.findByIdAndDelete(id);
+    if (isConnected) {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        await ModelTest.findByIdAndDelete(id);
+      } else {
+        await ModelTest.findOneAndDelete({ $or: [{ examNo: id }, { serialNo: parseInt(id, 10) || -1 }] });
+      }
     }
 
     const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
