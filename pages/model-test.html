@@ -82,8 +82,13 @@
                 </div>
 
                 <!-- ফিল্টার ট্যাব -->
+                <!-- চলমান লাইভ এক্সাম হাইলাইট সেকশন -->
+                <section id="featuredLiveSection" class="featured-live-section" style="display:none;"></section>
+
+                <!-- ফিল্টার ট্যাব -->
                 <div class="filter-tabs">
                     <button class="tab-btn active" data-filter="all">সকল মডেল টেস্ট</button>
+                    <button class="tab-btn" data-filter="live" style="color: #DC2626; font-weight: 700;"><span class="mt-live-dot" style="margin-right: 4px;"></span> লাইভ এক্সাম</button>
                     <button class="tab-btn" data-filter="full">পূর্ণাঙ্গ সিলেবাস (Full)</button>
                     <button class="tab-btn" data-filter="chapter">অধ্যায়ভিত্তিক স্পিড টেস্ট</button>
                 </div>
@@ -91,33 +96,62 @@
                 <!-- মডেল টেস্ট কার্ড গ্রিড -->
                 <div class="model-tests-grid" id="modelTestsGrid">
 
-                    <!-- মডেল টেস্ট 01 -->
-                    <div class="test-card model-test-card" data-category="full" id="card-mt-01">
+                    <!-- মডেল টেস্ট 01 (লাইভ পরীক্ষা) -->
+                    <div class="test-card model-test-card is-live-active" data-category="chapter" data-is-live="true" id="card-mt-01">
                         <div>
                             <div class="mt-top-row">
-                                <div class="mt-date-pill">Date: 01-11-26</div>
+                                <div class="mt-date-pill">Date: 08-11-26</div>
                                 <div class="mt-top-right">
                                     <div class="mt-badges-row">
                                         <div class="mt-participants-pill">
                                             <i class="fa-solid fa-users"></i> ৫৪৭ জন
                                         </div>
-                                        <div class="mt-live-badge" style="display:none;" id="live-badge-01">
+                                        <div class="mt-live-badge" id="live-badge-01">
                                             <span class="mt-live-dot"></span> LIVE
                                         </div>
                                     </div>
-                                    <div class="mt-live-countdown" id="live-countdown-01" style="display:none;"></div>
+                                    <div class="mt-live-countdown" id="live-countdown-01">🔴 লাইভ চলছে</div>
                                 </div>
                             </div>
                             <h3 class="mt-exam-no">Exam No: 01</h3>
                             <div class="mt-chapters">Chapters: <span>প্রথম অধ্যায়</span></div>
+                            <div class="mt-meta-row">
+                                <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ৩০টি প্রশ্ন</span>
+                                <span class="mt-meta-item"><i class="fa-solid fa-clock"></i> ৩০ মিনিট</span>
+                                <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ৩০ নম্বর</span>
+                            </div>
+                        </div>
+                        <button class="mt-start-btn" onclick="startExam('Model Test 01', 30)">
+                            <i class="fa-solid fa-play"></i> <span>Start Live Exam</span>
+                        </button>
+                    </div>
+                    <!-- মডেল টেস্ট 51 (লাইভ পরীক্ষা) -->
+                    <div class="test-card model-test-card is-live-active" data-category="full" data-is-live="true" id="card-mt-51">
+                        <div>
+                            <div class="mt-top-row">
+                                <div class="mt-date-pill">Date: 08-11-26</div>
+                                <div class="mt-top-right">
+                                    <div class="mt-badges-row">
+                                        <div class="mt-participants-pill">
+                                            <i class="fa-solid fa-users"></i> ৫৪৭ জন
+                                        </div>
+                                        <div class="mt-live-badge" id="live-badge-51">
+                                            <span class="mt-live-dot"></span> LIVE
+                                        </div>
+                                    </div>
+                                    <div class="mt-live-countdown" id="live-countdown-51">🔴 লাইভ চলছে</div>
+                                </div>
+                            </div>
+                            <h3 class="mt-exam-no">Exam No: 51</h3>
+                            <div class="mt-chapters">Chapters: <span>প্রথম অধ্যায়</span></div>
                             <div class="mt-meta-row">
                                 <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ২৫টি প্রশ্ন</span>
                                 <span class="mt-meta-item"><i class="fa-solid fa-clock"></i> ২৫ মিনিট</span>
                                 <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ২৫ নম্বর</span>
                             </div>
                         </div>
-                        <button class="mt-start-btn" onclick="startExam('Model Test 01', 25)">
-                            <i class="fa-solid fa-play"></i> <span>Start Previous Live Exam</span>
+                        <button class="mt-start-btn" onclick="startExam('Model Test 51', 25)">
+                            <i class="fa-solid fa-play"></i> <span>Start Live Exam</span>
                         </button>
                     </div>
                     <!-- মডেল টেস্ট 02 -->

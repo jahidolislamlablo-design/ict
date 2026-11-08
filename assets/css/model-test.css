@@ -593,3 +593,65 @@
 .mt-start-btn:active {
     transform: translateY(0);
 }
+
+/* ==========================================================================
+   লাইভ এক্সাম স্পেশাল স্টাইল ও হাইলাইটেড সেকশন
+   ========================================================================== */
+.model-test-card.is-live-active {
+    border: 2px solid #FCA5A5;
+    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.18), 0 8px 10px -6px rgba(239, 68, 68, 0.12);
+    position: relative;
+}
+
+.featured-live-section {
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 50%, #FECDD3 100%);
+    border: 2px solid #FB7185;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 28px -6px rgba(244, 63, 94, 0.2);
+    animation: fadeInLiveSection 0.4s ease-in-out;
+}
+
+@keyframes fadeInLiveSection {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.featured-live-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.featured-live-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #9F1239;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.featured-live-title .badge-live-pulse {
+    background: #E11D48;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.featured-live-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+

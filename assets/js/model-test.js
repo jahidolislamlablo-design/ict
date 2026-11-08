@@ -115,7 +115,12 @@ function filterTests(filter) {
     currentFilterCategory = filter || 'all';
     const cards = document.querySelectorAll('.model-tests-grid .test-card');
     cards.forEach(card => {
-        if (currentFilterCategory === 'all' || card.getAttribute('data-category') === currentFilterCategory) {
+        if (currentFilterCategory === 'all') {
+            card.style.display = 'flex';
+        } else if (currentFilterCategory === 'live') {
+            const isLive = card.getAttribute('data-is-live') === 'true' || card.classList.contains('is-live-active');
+            card.style.display = isLive ? 'flex' : 'none';
+        } else if (card.getAttribute('data-category') === currentFilterCategory) {
             card.style.display = 'flex';
         } else {
             card.style.display = 'none';
@@ -124,6 +129,7 @@ function filterTests(filter) {
 }
 
 function isExamLiveNow(item) {
+    if (!item) return false;
     if (item.isLive === true || item.isLive === 'true') return true;
     if (!item.startTime || !item.endTime) return false;
     const now = new Date();
@@ -133,11 +139,17 @@ function isExamLiveNow(item) {
 }
 
 function getRemainingLiveTimeText(item) {
-    if (!item.endTime) return '';
+    if (!item) return '';
+    if (!item.endTime) return '🔴 লাইভ চলছে';
     const now = new Date();
     const end = new Date(item.endTime);
     const diffMs = end - now;
-    if (diffMs <= 0) return 'সময় সমাপ্ত';
+    if (diffMs <= 0) {
+        if (item.isLive === true || item.isLive === 'true') {
+            return '🔴 লাইভ চলছে';
+        }
+        return 'সময় সমাপ্ত';
+    }
 
     const totalSeconds = Math.floor(diffMs / 1000);
     const hours = Math.floor(totalSeconds / 3600);
@@ -151,65 +163,103 @@ function getRemainingLiveTimeText(item) {
     return 'সময় বাকি: ' + toBanglaNum(pad(minutes)) + ' মি. ' + toBanglaNum(pad(seconds)) + ' সে.';
 }
 
-function renderModelTestCards(list) {
-    const grid = document.getElementById('modelTestsGrid') || document.querySelector('.model-tests-grid');
-    if (!grid) return;
+function generateSingleCardHtml(item, prefix = 'card-mt-') {
+    const isLive = isExamLiveNow(item);
+    const examKey = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+    const dateStr = item.date || '01-11-26';
+    const chaptersStr = item.chapters || 'প্রথম অধ্যায়';
+    const participantsCount = item.participants || 547;
+    const totalQ = item.totalQuestions || 25;
+    const duration = item.duration || 25;
+    const totalM = item.totalMarks || 25;
+    const titleSafe = (item.title || ('Model Test ' + examKey)).replace(/'/g, "\\'");
 
-    grid.innerHTML = list.map(item => {
-        const isLive = isExamLiveNow(item);
-        const examKey = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
-        const dateStr = item.date || '01-11-26';
-        const chaptersStr = item.chapters || 'প্রথম অধ্যায়';
-        const participantsCount = item.participants || 547;
-        const totalQ = item.totalQuestions || 25;
-        const duration = item.duration || 25;
-        const totalM = item.totalMarks || 25;
-        const titleSafe = (item.title || ('Model Test ' + examKey)).replace(/'/g, "\\'");
+    let btnText = item.buttonText || (isLive ? 'Start Live Exam' : 'Start Previous Live Exam');
+    if (isLive) btnText = 'Start Live Exam';
 
-        let btnText = item.buttonText || (isLive ? 'Start Live Exam' : 'Start Previous Live Exam');
-        if (isLive) btnText = 'Start Live Exam';
-
-        return `
-            <div class="test-card model-test-card" data-category="${item.category || 'full'}" id="card-mt-${examKey}">
-                <div>
-                    <!-- Top Row -->
-                    <div class="mt-top-row">
-                        <div class="mt-date-pill">Date: ${escapeHtml(dateStr)}</div>
-                        <div class="mt-top-right">
-                            <div class="mt-badges-row">
-                                <div class="mt-participants-pill">
-                                    <i class="fa-solid fa-users"></i> ${toBanglaNum(participantsCount)} জন
-                                </div>
-                                <div class="mt-live-badge" id="live-badge-${examKey}" style="${isLive ? '' : 'display:none;'}">
-                                    <span class="mt-live-dot"></span> LIVE
-                                </div>
+    return `
+        <div class="test-card model-test-card ${isLive ? 'is-live-active' : ''}" 
+             data-category="${item.category || 'full'}" 
+             data-is-live="${isLive ? 'true' : 'false'}"
+             id="${prefix ? prefix + examKey : 'card-mt-' + examKey}">
+            <div>
+                <!-- Top Row -->
+                <div class="mt-top-row">
+                    <div class="mt-date-pill">Date: ${escapeHtml(dateStr)}</div>
+                    <div class="mt-top-right">
+                        <div class="mt-badges-row">
+                            <div class="mt-participants-pill">
+                                <i class="fa-solid fa-users"></i> ${toBanglaNum(participantsCount)} জন
                             </div>
-                            <!-- Live Remaining Time below LIVE badge -->
-                            <div class="mt-live-countdown" id="live-countdown-${examKey}" style="${isLive ? '' : 'display:none;'}">
-                                ${isLive ? getRemainingLiveTimeText(item) : ''}
+                            <div class="mt-live-badge" id="live-badge-${prefix}${examKey}" style="${isLive ? '' : 'display:none;'}">
+                                <span class="mt-live-dot"></span> LIVE
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Heading & Chapters -->
-                    <h3 class="mt-exam-no">Exam No: ${escapeHtml(examKey)}</h3>
-                    <div class="mt-chapters">Chapters: <span>${escapeHtml(chaptersStr)}</span></div>
-
-                    <!-- Meta info row -->
-                    <div class="mt-meta-row">
-                        <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ${toBanglaNum(totalQ)}টি প্রশ্ন</span>
-                        <span class="mt-meta-item"><i class="fa-solid fa-clock"></i> ${toBanglaNum(duration)} মিনিট</span>
-                        <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ${toBanglaNum(totalM)} নম্বর</span>
+                        <!-- Live Remaining Time below LIVE badge -->
+                        <div class="mt-live-countdown" id="live-countdown-${prefix}${examKey}" style="${isLive ? '' : 'display:none;'}">
+                            ${isLive ? getRemainingLiveTimeText(item) : ''}
+                        </div>
                     </div>
                 </div>
 
-                <!-- Action Button -->
-                <button class="mt-start-btn" onclick="startExam('${titleSafe}', ${duration})">
-                    <i class="fa-solid fa-play"></i> <span>${escapeHtml(btnText)}</span>
-                </button>
+                <!-- Heading & Chapters -->
+                <h3 class="mt-exam-no">Exam No: ${escapeHtml(examKey)}</h3>
+                <div class="mt-chapters">Chapters: <span>${escapeHtml(chaptersStr)}</span></div>
+
+                <!-- Meta info row -->
+                <div class="mt-meta-row">
+                    <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ${toBanglaNum(totalQ)}টি প্রশ্ন</span>
+                    <span class="mt-meta-item"><i class="fa-solid fa-clock"></i> ${toBanglaNum(duration)} মিনিট</span>
+                    <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ${toBanglaNum(totalM)} নম্বর</span>
+                </div>
             </div>
-        `;
-    }).join('');
+
+            <!-- Action Button -->
+            <button class="mt-start-btn" onclick="startExam('${titleSafe}', ${duration})">
+                <i class="fa-solid fa-play"></i> <span>${escapeHtml(btnText)}</span>
+            </button>
+        </div>
+    `;
+}
+
+function renderModelTestCards(list) {
+    // ১. চলমান লাইভ পরীক্ষাগুলো খুঁজে বের করা
+    const liveItems = list.filter(isExamLiveNow);
+    const featuredContainer = document.getElementById('featuredLiveSection');
+    if (featuredContainer) {
+        if (liveItems.length > 0) {
+            featuredContainer.style.display = 'block';
+            featuredContainer.innerHTML = `
+                <div class="featured-live-header">
+                    <div class="featured-live-title">
+                        <span class="badge-live-pulse"><span class="mt-live-dot" style="background:#fff;"></span> LIVE</span>
+                        <span>চলমান লাইভ এক্সাম (Active Live Exam)</span>
+                    </div>
+                    <span style="font-size: 0.9rem; color: #BE123C; font-weight: 600;">
+                        নির্ধারিত সময়ের মধ্যে পরীক্ষায় অংশ নিন
+                    </span>
+                </div>
+                <div class="featured-live-grid">
+                    ${liveItems.map(item => generateSingleCardHtml(item, 'featured-live-')).join('')}
+                </div>
+            `;
+        } else {
+            featuredContainer.style.display = 'none';
+        }
+    }
+
+    // ২. মডেল টেস্ট গ্রিডে লাইভ এক্সামগুলো আগে রেখে সাজানো
+    const sortedList = [...list].sort((a, b) => {
+        const liveA = isExamLiveNow(a) ? 1 : 0;
+        const liveB = isExamLiveNow(b) ? 1 : 0;
+        if (liveA !== liveB) return liveB - liveA; // লাইভগুলো প্রথমে
+        return (a.serialNo || 0) - (b.serialNo || 0);
+    });
+
+    const grid = document.getElementById('modelTestsGrid') || document.querySelector('.model-tests-grid');
+    if (grid) {
+        grid.innerHTML = sortedList.map(item => generateSingleCardHtml(item, '')).join('');
+    }
 
     filterTests(currentFilterCategory);
 }
@@ -220,6 +270,8 @@ function startLiveCountdowns() {
         allModelTestsData.forEach(item => {
             const isLive = isExamLiveNow(item);
             const examKey = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+            
+            // গ্রিড কার্ড টাইমার
             const badge = document.getElementById('live-badge-' + examKey);
             const timer = document.getElementById('live-countdown-' + examKey);
             if (badge) badge.style.display = isLive ? 'inline-flex' : 'none';
@@ -229,6 +281,19 @@ function startLiveCountdowns() {
                     timer.innerText = getRemainingLiveTimeText(item);
                 } else {
                     timer.style.display = 'none';
+                }
+            }
+
+            // ফিচারড লাইভ কার্ড টাইমার
+            const fBadge = document.getElementById('live-badge-featured-live-' + examKey);
+            const fTimer = document.getElementById('live-countdown-featured-live-' + examKey);
+            if (fBadge) fBadge.style.display = isLive ? 'inline-flex' : 'none';
+            if (fTimer) {
+                if (isLive) {
+                    fTimer.style.display = 'block';
+                    fTimer.innerText = getRemainingLiveTimeText(item);
+                } else {
+                    fTimer.style.display = 'none';
                 }
             }
         });

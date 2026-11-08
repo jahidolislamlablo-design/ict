@@ -2089,20 +2089,23 @@ app.post('/api/model-tests', async (req, res) => {
       startTime: startTime || '',
       endTime: endTime || '',
       isLive: isLive === true || isLive === 'true',
-      buttonText: buttonText || 'Start Previous Live Exam'
+      buttonText: buttonText || 'Start Live Exam'
     });
 
     let saved = null;
     if (isConnected) {
       saved = await testDoc.save();
       await syncDatabaseJson('modelTests');
-    }
+    } else {
+      const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+      let fileData = [];
+      if (fs.existsSync(jsonPath)) {
+        try { fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8')); } catch(e) { fileData = []; }
+      }
+      fileData = fileData.filter(item => String(item.examNo) !== String(testDoc.examNo));
+      fileData.push(testDoc.toObject());
+      fileData.sort((a, b) => (a.serialNo || 0) - (b.serialNo || 0));
 
-    // JSON ফাইল ব্যাকআপ আপডেট
-    const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
-    if (fs.existsSync(jsonPath)) {
-      const fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-      fileData.push(saved ? saved.toObject() : testDoc.toObject());
       const destDirs = [
         path.join(__dirname, 'database'),
         'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
@@ -2114,6 +2117,8 @@ app.post('/api/model-tests', async (req, res) => {
         } catch(e) {}
       });
     }
+
+    autoPushToGitHub(`Add/Update Live Exam: ${testDoc.title || testDoc.examNo}`);
 
     res.status(201).json({
       success: true,
@@ -2151,34 +2156,35 @@ app.put('/api/model-tests/:id', async (req, res) => {
       updated = await ModelTest.findOneAndUpdate({ examNo: updateData.examNo }, updateData, { new: true });
     }
 
-    // JSON ফাইলেও আপডেট রাখা
-    const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
-    if (fs.existsSync(jsonPath)) {
-      let fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-      const idx = fileData.findIndex(item => 
-        String(item._id) === String(id) || 
-        String(item.examNo) === String(updateData.examNo) ||
-        (updateData.serialNo && item.serialNo === updateData.serialNo)
-      );
-      if (idx !== -1) {
-        fileData[idx] = { ...fileData[idx], ...updateData };
-        if (!updated) updated = fileData[idx];
-      }
-      const destDirs = [
-        path.join(__dirname, 'database'),
-        'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
-      ];
-      destDirs.forEach(dir => {
-        try {
-          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-          fs.writeFileSync(path.join(dir, 'model_tests.json'), JSON.stringify(fileData, null, 2), 'utf8');
-        } catch(e) {}
-      });
-    }
-
     if (isConnected) {
       await syncDatabaseJson('modelTests');
+    } else {
+      const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
+      if (fs.existsSync(jsonPath)) {
+        let fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        const idx = fileData.findIndex(item => 
+          String(item._id) === String(id) || 
+          String(item.examNo) === String(updateData.examNo) ||
+          (updateData.serialNo && item.serialNo === updateData.serialNo)
+        );
+        if (idx !== -1) {
+          fileData[idx] = { ...fileData[idx], ...updateData };
+          if (!updated) updated = fileData[idx];
+        }
+        const destDirs = [
+          path.join(__dirname, 'database'),
+          'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+        ];
+        destDirs.forEach(dir => {
+          try {
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+            fs.writeFileSync(path.join(dir, 'model_tests.json'), JSON.stringify(fileData, null, 2), 'utf8');
+          } catch(e) {}
+        });
+      }
     }
+
+    autoPushToGitHub(`Update Live Exam / Model Test: ${updateData.title || updateData.examNo || id}`);
 
     res.status(200).json({
       success: true,
@@ -2225,6 +2231,8 @@ app.delete('/api/model-tests/:id', async (req, res) => {
     if (isConnected) {
       await syncDatabaseJson('modelTests');
     }
+
+    autoPushToGitHub(`Delete Live Exam / Model Test: ${id}`);
 
     res.status(200).json({
       success: true,
