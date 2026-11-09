@@ -1115,20 +1115,21 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc1c",
     "serialNo": 6,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
-    "question": "৫, ৮, ই ধারার পরবর্তী মান কোনটি?",
+    "modelTestNo": "Model Test 03",
+    "question": "5, 8, B ধারার পরবর্তী মান কোনটি?",
     "image": "",
     "options": [
       "C",
@@ -1139,7 +1140,8 @@
     "correctAnswer": "E",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 3"
   },
   {
     "_id": "6aeb32daf84660475440e04f",
