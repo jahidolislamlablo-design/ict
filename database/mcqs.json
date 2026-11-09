@@ -34,7 +34,8 @@
     "_id": "6af01cbf268cb6b55a18cbe9",
     "serialNo": 1,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
