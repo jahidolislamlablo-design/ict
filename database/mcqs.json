@@ -13390,13 +13390,14 @@
     "createdAt": "2026-11-03T05:41:46.290Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9796",
     "serialNo": 70,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -13415,7 +13416,8 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.537Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
