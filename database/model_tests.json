@@ -949,25 +949,5 @@
     "buttonText": "Start Previous Live Exam",
     "createdAt": "2026-11-08T07:44:20.047Z",
     "__v": 0
-  },
-  {
-    "_id": "6af058ee5846b392ccf3267c",
-    "serialNo": 51,
-    "examNo": "51",
-    "title": "Model Test 51",
-    "date": "08-11-26",
-    "chapters": "প্রথম অধ্যায়",
-    "category": "full",
-    "totalQuestions": 25,
-    "duration": 25,
-    "totalMarks": 25,
-    "participants": 547,
-    "startTime": "2026-11-08T11:11:00.000Z",
-    "endTime": "2026-11-02T11:11:00.000Z",
-    "isLive": false,
-    "buttonText": "Start Live Exam",
-    "createdAt": "2026-11-08T11:11:42.812Z",
-    "__v": 0,
-    "updatedAt": "2026-11-08T11:20:37.733Z"
   }
 ]
