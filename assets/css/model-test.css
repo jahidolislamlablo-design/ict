@@ -349,7 +349,7 @@
     .exam-topbar {
         padding: 8px 12px !important;
         gap: 8px !important;
-        top: 60px !important;
+        top: 104px !important; /* নিচে নামানো যাতে মোবাইলে স্টিকি হেডার দিয়ে ঘড়ি ঢেকে না যায় */
         border-radius: 12px !important;
         flex-direction: row !important;
         align-items: center !important;
@@ -806,5 +806,17 @@
     .mt-split-right.mt-marksheet-btn {
         padding: 10px 10px;
         font-size: 0.85rem;
+    }
+}
+
+/* Mobile Sticky Topbar Fix: Prevent header from overlapping exam clock & submit */
+@media (max-width: 1024px) {
+    .exam-topbar {
+        position: sticky !important;
+        top: 104px !important;
+        z-index: 990 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
     }
 }

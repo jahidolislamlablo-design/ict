@@ -1,4 +1,20 @@
 
+/**
+ * মোবাইলে স্টিকি হেডার অনুযায়ী পরীক্ষার টপবার অ্যাডজাস্ট করা
+ */
+function adjustStickyTopbarForHeader() {
+    const header = document.querySelector('.site-header');
+    const topbar = document.querySelector('.exam-topbar');
+    if (header && topbar) {
+        const hHeight = header.getBoundingClientRect().height;
+        if (hHeight > 0) {
+            topbar.style.top = (Math.round(hHeight) + 4) + 'px';
+        }
+    }
+}
+window.addEventListener('resize', adjustStickyTopbarForHeader);
+
+
 // লাইভ পরীক্ষা ইউজারের সাবমিশন ট্র্যাকিং (লাইভ চলাকালীন একবারই দিতে পারবে)
 const SUBMITTED_LIVE_EXAMS_KEY = 'ict_submitted_live_exams';
 
@@ -19,6 +35,13 @@ function hasUserSubmittedLiveExam(examKey) {
 function recordLiveExamSubmission(examKey, score, total, details = {}) {
     if (!examKey) return;
     const submitted = getSubmittedLiveExams();
+    const existing = submitted[String(examKey).trim()];
+    
+    // নিরাপত্তা চেক: যদি ইতিমধ্যে ভালো স্কোর সেভ থাকে এবং কোনো কারণে নতুন স্কোর ০ আসে, তবে আগের স্কোর বহাল থাকবে
+    if (existing && existing.score > 0 && score === 0 && !details.forceOverwrite) {
+        console.warn('Prevented resetting existing score to 0 for exam:', examKey);
+        return;
+    }
     const wrongCount = details.wrongCount !== undefined ? details.wrongCount : (total - score);
     const skippedCount = details.skippedCount !== undefined ? details.skippedCount : 0;
     const scorePercentage = details.scorePercentage !== undefined ? details.scorePercentage : (total > 0 ? Math.round((score / total) * 100) : 0);
@@ -456,6 +479,19 @@ async function startExam(testTitle, durationMins = 25, examNo = '', forceRestart
     userAnswers = {};
     remainingSeconds = durationMins * 60;
 
+    // বাটন রিসেট
+    const topBtn = document.querySelector('.exam-top-submit-btn');
+    if (topBtn) {
+        topBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>সাবমিট করুন</span>';
+        topBtn.onclick = confirmSubmitExam;
+    }
+    const bottomBtn = document.querySelector('.exam-bottom-submit-btn') || document.getElementById('examBottomSubmitBtn');
+    if (bottomBtn) {
+        bottomBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> পরীক্ষা শেষ ও ফলাফল দেখুন';
+        bottomBtn.onclick = confirmSubmitExam;
+    }
+    setTimeout(adjustStickyTopbarForHeader, 120);
+
     // ডাটাবেজ থেকে প্রশ্ন লোড (লাইভ এক্সামের প্রশ্ন অটো আসবে না, শুধুমাত্র আপলোডকৃত প্রশ্ন আসবে)
     try {
         let dbQuestions = null;
@@ -665,6 +701,11 @@ function startTimer() {
  * সাবমিট কনফার্মেশন
  */
 function confirmSubmitExam() {
+    // যদি ইতিমধ্যেই পরীক্ষা সাবমিট হয়ে থাকে বা এন্সার শীট দেখা অবস্থায় থাকে
+    if (isExamSubmitted) {
+        openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
+        return;
+    }
     const answeredCount = Object.keys(userAnswers).length;
     const unanswered = activeExamQuestions.length - answeredCount;
     
@@ -684,6 +725,11 @@ function confirmSubmitExam() {
  */
 function submitExam() {
     clearInterval(timerInterval);
+    // যদি ইতিমধ্যে সাবমিট হয়ে থাকে তাহলে মার্কশীট ওপেন করবে, পুনরায় সাবমিট করে প্রাপ্ত নম্বর ০ করবে না
+    if (isExamSubmitted) {
+        openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
+        return;
+    }
     isExamSubmitted = true;
 
     let correctCount = 0;
@@ -797,6 +843,18 @@ function submitExam() {
                 })
                 .catch(() => {});
         }
+    }
+
+    // সাবমিট বাটনগুলোকে 'মার্ক শীট দেখুন' বাটনে রূপান্তর করা যাতে পুনরায় সাবমিট হয়ে মার্ক ০ না হয়
+    const topBtn = document.querySelector('.exam-top-submit-btn');
+    if (topBtn) {
+        topBtn.innerHTML = '<i class="fa-solid fa-square-poll-vertical"></i> <span>মার্ক শীট দেখুন</span>';
+        topBtn.onclick = () => openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
+    }
+    const bottomBtn = document.querySelector('.exam-bottom-submit-btn') || document.getElementById('examBottomSubmitBtn');
+    if (bottomBtn) {
+        bottomBtn.innerHTML = '<i class="fa-solid fa-square-poll-vertical"></i> মার্ক শীট ও ফলাফল দেখুন';
+        bottomBtn.onclick = () => openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
     }
 
     openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
@@ -1120,8 +1178,23 @@ async function showAnswerSheetFromMarksheet(examKey, title) {
         };
     });
 
-    // প্রশ্নপত্র রেন্ডার করা
-    renderExamQuestions(activeExamQuestions);
+    // প্রশ্নপত্র রেন্ডার করা (renderAllQuestions ও question palette)
+    renderAllQuestions();
+    renderQuestionPalette();
+    updateExamProgress();
+    adjustStickyTopbarForHeader();
+
+    // সাবমিট বাটনগুলোকে 'মার্ক শীট দেখুন' বাটনে রূপান্তর করা যাতে পুনরায় সাবমিট হয়ে মার্ক ০ না হয়
+    const topBtn = document.querySelector('.exam-top-submit-btn');
+    if (topBtn) {
+        topBtn.innerHTML = '<i class="fa-solid fa-square-poll-vertical"></i> <span>মার্ক শীট দেখুন</span>';
+        topBtn.onclick = () => openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
+    }
+    const bottomBtn = document.querySelector('.exam-bottom-submit-btn') || document.getElementById('examBottomSubmitBtn');
+    if (bottomBtn) {
+        bottomBtn.innerHTML = '<i class="fa-solid fa-square-poll-vertical"></i> মার্ক শীট ও ফলাফল দেখুন';
+        bottomBtn.onclick = () => openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
+    }
 
     // সব অপশন লক করা এবং সঠিক/ভুল উত্তর হাইলাইট করা
     setTimeout(() => {
