@@ -4619,13 +4619,14 @@
     "createdAt": "2026-11-03T05:41:45.949Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9768",
     "serialNo": 24,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -4633,7 +4634,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 04",
     "question": "জাতীয় পরিচয়পত্র তৈরিতে নিচের কোন প্রযুক্তি ব্যবহৃত হয়?[ম.বো. '২৫]",
     "options": [
       "কৃত্রিম বুদ্ধিমত্তা",
@@ -4643,7 +4644,8 @@
     ],
     "correctAnswer": "বায়োমেট্রিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.372Z"
+    "createdAt": "2026-11-02T16:02:03.372Z",
+    "liveExamNo": "Live Exam 04"
   },
   {
     "liveExamNo": "",
