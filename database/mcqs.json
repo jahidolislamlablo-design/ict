@@ -4774,20 +4774,21 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc2f",
     "serialNo": 25,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
-    "question": "৪ বিটবিশিষ্ট কোড কোনটি?",
+    "modelTestNo": "Model Test 03",
+    "question": "4 বিটবিশিষ্ট কোড কোনটি?",
     "image": "",
     "options": [
       "Octal code",
@@ -4798,7 +4799,8 @@
     "correctAnswer": "BCD code",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 3"
   },
   {
     "liveExamNo": "",
