@@ -545,13 +545,14 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e04c",
     "serialNo": 3,
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
@@ -559,7 +560,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 10",
     "question": "ইন্টারনেট সংযোগের ক্ষেত্রে সবচেয়ে গুরুত্বপূর্ণ হলো-\t[চ. বো. '২৫]",
     "image": "",
     "options": [
@@ -570,7 +571,8 @@
     ],
     "correctAnswer": "IP Address",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.164Z"
+    "createdAt": "2026-11-04T13:27:53.164Z",
+    "liveExamNo": "Live Exam 10"
   },
   {
     "_id": "6ae9741b8dfcb51410ac7271",
