@@ -1688,45 +1688,66 @@ const ApiService = {
 
     // ৫. অধ্যায়ভিত্তিক MCQ
     async getChapterMCQ(chapterId) {
+        let result = [];
         try {
             const endpoint = `/api/mcqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterId)}`;
             const res = await fetchFromBackend(endpoint);
             if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
-                return res.data.map(mapBackendMcqToFrontend);
+                result = res.data.map(mapBackendMcqToFrontend);
             }
         } catch (e) {}
 
-        const allMcqs = await fetchStaticJson('mcqs.json');
-        if (allMcqs.length > 0) {
-            const filtered = allMcqs.filter(item => {
-                if (!hasCategory(item, 'Chapter Practice')) return false;
-                return matchesChapter(item.chapter, chapterId);
-            });
-            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
+        if (result.length === 0) {
+            const allMcqs = await fetchStaticJson('mcqs.json');
+            if (allMcqs.length > 0) {
+                const filtered = allMcqs.filter(item => {
+                    if (!hasCategory(item, 'Chapter Practice')) return false;
+                    return matchesChapter(item.chapter, chapterId);
+                });
+                if (filtered.length > 0) result = filtered.map(mapBackendMcqToFrontend);
+            }
         }
 
-        return MOCK_DATA.questions.filter(q => q.chapter_id == chapterId);
+        if (result.length === 0) {
+            result = MOCK_DATA.questions.filter(q => q.chapter_id == chapterId);
+        }
+
+        return result.sort((a, b) => {
+            const sa = (a.serialNo !== undefined && a.serialNo !== null && Number(a.serialNo) > 0) ? Number(a.serialNo) : 999999;
+            const sb = (b.serialNo !== undefined && b.serialNo !== null && Number(b.serialNo) > 0) ? Number(b.serialNo) : 999999;
+            if (sa !== sb) return sa - sb;
+            return (new Date(a.createdAt || 0)) - (new Date(b.createdAt || 0));
+        });
     },
 
     // ৬. অধ্যায়ভিত্তিক CQ
     async getChapterCQ(chapterId) {
+        let result = [];
         try {
             const endpoint = `/api/cqs?categoryType=Chapter Practice&chapter=${encodeURIComponent(chapterId)}`;
             const res = await fetchFromBackend(endpoint);
             if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
-                return res.data.map(mapBackendCqToFrontend);
+                result = res.data.map(mapBackendCqToFrontend);
             }
         } catch (e) {}
 
-        const allCqs = await fetchStaticJson('cqs.json');
-        if (allCqs.length > 0) {
-            const filtered = allCqs.filter(item => {
-                if (!hasCategory(item, 'Chapter Practice')) return false;
-                return matchesChapter(item.chapter, chapterId);
-            });
-            return filtered.map(mapBackendCqToFrontend);
+        if (result.length === 0) {
+            const allCqs = await fetchStaticJson('cqs.json');
+            if (allCqs.length > 0) {
+                const filtered = allCqs.filter(item => {
+                    if (!hasCategory(item, 'Chapter Practice')) return false;
+                    return matchesChapter(item.chapter, chapterId);
+                });
+                result = filtered.map(mapBackendCqToFrontend);
+            }
         }
-        return [];
+
+        return result.sort((a, b) => {
+            const sa = (a.serialNo !== undefined && a.serialNo !== null && Number(a.serialNo) > 0) ? Number(a.serialNo) : 999999;
+            const sb = (b.serialNo !== undefined && b.serialNo !== null && Number(b.serialNo) > 0) ? Number(b.serialNo) : 999999;
+            if (sa !== sb) return sa - sb;
+            return (new Date(b.createdAt || 0)) - (new Date(a.createdAt || 0));
+        });
     },
 
     // ৭. টেস্ট পেপার / কলেজ ভিত্তিক CQ

@@ -2046,7 +2046,11 @@ input:checked + .slider:before {
 
 /* Model Test Banner & Timer */
 .modern-model-toolbar {
-    background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);
+    position: sticky;
+    top: 75px;
+    z-index: 950;
+    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(67, 56, 202, 0.98) 0%, rgba(99, 102, 241, 0.98) 100%);
     color: white;
     border-radius: 18px;
     padding: 16px 20px;
@@ -2056,7 +2060,7 @@ input:checked + .slider:before {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
 }
 
 .modern-model-stats {
@@ -2630,6 +2634,9 @@ input:checked + .slider:before {
 /* Mobile Responsive Enhancements for Model Test */
 @media (max-width: 768px) {
     .modern-model-toolbar {
+        position: sticky !important;
+        top: 60px !important;
+        z-index: 950 !important;
         padding: 12px 14px !important;
         border-radius: 14px !important;
         margin-bottom: 16px !important;

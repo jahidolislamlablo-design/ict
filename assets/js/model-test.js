@@ -16,13 +16,21 @@ function hasUserSubmittedLiveExam(examKey) {
     return !!submitted[String(examKey).trim()];
 }
 
-function recordLiveExamSubmission(examKey, score, total) {
+function recordLiveExamSubmission(examKey, score, total, details = {}) {
     if (!examKey) return;
     const submitted = getSubmittedLiveExams();
+    const wrongCount = details.wrongCount !== undefined ? details.wrongCount : (total - score);
+    const skippedCount = details.skippedCount !== undefined ? details.skippedCount : 0;
+    const scorePercentage = details.scorePercentage !== undefined ? details.scorePercentage : (total > 0 ? Math.round((score / total) * 100) : 0);
     submitted[String(examKey).trim()] = {
         submittedAt: new Date().toISOString(),
         score,
-        total
+        total,
+        correctCount: score,
+        wrongCount,
+        skippedCount,
+        scorePercentage,
+        examTitle: details.examTitle || currentExamTitle || ('Model Test ' + examKey)
     };
     try {
         localStorage.setItem(SUBMITTED_LIVE_EXAMS_KEY, JSON.stringify(submitted));
@@ -229,6 +237,26 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
 
     const btnClass = hasSubmittedLive ? 'mt-start-btn submitted-live-btn' : 'mt-start-btn';
 
+    let actionBtnHtml = '';
+    if (hasSubmittedLive) {
+        actionBtnHtml = `
+            <div class="mt-btn-split-group">
+                <button type="button" class="mt-start-btn mt-split-left submitted-live-btn" onclick="startExam('${titleSafe}', ${duration}, '${examKey}')" title="পরীক্ষা সম্পন্ন হয়েছে">
+                    <i class="fa-solid fa-circle-check"></i> <span>পরীক্ষা সম্পন্ন হয়েছে</span>
+                </button>
+                <button type="button" class="mt-start-btn mt-split-right mt-marksheet-btn" onclick="openLiveExamMarksheet('${examKey}', '${titleSafe}')" title="মার্ক শীট ও বিস্তারিত রেজাল্ট দেখুন">
+                    <i class="fa-solid fa-square-poll-vertical"></i> <span>মার্ক শীট</span>
+                </button>
+            </div>
+        `;
+    } else {
+        actionBtnHtml = `
+            <button class="${btnClass}" onclick="startExam('${titleSafe}', ${duration}, '${examKey}')">
+                <i class="fa-solid ${hasSubmittedLive ? 'fa-circle-check' : 'fa-play'}"></i> <span>${escapeHtml(btnText)}</span>
+            </button>
+        `;
+    }
+
     return `
         <div class="test-card model-test-card ${isLive ? 'is-live-active' : ''}" 
              data-category="${item.category || 'full'}" 
@@ -267,9 +295,7 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
             </div>
 
             <!-- Action Button -->
-            <button class="${btnClass}" onclick="startExam('${titleSafe}', ${duration}, '${examKey}')">
-                <i class="fa-solid ${hasSubmittedLive ? 'fa-circle-check' : 'fa-play'}"></i> <span>${escapeHtml(btnText)}</span>
-            </button>
+            ${actionBtnHtml}
         </div>
     `;
 }
@@ -719,7 +745,12 @@ function submitExam() {
 
     // যদি চলমান লাইভ পরীক্ষা হয়, ইউজারের সাবমিশন রেকর্ড করা
     if (currentExamIsLive && currentExamKey) {
-        recordLiveExamSubmission(currentExamKey, correctCount, totalQuestions);
+        recordLiveExamSubmission(currentExamKey, correctCount, totalQuestions, {
+            wrongCount,
+            skippedCount,
+            scorePercentage,
+            examTitle: currentExamTitle
+        });
         if (allModelTestsData && allModelTestsData.length > 0) {
             renderModelTestCards(allModelTestsData);
         }
@@ -865,3 +896,120 @@ function toggleModelTestExp(qIdx) {
     }
 }
 window.toggleModelTestExp = toggleModelTestExp;
+
+
+/**
+ * লাইভ পরীক্ষার মার্কশীট প্রদর্শন পপআপ মডাল
+ */
+function openLiveExamMarksheet(examKey, testTitle) {
+    const submitted = getSubmittedLiveExams();
+    const entry = submitted[String(examKey).trim()] || {};
+    
+    let studentProfile = {};
+    try {
+        studentProfile = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
+    } catch(e) {}
+    
+    const studentName = studentProfile.name || 'শিক্ষার্থী';
+    const studentCollege = studentProfile.college || '';
+    const title = entry.examTitle || testTitle || ('Model Test ' + examKey);
+    const score = entry.correctCount !== undefined ? entry.correctCount : (entry.score || 0);
+    const total = entry.total || 25;
+    const wrong = entry.wrongCount !== undefined ? entry.wrongCount : (total - score);
+    const skipped = entry.skippedCount !== undefined ? entry.skippedCount : 0;
+    const perc = entry.scorePercentage !== undefined ? entry.scorePercentage : (total > 0 ? Math.round((score / total) * 100) : 0);
+    
+    let dateStr = 'আজ';
+    if (entry.submittedAt) {
+        try {
+            const d = new Date(entry.submittedAt);
+            dateStr = d.toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' }) + ', ' + d.toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' });
+        } catch(e) {}
+    }
+
+    let gradeText = 'কৃতকার্য';
+    if (perc >= 80) { gradeText = 'অসাধারণ! (A+)'; }
+    else if (perc >= 70) { gradeText = 'খুব ভালো! (A)'; }
+    else if (perc >= 60) { gradeText = 'ভালো (A-)'; }
+    else if (perc >= 50) { gradeText = 'সন্তোষজনক (B)'; }
+    else { gradeText = 'পুনরায় চেষ্টা করুন'; }
+
+    let modal = document.getElementById('liveMarksheetModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'liveMarksheetModal';
+        modal.className = 'modal-overlay';
+        modal.onclick = (e) => { if (e.target === modal) closeLiveExamMarksheet(); };
+        document.body.appendChild(modal);
+    }
+
+    modal.innerHTML = `
+        <div class="modal-window marksheet-modal-window" style="max-width: 520px; text-align: center; padding: 24px 22px; border-radius: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 12px; margin-bottom: 16px;">
+                <div style="text-align: left;">
+                    <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: #6366F1; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap"></i> ICT Easy Learning Mark Sheet</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #1E293B; margin: 2px 0 0 0;">${escapeHtml(title)}</h3>
+                </div>
+                <button type="button" onclick="closeLiveExamMarksheet()" style="background: #F1F5F9; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; color: #64748B; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s;">&times;</button>
+            </div>
+
+            <!-- স্টুডেন্ট প্রোফাইল কার্ড -->
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+                <div>
+                    <strong style="color: #0F172A; font-size: 0.95rem;">👤 ${escapeHtml(studentName)}</strong>
+                    ${studentCollege ? `<div style="font-size: 0.78rem; color: #64748B;">🏫 ${escapeHtml(studentCollege)}</div>` : ''}
+                </div>
+                <div style="text-align: right; font-size: 0.78rem; color: #64748B;">
+                    <div><i class="fa-regular fa-calendar-check"></i> ${dateStr}</div>
+                    <span style="display: inline-block; margin-top: 3px; font-weight: 700; color: #059669; background: #D1FAE5; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem;">${gradeText}</span>
+                </div>
+            </div>
+
+            <!-- স্কোর সামারি বক্স -->
+            <div class="result-score-summary-row" style="margin-bottom: 18px;">
+                <div class="result-score-box result-score-marks-box" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); border: 1.5px solid #C7D2FE;">
+                    <span class="result-score-box-label" style="color: #4338CA;"><i class="fa-solid fa-award"></i> প্রাপ্ত নম্বর</span>
+                    <strong class="result-score-box-val" style="color: #3730A3;">${toBanglaNum(score)} / ${toBanglaNum(total)}</strong>
+                </div>
+                <div class="result-score-box result-score-perc-box" style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); border: 1.5px solid #A7F3D0;">
+                    <span class="result-score-box-label" style="color: #065F46;"><i class="fa-solid fa-percent"></i> শতকরা হার</span>
+                    <strong class="result-score-box-val" style="color: #047857;">${toBanglaNum(perc)}%</strong>
+                </div>
+            </div>
+
+            <!-- সঠিক / ভুল / অনুত্তরিত পরিসংখ্যান -->
+            <div class="score-stats-grid" style="margin-bottom: 20px;">
+                <div class="score-stat-box" style="border-top: 3px solid var(--success); background: #F0FDF4;">
+                    <strong style="color: var(--success); font-size: 1.35rem;">${toBanglaNum(score)}টি</strong>
+                    <span style="font-size: 0.8rem; color: #475569;">সঠিক উত্তর</span>
+                </div>
+                <div class="score-stat-box" style="border-top: 3px solid var(--danger); background: #FEF2F2;">
+                    <strong style="color: var(--danger); font-size: 1.35rem;">${toBanglaNum(wrong)}টি</strong>
+                    <span style="font-size: 0.8rem; color: #475569;">ভুল উত্তর</span>
+                </div>
+                <div class="score-stat-box" style="border-top: 3px solid var(--warning); background: #FFFBEB;">
+                    <strong style="color: var(--warning-dark); font-size: 1.35rem;">${toBanglaNum(skipped)}টি</strong>
+                    <span style="font-size: 0.8rem; color: #475569;">অনুত্তরিত</span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" class="btn btn-primary" onclick="closeLiveExamMarksheet(); startExam('${escapeHtml(title).replace(/'/g, "\\'")}', 25, '${escapeHtml(examKey)}');" style="flex: 1; min-width: 150px; padding: 11px 18px; border-radius: 9999px;">
+                    <i class="fa-solid fa-list-check"></i> সমাধান ও প্রশ্নপত্র
+                </button>
+                <button type="button" class="btn btn-outline" onclick="closeLiveExamMarksheet()" style="flex: 1; min-width: 120px; padding: 11px 18px; border-radius: 9999px;">
+                    <i class="fa-solid fa-xmark"></i> বন্ধ করুন
+                </button>
+            </div>
+        </div>
+    `;
+
+    modal.classList.add('open');
+}
+
+function closeLiveExamMarksheet() {
+    const modal = document.getElementById('liveMarksheetModal');
+    if (modal) modal.classList.remove('open');
+}
+window.openLiveExamMarksheet = openLiveExamMarksheet;
+window.closeLiveExamMarksheet = closeLiveExamMarksheet;

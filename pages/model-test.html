@@ -1579,16 +1579,18 @@
             <!-- লাইভ এক্সাম ভিউ (পরীক্ষা চলাকালীন দৃশ্যমান) -->
             <section id="live-exam-view">
                 <div class="exam-topbar">
-                    <div>
-                        <h2 id="exam-active-title" style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">মডেল টেস্ট</h2>
+                    <div class="exam-topbar-info">
+                        <h2 id="exam-active-title" style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin: 0 0 2px 0;">মডেল টেস্ট</h2>
                         <span id="exam-q-counter" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;"><i class="fa-solid fa-circle-check"></i> উত্তর সম্পন্ন: ০ / ৫</span>
                     </div>
-                    <div class="exam-timer normal" id="examTimer">
-                        <i class="fa-solid fa-stopwatch"></i> ২৫:০০
+                    <div class="exam-topbar-actions">
+                        <button class="btn btn-primary btn-sm exam-top-submit-btn" onclick="confirmSubmitExam()">
+                            <i class="fa-solid fa-paper-plane"></i> সাবমিট করুন
+                        </button>
+                        <div class="exam-timer normal" id="examTimer">
+                            <i class="fa-solid fa-stopwatch"></i> ২৫:০০
+                        </div>
                     </div>
-                    <button class="btn btn-primary btn-sm" onclick="confirmSubmitExam()">
-                        <i class="fa-solid fa-paper-plane"></i> সাবমিট করুন
-                    </button>
                 </div>
 
                 <div class="exam-layout">

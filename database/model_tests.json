@@ -11,9 +11,9 @@
     "duration": 25,
     "totalMarks": 25,
     "participants": 641,
-    "startTime": "",
-    "endTime": "",
-    "isLive": false,
+    "startTime": "2026-11-09T06:31:00.000Z",
+    "endTime": "2026-11-10T06:31:00.000Z",
+    "isLive": true,
     "buttonText": "Start Previous Live Exam",
     "createdAt": "2026-11-08T07:44:20.030Z",
     "__v": 0
