@@ -6324,13 +6324,14 @@
     "createdAt": "2026-11-03T05:41:46.019Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9771",
     "serialNo": 33,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -6338,7 +6339,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 06",
     "question": "নিচের উদ্দীপকের আলোকে প্রশ্নের উত্তর দাও:\nমি.ফরিদ সাহেব একজন কৃষি বিজ্ঞানী।তিনি তার গবেষণায় উন্নত জাতের ধান উদ্ভাবন করেছেন যা প্রাকৃতিক বিপর্যয়ে নষ্ট হয় না। \nমি. ফরিদ সাহেবের ব্যবহৃত প্রযুক্তিটির নাম কী? [দি. বো. '২৫]",
     "options": [
       "বায়োমেট্রিক্স",
@@ -6348,7 +6349,8 @@
     ],
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.405Z"
+    "createdAt": "2026-11-02T16:02:03.405Z",
+    "liveExamNo": "Live Exam 06"
   },
   {
     "liveExamNo": "",
