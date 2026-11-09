@@ -2044,31 +2044,72 @@ input:checked + .slider:before {
     display: block;
 }
 
-/* Model Test Banner & Timer */
-.modern-model-toolbar {
+/* Model Test Sticky Top Toolbar & Banner */
+.interactive-model-top-toolbar {
     position: sticky;
     top: 75px;
-    z-index: 950;
-    backdrop-filter: blur(8px);
+    z-index: 980;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.modern-model-toolbar {
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     background: linear-gradient(135deg, rgba(67, 56, 202, 0.98) 0%, rgba(99, 102, 241, 0.98) 100%);
     color: white;
-    border-radius: 18px;
-    padding: 16px 20px;
-    margin-bottom: 22px;
+    border-radius: 16px;
+    padding: 10px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 12px;
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+    box-shadow: 0 4px 18px rgba(79, 70, 229, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-sizing: border-box;
 }
 
 .modern-model-stats {
     display: flex;
     align-items: center;
-    gap: 16px;
-    font-size: 0.92rem;
+    gap: 14px;
+    font-size: 0.90rem;
     font-weight: 600;
+}
+
+.modern-model-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.btn-model-top-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFFFFF;
+    color: #4338CA;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-model-top-submit:hover {
+    background: #F8FAFC;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-model-top-submit:active {
+    transform: translateY(0);
 }
 
 .modern-model-timer {
@@ -2080,6 +2121,8 @@ input:checked + .slider:before {
     border-radius: 9999px;
     font-size: 0.95rem;
     font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .modern-model-result-card {
@@ -2632,29 +2675,58 @@ input:checked + .slider:before {
 
 
 /* Mobile Responsive Enhancements for Model Test */
+@media (max-width: 1024px) {
+    .interactive-model-top-toolbar {
+        top: 104px !important;
+    }
+}
+
 @media (max-width: 768px) {
+    .interactive-model-top-toolbar {
+        top: 104px !important;
+        margin-bottom: 10px !important;
+    }
     .modern-model-toolbar {
-        position: sticky !important;
-        top: 60px !important;
-        z-index: 950 !important;
-        padding: 12px 14px !important;
-        border-radius: 14px !important;
-        margin-bottom: 16px !important;
-        gap: 8px !important;
+        position: relative !important;
+        padding: 8px 12px !important;
+        border-radius: 12px !important;
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        margin-bottom: 0 !important;
     }
     .modern-model-stats {
-        gap: 8px !important;
-        font-size: 0.82rem !important;
-        flex-wrap: wrap !important;
+        gap: 6px !important;
+        font-size: 0.78rem !important;
+        white-space: nowrap !important;
+    }
+    .modern-model-actions {
+        gap: 6px !important;
+    }
+    .btn-model-top-submit {
+        padding: 5px 10px !important;
+        font-size: 0.80rem !important;
+        gap: 4px !important;
     }
     .modern-model-timer {
-        padding: 4px 10px !important;
-        font-size: 0.85rem !important;
+        padding: 5px 10px !important;
+        font-size: 0.82rem !important;
+        gap: 4px !important;
         flex-shrink: 0 !important;
     }
+}
+
+@media (max-width: 480px) {
+    .modern-model-stats span:first-child {
+        display: none !important;
+    }
+    .modern-model-stats {
+        font-size: 0.78rem !important;
+    }
+}
     #chapter-interactive-model-container,
     #board-interactive-model-container,
     #college-interactive-model-container,

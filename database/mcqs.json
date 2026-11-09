@@ -121,9 +121,9 @@
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Model Test",
       "Chapter Practice",
-      "Live Exam"
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
@@ -131,7 +131,7 @@
     "boardName": "Jashore Board",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 06",
+    "modelTestNo": "Model Test 03",
     "question": "(100)₁₀ গণনা করার জন্য কতটি বাইনারি ডিজিট প্রয়োজন?",
     "image": "",
     "options": [
@@ -144,7 +144,7 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 51"
+    "liveExamNo": "Live Exam 3"
   },
   {
     "_id": "6aeb32daf84660475440e04a",
