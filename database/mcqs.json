@@ -40707,21 +40707,22 @@
     "createdAt": "2026-11-03T05:41:47.670Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae982f",
     "serialNo": 223,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "হলিক্রস কলেজ, ঢাকা",
-    "boardName": "ঢাকা বোর্ড",
+    "collegeName": "",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 01",
     "question": "ইমেল ঠিকানায় কয়টি অংশ থাকে?\t[হলিক্রস কলেজ, ঢাকা]",
     "options": [
       "২",
@@ -40731,7 +40732,8 @@
     ],
     "correctAnswer": "২",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.005Z"
+    "createdAt": "2026-11-02T16:02:04.005Z",
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
