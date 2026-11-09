@@ -1159,13 +1159,14 @@
     "createdAt": "2026-11-04T13:27:53.198Z"
   },
   {
-    "liveExamNo": "",
     "_id": "6ae9741b8dfcb51410ac7274",
     "serialNo": 6,
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং",
@@ -1173,7 +1174,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 05",
     "question": "কম্পিউটার ও মাল্টিমিডিয়া প্রজেক্টরের মধ্যে ডেটা ট্রান্সমিশন মোড কোনটি? [সকল. বো. '২৬]",
     "image": "",
     "options": [
@@ -1184,7 +1185,8 @@
     ],
     "correctAnswer": "সিমপ্লেক্স",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:45.813Z"
+    "createdAt": "2026-11-03T05:41:45.813Z",
+    "liveExamNo": "Live Exam 05"
   },
   {
     "image": "",
