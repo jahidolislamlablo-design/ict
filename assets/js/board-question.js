@@ -256,6 +256,8 @@ function goBackStep() {
         if (window.currentExamState && window.currentExamState.timerId) {
             clearInterval(window.currentExamState.timerId);
         }
+        const topToolbar = document.getElementById('board-interactive-model-toolbar');
+        if (topToolbar) topToolbar.style.display = 'none';
         currentStep = 'boards';
     } else if (currentStep === 'boards') {
         currentStep = 'years';

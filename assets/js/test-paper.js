@@ -256,6 +256,8 @@ function goBackTestPaper() {
         if (window.currentExamState && window.currentExamState.timerId) {
             clearInterval(window.currentExamState.timerId);
         }
+        const topToolbar = document.getElementById('college-interactive-model-toolbar');
+        if (topToolbar) topToolbar.style.display = 'none';
         testStep = 'colleges';
     } else if (testStep === 'colleges') {
         testStep = 'years';
