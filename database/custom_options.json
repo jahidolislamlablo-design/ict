@@ -6,7 +6,8 @@
     "Chapter 3 (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট",
     "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
-    "Chapter 6: ডাটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)"
+    "Chapter 6: ডাটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "অধ্যায়"
   ],
   "boards": [
     "কারিগরি শিক্ষা বোর্ড (Technical Board)",
@@ -19,7 +20,8 @@
     "Sylhet Board",
     "Dinajpur Board",
     "Mymensingh Board",
-    "Madrasah Board"
+    "Madrasah Board",
+    "ডাকাতিয়া বোর্ড"
   ],
   "years": [
     "2026",
@@ -32,7 +34,8 @@
     "2019",
     "2018",
     "2017",
-    "2016"
+    "2016",
+    "২০২৮"
   ],
   "colleges": [
     "Notre Dame College, Dhaka",
@@ -41,7 +44,8 @@
     "Rajuk Uttara Model College",
     "Dhaka College, Dhaka",
     "Chattogram College",
-    "Rajshahi College"
+    "Rajshahi College",
+    "ক্কক কলেজ"
   ],
   "modelTests": [
     "Model Test 01",
@@ -69,6 +73,7 @@
     "Model Test 23",
     "Model Test 24",
     "Model Test 25",
-    "model test 51"
+    "model test 51",
+    "মডেল টস্ট ২২২২"
   ]
 }
