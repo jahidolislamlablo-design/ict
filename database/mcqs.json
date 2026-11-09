@@ -174,7 +174,6 @@
     "liveExamNo": "Live Exam 51"
   },
   {
-    "liveExamNo": "",
     "_id": "6ae9741b8dfcb51410ac726f",
     "serialNo": 1,
     "categoryTypes": [
@@ -201,7 +200,8 @@
     ],
     "correctAnswer": "স্টার",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:45.783Z"
+    "createdAt": "2026-11-03T05:41:45.783Z",
+    "liveExamNo": "Live Exam 04"
   },
   {
     "image": "",
