@@ -46424,13 +46424,14 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9870",
     "serialNo": 288,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -46438,7 +46439,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 02",
     "question": "GPS এর মাধ্যমে যেকোনো চলমান যানবাহনের -\n[ক্যান্টনমেন্ট কলেজ, যশোর]\ni. নির্ভুল অবস্থান নির্ণয় করা যায়\nii. গতিবেগ নির্ণয় করা যায়\niii. গতিপথ নির্ণয় করা যায়\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -46449,7 +46450,8 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.165Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 02"
   },
   {
     "liveExamNo": "",
