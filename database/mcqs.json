@@ -6105,19 +6105,20 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc36",
     "serialNo": 32,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "একটি ডিকোডারের আউটপুট ৬৪ পেতে হলে, ইনপুট কত দিতে হবে?",
     "image": "",
     "options": [
@@ -6129,7 +6130,8 @@
     "correctAnswer": "6",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 3"
   },
   {
     "liveExamNo": "",
