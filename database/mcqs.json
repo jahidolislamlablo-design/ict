@@ -1792,15 +1792,15 @@
     "createdAt": "2026-11-03T05:41:45.838Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9759",
     "serialNo": 9,
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Model Test",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -1818,7 +1818,8 @@
     ],
     "correctAnswer": "স্পীচ প্রসেসিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.310Z"
+    "createdAt": "2026-11-02T16:02:03.310Z",
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
