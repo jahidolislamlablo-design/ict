@@ -6513,15 +6513,15 @@
     "createdAt": "2026-11-03T05:41:46.033Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9772",
     "serialNo": 34,
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Model Test",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -6529,7 +6529,7 @@
     "boardName": "Rajshahi Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 06",
     "question": "উদ্দীপকের আলোকে মি. ফরিদ সাহেবের লক্ষ্য হলো-\ni. \tপ্রতিকূল পরিবেশে উৎপাদন নিশ্চিত করা\nii. \tউৎপাদনের পরিমাণ বাড়ানো\niii. \tরোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করা\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -6540,7 +6540,8 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.411Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 06"
   },
   {
     "liveExamNo": "",
