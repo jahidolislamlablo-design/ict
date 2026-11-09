@@ -762,7 +762,6 @@
     "createdAt": "2026-11-03T05:41:45.802Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9754",
     "serialNo": 4,
@@ -770,7 +769,8 @@
       "Board Question",
       "College Test Paper",
       "Chapter Practice",
-      "Live Exam"
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -778,7 +778,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 01",
     "question": "হার্ডওয়্যার ও সফটওয়্যার এর  সমন্বয়ে চিত্রায়ণকে কী বলে?",
     "options": [
       "রোবটিক্স",
@@ -788,7 +788,8 @@
     ],
     "correctAnswer": "ভার্চুয়াল রিয়েলিটি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.296Z"
+    "createdAt": "2026-11-02T16:02:03.296Z",
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
