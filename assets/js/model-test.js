@@ -238,9 +238,10 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
     const dateStr = item.date || '01-11-26';
     const chaptersStr = item.chapters || 'প্রথম অধ্যায়';
     const participantsCount = item.participants || 547;
-    const totalQ = item.totalQuestions || 25;
+    const cardId = prefix ? (prefix + examKey) : ('card-mt-' + examKey);
+    const totalQuestions = item.totalQuestions || 25;
     const duration = item.duration || 25;
-    const totalM = item.totalMarks || 25;
+    const totalMarks = item.totalMarks || 25;
     const titleSafe = (item.title || ('Model Test ' + examKey)).replace(/'/g, "\\'");
     const hasSubmittedLive = hasUserSubmittedLiveExam(examKey);
 
@@ -757,12 +758,15 @@ function submitExam() {
     document.getElementById('modal-skipped-count').innerText = `${toBanglaNum(skippedCount)}টি`;
 
     // যদি চলমান লাইভ পরীক্ষা হয়, ইউজারের সাবমিশন রেকর্ড করা
-    if (currentExamIsLive && currentExamKey) {
+    // লাইভ পরীক্ষা বা প্রিভিয়াস লাইভ পরীক্ষা - যেটাই হোক ফলাফল সংরক্ষণ করা
+    if (currentExamKey) {
         recordLiveExamSubmission(currentExamKey, correctCount, totalQuestions, {
             wrongCount,
             skippedCount,
             scorePercentage,
-            examTitle: currentExamTitle
+            examTitle: currentExamTitle,
+            userAnswers: { ...userAnswers },
+            questions: activeExamQuestions
         });
         if (allModelTestsData && allModelTestsData.length > 0) {
             renderModelTestCards(allModelTestsData);
@@ -795,7 +799,7 @@ function submitExam() {
         }
     }
 
-    document.getElementById('examResultModal').classList.add('open');
+    openLiveExamMarksheet(currentExamKey, currentExamTitle, currentExamDuration);
 }
 
 /**
