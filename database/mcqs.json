@@ -1709,19 +1709,20 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc1f",
     "serialNo": 9,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "একটি বইয়ের মূল্য AA₁₆ হলে তার সমকক্ষ\ni. 170₁₀ii. 252₈\niii. 10101010₂\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -1733,7 +1734,8 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 3"
   },
   {
     "_id": "6aeb32daf84660475440e052",
