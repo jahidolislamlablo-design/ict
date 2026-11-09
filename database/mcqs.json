@@ -17401,7 +17401,7 @@
     "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 06",
     "question": "কোনটি ভার্চুয়াল রিয়েলিটিতে ব্যবহৃত হয়? \t[দি.বো.'১৭ য.বো.'১৬]",
     "options": [
       "ত্রিমাত্রিক সিমুলেশন",
@@ -17412,7 +17412,7 @@
     "correctAnswer": "ত্রিমাত্রিক সিমুলেশন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.600Z",
-    "liveExamNo": "Live Exam 01"
+    "liveExamNo": "Live Exam 06"
   },
   {
     "liveExamNo": "",
