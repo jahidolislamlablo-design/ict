@@ -33786,13 +33786,14 @@
     "createdAt": "2026-11-03T05:41:46.940Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9802",
     "serialNo": 178,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -33800,7 +33801,7 @@
     "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 03",
     "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:\nমি. 'ক' ফস্নাইট সিমুলেটররে সাহায্যে বিমান চালনার প্রশিক্ষণ নেন। প্রশিক্ষণ শেষে যাত্রীবাহী বিমান চালনার সময় যান্ত্রিক ত্রুটির কারণে তার বিমানটি বিধ্বস্ত হয় এবং সকল যাত্রীরা দেহ সম্পূর্ণরূপে আগুনে পুড়ে যায়। \t\t [রা.বো. '১৯]\nদুর্ঘটনায় নিহত যাত্রীদেi শনাক্তকরণের জন্য ব্যবহৃত হতে পারে-",
     "options": [
       "Finger print",
@@ -33811,7 +33812,8 @@
     "correctAnswer": "DNA Analysis",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.874Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 03"
   },
   {
     "liveExamNo": "",
