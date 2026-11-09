@@ -279,7 +279,7 @@ function updateTestPaperStep() {
     if (testStep === 'years') {
         if (stepYears) stepYears.style.display = 'block';
         if (stepColleges) stepColleges.style.display = 'none';
-        if (stepQuestions) stepQuestions.style.display = 'none';
+        if (stepQuestions) { stepQuestions.style.display = 'none'; document.querySelector('.container')?.classList.remove('fullscreen-mode'); }
         if (breadcrumbStep) breadcrumbStep.innerText = 'সাল নির্বাচন করুন';
         if (backBtnText) backBtnText.innerText = 'হোমে ফিরে যান';
     } else if (testStep === 'colleges') {
@@ -291,7 +291,7 @@ function updateTestPaperStep() {
     } else if (testStep === 'questions') {
         if (stepYears) stepYears.style.display = 'none';
         if (stepColleges) stepColleges.style.display = 'none';
-        if (stepQuestions) stepQuestions.style.display = 'block';
+        if (stepQuestions) { stepQuestions.style.display = 'block'; document.querySelector('.container')?.classList.add('fullscreen-mode'); }
         if (breadcrumbStep) breadcrumbStep.innerText = `${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedTestYear) : selectedTestYear} > ${selectedCollege}`;
         if (backBtnText) backBtnText.innerText = 'কলেজ পরিবর্তনে যান';
     }

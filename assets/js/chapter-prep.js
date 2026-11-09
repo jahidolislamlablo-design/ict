@@ -128,7 +128,7 @@ function openChapterInteractiveView(chapterTitle, chapterId = null, initialTab =
     const backBtnText = document.getElementById('back-btn-text');
 
     if (chapterListView) chapterListView.style.display = 'none';
-    if (quizView) quizView.style.display = 'block';
+    if (quizView) { quizView.style.display = 'block'; document.querySelector('.container')?.classList.add('fullscreen-mode'); }
 
     if (titleEl) {
         if (window.innerWidth <= 768) {
@@ -287,7 +287,7 @@ function goBackChapterPrep() {
         }
         const topToolbar = document.getElementById('chapter-interactive-model-toolbar');
         if (topToolbar) topToolbar.style.display = 'none';
-        quizView.style.display = 'none';
+        quizView.style.display = 'none'; document.querySelector('.container')?.classList.remove('fullscreen-mode');
         if (chapterListView) chapterListView.style.display = 'block';
         if (currentBreadcrumb) currentBreadcrumb.innerText = 'অধ্যায় নির্বাচন';
         if (backBtnText) backBtnText.innerText = 'হোমে ফিরে যান';

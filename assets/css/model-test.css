@@ -146,10 +146,12 @@
 }
 
 .exam-layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 24px;
-    align-items: start;
+    display: block;
+    width: 100% !important;
+}
+
+.exam-nav-sidebar {
+    display: none !important;
 }
 
 .exam-questions-scroll-area {
@@ -819,4 +821,20 @@
         backdrop-filter: blur(10px) !important;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
     }
+}
+
+/* Fullscreen Exam Area */
+#live-exam-view {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.exam-questions-scroll-area {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.question-card {
+    width: 100% !important;
+    max-width: 100% !important;
 }

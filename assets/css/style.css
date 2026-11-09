@@ -1610,19 +1610,65 @@ input:checked + .slider:before {
     }
 }
 
-/* Tablet & Desktop view (>= 769px) */
+/* Tablet & Desktop view (>= 769px) - Bottom Navigation Bar (প্র্যাকটিস, মডেল টেস্ট, সাজেশন, স্টুডেন্ট র্যাংকিং, প্রোফাইল) */
 @media (min-width: 769px) {
-    /* Hide mobile bottom navigation bar on tablet/desktop */
     .bottom-nav {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
+        padding: 0 24px !important;
+        height: 68px !important;
+        background: rgba(255, 255, 255, 0.96) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border-top: 1px solid var(--border-color) !important;
+        box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08) !important;
+        z-index: 1000 !important;
+    }
+    
+    .bottom-nav .nav-item {
+        flex: 0 1 auto !important;
+        min-width: 110px !important;
+        max-width: 160px !important;
+        padding: 8px 16px !important;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        gap: 4px !important;
+        border-radius: 12px !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    .bottom-nav .nav-item i {
+        font-size: 1.25rem !important;
+    }
+    
+    .bottom-nav .nav-item:hover {
+        background-color: var(--primary-light) !important;
+        color: var(--primary) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .bottom-nav .nav-item.active {
+        color: var(--primary) !important;
+        background-color: var(--primary-light) !important;
+        font-weight: 700 !important;
+    }
+    
+    .bottom-nav .nav-label-multiline br {
         display: none !important;
     }
     
+    .bottom-nav .nav-label-multiline {
+        white-space: nowrap !important;
+    }
+    
     .container {
-        padding-bottom: 40px;
+        padding-bottom: 95px !important;
     }
     
     .site-footer {
-        padding-bottom: 30px;
+        padding-bottom: 95px !important;
     }
 }
 
@@ -1633,7 +1679,8 @@ input:checked + .slider:before {
    ========================================================================== */
 
 .interactive-view-container {
-    max-width: 760px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding-bottom: 40px;
 }
@@ -2175,12 +2222,27 @@ input:checked + .slider:before {
    ========================================================================== */
 @media (min-width: 769px) {
     /* ডেস্কটপে বোর্ড, টেস্ট পেপার ও অধ্যায় অনুশীলনের কন্টেইনার - সেন্টার্ড ক্যানভাস */
+    /* Desktop Fullscreen Layout for MCQ, CQ, and Model Test */
     .interactive-view-container {
-        max-width: 880px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
         margin: 0 auto !important;
         padding: 24px 28px 60px 28px !important;
-        border-radius: 28px !important;
+        border-radius: 20px !important;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+    }
+
+    .container.fullscreen-mode,
+    .container:has(.interactive-view-container),
+    .container:has(#interactiveQuizView),
+    .container:has(#step-questions),
+    .container:has(#live-exam-view) {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        box-sizing: border-box !important;
     }
 
     .modern-quiz-card,

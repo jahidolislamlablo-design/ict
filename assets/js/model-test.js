@@ -462,7 +462,7 @@ async function startExam(testTitle, durationMins = 25, examNo = '', forceRestart
     }
 
     document.getElementById('model-test-list-view').style.display = 'none';
-    document.getElementById('live-exam-view').style.display = 'block';
+    document.getElementById('live-exam-view').style.display = 'block'; document.querySelector('.container')?.classList.add('fullscreen-mode'); document.querySelector('.container')?.classList.add('fullscreen-mode');
     document.getElementById('exam-active-title').innerText = testTitle;
 
     const container = document.getElementById('questionsListContainer');
@@ -893,7 +893,7 @@ function exitExam() {
         if (resultModal) {
             resultModal.classList.remove('open');
         }
-        examView.style.display = 'none';
+        examView.style.display = 'none'; document.querySelector('.container')?.classList.remove('fullscreen-mode');
         document.getElementById('model-test-list-view').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
