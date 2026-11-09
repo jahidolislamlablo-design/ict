@@ -22498,21 +22498,22 @@
     "createdAt": "2026-11-03T05:41:46.583Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae97c6",
     "serialNo": 118,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "চট্টগ্রাম বোর্ড",
+    "boardName": "",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 01",
     "question": "কোনটি বায়োইনফরমেটিকসের উপাদান নয়? \t[চ.বো.'২৩]",
     "options": [
       "রসায়ন",
@@ -22523,7 +22524,8 @@
     "correctAnswer": "রসায়ন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.675Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
