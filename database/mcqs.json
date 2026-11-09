@@ -145,7 +145,8 @@
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
