@@ -2582,6 +2582,21 @@ function toggleModernShowAnswers(checkbox, containerSelector) {
 // ------------------------------------------
 // ৬. MODEL TEST RUNNER (25 RANDOM MCQS)
 // ------------------------------------------
+function adjustInteractiveToolbarPosition() {
+    const header = document.querySelector('.site-header');
+    const toolbars = document.querySelectorAll('.interactive-model-top-toolbar');
+    if (header && toolbars.length > 0) {
+        const hHeight = header.getBoundingClientRect().height;
+        if (hHeight > 0) {
+            toolbars.forEach(tb => {
+                tb.style.top = (Math.round(hHeight) + 4) + 'px';
+            });
+        }
+    }
+}
+window.addEventListener('resize', adjustInteractiveToolbarPosition);
+window.adjustInteractiveToolbarPosition = adjustInteractiveToolbarPosition;
+
 function startInteractiveModelTest(allQuestions, containerId, onRetakeCallback) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -2625,17 +2640,50 @@ function startInteractiveModelTest(allQuestions, containerId, onRetakeCallback) 
         cardsHtml += renderModernMCQCardHTML(q, idx, { mode: 'exam' });
     });
 
-    container.innerHTML = `
+    // 1. Locate or create top toolbar container above the segmented tabs
+    const toolbarId = containerId.replace('-container', '-toolbar');
+    let topToolbar = document.getElementById(toolbarId);
+    if (!topToolbar) {
+        const viewContainer = container.closest('.interactive-view-container') || container.closest('section');
+        if (viewContainer) {
+            topToolbar = viewContainer.querySelector('.interactive-model-top-toolbar');
+            if (!topToolbar) {
+                const segWrapper = viewContainer.querySelector('.interactive-segmented-wrapper');
+                if (segWrapper && segWrapper.parentNode) {
+                    topToolbar = document.createElement('div');
+                    topToolbar.id = toolbarId;
+                    topToolbar.className = 'interactive-model-top-toolbar';
+                    segWrapper.parentNode.insertBefore(topToolbar, segWrapper);
+                }
+            }
+        }
+    }
+
+    const toolbarHtml = `
         <div class="modern-model-toolbar">
             <div class="modern-model-stats">
                 <span><i class="fa-solid fa-list-check"></i> মোট প্রশ্ন: ${toBanglaNum(totalCount)}টি</span>
                 <span id="exam-answered-count"><i class="fa-regular fa-circle-check"></i> উত্তর দিয়েছেন: ০টি</span>
             </div>
-            <div class="modern-model-timer">
-                <i class="fa-solid fa-stopwatch fa-spin-pulse"></i>
-                <span id="exam-timer-display">২৫:০০</span>
+            <div class="modern-model-actions">
+                <button type="button" class="btn-model-top-submit" id="btn-model-top-submit" onclick="submitCurrentModelTest()" title="মডেল টেস্ট জমা দিন">
+                    <i class="fa-solid fa-paper-plane"></i> <span>সাবমিট</span>
+                </button>
+                <div class="modern-model-timer" id="top-model-timer">
+                    <i class="fa-solid fa-stopwatch fa-spin-pulse"></i>
+                    <span id="exam-timer-display">২৫:০০</span>
+                </div>
             </div>
         </div>
+    `;
+
+    if (topToolbar) {
+        topToolbar.innerHTML = toolbarHtml;
+        topToolbar.style.display = 'block';
+    }
+
+    container.innerHTML = `
+        ${!topToolbar ? toolbarHtml : ''}
         <div id="exam-result-area"></div>
         <div id="exam-questions-list">
             ${cardsHtml}
@@ -2646,6 +2694,10 @@ function startInteractiveModelTest(allQuestions, containerId, onRetakeCallback) 
             </button>
         </div>
     `;
+
+    if (typeof adjustInteractiveToolbarPosition === 'function') {
+        setTimeout(adjustInteractiveToolbarPosition, 50);
+    }
 
     const timerDisplay = document.getElementById('exam-timer-display');
     const updateTimer = () => {
@@ -2681,6 +2733,14 @@ function submitCurrentModelTest(isAuto = false) {
 
     const submitArea = document.getElementById('exam-submit-area');
     if (submitArea) submitArea.style.display = 'none';
+
+    const topSubmitBtn = document.getElementById('btn-model-top-submit');
+    if (topSubmitBtn) {
+        topSubmitBtn.disabled = true;
+        topSubmitBtn.style.opacity = '0.7';
+        topSubmitBtn.style.cursor = 'default';
+        topSubmitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>সম্পন্ন</span>';
+    }
 
     let correctCount = 0;
     let wrongCount = 0;

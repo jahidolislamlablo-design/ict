@@ -890,17 +890,17 @@
     "_id": "6aef4900541019a0004afc1a",
     "serialNo": 5,
     "categoryTypes": [
-      "Model Test",
       "Chapter Practice",
-      "Live Exam"
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "Model Test",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 05",
+    "modelTestNo": "Model Test 03",
     "question": "সুমেরিয়ান-ব্যবিলিয়ান সংখ্যা পদ্ধতি ছিল",
     "image": "",
     "options": [
@@ -913,7 +913,7 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 05"
+    "liveExamNo": "Live Exam 3"
   },
   {
     "liveExamNo": "",

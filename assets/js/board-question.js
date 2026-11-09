@@ -104,6 +104,14 @@ async function switchBoardInteractiveTab(tab) {
     if (panelCq) panelCq.style.display = (tab === 'cq') ? 'block' : 'none';
     if (panelModel) panelModel.style.display = (tab === 'model') ? 'block' : 'none';
 
+    const topToolbar = document.getElementById('board-interactive-model-toolbar');
+    if (topToolbar) {
+        topToolbar.style.display = (tab === 'model') ? 'block' : 'none';
+        if (tab === 'model' && typeof adjustInteractiveToolbarPosition === 'function') {
+            setTimeout(adjustInteractiveToolbarPosition, 50);
+        }
+    }
+
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
     }

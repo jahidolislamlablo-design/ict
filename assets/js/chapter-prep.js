@@ -169,6 +169,14 @@ async function switchChapterInteractiveTab(tab) {
     if (panelCq) panelCq.style.display = (tab === 'cq') ? 'block' : 'none';
     if (panelModel) panelModel.style.display = (tab === 'model') ? 'block' : 'none';
 
+    const topToolbar = document.getElementById('chapter-interactive-model-toolbar');
+    if (topToolbar) {
+        topToolbar.style.display = (tab === 'model') ? 'block' : 'none';
+        if (tab === 'model' && typeof adjustInteractiveToolbarPosition === 'function') {
+            setTimeout(adjustInteractiveToolbarPosition, 50);
+        }
+    }
+
     if (showAnsWrapper) {
         showAnsWrapper.style.display = (tab === 'mcq') ? 'flex' : 'none';
     }
@@ -277,6 +285,8 @@ function goBackChapterPrep() {
         if (window.currentExamState && window.currentExamState.timerId) {
             clearInterval(window.currentExamState.timerId);
         }
+        const topToolbar = document.getElementById('chapter-interactive-model-toolbar');
+        if (topToolbar) topToolbar.style.display = 'none';
         quizView.style.display = 'none';
         if (chapterListView) chapterListView.style.display = 'block';
         if (currentBreadcrumb) currentBreadcrumb.innerText = 'অধ্যায় নির্বাচন';
