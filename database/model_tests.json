@@ -1,24 +1,5 @@
 [
   {
-    "_id": "6af02ffd1d0bfdc47abca85c",
-    "serialNo": 2,
-    "examNo": "02",
-    "title": "Model Test 02",
-    "date": "03-11-26",
-    "chapters": "দ্বিতীয় অধ্যায়",
-    "category": "chapter",
-    "totalQuestions": 25,
-    "duration": 25,
-    "totalMarks": 25,
-    "participants": 594,
-    "startTime": "",
-    "endTime": "",
-    "isLive": false,
-    "buttonText": "Start Previous Live Exam",
-    "createdAt": "2026-11-08T07:44:20.030Z",
-    "__v": 0
-  },
-  {
     "_id": "6af02ffd1d0bfdc47abca85d",
     "serialNo": 3,
     "examNo": "03",
