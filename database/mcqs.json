@@ -8852,7 +8852,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 09",
     "question": "কৃত্রিম বুদ্ধিমত্তায় ব্যবহৃত হয় কোন প্রোগ্রামিং ভাষা? [ঢা.বো.'২৪]",
     "options": [
       "COBOL",
@@ -8863,7 +8863,7 @@
     "correctAnswer": "PROLOG",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.453Z",
-    "liveExamNo": "Live Exam 01"
+    "liveExamNo": "Live Exam 09"
   },
   {
     "liveExamNo": "",
