@@ -17006,21 +17006,22 @@
     "createdAt": "2026-11-03T05:41:46.415Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae97a9",
     "serialNo": 89,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "বরিশাল বোর্ড",
+    "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 01",
     "question": "কম্পিউটার সংশ্লিষ্ট যন্ত্রপাতিকে সঠিকভাবে পরিচালনার জন্য নিচের কোনটি প্রয়োজন?: \t \t[ব.বো.'১৯]",
     "options": [
       "হার্ডওয়্যার",
@@ -17030,7 +17031,8 @@
     ],
     "correctAnswer": "সফটওয়্যার",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.594Z"
+    "createdAt": "2026-11-02T16:02:03.594Z",
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
