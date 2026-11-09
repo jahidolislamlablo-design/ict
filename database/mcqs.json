@@ -15487,21 +15487,22 @@
     "createdAt": "2026-11-03T05:41:46.357Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae97a1",
     "serialNo": 81,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "সিলেট বোর্ড",
+    "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 01",
     "question": "বিশ্বগ্রামের কারণে-        \t[সি.বো '১৬]",
     "options": [
       "বাস্তব সামাজিক যোগাযোগ হ্রাস পায়",
@@ -15511,7 +15512,8 @@
     ],
     "correctAnswer": "বাস্তব সামাজিক যোগাযোগ হ্রাস পায়",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.570Z"
+    "createdAt": "2026-11-02T16:02:03.570Z",
+    "liveExamNo": "Live Exam 01"
   },
   {
     "liveExamNo": "",
