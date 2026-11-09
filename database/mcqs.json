@@ -10120,13 +10120,14 @@
     "createdAt": "2026-11-03T05:41:46.175Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9785",
     "serialNo": 53,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -10134,7 +10135,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 07",
     "question": "বিজ্ঞানী মাকসুদুল আলম কোন বিষয়ে গবেষণা করে বিশ্ব দরবারে খ্যাতি অর্জন করেন? [চ.বো. ২৪]",
     "options": [
       "ভুট্টা",
@@ -10142,9 +10143,10 @@
       "চা",
       "পাট"
     ],
-    "correctAnswer": "ধান",
+    "correctAnswer": "পাট",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.477Z"
+    "createdAt": "2026-11-02T16:02:03.477Z",
+    "liveExamNo": "Live Exam 07"
   },
   {
     "liveExamNo": "",
