@@ -58,20 +58,21 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6af015f629f22f72f1eb2f55",
     "serialNo": 1,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 5: প্রোগ্রামিং ভাষা (C Programming)",
     "collegeName": "",
-    "boardName": "সকল বোর্ড",
+    "boardName": "",
     "examYear": "2026",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 02",
     "question": "নিচের উদ্দীপকটি পড় এবং ৫ ও ৬ নং প্রশ্নের উত্তর দাও:\nfor (C = 15; C <= 25; C = C + 2)\n{\nprint f (\"Apple\");\nif (C == 21)\nbreak;\n}\nApple লেখাটি কতবার প্রদর্শিত হবে?",
     "image": "",
     "options": [
@@ -83,7 +84,8 @@
     "correctAnswer": "৪",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.060Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 02"
   },
   {
     "_id": "6aef62db441e8a8634d0c902",
