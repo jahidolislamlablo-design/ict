@@ -204,7 +204,6 @@
     "createdAt": "2026-11-03T05:41:45.783Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9751",
     "serialNo": 1,
@@ -231,7 +230,8 @@
     ],
     "correctAnswer": "বটম-আপ",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.277Z"
+    "createdAt": "2026-11-02T16:02:03.277Z",
+    "liveExamNo": "Live Exam 04"
   },
   {
     "liveExamNo": "",
