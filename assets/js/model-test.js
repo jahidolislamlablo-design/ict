@@ -22,6 +22,22 @@ function recordLiveExamSubmission(examKey, score, total, details = {}) {
     const wrongCount = details.wrongCount !== undefined ? details.wrongCount : (total - score);
     const skippedCount = details.skippedCount !== undefined ? details.skippedCount : 0;
     const scorePercentage = details.scorePercentage !== undefined ? details.scorePercentage : (total > 0 ? Math.round((score / total) * 100) : 0);
+    
+    // প্রশ্ন ও উত্তর সংরক্ষণের প্রস্তুতি
+    let savedQuestions = [];
+    if (Array.isArray(details.questions) && details.questions.length > 0) {
+        savedQuestions = details.questions.map((q, idx) => ({
+            id: q.id || (idx + 1),
+            question: q.question_text || q.question || '',
+            options: q.options || [],
+            correct: (q.correct !== undefined ? q.correct : q.correct_index),
+            correct_index: (q.correct !== undefined ? q.correct : q.correct_index),
+            explanation: q.explanation || '',
+            image: q.image || '',
+            context_stem: q.context_stem || ''
+        }));
+    }
+
     submitted[String(examKey).trim()] = {
         submittedAt: new Date().toISOString(),
         score,
@@ -30,11 +46,15 @@ function recordLiveExamSubmission(examKey, score, total, details = {}) {
         wrongCount,
         skippedCount,
         scorePercentage,
-        examTitle: details.examTitle || currentExamTitle || ('Model Test ' + examKey)
+        examTitle: details.examTitle || currentExamTitle || ('Model Test ' + examKey),
+        userAnswers: details.userAnswers ? { ...details.userAnswers } : (typeof userAnswers !== 'undefined' ? { ...userAnswers } : {}),
+        questions: savedQuestions
     };
     try {
         localStorage.setItem(SUBMITTED_LIVE_EXAMS_KEY, JSON.stringify(submitted));
-    } catch(e) {}
+    } catch(e) {
+        console.warn("Failed to save live exam submission:", e);
+    }
 }
 
 let currentExamKey = '';
@@ -222,7 +242,7 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
     const duration = item.duration || 25;
     const totalM = item.totalMarks || 25;
     const titleSafe = (item.title || ('Model Test ' + examKey)).replace(/'/g, "\\'");
-    const hasSubmittedLive = isLive && hasUserSubmittedLiveExam(examKey);
+    const hasSubmittedLive = hasUserSubmittedLiveExam(examKey);
 
     let btnText = item.buttonText || (isLive ? 'Start Live Exam' : 'Start Previous Live Exam');
     if (isLive) {
@@ -241,10 +261,10 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
     if (hasSubmittedLive) {
         actionBtnHtml = `
             <div class="mt-btn-split-group">
-                <button type="button" class="mt-start-btn mt-split-left submitted-live-btn" onclick="startExam('${titleSafe}', ${duration}, '${examKey}')" title="পরীক্ষা সম্পন্ন হয়েছে">
-                    <i class="fa-solid fa-circle-check"></i> <span>পরীক্ষা সম্পন্ন হয়েছে</span>
+                <button type="button" class="mt-start-btn mt-split-left submitted-live-btn" onclick="startExam('${titleSafe}', ${duration}, '${examKey}', ${!isLive})" title="পরীক্ষা সম্পন্ন হয়েছে">
+                    <i class="fa-solid fa-circle-check"></i> <span>পরীক্ষা সম্পন্ন হয়েছে</span>
                 </button>
-                <button type="button" class="mt-start-btn mt-split-right mt-marksheet-btn" onclick="openLiveExamMarksheet('${examKey}', '${titleSafe}')" title="মার্ক শীট ও বিস্তারিত রেজাল্ট দেখুন">
+                <button type="button" class="mt-start-btn mt-split-right mt-marksheet-btn" onclick="openLiveExamMarksheet('${examKey}', '${titleSafe}', ${duration})" title="মার্ক শীট ও বিস্তারিত রেজাল্ট দেখুন">
                     <i class="fa-solid fa-square-poll-vertical"></i> <span>মার্ক শীট</span>
                 </button>
             </div>
@@ -260,37 +280,30 @@ function generateSingleCardHtml(item, prefix = 'card-mt-') {
     return `
         <div class="test-card model-test-card ${isLive ? 'is-live-active' : ''}" 
              data-category="${item.category || 'full'}" 
-             data-is-live="${isLive ? 'true' : 'false'}"
-             id="${prefix ? prefix + examKey : 'card-mt-' + examKey}">
+             id="${cardId}">
             <div>
-                <!-- Top Row -->
                 <div class="mt-top-row">
-                    <div class="mt-date-pill">Date: ${escapeHtml(dateStr)}</div>
+                    <div class="mt-date-pill">Date: ${escapeHtml(item.date || 'Regular')}</div>
                     <div class="mt-top-right">
                         <div class="mt-badges-row">
                             <div class="mt-participants-pill">
-                                <i class="fa-solid fa-users"></i> ${toBanglaNum(participantsCount)} জন
+                                <i class="fa-solid fa-users"></i> ${toBanglaNum(item.participants || 0)} জন
                             </div>
-                            <div class="mt-live-badge" id="live-badge-${prefix}${examKey}" style="${isLive ? '' : 'display:none;'}">
+                            <div class="mt-live-badge" style="display:${isLive ? 'inline-flex' : 'none'};" id="live-badge-${examKey}">
                                 <span class="mt-live-dot"></span> LIVE
                             </div>
                         </div>
-                        <!-- Live Remaining Time below LIVE badge -->
-                        <div class="mt-live-countdown" id="live-countdown-${prefix}${examKey}" style="${isLive ? '' : 'display:none;'}">
-                            ${isLive ? getRemainingLiveTimeText(item) : ''}
-                        </div>
+                        <div class="mt-live-countdown" id="live-countdown-${examKey}" style="display:none;"></div>
                     </div>
                 </div>
 
-                <!-- Heading & Chapters -->
-                <h3 class="mt-exam-no">Exam No: ${escapeHtml(examKey)}</h3>
-                <div class="mt-chapters">Chapters: <span>${escapeHtml(chaptersStr)}</span></div>
-
-                <!-- Meta info row -->
+                <h3 class="mt-exam-no">${escapeHtml(item.title || ('Model Test ' + examKey))}</h3>
+                <div class="mt-chapters">Chapters: <span>${escapeHtml(item.chapters || 'পূর্ণাঙ্গ সিলেবাস')}</span></div>
+                
                 <div class="mt-meta-row">
-                    <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ${toBanglaNum(totalQ)}টি প্রশ্ন</span>
+                    <span class="mt-meta-item"><i class="fa-solid fa-circle-question"></i> ${toBanglaNum(totalQuestions)}টি প্রশ্ন</span>
                     <span class="mt-meta-item"><i class="fa-solid fa-clock"></i> ${toBanglaNum(duration)} মিনিট</span>
-                    <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ${toBanglaNum(totalM)} নম্বর</span>
+                    <span class="mt-meta-item"><i class="fa-solid fa-award"></i> ${toBanglaNum(totalMarks)} নম্বর</span>
                 </div>
             </div>
 
@@ -306,7 +319,7 @@ function renderModelTestCards(list) {
         const liveA = isExamLiveNow(a) ? 1 : 0;
         const liveB = isExamLiveNow(b) ? 1 : 0;
         if (liveA !== liveB) return liveB - liveA; // লাইভগুলো প্রথমে
-        return (a.serialNo || 0) - (b.serialNo || 0);
+        return (b.serialNo || 0) - (a.serialNo || 0); // ডিসেন্ডিং অর্ডারে (সর্বশেষ এক্সাম আগে)
     });
 
     const grid = document.getElementById('modelTestsGrid') || document.querySelector('.model-tests-grid');
@@ -371,7 +384,7 @@ async function loadAllModelTests() {
         }
 
         if (list && list.length > 0) {
-            allModelTestsData = list.sort((a, b) => (a.serialNo || 0) - (b.serialNo || 0));
+            allModelTestsData = list.sort((a, b) => (b.serialNo || 0) - (a.serialNo || 0)); // ডিসেন্ডিং
             renderModelTestCards(allModelTestsData);
             startLiveCountdowns();
         } else {
@@ -385,7 +398,7 @@ async function loadAllModelTests() {
 /**
  * পরীক্ষা শুরু করা
  */
-async function startExam(testTitle, durationMins = 25, examNo = '') {
+async function startExam(testTitle, durationMins = 25, examNo = '', forceRestart = false) {
     let examKey = examNo || '';
     if (!examKey && testTitle) {
         const match = String(testTitle).match(/(\d+)/);
@@ -901,7 +914,12 @@ window.toggleModelTestExp = toggleModelTestExp;
 /**
  * লাইভ পরীক্ষার মার্কশীট প্রদর্শন পপআপ মডাল
  */
-function openLiveExamMarksheet(examKey, testTitle) {
+
+/**
+ * লাইভ ও প্রিভিয়াস লাইভ পরীক্ষার মার্কশীট প্রদর্শন পপআপ মডাল
+ * বাটন ৩টি: Restart Exam, Answer Sheet, Exit
+ */
+function openLiveExamMarksheet(examKey, testTitle, duration = 25) {
     const submitted = getSubmittedLiveExams();
     const entry = submitted[String(examKey).trim()] || {};
     
@@ -943,8 +961,11 @@ function openLiveExamMarksheet(examKey, testTitle) {
         document.body.appendChild(modal);
     }
 
+    const titleEscapedForJs = escapeHtml(title).replace(/'/g, "\\'");
+    const examKeyEscapedForJs = escapeHtml(String(examKey)).replace(/'/g, "\\'");
+
     modal.innerHTML = `
-        <div class="modal-window marksheet-modal-window" style="max-width: 520px; text-align: center; padding: 24px 22px; border-radius: 20px;">
+        <div class="modal-window marksheet-modal-window" style="max-width: 520px; text-align: center; padding: 24px 22px; border-radius: 20px; position: relative;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 12px; margin-bottom: 16px;">
                 <div style="text-align: left;">
                     <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: #6366F1; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap"></i> ICT Easy Learning Mark Sheet</span>
@@ -993,12 +1014,16 @@ function openLiveExamMarksheet(examKey, testTitle) {
                 </div>
             </div>
 
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                <button type="button" class="btn btn-primary" onclick="closeLiveExamMarksheet(); startExam('${escapeHtml(title).replace(/'/g, "\\'")}', 25, '${escapeHtml(examKey)}');" style="flex: 1; min-width: 150px; padding: 11px 18px; border-radius: 9999px;">
-                    <i class="fa-solid fa-list-check"></i> সমাধান ও প্রশ্নপত্র
+            <!-- ৩টি অ্যাকশন বাটন: Restart Exam, Answer Sheet, Exit -->
+            <div class="marksheet-actions-row" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" class="btn btn-warning" onclick="restartExamFromMarksheet('${examKeyEscapedForJs}', '${titleEscapedForJs}', ${duration})" style="flex: 1; min-width: 140px; padding: 11px 16px; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: #F59E0B; border: none; color: #FFF; cursor: pointer;">
+                    <i class="fa-solid fa-rotate-right"></i> Restart Exam
                 </button>
-                <button type="button" class="btn btn-outline" onclick="closeLiveExamMarksheet()" style="flex: 1; min-width: 120px; padding: 11px 18px; border-radius: 9999px;">
-                    <i class="fa-solid fa-xmark"></i> বন্ধ করুন
+                <button type="button" class="btn btn-primary" onclick="showAnswerSheetFromMarksheet('${examKeyEscapedForJs}', '${titleEscapedForJs}')" style="flex: 1; min-width: 140px; padding: 11px 16px; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: #4F46E5; border: none; color: #FFF; cursor: pointer;">
+                    <i class="fa-solid fa-list-check"></i> Answer Sheet
+                </button>
+                <button type="button" class="btn btn-outline" onclick="closeLiveExamMarksheet()" style="flex: 1; min-width: 90px; padding: 11px 16px; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: #F1F5F9; border: 1px solid #CBD5E1; color: #475569; cursor: pointer;">
+                    <i class="fa-solid fa-xmark"></i> Exit
                 </button>
             </div>
         </div>
@@ -1011,5 +1036,142 @@ function closeLiveExamMarksheet() {
     const modal = document.getElementById('liveMarksheetModal');
     if (modal) modal.classList.remove('open');
 }
+
+/**
+ * বাটন ১: Restart Exam - এই এক্সামটি আবার শুরু হবে
+ */
+function restartExamFromMarksheet(examKey, title, duration = 25) {
+    closeLiveExamMarksheet();
+    startExam(title, duration, examKey, true /* forceRestart */);
+}
+
+/**
+ * বাটন ২: Answer Sheet - পূর্বের এন্সার শীট ও সমাধান দেখাবে
+ */
+async function showAnswerSheetFromMarksheet(examKey, title) {
+    closeLiveExamMarksheet();
+    const submitted = getSubmittedLiveExams();
+    const entry = submitted[String(examKey).trim()] || {};
+
+    currentExamTitle = title || entry.examTitle || ('Model Test ' + examKey);
+    currentExamKey = examKey;
+    isExamSubmitted = true;
+    userAnswers = entry.userAnswers || {};
+
+    document.getElementById('model-test-list-view').style.display = 'none';
+    document.getElementById('live-exam-view').style.display = 'block';
+    document.getElementById('exam-active-title').innerText = currentExamTitle + ' (Answer Sheet)';
+
+    const timerEl = document.getElementById('examTimer');
+    if (timerEl) {
+        timerEl.innerHTML = '<span style="font-size:0.85rem; font-weight:700; color:var(--success);"><i class="fa-solid fa-circle-check"></i> উত্তরপত্র</span>';
+    }
+
+    const container = document.getElementById('questionsListContainer');
+    if (container) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 50px 20px; color: var(--text-secondary);">
+                <i class="fa-solid fa-circle-notch fa-spin fa-2x" style="color: var(--primary); margin-bottom: 12px;"></i>
+                <p style="font-weight: 500;">এন্সার শীট লোড করা হচ্ছে...</p>
+            </div>
+        `;
+    }
+
+    let questions = entry.questions;
+    if (!questions || questions.length === 0) {
+        try {
+            if (typeof ApiService !== 'undefined' && ApiService.getModelTestMCQ) {
+                questions = await ApiService.getModelTestMCQ(title, examKey);
+            }
+        } catch(e) {}
+    }
+
+    if (!questions || questions.length === 0) {
+        if (container) {
+            container.innerHTML = `<div style="text-align:center; padding:50px 20px; background:#fff; border-radius:16px; border:1px solid #e2e8f0;">
+                <i class="fa-solid fa-clipboard-question" style="font-size:3rem; color:#94a3b8; margin-bottom:12px;"></i>
+                <h4 style="color:#1e293b; font-weight:700;">কোনো প্রশ্ন পাওয়া যায়নি</h4>
+                <p style="color:#64748b; font-size:0.9rem;">এই পরীক্ষার কোনো প্রশ্ন ডাটাবেজে পাওয়া যায়নি।</p>
+                <button type="button" class="btn btn-primary" onclick="exitExam()" style="margin-top:15px; border-radius:9999px;">টেস্ট তালিকায় ফিরে যান</button>
+            </div>`;
+        }
+        return;
+    }
+
+    activeExamQuestions = questions.map((q, idx) => {
+        let opts = q.options;
+        if (typeof opts === 'string') {
+            try { opts = JSON.parse(opts); } catch(e) { opts = []; }
+        }
+        return {
+            id: q.id || (idx + 1),
+            question_text: q.question_text || q.question || '',
+            question: q.question_text || q.question || '',
+            options: Array.isArray(opts) ? opts : [],
+            correct: (q.correct !== undefined ? q.correct : q.correct_index),
+            correct_index: (q.correct !== undefined ? q.correct : q.correct_index),
+            explanation: q.explanation || '',
+            image: q.image || '',
+            context_stem: q.context_stem || ''
+        };
+    });
+
+    // প্রশ্নপত্র রেন্ডার করা
+    renderExamQuestions(activeExamQuestions);
+
+    // সব অপশন লক করা এবং সঠিক/ভুল উত্তর হাইলাইট করা
+    setTimeout(() => {
+        activeExamQuestions.forEach((q, idx) => {
+            const card = document.getElementById(`modern-mcq-card-${idx}`) || document.getElementById(`model-mcq-card-${idx}`) || document.getElementById(`question-card-${idx}`);
+            if (!card) return;
+
+            card.classList.add('locked', 'answered');
+            const options = card.querySelectorAll('.modern-option-pill, .option-item');
+            options.forEach(opt => {
+                opt.classList.add('locked');
+                opt.style.pointerEvents = 'none';
+                opt.classList.remove('exam-selected');
+            });
+
+            const userSelected = userAnswers[idx];
+            const correctOptIndex = (q.correct !== undefined) ? parseInt(q.correct, 10) : parseInt(q.correct_index, 10) || 0;
+
+            // সঠিক উত্তরটি সবুজ
+            const correctOpt = card.querySelector(`[data-opt-idx="${correctOptIndex}"]`);
+            if (correctOpt) {
+                correctOpt.classList.add('correct-selected');
+                const icon = correctOpt.querySelector('.modern-status-icon');
+                if (icon) {
+                    icon.className = 'modern-status-icon check';
+                    icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+                }
+            }
+
+            // ইউজারের দেওয়া উত্তর যদি ভুল হয় তাহলে লাল
+            if (userSelected !== undefined) {
+                if (userSelected !== correctOptIndex) {
+                    const wrongOpt = card.querySelector(`[data-opt-idx="${userSelected}"]`);
+                    if (wrongOpt) {
+                        wrongOpt.classList.add('wrong-selected');
+                        const icon = wrongOpt.querySelector('.modern-status-icon');
+                        if (icon) {
+                            icon.className = 'modern-status-icon cross';
+                            icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                        }
+                    }
+                }
+            }
+
+            // ব্যাখ্যা উন্মুক্ত করা
+            const expBtn = card.querySelector('.modern-exp-btn');
+            if (expBtn) expBtn.style.display = 'inline-flex';
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 60);
+}
+
 window.openLiveExamMarksheet = openLiveExamMarksheet;
 window.closeLiveExamMarksheet = closeLiveExamMarksheet;
+window.restartExamFromMarksheet = restartExamFromMarksheet;
+window.showAnswerSheetFromMarksheet = showAnswerSheetFromMarksheet;
