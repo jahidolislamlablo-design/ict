@@ -571,13 +571,14 @@
     "createdAt": "2026-11-04T13:27:53.164Z"
   },
   {
-    "liveExamNo": "",
     "_id": "6ae9741b8dfcb51410ac7271",
     "serialNo": 3,
     "categoryTypes": [
       "Board Question",
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং",
@@ -585,7 +586,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 10",
     "question": "নিচের উদ্দীপকের আলোকে  প্রশ্নের উত্তর দাও:\nএই ধরনের নেটওয়ার্কে মোট তারের সংখ্যা হবে  [সকল. বো. '২৬]",
     "image": "/uploads/images/mcq_ch2_image1.png",
     "options": [
@@ -597,7 +598,8 @@
     "correctAnswer": "n(n - 1)/2",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.798Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 10"
   },
   {
     "liveExamNo": "",
