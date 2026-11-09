@@ -34165,13 +34165,14 @@
     "createdAt": "2026-11-03T05:41:46.960Z"
   },
   {
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9804",
     "serialNo": 180,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -34179,7 +34180,7 @@
     "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 02",
     "question": "উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:\nডা.রাজ শহরে অবস্থান কiIে প্রত্যন্ত অঞ্চলে সরাসরি চিকিৎসা সেবা দিয়ে থাকেন। তিনি তার বন্ধুর আচিলের অপারেশনে নিম্নতাপমাত্রা প্রয়োগ করে চিকিৎসা করেন এবং তিনি দ্রুত সুস্থ হয়ে বাড়ি ফিরে যান। \t\t[য.বো.১৯]\nপ্রত্যনত্ম অঞ্চলে চিকিৎসা দেয়ার প্রক্রিয়াটি হচ্ছে-\ni. ভিডিও কনফারেন্স\t\nii. টেলিমেডিসিন\niii. ই-মেইল\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -34190,7 +34191,8 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.884Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 02"
   },
   {
     "liveExamNo": "",
