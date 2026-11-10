@@ -5136,7 +5136,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc31",
     "serialNo": 27,
     "categoryTypes": [
@@ -5146,10 +5145,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "৩১₁₀ সংখ্যাটির ২'ং পড়সঢ়ষবসবহঃ কত?",
+    "question": "31₁₀ সংখ্যাটির 2 is complement কত?",
     "image": "",
     "options": [
       "11000111",
@@ -5160,7 +5159,8 @@
     "correctAnswer": "11100001",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
