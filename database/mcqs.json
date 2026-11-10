@@ -7425,17 +7425,16 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc3d",
     "serialNo": 39,
     "categoryTypes": [
       "Chapter Practice"
     ],
     "categoryType": "Chapter Practice",
-    "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
+    "chapter": "Chapter 3 (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "তথ্য ও উপাত্ত সংরক্ষণের সাথে জড়িত\ni. অ্যাডারii. ফ্লিপফ্লপ\nরii. রেজিস্টার\nনিচের কোনটি সঠিক?",
@@ -7449,7 +7448,8 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
