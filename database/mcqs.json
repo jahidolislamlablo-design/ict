@@ -4948,7 +4948,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc30",
     "serialNo": 26,
     "categoryTypes": [
@@ -4958,10 +4957,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "০ থেকে ৩১ গণনা করার জন্য রিপল কাউন্টারে কয়টি ফ্লিপফ্লপ ব্যবহার করতে হবে?",
+    "question": "0 থেকে 31 গণনা করার জন্য রিপল কাউন্টারে কয়টি ফ্লিপফ্লপ ব্যবহার করতে হবে?",
     "image": "",
     "options": [
       "4",
@@ -4972,7 +4971,8 @@
     "correctAnswer": "5",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
