@@ -7045,7 +7045,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc3b",
     "serialNo": 37,
     "categoryTypes": [
@@ -7055,21 +7054,22 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "কোন শাসকেরা শূন্যকে শয়তানের রূপ বিবেচনা করতো?",
     "image": "",
     "options": [
-      "gymwjg",
+      "মুসলিম",
       "গ্রিক",
       "খ্রিষ্টীয়",
-      "wgkixq"
+      "মীশরিয়ো"
     ],
     "correctAnswer": "খ্রিষ্টীয়",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
