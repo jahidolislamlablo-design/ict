@@ -10,13 +10,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function initUserProfile() {
     try {
         let user = null;
-        if (window.ApiService && typeof ApiService.getStudentProfile === 'function') {
-            user = await ApiService.getStudentProfile();
+        const cached = localStorage.getItem('ict_student_profile');
+        if (cached) {
+            try { user = JSON.parse(cached); } catch (e) {}
         }
-
-        if (!user) {
-            const cached = localStorage.getItem('ict_student_profile');
-            if (cached) user = JSON.parse(cached);
+        if (!user && window.ApiService && typeof ApiService.getStudentProfile === 'function') {
+            user = await ApiService.getStudentProfile();
         }
 
         if (user) {
@@ -47,6 +46,8 @@ function updateProfileUI(user) {
         if (nameEl) nameEl.innerText = user.name;
         const inputName = document.getElementById('editNameInput');
         if (inputName) inputName.value = user.name;
+        const headerNames = document.querySelectorAll('.header-user-name');
+        headerNames.forEach(el => { el.innerText = user.name; });
     }
 
     if (user.college) {
@@ -64,6 +65,8 @@ function updateProfileUI(user) {
     if (user.avatar) {
         const avatarImgs = document.querySelectorAll('.profile-avatar-img');
         avatarImgs.forEach(img => { img.src = user.avatar; });
+        const headerAvatars = document.querySelectorAll('.header-user-btn img');
+        headerAvatars.forEach(img => { img.src = user.avatar; });
     }
 }
 
@@ -114,7 +117,8 @@ function confirmLogout() {
             window.showToast("লগ আউট সম্পন্ন হয়েছে", "info");
         }
         setTimeout(() => {
-            window.location.href = "../index.html";
+            localStorage.removeItem('ict_is_logged_in');
+            window.location.href = "login.html";
         }, 1000);
     }
 }

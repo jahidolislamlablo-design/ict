@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রবেশ ও লগইন - ICT Easy Learning</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Neumorphic Auth Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/login.css?v=5.4">
+</head>
+<body class="auth-page-body">
+
+    <div class="neumorphic-card">
+
+        <!-- ==========================================
+             ১. লগইন ভিউ (WELCOME CARD)
+             ========================================== -->
+        <div id="loginView" class="auth-view active">
+            <!-- টপ সার্কুলার লক আইকন -->
+            <div class="neumorphic-icon-socket">
+                <i class="fa-solid fa-lock socket-icon"></i>
+            </div>
+
+            <!-- শিরোনাম -->
+            <h1 class="neumorphic-title">Welcome</h1>
+            <p class="neumorphic-subtitle">Login to continue your journey</p>
+
+            <!-- লগইন ফর্ম -->
+            <form onsubmit="handleLogin(event)" autocomplete="on">
+                <div class="neumorphic-input-group">
+                    <input type="text" id="loginEmailOrNumber" class="neumorphic-input no-toggle" placeholder="Email Or Number" autocomplete="username" required>
+                </div>
+
+                <div class="neumorphic-input-group">
+                    <input type="password" id="loginPassword" class="neumorphic-input" placeholder="Password" autocomplete="current-password" required>
+                    <button type="button" class="password-toggle-btn" data-target="loginPassword" aria-label="Toggle Password Visibility">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <!-- রিমেম্বার মি চেকবক্স -->
+                <label class="remember-me-row">
+                    <input type="checkbox" id="loginRememberMe" checked>
+                    <div class="neumorphic-checkbox-box">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="remember-me-text">Remember me</span>
+                </label>
+
+                <!-- লগইন বাটন -->
+                <button type="submit" class="btn-neumorphic-login">Login</button>
+            </form>
+
+            <!-- বটম লিংক রো -->
+            <div class="neumorphic-bottom-row">
+                <span class="bottom-prompt-text">Don't have an account?</span>
+                <button type="button" class="btn-circle-create" onclick="switchAuthView('signup')" title="অ্যাকাউন্ট তৈরি করুন">
+                    <span>Create<br>account</span>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- ==========================================
+             ২. রেজিস্ট্রেশন ভিউ (CREATE ACCOUNT CARD)
+             ========================================== -->
+        <div id="signupView" class="auth-view">
+            <!-- টপ সার্কুলার ইউজার/প্রোফাইল পিকচার সকেট -->
+            <div class="neumorphic-icon-socket interactive-avatar" id="signupAvatarSocket" title="প্রোফাইল ছবি নির্বাচন বা আপলোড করতে ক্লিক করুন">
+                <i class="fa-solid fa-user socket-icon" id="signupDefaultIcon"></i>
+                <img src="" id="signupAvatarPreview" class="socket-avatar-preview" alt="User Avatar">
+                <div class="avatar-camera-badge" title="ছবি পরিবর্তন">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <input type="file" id="signupAvatarInput" accept="image/*">
+            </div>
+
+            <!-- শিরোনাম -->
+            <h1 class="neumorphic-title">Create Account</h1>
+            <p class="neumorphic-subtitle">Start your journey with us</p>
+
+            <!-- অ্যাকাউন্ট তৈরির ফর্ম -->
+            <form onsubmit="handleCreateAccount(event)" autocomplete="on">
+                <div class="neumorphic-input-group">
+                    <input type="text" id="signupFullName" class="neumorphic-input no-toggle" placeholder="Full Name" autocomplete="name" required>
+                </div>
+
+                <div class="neumorphic-input-group">
+                    <input type="text" id="signupEmailOrNumber" class="neumorphic-input no-toggle" placeholder="Email Or Number" autocomplete="email" required>
+                </div>
+
+                <div class="neumorphic-input-group">
+                    <input type="password" id="signupPassword" class="neumorphic-input" placeholder="Password" autocomplete="new-password" required>
+                    <button type="button" class="password-toggle-btn" data-target="signupPassword" aria-label="Toggle Password Visibility">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="neumorphic-input-group">
+                    <input type="password" id="signupConfirmPassword" class="neumorphic-input" placeholder="Confirm Password" autocomplete="new-password" required>
+                    <button type="button" class="password-toggle-btn" data-target="signupConfirmPassword" aria-label="Toggle Password Visibility">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+
+                <!-- অ্যাকাউন্ট তৈরি বাটন -->
+                <button type="submit" class="btn-neumorphic-create">CREATE ACCOUNT</button>
+            </form>
+
+            <!-- বটম লিংক রো (ব্যাক টু লগইন) -->
+            <div class="neumorphic-bottom-row">
+                <span class="bottom-prompt-text">Already have an account?</span>
+                <button type="button" class="btn-circle-back" onclick="switchAuthView('login')" title="লগইন পেজে ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- গেস্ট হিসেবে চালিয়ে যান (অপশনাল স্কিপ অপশন) -->
+        <div class="auth-guest-footer">
+            <button type="button" class="guest-link-btn" onclick="continueAsGuest()">
+                <i class="fa-solid fa-compass"></i> গেস্ট হিসেবে ভিজিট করুন &rarr;
+            </button>
+        </div>
+
+    </div>
+
+    <!-- অথেনটিকেশন স্ক্রিপ্ট -->
+    <script src="../assets/js/login.js?v=5.4"></script>
+</body>
+</html>

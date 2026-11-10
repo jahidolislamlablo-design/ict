@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGlobalHelpers();
     initHeroSlider();
+    checkWebsiteAuthentication();
+    syncGlobalHeaderUserProfile();
+
     updateHeaderActualHeight();
     checkFileProtocolWarning();
 });
@@ -319,3 +322,44 @@ function initPreventPullToRefresh() {
         }, { passive: true });
     }
 }
+
+
+/**
+ * ওয়েবসাইট প্রবেশ নিয়ন্ত্রণ ও অথেনটিকেশন চেক
+ */
+function checkWebsiteAuthentication() {
+    const isLoginPage = window.location.pathname.toLowerCase().includes('login.html');
+    if (isLoginPage) return;
+
+    const isLoggedIn = localStorage.getItem('ict_is_logged_in') === 'true';
+    if (!isLoggedIn) {
+        const isPages = window.location.pathname.includes('/pages/');
+        const targetLogin = isPages ? 'login.html' : 'login.html';
+        window.location.href = targetLogin;
+    }
+}
+window.checkWebsiteAuthentication = checkWebsiteAuthentication;
+
+/**
+ * গ্লোবাল হেডার প্রোফাইল ইনফো সিঙ্ক (সকল পেজের হেডারে নাম ও ছবি আপডেট)
+ */
+function syncGlobalHeaderUserProfile() {
+    try {
+        const cached = localStorage.getItem('ict_student_profile');
+        if (!cached) return;
+        const user = JSON.parse(cached);
+        if (!user) return;
+
+        if (user.name) {
+            document.querySelectorAll('.header-user-name').forEach(el => {
+                el.innerText = user.name;
+            });
+        }
+        if (user.avatar) {
+            document.querySelectorAll('.header-user-btn img').forEach(img => {
+                img.src = user.avatar;
+            });
+        }
+    } catch (e) {}
+}
+window.syncGlobalHeaderUserProfile = syncGlobalHeaderUserProfile;
