@@ -9166,19 +9166,20 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc46",
     "serialNo": 48,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 02",
     "question": "হিন্দু-আরবীয় সংখ্যা পদ্ধতি কোনটি?",
     "image": "",
     "options": [
@@ -9190,7 +9191,8 @@
     "correctAnswer": "দশমিক সংখ্যা পদ্ধতি",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 2"
   },
   {
     "liveExamNo": "",
