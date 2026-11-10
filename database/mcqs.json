@@ -8759,7 +8759,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc44",
     "serialNo": 46,
     "categoryTypes": [
@@ -8769,10 +8768,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "(১০১১১)₂ এর সমতুল্য দশমিক মান কত?",
+    "question": "(10111)₂ এর সমতুল্য দশমিক মান কত?",
     "image": "",
     "options": [
       "22",
@@ -8783,7 +8782,8 @@
     "correctAnswer": "23",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
