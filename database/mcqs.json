@@ -7805,7 +7805,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc3f",
     "serialNo": 41,
     "categoryTypes": [
@@ -7815,10 +7814,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "ী₅ হলে ী=১৪ এর পরবর্তী মান কোনটি?",
+    "question": "(x)₅ হলে  x=14 এর পরবর্তী মান কোনটি?",
     "image": "",
     "options": [
       "15",
@@ -7829,7 +7828,8 @@
     "correctAnswer": "20",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
