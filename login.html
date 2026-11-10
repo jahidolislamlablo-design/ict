@@ -54,6 +54,9 @@
                     <button type="button" class="btn-forgot-password" onclick="switchAuthView('forgot')" title="পাসওয়ার্ড ভুলে গেছেন?">Forgot Password?</button>
                 </div>
 
+                <!-- লগইন এরর / স্বাগত মেসেজ বক্স (বাটনের ঠিক উপরে) -->
+                <div id="loginAuthAlert" class="auth-inline-alert" style="display: none;" role="alert"></div>
+
                 <!-- লগইন বাটন -->
                 <button type="submit" class="btn-neumorphic-login">Login</button>
             </form>
@@ -117,6 +120,9 @@
                     </button>
                 </div>
 
+                <!-- একাউন্ট তৈরি এরর / স্বাগত মেসেজ বক্স (বাটনের ঠিক উপরে) -->
+                <div id="signupAuthAlert" class="auth-inline-alert" style="display: none;" role="alert"></div>
+
                 <!-- অ্যাকাউন্ট তৈরি বাটন -->
                 <button type="submit" class="btn-neumorphic-create">CREATE ACCOUNT</button>
             </form>
@@ -163,6 +169,9 @@
                         <i class="fa-regular fa-eye"></i>
                     </button>
                 </div>
+
+                <!-- পাসওয়ার্ড রিসেট এরর / স্বাগত মেসেজ বক্স (বাটনের ঠিক উপরে) -->
+                <div id="forgotAuthAlert" class="auth-inline-alert" style="display: none;" role="alert"></div>
 
                 <!-- পাসওয়ার্ড পরিবর্তন বাটন -->
                 <button type="submit" class="btn-neumorphic-create">RESET PASSWORD</button>
