@@ -7616,7 +7616,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc3e",
     "serialNo": 40,
     "categoryTypes": [
@@ -7626,10 +7625,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "(১অ.৪৮)₁₆ এর সমতুল্য বাইনারি মান",
+    "question": "(1A.48)₁₆ এর সমতুল্য বাইনারি মান",
     "image": "",
     "options": [
       "10110.01001",
@@ -7640,7 +7639,8 @@
     "correctAnswer": "11010.01001",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
