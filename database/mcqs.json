@@ -918,19 +918,20 @@
     "liveExamNo": "Live Exam 2"
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc1b",
     "serialNo": 5,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 02",
     "question": "সিগন্যালটির সমকক্ষ বাইনারি মান কোনটি?",
     "image": "/uploads/images/mcq_ch3_signal_1.png",
     "options": [
@@ -942,7 +943,8 @@
     "correctAnswer": "1000110",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 2"
   },
   {
     "_id": "6aeb32daf84660475440e04e",
