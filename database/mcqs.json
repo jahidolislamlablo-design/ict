@@ -520,7 +520,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc19",
     "serialNo": 3,
     "categoryTypes": [
@@ -530,7 +529,7 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "মিনিট এবং ঘণ্টার হিসাব, কোণের পরিমাপ ইত্যাদি কোন সংখ্যা পদ্ধতির উদাহরণ?",
@@ -544,7 +543,8 @@
     "correctAnswer": "সুমেরিয়ান-ব্যবলিয়ান",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "_id": "6aeb32daf84660475440e04c",
