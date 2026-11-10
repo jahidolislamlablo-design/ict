@@ -8188,7 +8188,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc41",
     "serialNo": 43,
     "categoryTypes": [
@@ -8198,10 +8197,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "রামিসার রোল (77)₈\n\nক্লাসে ওঈঞ শিক্ষক (১০১১.১১)₂ ও (১১০১.১০)₂ এর যোগফল নির্ণয় করতে বললেন। আরিফ (১১০১১.১১)₂ লিখল। সে কত বেশি লিখল?",
+    "question": "রামিসার রোল (77)₈\n\nক্লাসে ওঈঞ শিক্ষক (1011.11)₂ ও (1101.10)₂ এর যোগফল নির্ণয় করতে বললেন। আরিফ (11011.11)₂ লিখল। সে কত বেশি লিখল?",
     "image": "",
     "options": [
       "101.10",
@@ -8212,7 +8211,8 @@
     "correctAnswer": "10.10",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
