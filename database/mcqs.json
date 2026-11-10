@@ -5711,7 +5711,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc34",
     "serialNo": 30,
     "categoryTypes": [
@@ -5721,7 +5720,7 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "কোন বর্তনী বাইনারি সংখ্যা যোগ করতে পারে?",
@@ -5730,12 +5729,13 @@
       "এনকোডার",
       "ডিকোডার",
       "ফ্লিপ-ফ্লপ",
-      "GWvi"
+      "এ্যাডার"
     ],
     "correctAnswer": "GWvi",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
