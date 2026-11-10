@@ -1,4 +1,16 @@
 
+// Safe helper fallbacks
+if (typeof window.toBanglaNum !== 'function') {
+    window.toBanglaNum = function(num) {
+        if (num === null || num === undefined) return '';
+        const banglaDigits = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
+        return num.toString().replace(/\d/g, d => banglaDigits[d] || d);
+    };
+}
+if (typeof window.showToast !== 'function') {
+    window.showToast = function(msg) { console.log(msg); };
+}
+
 /**
  * মোবাইলে স্টিকি হেডার অনুযায়ী পরীক্ষার টপবার অ্যাডজাস্ট করা
  */
@@ -450,14 +462,19 @@ function startLiveCountdowns() {
 }
 
 async function loadAllModelTests() {
+    const grid = document.getElementById('modelTestsGrid') || document.querySelector('.model-tests-grid');
     try {
         let list = [];
         if (typeof ApiService !== 'undefined' && ApiService.getModelTests) {
             list = await ApiService.getModelTests();
         }
         if (!list || list.length === 0) {
-            const resp = await fetch('../database/model_tests.json');
-            if (resp.ok) list = await resp.json();
+            try {
+                const resp = await fetch('../database/model_tests.json');
+                if (resp.ok) list = await resp.json();
+            } catch (fe) {
+                console.warn('Direct fetch model_tests.json failed:', fe);
+            }
         }
 
         if (list && list.length > 0) {
@@ -465,10 +482,16 @@ async function loadAllModelTests() {
             renderModelTestCards(allModelTestsData);
             startLiveCountdowns();
         } else {
+            if (grid) {
+                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: var(--text-secondary); background: #ffffff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin: 15px 0;"><i class="fa-regular fa-folder-open fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: #1E293B;">কোনো মডেল টেস্ট পাওয়া যায়নি</p></div>';
+            }
             startLiveCountdowns();
         }
     } catch (err) {
         console.warn('loadAllModelTests warning:', err);
+        if (grid) {
+            grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: #DC2626; background: #FEF2F2; border-radius: 18px; border: 1.5px solid #FCA5A5; margin: 15px 0;"><i class="fa-solid fa-triangle-exclamation fa-2x" style="margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem;">মডেল টেস্ট তালিকা লোড করতে সমস্যা হয়েছে</p><button class="btn btn-primary" onclick="loadAllModelTests()" style="margin-top: 12px; padding: 8px 20px; border-radius: 9999px;"><i class="fa-solid fa-rotate-right"></i> পুনরায় চেষ্টা করুন</button></div>';
+        }
     }
 }
 

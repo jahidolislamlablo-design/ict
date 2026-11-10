@@ -32,7 +32,9 @@ function checkFileProtocolWarning() {
         warningDiv.id = 'file-protocol-warning';
         warningDiv.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1E293B; color: #FFFFFF; padding: 16px 22px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 2px solid #6366F1; z-index: 999999; max-width: 92%; width: 580px; font-size: 0.92rem; line-height: 1.5; display: flex; align-items: center; justify-content: space-between; gap: 16px;';
         
-        let subPath = window.location.pathname.replace(/^.*(?=/(pages|index\.html))/, '') || '/index.html';
+        let rawPath = window.location.pathname || '';
+        let match = rawPath.match(/(pages\/.*|index\.html.*)$/i);
+        let subPath = match ? ('/' + match[1]) : '/index.html';
         if (!subPath.startsWith('/')) subPath = '/' + subPath;
         const localhostUrl = 'http://localhost:5000' + subPath;
         
