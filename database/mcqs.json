@@ -10667,7 +10667,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc4e",
     "serialNo": 56,
     "categoryTypes": [
@@ -10677,10 +10676,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "(১১০১.১১)₂ = (ঢ)₁₆ হলে, ী এর মান কত?",
+    "question": "(1101.11)₂ = (X)₁₆ হলে X এর মান কত?",
     "image": "",
     "options": [
       "E. 3",
@@ -10691,7 +10690,8 @@
     "correctAnswer": "D.C",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
