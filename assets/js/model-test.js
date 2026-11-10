@@ -5,14 +5,20 @@
 function adjustStickyTopbarForHeader() {
     const header = document.querySelector('.site-header');
     const topbar = document.querySelector('.exam-topbar');
-    if (header && topbar) {
-        const hHeight = header.getBoundingClientRect().height;
+    if (header) {
+        const hHeight = Math.round(header.getBoundingClientRect().height);
         if (hHeight > 0) {
-            topbar.style.top = (Math.round(hHeight) + 4) + 'px';
+            document.documentElement.style.setProperty('--header-actual-height', hHeight + 'px');
+            if (topbar) {
+                topbar.style.top = hHeight + 'px';
+            }
         }
     }
 }
 window.addEventListener('resize', adjustStickyTopbarForHeader);
+window.addEventListener('scroll', adjustStickyTopbarForHeader, { passive: true });
+document.addEventListener('DOMContentLoaded', adjustStickyTopbarForHeader);
+setTimeout(adjustStickyTopbarForHeader, 50);
 
 
 // লাইভ পরীক্ষা ইউজারের সাবমিশন ট্র্যাকিং (লাইভ চলাকালীন একবারই দিতে পারবে)
@@ -177,40 +183,87 @@ function escapeHtml(str) {
         .replace(/'/g, '&#039;');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function startAppInitialization() {
     initFilterTabs();
     loadAllModelTests();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startAppInitialization);
+} else {
+    startAppInitialization();
+}
 
 function initFilterTabs() {
-    const tabs = document.querySelectorAll('.tab-btn');
+    const tabs = document.querySelectorAll('.filter-tabs .tab-btn');
     tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            const filter = tab.getAttribute('data-filter');
-            currentFilterCategory = filter;
-            filterTests(filter);
-        });
+        tab.onclick = function(e) {
+            e.preventDefault();
+            onFilterTabClick(this);
+        };
     });
 }
 
+function onFilterTabClick(tabEl) {
+    if (!tabEl) return;
+    const tabs = document.querySelectorAll('.filter-tabs .tab-btn');
+    tabs.forEach(t => t.classList.remove('active'));
+    tabEl.classList.add('active');
+    
+    const filter = tabEl.getAttribute('data-filter');
+    filterTests(filter);
+}
+window.onFilterTabClick = onFilterTabClick;
+
 function filterTests(filter) {
     currentFilterCategory = filter || 'all';
+    const grid = document.getElementById('modelTestsGrid') || document.querySelector('.model-tests-grid');
     const cards = document.querySelectorAll('.model-tests-grid .test-card');
+    
+    let visibleCount = 0;
     cards.forEach(card => {
+        let show = false;
         if (currentFilterCategory === 'all') {
-            card.style.display = 'flex';
+            show = true;
         } else if (currentFilterCategory === 'live') {
-            const isLive = card.getAttribute('data-is-live') === 'true' || card.classList.contains('is-live-active');
-            card.style.display = isLive ? 'flex' : 'none';
+            show = (card.getAttribute('data-is-live') === 'true' || 
+                    card.classList.contains('is-live-active') || 
+                    card.getAttribute('data-has-live-flag') === 'true');
         } else if (card.getAttribute('data-category') === currentFilterCategory) {
-            card.style.display = 'flex';
+            show = true;
+        }
+
+        if (show) {
+            card.classList.remove('is-hidden');
+            card.style.setProperty('display', 'flex', 'important');
+            visibleCount++;
         } else {
-            card.style.display = 'none';
+            card.classList.add('is-hidden');
+            card.style.setProperty('display', 'none', 'important');
         }
     });
+
+    // Handle empty state message if no cards match filter
+    let emptyMsg = document.getElementById('mt-filter-empty-msg');
+    if (visibleCount === 0) {
+        if (!emptyMsg && grid) {
+            emptyMsg = document.createElement('div');
+            emptyMsg.id = 'mt-filter-empty-msg';
+            emptyMsg.className = 'mt-empty-filter-state';
+            emptyMsg.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: var(--text-secondary); background: #ffffff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin: 15px 0;';
+            grid.appendChild(emptyMsg);
+        }
+        if (emptyMsg) {
+            emptyMsg.style.display = 'block';
+            if (currentFilterCategory === 'live') {
+                emptyMsg.innerHTML = '<i class="fa-solid fa-satellite-dish fa-2x" style="color: #EF4444; margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: #1E293B;">বর্তমানে কোনো লাইভ এক্সাম চালু নেই</p><p style="font-size: 0.88rem; color: var(--text-muted);">পরবর্তী লাইভ এক্সামের নোটিশ শীঘ্রই এখানে প্রকাশ করা হবে।</p>';
+            } else {
+                emptyMsg.innerHTML = '<i class="fa-regular fa-folder-open fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: #1E293B;">এই ক্যাটাগরিতে কোনো মডেল টেস্ট পাওয়া যায়নি</p>';
+            }
+        }
+    } else if (emptyMsg) {
+        emptyMsg.style.display = 'none';
+    }
 }
 
 function isExamLiveNow(item) {
@@ -462,7 +515,8 @@ async function startExam(testTitle, durationMins = 25, examNo = '', forceRestart
     }
 
     document.getElementById('model-test-list-view').style.display = 'none';
-    document.getElementById('live-exam-view').style.display = 'block'; document.querySelector('.container')?.classList.add('fullscreen-mode'); document.querySelector('.container')?.classList.add('fullscreen-mode');
+    document.getElementById('live-exam-view').style.display = 'block';
+    document.querySelector('.container')?.classList.add('fullscreen-mode');
     document.getElementById('exam-active-title').innerText = testTitle;
 
     const container = document.getElementById('questionsListContainer');
@@ -700,6 +754,85 @@ function startTimer() {
 /**
  * সাবমিট কনফার্মেশন
  */
+
+function openSubmitConfirmModal(answeredCount, unanswered, onConfirmCallback) {
+    let modal = document.getElementById('examSubmitConfirmModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'examSubmitConfirmModal';
+        modal.className = 'modal-overlay';
+        modal.style.zIndex = '10000';
+        document.body.appendChild(modal);
+    }
+
+    modal.innerHTML = `
+        <div class="modal-window" style="max-width: 530px; width: 92%; border-radius: 26px; padding: 32px 26px; text-align: center; box-shadow: 0 25px 60px rgba(15, 23, 42, 0.28); background: #FFFFFF; border: 1.5px solid #E2E8F0;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); color: #D97706; font-size: 2.2rem; margin-bottom: 16px; border: 3px solid #FCD34D;">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+            
+            <h3 style="font-size: 1.65rem; font-weight: 800; color: #0F172A; margin: 0 0 16px 0;">পরীক্ষা সাবমিট নিশ্চিতকরণ</h3>
+
+            <div class="confirm-stat-row" style="display: flex; gap: 14px; margin-bottom: 20px;">
+                <div class="confirm-stat-box" style="flex: 1; background: #F0FDF4; border: 2.5px solid #86EFAC; border-radius: 18px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #15803D; margin-bottom: 4px; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-circle-check"></i> উত্তর দিয়েছেন
+                    </span>
+                    <strong style="font-size: 2.35rem; font-weight: 900; color: #166534; line-height: 1;">${toBanglaNum(answeredCount)}টি</strong>
+                </div>
+                <div class="confirm-stat-box" style="flex: 1; background: #FFFBEB; border: 2.5px solid #FDE68A; border-radius: 18px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #B45309; margin-bottom: 4px; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-clock"></i> উত্তর বাকি
+                    </span>
+                    <strong style="font-size: 2.35rem; font-weight: 900; color: #B45309; line-height: 1;">${toBanglaNum(unanswered)}টি</strong>
+                </div>
+            </div>
+
+            <div class="confirm-prompt-card" style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 18px; padding: 18px 20px; margin-bottom: 26px;">
+                <p class="confirm-prompt-text" style="font-size: 1.25rem; font-weight: 700; color: #1E293B; line-height: 1.6; margin: 0;">
+                    আপনি মোট <span style="color: #16A34A; font-weight: 900;">${toBanglaNum(answeredCount)}টি</span> প্রশ্নের উত্তর দিয়েছেন।<br>
+                    ${unanswered > 0 ? `এখনও <span style="color: #DC2626; font-weight: 900;">${toBanglaNum(unanswered)}টি</span> প্রশ্নের উত্তর দেওয়া বাকি আছে।<br>` : ''}
+                    <span class="confirm-prompt-question" style="display: block; margin-top: 10px; font-size: 1.30rem; font-weight: 800; color: #4338CA;">
+                        আপনি কি নিশ্চিতভাবে পরীক্ষা সাবমিট করতে চান?
+                    </span>
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" id="btn-confirm-submit-yes" class="confirm-btn-yes">
+                    <i class="fa-solid fa-paper-plane"></i> হ্যাঁ, সাবমিট করুন
+                </button>
+                <button type="button" id="btn-confirm-submit-no" class="confirm-btn-no">
+                    <i class="fa-solid fa-arrow-left"></i> না, আরও সময় নেব
+                </button>
+            </div>
+        </div>
+    `;
+
+    modal.classList.add('open');
+
+    const yesBtn = modal.querySelector('#btn-confirm-submit-yes');
+    const noBtn = modal.querySelector('#btn-confirm-submit-no');
+
+    yesBtn.onclick = () => {
+        modal.classList.remove('open');
+        if (typeof onConfirmCallback === 'function') {
+            onConfirmCallback();
+        }
+    };
+
+    noBtn.onclick = () => {
+        modal.classList.remove('open');
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('open');
+        }
+    };
+}
+window.openSubmitConfirmModal = openSubmitConfirmModal;
+
 function confirmSubmitExam() {
     // যদি ইতিমধ্যেই পরীক্ষা সাবমিট হয়ে থাকে বা এন্সার শীট দেখা অবস্থায় থাকে
     if (isExamSubmitted) {
@@ -1122,6 +1255,7 @@ async function showAnswerSheetFromMarksheet(examKey, title) {
 
     document.getElementById('model-test-list-view').style.display = 'none';
     document.getElementById('live-exam-view').style.display = 'block';
+    document.querySelector('.container')?.classList.add('fullscreen-mode');
     document.getElementById('exam-active-title').innerText = currentExamTitle + ' (Answer Sheet)';
 
     const timerEl = document.getElementById('examTimer');

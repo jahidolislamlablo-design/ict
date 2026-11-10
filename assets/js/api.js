@@ -2585,16 +2585,22 @@ function toggleModernShowAnswers(checkbox, containerSelector) {
 function adjustInteractiveToolbarPosition() {
     const header = document.querySelector('.site-header');
     const toolbars = document.querySelectorAll('.interactive-model-top-toolbar');
-    if (header && toolbars.length > 0) {
-        const hHeight = header.getBoundingClientRect().height;
+    if (header) {
+        const hHeight = Math.round(header.getBoundingClientRect().height);
         if (hHeight > 0) {
-            toolbars.forEach(tb => {
-                tb.style.top = (Math.round(hHeight) + 4) + 'px';
-            });
+            document.documentElement.style.setProperty('--header-actual-height', hHeight + 'px');
+            if (toolbars.length > 0) {
+                toolbars.forEach(tb => {
+                    tb.style.top = hHeight + 'px';
+                });
+            }
         }
     }
 }
 window.addEventListener('resize', adjustInteractiveToolbarPosition);
+window.addEventListener('scroll', adjustInteractiveToolbarPosition, { passive: true });
+document.addEventListener('DOMContentLoaded', adjustInteractiveToolbarPosition);
+setTimeout(adjustInteractiveToolbarPosition, 50);
 window.adjustInteractiveToolbarPosition = adjustInteractiveToolbarPosition;
 
 function startInteractiveModelTest(allQuestions, containerId, onRetakeCallback) {
@@ -2718,17 +2724,103 @@ function startInteractiveModelTest(allQuestions, containerId, onRetakeCallback) 
     examState.timerId = setInterval(updateTimer, 1000);
 }
 
+
+function openSubmitConfirmModal(answeredCount, unanswered, onConfirmCallback) {
+    let modal = document.getElementById('examSubmitConfirmModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'examSubmitConfirmModal';
+        modal.className = 'modal-overlay';
+        modal.style.zIndex = '10000';
+        document.body.appendChild(modal);
+    }
+
+    modal.innerHTML = `
+        <div class="modal-window" style="max-width: 530px; width: 92%; border-radius: 26px; padding: 32px 26px; text-align: center; box-shadow: 0 25px 60px rgba(15, 23, 42, 0.28); background: #FFFFFF; border: 1.5px solid #E2E8F0;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); color: #D97706; font-size: 2.2rem; margin-bottom: 16px; border: 3px solid #FCD34D;">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+            
+            <h3 style="font-size: 1.65rem; font-weight: 800; color: #0F172A; margin: 0 0 16px 0;">পরীক্ষা সাবমিট নিশ্চিতকরণ</h3>
+
+            <div class="confirm-stat-row" style="display: flex; gap: 14px; margin-bottom: 20px;">
+                <div class="confirm-stat-box" style="flex: 1; background: #F0FDF4; border: 2.5px solid #86EFAC; border-radius: 18px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #15803D; margin-bottom: 4px; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-circle-check"></i> উত্তর দিয়েছেন
+                    </span>
+                    <strong style="font-size: 2.35rem; font-weight: 900; color: #166534; line-height: 1;">${toBanglaNum(answeredCount)}টি</strong>
+                </div>
+                <div class="confirm-stat-box" style="flex: 1; background: #FFFBEB; border: 2.5px solid #FDE68A; border-radius: 18px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span style="font-size: 1.05rem; font-weight: 700; color: #B45309; margin-bottom: 4px; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-clock"></i> উত্তর বাকি
+                    </span>
+                    <strong style="font-size: 2.35rem; font-weight: 900; color: #B45309; line-height: 1;">${toBanglaNum(unanswered)}টি</strong>
+                </div>
+            </div>
+
+            <div class="confirm-prompt-card" style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 18px; padding: 18px 20px; margin-bottom: 26px;">
+                <p class="confirm-prompt-text" style="font-size: 1.25rem; font-weight: 700; color: #1E293B; line-height: 1.6; margin: 0;">
+                    আপনি মোট <span style="color: #16A34A; font-weight: 900;">${toBanglaNum(answeredCount)}টি</span> প্রশ্নের উত্তর দিয়েছেন।<br>
+                    ${unanswered > 0 ? `এখনও <span style="color: #DC2626; font-weight: 900;">${toBanglaNum(unanswered)}টি</span> প্রশ্নের উত্তর দেওয়া বাকি আছে।<br>` : ''}
+                    <span class="confirm-prompt-question" style="display: block; margin-top: 10px; font-size: 1.30rem; font-weight: 800; color: #4338CA;">
+                        আপনি কি নিশ্চিতভাবে পরীক্ষা সাবমিট করতে চান?
+                    </span>
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" id="btn-confirm-submit-yes" class="confirm-btn-yes">
+                    <i class="fa-solid fa-paper-plane"></i> হ্যাঁ, সাবমিট করুন
+                </button>
+                <button type="button" id="btn-confirm-submit-no" class="confirm-btn-no">
+                    <i class="fa-solid fa-arrow-left"></i> না, আরও সময় নেব
+                </button>
+            </div>
+        </div>
+    `;
+
+    modal.classList.add('open');
+
+    const yesBtn = modal.querySelector('#btn-confirm-submit-yes');
+    const noBtn = modal.querySelector('#btn-confirm-submit-no');
+
+    yesBtn.onclick = () => {
+        modal.classList.remove('open');
+        if (typeof onConfirmCallback === 'function') {
+            onConfirmCallback();
+        }
+    };
+
+    noBtn.onclick = () => {
+        modal.classList.remove('open');
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('open');
+        }
+    };
+}
+window.openSubmitConfirmModal = openSubmitConfirmModal;
+
 function submitCurrentModelTest(isAuto = false) {
     const state = window.currentExamState;
     if (!state || state.submitted) return;
+
+    if (!isAuto) {
+        const answeredCount = Object.keys(state.answers).length;
+        const total = state.questions.length;
+        const unanswered = total - answeredCount;
+        openSubmitConfirmModal(answeredCount, unanswered, () => {
+            submitCurrentModelTest(true);
+        });
+        return;
+    }
+
     state.submitted = true;
 
     if (state.timerId) {
         clearInterval(state.timerId);
-    }
-
-    if (isAuto) {
-        alert("সময় শেষ! আপনার মডেল টেস্ট স্বয়ংক্রিয়ভাবে জমা নেওয়া হয়েছে।");
     }
 
     const submitArea = document.getElementById('exam-submit-area');
@@ -2797,38 +2889,38 @@ function submitCurrentModelTest(isAuto = false) {
     const resultArea = document.getElementById('exam-result-area');
     if (resultArea) {
         resultArea.innerHTML = `
-            <div class="modern-model-result-card">
-                <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: #DCFCE7; color: #16A34A; font-size: 1.8rem; margin-bottom: 12px;">
+            <div class="modern-model-result-card" style="padding: 28px 22px; border-radius: 22px; border: 2px solid #86EFAC; background: #FFFFFF; box-shadow: 0 10px 30px rgba(0,0,0,0.06); text-align: center; margin-bottom: 26px;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; border-radius: 50%; background: #DCFCE7; color: #16A34A; font-size: 2rem; margin-bottom: 12px;">
                     <i class="fa-solid fa-trophy"></i>
                 </div>
-                <h3 style="font-size: 1.35rem; font-weight: 800; color: #1E293B; margin-bottom: 4px;">মডেল টেস্ট সম্পন্ন হয়েছে!</h3>
-                <p style="color: #64748B; font-size: 0.92rem; margin-bottom: 18px;">নিচে আপনার ফলাফল ও প্রতিটি প্রশ্নের সঠিক উত্তরের ব্যাখ্যা দেখুন</p>
+                <h3 style="font-size: 1.55rem; font-weight: 800; color: #0F172A; margin-bottom: 6px;">মডেল টেস্ট সম্পন্ন হয়েছে!</h3>
+                <p style="color: #64748B; font-size: 1.02rem; margin-bottom: 22px;">নিচে আপনার অর্জিত স্কোর ও প্রতিটি প্রশ্নের সঠিক উত্তরের ব্যাখ্যা দেখুন</p>
                 
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
-                    <div style="background: #EEF2FF; border: 1.5px solid #C7D2FE; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
-                        <div style="font-size: 0.80rem; color: #4338CA; font-weight: 600;">প্রাপ্ত নম্বর</div>
-                        <div style="font-size: 1.35rem; font-weight: 800; color: #4338CA;">${toBanglaNum(correctCount)} / ${toBanglaNum(total)}</div>
+                <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px;">
+                    <div style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); border: 2px solid #C7D2FE; border-radius: 16px; padding: 14px 22px; min-width: 120px;">
+                        <div style="font-size: 0.95rem; color: #4338CA; font-weight: 700; margin-bottom: 3px;">প্রাপ্ত নম্বর</div>
+                        <div style="font-size: 1.65rem; font-weight: 900; color: #3730A3;">${toBanglaNum(correctCount)} / ${toBanglaNum(total)}</div>
                     </div>
-                    <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
-                        <div style="font-size: 0.80rem; color: #16A34A; font-weight: 600;">সঠিক</div>
-                        <div style="font-size: 1.35rem; font-weight: 800; color: #16A34A;">${toBanglaNum(correctCount)}টি</div>
+                    <div style="background: #F0FDF4; border: 2px solid #86EFAC; border-radius: 16px; padding: 14px 22px; min-width: 110px;">
+                        <div style="font-size: 0.95rem; color: #16A34A; font-weight: 700; margin-bottom: 3px;">সঠিক</div>
+                        <div style="font-size: 1.65rem; font-weight: 900; color: #15803D;">${toBanglaNum(correctCount)}টি</div>
                     </div>
-                    <div style="background: #FEF2F2; border: 1.5px solid #FCA5A5; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
-                        <div style="font-size: 0.80rem; color: #DC2626; font-weight: 600;">ভুল</div>
-                        <div style="font-size: 1.35rem; font-weight: 800; color: #DC2626;">${toBanglaNum(wrongCount)}টি</div>
+                    <div style="background: #FEF2F2; border: 2px solid #FCA5A5; border-radius: 16px; padding: 14px 22px; min-width: 110px;">
+                        <div style="font-size: 0.95rem; color: #DC2626; font-weight: 700; margin-bottom: 3px;">ভুল</div>
+                        <div style="font-size: 1.65rem; font-weight: 900; color: #B91C1C;">${toBanglaNum(wrongCount)}টি</div>
                     </div>
-                    <div style="background: #FFFBEB; border: 1.5px solid #FDE68A; border-radius: 14px; padding: 12px 18px; min-width: 105px;">
-                        <div style="font-size: 0.80rem; color: #D97706; font-weight: 600;">ছেড়ে দিয়েছেন</div>
-                        <div style="font-size: 1.35rem; font-weight: 800; color: #D97706;">${toBanglaNum(skippedCount)}টি</div>
+                    <div style="background: #FFFBEB; border: 2px solid #FDE68A; border-radius: 16px; padding: 14px 22px; min-width: 110px;">
+                        <div style="font-size: 0.95rem; color: #D97706; font-weight: 700; margin-bottom: 3px;">ছেড়ে দিয়েছেন</div>
+                        <div style="font-size: 1.65rem; font-weight: 900; color: #B45309;">${toBanglaNum(skippedCount)}টি</div>
                     </div>
                 </div>
 
-                <div style="font-size: 1.15rem; font-weight: 700; color: #1E293B; margin-bottom: 18px;">
-                    সঠিকতার হার: <span style="color: ${percentage >= 70 ? '#16A34A' : (percentage >= 40 ? '#D97706' : '#DC2626')};">${toBanglaNum(percentage)}%</span>
+                <div style="font-size: 1.25rem; font-weight: 800; color: #1E293B; margin-bottom: 22px;">
+                    সঠিকতার হার: <span style="font-size: 1.4rem; color: ${percentage >= 70 ? '#16A34A' : (percentage >= 40 ? '#D97706' : '#DC2626')};">${toBanglaNum(percentage)}%</span>
                 </div>
 
-                <button class="btn btn-outline" onclick="restartCurrentModelTest()" style="border-radius: 9999px; padding: 10px 24px; font-weight: 700; border-color: #6366F1; color: #4F46E5;">
-                    <i class="fa-solid fa-rotate-right" style="margin-right: 6px;"></i> পুনরায় মডেল টেস্ট দিন (Retake)
+                <button class="btn btn-outline" onclick="restartCurrentModelTest()" style="border-radius: 9999px; padding: 12px 28px; font-size: 1.05rem; font-weight: 700; border-color: #6366F1; color: #4F46E5; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.15);">
+                    <i class="fa-solid fa-rotate-right" style="margin-right: 8px;"></i> পুনরায় মডেল টেস্ট দিন (Retake)
                 </button>
             </div>
         `;

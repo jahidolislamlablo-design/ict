@@ -8,7 +8,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGlobalHelpers();
     initHeroSlider();
+    updateHeaderActualHeight();
+    checkFileProtocolWarning();
 });
+
+function updateHeaderActualHeight() {
+    const header = document.querySelector('.site-header');
+    if (header) {
+        const h = Math.round(header.getBoundingClientRect().height);
+        if (h > 0) {
+            document.documentElement.style.setProperty('--header-actual-height', h + 'px');
+        }
+    }
+}
+window.addEventListener('resize', updateHeaderActualHeight);
+window.addEventListener('scroll', updateHeaderActualHeight, { passive: true });
+updateHeaderActualHeight();
+
+function checkFileProtocolWarning() {
+    if (window.location.protocol === 'file:') {
+        if (document.getElementById('file-protocol-warning')) return;
+        const warningDiv = document.createElement('div');
+        warningDiv.id = 'file-protocol-warning';
+        warningDiv.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1E293B; color: #FFFFFF; padding: 16px 22px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 2px solid #6366F1; z-index: 999999; max-width: 92%; width: 580px; font-size: 0.92rem; line-height: 1.5; display: flex; align-items: center; justify-content: space-between; gap: 16px;';
+        
+        let subPath = window.location.pathname.replace(/^.*(?=/(pages|index\.html))/, '') || '/index.html';
+        if (!subPath.startsWith('/')) subPath = '/' + subPath;
+        const localhostUrl = 'http://localhost:5000' + subPath;
+        
+        warningDiv.innerHTML = '<div style="display: flex; align-items: flex-start; gap: 12px;"><i class="fa-solid fa-triangle-exclamation" style="color: #F59E0B; font-size: 1.4rem; margin-top: 2px;"></i><div><strong style="display: block; font-size: 1rem; color: #F8FAFC; margin-bottom: 3px;">সরাসরি ফাইল থেকে ওপেন করা হয়েছে</strong><span style="color: #CBD5E1;">ব্রাউজার সিকিউরিটির (CORS) কারণে সরাসরি ফাইল মোডে ডাটাবেজের তথ্য আসে না। সম্পূর্ণ ডাটা দেখতে লোকাল সার্ভারে প্রবেশ করুন:</span></div></div><div style="display: flex; gap: 8px; flex-shrink: 0;"><a href="' + localhostUrl + '" style="background: linear-gradient(135deg, #4F46E5, #6366F1); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><i class="fa-solid fa-arrow-up-right-from-square"></i> চালু করুন</a><button type="button" onclick="this.closest(\'#file-protocol-warning\').remove()" style="background: transparent; border: none; color: #94A3B8; font-size: 1.2rem; cursor: pointer; padding: 4px;">&times;</button></div>';
+        document.body.appendChild(warningDiv);
+    }
+}
 
 /**
  * সক্রিয় নেভিগেশন লিংক সনাক্তকরণ
