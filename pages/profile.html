@@ -264,20 +264,87 @@
 
     <!-- প্রোফাইল এডিট মডাল -->
     <div id="editProfileModal" class="modal-overlay" onclick="if(event.target === this) closeEditProfileModal()">
-        <div class="modal-window">
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;">প্রোফাইল তথ্য পরিবর্তন</h3>
-            <form onsubmit="saveProfile(event)">
-                <div style="margin-bottom: 14px;">
-                    <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">শিক্ষার্থীর নাম</label>
-                    <input type="text" id="editNameInput" value="মোঃ তানভীর আহমেদ" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); font-family: inherit; font-size: 0.95rem;">
+        <div class="modal-window profile-edit-modal-window">
+            <div class="modal-header-row">
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-user-pen" style="color: var(--primary);"></i> প্রোফাইল তথ্য পরিবর্তন
+                </h3>
+                <button type="button" class="modal-close-icon-btn" onclick="closeEditProfileModal()" title="বন্ধ করুন">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="saveProfile(event)" id="editProfileForm" style="margin-top: 16px;">
+                <!-- ১. প্রোফাইল ছবি পরিবর্তন -->
+                <div class="edit-avatar-container">
+                    <div class="edit-avatar-preview-box" onclick="document.getElementById('editAvatarInput').click()" title="ছবি পরিবর্তন করতে ক্লিক করুন">
+                        <img id="editAvatarPreview" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="Avatar">
+                        <div class="edit-avatar-camera-btn">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                    </div>
+                    <input type="file" id="editAvatarInput" accept="image/*" style="display: none;">
+                    <button type="button" class="btn-change-photo" onclick="document.getElementById('editAvatarInput').click()">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> ছবি পরিবর্তন করুন
+                    </button>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">কলেজের নাম</label>
-                    <input type="text" id="editCollegeInput" value="নটর ডেম কলেজ, ঢাকা" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); font-family: inherit; font-size: 0.95rem;">
+
+                <!-- ২. শিক্ষার্থীর পূর্ণ নাম -->
+                <div class="form-group-item">
+                    <label class="form-label-styled">শিক্ষার্থীর সম্পূর্ণ নাম <span style="color: #ef4444;">*</span></label>
+                    <input type="text" id="editNameInput" required placeholder="আপনার সম্পূর্ণ নাম লিখুন" class="form-input-styled">
                 </div>
-                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+
+                <!-- ৩. কলেজের নাম -->
+                <div class="form-group-item">
+                    <label class="form-label-styled">কলেজের নাম</label>
+                    <input type="text" id="editCollegeInput" placeholder="যেমন: সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল" class="form-input-styled">
+                </div>
+
+                <!-- ৪. এইচএসসি ইয়ার / শিক্ষাবর্ষ -->
+                <div class="form-group-item">
+                    <label class="form-label-styled">এইচএসসি ব্যাচ / ইয়ার</label>
+                    <input type="text" id="editHscYearInput" placeholder="যেমন: HSC 2026, HSC 2025" class="form-input-styled">
+                </div>
+
+                <!-- ৫. পাসওয়ার্ড পরিবর্তন / রিসেট সেকশন -->
+                <div class="edit-password-box">
+                    <div class="edit-section-header">
+                        <i class="fa-solid fa-lock" style="color: var(--primary);"></i>
+                        <strong>পাসওয়ার্ড পরিবর্তন (ঐচ্ছিক)</strong>
+                    </div>
+                    <p class="edit-section-hint">পাসওয়ার্ড পরিবর্তন করতে না চাইলে নিচের ফিল্ডগুলো ফাঁকা রাখুন</p>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <label class="form-label-styled" style="font-size: 0.82rem;">নতুন পাসওয়ার্ড</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="editNewPasswordInput" placeholder="নতুন পাসওয়ার্ড (কমপক্ষে ৪ অক্ষর)" class="form-input-styled" autocomplete="new-password">
+                            <button type="button" class="btn-eye-toggle" onclick="toggleEditPassword('editNewPasswordInput', this)" title="পাসওয়ার্ড দেখুন">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label-styled" style="font-size: 0.82rem;">কনফার্ম নতুন পাসওয়ার্ড</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="editConfirmPasswordInput" placeholder="নতুন পাসওয়ার্ড পুনরায় লিখুন" class="form-input-styled" autocomplete="new-password">
+                            <button type="button" class="btn-eye-toggle" onclick="toggleEditPassword('editConfirmPasswordInput', this)" title="পাসওয়ার্ড দেখুন">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ইনলাইন অ্যালার্ট মেসেজ -->
+                <div id="profileEditAlert" class="profile-inline-alert" style="display: none;" role="alert"></div>
+
+                <!-- বাটন গ্রুপ -->
+                <div class="modal-btn-row">
                     <button type="button" class="btn btn-outline btn-sm" onclick="closeEditProfileModal()">বাতিল</button>
-                    <button type="submit" class="btn btn-primary btn-sm">সংরক্ষণ করুন</button>
+                    <button type="submit" id="btnSaveProfile" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ করুন
+                    </button>
                 </div>
             </form>
         </div>
