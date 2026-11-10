@@ -3613,7 +3613,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc29",
     "serialNo": 19,
     "categoryTypes": [
@@ -3623,21 +3622,22 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "ইউনিকোডের প্রথম সংস্করণ কতটি ভাষা নিয়ে চালু করা হয়?",
     "image": "",
     "options": [
-      "6wU",
-      "12wU",
-      "24wU",
-      "48wU"
+      "৬টি",
+      "১২টি",
+      "২৪টি",
+      "৪৮টি"
     ],
-    "correctAnswer": "24wU",
+    "correctAnswer": "২৪টি",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
