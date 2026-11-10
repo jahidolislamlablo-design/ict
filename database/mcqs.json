@@ -9330,7 +9330,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc47",
     "serialNo": 49,
     "categoryTypes": [
@@ -9340,21 +9339,22 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "শূন্য এর প্রবক্তা কারা?",
     "image": "",
     "options": [
-      "Aviexqiv",
-      "wgmixqiv",
-      "fviZxqiv",
+      "আরবীয়রা",
+      "মিসরীয়োরা",
+      "ভারতীয়রা",
       "ইউরোপীয়রা"
     ],
-    "correctAnswer": "fviZxqiv",
+    "correctAnswer": "ভারতীয়রা",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",

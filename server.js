@@ -2444,14 +2444,26 @@ app.post('/api/students/point', async (req, res) => {
 app.get('/api/profile', async (req, res) => {
   try {
     let student = null;
+    const queryEmail = (req.query.emailOrNumber || req.query.email || '').trim();
+
     if (mongoose.connection.readyState === 1) {
-      student = await Student.findOne({ isCurrentUser: true }).lean();
+      if (queryEmail) {
+        student = await Student.findOne({ emailOrNumber: queryEmail }).lean();
+      }
+      if (!student) {
+        student = await Student.findOne({ isCurrentUser: true }).lean();
+      }
     }
     if (!student) {
       const fallbackPath = path.join(__dirname, 'database', 'students.json');
       if (fs.existsSync(fallbackPath)) {
         const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-        student = list.find(s => s.isCurrentUser) || list[0];
+        if (queryEmail) {
+          student = list.find(s => s.emailOrNumber === queryEmail);
+        }
+        if (!student) {
+          student = list.find(s => s.isCurrentUser) || list[0];
+        }
       }
     }
     if (student) {
@@ -2465,34 +2477,85 @@ app.get('/api/profile', async (req, res) => {
   }
 });
 
-// ৪. প্রোফাইল তথ্য আপডেট (Update Profile)
+// ৪. প্রোফাইল তথ্য আপডেট (Update Profile: Image, Name, College, HSC Year, Password)
 app.post('/api/profile', async (req, res) => {
   try {
-    const { name, college, avatar } = req.body || {};
+    const { name, college, avatar, hscYear, password, emailOrNumber } = req.body || {};
     let student = null;
+
     if (mongoose.connection.readyState === 1) {
-      student = await Student.findOne({ isCurrentUser: true });
-      if (student) {
-        if (name) student.name = name;
-        if (college) student.college = college;
-        if (avatar) student.avatar = avatar;
-        await student.save();
-        await syncDatabaseJson('students');
+      if (emailOrNumber && String(emailOrNumber).trim()) {
+        student = await Student.findOne({ emailOrNumber: String(emailOrNumber).trim() });
       }
+      if (!student) {
+        student = await Student.findOne({ isCurrentUser: true });
+      }
+      if (!student) {
+        student = await Student.findOne({});
+      }
+      if (!student) {
+        student = new Student({
+          name: (name && String(name).trim()) || 'জাহিদুল ইসলাম লাভলু',
+          emailOrNumber: (emailOrNumber && String(emailOrNumber).trim()) || '',
+          college: (college && String(college).trim()) || 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
+          hscYear: (hscYear && String(hscYear).trim()) || 'HSC 2026',
+          avatar: (avatar && String(avatar).trim()) || '/assets/images/developer.jpg',
+          points: 25,
+          testsCompleted: 0,
+          isCurrentUser: true
+        });
+      }
+
+      if (name && String(name).trim()) student.name = String(name).trim();
+      if (college && String(college).trim()) student.college = String(college).trim();
+      if (hscYear && String(hscYear).trim()) student.hscYear = String(hscYear).trim();
+      if (avatar && String(avatar).trim()) student.avatar = String(avatar).trim();
+      if (password && String(password).trim().length >= 4) student.password = String(password).trim();
+      student.isCurrentUser = true;
+
+      await student.save();
+      await syncDatabaseJson('students');
     } else {
       const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      let list = [];
       if (fs.existsSync(fallbackPath)) {
-        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-        student = list.find(s => s.isCurrentUser) || list[0];
-        if (student) {
-          if (name) student.name = name;
-          if (college) student.college = college;
-          if (avatar) student.avatar = avatar;
-          fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
-        }
+        list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
       }
+      if (emailOrNumber && String(emailOrNumber).trim()) {
+        student = list.find(s => s.emailOrNumber === String(emailOrNumber).trim());
+      }
+      if (!student) {
+        student = list.find(s => s.isCurrentUser) || list[0];
+      }
+      if (!student) {
+        student = {
+          _id: 'user_' + Date.now(),
+          name: (name && String(name).trim()) || 'জাহিদুল ইসলাম লাভলু',
+          emailOrNumber: (emailOrNumber && String(emailOrNumber).trim()) || '',
+          college: (college && String(college).trim()) || 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
+          hscYear: (hscYear && String(hscYear).trim()) || 'HSC 2026',
+          avatar: (avatar && String(avatar).trim()) || '/assets/images/developer.jpg',
+          points: 25,
+          testsCompleted: 0,
+          isCurrentUser: true
+        };
+        list.push(student);
+      }
+
+      if (name && String(name).trim()) student.name = String(name).trim();
+      if (college && String(college).trim()) student.college = String(college).trim();
+      if (hscYear && String(hscYear).trim()) student.hscYear = String(hscYear).trim();
+      if (avatar && String(avatar).trim()) student.avatar = String(avatar).trim();
+      if (password && String(password).trim().length >= 4) student.password = String(password).trim();
+      student.isCurrentUser = true;
+
+      fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
     }
-    res.json({ success: true, data: student });
+
+    const safeUser = student.toObject ? student.toObject() : { ...student };
+    delete safeUser.password;
+
+    res.json({ success: true, message: 'প্রোফাইল তথ্য সফলভাবে আপডেট হয়েছে!', data: safeUser });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }

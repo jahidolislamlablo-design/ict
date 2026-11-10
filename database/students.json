@@ -1,18 +1,18 @@
 [
   {
-    "emailOrNumber": "",
-    "password": "",
-    "hscYear": "HSC 2026",
     "_id": "6af000000000000000000001",
-    "name": "সাদিয়া আফরিন",
-    "college": "ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ",
+    "name": "জাহিদুল ইসলাম লাভলু",
+    "college": "সরকারি মুজিব কলেজ",
     "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
     "points": 35,
     "testsCompleted": 38,
-    "isCurrentUser": false,
+    "isCurrentUser": true,
     "createdAt": "2026-10-20T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
-    "__v": 0
+    "updatedAt": "2026-11-10T17:42:39.193Z",
+    "__v": 0,
+    "emailOrNumber": "",
+    "hscYear": "HSC 2026",
+    "password": ""
   },
   {
     "emailOrNumber": "",
@@ -26,7 +26,7 @@
     "testsCompleted": 35,
     "isCurrentUser": false,
     "createdAt": "2026-10-21T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -41,7 +41,7 @@
     "testsCompleted": 33,
     "isCurrentUser": false,
     "createdAt": "2026-10-22T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -56,7 +56,7 @@
     "testsCompleted": 26,
     "isCurrentUser": false,
     "createdAt": "2026-10-20T08:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -71,7 +71,7 @@
     "testsCompleted": 25,
     "isCurrentUser": false,
     "createdAt": "2026-10-23T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -86,7 +86,7 @@
     "testsCompleted": 22,
     "isCurrentUser": false,
     "createdAt": "2026-10-24T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -101,7 +101,7 @@
     "testsCompleted": 18,
     "isCurrentUser": false,
     "createdAt": "2026-10-25T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -116,7 +116,7 @@
     "testsCompleted": 16,
     "isCurrentUser": false,
     "createdAt": "2026-10-26T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -131,7 +131,7 @@
     "testsCompleted": 14,
     "isCurrentUser": false,
     "createdAt": "2026-10-27T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   },
   {
@@ -146,7 +146,7 @@
     "testsCompleted": 12,
     "isCurrentUser": false,
     "createdAt": "2026-10-28T10:00:00.000Z",
-    "updatedAt": "2026-11-10T17:37:51.593Z",
+    "updatedAt": "2026-11-10T17:40:58.992Z",
     "__v": 0
   }
 ]

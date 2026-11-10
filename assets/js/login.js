@@ -1,6 +1,7 @@
 /**
  * ICT EASY LEARNING - NEUMORPHIC AUTH SCRIPT (login.js)
  * Handles authentic login, registration, password reset, avatar uploads, and sessions
+ * Seamlessly integrates with Node.js Express & MongoDB backend (port 5000 / Live Server / GitHub Pages)
  */
 
 let uploadedAvatarDataUrl = '';
@@ -9,8 +10,52 @@ document.addEventListener('DOMContentLoaded', () => {
     initAuthTabs();
     initPasswordToggles();
     initAvatarUpload();
+    initInputClearListeners();
     checkExistingSession();
 });
+
+/**
+ * ব্যাকএন্ড এপিআই বেস URL নির্ধারণ
+ * লাইভ সার্ভার (৫৫০০), লোকালহোস্ট (৩০০০/৫০০), ফাইল বা গিটহাব পেজ সব জায়গা থেকেই ব্যাকএন্ড যুক্ত থাকবে
+ */
+function getAuthApiBaseUrl() {
+    // ১. কাস্টম লাইভ ব্যাকএন্ড URL (যদি কনফিগার করা থাকে)
+    const liveApi = localStorage.getItem('ICT_LIVE_API_URL');
+    if (liveApi && liveApi.trim() !== '') {
+        return liveApi.trim().replace(/\/+$/, '');
+    }
+
+    // ২. গ্লোবাল BACKEND_URL যদি api.js থেকে সেট থাকে
+    if (window.BACKEND_URL && window.BACKEND_URL.trim() !== '') {
+        return window.BACKEND_URL.trim().replace(/\/+$/, '');
+    }
+
+    // ৩. ব্যাকএন্ড সার্ভার পোর্ট (৫০০০) থেকে সরাসরি ব্রাউজ করলে রিলেটিভ রুট ''
+    if (window.location.port === '5000' || (window.location.origin && window.location.origin.includes(':5000'))) {
+        return '';
+    }
+
+    const hostname = window.location.hostname;
+
+    // ৪. লোকাল নেটওয়ার্ক আইপি (মোবাইল ব্রাউজিং: 192.168.x.x, 10.x.x.x, 172.x.x.x)
+    if (/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(hostname)) {
+        return `${window.location.protocol}//${hostname}:5000`;
+    }
+
+    // ৫. লোকালহোস্ট বা লাইভ সার্ভার (e.g. 127.0.0.1:5500, localhost:3000, localhost:5173 ইত্যাদি)
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        return 'http://localhost:5000';
+    }
+
+    // ৬. ফাইল সিস্টেম (file:///)
+    if (window.location.protocol === 'file:') {
+        return 'http://localhost:5000';
+    }
+
+    // ৭. গিটহাব পেজ বা অন্যান্য ওয়েব হোস্টিং - ডিফল্ট লোকাল বা লাইভ ব্যাকএন্ড ট্রাই করবে
+    return 'http://localhost:5000';
+}
+window.getAuthApiBaseUrl = getAuthApiBaseUrl;
 
 /**
  * নিরাপদভাবে ওয়েবসাইটের হোম পেজে নিয়ে যাওয়ার হেল্পার (GitHub Pages ও Localhost উভয় ক্ষেত্রে নির্ভুল)
@@ -26,6 +71,73 @@ function redirectToHome() {
     window.location.href = isPages ? '../index.html' : 'index.html';
 }
 window.redirectToHome = redirectToHome;
+
+/**
+ * লগইন/ক্রিয়েট একাউন্ট বাটনের ঠিক উপরে এরর বা স্বাগত মেসেজ প্রদর্শনকারী হেল্পার
+ */
+function setAuthAlert(message, type = 'error', viewId = null) {
+    let targetAlert = null;
+    if (viewId === 'signup' || (!viewId && document.getElementById('signupView')?.classList.contains('active'))) {
+        targetAlert = document.getElementById('signupAuthAlert');
+    } else if (viewId === 'forgot' || (!viewId && document.getElementById('forgotView')?.classList.contains('active'))) {
+        targetAlert = document.getElementById('forgotAuthAlert');
+    } else {
+        targetAlert = document.getElementById('loginAuthAlert');
+    }
+
+    if (!targetAlert) {
+        showToast(message, type);
+        return;
+    }
+
+    if (!message) {
+        targetAlert.style.display = 'none';
+        targetAlert.innerHTML = '';
+        targetAlert.className = 'auth-inline-alert';
+        return;
+    }
+
+    let icon = '<i class="fa-solid fa-circle-exclamation"></i>';
+    if (type === 'success') {
+        icon = '<i class="fa-solid fa-circle-check"></i>';
+    } else if (type === 'info') {
+        icon = '<i class="fa-solid fa-circle-info"></i>';
+    }
+
+    targetAlert.className = `auth-inline-alert ${type}`;
+    targetAlert.innerHTML = `${icon}<span>${message}</span>`;
+    targetAlert.style.display = 'flex';
+
+    // ব্যবহারকারীর দৃষ্টি আকর্ষণের জন্য সুন্দর স্মুথ স্ক্রোল (যদি ভিউ ছোট থাকে)
+    targetAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+window.setAuthAlert = setAuthAlert;
+
+/**
+ * সকল ইনলাইন অ্যালার্ট মুছে ফেলা
+ */
+function clearAuthAlerts() {
+    ['loginAuthAlert', 'signupAuthAlert', 'forgotAuthAlert'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.style.display = 'none';
+            el.innerHTML = '';
+            el.className = 'auth-inline-alert';
+        }
+    });
+}
+window.clearAuthAlerts = clearAuthAlerts;
+
+/**
+ * ইনপুটে টাইপ করার সাথে সাথে পূর্ববর্তী এরর মেসেজ স্বয়ংক্রিয়ভাবে মুছে যাওয়ার ব্যবস্থা
+ */
+function initInputClearListeners() {
+    document.querySelectorAll('.neumorphic-input').forEach(input => {
+        input.addEventListener('input', () => {
+            clearAuthAlerts();
+        });
+    });
+}
 
 /**
  * ভিউ সুইচিং (Login <-> Create Account <-> Forgot Password)
@@ -53,6 +165,8 @@ function initAuthTabs() {
 }
 
 function switchAuthView(viewName) {
+    clearAuthAlerts();
+
     const loginView = document.getElementById('loginView');
     const signupView = document.getElementById('signupView');
     const forgotView = document.getElementById('forgotView');
@@ -67,12 +181,15 @@ function switchAuthView(viewName) {
     if (viewName === 'signup') {
         signupView.classList.add('active');
         window.location.hash = 'signup';
+        setTimeout(() => document.getElementById('signupFullName')?.focus(), 150);
     } else if (viewName === 'forgot') {
         if (forgotView) forgotView.classList.add('active');
         window.location.hash = 'forgot';
+        setTimeout(() => document.getElementById('forgotEmailOrNumber')?.focus(), 150);
     } else {
         loginView.classList.add('active');
         window.location.hash = 'login';
+        setTimeout(() => document.getElementById('loginEmailOrNumber')?.focus(), 150);
     }
 }
 window.switchAuthView = switchAuthView;
@@ -108,7 +225,7 @@ function initPasswordToggles() {
 
 /**
  * ছবি আপলোড ও প্রিভিউ (ইনসেট সার্কেলের ভেতরে ক্লিক করলেই ফাইল পিকার ওপেন হবে)
- * স্বয়ংক্রিয়ভাবে ক্যানভাসে ২৫০x২৫০ সাইজে অপ্টিমাইজড করে যাতে সহজে সেভ হয়
+ * স্বয়ংক্রিয়ভাবে ক্যানভাসে ২৪০x২৪০ সাইজে অপ্টিমাইজড করে যাতে সহজে সেভ হয়
  */
 function initAvatarUpload() {
     const avatarInput = document.getElementById('signupAvatarInput');
@@ -130,7 +247,7 @@ function initAvatarUpload() {
 
         // সাইজ চেক (১০ মেগাবাইট পর্যন্ত অনুমোদিত)
         if (file.size > 10 * 1024 * 1024) {
-            showToast('ছবির সাইজ সর্বোচ্চ ১০ মেগাবাইট হতে পারবে!', 'error');
+            setAuthAlert('ছবির সাইজ সর্বোচ্চ ১০ মেগাবাইট হতে পারবে!', 'error', 'signup');
             return;
         }
 
@@ -162,7 +279,7 @@ function initAvatarUpload() {
                     avatarPreview.style.display = 'block';
                     defaultIcon.style.display = 'none';
                 }
-                showToast('প্রোফাইল ছবি সফলভাবে নির্বাচন করা হয়েছে!', 'success');
+                setAuthAlert('প্রোফাইল ছবি সফলভাবে যুক্ত হয়েছে!', 'info', 'signup');
             };
             img.onerror = function() {
                 uploadedAvatarDataUrl = rawDataUrl;
@@ -179,10 +296,11 @@ function initAvatarUpload() {
 }
 
 /**
- * রেজিস্টার / অ্যাকাউন্ট তৈরি হ্যান্ডলার (ডাটাবেজ ও ব্যাকএন্ডে সংরক্ষণ)
+ * রেজিস্টার / অ্যাকাউন্ট তৈরি হ্যান্ডলার (ডাটাবেজ ও ব্যাকএন্ডে সরাসরি সংরক্ষণ)
  */
 async function handleCreateAccount(e) {
     if (e) e.preventDefault();
+    clearAuthAlerts();
 
     const fullName = (document.getElementById('signupFullName')?.value || '').trim();
     const emailOrNumber = (document.getElementById('signupEmailOrNumber')?.value || '').trim();
@@ -192,31 +310,31 @@ async function handleCreateAccount(e) {
     const confirmPassword = (document.getElementById('signupConfirmPassword')?.value || '').trim();
 
     if (!fullName) {
-        showToast('দয়া করে আপনার সম্পূর্ণ নাম লিখুন', 'error');
+        setAuthAlert('দয়া করে আপনার সম্পূর্ণ নাম লিখুন', 'error', 'signup');
         document.getElementById('signupFullName')?.focus();
         return;
     }
 
     if (!emailOrNumber) {
-        showToast('ইমেইল অথবা মোবাইল নম্বর লিখুন', 'error');
+        setAuthAlert('ইমেইল অথবা মোবাইল নম্বর লিখুন', 'error', 'signup');
         document.getElementById('signupEmailOrNumber')?.focus();
         return;
     }
 
     if (!password) {
-        showToast('একটি পাসওয়ার্ড প্রদান করুন', 'error');
+        setAuthAlert('একটি পাসওয়ার্ড প্রদান করুন', 'error', 'signup');
         document.getElementById('signupPassword')?.focus();
         return;
     }
 
     if (password.length < 4) {
-        showToast('পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে', 'error');
+        setAuthAlert('পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে', 'error', 'signup');
         document.getElementById('signupPassword')?.focus();
         return;
     }
 
     if (password !== confirmPassword) {
-        showToast('পাসওয়ার্ড এবং কনফার্ম পাসওয়ার্ড মিলছে না!', 'error');
+        setAuthAlert('পাসওয়ার্ড এবং কনফার্ম পাসওয়ার্ড মিলছে না!', 'error', 'signup');
         document.getElementById('signupConfirmPassword')?.focus();
         return;
     }
@@ -234,47 +352,47 @@ async function handleCreateAccount(e) {
         avatar: finalAvatar
     };
 
+    const submitBtn = document.querySelector('#signupView button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> অ্যাকাউন্ট তৈরি হচ্ছে...';
+    }
+
     let backendSuccess = false;
-    const isStaticHost = window.location.host.includes('github.io') || window.location.protocol === 'file:';
+    let savedUser = null;
+    const baseUrl = getAuthApiBaseUrl();
 
-    // ১. ব্যাকএন্ডে রেজিস্ট্রেশন রিকোয়েস্ট পাঠানো (যদি সার্ভার সক্রিয় থাকে)
-    if (!isStaticHost) {
-        try {
-            const response = await fetch('/api/auth/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+    // ১. ব্যাকএন্ডে রেজিস্ট্রেশন রিকোয়েস্ট পাঠানো (সর্বদাই চেষ্টা করবে)
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 7000);
 
-            // যদি সার্ভারে রাউট না থাকে (404/405), লোকাল রেজিস্ট্রি দিয়ে চলবে
-            if (response.status !== 404 && response.status !== 405) {
-                const data = await response.json().catch(() => null);
+        const response = await fetch(`${baseUrl}/api/auth/register`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
 
-                if (!response.ok) {
-                    const errorMsg = (data && data.message) || 'এই ইমেইল বা নম্বর দিয়ে ইতিমধ্যে একাউন্ট রয়েছে!';
-                    showToast(errorMsg, 'error');
-                    return; // থামিয়ে দিন
-                }
+        const data = await response.json().catch(() => null);
 
-                if (data && data.success) {
-                    backendSuccess = true;
-                    const profile = {
-                        name: data.user.name || fullName,
-                        email: data.user.emailOrNumber || emailOrNumber,
-                        college: data.user.college || payload.college,
-                        hsc_batch: data.user.hscYear || payload.hscYear,
-                        batch: data.user.hscYear || payload.hscYear,
-                        avatar: data.user.avatar || finalAvatar,
-                        points: data.user.points !== undefined ? data.user.points : 25,
-                        testsCompleted: data.user.testsCompleted || 0,
-                        isCurrentUser: true
-                    };
-                    localStorage.setItem('ict_student_profile', JSON.stringify(profile));
-                }
+        if (!response.ok) {
+            const errorMsg = (data && data.message) || 'এই ইমেইল বা নম্বর দিয়ে ইতিমধ্যে একাউন্ট রয়েছে!';
+            setAuthAlert(errorMsg, 'error', 'signup');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'CREATE ACCOUNT';
             }
-        } catch (netErr) {
-            // নেটওয়ার্ক ফেইল হলে স্বয়ংক্রিয়ভাবে ফলব্যাক অ্যাকাউন্টে সেভ হবে
+            return; // ডুপ্লিকেট বা ভ্যালিডেশন এরর হলে বন্ধ করবে
         }
+
+        if (data && data.success) {
+            backendSuccess = true;
+            savedUser = data.user;
+        }
+    } catch (netErr) {
+        console.warn('Backend register request failed or timed out, fallback to local storage:', netErr.message);
     }
 
     // ২. লোকাল রেজিস্ট্রি আপডেট (GitHub Pages ও অফলাইন ফলব্যাক)
@@ -283,47 +401,60 @@ async function handleCreateAccount(e) {
         accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
     } catch (err) { accounts = []; }
 
-    // যদি ব্যাকএন্ড অফলাইন থাকে, তবে লোকাল ডুপ্লিকেট চেক
+    // যদি ব্যাকএন্ড অফলাইনে থাকে তবে লোকাল ডুপ্লিকেট চেক
     if (!backendSuccess) {
         const existing = accounts.find(a => a.emailOrNumber === emailOrNumber);
         if (existing) {
-            showToast('এই ইমেইল বা নম্বর দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে! অনুগ্রহ করে লগইন করুন।', 'error');
+            setAuthAlert('এই ইমেইল বা নম্বর দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে! অনুগ্রহ করে লগইন করুন।', 'error', 'signup');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'CREATE ACCOUNT';
+            }
             return;
         }
-
-        const profile = {
-            name: fullName,
-            email: emailOrNumber,
-            college: payload.college,
-            hsc_batch: payload.hscYear,
-            batch: payload.hscYear,
-            avatar: finalAvatar,
-            points: 25,
-            testsCompleted: 0,
-            isCurrentUser: true
-        };
-        localStorage.setItem('ict_student_profile', JSON.stringify(profile));
     }
 
-    // লোকাল অ্যাকাউন্টে সেভ
-    accounts = accounts.filter(a => a.emailOrNumber !== emailOrNumber);
-    accounts.push({
-        name: fullName,
-        emailOrNumber: emailOrNumber,
-        college: payload.college,
-        hscYear: payload.hscYear,
-        password: password,
-        avatar: finalAvatar
-    });
-    localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
+    // স্টুডেন্ট প্রোফাইল অবজেক্ট তৈরি
+    const profile = {
+        name: (savedUser && savedUser.name) || fullName,
+        email: (savedUser && savedUser.emailOrNumber) || emailOrNumber,
+        emailOrNumber: (savedUser && savedUser.emailOrNumber) || emailOrNumber,
+        college: (savedUser && savedUser.college) || payload.college,
+        hsc_batch: (savedUser && savedUser.hscYear) || payload.hscYear,
+        batch: (savedUser && savedUser.hscYear) || payload.hscYear,
+        hscYear: (savedUser && savedUser.hscYear) || payload.hscYear,
+        avatar: (savedUser && savedUser.avatar) || finalAvatar,
+        points: (savedUser && savedUser.points !== undefined) ? savedUser.points : 25,
+        testsCompleted: (savedUser && savedUser.testsCompleted) || 0,
+        isCurrentUser: true
+    };
+
+    localStorage.setItem('ict_student_profile', JSON.stringify(profile));
     localStorage.setItem('ict_is_logged_in', 'true');
 
-    showToast(`স্বাগতম, ${fullName}! অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।`, 'success');
+    // লোকাল অ্যাকাউন্টেও সংরক্ষণ
+    accounts = accounts.filter(a => a.emailOrNumber !== emailOrNumber);
+    accounts.push({
+        name: profile.name,
+        emailOrNumber: emailOrNumber,
+        college: profile.college,
+        hscYear: profile.hscYear,
+        password: password,
+        avatar: profile.avatar
+    });
+    localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
 
-    // সরাসরি হোম পেজে রিডাইরেক্ট
+    // বাটনের ঠিক উপরে স্বাগত মেসেজ প্রদর্শন
+    setAuthAlert(`স্বাগতম, ${fullName}! অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।`, 'success', 'signup');
+
+    if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> সফল হয়েছে!';
+    }
+
+    // ব্যবহারকারী যাতে স্বাগত মেসেজ দেখতে পান তাই ১.২ সেকেন্ড পর রিডাইরেক্ট
     setTimeout(() => {
         redirectToHome();
-    }, 600);
+    }, 1200);
 }
 window.handleCreateAccount = handleCreateAccount;
 
@@ -332,47 +463,61 @@ window.handleCreateAccount = handleCreateAccount;
  */
 async function handleLogin(e) {
     if (e) e.preventDefault();
+    clearAuthAlerts();
 
     const emailOrNumber = (document.getElementById('loginEmailOrNumber')?.value || '').trim();
     const password = (document.getElementById('loginPassword')?.value || '').trim();
     const rememberMe = document.getElementById('loginRememberMe')?.checked;
 
     if (!emailOrNumber) {
-        showToast('ইমেইল অথবা মোবাইল নম্বর লিখুন', 'error');
+        setAuthAlert('ইমেইল অথবা মোবাইল নম্বর লিখুন', 'error', 'login');
         document.getElementById('loginEmailOrNumber')?.focus();
         return;
     }
 
     if (!password) {
-        showToast('পাসওয়ার্ড লিখুন', 'error');
+        setAuthAlert('পাসওয়ার্ড লিখুন', 'error', 'login');
         document.getElementById('loginPassword')?.focus();
         return;
     }
 
-    // ১. ব্যাকএন্ডের মাধ্যমে অথেনটিকেশন যাচাইকরণ
+    const submitBtn = document.querySelector('#loginView button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> যাচাই হচ্ছে...';
+    }
+
     let loggedInUser = null;
-    const isStaticHost = window.location.host.includes('github.io') || window.location.protocol === 'file:';
+    const baseUrl = getAuthApiBaseUrl();
 
-    if (!isStaticHost) {
-        try {
-            const response = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ emailOrNumber, password })
-            });
+    // ১. ব্যাকএন্ডের মাধ্যমে অথেনটিকেশন যাচাইকরণ
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 7000);
 
-            if (response.status !== 404 && response.status !== 405) {
-                const data = await response.json().catch(() => null);
+        const response = await fetch(`${baseUrl}/api/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ emailOrNumber, password }),
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
 
-                if (response.ok && data && data.success) {
-                    loggedInUser = data.user;
-                } else if (response.status === 400 || response.status === 401) {
-                    const msg = (data && data.message) || 'ভুল ইমেইল/নম্বর অথবা পাসওয়ার্ড!';
-                    showToast(msg, 'error');
-                    return; // ভুল হলে লগইন বন্ধ!
-                }
+        const data = await response.json().catch(() => null);
+
+        if (response.ok && data && data.success) {
+            loggedInUser = data.user;
+        } else if (response.status === 400 || response.status === 401 || (data && data.message)) {
+            const msg = (data && data.message) || 'ভুল ইমেইল/নম্বর অথবা পাসওয়ার্ড!';
+            setAuthAlert(msg, 'error', 'login');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Login';
             }
-        } catch (netErr) {}
+            return; // ভুল হলে লগইন বন্ধ!
+        }
+    } catch (netErr) {
+        console.warn('Backend login network error, fallback to local storage:', netErr.message);
     }
 
     // ২. ফলব্যাক চেক (GitHub Pages বা লোকাল স্টোরেজ একাউন্ট)
@@ -385,12 +530,20 @@ async function handleLogin(e) {
         const matchedAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
 
         if (!matchedAccount) {
-            showToast('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি! সঠিক তথ্য দিন অথবা Create Account করুন।', 'error');
+            setAuthAlert('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি! সঠিক তথ্য দিন অথবা Create Account করুন।', 'error', 'login');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Login';
+            }
             return;
         }
 
         if (matchedAccount.password !== password) {
-            showToast('ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা Forgot Password ব্যবহার করুন।', 'error');
+            setAuthAlert('ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা Forgot Password ব্যবহার করুন।', 'error', 'login');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Login';
+            }
             return;
         }
 
@@ -409,9 +562,11 @@ async function handleLogin(e) {
     const profile = {
         name: loggedInUser.name,
         email: loggedInUser.emailOrNumber,
+        emailOrNumber: loggedInUser.emailOrNumber,
         college: loggedInUser.college,
         hsc_batch: loggedInUser.hscYear || 'HSC 2026',
         batch: loggedInUser.hscYear || 'HSC 2026',
+        hscYear: loggedInUser.hscYear || 'HSC 2026',
         avatar: loggedInUser.avatar,
         points: loggedInUser.points !== undefined ? loggedInUser.points : 25,
         testsCompleted: loggedInUser.testsCompleted || 0,
@@ -425,12 +580,17 @@ async function handleLogin(e) {
         localStorage.setItem('ict_remember_login', 'true');
     }
 
-    showToast(`স্বাগতম, ${profile.name}! সফলভাবে লগইন হয়েছে।`, 'success');
+    // বাটনের ঠিক উপরে স্বাগত মেসেজ প্রদর্শন
+    setAuthAlert(`স্বাগতম, ${profile.name}! সফলভাবে লগইন হয়েছে।`, 'success', 'login');
 
-    // সরাসরি হোম পেজে রিডাইরেক্ট
+    if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> সফল হয়েছে!';
+    }
+
+    // ১.২ সেকেন্ড পর সরাসরি হোম পেজে রিডাইরেক্ট
     setTimeout(() => {
         redirectToHome();
-    }, 600);
+    }, 1200);
 }
 window.handleLogin = handleLogin;
 
@@ -439,58 +599,72 @@ window.handleLogin = handleLogin;
  */
 async function handleResetPassword(e) {
     if (e) e.preventDefault();
+    clearAuthAlerts();
 
     const emailOrNumber = (document.getElementById('forgotEmailOrNumber')?.value || '').trim();
     const newPassword = (document.getElementById('forgotNewPassword')?.value || '').trim();
     const confirmPassword = (document.getElementById('forgotConfirmPassword')?.value || '').trim();
 
     if (!emailOrNumber) {
-        showToast('দয়া করে নিবন্ধিত ইমেইল বা মোবাইল নম্বর দিন', 'error');
+        setAuthAlert('দয়া করে নিবন্ধিত ইমেইল বা মোবাইল নম্বর দিন', 'error', 'forgot');
         document.getElementById('forgotEmailOrNumber')?.focus();
         return;
     }
 
     if (!newPassword) {
-        showToast('নতুন পাসওয়ার্ড লিখুন', 'error');
+        setAuthAlert('নতুন পাসওয়ার্ড লিখুন', 'error', 'forgot');
         document.getElementById('forgotNewPassword')?.focus();
         return;
     }
 
     if (newPassword.length < 4) {
-        showToast('নতুন পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে', 'error');
+        setAuthAlert('নতুন পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে', 'error', 'forgot');
         document.getElementById('forgotNewPassword')?.focus();
         return;
     }
 
     if (newPassword !== confirmPassword) {
-        showToast('নতুন পাসওয়ার্ড এবং কনফার্ম পাসওয়ার্ড মিলছে না!', 'error');
+        setAuthAlert('নতুন পাসওয়ার্ড এবং কনফার্ম পাসওয়ার্ড মিলছে না!', 'error', 'forgot');
         document.getElementById('forgotConfirmPassword')?.focus();
         return;
     }
 
-    // ১. ব্যাকএন্ডে রিসেট রিকোয়েস্ট পাঠানো
+    const submitBtn = document.querySelector('#forgotView button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> পাসওয়ার্ড রিসেট হচ্ছে...';
+    }
+
     let resetDone = false;
-    const isStaticHost = window.location.host.includes('github.io') || window.location.protocol === 'file:';
+    const baseUrl = getAuthApiBaseUrl();
 
-    if (!isStaticHost) {
-        try {
-            const response = await fetch('/api/auth/reset-password', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ emailOrNumber, newPassword })
-            });
+    // ১. ব্যাকএন্ডে রিসেট রিকোয়েস্ট পাঠানো
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 7000);
 
-            if (response.status !== 404 && response.status !== 405) {
-                const data = await response.json().catch(() => null);
+        const response = await fetch(`${baseUrl}/api/auth/reset-password`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ emailOrNumber, newPassword }),
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
 
-                if (response.ok && data && data.success) {
-                    resetDone = true;
-                } else if (response.status === 404 || response.status === 400) {
-                    showToast((data && data.message) || 'কোনো অ্যাকাউন্ট পাওয়া যায়নি!', 'error');
-                    return;
-                }
+        const data = await response.json().catch(() => null);
+
+        if (response.ok && data && data.success) {
+            resetDone = true;
+        } else if (response.status === 404 || response.status === 400 || (data && data.message)) {
+            setAuthAlert((data && data.message) || 'কোনো অ্যাকাউন্ট পাওয়া যায়নি!', 'error', 'forgot');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'RESET PASSWORD';
             }
-        } catch (err) {}
+            return;
+        }
+    } catch (err) {
+        console.warn('Backend reset password network error:', err.message);
     }
 
     // ২. লোকাল অ্যাকাউন্ট আপডেট
@@ -502,7 +676,11 @@ async function handleResetPassword(e) {
     const targetAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
 
     if (!resetDone && !targetAccount) {
-        showToast('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি!', 'error');
+        setAuthAlert('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি!', 'error', 'forgot');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'RESET PASSWORD';
+        }
         return;
     }
 
@@ -511,7 +689,11 @@ async function handleResetPassword(e) {
         localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
     }
 
-    showToast('পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! নতুন পাসওয়ার্ড দিয়ে লগইন করুন।', 'success');
+    setAuthAlert('পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! নতুন পাসওয়ার্ড দিয়ে লগইন করুন।', 'success', 'forgot');
+
+    if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> সম্পন্ন হয়েছে';
+    }
 
     // লগইন ভিউতে ফেরত পাঠানো এবং ইমেইল প্রি-ফিল করা
     const loginEmailInput = document.getElementById('loginEmailOrNumber');
@@ -519,12 +701,15 @@ async function handleResetPassword(e) {
     const loginPassInput = document.getElementById('loginPassword');
     if (loginPassInput) {
         loginPassInput.value = '';
-        loginPassInput.focus();
     }
 
     setTimeout(() => {
         switchAuthView('login');
-    }, 800);
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'RESET PASSWORD';
+        }
+    }, 1500);
 }
 window.handleResetPassword = handleResetPassword;
 
@@ -536,8 +721,12 @@ function continueAsGuest() {
     if (!profile) {
         profile = {
             name: 'তানভীর',
+            email: 'guest@ictlearning.com',
+            emailOrNumber: 'guest@ictlearning.com',
             college: 'সরকারি মুজিব কলেজ',
             hsc_batch: 'HSC 2026',
+            batch: 'HSC 2026',
+            hscYear: 'HSC 2026',
             avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
             points: 25,
             isCurrentUser: true
@@ -545,7 +734,7 @@ function continueAsGuest() {
         localStorage.setItem('ict_student_profile', JSON.stringify(profile));
     }
     localStorage.setItem('ict_is_logged_in', 'true');
-    showToast('গেস্ট হিসেবে প্রবেশ করা হচ্ছে...', 'info');
+    setAuthAlert('গেস্ট হিসেবে প্রবেশ করা হচ্ছে...', 'info');
     setTimeout(() => {
         redirectToHome();
     }, 500);
@@ -573,7 +762,7 @@ function checkExistingSession() {
 }
 
 /**
- * সাধারণ টোস্ট নোটিফিকেশন (যাতে স্ক্রিনের একদম উপরে অর্ধেক কেটে না যায়, সুন্দরভাবে নিচে ভেসে ওঠে)
+ * সাধারণ টোস্ট নোটিফিকেশন (যদি অতিরিক্ত নোটিফিকেশন দরকার হয়)
  */
 function showToast(message, type = 'info') {
     let toast = document.getElementById('auth-toast');

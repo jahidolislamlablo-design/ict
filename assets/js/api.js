@@ -1937,9 +1937,10 @@ const ApiService = {
     },
 
     // ১৪. বর্তমান ইউজারের প্রোফাইল তথ্য আনা
-    async getStudentProfile() {
+    async getStudentProfile(emailOrNumber = '') {
         try {
-            const res = await fetchFromBackend('/api/profile');
+            const query = emailOrNumber ? `?emailOrNumber=${encodeURIComponent(emailOrNumber)}` : '';
+            const res = await fetchFromBackend(`/api/profile${query}`);
             if (res && res.success && res.data) {
                 localStorage.setItem('ict_student_profile', JSON.stringify(res.data));
                 return res.data;
@@ -1962,6 +1963,26 @@ const ApiService = {
         };
         localStorage.setItem('ict_student_profile', JSON.stringify(curr));
         return curr;
+    },
+
+    // ১৫. শিক্ষার্থী প্রোফাইল আপডেট (ছবি, নাম, কলেজ, এইচএসসি ব্যাচ, পাসওয়ার্ড)
+    async updateProfile(profileData) {
+        try {
+            const res = await fetchFromBackend('/api/profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(profileData)
+            });
+            if (res && res.success && res.data) {
+                const current = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
+                const merged = { ...current, ...res.data };
+                localStorage.setItem('ict_student_profile', JSON.stringify(merged));
+            }
+            return res;
+        } catch (e) {
+            console.warn('Backend updateProfile error:', e);
+            return { success: false, message: e.message };
+        }
     }
 
 };
