@@ -13,6 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
+ * নিরাপদভাবে ওয়েবসাইটের হোম পেজে নিয়ে যাওয়ার হেল্পার (GitHub Pages ও Localhost উভয় ক্ষেত্রে নির্ভুল)
+ */
+function redirectToHome() {
+    if (window.location.host.includes('github.io')) {
+        const parts = window.location.pathname.split('/').filter(Boolean);
+        const repo = parts.length > 0 ? parts[0] : '';
+        window.location.href = repo ? `/${repo}/index.html` : '/index.html';
+        return;
+    }
+    const isPages = window.location.pathname.includes('/pages/');
+    window.location.href = isPages ? '../index.html' : 'index.html';
+}
+window.redirectToHome = redirectToHome;
+
+/**
  * ভিউ সুইচিং (Login <-> Create Account)
  */
 function initAuthTabs() {
@@ -126,6 +141,8 @@ async function handleCreateAccount(e) {
 
     const fullName = (document.getElementById('signupFullName')?.value || '').trim();
     const emailOrNumber = (document.getElementById('signupEmailOrNumber')?.value || '').trim();
+    const collegeName = (document.getElementById('signupCollegeName')?.value || '').trim();
+    const hscYear = (document.getElementById('signupHscYear')?.value || '').trim();
     const password = (document.getElementById('signupPassword')?.value || '').trim();
     const confirmPassword = (document.getElementById('signupConfirmPassword')?.value || '').trim();
 
@@ -166,7 +183,9 @@ async function handleCreateAccount(e) {
     const profile = {
         name: fullName,
         email: emailOrNumber,
-        college: 'এইচএসসি পরীক্ষার্থী',
+        college: collegeName || 'এইচএসসি পরীক্ষার্থী',
+        hsc_batch: hscYear || 'HSC 2026',
+        batch: hscYear || 'HSC 2026',
         avatar: finalAvatar,
         points: 25,
         testsCompleted: 0,
@@ -181,11 +200,12 @@ async function handleCreateAccount(e) {
     // নিবন্ধিত অ্যাকাউন্ট তালিকায় সংরক্ষণ
     try {
         let accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-        // যদি পূর্বে একই ইমেইল/নম্বর থাকে তবে তা রিপ্লেস করা
         accounts = accounts.filter(a => a.emailOrNumber !== emailOrNumber);
         accounts.push({
             name: fullName,
             emailOrNumber: emailOrNumber,
+            college: profile.college,
+            hscYear: profile.hsc_batch,
             password: password,
             avatar: finalAvatar
         });
@@ -207,9 +227,10 @@ async function handleCreateAccount(e) {
 
     showToast(`স্বাগতম, ${fullName}! অ্যাকাউন্ট তৈরি সম্পন্ন হয়েছে।`, 'success');
 
+    // সরাসরি হোম পেজে রিডাইরেক্ট
     setTimeout(() => {
-        window.location.href = 'index.html';
-    }, 800);
+        redirectToHome();
+    }, 600);
 }
 window.handleCreateAccount = handleCreateAccount;
 
@@ -249,7 +270,9 @@ async function handleLogin(e) {
         profile = {
             name: matched.name,
             email: matched.emailOrNumber,
-            college: (profile && profile.college) ? profile.college : 'এইচএসসি পরীক্ষার্থী',
+            college: matched.college || (profile && profile.college) || 'এইচএসসি পরীক্ষার্থী',
+            hsc_batch: matched.hscYear || (profile && profile.hsc_batch) || 'HSC 2026',
+            batch: matched.hscYear || (profile && profile.hsc_batch) || 'HSC 2026',
             avatar: matched.avatar || (profile && profile.avatar) || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
             points: (profile && profile.points !== undefined) ? profile.points : 25,
             isCurrentUser: true
@@ -261,6 +284,8 @@ async function handleLogin(e) {
                 name: 'শিক্ষার্থী',
                 email: emailOrNumber,
                 college: 'এইচএসসি পরীক্ষার্থী',
+                hsc_batch: 'HSC 2026',
+                batch: 'HSC 2026',
                 avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
                 points: 25,
                 isCurrentUser: true
@@ -277,9 +302,10 @@ async function handleLogin(e) {
 
     showToast(`স্বাগতম, ${profile.name || 'শিক্ষার্থী'}! সফলভাবে লগইন হয়েছে।`, 'success');
 
+    // সরাসরি হোম পেজে রিডাইরেক্ট
     setTimeout(() => {
-        window.location.href = 'index.html';
-    }, 700);
+        redirectToHome();
+    }, 600);
 }
 window.handleLogin = handleLogin;
 
@@ -292,6 +318,7 @@ function continueAsGuest() {
         profile = {
             name: 'তানভীর',
             college: 'সরকারি মুজিব কলেজ',
+            hsc_batch: 'HSC 2026',
             avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
             points: 25,
             isCurrentUser: true
@@ -301,7 +328,7 @@ function continueAsGuest() {
     localStorage.setItem('ict_is_logged_in', 'true');
     showToast('গেস্ট হিসেবে প্রবেশ করা হচ্ছে...', 'info');
     setTimeout(() => {
-        window.location.href = 'index.html';
+        redirectToHome();
     }, 500);
 }
 window.continueAsGuest = continueAsGuest;
@@ -316,13 +343,12 @@ function checkExistingSession() {
 
     // যদি অলরেডি লগইন থাকে এবং জোরপূর্বক লগইন পেজে না আসে, সরাসরি হোমপেজে পাঠানো
     if (isLoggedIn && !forceShow) {
-        // ছোট বাটন যোগ করা যে ইউজার চাইলে সরাসরি সাইটে যেতে পারেন
         const guestFooter = document.querySelector('.auth-guest-footer');
         if (guestFooter) {
             guestFooter.innerHTML = `
-                <a href="index.html" class="guest-link-btn" style="color: #0066FF; font-weight: 700;">
-                    <i class="fa-solid fa-house"></i> আপনি ইতিমধ্যে লগইন আছেন - ওয়েবসাইটে প্রবেশ করুন &rarr;
-                </a>
+                <button type="button" onclick="redirectToHome()" class="guest-link-btn" style="color: #0066FF; font-weight: 700;">
+                    <i class="fa-solid fa-house"></i> আপনি ইতিমধ্যে লগইন আছেন - হোম পেজে প্রবেশ করুন &rarr;
+                </button>
             `;
         }
     }
@@ -338,14 +364,14 @@ function showToast(message, type = 'info') {
         toast.id = 'auth-toast';
         toast.style.cssText = `
             position: fixed;
-            top: 24px;
+            top: 18px;
             left: 50%;
             transform: translateX(-50%) translateY(-20px);
             background: #1E293B;
             color: #FFFFFF;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 9999px;
-            font-size: 0.95rem;
+            font-size: 0.90rem;
             font-weight: 600;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             z-index: 999999;
@@ -355,6 +381,8 @@ function showToast(message, type = 'info') {
             display: flex;
             align-items: center;
             gap: 8px;
+            max-width: 90%;
+            text-align: center;
         `;
         document.body.appendChild(toast);
     }

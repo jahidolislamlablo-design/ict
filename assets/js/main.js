@@ -333,8 +333,16 @@ function checkWebsiteAuthentication() {
 
     const isLoggedIn = localStorage.getItem('ict_is_logged_in') === 'true';
     if (!isLoggedIn) {
+        let targetLogin = 'login.html';
         const isPages = window.location.pathname.includes('/pages/');
-        const targetLogin = isPages ? 'login.html' : 'login.html';
+        if (isPages) {
+            targetLogin = '../login.html';
+        }
+        if (window.location.host.includes('github.io')) {
+            const parts = window.location.pathname.split('/').filter(Boolean);
+            const repo = parts.length > 0 ? parts[0] : '';
+            targetLogin = repo ? `/${repo}/login.html` : '/login.html';
+        }
         window.location.href = targetLogin;
     }
 }

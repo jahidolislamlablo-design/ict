@@ -68,6 +68,11 @@ function updateProfileUI(user) {
         const headerAvatars = document.querySelectorAll('.header-user-btn img');
         headerAvatars.forEach(img => { img.src = user.avatar; });
     }
+
+    if (user.hsc_batch || user.batch) {
+        const batchBadge = document.getElementById('profileHscBatchBadge');
+        if (batchBadge) batchBadge.innerText = user.hsc_batch || user.batch;
+    }
 }
 
 function openEditProfileModal() {

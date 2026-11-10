@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Neumorphic Auth Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/login.css?v=5.4">
+    <link rel="stylesheet" href="../assets/css/login.css?v=5.5">
 </head>
 <body class="auth-page-body">
 
@@ -93,6 +93,16 @@
                     <input type="text" id="signupEmailOrNumber" class="neumorphic-input no-toggle" placeholder="Email Or Number" autocomplete="email" required>
                 </div>
 
+                <!-- College Name ফিল্ড -->
+                <div class="neumorphic-input-group">
+                    <input type="text" id="signupCollegeName" class="neumorphic-input no-toggle" placeholder="College Name" autocomplete="organization">
+                </div>
+
+                <!-- HSC Year ফিল্ড -->
+                <div class="neumorphic-input-group">
+                    <input type="text" id="signupHscYear" class="neumorphic-input no-toggle" placeholder="HSC Year (e.g. HSC 2026)" autocomplete="off">
+                </div>
+
                 <div class="neumorphic-input-group">
                     <input type="password" id="signupPassword" class="neumorphic-input" placeholder="Password" autocomplete="new-password" required>
                     <button type="button" class="password-toggle-btn" data-target="signupPassword" aria-label="Toggle Password Visibility">
@@ -130,6 +140,6 @@
     </div>
 
     <!-- অথেনটিকেশন স্ক্রিপ্ট -->
-    <script src="../assets/js/login.js?v=5.4"></script>
+    <script src="../assets/js/login.js?v=5.5"></script>
 </body>
 </html>

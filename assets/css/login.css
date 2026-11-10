@@ -1,6 +1,6 @@
 /**
- * ICT EASY LEARNING - NEUMORPHIC AUTH STYLES
- * Pixel-perfect implementation of Soft Neumorphic UI
+ * ICT EASY LEARNING - NEUMORPHIC AUTH STYLES (COMPACT FULLSCREEN FIT)
+ * Pixel-perfect Soft Neumorphic UI fitting in 100vh without vertical scrolling
  */
 
 * {
@@ -11,39 +11,40 @@
 }
 
 body.auth-page-body {
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     background-color: #EEF2F6;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px 16px;
+    padding: 8px 14px;
     color: #1E293B;
     position: relative;
-    overflow-x: hidden;
 }
 
-/* Subtle background glowing ambient orbs (optional, adds depth) */
+/* Subtle background glowing ambient orbs */
 .auth-page-body::before {
     content: '';
     position: absolute;
-    width: 320px;
-    height: 320px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(238, 242, 246, 0) 70%);
-    top: -60px;
-    left: -60px;
+    top: -50px;
+    left: -50px;
     pointer-events: none;
 }
 
 .auth-page-body::after {
     content: '';
     position: absolute;
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0, 102, 255, 0.06) 0%, rgba(238, 242, 246, 0) 70%);
-    bottom: -60px;
-    right: -60px;
+    bottom: -50px;
+    right: -50px;
     pointer-events: none;
 }
 
@@ -51,20 +52,28 @@ body.auth-page-body {
 .neumorphic-card {
     background: #EEF2F6;
     width: 100%;
-    max-width: 440px;
-    border-radius: 46px;
-    padding: 44px 34px 38px 34px;
-    box-shadow: 18px 18px 38px #d1d9e6, -18px -18px 38px #ffffff;
+    max-width: 400px;
+    max-height: 98vh;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    border-radius: 34px;
+    padding: 20px 24px 16px 24px;
+    box-shadow: 16px 16px 34px #d1d9e6, -16px -16px 34px #ffffff;
     border: 1.5px solid rgba(255, 255, 255, 0.85);
     position: relative;
     z-index: 10;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neumorphic-card::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 /* Auth Views */
 .auth-view {
     display: none;
-    animation: fadeInView 0.35s ease forwards;
+    animation: fadeInView 0.25s ease forwards;
 }
 
 .auth-view.active {
@@ -74,7 +83,7 @@ body.auth-page-body {
 @keyframes fadeInView {
     from {
         opacity: 0;
-        transform: translateY(8px) scale(0.99);
+        transform: translateY(6px) scale(0.99);
     }
     to {
         opacity: 1;
@@ -84,12 +93,12 @@ body.auth-page-body {
 
 /* Top Circular Inset Well / Socket */
 .neumorphic-icon-socket {
-    width: 96px;
-    height: 96px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
-    margin: 0 auto 22px auto;
+    margin: 0 auto 8px auto;
     background: #EEF2F6;
-    box-shadow: inset 6px 6px 12px #d1d9e6, inset -6px -6px 12px #ffffff;
+    box-shadow: inset 4px 4px 9px #d1d9e6, inset -4px -4px 9px #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +113,7 @@ body.auth-page-body {
 
 .neumorphic-icon-socket .socket-icon {
     color: #007AFF;
-    font-size: 2.25rem;
+    font-size: 1.45rem;
     transition: transform 0.2s ease;
 }
 
@@ -114,30 +123,30 @@ body.auth-page-body {
 
 /* Avatar Preview Image inside Socket */
 .socket-avatar-preview {
-    width: 82px;
-    height: 82px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
     display: none;
 }
 
 /* Camera Badge on Avatar Socket */
 .avatar-camera-badge {
     position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 28px;
-    height: 28px;
+    bottom: -1px;
+    right: -1px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: #0066FF;
     color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
-    box-shadow: 0 3px 8px rgba(0, 102, 255, 0.45);
-    border: 2px solid #EEF2F6;
+    font-size: 0.60rem;
+    box-shadow: 0 2px 6px rgba(0, 102, 255, 0.45);
+    border: 1.5px solid #EEF2F6;
     transition: transform 0.2s ease;
 }
 
@@ -147,27 +156,28 @@ body.auth-page-body {
 
 /* Titles & Subtitles */
 .neumorphic-title {
-    font-size: 2.15rem;
+    font-size: 1.52rem;
     font-weight: 800;
     color: #1E293B;
     text-align: center;
-    margin: 0 0 6px 0;
-    letter-spacing: -0.4px;
+    margin: 0 0 2px 0;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
 }
 
 .neumorphic-subtitle {
-    font-size: 0.98rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: #64748B;
     text-align: center;
-    margin: 0 0 28px 0;
-    line-height: 1.4;
+    margin: 0 0 13px 0;
+    line-height: 1.3;
 }
 
 /* Neumorphic Input Fields */
 .neumorphic-input-group {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 9px;
     width: 100%;
 }
 
@@ -175,12 +185,12 @@ body.auth-page-body {
     width: 100%;
     background: #EEF2F6;
     border-radius: 50px;
-    padding: 16px 24px;
-    padding-right: 50px; /* space for eye icon */
+    padding: 10px 18px;
+    padding-right: 44px; /* space for eye icon */
     border: none;
     outline: none;
-    box-shadow: inset 5px 5px 10px #cdd5e0, inset -5px -5px 10px #ffffff;
-    font-size: 1.02rem;
+    box-shadow: inset 4px 4px 8px #cdd5e0, inset -4px -4px 8px #ffffff;
+    font-size: 0.88rem;
     font-weight: 500;
     color: #1E293B;
     transition: all 0.2s ease;
@@ -188,7 +198,7 @@ body.auth-page-body {
 }
 
 .neumorphic-input.no-toggle {
-    padding-right: 24px;
+    padding-right: 18px;
 }
 
 .neumorphic-input::placeholder {
@@ -197,21 +207,21 @@ body.auth-page-body {
 }
 
 .neumorphic-input:focus {
-    box-shadow: inset 6px 6px 12px #c5cbd5, inset -6px -6px 12px #ffffff, 0 0 0 1.5px rgba(0, 102, 255, 0.25);
+    box-shadow: inset 5px 5px 10px #c5cbd5, inset -5px -5px 10px #ffffff, 0 0 0 1.5px rgba(0, 102, 255, 0.25);
 }
 
 /* Password Toggle Icon */
 .password-toggle-btn {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
     border: none;
     color: #64748B;
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     cursor: pointer;
-    padding: 6px;
+    padding: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,18 +237,18 @@ body.auth-page-body {
 .remember-me-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin: 16px 6px 26px 6px;
+    gap: 8px;
+    margin: 6px 4px 12px 4px;
     cursor: pointer;
     user-select: none;
 }
 
 .neumorphic-checkbox-box {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
     background: #EEF2F6;
-    box-shadow: inset 2px 2px 5px #cdd5e0, inset -2px -2px 5px #ffffff;
+    box-shadow: inset 2px 2px 4px #cdd5e0, inset -2px -2px 4px #ffffff;
     border: 1.5px solid #CBD5E1;
     display: flex;
     align-items: center;
@@ -248,7 +258,7 @@ body.auth-page-body {
 }
 
 .neumorphic-checkbox-box i {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: #FFFFFF;
     opacity: 0;
     transform: scale(0.5);
@@ -262,7 +272,7 @@ body.auth-page-body {
 .remember-me-row input[type="checkbox"]:checked + .neumorphic-checkbox-box {
     background: #007AFF;
     border-color: #007AFF;
-    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.35);
+    box-shadow: 0 2px 6px rgba(0, 122, 255, 0.35);
 }
 
 .remember-me-row input[type="checkbox"]:checked + .neumorphic-checkbox-box i {
@@ -272,7 +282,7 @@ body.auth-page-body {
 
 .remember-me-text {
     color: #475569;
-    font-size: 0.95rem;
+    font-size: 0.84rem;
     font-weight: 500;
 }
 
@@ -280,29 +290,28 @@ body.auth-page-body {
 .btn-neumorphic-login {
     width: 100%;
     background: #EEF2F6;
-    box-shadow: 6px 6px 16px #cdd5e0, -6px -6px 16px #ffffff;
+    box-shadow: 5px 5px 13px #cdd5e0, -5px -5px 13px #ffffff;
     border-radius: 50px;
     color: #0066FF;
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    padding: 17px;
+    padding: 11px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    letter-spacing: -0.2px;
     outline: none;
 }
 
 .btn-neumorphic-login:hover {
-    box-shadow: 8px 8px 20px #c5cbd5, -8px -8px 20px #ffffff;
+    box-shadow: 6px 6px 16px #c5cbd5, -6px -6px 16px #ffffff;
     transform: translateY(-1px);
 }
 
 .btn-neumorphic-login:active {
-    box-shadow: inset 4px 4px 8px #cdd5e0, inset -4px -4px 8px #ffffff;
+    box-shadow: inset 3px 3px 7px #cdd5e0, inset -3px -3px 7px #ffffff;
     transform: translateY(1px);
 }
 
@@ -311,15 +320,15 @@ body.auth-page-body {
     width: 100%;
     background: #0066FF;
     color: #FFFFFF;
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     font-weight: 800;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     border-radius: 50px;
-    padding: 18px;
+    padding: 12px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 24px rgba(0, 102, 255, 0.38);
+    box-shadow: 0 8px 18px rgba(0, 102, 255, 0.35);
     transition: all 0.25s ease;
     display: flex;
     align-items: center;
@@ -329,13 +338,13 @@ body.auth-page-body {
 
 .btn-neumorphic-create:hover {
     background: #005ce6;
-    box-shadow: 0 12px 28px rgba(0, 102, 255, 0.48);
-    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 102, 255, 0.45);
+    transform: translateY(-1px);
 }
 
 .btn-neumorphic-create:active {
     transform: translateY(1px);
-    box-shadow: 0 6px 16px rgba(0, 102, 255, 0.32);
+    box-shadow: 0 5px 13px rgba(0, 102, 255, 0.30);
 }
 
 /* Bottom Actions Rows */
@@ -343,30 +352,30 @@ body.auth-page-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 34px;
+    margin-top: 12px;
     padding: 0 4px;
 }
 
 .bottom-prompt-text {
     color: #64748B;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     font-weight: 500;
 }
 
 /* Circular "Create account" Button */
 .btn-circle-create {
-    width: 72px;
-    height: 72px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: #EEF2F6;
-    box-shadow: 5px 5px 12px #cdd5e0, -5px -5px 12px #ffffff;
+    box-shadow: 4px 4px 10px #cdd5e0, -4px -4px 10px #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #0066FF;
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: 0.68rem;
     line-height: 1.15;
     border: none;
     cursor: pointer;
@@ -376,23 +385,23 @@ body.auth-page-body {
 }
 
 .btn-circle-create:hover {
-    box-shadow: 7px 7px 16px #c5cbd5, -7px -7px 16px #ffffff;
-    transform: scale(1.04);
+    box-shadow: 5px 5px 13px #c5cbd5, -5px -5px 13px #ffffff;
+    transform: scale(1.05);
 }
 
 .btn-circle-create:active {
-    box-shadow: inset 3px 3px 6px #cdd5e0, inset -3px -3px 6px #ffffff;
-    transform: scale(0.98);
+    box-shadow: inset 2px 2px 5px #cdd5e0, inset -2px -2px 5px #ffffff;
+    transform: scale(0.97);
 }
 
 /* Circular Back Arrow Button with speech pointer tail */
 .btn-circle-back {
-    width: 68px;
-    height: 68px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    border-bottom-left-radius: 8px; /* Speech bubble pointer tail */
+    border-bottom-left-radius: 6px;
     background: #EEF2F6;
-    box-shadow: 5px 5px 12px #cdd5e0, -5px -5px 12px #ffffff;
+    box-shadow: 4px 4px 10px #cdd5e0, -4px -4px 10px #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -404,42 +413,42 @@ body.auth-page-body {
 }
 
 .btn-circle-back i {
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     transition: transform 0.2s ease;
 }
 
 .btn-circle-back:hover {
-    box-shadow: 7px 7px 16px #c5cbd5, -7px -7px 16px #ffffff;
-    transform: scale(1.04);
+    box-shadow: 5px 5px 13px #c5cbd5, -5px -5px 13px #ffffff;
+    transform: scale(1.05);
 }
 
 .btn-circle-back:hover i {
-    transform: translateX(-3px);
+    transform: translateX(-2px);
 }
 
 .btn-circle-back:active {
-    box-shadow: inset 3px 3px 6px #cdd5e0, inset -3px -3px 6px #ffffff;
-    transform: scale(0.98);
+    box-shadow: inset 2px 2px 5px #cdd5e0, inset -2px -2px 5px #ffffff;
+    transform: scale(0.97);
 }
 
 /* Guest Skip Footer Link */
 .auth-guest-footer {
     text-align: center;
-    margin-top: 26px;
+    margin-top: 10px;
     border-top: 1px solid rgba(203, 213, 225, 0.4);
-    padding-top: 16px;
+    padding-top: 7px;
 }
 
 .guest-link-btn {
     background: none;
     border: none;
     color: #64748B;
-    font-size: 0.88rem;
+    font-size: 0.78rem;
     font-weight: 600;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     transition: color 0.2s ease;
 }
 
@@ -450,27 +459,27 @@ body.auth-page-body {
 /* Responsive adjustments */
 @media (max-width: 480px) {
     .neumorphic-card {
-        padding: 36px 22px 30px 22px;
-        border-radius: 36px;
+        padding: 16px 18px 14px 18px;
+        border-radius: 28px;
     }
     .neumorphic-title {
-        font-size: 1.85rem;
+        font-size: 1.35rem;
     }
     .neumorphic-subtitle {
-        font-size: 0.90rem;
-        margin-bottom: 24px;
+        font-size: 0.78rem;
+        margin-bottom: 10px;
     }
     .neumorphic-input {
-        padding: 14px 20px;
-        font-size: 0.96rem;
+        padding: 9px 14px;
+        font-size: 0.85rem;
     }
     .btn-circle-create {
-        width: 64px;
-        height: 64px;
-        font-size: 0.78rem;
+        width: 44px;
+        height: 44px;
+        font-size: 0.64rem;
     }
     .btn-circle-back {
-        width: 60px;
-        height: 60px;
+        width: 42px;
+        height: 42px;
     }
 }
