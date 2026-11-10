@@ -131,27 +131,15 @@ body.auth-page-body {
     display: none;
 }
 
-/* Camera Badge on Avatar Socket */
-.avatar-camera-badge {
-    position: absolute;
-    bottom: -1px;
-    right: -1px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #0066FF;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.60rem;
-    box-shadow: 0 2px 6px rgba(0, 102, 255, 0.45);
-    border: 1.5px solid #EEF2F6;
-    transition: transform 0.2s ease;
-}
-
-.neumorphic-icon-socket.interactive-avatar:hover .avatar-camera-badge {
-    transform: scale(1.15);
+/* Hide native file input completely */
+#signupAvatarInput {
+    display: none !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
 }
 
 /* Titles & Subtitles */
@@ -233,12 +221,38 @@ body.auth-page-body {
     color: #0066FF;
 }
 
+/* Auth Options Row (Remember Me + Forgot Password) */
+.auth-options-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 4px 12px 4px;
+}
+
+.btn-forgot-password {
+    background: transparent;
+    border: none;
+    color: #0066FF;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 2px 4px;
+    outline: none;
+    text-decoration: none;
+}
+
+.btn-forgot-password:hover {
+    color: #0050cc;
+    text-decoration: underline;
+}
+
 /* Custom Neumorphic Checkbox (Remember Me) */
 .remember-me-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: 6px 4px 12px 4px;
+    margin: 0;
     cursor: pointer;
     user-select: none;
 }
@@ -364,8 +378,8 @@ body.auth-page-body {
 
 /* Circular "Create account" Button */
 .btn-circle-create {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #EEF2F6;
     box-shadow: 4px 4px 10px #cdd5e0, -4px -4px 10px #ffffff;
@@ -374,14 +388,17 @@ body.auth-page-body {
     align-items: center;
     justify-content: center;
     color: #0066FF;
-    font-weight: 700;
-    font-size: 0.68rem;
-    line-height: 1.15;
+    font-weight: 800;
+    font-size: 0.82rem;
+    line-height: 1.12;
+    text-align: center;
     border: none;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease;
     outline: none;
+    padding: 3px;
+    letter-spacing: -0.2px;
 }
 
 .btn-circle-create:hover {
@@ -474,9 +491,10 @@ body.auth-page-body {
         font-size: 0.85rem;
     }
     .btn-circle-create {
-        width: 44px;
-        height: 44px;
-        font-size: 0.64rem;
+        width: 54px;
+        height: 54px;
+        font-size: 0.74rem;
+        font-weight: 800;
     }
     .btn-circle-back {
         width: 42px;

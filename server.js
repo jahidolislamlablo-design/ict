@@ -344,9 +344,23 @@ const StudentSchema = new mongoose.Schema({
     trim: true,
     default: 'জাহিদুল ইসলাম লাভলু'
   },
+  emailOrNumber: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  password: {
+    type: String,
+    default: ''
+  },
   college: {
     type: String,
     default: 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
+    trim: true
+  },
+  hscYear: {
+    type: String,
+    default: 'HSC 2026',
     trim: true
   },
   avatar: {
@@ -2346,10 +2360,14 @@ app.get('/api/rankings', async (req, res) => {
         students.sort((a, b) => (b.points || 0) - (a.points || 0));
       }
     }
-    const ranked = students.map((s, idx) => ({
-      ...s,
-      position: idx + 1
-    }));
+    const ranked = students.map((s, idx) => {
+      const safe = { ...s };
+      delete safe.password; // পাসওয়ার্ড নিরাপত্তা নিশ্চিতকরণ
+      return {
+        ...safe,
+        position: idx + 1
+      };
+    });
     const currentUser = ranked.find(s => s.isCurrentUser) || ranked[0] || null;
     res.json({
       success: true,
@@ -2436,7 +2454,12 @@ app.get('/api/profile', async (req, res) => {
         student = list.find(s => s.isCurrentUser) || list[0];
       }
     }
-    res.json({ success: true, data: student });
+    if (student) {
+      const safe = { ...student };
+      delete safe.password;
+      return res.json({ success: true, data: safe });
+    }
+    res.json({ success: true, data: null });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -2470,6 +2493,265 @@ app.post('/api/profile', async (req, res) => {
       }
     }
     res.json({ success: true, data: student });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// ৫. ইউজার রেজিস্ট্রেশন ও অথেনটিকেশন (User Registration)
+app.post('/api/auth/register', async (req, res) => {
+  try {
+    const { name, emailOrNumber, college, hscYear, password, avatar } = req.body || {};
+
+    if (!name || !name.trim()) {
+      return res.status(400).json({ success: false, message: 'দয়া করে আপনার সম্পূর্ণ নাম লিখুন!' });
+    }
+    if (!emailOrNumber || !emailOrNumber.trim()) {
+      return res.status(400).json({ success: false, message: 'দয়া করে ইমেইল অথবা মোবাইল নম্বর লিখুন!' });
+    }
+    if (!password || password.trim().length < 4) {
+      return res.status(400).json({ success: false, message: 'পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে!' });
+    }
+
+    const cleanEmailOrNumber = emailOrNumber.trim();
+    const cleanName = name.trim();
+    const cleanCollege = (college || 'এইচএসসি পরীক্ষার্থী').trim();
+    const cleanHscYear = (hscYear || 'HSC 2026').trim();
+    const cleanAvatar = avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80';
+
+    if (mongoose.connection.readyState === 1) {
+      // চেক করি এই emailOrNumber ইতিমধ্যে আছে কিনা
+      const existing = await Student.findOne({ emailOrNumber: cleanEmailOrNumber });
+      if (existing) {
+        return res.status(400).json({
+          success: false,
+          message: 'এই ইমেইল বা মোবাইল নম্বর দিয়ে ইতিপূর্বে একাউন্ট খোলা হয়েছে! অনুগ্রহ করে লগইন করুন অথবা পাসওয়ার্ড রিসেট করুন।'
+        });
+      }
+
+      // পূর্বের সকল ইউজারের isCurrentUser false করে দেই
+      await Student.updateMany({}, { isCurrentUser: false });
+
+      // নতুন স্টুডেন্ট তৈরি
+      const newStudent = new Student({
+        name: cleanName,
+        emailOrNumber: cleanEmailOrNumber,
+        password: password.trim(),
+        college: cleanCollege,
+        hscYear: cleanHscYear,
+        avatar: cleanAvatar,
+        points: 25,
+        testsCompleted: 0,
+        isCurrentUser: true
+      });
+      await newStudent.save();
+      await syncDatabaseJson('students');
+
+      return res.json({
+        success: true,
+        message: 'অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!',
+        user: {
+          id: newStudent._id,
+          name: newStudent.name,
+          emailOrNumber: newStudent.emailOrNumber,
+          college: newStudent.college,
+          hscYear: newStudent.hscYear,
+          avatar: newStudent.avatar,
+          points: newStudent.points,
+          testsCompleted: newStudent.testsCompleted,
+          isCurrentUser: true
+        }
+      });
+    } else {
+      // Fallback to students.json
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      let list = [];
+      if (fs.existsSync(fallbackPath)) {
+        list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+      }
+      const existing = list.find(s => s.emailOrNumber === cleanEmailOrNumber);
+      if (existing) {
+        return res.status(400).json({
+          success: false,
+          message: 'এই ইমেইল বা মোবাইল নম্বর দিয়ে ইতিপূর্বে একাউন্ট খোলা হয়েছে! অনুগ্রহ করে লগইন করুন।'
+        });
+      }
+      list.forEach(s => s.isCurrentUser = false);
+      const newStudent = {
+        _id: 'user_' + Date.now(),
+        name: cleanName,
+        emailOrNumber: cleanEmailOrNumber,
+        password: password.trim(),
+        college: cleanCollege,
+        hscYear: cleanHscYear,
+        avatar: cleanAvatar,
+        points: 25,
+        testsCompleted: 0,
+        isCurrentUser: true,
+        createdAt: new Date().toISOString()
+      };
+      list.unshift(newStudent);
+      fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+
+      return res.json({
+        success: true,
+        message: 'অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!',
+        user: newStudent
+      });
+    }
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'রেজিস্ট্রেশন ব্যর্থ হয়েছে: ' + err.message });
+  }
+});
+
+// ৬. ইউজার লগইন যাচাইকরণ (User Login Verification)
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const { emailOrNumber, password } = req.body || {};
+
+    if (!emailOrNumber || !emailOrNumber.trim()) {
+      return res.status(400).json({ success: false, message: 'দয়া করে ইমেইল অথবা মোবাইল নম্বর দিন!' });
+    }
+    if (!password || !password.trim()) {
+      return res.status(400).json({ success: false, message: 'দয়া করে পাসওয়ার্ড দিন!' });
+    }
+
+    const cleanInput = emailOrNumber.trim();
+    const cleanPass = password.trim();
+
+    let student = null;
+    if (mongoose.connection.readyState === 1) {
+      student = await Student.findOne({ emailOrNumber: cleanInput });
+    }
+    if (!student) {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        student = list.find(s => s.emailOrNumber === cleanInput);
+      }
+    }
+
+    if (!student) {
+      return res.status(400).json({
+        success: false,
+        message: 'এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি! সঠিক তথ্য দিন অথবা নতুন একাউন্ট তৈরি করুন।'
+      });
+    }
+
+    if (student.password !== cleanPass) {
+      return res.status(400).json({
+        success: false,
+        message: 'ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা পাসওয়ার্ড রিসেট করুন।'
+      });
+    }
+
+    // Set isCurrentUser = true for this student and false for others
+    if (mongoose.connection.readyState === 1) {
+      await Student.updateMany({}, { isCurrentUser: false });
+      student.isCurrentUser = true;
+      await student.save();
+      await syncDatabaseJson('students');
+    } else {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        list.forEach(s => s.isCurrentUser = (s.emailOrNumber === cleanInput));
+        fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+      }
+    }
+
+    return res.json({
+      success: true,
+      message: 'সফলভাবে লগইন হয়েছে!',
+      user: {
+        id: student._id,
+        name: student.name,
+        emailOrNumber: student.emailOrNumber,
+        college: student.college,
+        hscYear: student.hscYear || 'HSC 2026',
+        avatar: student.avatar,
+        points: student.points || 0,
+        testsCompleted: student.testsCompleted || 0,
+        isCurrentUser: true
+      }
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'লগইন ব্যর্থ হয়েছে: ' + err.message });
+  }
+});
+
+// ৭. পাসওয়ার্ড রিসেট (Forgot / Reset Password)
+app.post('/api/auth/reset-password', async (req, res) => {
+  try {
+    const { emailOrNumber, newPassword } = req.body || {};
+
+    if (!emailOrNumber || !emailOrNumber.trim()) {
+      return res.status(400).json({ success: false, message: 'দয়া করে নিবন্ধিত ইমেইল বা মোবাইল নম্বর দিন!' });
+    }
+    if (!newPassword || newPassword.trim().length < 4) {
+      return res.status(400).json({ success: false, message: 'নতুন পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে!' });
+    }
+
+    const cleanInput = emailOrNumber.trim();
+    const cleanPass = newPassword.trim();
+
+    let student = null;
+    if (mongoose.connection.readyState === 1) {
+      student = await Student.findOne({ emailOrNumber: cleanInput });
+      if (student) {
+        student.password = cleanPass;
+        await student.save();
+        await syncDatabaseJson('students');
+      }
+    }
+
+    const fallbackPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(fallbackPath)) {
+      const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+      const found = list.find(s => s.emailOrNumber === cleanInput);
+      if (found) {
+        found.password = cleanPass;
+        fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+        if (!student) student = found;
+      }
+    }
+
+    if (!student) {
+      return res.status(404).json({
+        success: false,
+        message: 'এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি!'
+      });
+    }
+
+    return res.json({
+      success: true,
+      message: 'পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে! এখন নতুন পাসওয়ার্ড দিয়ে লগইন করুন।'
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'পাসওয়ার্ড রিসেট ব্যর্থ হয়েছে: ' + err.message });
+  }
+});
+
+// ৮. ইউজার ম্যানেজমেন্ট তালিকা (Registered Users List)
+app.get('/api/users', async (req, res) => {
+  try {
+    let users = [];
+    if (mongoose.connection.readyState === 1) {
+      users = await Student.find({ emailOrNumber: { $exists: true, $ne: '' } })
+        .select('-password')
+        .sort({ createdAt: -1 })
+        .lean();
+    }
+    if (!users || users.length === 0) {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        users = list
+          .filter(s => s.emailOrNumber)
+          .map(({ password, ...u }) => u);
+      }
+    }
+    res.json({ success: true, count: users.length, data: users });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }

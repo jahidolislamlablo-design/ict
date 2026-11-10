@@ -1,6 +1,6 @@
 /**
  * ICT EASY LEARNING - NEUMORPHIC AUTH SCRIPT (login.js)
- * Handles login, registration, avatar uploads, profile sync and transitions
+ * Handles authentic login, registration, password reset, avatar uploads, and sessions
  */
 
 let uploadedAvatarDataUrl = '';
@@ -28,12 +28,14 @@ function redirectToHome() {
 window.redirectToHome = redirectToHome;
 
 /**
- * ভিউ সুইচিং (Login <-> Create Account)
+ * ভিউ সুইচিং (Login <-> Create Account <-> Forgot Password)
  */
 function initAuthTabs() {
     const hash = window.location.hash.toLowerCase();
     if (hash === '#signup' || hash === '#register') {
         switchAuthView('signup');
+    } else if (hash === '#forgot' || hash === '#reset') {
+        switchAuthView('forgot');
     } else {
         switchAuthView('login');
     }
@@ -42,6 +44,8 @@ function initAuthTabs() {
         const h = window.location.hash.toLowerCase();
         if (h === '#signup' || h === '#register') {
             switchAuthView('signup');
+        } else if (h === '#forgot' || h === '#reset') {
+            switchAuthView('forgot');
         } else {
             switchAuthView('login');
         }
@@ -51,14 +55,22 @@ function initAuthTabs() {
 function switchAuthView(viewName) {
     const loginView = document.getElementById('loginView');
     const signupView = document.getElementById('signupView');
+    const forgotView = document.getElementById('forgotView');
+
     if (!loginView || !signupView) return;
 
+    // Reset all views
+    loginView.classList.remove('active');
+    signupView.classList.remove('active');
+    if (forgotView) forgotView.classList.remove('active');
+
     if (viewName === 'signup') {
-        loginView.classList.remove('active');
         signupView.classList.add('active');
         window.location.hash = 'signup';
+    } else if (viewName === 'forgot') {
+        if (forgotView) forgotView.classList.add('active');
+        window.location.hash = 'forgot';
     } else {
-        signupView.classList.remove('active');
         loginView.classList.add('active');
         window.location.hash = 'login';
     }
@@ -95,7 +107,7 @@ function initPasswordToggles() {
 }
 
 /**
- * ছবি আপলোড ও প্রিভিউ
+ * ছবি আপলোড ও প্রিভিউ (ইনসেট সার্কেলের ভেতরে ক্লিক করলেই ফাইল পিকার ওপেন হবে)
  */
 function initAvatarUpload() {
     const avatarInput = document.getElementById('signupAvatarInput');
@@ -105,8 +117,11 @@ function initAvatarUpload() {
 
     if (!avatarInput || !avatarSocket) return;
 
-    avatarSocket.addEventListener('click', () => {
-        avatarInput.click();
+    avatarSocket.addEventListener('click', (e) => {
+        // ফাইল ইনপুটে সরাসরি ক্লিক প্রতিরোধ যাতে লুপ না হয়
+        if (e.target !== avatarInput) {
+            avatarInput.click();
+        }
     });
 
     avatarInput.addEventListener('change', function(e) {
@@ -134,7 +149,7 @@ function initAvatarUpload() {
 }
 
 /**
- * রেজিস্টার / অ্যাকাউন্ট তৈরি হ্যান্ডলার
+ * রেজিস্টার / অ্যাকাউন্ট তৈরি হ্যান্ডলার (ডাটাবেজ ও ব্যাকএন্ডে সংরক্ষণ)
  */
 async function handleCreateAccount(e) {
     if (e) e.preventDefault();
@@ -166,6 +181,7 @@ async function handleCreateAccount(e) {
 
     if (password.length < 4) {
         showToast('পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে', 'error');
+        document.getElementById('signupPassword')?.focus();
         return;
     }
 
@@ -179,53 +195,95 @@ async function handleCreateAccount(e) {
     const defaultAvatar = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80';
     const finalAvatar = uploadedAvatarDataUrl || defaultAvatar;
 
-    // প্রোফাইল অবজেক্ট তৈরি
-    const profile = {
+    const payload = {
         name: fullName,
-        email: emailOrNumber,
+        emailOrNumber: emailOrNumber,
         college: collegeName || 'এইচএসসি পরীক্ষার্থী',
-        hsc_batch: hscYear || 'HSC 2026',
-        batch: hscYear || 'HSC 2026',
-        avatar: finalAvatar,
-        points: 25,
-        testsCompleted: 0,
-        isCurrentUser: true,
-        registeredAt: new Date().toISOString()
+        hscYear: hscYear || 'HSC 2026',
+        password: password,
+        avatar: finalAvatar
     };
 
-    // লোকাল স্টোরেজে সংরক্ষণ
-    localStorage.setItem('ict_student_profile', JSON.stringify(profile));
-    localStorage.setItem('ict_is_logged_in', 'true');
-
-    // নিবন্ধিত অ্যাকাউন্ট তালিকায় সংরক্ষণ
+    // ১. ব্যাকএন্ডে রেজিস্ট্রেশন রিকোয়েস্ট পাঠানো
+    let backendSuccess = false;
     try {
-        let accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-        accounts = accounts.filter(a => a.emailOrNumber !== emailOrNumber);
-        accounts.push({
-            name: fullName,
-            emailOrNumber: emailOrNumber,
-            college: profile.college,
-            hscYear: profile.hsc_batch,
-            password: password,
-            avatar: finalAvatar
-        });
-        localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
-    } catch (e) {}
-
-    // ব্যাকএন্ডে প্রোফাইল সিঙ্ক
-    try {
-        fetch('/api/profile', {
+        const response = await fetch('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name: fullName,
-                avatar: finalAvatar,
-                college: profile.college
-            })
-        }).catch(() => {});
-    } catch (e) {}
+            body: JSON.stringify(payload)
+        });
 
-    showToast(`স্বাগতম, ${fullName}! অ্যাকাউন্ট তৈরি সম্পন্ন হয়েছে।`, 'success');
+        const data = await response.json().catch(() => null);
+
+        if (!response.ok) {
+            // যদি সার্ভার কোনো ত্রুটি দেয় (যেমন: নম্বর বা ইমেইল ইতিমধ্যে ব্যবহৃত)
+            const errorMsg = (data && data.message) || 'রেজিস্ট্রেশন করা সম্ভব হয়নি!';
+            showToast(errorMsg, 'error');
+            return;
+        }
+
+        if (data && data.success) {
+            backendSuccess = true;
+            // প্রোফাইল অবজেক্ট সেট
+            const profile = {
+                name: data.user.name || fullName,
+                email: data.user.emailOrNumber || emailOrNumber,
+                college: data.user.college || payload.college,
+                hsc_batch: data.user.hscYear || payload.hscYear,
+                batch: data.user.hscYear || payload.hscYear,
+                avatar: data.user.avatar || finalAvatar,
+                points: data.user.points !== undefined ? data.user.points : 25,
+                testsCompleted: data.user.testsCompleted || 0,
+                isCurrentUser: true
+            };
+            localStorage.setItem('ict_student_profile', JSON.stringify(profile));
+        }
+    } catch (netErr) {
+        // ব্যাকএন্ড অফলাইন (যেমন: স্ট্যাটিক GitHub Pages)
+    }
+
+    // ২. লোকাল রেজিস্ট্রি আপডেট (GitHub Pages ও অফলাইন ফলব্যাক)
+    let accounts = [];
+    try {
+        accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+    } catch (err) { accounts = []; }
+
+    // যদি ব্যাকএন্ড সফল না হয়ে থাকে (স্ট্যাটিক পেজ), তাহলে লোকাল ডুপ্লিকেট চেক
+    if (!backendSuccess) {
+        const existing = accounts.find(a => a.emailOrNumber === emailOrNumber);
+        if (existing) {
+            showToast('এই ইমেইল বা নম্বর দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে! অনুগ্রহ করে লগইন করুন।', 'error');
+            return;
+        }
+
+        const profile = {
+            name: fullName,
+            email: emailOrNumber,
+            college: payload.college,
+            hsc_batch: payload.hscYear,
+            batch: payload.hscYear,
+            avatar: finalAvatar,
+            points: 25,
+            testsCompleted: 0,
+            isCurrentUser: true
+        };
+        localStorage.setItem('ict_student_profile', JSON.stringify(profile));
+    }
+
+    // লোকাল অ্যাকাউন্টে সেভ
+    accounts = accounts.filter(a => a.emailOrNumber !== emailOrNumber);
+    accounts.push({
+        name: fullName,
+        emailOrNumber: emailOrNumber,
+        college: payload.college,
+        hscYear: payload.hscYear,
+        password: password,
+        avatar: finalAvatar
+    });
+    localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
+    localStorage.setItem('ict_is_logged_in', 'true');
+
+    showToast(`স্বাগতম, ${fullName}! অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।`, 'success');
 
     // সরাসরি হোম পেজে রিডাইরেক্ট
     setTimeout(() => {
@@ -235,7 +293,7 @@ async function handleCreateAccount(e) {
 window.handleCreateAccount = handleCreateAccount;
 
 /**
- * লগইন হ্যান্ডলার
+ * লগইন হ্যান্ডলার (যাচাইকরণ ব্যতীত কোনো ইউজার প্রবেশ করতে পারবে না)
  */
 async function handleLogin(e) {
     if (e) e.preventDefault();
@@ -256,42 +314,74 @@ async function handleLogin(e) {
         return;
     }
 
-    let accounts = [];
+    // ১. ব্যাকএন্ডের মাধ্যমে অথেনটিকেশন যাচাইকরণ
+    let loggedInUser = null;
+    let backendChecked = false;
+
     try {
-        accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-    } catch (e) { accounts = []; }
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ emailOrNumber, password })
+        });
 
-    // মেলাবার চেষ্টা
-    const matched = accounts.find(a => (a.emailOrNumber === emailOrNumber) && (a.password === password));
+        const data = await response.json().catch(() => null);
 
-    let profile = JSON.parse(localStorage.getItem('ict_student_profile') || 'null');
-
-    if (matched) {
-        profile = {
-            name: matched.name,
-            email: matched.emailOrNumber,
-            college: matched.college || (profile && profile.college) || 'এইচএসসি পরীক্ষার্থী',
-            hsc_batch: matched.hscYear || (profile && profile.hsc_batch) || 'HSC 2026',
-            batch: matched.hscYear || (profile && profile.hsc_batch) || 'HSC 2026',
-            avatar: matched.avatar || (profile && profile.avatar) || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
-            points: (profile && profile.points !== undefined) ? profile.points : 25,
-            isCurrentUser: true
-        };
-    } else {
-        // যদি একাউন্ট পূর্বে সেইভ না থাকে কিন্তু লগইন করছে, নাম ডিফল্ট হিসেবে অথবা ইনপুট থেকে নেওয়া
-        if (!profile) {
-            profile = {
-                name: 'শিক্ষার্থী',
-                email: emailOrNumber,
-                college: 'এইচএসসি পরীক্ষার্থী',
-                hsc_batch: 'HSC 2026',
-                batch: 'HSC 2026',
-                avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
-                points: 25,
-                isCurrentUser: true
-            };
+        if (response.ok && data && data.success) {
+            loggedInUser = data.user;
+            backendChecked = true;
+        } else if (response.status === 400 || response.status === 401 || response.status === 404) {
+            // ভুল পাসওয়ার্ড বা একাউন্ট না পাওয়ার এরর
+            const msg = (data && data.message) || 'ভুল ইমেইল/নম্বর অথবা পাসওয়ার্ড!';
+            showToast(msg, 'error');
+            return; // লগইন বাতিল ও রিডাইরেক্ট বন্ধ!
         }
+    } catch (netErr) {
+        // ব্যাকএন্ড অফলাইন (যেমন: স্ট্যাটিক GitHub Pages)
     }
+
+    // ২. ফলব্যাক চেক (GitHub Pages বা লোকাল স্টোরেজ একাউন্ট)
+    if (!loggedInUser) {
+        let accounts = [];
+        try {
+            accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+        } catch (err) { accounts = []; }
+
+        const matchedAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
+
+        if (!matchedAccount) {
+            showToast('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি! সঠিক তথ্য দিন অথবা Create Account করুন।', 'error');
+            return; // লগইন বাতিল!
+        }
+
+        if (matchedAccount.password !== password) {
+            showToast('ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা Forgot Password ব্যবহার করুন।', 'error');
+            return; // লগইন বাতিল!
+        }
+
+        loggedInUser = {
+            name: matchedAccount.name,
+            emailOrNumber: matchedAccount.emailOrNumber,
+            college: matchedAccount.college || 'এইচএসসি পরীক্ষার্থী',
+            hscYear: matchedAccount.hscYear || 'HSC 2026',
+            avatar: matchedAccount.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
+            points: 25,
+            testsCompleted: 0
+        };
+    }
+
+    // ৩. সফল লগইন হলে প্রোফাইল সংরক্ষণ
+    const profile = {
+        name: loggedInUser.name,
+        email: loggedInUser.emailOrNumber,
+        college: loggedInUser.college,
+        hsc_batch: loggedInUser.hscYear || 'HSC 2026',
+        batch: loggedInUser.hscYear || 'HSC 2026',
+        avatar: loggedInUser.avatar,
+        points: loggedInUser.points !== undefined ? loggedInUser.points : 25,
+        testsCompleted: loggedInUser.testsCompleted || 0,
+        isCurrentUser: true
+    };
 
     localStorage.setItem('ict_student_profile', JSON.stringify(profile));
     localStorage.setItem('ict_is_logged_in', 'true');
@@ -300,7 +390,7 @@ async function handleLogin(e) {
         localStorage.setItem('ict_remember_login', 'true');
     }
 
-    showToast(`স্বাগতম, ${profile.name || 'শিক্ষার্থী'}! সফলভাবে লগইন হয়েছে।`, 'success');
+    showToast(`স্বাগতম, ${profile.name}! সফলভাবে লগইন হয়েছে।`, 'success');
 
     // সরাসরি হোম পেজে রিডাইরেক্ট
     setTimeout(() => {
@@ -308,6 +398,95 @@ async function handleLogin(e) {
     }, 600);
 }
 window.handleLogin = handleLogin;
+
+/**
+ * পাসওয়ার্ড রিসেট হ্যান্ডলার (Forgot Password)
+ */
+async function handleResetPassword(e) {
+    if (e) e.preventDefault();
+
+    const emailOrNumber = (document.getElementById('forgotEmailOrNumber')?.value || '').trim();
+    const newPassword = (document.getElementById('forgotNewPassword')?.value || '').trim();
+    const confirmPassword = (document.getElementById('forgotConfirmPassword')?.value || '').trim();
+
+    if (!emailOrNumber) {
+        showToast('দয়া করে নিবন্ধিত ইমেইল বা মোবাইল নম্বর দিন', 'error');
+        document.getElementById('forgotEmailOrNumber')?.focus();
+        return;
+    }
+
+    if (!newPassword) {
+        showToast('নতুন পাসওয়ার্ড লিখুন', 'error');
+        document.getElementById('forgotNewPassword')?.focus();
+        return;
+    }
+
+    if (newPassword.length < 4) {
+        showToast('নতুন পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে', 'error');
+        document.getElementById('forgotNewPassword')?.focus();
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        showToast('নতুন পাসওয়ার্ড এবং কনফার্ম পাসওয়ার্ড মিলছে না!', 'error');
+        document.getElementById('forgotConfirmPassword')?.focus();
+        return;
+    }
+
+    // ১. ব্যাকএন্ডে রিসেট রিকোয়েস্ট পাঠানো
+    let resetDone = false;
+    try {
+        const response = await fetch('/api/auth/reset-password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ emailOrNumber, newPassword })
+        });
+        const data = await response.json().catch(() => null);
+
+        if (response.ok && data && data.success) {
+            resetDone = true;
+        } else if (response.status === 404 || response.status === 400) {
+            showToast((data && data.message) || 'কোনো অ্যাকাউন্ট পাওয়া যায়নি!', 'error');
+            return;
+        }
+    } catch (err) {
+        // ফলব্যাকে যাওয়া হবে
+    }
+
+    // ২. লোকাল অ্যাকাউন্ট আপডেট
+    let accounts = [];
+    try {
+        accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+    } catch (e) { accounts = []; }
+
+    const targetAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
+
+    if (!resetDone && !targetAccount) {
+        showToast('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি!', 'error');
+        return;
+    }
+
+    if (targetAccount) {
+        targetAccount.password = newPassword;
+        localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
+    }
+
+    showToast('পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! নতুন পাসওয়ার্ড দিয়ে লগইন করুন।', 'success');
+
+    // লগইন ভিউতে ফেরত পাঠানো এবং ইমেইল প্রি-ফিল করা
+    const loginEmailInput = document.getElementById('loginEmailOrNumber');
+    if (loginEmailInput) loginEmailInput.value = emailOrNumber;
+    const loginPassInput = document.getElementById('loginPassword');
+    if (loginPassInput) {
+        loginPassInput.value = '';
+        loginPassInput.focus();
+    }
+
+    setTimeout(() => {
+        switchAuthView('login');
+    }, 800);
+}
+window.handleResetPassword = handleResetPassword;
 
 /**
  * গেস্ট হিসেবে প্রবেশ
@@ -341,7 +520,7 @@ function checkExistingSession() {
     const params = new URLSearchParams(window.location.search);
     const forceShow = params.get('force') === 'true';
 
-    // যদি অলরেডি লগইন থাকে এবং জোরপূর্বক লগইন পেজে না আসে, সরাসরি হোমপেজে পাঠানো
+    // যদি অলরেডি লগইন থাকে এবং জোরপূর্বক লগইন পেজে না আসে, সরাসরি হোমপেজে যাওয়ার লিংক দেওয়া
     if (isLoggedIn && !forceShow) {
         const guestFooter = document.querySelector('.auth-guest-footer');
         if (guestFooter) {
@@ -399,5 +578,5 @@ function showToast(message, type = 'info') {
     window.authToastTimeout = setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transform = 'translateX(-50%) translateY(-20px)';
-    }, 2800);
+    }, 3200);
 }
