@@ -36507,17 +36507,16 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afcd7",
     "serialNo": 193,
     "categoryTypes": [
       "Chapter Practice"
     ],
     "categoryType": "Chapter Practice",
-    "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
+    "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
     "question": "A ও B এর বুলিয়ান যোগফল সিগন্যাল-",
@@ -36531,7 +36530,8 @@
     "correctAnswer": "<img src=\"/uploads/images/mcq_ch3_opt_k.png\" style=\"vertical-align:middle; max-height:28px;\">",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
