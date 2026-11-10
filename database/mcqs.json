@@ -1132,7 +1132,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 02",
     "question": "5, 8, B ধারার পরবর্তী মান কোনটি?",
     "image": "",
     "options": [
@@ -1145,7 +1145,7 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 3"
+    "liveExamNo": "Live Exam 2"
   },
   {
     "_id": "6aeb32daf84660475440e04f",
