@@ -889,35 +889,6 @@
     "__v": 0
   },
   {
-    "_id": "6aef4900541019a0004afc1a",
-    "serialNo": 5,
-    "categoryTypes": [
-      "Chapter Practice",
-      "Live Exam",
-      "Model Test"
-    ],
-    "categoryType": "Chapter Practice",
-    "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
-    "collegeName": "",
-    "boardName": "",
-    "examYear": "2025",
-    "testPaperName": "",
-    "modelTestNo": "Model Test 02",
-    "question": "সুমেরিয়ান-ব্যবিলিয়ান সংখ্যা পদ্ধতি ছিল",
-    "image": "",
-    "options": [
-      "১০ ভিত্তিক",
-      "১৬ ভিত্তিক",
-      "২০ ভিত্তিক",
-      "৬০ ভিত্তিক"
-    ],
-    "correctAnswer": "৬০ ভিত্তিক",
-    "explanation": "",
-    "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0,
-    "liveExamNo": "Live Exam 2"
-  },
-  {
     "_id": "6aef4900541019a0004afc1b",
     "serialNo": 5,
     "categoryTypes": [
@@ -941,6 +912,35 @@
       "1010111"
     ],
     "correctAnswer": "1000110",
+    "explanation": "",
+    "createdAt": "2026-11-07T15:51:28.435Z",
+    "__v": 0,
+    "liveExamNo": "Live Exam 2"
+  },
+  {
+    "_id": "6aef4900541019a0004afc1a",
+    "serialNo": 5,
+    "categoryTypes": [
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
+    ],
+    "categoryType": "Chapter Practice",
+    "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
+    "collegeName": "",
+    "boardName": "",
+    "examYear": "2025",
+    "testPaperName": "",
+    "modelTestNo": "Model Test 02",
+    "question": "সুমেরিয়ান-ব্যবিলিয়ান সংখ্যা পদ্ধতি ছিল",
+    "image": "",
+    "options": [
+      "১০ ভিত্তিক",
+      "১৬ ভিত্তিক",
+      "২০ ভিত্তিক",
+      "৬০ ভিত্তিক"
+    ],
+    "correctAnswer": "৬০ ভিত্তিক",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
@@ -2872,33 +2872,6 @@
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
     "__v": 0
-  },
-  {
-    "_id": "6aef4900541019a0004afc25",
-    "serialNo": 15,
-    "categoryTypes": [
-      "Chapter Practice"
-    ],
-    "categoryType": "Chapter Practice",
-    "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
-    "collegeName": "",
-    "boardName": "",
-    "examYear": "2025",
-    "testPaperName": "",
-    "modelTestNo": "",
-    "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:\nদু'টি সংখ্যার পাথর্ক্য 52₁₀। তাদের মধ্যে বড় সংখ্যাটি 5D₁₆।\n\nএক বাইটের অর্ধেককে কী বলা হয়?",
-    "image": "",
-    "options": [
-      "wbej",
-      "কম্পিউটার শব্দ",
-      "ডেসিমাল",
-      "ক্যারেক্টার"
-    ],
-    "correctAnswer": "wbej",
-    "explanation": "",
-    "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0,
-    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
