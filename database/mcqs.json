@@ -3039,7 +3039,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc26",
     "serialNo": 16,
     "categoryTypes": [
@@ -3049,10 +3048,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "2-Gi cwic~iK\n\n১০১১০১ এর বাইনারি কমপ্লিমেন্ট কোনটি?",
+    "question": "2-Gi cwic~iK\n\n101101 এর বাইনারি কমপ্লিমেন্ট কোনটি?",
     "image": "",
     "options": [
       "101100",
@@ -3063,7 +3062,8 @@
     "correctAnswer": "010010",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
