@@ -2490,19 +2490,20 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc23",
     "serialNo": 13,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 02",
     "question": "নিচের উদ্দীপকটি পড় এবং ১১ ও ১২ নং প্রশ্নের উত্তর দাও:\nদু'টি সংখ্যার পাথর্ক্য ৫২₁₀। তাদের মধ্যে বড় সংখ্যাটি ৫উ₁₆।\n\nউদ্দীপকের অপর সংখ্যাটি কত?",
     "image": "",
     "options": [
@@ -2514,7 +2515,8 @@
     "correctAnswer": "101001₂",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 2"
   },
   {
     "liveExamNo": "",
