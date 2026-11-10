@@ -292,14 +292,13 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef62db441e8a8634d0c903",
     "serialNo": 2,
     "categoryTypes": [
       "College Test Paper"
     ],
     "categoryType": "College Test Paper",
-    "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
+    "chapter": "Chapter 3 (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট",
     "collegeName": "",
     "boardName": "",
     "examYear": "2025",
@@ -316,7 +315,8 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.489Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "_id": "6aef4900541019a0004afc18",
