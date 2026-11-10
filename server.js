@@ -54,8 +54,8 @@ app.use((req, res, next) => {
 });
 
 // JSON Body Parser à¦®à¦¿à¦¡à¦²à¦“à§Ÿà§à¦¯à¦¾à¦°
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // à¦¸à§à¦Ÿà§à¦¯à¦¾à¦Ÿà¦¿à¦• à¦«à¦¾à¦‡à¦² à¦ªà¦°à¦¿à¦¬à§‡à¦¶à¦¨ (public à¦¡à¦¿à¦°à§‡à¦•à§à¦Ÿà¦°à¦¿ à¦à¦¬à¦‚ à¦°à§à¦Ÿ à¦«à§‹à¦²à§à¦¡à¦¾à¦°)
 app.use(express.static(__dirname));
@@ -2737,7 +2737,7 @@ app.get('/api/users', async (req, res) => {
   try {
     let users = [];
     if (mongoose.connection.readyState === 1) {
-      users = await Student.find({ emailOrNumber: { $exists: true, $ne: '' } })
+      users = await Student.find({})
         .select('-password')
         .sort({ createdAt: -1 })
         .lean();
@@ -2746,12 +2746,34 @@ app.get('/api/users', async (req, res) => {
       const fallbackPath = path.join(__dirname, 'database', 'students.json');
       if (fs.existsSync(fallbackPath)) {
         const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-        users = list
-          .filter(s => s.emailOrNumber)
-          .map(({ password, ...u }) => u);
+        users = list.map(({ password, ...u }) => u);
       }
     }
     res.json({ success: true, count: users.length, data: users });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// ৯. ইউজার ডিলিট করা (Delete User by ID or emailOrNumber)
+app.delete('/api/users/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (mongoose.connection.readyState === 1) {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        await Student.findByIdAndDelete(id);
+      } else {
+        await Student.deleteOne({ emailOrNumber: id });
+      }
+      await syncDatabaseJson('students');
+    }
+    const fallbackPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(fallbackPath)) {
+      let list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+      list = list.filter(s => String(s._id) !== String(id) && s.emailOrNumber !== id);
+      fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+    }
+    res.json({ success: true, message: 'ব্যবহারকারী সফলভাবে ডিলিট করা হয়েছে।' });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }

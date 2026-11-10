@@ -822,6 +822,10 @@
         <span>🔴 লাইভ এক্সাম ও মডেল টেস্ট</span>
         <span class="badge" id="liveExamCountBadge">50</span>
       </button>
+      <button type="button" class="tab-btn" onclick="switchTab('usersTab')">
+        <span>👥 Users (ব্যবহারকারী)</span>
+        <span class="badge" id="usersCountBadge">0</span>
+      </button>
     </div>
 
     <!-- ============================================== -->
@@ -1619,7 +1623,71 @@
       </div>
     </section>
 
-  </main>
+    <!-- ============================================== -->
+    <!-- ৬. Users (ব্যবহারকারী তালিকা ও ম্যানেজমেন্ট) -->
+    <!-- ============================================== -->
+    <section id="usersTab" class="tab-content">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 8px;">
+              <span>👥 রেজিস্টার্ড ইউজার তালিকা (User Management)</span>
+            </h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+              ওয়েবসাইটে রেজিস্ট্রেশনকৃত সকল শিক্ষার্থীর নাম, ফোন/ইমেইল, কলেজ ও পয়েন্ট সম্পর্কিত তথ্য
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <input type="text" id="userSearchInput" placeholder="🔍 নাম, ইমেইল, মোবাইল বা কলেজ..." oninput="filterUserList()" style="padding: 0.45rem 0.85rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; width: 250px;">
+            <button type="button" class="btn btn-secondary" onclick="loadUserItems()" style="padding: 0.45rem 0.85rem; font-size: 0.85rem;">
+              🔄 রিফ্রেশ তালিকা
+            </button>
+          </div>
+        </div>
+
+        <!-- Summary Stats Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.78rem; font-weight: 700; color: #1e40af; text-transform: uppercase;">সর্বমোট শিক্ষার্থী</div>
+            <div id="statTotalUsers" style="font-size: 1.75rem; font-weight: 800; color: #1e3a8a; margin-top: 0.25rem;">0</div>
+          </div>
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.78rem; font-weight: 700; color: #166534; text-transform: uppercase;">গড় পয়েন্ট অর্জন</div>
+            <div id="statAvgPoints" style="font-size: 1.75rem; font-weight: 800; color: #14532d; margin-top: 0.25rem;">0</div>
+          </div>
+          <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.78rem; font-weight: 700; color: #6b21a8; text-transform: uppercase;">সর্বমোট টেস্ট সম্পন্ন</div>
+            <div id="statTotalTests" style="font-size: 1.75rem; font-weight: 800; color: #581c87; margin-top: 0.25rem;">0</div>
+          </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="table-container">
+          <table class="data-table" id="usersTable">
+            <thead>
+              <tr>
+                <th style="width: 50px;">নং</th>
+                <th>শিক্ষার্থী ও ছবি</th>
+                <th>ইমেইল / মোবাইল নম্বর</th>
+                <th>কলেজের নাম</th>
+                <th>এইচএসসি ব্যাচ</th>
+                <th>পয়েন্ট</th>
+                <th>টেস্ট সম্পন্ন</th>
+                <th>নিবন্ধন সময়</th>
+                <th style="text-align: center; width: 90px;">অ্যাকশন</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <tr>
+                <td colspan="9" style="text-align: center; padding: 2rem; color: #64748b;">
+                  ⏳ ব্যবহারকারী তথ্য লোড করা হচ্ছে...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
   <!-- ============================================== -->
   <!-- ৪. প্রশ্ন এডিট ও আপডেট মোডাল (Edit Modal) -->
@@ -1822,7 +1890,8 @@
         'cqTab': 1,
         'previewTab': 2,
         'pdfTab': 3,
-        'liveExamTab': 4
+        'liveExamTab': 4,
+        'usersTab': 5
       };
 
       const btnIndex = tabBtnMap[tabId];
@@ -1844,6 +1913,8 @@
         try { loadPdfItems(); } catch(e) { console.error('loadPdfItems error:', e); }
       } else if (tabId === 'liveExamTab') {
         try { loadLiveExamItems(); } catch(e) { console.error('loadLiveExamItems error:', e); }
+      } else if (tabId === 'usersTab') {
+        try { loadUserItems(); } catch(e) { console.error('loadUserItems error:', e); }
       }
     }
 
@@ -3699,10 +3770,226 @@
       }
     }
 
+    // ==============================================
+    // ইউজার ও শিক্ষার্থী ডেটা ম্যানেজমেন্ট (User Management)
+    // ==============================================
+    let allUsers = [];
+
+    async function loadUserItems(silent = false) {
+      const tableBody = document.getElementById('usersTableBody');
+      if (tableBody && !silent) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="9" style="text-align: center; padding: 2rem; color: #64748b;">
+              ⏳ ব্যবহারকারী তথ্য লোড হচ্ছে...
+            </td>
+          </tr>
+        `;
+      }
+
+      try {
+        let list = [];
+        // ১. ব্যাকএন্ড এপিআই কল
+        try {
+          const res = await fetch(`${API_BASE}/api/users?t=` + Date.now());
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success && Array.isArray(data.data)) {
+              list = data.data;
+            }
+          }
+        } catch (apiErr) {
+          console.warn('Backend /api/users error, trying fallback:', apiErr.message);
+        }
+
+        // ২. ফলব্যাক: static students.json
+        if (!list || list.length === 0) {
+          try {
+            const fb = await fetch('database/students.json?t=' + Date.now());
+            if (fb.ok) {
+              list = await fb.json();
+            }
+          } catch (fbErr) {}
+        }
+
+        // ৩. লোকাল স্টোরেজ অ্যাকাউন্ট সিঙ্ক (অফলাইন / GitHub Pages ফলব্যাক)
+        try {
+          const localAccounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+          if (Array.isArray(localAccounts) && localAccounts.length > 0) {
+            localAccounts.forEach(la => {
+              if (!list.some(u => u.emailOrNumber === la.emailOrNumber)) {
+                list.unshift({
+                  _id: 'local_' + la.emailOrNumber,
+                  name: la.name,
+                  emailOrNumber: la.emailOrNumber,
+                  college: la.college,
+                  hscYear: la.hscYear,
+                  avatar: la.avatar,
+                  points: 25,
+                  testsCompleted: 0,
+                  createdAt: new Date().toISOString()
+                });
+              }
+            });
+          }
+        } catch (e) {}
+
+        allUsers = list;
+
+        // ব্যাজ ও স্ট্যাটাস আপডেট
+        const badge = document.getElementById('usersCountBadge');
+        if (badge) badge.textContent = allUsers.length;
+
+        const totalStat = document.getElementById('statTotalUsers');
+        if (totalStat) totalStat.textContent = allUsers.length;
+
+        const totalPoints = allUsers.reduce((sum, u) => sum + (Number(u.points) || 0), 0);
+        const avgPoints = allUsers.length > 0 ? Math.round(totalPoints / allUsers.length) : 0;
+        const avgStat = document.getElementById('statAvgPoints');
+        if (avgStat) avgStat.textContent = avgPoints;
+
+        const totalTests = allUsers.reduce((sum, u) => sum + (Number(u.testsCompleted) || 0), 0);
+        const testsStat = document.getElementById('statTotalTests');
+        if (testsStat) testsStat.textContent = totalTests;
+
+        renderUserTable(allUsers);
+      } catch (err) {
+        console.error('loadUserItems error:', err);
+        if (tableBody) {
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="9" style="text-align: center; padding: 2rem; color: #ef4444;">
+                ❌ ব্যবহারকারী তালিকা লোড করা যায়নি: ${escapeHtml(err.message)}
+              </td>
+            </tr>
+          `;
+        }
+      }
+    }
+
+    function renderUserTable(list) {
+      const tableBody = document.getElementById('usersTableBody');
+      if (!tableBody) return;
+
+      if (!list || list.length === 0) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="9" style="text-align: center; padding: 2.5rem; color: #64748b;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+              <strong style="color: #334155;">কোনো ব্যবহারকারী পাওয়া যায়নি</strong>
+              <p style="font-size: 0.82rem; margin: 0.25rem 0 0 0;">নতুন অ্যাকাউন্ট তৈরি হলে এখানে স্বয়ংক্রিয়ভাবে প্রদর্শিত হবে</p>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tableBody.innerHTML = list.map((user, idx) => {
+        const id = user._id || user.emailOrNumber || ('user_' + idx);
+        const name = user.name || 'নামবিহীন শিক্ষার্থী';
+        const contact = user.emailOrNumber || 'দেওয়া হয়নি';
+        const college = user.college || 'এইচএসসি পরীক্ষার্থী';
+        const hscYear = user.hscYear || user.hsc_batch || user.batch || 'HSC 2026';
+        const points = user.points !== undefined ? user.points : 0;
+        const tests = user.testsCompleted !== undefined ? user.testsCompleted : 0;
+        const isCurrent = user.isCurrentUser ? '<span class="tag tag-emerald" style="font-size: 0.68rem; margin-left: 4px;">সক্রিয়</span>' : '';
+
+        const defaultAvatar = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80';
+        const avatarUrl = user.avatar || defaultAvatar;
+
+        let dateStr = '—';
+        if (user.createdAt) {
+          try {
+            const d = new Date(user.createdAt);
+            dateStr = d.toLocaleDateString('bn-BD', { day: 'numeric', month: 'short', year: 'numeric' });
+          } catch(e) {}
+        }
+
+        return `
+          <tr>
+            <td style="font-weight: 700; color: #64748b;">${idx + 1}</td>
+            <td>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="${avatarUrl}" alt="${escapeHtml(name)}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.08);" onerror="this.src='${defaultAvatar}'">
+                <div>
+                  <strong style="color: #1e293b; font-size: 0.90rem;">${escapeHtml(name)}</strong>
+                  ${isCurrent}
+                </div>
+              </div>
+            </td>
+            <td>
+              <span style="font-family: monospace; font-size: 0.86rem; color: #0284c7; background: #f0f9ff; padding: 2px 6px; border-radius: 4px;">
+                ${escapeHtml(contact)}
+              </span>
+            </td>
+            <td>
+              <span style="color: #475569; font-size: 0.85rem;">${escapeHtml(college)}</span>
+            </td>
+            <td>
+              <span class="tag tag-blue">${escapeHtml(hscYear)}</span>
+            </td>
+            <td>
+              <span class="tag tag-amber" style="font-weight: 700;">★ ${points}</span>
+            </td>
+            <td>
+              <span class="tag tag-purple">${tests} টি</span>
+            </td>
+            <td style="font-size: 0.80rem; color: #64748b; white-space: nowrap;">
+              ${dateStr}
+            </td>
+            <td style="text-align: center;">
+              <button type="button" class="btn btn-sm" onclick="deleteUserItem('${escapeHtml(String(id))}', '${escapeHtml(name)}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 3px 8px; font-size: 0.78rem; border-radius: 4px; cursor: pointer;" title="ইউজার ডিলিট করুন">
+                🗑️ মুছুন
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterUserList() {
+      const query = (document.getElementById('userSearchInput')?.value || '').toLowerCase().trim();
+      if (!query) {
+        renderUserTable(allUsers);
+        return;
+      }
+      const filtered = allUsers.filter(u => {
+        const n = (u.name || '').toLowerCase();
+        const e = (u.emailOrNumber || '').toLowerCase();
+        const c = (u.college || '').toLowerCase();
+        const h = (u.hscYear || '').toLowerCase();
+        return n.includes(query) || e.includes(query) || c.includes(query) || h.includes(query);
+      });
+      renderUserTable(filtered);
+    }
+
+    async function deleteUserItem(id, name) {
+      if (!confirm(`আপনি কি নিশ্চিত যে "${name}"-এর অ্যাকাউন্ট ডিলিট করতে চান?`)) return;
+      try {
+        const res = await fetch(`${API_BASE}/api/users/${encodeURIComponent(id)}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json().catch(() => null);
+
+        // লোকাল অ্যাকাউন্ট তালিকা থেকেও মুছে ফেলা
+        try {
+          let accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+          accounts = accounts.filter(a => String(a._id) !== String(id) && a.emailOrNumber !== id);
+          localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
+        } catch(e) {}
+
+        showToast('সফলতা', 'ব্যবহারকারী অ্যাকাউন্ট সফলভাবে ডিলিট করা হয়েছে', 'success');
+        await loadUserItems();
+      } catch (err) {
+        showToast('ত্রুটি', 'ডিলিট করতে সমস্যা হয়েছে: ' + err.message, 'error');
+      }
+    }
+
     // উইন্ডো লোডে মেটাডাটা অপশন ইনজেক্ট
     window.addEventListener('DOMContentLoaded', () => {
       loadCustomMetaOptions();
       loadLiveExamItems();
+      loadUserItems(true);
     });
 
   </script>
