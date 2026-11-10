@@ -6474,7 +6474,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc38",
     "serialNo": 34,
     "categoryTypes": [
@@ -6484,10 +6483,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "ঊ₁₆+১১₂+৭₈ এর মান হতে পারে\ni. 18₁₆ii. 11001₂\niii. 30₈\nনিচের কোনটি সঠিক?",
+    "question": "E₁₆+11₂+7₈ এর মান হতে পারে\ni. 18₁₆ii. 11001₂\niii. 30₈\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
       "i ও ii",
@@ -6498,7 +6497,8 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
