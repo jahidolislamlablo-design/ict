@@ -5519,7 +5519,6 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc33",
     "serialNo": 29,
     "categoryTypes": [
@@ -5529,10 +5528,10 @@
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "টঞঋ-৮ নিম্নের কোন কোড?",
+    "question": "ASSCI-8 নিম্নের কোন কোড?",
     "image": "",
     "options": [
       "BCD",
@@ -5543,7 +5542,8 @@
     "correctAnswer": "Unicode",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": ""
   },
   {
     "liveExamNo": "",
