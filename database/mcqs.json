@@ -12405,19 +12405,20 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aef4900541019a0004afc57",
     "serialNo": 65,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 3 (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 02",
     "question": "অকটাল সংখ্যা পদ্ধতিতে ২৭৭ এর পরের সংখ্যাটি কত?",
     "image": "",
     "options": [
@@ -12429,7 +12430,8 @@
     "correctAnswer": "300",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 2"
   },
   {
     "liveExamNo": "",
