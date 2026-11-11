@@ -16,21 +16,6 @@
   },
   {
     "serialNo": 0,
-    "_id": "6ae0844bebe4a8b6b3044d6d",
-    "title": "HSC ICT 2027 Exams MCQ Suggestion 6th  Chapter",
-    "category": "suggestion",
-    "chapter": "সকল অধ্যায়",
-    "description": "",
-    "pdfUrl": "/uploads/pdfs/1793098827343-92333227-HSC_ICT_2026_Exams_MCQ_Suggestion_6th__Chapter____.pdf",
-    "originalFileName": "HSC ICT 2026 Exams MCQ Suggestion 6th  Chapter    .pdf",
-    "fileSize": "0.6 MB",
-    "pagesCount": "১৫ পৃষ্ঠা",
-    "downloadsCount": 2,
-    "createdAt": "2026-10-27T11:00:27.369Z",
-    "__v": 0
-  },
-  {
-    "serialNo": 0,
     "_id": "6ae08426ebe4a8b6b3044d6c",
     "title": "HSC ICT 2027 Exam MCQ Suggestion 5th  Chapter",
     "category": "suggestion",
@@ -133,5 +118,20 @@
     "createdAt": "2026-10-28T11:28:45.485Z",
     "__v": 0,
     "serialNo": 3
+  },
+  {
+    "_id": "6ae0844bebe4a8b6b3044d6d",
+    "title": "HSC ICT 2027 Exams MCQ Suggestion 6th  Chapter",
+    "category": "handnote",
+    "chapter": "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)",
+    "description": "",
+    "pdfUrl": "/uploads/pdfs/1794380634013-365620389-HSC_ICT_2027_Exam_MCQ_Suggestion_6th__Chapter____.pdf",
+    "originalFileName": "HSC ICT 2027 Exam MCQ Suggestion 6th  Chapter    .pdf",
+    "fileSize": "0.6 MB",
+    "pagesCount": "১৫ পৃষ্ঠা",
+    "downloadsCount": 2,
+    "createdAt": "2026-10-27T11:00:27.369Z",
+    "__v": 0,
+    "serialNo": 6
   }
 ]
