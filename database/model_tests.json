@@ -1,24 +1,5 @@
 [
   {
-    "_id": "6af33611364d9941cdbedbb4",
-    "serialNo": 1,
-    "examNo": "Live exam-03",
-    "title": "Live exam 03",
-    "date": "11-11-26",
-    "chapters": "প্রথম অধ্যায়",
-    "category": "chapter",
-    "totalQuestions": 25,
-    "duration": 25,
-    "totalMarks": 25,
-    "participants": 547,
-    "startTime": "2026-11-10T15:19:00.000Z",
-    "endTime": "2026-11-12T14:19:00.000Z",
-    "isLive": true,
-    "buttonText": "Start Live Exam",
-    "createdAt": "2026-11-10T15:19:45.530Z",
-    "__v": 0
-  },
-  {
     "_id": "6af02ffd1d0bfdc47abca861",
     "serialNo": 7,
     "examNo": "07",
