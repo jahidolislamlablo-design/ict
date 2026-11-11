@@ -37833,20 +37833,21 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e112",
     "serialNo": 201,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "যশোর বোর্ড",
+    "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "লিমা যে ছবিটি সংযুক্ত করেছে তা হতে পারে–\ni. jpg\tii. bmp\niii. png\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -37857,7 +37858,8 @@
     ],
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:54.831Z"
+    "createdAt": "2026-11-04T13:27:54.831Z",
+    "liveExamNo": "Live Exam 3"
   },
   {
     "liveExamNo": "",
