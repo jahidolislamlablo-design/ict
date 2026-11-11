@@ -18123,20 +18123,21 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e0a8",
     "serialNo": 95,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "চট্টগ্রাম বোর্ড",
+    "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "একটি আইপি অ্যাড্রেসকে প্রকাশের জন্য মোট কয়টি অকটেড প্রয়োজন?\t[চ.বো.'১৬]",
     "image": "",
     "options": [
@@ -18147,7 +18148,8 @@
     ],
     "correctAnswer": "৪",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.788Z"
+    "createdAt": "2026-11-04T13:27:53.788Z",
+    "liveExamNo": "Live Exam 3"
   },
   {
     "liveExamNo": "",
