@@ -37669,21 +37669,22 @@
     "__v": 0
   },
   {
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e111",
     "serialNo": 200,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "যশোর বোর্ড",
+    "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
-    "question": "নিচের উদ্দীপকটি পড় এবং ১২০ ও ১২১ নং প্রশ্নের উত্তর দাও:\nলিমার তৈরিকৃত ওয়েব পেজে একটি নতুন ছবি সংযুক্ত করল। এর ফলে তার পেইজটি আরও দৃষ্টিনন্দন হলো।\t\t[য.বো.'১৬]\nলিমা যে ট্যাগ ব্যবহার করে ছবি যুক্ত করল সেই ট্যাগের প্রকারভেদের সাথে নিচের কোন ট্যাগের মিল রয়েছে?",
+    "modelTestNo": "Model Test 03",
+    "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:\nলিমার তৈরিকৃত ওয়েব পেজে একটি নতুন ছবি সংযুক্ত করল। এর ফলে তার পেইজটি আরও দৃষ্টিনন্দন হলো।\t\t[য.বো.'১৬]\nলিমা যে ট্যাগ ব্যবহার করে ছবি যুক্ত করল সেই ট্যাগের প্রকারভেদের সাথে নিচের কোন ট্যাগের মিল রয়েছে?",
     "image": "",
     "options": [
       "< html >",
@@ -37693,7 +37694,8 @@
     ],
     "correctAnswer": "< br >",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:54.820Z"
+    "createdAt": "2026-11-04T13:27:54.820Z",
+    "liveExamNo": "Live Exam 3"
   },
   {
     "liveExamNo": "",
