@@ -874,25 +874,6 @@
     "__v": 0
   },
   {
-    "_id": "6af02ffd1d0bfdc47abca88b",
-    "serialNo": 49,
-    "examNo": "49",
-    "title": "Model Test 49",
-    "date": "22-12-26",
-    "chapters": "অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়)",
-    "category": "chapter",
-    "totalQuestions": 25,
-    "duration": 25,
-    "totalMarks": 25,
-    "participants": 703,
-    "startTime": "",
-    "endTime": "",
-    "isLive": false,
-    "buttonText": "Start Previous Live Exam",
-    "createdAt": "2026-11-08T07:44:20.046Z",
-    "__v": 0
-  },
-  {
     "_id": "6af02ffd1d0bfdc47abca85f",
     "serialNo": 54,
     "examNo": "01",
