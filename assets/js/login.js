@@ -6,12 +6,24 @@
 
 let uploadedAvatarDataUrl = '';
 
+/**
+ * বাংলা ও ইংরেজি সংখ্যার স্বাভাবিক রূপান্তরকারী হেল্পার
+ * (যেমন: মোবাইল নম্বর '০১৭...' বা পাসওয়ার্ড '১২৩৪' যাতে ইংরেজি '017...', '1234' এর সাথে হুবহু মিলে)
+ */
+function normalizeBanglaDigits(str) {
+    if (!str && str !== 0) return '';
+    const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    return String(str).replace(/[০-৯]/g, d => bn.indexOf(d)).trim();
+}
+window.normalizeBanglaDigits = normalizeBanglaDigits;
+
 document.addEventListener('DOMContentLoaded', () => {
     initAuthTabs();
     initPasswordToggles();
     initAvatarUpload();
     initInputClearListeners();
     checkExistingSession();
+    checkServerConnectionStatus();
 });
 
 /**
@@ -445,7 +457,13 @@ async function handleCreateAccount(e) {
     localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
 
     // বাটনের ঠিক উপরে স্বাগত মেসেজ প্রদর্শন
-    setAuthAlert(`স্বাগতম, ${fullName}! অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।`, 'success', 'signup');
+    if (backendSuccess) {
+        setAuthAlert(`স্বাগতম, ${fullName}! অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে এবং সার্ভারে জমা হয়েছে।`, 'success', 'signup');
+    } else {
+        const isLive = localStorage.getItem('ICT_LIVE_API_URL');
+        const hint = isLive ? 'সার্ভার অফলাইন হওয়ায় ডিভাইসে সেভ হয়েছে।' : 'সার্ভার অফলাইন থাকায় ডিভাইসে সেভ হয়েছে। অন্য ফোনে পেতে সার্ভার কানেক্ট করুন।';
+        setAuthAlert(`স্বাগতম, ${fullName}! অ্যাকাউন্ট তৈরি হয়েছে (${hint})`, 'success', 'signup');
+    }
 
     if (submitBtn) {
         submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> সফল হয়েছে!';
@@ -520,17 +538,46 @@ async function handleLogin(e) {
         console.warn('Backend login network error, fallback to local storage:', netErr.message);
     }
 
-    // ২. ফলব্যাক চেক (GitHub Pages বা লোকাল স্টোরেজ একাউন্ট)
+    // ২. ফলব্যাক চেক (GitHub Pages বা ডাটাবেজ students.json ও লোকাল রেজিস্ট্রি)
     if (!loggedInUser) {
-        let accounts = [];
-        try {
-            accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-        } catch (err) { accounts = []; }
+        let allAccounts = [];
 
-        const matchedAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
+        // প্রথমে লোকাল স্টোরেজের একাউন্ট লোড করি
+        try {
+            const localAccs = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+            if (Array.isArray(localAccs)) allAccounts.push(...localAccs);
+        } catch (err) {}
+
+        // GitHub Pages বা অন্যান্য ডিভাইসে থাকা database/students.json থেকে একাউন্ট লোড করি
+        try {
+            const isPages = window.location.pathname.includes('/pages/');
+            const jsonPath = isPages ? '../database/students.json' : 'database/students.json';
+            const res = await fetch(jsonPath, { cache: 'no-cache' });
+            if (res.ok) {
+                const remoteList = await res.json();
+                if (Array.isArray(remoteList)) {
+                    remoteList.forEach(s => {
+                        const sNum = normalizeBanglaDigits(s.emailOrNumber || s.email || '');
+                        if (sNum && !allAccounts.some(a => normalizeBanglaDigits(a.emailOrNumber || a.email || '') === sNum)) {
+                            allAccounts.push(s);
+                        }
+                    });
+                }
+            }
+        } catch (e) {
+            console.warn('students.json fallback fetch error:', e.message);
+        }
+
+        const cleanInput = normalizeBanglaDigits(emailOrNumber).toLowerCase();
+        const cleanPass = normalizeBanglaDigits(password);
+
+        const matchedAccount = allAccounts.find(a => {
+            const userNum = normalizeBanglaDigits(a.emailOrNumber || a.email || '').toLowerCase();
+            return userNum === cleanInput || ((a.emailOrNumber || a.email || '').toLowerCase() === emailOrNumber.toLowerCase());
+        });
 
         if (!matchedAccount) {
-            setAuthAlert('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি! সঠিক তথ্য দিন অথবা Create Account করুন।', 'error', 'login');
+            setAuthAlert('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট পাওয়া যায় নি! সঠিক তথ্য দিন অথবা Create Account করুন।', 'error', 'login');
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.innerText = 'Login';
@@ -538,7 +585,8 @@ async function handleLogin(e) {
             return;
         }
 
-        if (matchedAccount.password !== password) {
+        const matchedPass = normalizeBanglaDigits(matchedAccount.password || '');
+        if (matchedPass !== cleanPass && matchedAccount.password !== password) {
             setAuthAlert('ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা Forgot Password ব্যবহার করুন।', 'error', 'login');
             if (submitBtn) {
                 submitBtn.disabled = false;
@@ -548,14 +596,24 @@ async function handleLogin(e) {
         }
 
         loggedInUser = {
+            id: matchedAccount._id || ('user_' + Date.now()),
             name: matchedAccount.name,
-            emailOrNumber: matchedAccount.emailOrNumber,
+            emailOrNumber: matchedAccount.emailOrNumber || matchedAccount.email || emailOrNumber,
             college: matchedAccount.college || 'এইচএসসি পরীক্ষার্থী',
             hscYear: matchedAccount.hscYear || 'HSC 2026',
             avatar: matchedAccount.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
-            points: 25,
-            testsCompleted: 0
+            points: matchedAccount.points !== undefined ? matchedAccount.points : 25,
+            testsCompleted: matchedAccount.testsCompleted || 0
         };
+
+        // লোকাল স্টোরেজেও ক্যাশ করে রাখি যাতে পরবর্তীতে দ্রুত কাজ করে
+        try {
+            let cached = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+            if (!cached.some(c => normalizeBanglaDigits(c.emailOrNumber) === cleanInput)) {
+                cached.push(matchedAccount);
+                localStorage.setItem('ict_registered_accounts', JSON.stringify(cached));
+            }
+        } catch(e) {}
     }
 
     // ৩. সফল লগইন হলে প্রোফাইল সংরক্ষণ
@@ -809,3 +867,78 @@ function showToast(message, type = 'info') {
         toast.style.transform = 'translateX(-50%) translateY(-15px)';
     }, 3200);
 }
+
+/**
+ * সার্ভার সংযোগ ও লাইভ API কনফিগারেশন হেল্পার
+ */
+function openServerConfigModal() {
+    const modal = document.getElementById('serverConfigModal');
+    const input = document.getElementById('customApiUrlInput');
+    if (input) {
+        input.value = localStorage.getItem('ICT_LIVE_API_URL') || getAuthApiBaseUrl();
+    }
+    if (modal) modal.style.display = 'flex';
+}
+window.openServerConfigModal = openServerConfigModal;
+
+function closeServerConfigModal() {
+    const modal = document.getElementById('serverConfigModal');
+    if (modal) modal.style.display = 'none';
+}
+window.closeServerConfigModal = closeServerConfigModal;
+
+function saveCustomServerConfig() {
+    const input = document.getElementById('customApiUrlInput');
+    let url = (input ? input.value : '').trim().replace(/\/+$/, '');
+    if (url) {
+        localStorage.setItem('ICT_LIVE_API_URL', url);
+        window.BACKEND_URL = url;
+        showToast('সার্ভার URL সফলভাবে সংরক্ষণ করা হয়েছে!', 'success');
+    } else {
+        localStorage.removeItem('ICT_LIVE_API_URL');
+        showToast('ডিফল্ট সার্ভার URL নির্ধারণ করা হয়েছে!', 'info');
+    }
+    closeServerConfigModal();
+    checkServerConnectionStatus();
+}
+window.saveCustomServerConfig = saveCustomServerConfig;
+
+function resetServerConfigToDefault() {
+    localStorage.removeItem('ICT_LIVE_API_URL');
+    const input = document.getElementById('customApiUrlInput');
+    if (input) input.value = '';
+    showToast('ডিফল্ট সেটিংসে ফিরিয়ে নেওয়া হয়েছে', 'info');
+    closeServerConfigModal();
+    checkServerConnectionStatus();
+}
+window.resetServerConfigToDefault = resetServerConfigToDefault;
+
+async function checkServerConnectionStatus() {
+    const statusDot = document.getElementById('serverStatusDot');
+    const statusText = document.getElementById('serverStatusText');
+    const baseUrl = getAuthApiBaseUrl();
+
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3500);
+        const res = await fetch(`${baseUrl}/api/health`, { signal: controller.signal });
+        clearTimeout(timeoutId);
+
+        if (res.ok) {
+            if (statusDot) {
+                statusDot.className = 'server-status-dot';
+                statusDot.title = 'সার্ভার সচল (Online)';
+            }
+            if (statusText) statusText.textContent = 'সার্ভার সচল (Online)';
+            return true;
+        }
+    } catch (e) {}
+
+    if (statusDot) {
+        statusDot.className = 'server-status-dot offline';
+        statusDot.title = 'সার্ভার অফলাইন (Offline)';
+    }
+    if (statusText) statusText.textContent = 'সার্ভার অফলাইন (Offline)';
+    return false;
+}
+window.checkServerConnectionStatus = checkServerConnectionStatus;

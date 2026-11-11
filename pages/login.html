@@ -54,6 +54,9 @@
                     <button type="button" class="btn-forgot-password" onclick="switchAuthView('forgot')" title="পাসওয়ার্ড ভুলে গেছেন?">Forgot Password?</button>
                 </div>
 
+                <!-- লগইন এরর / স্বাগত মেসেজ বক্স (বাটনের ঠিক উপরে) -->
+                <div id="loginAuthAlert" class="auth-inline-alert" style="display: none;" role="alert"></div>
+
                 <!-- লগইন বাটন -->
                 <button type="submit" class="btn-neumorphic-login">Login</button>
             </form>
@@ -61,8 +64,8 @@
             <!-- বটম লিংক রো -->
             <div class="neumorphic-bottom-row">
                 <span class="bottom-prompt-text">Don't have an account?</span>
-                <button type="button" class="btn-circle-create" onclick="switchAuthView('signup')" title="অ্যাকাউন্ট তৈরি করুন">
-                    <span>Create<br>account</span>
+                <button type="button" class="btn-wide-create" onclick="switchAuthView('signup')" title="অ্যাকাউন্ট তৈরি করুন">
+                    Create Account
                 </button>
             </div>
         </div>
@@ -72,11 +75,14 @@
              ২. রেজিস্ট্রেশন ভিউ (CREATE ACCOUNT CARD)
              ========================================== -->
         <div id="signupView" class="auth-view">
-            <!-- টপ সার্কুলার ইউজার আইকন সকেট (ইনসেট ডিজাইনে শুধু ইউজার আইকন, ক্লিক করলে ছবি সিলেক্ট) -->
-            <div class="neumorphic-icon-socket interactive-avatar" id="signupAvatarSocket" title="প্রোফাইল ছবি নির্বাচন করতে ক্লিক করুন">
-                <i class="fa-solid fa-user socket-icon" id="signupDefaultIcon"></i>
-                <img src="" id="signupAvatarPreview" class="socket-avatar-preview" alt="User Avatar">
-                <input type="file" id="signupAvatarInput" accept="image/*" style="display: none !important;">
+            <!-- টপ সার্কুলার ইউজার আইকন সকেট -->
+            <div class="signup-avatar-container">
+                <div class="neumorphic-icon-socket interactive-avatar" id="signupAvatarSocket" title="প্রোফাইল ছবি নির্বাচন করতে ক্লিক করুন">
+                    <i class="fa-solid fa-user socket-icon" id="signupDefaultIcon"></i>
+                    <img src="" id="signupAvatarPreview" class="socket-avatar-preview" alt="User Avatar">
+                    <input type="file" id="signupAvatarInput" accept="image/*" style="display: none !important;">
+                </div>
+                <span class="socket-avatar-caption" onclick="document.getElementById('signupAvatarSocket').click()">Add Image</span>
             </div>
 
             <!-- শিরোনাম -->
@@ -116,6 +122,9 @@
                         <i class="fa-regular fa-eye"></i>
                     </button>
                 </div>
+
+                <!-- একাউন্ট তৈরি এরর / স্বাগত মেসেজ বক্স (বাটনের ঠিক উপরে) -->
+                <div id="signupAuthAlert" class="auth-inline-alert" style="display: none;" role="alert"></div>
 
                 <!-- অ্যাকাউন্ট তৈরি বাটন -->
                 <button type="submit" class="btn-neumorphic-create">CREATE ACCOUNT</button>
@@ -164,6 +173,9 @@
                     </button>
                 </div>
 
+                <!-- পাসওয়ার্ড রিসেট এরর / স্বাগত মেসেজ বক্স (বাটনের ঠিক উপরে) -->
+                <div id="forgotAuthAlert" class="auth-inline-alert" style="display: none;" role="alert"></div>
+
                 <!-- পাসওয়ার্ড পরিবর্তন বাটন -->
                 <button type="submit" class="btn-neumorphic-create">RESET PASSWORD</button>
             </form>
@@ -180,9 +192,37 @@
         <!-- গেস্ট হিসেবে চালিয়ে যান (স্কিপ অপশন) -->
         <div class="auth-guest-footer">
             <button type="button" class="guest-link-btn" onclick="continueAsGuest()">
-                <i class="fa-solid fa-compass"></i> গেস্ট হিসেবে ভিজিট করুন &rarr;
+                <i class="fa-solid fa-compass"></i> গেস্ট হিসেবে প্রবেশ করুন &rarr;
+            </button>
+            <button type="button" class="server-config-link" onclick="openServerConfigModal()" title="সার্ভার সংযোগ ও লাইভ API কনফিগারেশন">
+                <span class="server-status-dot" id="serverStatusDot"></span> <span id="serverStatusText">সার্ভার সেটিংস</span>
             </button>
         </div>
+
+    </div>
+
+    <!-- সার্ভার কনফিগারেশন মডাল (মোবাইল ও পিসিতে লাইভ API URL বা লোকাল IP সেট করতে) -->
+    <div id="serverConfigModal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center; padding: 16px;">
+        <div style="background: #EEF2F6; border-radius: 24px; max-width: 420px; width: 100%; padding: 22px; box-shadow: 16px 16px 36px #c5cbd5, -16px -16px 36px #ffffff; border: 1.5px solid rgba(255,255,255,0.8);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: #1E293B; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-server" style="color: #0066FF;"></i> সার্ভার সংযোগ সেটিংস
+                </h3>
+                <button type="button" onclick="closeServerConfigModal()" style="border: none; background: none; font-size: 1.2rem; cursor: pointer; color: #64748B;">✕</button>
+            </div>
+            <p style="font-size: 0.82rem; color: #64748B; margin-bottom: 14px; line-height: 1.4;">
+                ফোন থেকে পিসি ব্যাকএন্ডে বা লাইভ ক্লাউড ব্যাকএন্ডে (Render / ngrok / PC IP) একাউন্ট সিঙ্ক করতে API URL সেট করুন।
+            </p>
+            <div style="margin-bottom: 12px;">
+                <label style="display: block; font-size: 0.82rem; font-weight: 600; color: #334155; margin-bottom: 6px;">বর্তমান ব্যাকএন্ড URL:</label>
+                <input type="text" id="customApiUrlInput" class="neumorphic-input no-toggle" placeholder="e.g. http://10.116.60.53:5000 বা https://api.render.com" style="width: 100%; padding: 10px 14px; font-size: 0.88rem;">
+            </div>
+            <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px;">
+                <button type="button" onclick="resetServerConfigToDefault()" style="padding: 8px 14px; border-radius: 14px; border: none; background: #E2E8F0; color: #475569; font-weight: 600; font-size: 0.82rem; cursor: pointer;">ডিফল্ট</button>
+                <button type="button" onclick="saveCustomServerConfig()" style="padding: 8px 18px; border-radius: 14px; border: none; background: #0066FF; color: #fff; font-weight: 700; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.35);">সংরক্ষণ করুন</button>
+            </div>
+        </div>
+    </div>
 
     </div>
 

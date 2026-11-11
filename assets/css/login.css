@@ -106,7 +106,18 @@ body.auth-page-body {
     cursor: default;
 }
 
+/* Create Account Page Larger Avatar Socket */
+.signup-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
 .neumorphic-icon-socket.interactive-avatar {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 3px auto;
     cursor: pointer;
     overflow: visible;
 }
@@ -115,6 +126,10 @@ body.auth-page-body {
     color: #007AFF;
     font-size: 1.45rem;
     transition: transform 0.2s ease;
+}
+
+.neumorphic-icon-socket.interactive-avatar .socket-icon {
+    font-size: 1.75rem;
 }
 
 .neumorphic-icon-socket.interactive-avatar:hover .socket-icon {
@@ -129,6 +144,30 @@ body.auth-page-body {
     object-fit: cover;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
     display: none;
+}
+
+.neumorphic-icon-socket.interactive-avatar .socket-avatar-preview {
+    width: 66px;
+    height: 66px;
+}
+
+/* Add Image tiny caption under user icon */
+.socket-avatar-caption {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+    margin-top: 3px;
+    display: block;
+    text-align: center;
+}
+
+.socket-avatar-caption:hover {
+    color: #0066FF;
 }
 
 /* Hide native file input completely */
@@ -432,17 +471,54 @@ body.auth-page-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 14px;
     padding: 0 4px;
 }
 
 .bottom-prompt-text {
-    color: #64748B;
-    font-size: 0.82rem;
-    font-weight: 500;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
 }
 
-/* Circular "Create account" Button */
+/* Elongated / Wide "Create Account" Button (stretches along row) */
+.btn-wide-create {
+    background: #EEF2F6;
+    box-shadow: 4px 4px 10px #cdd5e0, -4px -4px 10px #ffffff;
+    border-radius: 24px;
+    padding: 9px 20px;
+    color: #0066FF;
+    font-weight: 700;
+    font-size: 0.88rem;
+    line-height: 1.2;
+    text-align: center;
+    border: 1.5px solid rgba(0, 102, 255, 0.15);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    outline: none;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-wide-create:hover {
+    box-shadow: 5px 5px 14px #c5cbd5, -5px -5px 14px #ffffff;
+    transform: translateY(-1px);
+    color: #0052cc;
+    border-color: rgba(0, 102, 255, 0.35);
+}
+
+.btn-wide-create:active {
+    box-shadow: inset 2px 2px 5px #cdd5e0, inset -2px -2px 5px #ffffff;
+    transform: translateY(1px);
+}
+
+/* Fallback circular create button if needed */
 .btn-circle-create {
     width: 60px;
     height: 60px;
@@ -514,29 +590,74 @@ body.auth-page-body {
     transform: scale(0.97);
 }
 
-/* Guest Skip Footer Link */
+/* Guest Skip Footer Link (Bigger Brand Color) */
 .auth-guest-footer {
     text-align: center;
-    margin-top: 10px;
-    border-top: 1px solid rgba(203, 213, 225, 0.4);
-    padding-top: 7px;
+    margin-top: 14px;
+    border-top: 1px solid rgba(203, 213, 225, 0.45);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
 .guest-link-btn {
     background: none;
     border: none;
-    color: #64748B;
-    font-size: 0.78rem;
-    font-weight: 600;
+    color: #0066FF;
+    font-size: 1.02rem;
+    font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    transition: color 0.2s ease;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.22s ease;
+    box-shadow: 2px 2px 6px rgba(0, 102, 255, 0.08);
+    background: rgba(0, 102, 255, 0.04);
 }
 
 .guest-link-btn:hover {
+    color: #0052cc;
+    background: rgba(0, 102, 255, 0.09);
+    transform: translateY(-1px);
+}
+
+.guest-link-btn:active {
+    transform: translateY(0);
+}
+
+/* Server Configuration helper button */
+.server-config-link {
+    font-size: 0.74rem;
+    color: #64748B;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+}
+
+.server-config-link:hover {
     color: #0066FF;
+}
+
+.server-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #10B981;
+}
+
+.server-status-dot.offline {
+    background: #F59E0B;
 }
 
 /* Responsive adjustments */

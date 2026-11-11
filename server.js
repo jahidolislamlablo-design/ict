@@ -117,6 +117,26 @@ const McqSchema = new mongoose.Schema({
     default: 'Chapter Practice',
     trim: true
   },
+  chapters: {
+    type: [String],
+    default: []
+  },
+  collegeNames: {
+    type: [String],
+    default: []
+  },
+  boardNames: {
+    type: [String],
+    default: []
+  },
+  examYears: {
+    type: [String],
+    default: []
+  },
+  modelTestNos: {
+    type: [String],
+    default: []
+  },
   chapter: {
     type: String,
     required: [true, 'à¦šà§à¦¯à¦¾à¦ªà§à¦Ÿà¦¾à¦°à§‡à¦° à¦¨à¦¾à¦® à¦†à¦¬à¦¶à§à¦¯à¦•'],
@@ -202,6 +222,26 @@ const CqSchema = new mongoose.Schema({
     type: String,
     default: 'Board Question',
     trim: true
+  },
+  chapters: {
+    type: [String],
+    default: []
+  },
+  collegeNames: {
+    type: [String],
+    default: []
+  },
+  boardNames: {
+    type: [String],
+    default: []
+  },
+  examYears: {
+    type: [String],
+    default: []
+  },
+  modelTestNos: {
+    type: [String],
+    default: []
   },
   chapter: {
     type: String,
@@ -721,6 +761,99 @@ const ModelTestSchema = new mongoose.Schema({
 
 const ModelTest = mongoose.model('ModelTest', ModelTestSchema);
 
+// ------------------------------------------
+// ৪.৩ Trash Model & Helpers (ট্র্যাশ ক্যান / রিসাইকেল বিন)
+// ------------------------------------------
+const TrashSchema = new mongoose.Schema({
+  itemType: {
+    type: String, // 'mcq', 'cq', 'pdf', 'modelTest'
+    required: true
+  },
+  originalId: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    default: ''
+  },
+  details: {
+    type: String,
+    default: ''
+  },
+  data: {
+    type: mongoose.Schema.Types.Mixed,
+    required: true
+  },
+  deletedAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+const Trash = mongoose.model('Trash', TrashSchema);
+
+const trashJsonPath = path.join(__dirname, 'database', 'trash.json');
+
+function readTrashFile() {
+  if (fs.existsSync(trashJsonPath)) {
+    try {
+      return JSON.parse(fs.readFileSync(trashJsonPath, 'utf8'));
+    } catch(e) { return []; }
+  }
+  return [];
+}
+
+function writeTrashFile(list) {
+  try {
+    const destDirs = [
+      path.join(__dirname, 'database'),
+      'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+    ];
+    destDirs.forEach(dir => {
+      try {
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        fs.writeFileSync(path.join(dir, 'trash.json'), JSON.stringify(list, null, 2), 'utf8');
+      } catch(e) {}
+    });
+  } catch(e) {}
+}
+
+async function moveToTrash(itemType, originalId, title, details, data) {
+  const cleanData = data && typeof data.toObject === 'function' ? data.toObject() : (data ? JSON.parse(JSON.stringify(data)) : {});
+  const trashItem = {
+    _id: 'trash_' + Date.now() + '_' + Math.round(Math.random() * 1000),
+    itemType,
+    originalId: String(originalId || (cleanData && cleanData._id) || Date.now()),
+    title: title || '',
+    details: details || '',
+    data: cleanData,
+    deletedAt: new Date().toISOString()
+  };
+
+  if (isConnected) {
+    try {
+      const doc = new Trash({
+        itemType,
+        originalId: trashItem.originalId,
+        title: trashItem.title,
+        details: trashItem.details,
+        data: trashItem.data,
+        deletedAt: new Date()
+      });
+      await doc.save();
+      trashItem._id = doc._id;
+    } catch(e) {
+      console.warn('Mongo Trash save error:', e.message);
+    }
+  }
+
+  const list = readTrashFile();
+  list.unshift(trashItem);
+  writeTrashFile(list);
+  return trashItem;
+}
+
 // অটো গিট পুশ হেল্পার (GitHub Pages এ অটোমেটিক সিঙ্ক করার জন্য)
 function autoPushToGitHub(commitMsg = 'Update ICT learning data & PDFs') {
   const repoDir = __dirname;
@@ -1000,6 +1133,33 @@ app.post('/api/custom-options', (req, res) => {
   }
 });
 
+// কাস্টম অপশন ডিলিট করার API
+app.delete('/api/custom-options', (req, res) => {
+  try {
+    const { type, val } = req.body || {};
+    if (!type || !val) {
+      return res.status(400).json({ success: false, message: 'type এবং val আবশ্যক' });
+    }
+    const cleanVal = val.trim();
+    const data = readCustomOptionsFile();
+    const map = {
+      chapter: 'chapters',
+      board: 'boards',
+      year: 'years',
+      college: 'colleges',
+      modelTest: 'modelTests'
+    };
+    const key = map[type] || (type + 's');
+    if (Array.isArray(data[key])) {
+      data[key] = data[key].filter(item => item.trim().toLowerCase() !== cleanVal.toLowerCase());
+      writeCustomOptionsFile(data);
+    }
+    res.json({ success: true, message: `"${cleanVal}" অপশনটি সফলভাবে মুছে ফেলা হয়েছে` });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
 // হেলথ চেক API
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, status: 'online', port: PORT, timestamp: new Date() });
@@ -1133,13 +1293,18 @@ app.post('/api/mcqs', async (req, res) => {
     const {
       categoryTypes,
       categoryType,
+      chapters,
       chapter,
       serialNo,
       image,
+      collegeNames,
       collegeName,
+      boardNames,
       boardName,
+      examYears,
       examYear,
       testPaperName,
+      modelTestNos,
       modelTestNo,
       liveExamNo,
       question,
@@ -1148,12 +1313,19 @@ app.post('/api/mcqs', async (req, res) => {
       explanation
     } = req.body;
 
+    const finalChapters = Array.isArray(chapters) && chapters.length > 0 ? chapters.map(c => String(c).trim()) : (chapter ? [String(chapter).trim()] : []);
+    const finalColleges = Array.isArray(collegeNames) && collegeNames.length > 0 ? collegeNames.map(c => String(c).trim()) : (collegeName ? [String(collegeName).trim()] : []);
+    const finalBoards = Array.isArray(boardNames) && boardNames.length > 0 ? boardNames.map(b => String(b).trim()) : (boardName ? [String(boardName).trim()] : []);
+    const finalYears = Array.isArray(examYears) && examYears.length > 0 ? examYears.map(y => String(y).trim()) : (examYear ? [String(examYear).trim()] : []);
+    const finalModels = Array.isArray(modelTestNos) && modelTestNos.length > 0 ? modelTestNos.map(m => String(m).trim()) : (modelTestNo ? [String(modelTestNo).trim()] : []);
+
     let finalCategoryTypes = categoryTypes;
     if (!finalCategoryTypes || !Array.isArray(finalCategoryTypes) || finalCategoryTypes.length === 0) {
       finalCategoryTypes = categoryType ? [categoryType] : ['Chapter Practice'];
     }
 
-    if (!chapter || !question || !options || !correctAnswer) {
+    const primaryChapter = (finalChapters && finalChapters.length > 0) ? finalChapters[0] : (chapter ? chapter.trim() : '');
+    if (!primaryChapter || !question || !options || !correctAnswer) {
       return res.status(400).json({
         success: false,
         message: 'অনুগ্রহ করে chapter, question, options এবং correctAnswer ফিল্ডগুলো পূরণ করুন'
@@ -1163,12 +1335,17 @@ app.post('/api/mcqs', async (req, res) => {
     const newMcq = new Mcq({
       categoryTypes: finalCategoryTypes,
       categoryType: finalCategoryTypes[0] || 'Chapter Practice',
-      chapter: chapter.trim(),
-      collegeName: collegeName ? collegeName.trim() : '',
-      boardName: boardName ? boardName.trim() : '',
-      examYear: examYear ? String(examYear).trim() : '',
+      chapters: finalChapters,
+      chapter: finalChapters[0] || (chapter ? chapter.trim() : ''),
+      collegeNames: finalColleges,
+      collegeName: finalColleges[0] || (collegeName ? collegeName.trim() : ''),
+      boardNames: finalBoards,
+      boardName: finalBoards[0] || (boardName ? boardName.trim() : ''),
+      examYears: finalYears,
+      examYear: finalYears[0] || (examYear ? String(examYear).trim() : ''),
       testPaperName: testPaperName ? testPaperName.trim() : '',
-      modelTestNo: modelTestNo ? modelTestNo.trim() : '',
+      modelTestNos: finalModels,
+      modelTestNo: finalModels[0] || (modelTestNo ? modelTestNo.trim() : ''),
       liveExamNo: liveExamNo ? liveExamNo.trim() : '',
       serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
       image: image ? image.trim() : '',
@@ -1203,11 +1380,16 @@ app.put('/api/mcqs/:id', async (req, res) => {
       image,
       categoryTypes,
       categoryType,
+      chapters,
       chapter,
+      collegeNames,
       collegeName,
+      boardNames,
       boardName,
+      examYears,
       examYear,
       testPaperName,
+      modelTestNos,
       modelTestNo,
       liveExamNo,
       question,
@@ -1217,6 +1399,27 @@ app.put('/api/mcqs/:id', async (req, res) => {
     } = req.body;
 
     let updateData = {};
+
+    if (chapters && Array.isArray(chapters)) {
+      updateData.chapters = chapters.map(c => String(c).trim());
+      updateData.chapter = updateData.chapters[0] || '';
+    }
+    if (collegeNames && Array.isArray(collegeNames)) {
+      updateData.collegeNames = collegeNames.map(c => String(c).trim());
+      updateData.collegeName = updateData.collegeNames[0] || '';
+    }
+    if (boardNames && Array.isArray(boardNames)) {
+      updateData.boardNames = boardNames.map(b => String(b).trim());
+      updateData.boardName = updateData.boardNames[0] || '';
+    }
+    if (examYears && Array.isArray(examYears)) {
+      updateData.examYears = examYears.map(y => String(y).trim());
+      updateData.examYear = updateData.examYears[0] || '';
+    }
+    if (modelTestNos && Array.isArray(modelTestNos)) {
+      updateData.modelTestNos = modelTestNos.map(m => String(m).trim());
+      updateData.modelTestNo = updateData.modelTestNos[0] || '';
+    }
 
     if (categoryTypes && Array.isArray(categoryTypes) && categoryTypes.length > 0) {
       updateData.categoryTypes = categoryTypes;
@@ -1265,13 +1468,23 @@ app.put('/api/mcqs/:id', async (req, res) => {
 // ৬. MCQ ডিলিট করা (DELETE /api/mcqs/:id)
 app.delete('/api/mcqs/:id', async (req, res) => {
   try {
-    const deletedMcq = await Mcq.findByIdAndDelete(req.params.id);
+    let deletedMcq = null;
+    if (isConnected) {
+      deletedMcq = await Mcq.findById(req.params.id);
+      if (deletedMcq) await Mcq.findByIdAndDelete(req.params.id);
+    }
+    const mcqsPath = path.join(__dirname, 'database', 'mcqs.json');
+    if (!deletedMcq && fs.existsSync(mcqsPath)) {
+      const list = JSON.parse(fs.readFileSync(mcqsPath, 'utf8'));
+      deletedMcq = list.find(m => String(m._id) === String(req.params.id));
+    }
     if (!deletedMcq) {
       return res.status(404).json({ success: false, message: 'MCQ প্রশ্নটি পাওয়া যায়নি' });
     }
+    await moveToTrash('mcq', deletedMcq._id || req.params.id, deletedMcq.question, deletedMcq.chapter, deletedMcq);
     await syncDatabaseJson('mcqs');
     autoPushToGitHub('Delete MCQ: ' + req.params.id);
-    res.status(200).json({ success: true, message: 'MCQ প্রশ্নটি সফলভাবে মুছে ফেলা হয়েছে' });
+    res.status(200).json({ success: true, message: 'MCQ প্রশ্নটি ট্র্যাশে পাঠানো হয়েছে (প্রয়োজনে রিস্টোর করা যাবে)' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -1410,11 +1623,16 @@ app.post('/api/cqs', async (req, res) => {
       image,
       categoryTypes,
       categoryType,
+      chapters,
       chapter,
+      collegeNames,
       collegeName,
+      boardNames,
       boardName,
+      examYears,
       examYear,
       testPaperName,
+      modelTestNos,
       modelTestNo,
       liveExamNo,
       stem,
@@ -1428,13 +1646,20 @@ app.post('/api/cqs', async (req, res) => {
       a_gha
     } = req.body;
 
+    const finalChapters = Array.isArray(chapters) && chapters.length > 0 ? chapters.map(c => String(c).trim()) : (chapter ? [String(chapter).trim()] : []);
+    const finalColleges = Array.isArray(collegeNames) && collegeNames.length > 0 ? collegeNames.map(c => String(c).trim()) : (collegeName ? [String(collegeName).trim()] : []);
+    const finalBoards = Array.isArray(boardNames) && boardNames.length > 0 ? boardNames.map(b => String(b).trim()) : (boardName ? [String(boardName).trim()] : []);
+    const finalYears = Array.isArray(examYears) && examYears.length > 0 ? examYears.map(y => String(y).trim()) : (examYear ? [String(examYear).trim()] : []);
+    const finalModels = Array.isArray(modelTestNos) && modelTestNos.length > 0 ? modelTestNos.map(m => String(m).trim()) : (modelTestNo ? [String(modelTestNo).trim()] : []);
+
     let finalCategoryTypes = categoryTypes;
     if (!finalCategoryTypes || !Array.isArray(finalCategoryTypes) || finalCategoryTypes.length === 0) {
       finalCategoryTypes = categoryType ? [categoryType] : ['Board Question'];
     }
 
     // à¦†à¦¬à¦¶à§à¦¯à¦• à¦«à¦¿à¦²à§à¦¡ à¦¯à¦¾à¦šà¦¾à¦‡à¦•à¦°à¦£
-    if (!chapter || !stem || !q_ka || !q_kha || !q_ga || !q_gha) {
+    const primaryChapter = (finalChapters && finalChapters.length > 0) ? finalChapters[0] : (chapter ? chapter.trim() : "");
+    if (!primaryChapter || !stem || !q_ka || !q_kha || !q_ga || !q_gha) {
       return res.status(400).json({
         success: false,
         message: 'à¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ chapter, stem (à¦‰à¦¦à§à¦¦à§€à¦ªà¦•) à¦à¦¬à¦‚ à¦ªà§à¦°à¦¶à§à¦¨ à¦•, à¦–, à¦—, à¦˜ à¦«à¦¿à¦²à§à¦¡à¦—à§à¦²à§‹ à¦ªà§‚à¦°à¦£ à¦•à¦°à§à¦¨'
@@ -1444,12 +1669,17 @@ app.post('/api/cqs', async (req, res) => {
     const newCq = new Cq({
       categoryTypes: finalCategoryTypes,
       categoryType: finalCategoryTypes[0] || 'Board Question',
-      chapter: chapter.trim(),
-      collegeName: collegeName ? collegeName.trim() : '',
-      boardName: boardName ? boardName.trim() : '',
-      examYear: examYear ? String(examYear).trim() : '',
+      chapters: finalChapters,
+      chapter: finalChapters[0] || (chapter ? chapter.trim() : ''),
+      collegeNames: finalColleges,
+      collegeName: finalColleges[0] || (collegeName ? collegeName.trim() : ''),
+      boardNames: finalBoards,
+      boardName: finalBoards[0] || (boardName ? boardName.trim() : ''),
+      examYears: finalYears,
+      examYear: finalYears[0] || (examYear ? String(examYear).trim() : ''),
       testPaperName: testPaperName ? testPaperName.trim() : '',
-      modelTestNo: modelTestNo ? modelTestNo.trim() : '',
+      modelTestNos: finalModels,
+      modelTestNo: finalModels[0] || (modelTestNo ? modelTestNo.trim() : ''),
       liveExamNo: liveExamNo ? liveExamNo.trim() : '',
       serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
       image: image ? image.trim() : '',
@@ -1490,11 +1720,16 @@ app.put('/api/cqs/:id', async (req, res) => {
       image,
       categoryTypes,
       categoryType,
+      chapters,
       chapter,
+      collegeNames,
       collegeName,
+      boardNames,
       boardName,
+      examYears,
       examYear,
       testPaperName,
+      modelTestNos,
       modelTestNo,
       liveExamNo,
       stem,
@@ -1509,6 +1744,27 @@ app.put('/api/cqs/:id', async (req, res) => {
     } = req.body;
 
     let updateData = {};
+
+    if (chapters && Array.isArray(chapters)) {
+      updateData.chapters = chapters.map(c => String(c).trim());
+      updateData.chapter = updateData.chapters[0] || '';
+    }
+    if (collegeNames && Array.isArray(collegeNames)) {
+      updateData.collegeNames = collegeNames.map(c => String(c).trim());
+      updateData.collegeName = updateData.collegeNames[0] || '';
+    }
+    if (boardNames && Array.isArray(boardNames)) {
+      updateData.boardNames = boardNames.map(b => String(b).trim());
+      updateData.boardName = updateData.boardNames[0] || '';
+    }
+    if (examYears && Array.isArray(examYears)) {
+      updateData.examYears = examYears.map(y => String(y).trim());
+      updateData.examYear = updateData.examYears[0] || '';
+    }
+    if (modelTestNos && Array.isArray(modelTestNos)) {
+      updateData.modelTestNos = modelTestNos.map(m => String(m).trim());
+      updateData.modelTestNo = updateData.modelTestNos[0] || '';
+    }
 
     if (categoryTypes && Array.isArray(categoryTypes) && categoryTypes.length > 0) {
       updateData.categoryTypes = categoryTypes;
@@ -1562,18 +1818,27 @@ app.put('/api/cqs/:id', async (req, res) => {
 // à§¬. CQ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾ (DELETE /api/cqs/:id)
 app.delete('/api/cqs/:id', async (req, res) => {
   try {
-    const deletedCq = await Cq.findByIdAndDelete(req.params.id);
-    if (!deletedCq) {
-      return res.status(404).json({ success: false, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿' });
+    let deletedCq = null;
+    if (isConnected) {
+      deletedCq = await Cq.findById(req.params.id);
+      if (deletedCq) await Cq.findByIdAndDelete(req.params.id);
     }
+    const cqsPath = path.join(__dirname, 'database', 'cqs.json');
+    if (!deletedCq && fs.existsSync(cqsPath)) {
+      const list = JSON.parse(fs.readFileSync(cqsPath, 'utf8'));
+      deletedCq = list.find(c => String(c._id) === String(req.params.id));
+    }
+    if (!deletedCq) {
+      return res.status(404).json({ success: false, message: 'CQ প্রশ্নটি পাওয়া যায়নি' });
+    }
+    await moveToTrash('cq', deletedCq._id || req.params.id, deletedCq.stem || deletedCq.q_ka, deletedCq.chapter, deletedCq);
     await syncDatabaseJson('cqs');
     autoPushToGitHub('Delete CQ: ' + req.params.id);
-    res.status(200).json({ success: true, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦®à§à¦›à§‡ à¦«à§‡à¦²à¦¾ à¦¹à§Ÿà§‡à¦›à§‡' });
+    res.status(200).json({ success: true, message: 'CQ প্রশ্নটি ট্র্যাশে পাঠানো হয়েছে (প্রয়োজনে রিস্টোর করা যাবে)' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
-
 // ------------------------------------------
 // à¦—. Notes à¦°à¦¾à¦‰à¦Ÿà¦¸
 // ------------------------------------------
@@ -2017,24 +2282,27 @@ app.post('/api/pdfs', (req, res) => {
 // ৪. পিডিএফ ডিলিট করা (ফাইল ও ডাটাবেজ রেকর্ড)
 app.delete('/api/pdfs/:id', async (req, res) => {
   try {
-    const pdf = await Pdf.findById(req.params.id);
+    let pdf = null;
+    if (isConnected) {
+      pdf = await Pdf.findById(req.params.id);
+      if (pdf) await Pdf.findByIdAndDelete(req.params.id);
+    }
+    const pdfsPath = path.join(__dirname, 'database', 'pdfs.json');
+    if (!pdf && fs.existsSync(pdfsPath)) {
+      const list = JSON.parse(fs.readFileSync(pdfsPath, 'utf8'));
+      pdf = list.find(p => String(p._id) === String(req.params.id));
+    }
     if (!pdf) {
       return res.status(404).json({ success: false, message: 'পিডিএফ পাওয়া যায়নি' });
     }
 
-    // লোকাল ফাইল হলে ডিস্ক থেকে মুছে ফেলা
-    if (pdf.pdfUrl && pdf.pdfUrl.startsWith('/uploads/pdfs/')) {
-      const filename = path.basename(pdf.pdfUrl);
-      removePdfFileFromFrontend(filename);
-    }
-
-    await Pdf.findByIdAndDelete(req.params.id);
+    await moveToTrash('pdf', pdf._id || req.params.id, pdf.title, pdf.chapter || pdf.category, pdf);
     await syncPdfsJson();
-    autoPushToGitHub(`Delete PDF: ${pdf.title || 'item'}`);
+    autoPushToGitHub(`Delete PDF to Trash: ${pdf.title || 'item'}`);
 
     res.status(200).json({
       success: true,
-      message: 'পিডিএফ সফলভাবে ডিলিট করা হয়েছে'
+      message: 'পিডিএফ সফলভাবে ট্র্যাশে পাঠানো হয়েছে (প্রয়োজনে আবার রিস্টোর করতে পারবেন)'
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -2300,17 +2568,23 @@ app.put('/api/model-tests/:id', async (req, res) => {
 app.delete('/api/model-tests/:id', async (req, res) => {
   try {
     const { id } = req.params;
+    let target = null;
     if (isConnected) {
       if (mongoose.Types.ObjectId.isValid(id)) {
-        await ModelTest.findByIdAndDelete(id);
+        target = await ModelTest.findById(id);
+        if (target) await ModelTest.findByIdAndDelete(id);
       } else {
-        await ModelTest.findOneAndDelete({ $or: [{ examNo: id }, { serialNo: parseInt(id, 10) || -1 }] });
+        target = await ModelTest.findOne({ $or: [{ examNo: id }, { serialNo: parseInt(id, 10) || -1 }] });
+        if (target) await ModelTest.findOneAndDelete({ $or: [{ examNo: id }, { serialNo: parseInt(id, 10) || -1 }] });
       }
     }
 
     const jsonPath = path.join(__dirname, 'database', 'model_tests.json');
     if (fs.existsSync(jsonPath)) {
       let fileData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      if (!target) {
+        target = fileData.find(item => String(item._id) === String(id) || String(item.examNo) === String(id));
+      }
       fileData = fileData.filter(item => String(item._id) !== String(id) && String(item.examNo) !== String(id));
       const destDirs = [
         path.join(__dirname, 'database'),
@@ -2324,15 +2598,33 @@ app.delete('/api/model-tests/:id', async (req, res) => {
       });
     }
 
+    if (target) {
+      await moveToTrash('modelTest', target._id || id, target.title || target.examNo, target.category, target);
+
+      // Clean up matching modelTest from custom_options.json so old ones don't linger in filter
+      try {
+        const custom = readCustomOptionsFile();
+        if (Array.isArray(custom.modelTests)) {
+          const tTitle = (target.title || '').trim().toLowerCase();
+          const tExam = (target.examNo || '').trim().toLowerCase();
+          custom.modelTests = custom.modelTests.filter(m => {
+            const mLow = m.trim().toLowerCase();
+            return mLow !== tTitle && mLow !== tExam && mLow !== `model test ${tExam}` && mLow !== `model test 0${tExam}`;
+          });
+          writeCustomOptionsFile(custom);
+        }
+      } catch(e) {}
+    }
+
     if (isConnected) {
       await syncDatabaseJson('modelTests');
     }
 
-    autoPushToGitHub(`Delete Live Exam / Model Test: ${id}`);
+    autoPushToGitHub(`Delete Live Exam / Model Test to Trash: ${id}`);
 
     res.status(200).json({
       success: true,
-      message: 'মডেল টেস্ট সফলভাবে মুছে ফেলা হয়েছে'
+      message: 'মডেল টেস্ট সফলভাবে ট্র্যাশে পাঠানো হয়েছে (প্রয়োজনে রিস্টোর করা যাবে)'
     });
   } catch (error) {
     res.status(500).json({
@@ -2842,6 +3134,165 @@ app.delete('/api/users/:id', async (req, res) => {
   }
 });
 
+
+// ==========================================
+// ট্র্যাশ ক্যান (Trash Can) API রাউটস
+// ==========================================
+
+// ১. সকল ট্র্যাশ আইটেম ফেচ করা
+app.get('/api/trash', async (req, res) => {
+  try {
+    let items = [];
+    if (isConnected) {
+      items = await Trash.find().sort({ deletedAt: -1 }).lean();
+    }
+    if (!items || items.length === 0) {
+      items = readTrashFile();
+    }
+    res.json({ success: true, count: items.length, data: items });
+  } catch (err) {
+    const list = readTrashFile();
+    res.json({ success: true, count: list.length, data: list });
+  }
+});
+
+// ২. ট্র্যাশ থেকে আইটেম পুনরুদ্ধার (Restore) করা
+app.post('/api/trash/:id/restore', async (req, res) => {
+  try {
+    const { id } = req.params;
+    let item = null;
+    if (isConnected) {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        item = await Trash.findById(id).lean();
+      } else {
+        item = await Trash.findOne({ $or: [{ _id: id }, { originalId: id }] }).lean();
+      }
+    }
+    if (!item) {
+      const list = readTrashFile();
+      item = list.find(t => String(t._id) === String(id) || String(t.originalId) === String(id));
+    }
+
+    if (!item) {
+      return res.status(404).json({ success: false, message: 'ট্র্যাশে আইটেমটি পাওয়া যায়নি!' });
+    }
+
+    const { itemType, data } = item;
+    const cleanData = data ? { ...data } : {};
+    delete cleanData._id;
+    delete cleanData.__v;
+
+    if (itemType === 'mcq') {
+      if (isConnected) {
+        await Mcq.create(cleanData);
+        await syncDatabaseJson('mcqs');
+      } else {
+        const mcqsPath = path.join(__dirname, 'database', 'mcqs.json');
+        let mcqs = fs.existsSync(mcqsPath) ? JSON.parse(fs.readFileSync(mcqsPath, 'utf8')) : [];
+        mcqs.unshift(data);
+        fs.writeFileSync(mcqsPath, JSON.stringify(mcqs, null, 2), 'utf8');
+      }
+    } else if (itemType === 'cq') {
+      if (isConnected) {
+        await Cq.create(cleanData);
+        await syncDatabaseJson('cqs');
+      } else {
+        const cqsPath = path.join(__dirname, 'database', 'cqs.json');
+        let cqs = fs.existsSync(cqsPath) ? JSON.parse(fs.readFileSync(cqsPath, 'utf8')) : [];
+        cqs.unshift(data);
+        fs.writeFileSync(cqsPath, JSON.stringify(cqs, null, 2), 'utf8');
+      }
+    } else if (itemType === 'pdf') {
+      if (isConnected) {
+        await Pdf.create(cleanData);
+        await syncDatabaseJson('pdfs');
+      } else {
+        const pdfsPath = path.join(__dirname, 'database', 'pdfs.json');
+        let pdfs = fs.existsSync(pdfsPath) ? JSON.parse(fs.readFileSync(pdfsPath, 'utf8')) : [];
+        pdfs.unshift(data);
+        fs.writeFileSync(pdfsPath, JSON.stringify(pdfs, null, 2), 'utf8');
+      }
+    } else if (itemType === 'modelTest') {
+      if (isConnected) {
+        await ModelTest.create(cleanData);
+        await syncDatabaseJson('modelTests');
+      } else {
+        const mtPath = path.join(__dirname, 'database', 'model_tests.json');
+        let mts = fs.existsSync(mtPath) ? JSON.parse(fs.readFileSync(mtPath, 'utf8')) : [];
+        mts.unshift(data);
+        fs.writeFileSync(mtPath, JSON.stringify(mts, null, 2), 'utf8');
+      }
+    }
+
+    // ট্র্যাশ থেকে মুছে ফেলা
+    if (isConnected) {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        await Trash.findByIdAndDelete(id);
+      } else {
+        await Trash.findOneAndDelete({ $or: [{ _id: id }, { originalId: id }] });
+      }
+    }
+    const remaining = readTrashFile().filter(t => String(t._id) !== String(id) && String(t.originalId) !== String(id));
+    writeTrashFile(remaining);
+
+    autoPushToGitHub(`Restore ${itemType}: ${item.title || id}`);
+    res.json({ success: true, message: 'আইটেমটি সফলভাবে পুনরুদ্ধার (Restore) করা হয়েছে!' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'পুনরুদ্ধার ব্যর্থ হয়েছে: ' + err.message });
+  }
+});
+
+// ৩. ট্র্যাশ থেকে একটি আইটেম স্থায়ীভাবে মুছে ফেলা
+app.delete('/api/trash/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    let item = null;
+    if (isConnected) {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        item = await Trash.findByIdAndDelete(id);
+      } else {
+        item = await Trash.findOneAndDelete({ $or: [{ _id: id }, { originalId: id }] });
+      }
+    }
+    const list = readTrashFile();
+    const found = list.find(t => String(t._id) === String(id) || String(t.originalId) === String(id));
+    const filtered = list.filter(t => String(t._id) !== String(id) && String(t.originalId) !== String(id));
+    writeTrashFile(filtered);
+
+    // যদি PDF ফাইল হয় তবে ডিস্ক থেকেও ডিলিট করি
+    const target = item || found;
+    if (target && target.itemType === 'pdf' && target.data && target.data.pdfUrl) {
+      const url = target.data.pdfUrl;
+      if (url.startsWith('/uploads/pdfs/')) {
+        const filename = path.basename(url);
+        const filepath = path.join(pdfUploadDir, filename);
+        if (fs.existsSync(filepath)) {
+          try { fs.unlinkSync(filepath); } catch(e) {}
+        }
+        removePdfFileFromFrontend(filename);
+      }
+    }
+
+    res.json({ success: true, message: 'ট্র্যাশ থেকে স্থায়ীভাবে মুছে ফেলা হয়েছে।' });
+  } catch(err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// ৪. ট্র্যাশ সম্পূর্ণ খালি করা (Empty Trash)
+app.delete('/api/trash', async (req, res) => {
+  try {
+    if (isConnected) {
+      await Trash.deleteMany({});
+    }
+    writeTrashFile([]);
+    res.json({ success: true, message: 'ট্র্যাশ সফলভাবে সম্পূর্ণ খালি করা হয়েছে!' });
+  } catch(err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -2864,14 +3315,26 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 if (require.main === module) {
+  const os = require('os');
   app.listen(PORT, () => {
-    console.log(`ðŸš€ à¦¸à¦¾à¦°à§à¦­à¦¾à¦° à¦šà¦¾à¦²à§ à¦¹à§Ÿà§‡à¦›à§‡: http://localhost:${PORT}`);
-    console.log(`ðŸ“ à¦…à§à¦¯à¦¾à¦¡à¦®à¦¿à¦¨ à¦¡à§à¦¯à¦¾à¦¶à¦¬à§‹à¦°à§à¦¡: http://localhost:${PORT}/admin.html`);
-    console.log(`ðŸŒ à¦«à§à¦°à¦¨à§à¦Ÿà¦à¦¨à§à¦¡ Origin à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿà§‡à¦¡: https://jahidolislamlablo-design.github.io`);
+    console.log(`🚀 সার্ভার চালু হয়েছে: http://localhost:${PORT}`);
+    console.log(`📋 অ্যাডমিন ড্যাশবোর্ড: http://localhost:${PORT}/admin.html`);
+    console.log(`🌐 ফ্রন্টএন্ড Origin সাপোর্টেড: https://jahidolislamlablo-design.github.io`);
+
+    const interfaces = os.networkInterfaces();
+    const wifiIps = [];
+    for (const name of Object.keys(interfaces)) {
+      for (const iface of interfaces[name]) {
+        if (iface.family === 'IPv4' && !iface.internal) {
+          wifiIps.push(iface.address);
+        }
+      }
+    }
+    if (wifiIps.length > 0) {
+      console.log('📱 মোবাইল ফোন থেকে একই ওয়াইফাইয়ে ব্রাউজ ও একাউন্ট করতে:');
+      wifiIps.forEach(ip => console.log(`   👉 http://${ip}:${PORT}/login.html`));
+    }
   });
 }
 
-
-module.exports = { app, Mcq, Cq, Note, Pdf, ModelTest };
-
-
+module.exports = { app, Mcq, Cq, Note, Pdf, ModelTest, Trash };
