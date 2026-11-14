@@ -6566,20 +6566,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e066",
     "serialNo": 29,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
-    "collegeName": "দি. বো. ২৫; উত্তরা হাই স্কুল এন্ড কলেজ, ঢাকা",
-    "boardName": "দিনাজপুর বোর্ড, ঢাকা বোর্ড",
+    "collegeName": "",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "টেবিলে সেল তৈরির জন্য কোন ট্যাগ ব্যবহৃত হয়?\n[দি. বো. '২৫; উত্তরা হাই স্কুল এন্ড কলেজ, ঢাকা]",
     "image": "",
     "options": [
@@ -6590,7 +6591,8 @@
     ],
     "correctAnswer": "<td>",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.391Z"
+    "createdAt": "2026-11-04T13:27:53.391Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
