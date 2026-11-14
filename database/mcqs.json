@@ -4078,20 +4078,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e05b",
     "serialNo": 18,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "যশোর বোর্ড",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "নতুন ট্যাবে ওয়েব পেইজ খুলতে উক্ত ট্যাগের এট্রিবিউট কোনটি?\t[য. বো. '২৫]",
     "image": "",
     "options": [
@@ -4102,7 +4103,8 @@
     ],
     "correctAnswer": "target = \"_blank\"",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.317Z"
+    "createdAt": "2026-11-04T13:27:53.317Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
