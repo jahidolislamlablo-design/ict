@@ -19445,20 +19445,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e09f",
     "serialNo": 86,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "চট্টগ্রাম বোর্ড",
+    "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "আইপি এড্রেস (IPV4) কত বিটের?\t[চ.বো.'১৯]",
     "image": "",
     "options": [
@@ -19469,7 +19470,8 @@
     ],
     "correctAnswer": "৩২",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.742Z"
+    "createdAt": "2026-11-04T13:27:53.742Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
