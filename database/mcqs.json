@@ -58252,20 +58252,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98a0",
     "serialNo": 336,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "RADAR  এর পূর্ণরূপ কী?\t[জাবি ডি ইউনিট ২০১৩-১৪]",
     "options": [
       "Radio Detection And Range",
@@ -58275,7 +58276,8 @@
     ],
     "correctAnswer": "Radio Detection And Ranging",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.263Z"
+    "createdAt": "2026-11-02T16:02:04.263Z",
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
