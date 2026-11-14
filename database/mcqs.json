@@ -39903,20 +39903,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e0fa",
     "serialNo": 177,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "যশোর বোর্ড",
+    "boardName": "",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "নিচের উদ্দীপকটি পড়ে ৯৭ ও ৯৮ নং প্রশ্নের উত্তর দাও:\n<span style = ''color : red'' > Text </span> []\nউদ্দীপকে এলিমেন্ট কন্টেন্ট কোনটি?",
     "image": "",
     "options": [
@@ -39927,7 +39928,8 @@
     ],
     "correctAnswer": "Text",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:54.597Z"
+    "createdAt": "2026-11-04T13:27:54.597Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
