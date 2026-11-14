@@ -16059,20 +16059,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e090",
     "serialNo": 71,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "বরিশাল বোর্ড",
+    "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "<ol type = “a” start = “4”> এর আউটপুট কেমন হবে? [ব.বো. ২৪]",
     "image": "",
     "options": [
@@ -16083,7 +16084,8 @@
     ],
     "correctAnswer": "d. e. f.",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.666Z"
+    "createdAt": "2026-11-04T13:27:53.666Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
