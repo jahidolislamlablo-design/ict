@@ -3687,6 +3687,7 @@
     "serialNo": 16,
     "categoryTypes": [
       "Board Question",
+      "College Test Paper",
       "Chapter Practice",
       "Live Exam",
       "Model Test"
@@ -3697,7 +3698,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 50",
     "question": "ক্রায়োজনিক এজেন্ট কোনটি?\t[রা. বো. '২৫]",
     "options": [
       "হাইড্রোজেন",
@@ -3708,7 +3709,7 @@
     "correctAnswer": "আর্গন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.343Z",
-    "liveExamNo": "Live Exam 01"
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
