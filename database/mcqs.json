@@ -18992,20 +18992,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e09d",
     "serialNo": 84,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "রাজশাহী বোর্ড",
+    "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "সারা বিশ্বের সকল আইপি এড্রেস ও ডোমেইন নেম নিয়ন্ত্রণ করে কোন প্রতিষ্ঠান?\t[রা.বো.'১৯]",
     "image": "",
     "options": [
@@ -19016,7 +19017,8 @@
     ],
     "correctAnswer": "ICANN",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.736Z"
+    "createdAt": "2026-11-04T13:27:53.736Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
