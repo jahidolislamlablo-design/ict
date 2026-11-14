@@ -21511,13 +21511,14 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae97af",
     "serialNo": 95,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -21525,7 +21526,7 @@
     "boardName": "",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "ভার্চুয়াল রিয়েলিটিতে ব্যবহৃত HMD কোনটিকে নির্দেশ করে?\n[ব.বো.'২৩]",
     "options": [
       "বিশেষ চশমা",
@@ -21535,7 +21536,8 @@
     ],
     "correctAnswer": "বিশেষ চশমা",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.612Z"
+    "createdAt": "2026-11-02T16:02:03.612Z",
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
