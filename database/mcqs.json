@@ -28922,21 +28922,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae97d0",
     "serialNo": 128,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "ঢাকা বোর্ড",
+    "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "ন্যানো বুঝায় কোনটি? \t\t[ঢা.বো.'১৭]",
     "options": [
       "১০-৬",
@@ -28946,7 +28947,8 @@
     ],
     "correctAnswer": "১০-৯",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.693Z"
+    "createdAt": "2026-11-02T16:02:03.693Z",
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
