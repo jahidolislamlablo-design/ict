@@ -49177,21 +49177,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9836",
     "serialNo": 230,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "হলিক্রস কলেজ, ঢাকা",
-    "boardName": "ঢাকা বোর্ড",
+    "collegeName": "",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "কোন প্রযুক্তিটি মনষ্যত্বহীনতা তৈরি করে?\t[হলিক্রস কলেজ, ঢাকা]",
     "options": [
       "ভাচুর্য়াল রিয়েলিটি",
@@ -49201,7 +49202,8 @@
     ],
     "correctAnswer": "ভাচুর্য়াল রিয়েলিটি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.026Z"
+    "createdAt": "2026-11-02T16:02:04.026Z",
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
