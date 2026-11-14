@@ -9780,21 +9780,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae977b",
     "serialNo": 43,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "ঢাকা বোর্ড",
+    "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "ক্রায়োজনিক এজেন্ট হচ্ছ্তে [ঢা.বো.'২৪]\ni. তরল নাইট্রোজেন\tii. তরল হাইড্রোজেন\niii. অক্সিজেন\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -9805,7 +9806,8 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.444Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
