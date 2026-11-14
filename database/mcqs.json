@@ -43905,13 +43905,14 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9814",
     "serialNo": 196,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -43919,7 +43920,7 @@
     "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "নিচের অনুচ্ছেদটি পড় এবং  প্রশ্নের উত্তর দাও:\nICT শিক্ষক মিজান স্যার ছাত্রদের নিয়ে ল্যাবে যেতে যেতে ল্যাবের দারজার দিকে তাকাতেই দরজা খুলে গেল। তারপর ছাত্রদের মাথায় হেলমেট পরিয়ে আলো নিভিয়ে নিয়ে গেল সমুদ্র সৈকতে, যেখানে তারা সৈকতের বাস্তব স্বাদ পেল। \t\t[সি.বো.'১৭]\nশিক্ষক মিজান কোন বৈশিষ্ট্যের প্রয়োগ দ্বারা ল্যাবে প্রবেশ করলেন?",
     "options": [
       "আঙ্গলের ছাপ",
@@ -43930,7 +43931,8 @@
     "correctAnswer": "রেটিনা",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.934Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
