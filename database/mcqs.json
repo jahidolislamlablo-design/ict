@@ -31845,21 +31845,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae97dd",
     "serialNo": 141,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "দিনাজপুর বোর্ড",
+    "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "নেটভিত্তিক অন্যের তথ্যকে নিজের নামে চালিয়ে দেয়াকে কী বলে?\n[দি.বো.'১৯]",
     "options": [
       "হ্যাকিং",
@@ -31869,7 +31870,8 @@
     ],
     "correctAnswer": "প্লেজিয়ারিজম",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.731Z"
+    "createdAt": "2026-11-02T16:02:03.731Z",
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
