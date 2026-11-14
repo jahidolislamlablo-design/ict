@@ -2234,20 +2234,38 @@
           return;
         }
 
-        const chapter = document.getElementById('mcqChapter').value;
-        const boardName = document.getElementById('mcqBoardName').value;
-        const collegeName = document.getElementById('mcqCollegeName').value;
-        const examYear = document.getElementById('mcqExamYear').value;
-        const testPaperName = document.getElementById('mcqTestPaperName').value;
+        // মাল্টি-সিলেক্ট চেকবক্সগুলো থেকে সংগ্রহ
+        const checkedChapters = Array.from(document.querySelectorAll('input[name="mcqChapters"]:checked')).map(cb => cb.value);
+        const checkedBoards = Array.from(document.querySelectorAll('input[name="mcqBoards"]:checked')).map(cb => cb.value);
+        const checkedColleges = Array.from(document.querySelectorAll('input[name="mcqColleges"]:checked')).map(cb => cb.value);
+        const checkedYears = Array.from(document.querySelectorAll('input[name="mcqYears"]:checked')).map(cb => cb.value);
+        const checkedModelTests = Array.from(document.querySelectorAll('input[name="mcqModelTests"]:checked')).map(cb => cb.value);
+
+        if (checkedChapters.length === 0) {
+          showToast('সতর্কতা', 'অনুগ্রহ করে কমপক্ষে একটি অধ্যায় নির্বাচন করুন', 'error');
+          return;
+        }
+
+        const primaryChapter = checkedChapters[0] || (document.getElementById('mcqChapter')?.value || '');
+        const primaryBoard = checkedBoards[0] || (document.getElementById('mcqBoardName')?.value || '');
+        const primaryCollege = checkedColleges[0] || (document.getElementById('mcqCollegeName')?.value || '');
+        const primaryYear = checkedYears[0] || (document.getElementById('mcqExamYear')?.value || '');
+        const testPaperName = document.getElementById('mcqTestPaperName')?.value || '';
         const liveExamNo = document.getElementById('mcqLiveExamNo')?.value || '';
-        let modelTestNo = '';
+        let modelTestNo = checkedModelTests[0] || '';
+
         if (liveExamNo) {
           const numMatch = liveExamNo.match(/\d+/);
           const num = numMatch ? numMatch[0] : '';
           const paddedNum = num ? (num.length === 1 ? '0' + num : num) : '';
-          modelTestNo = paddedNum ? ('Model Test ' + paddedNum) : '';
+          const autoModel = paddedNum ? ('Model Test ' + paddedNum) : '';
+          if (autoModel && !checkedModelTests.includes(autoModel)) checkedModelTests.push(autoModel);
+          if (!modelTestNo) modelTestNo = autoModel;
           if (!categoryTypes.includes('Live Exam')) categoryTypes.push('Live Exam');
           if (!categoryTypes.includes('Model Test')) categoryTypes.push('Model Test');
+        }
+        if (checkedModelTests.length > 0 && !categoryTypes.includes('Model Test')) {
+          categoryTypes.push('Model Test');
         }
 
         const question = document.getElementById('mcqQuestion').value.trim();
@@ -2282,11 +2300,16 @@
         const payload = {
           categoryTypes,
           categoryType: categoryTypes[0],
-          chapter,
-          boardName,
-          collegeName,
-          examYear,
+          chapters: checkedChapters,
+          chapter: primaryChapter,
+          boardNames: checkedBoards,
+          boardName: primaryBoard,
+          collegeNames: checkedColleges,
+          collegeName: primaryCollege,
+          examYears: checkedYears,
+          examYear: primaryYear,
           testPaperName,
+          modelTestNos: checkedModelTests,
           modelTestNo,
           liveExamNo,
           question,
@@ -2335,12 +2358,22 @@
       document.getElementById('mcqOpt4').value = '';
       document.getElementById('mcqCorrectAnswer').value = '';
       document.getElementById('mcqExplanation').value = '';
+      if (document.getElementById('mcqImageFile')) document.getElementById('mcqImageFile').value = '';
+      if (document.getElementById('mcqImagePreviewBox')) document.getElementById('mcqImagePreviewBox').style.display = 'none';
       updateCorrectAnswerOptions();
 
       if (!keepMetadata) {
-        document.getElementById('mcqCollegeName').value = '';
-        if (document.getElementById('mcqModelTestNo')) document.getElementById('mcqModelTestNo').value = '';
+        clearMultiSelectGroup('mcqChapters', 'mcqChapterWrapper', 'অধ্যায় নির্বাচন করুন');
+        const firstCh = document.querySelector('input[name="mcqChapters"][value^="Chapter 1"]');
+        if (firstCh) { firstCh.checked = true; syncMultiSelectText('mcqChapterWrapper', 'mcqChapters', 'অধ্যায় নির্বাচন করুন', 'অধ্যায়'); }
+        clearMultiSelectGroup('mcqBoards', 'mcqBoardWrapper', '-- কোনো বোর্ড নয় --');
+        clearMultiSelectGroup('mcqColleges', 'mcqCollegeWrapper', '-- শীর্ষ কলেজ নির্বাচন করুন --');
+        clearMultiSelectGroup('mcqYears', 'mcqYearWrapper', '-- পরীক্ষার সাল --');
+        const defYear = document.querySelector('input[name="mcqYears"][value="2025"]');
+        if (defYear) { defYear.checked = true; syncMultiSelectText('mcqYearWrapper', 'mcqYears', '-- পরীক্ষার সাল --', 'সাল'); }
+        clearMultiSelectGroup('mcqModelTests', 'mcqModelTestWrapper', '-- কোনো মডেল টেস্ট নয় --');
         document.getElementById('mcqTestPaperName').value = '';
+        if (document.getElementById('mcqLiveExamNo')) document.getElementById('mcqLiveExamNo').value = '';
       }
     }
 
@@ -2362,12 +2395,24 @@
           return;
         }
 
-        const chapter = document.getElementById('cqChapter').value;
-        const boardName = document.getElementById('cqBoardName').value;
-        const collegeName = document.getElementById('cqCollegeName').value;
-        const examYear = document.getElementById('cqExamYear').value;
-        const testPaperName = document.getElementById('cqTestPaperName').value;
-        const modelTestNo = '';
+        // মাল্টি-সিলেক্ট চেকবক্সগুলো থেকে সংগ্রহ
+        const checkedChapters = Array.from(document.querySelectorAll('input[name="cqChapters"]:checked')).map(cb => cb.value);
+        const checkedBoards = Array.from(document.querySelectorAll('input[name="cqBoards"]:checked')).map(cb => cb.value);
+        const checkedColleges = Array.from(document.querySelectorAll('input[name="cqColleges"]:checked')).map(cb => cb.value);
+        const checkedYears = Array.from(document.querySelectorAll('input[name="cqYears"]:checked')).map(cb => cb.value);
+        const checkedModelTests = Array.from(document.querySelectorAll('input[name="cqModelTests"]:checked')).map(cb => cb.value);
+
+        if (checkedChapters.length === 0) {
+          showToast('সতর্কতা', 'অনুগ্রহ করে কমপক্ষে একটি অধ্যায় নির্বাচন করুন', 'error');
+          return;
+        }
+
+        const primaryChapter = checkedChapters[0] || (document.getElementById('cqChapter')?.value || '');
+        const primaryBoard = checkedBoards[0] || (document.getElementById('cqBoardName')?.value || '');
+        const primaryCollege = checkedColleges[0] || (document.getElementById('cqCollegeName')?.value || '');
+        const primaryYear = checkedYears[0] || (document.getElementById('cqExamYear')?.value || '');
+        const testPaperName = document.getElementById('cqTestPaperName')?.value || '';
+        const modelTestNo = checkedModelTests[0] || '';
         const liveExamNo = '';
 
         const stem = document.getElementById('cqStem').value.trim();
@@ -2392,11 +2437,16 @@
         const payload = {
           categoryTypes,
           categoryType: categoryTypes[0],
-          chapter,
-          boardName,
-          collegeName,
-          examYear,
+          chapters: checkedChapters,
+          chapter: primaryChapter,
+          boardNames: checkedBoards,
+          boardName: primaryBoard,
+          collegeNames: checkedColleges,
+          collegeName: primaryCollege,
+          examYears: checkedYears,
+          examYear: primaryYear,
           testPaperName,
+          modelTestNos: checkedModelTests,
           modelTestNo,
           liveExamNo,
           stem,
@@ -2541,7 +2591,7 @@
         const directPdfUrl = document.getElementById('directPdfUrl').value.trim();
         const fileInput = document.getElementById('pdfFileInput');
 
-        if (!fileInput.files[0] && !directPdfUrl) {
+        if (!fileInput.files[0] && !directPdfUrl && !editingPdfId) {
           showToast('সতর্কতা', 'অনুগ্রহ করে একটি PDF ফাইল নির্বাচন করুন অথবা সরাসরি লিংক দিন', 'error');
           return;
         }
@@ -2808,20 +2858,40 @@
       // Keep only default option first
       select.innerHTML = '<option value="all">⏱️ সকল মডেল টেস্ট</option>';
 
-      // Standard Model Tests 01 to 50
-      for (let i = 1; i <= 50; i++) {
-        const n = i < 10 ? '0' + i : '' + i;
-        const val = 'Model Test ' + n;
-        added.add(val.toLowerCase());
-        const opt = document.createElement('option');
-        opt.value = val;
-        opt.textContent = val + (i <= 30 ? ' (পূর্ণাঙ্গ)' : ' (অধ্যায়ভিত্তিক)');
-        select.appendChild(opt);
+      // Populate ONLY from active live exams / model tests in database (Deleted items are completely removed)
+      if (Array.isArray(allModelTests) && allModelTests.length > 0) {
+        const sorted = [...allModelTests].sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
+        sorted.forEach(item => {
+          const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+          const val = 'Model Test ' + key;
+          const liveVal = 'Live Exam ' + key;
+          const title = item.title ? ` (${item.title})` : '';
+
+          if (!added.has(val.toLowerCase())) {
+            added.add(val.toLowerCase());
+            const opt = document.createElement('option');
+            opt.value = val;
+            opt.textContent = val + title;
+            select.appendChild(opt);
+          }
+          if (!added.has(liveVal.toLowerCase())) {
+            added.add(liveVal.toLowerCase());
+            const opt = document.createElement('option');
+            opt.value = liveVal;
+            opt.textContent = liveVal + title;
+            select.appendChild(opt);
+          }
+        });
       }
 
-      // Add any custom modelTestNo or liveExamNo from items
+      // Add any custom modelTestNo or liveExamNo currently attached to questions
       [...allMcqs, ...allCqs].forEach(item => {
-        [item.modelTestNo, item.liveExamNo].forEach(name => {
+        const names = [];
+        if (Array.isArray(item.modelTestNos)) names.push(...item.modelTestNos);
+        if (item.modelTestNo) names.push(item.modelTestNo);
+        if (item.liveExamNo) names.push(item.liveExamNo);
+
+        names.forEach(name => {
           if (name && name.trim()) {
             const trimmed = name.trim();
             const lower = trimmed.toLowerCase();
@@ -2837,6 +2907,53 @@
       });
 
       select.value = currentVal || 'all';
+    }
+
+    
+    // সক্রিয় মডেল টেস্টগুলোকে MCQ ও CQ ফর্মের মাল্টি-সিলেক্ট মেন্যুতে ডায়নামিকভাবে যোগ করা
+    function populateActiveModelTestCheckboxes() {
+      const mcqMenu = document.getElementById('mcqModelTestMenu');
+      const cqMenu = document.getElementById('cqModelTestMenu');
+      
+      const buildItemsHtml = (prefix, wrapperId) => {
+        if (!Array.isArray(allModelTests) || allModelTests.length === 0) {
+          return '<div style="padding: 10px 12px; font-size: 0.82rem; color: #94a3b8; text-align: center;">কোনো সক্রিয় মডেল টেস্ট নেই</div>';
+        }
+        const sorted = [...allModelTests].sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
+        return sorted.map(item => {
+          const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+          const val = 'Model Test ' + key;
+          const title = item.title || ('Model Test ' + key);
+          return `
+            <label class="multiselect-item">
+              <input type="checkbox" name="${prefix}" value="${escapeHtml(val)}" onchange="syncMultiSelectText('${wrapperId}', '${prefix}', '-- কোনো মডেল টেস্ট নয় --', 'মডেল টেস্ট')">
+              <span>⏱️ ${escapeHtml(val)} (${escapeHtml(title)})</span>
+            </label>
+          `;
+        }).join('');
+      };
+
+      if (mcqMenu) {
+        const searchInput = mcqMenu.querySelector('.multiselect-search-input');
+        const headerActions = mcqMenu.querySelector('.multiselect-menu-actions');
+        let oldItems = mcqMenu.querySelector('.multiselect-items-container');
+        if (!oldItems) {
+          oldItems = document.createElement('div');
+          oldItems.className = 'multiselect-items-container';
+          mcqMenu.appendChild(oldItems);
+        }
+        oldItems.innerHTML = buildItemsHtml('mcqModelTests', 'mcqModelTestWrapper');
+      }
+
+      if (cqMenu) {
+        let oldItems = cqMenu.querySelector('.multiselect-items-container');
+        if (!oldItems) {
+          oldItems = document.createElement('div');
+          oldItems.className = 'multiselect-items-container';
+          cqMenu.appendChild(oldItems);
+        }
+        oldItems.innerHTML = buildItemsHtml('cqModelTests', 'cqModelTestWrapper');
+      }
     }
 
     function populateCollegeFilterOptions() {
@@ -2875,48 +2992,61 @@
         items = items.concat(allCqs.map(item => ({ ...item, _type: 'CQ' })));
       }
 
-      // অধ্যায় ফিল্টার
+      // অধ্যায় ফিল্টার (একক বা একাধিক অধ্যায় সমর্থন)
       if (selectedChapterFilter && selectedChapterFilter !== 'all') {
         const query = selectedChapterFilter.toLowerCase();
         items = items.filter(item => {
-          if (!item.chapter) return false;
-          const ch = item.chapter.toLowerCase();
-          if (query.includes('chapter 1') || query === 'chapter 1') return ch.includes('chapter 1') || ch.includes('অধ্যায় ১') || ch.includes('বিশ্ব ও বাংলাদেশ');
-          if (query.includes('chapter 2') || query === 'chapter 2') return ch.includes('chapter 2') || ch.includes('অধ্যায় ২') || ch.includes('কমিউনিকেশন');
-          if (query.includes('১ম')) return ch.includes('সংখ্যা') || ch.includes('number') || ch.includes('১ম');
-          if (query.includes('২য়')) return ch.includes('ডিজিটাল') || ch.includes('digital') || ch.includes('২য়');
-          if (query.includes('chapter 4') || query === 'chapter 4') return ch.includes('chapter 4') || ch.includes('অধ্যায় ৪') || ch.includes('html');
-          if (query.includes('chapter 5') || query === 'chapter 5') return ch.includes('chapter 5') || ch.includes('অধ্যায় ৫') || ch.includes('c program') || ch.includes('প্রোগ্রামিং');
-          if (query.includes('chapter 6') || query === 'chapter 6') return ch.includes('chapter 6') || ch.includes('অধ্যায় ৬') || ch.includes('dbms') || ch.includes('ডাটাবেজ');
-          return ch.includes(query);
+          const chList = (Array.isArray(item.chapters) && item.chapters.length > 0)
+            ? item.chapters
+            : (item.chapter ? [item.chapter] : []);
+          if (chList.length === 0) return false;
+
+          return chList.some(chapterStr => {
+            const ch = String(chapterStr).toLowerCase();
+            if (query.includes('chapter 1') || query === 'chapter 1') return ch.includes('chapter 1') || ch.includes('অধ্যায় ১') || ch.includes('বিশ্ব ও বাংলাদেশ');
+            if (query.includes('chapter 2') || query === 'chapter 2') return ch.includes('chapter 2') || ch.includes('অধ্যায় ২') || ch.includes('কমিউনিকেশন');
+            if (query.includes('১ম')) return ch.includes('সংখ্যা') || ch.includes('number') || ch.includes('১ম');
+            if (query.includes('২য়')) return ch.includes('ডিজিটাল') || ch.includes('digital') || ch.includes('২য়');
+            if (query.includes('chapter 4') || query === 'chapter 4') return ch.includes('chapter 4') || ch.includes('অধ্যায় ৪') || ch.includes('html');
+            if (query.includes('chapter 5') || query === 'chapter 5') return ch.includes('chapter 5') || ch.includes('অধ্যায় ৫') || ch.includes('c program') || ch.includes('প্রোগ্রামিং');
+            if (query.includes('chapter 6') || query === 'chapter 6') return ch.includes('chapter 6') || ch.includes('অধ্যায় ৬') || ch.includes('dbms') || ch.includes('ডাটাবেজ');
+            return ch.includes(query);
+          });
         });
       }
 
-      // বোর্ড ফিল্টার
+      // বোর্ড ফিল্টার (একক বা একাধিক বোর্ড সমর্থন)
       if (selectedBoardFilter && selectedBoardFilter !== 'all') {
         const query = selectedBoardFilter.toLowerCase();
         items = items.filter(item => {
-          if (!item.boardName) return false;
-          return item.boardName.toLowerCase().includes(query);
+          const bList = (Array.isArray(item.boardNames) && item.boardNames.length > 0)
+            ? item.boardNames
+            : (item.boardName ? [item.boardName] : []);
+          return bList.some(b => b && String(b).toLowerCase().includes(query));
         });
       }
 
-      // কলেজ ফিল্টার
+      // কলেজ ফিল্টার (একক বা একাধিক কলেজ সমর্থন)
       if (selectedCollegeFilter && selectedCollegeFilter !== 'all') {
         const query = selectedCollegeFilter.toLowerCase();
         items = items.filter(item => {
-          if (!item.collegeName) return false;
-          return item.collegeName.toLowerCase().includes(query);
+          const colList = (Array.isArray(item.collegeNames) && item.collegeNames.length > 0)
+            ? item.collegeNames
+            : (item.collegeName ? [item.collegeName] : []);
+          return colList.some(c => c && String(c).toLowerCase().includes(query));
         });
       }
 
-      // মডেল টেস্ট ফিল্টার
+      // মডেল টেস্ট ফিল্টার (একক বা একাধিক মডেল টেস্ট সমর্থন)
       if (selectedModelTestFilter && selectedModelTestFilter !== 'all') {
         const query = selectedModelTestFilter.toLowerCase();
         items = items.filter(item => {
-          const mt = (item.modelTestNo || '').toLowerCase();
-          const le = (item.liveExamNo || '').toLowerCase();
-          return mt.includes(query) || le.includes(query);
+          const mList = (Array.isArray(item.modelTestNos) && item.modelTestNos.length > 0)
+            ? [...item.modelTestNos]
+            : [];
+          if (item.modelTestNo) mList.push(item.modelTestNo);
+          if (item.liveExamNo) mList.push(item.liveExamNo);
+          return mList.some(m => m && String(m).toLowerCase().includes(query));
         });
       }
 
@@ -3459,9 +3589,177 @@
       }
     }
 
+    
+    // ==========================================
+    // ৫. ট্র্যাশ ক্যান ও ফাইল রিস্টোর ফাংশনালিটি
+    // ==========================================
+    let allTrashItems = [];
+
+    async function loadTrashItems() {
+      const tbody = document.getElementById('trashTableBody');
+      const badge = document.getElementById('trashCountBadge');
+      if (tbody) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:2rem; color:#64748b;">⏳ ট্র্যাশ আইটেম লোড হচ্ছে...</td></tr>';
+      }
+      try {
+        const res = await fetch(`${API_BASE}/api/trash`, { cache: 'no-cache' });
+        const data = await res.json();
+        if (data.success) {
+          allTrashItems = data.data || [];
+          if (badge) badge.textContent = allTrashItems.length;
+          renderTrashTable(allTrashItems);
+        } else {
+          showToast('ত্রুটি', data.message || 'ট্র্যাশ ডাটা লোড ব্যর্থ', 'error');
+        }
+      } catch (err) {
+        if (tbody) {
+          tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:2rem; color:#ef4444;">সার্ভারে ট্র্যাশ কানেক্ট করতে ব্যর্থ: ${escapeHtml(err.message)}</td></tr>`;
+        }
+      }
+    }
+
+    function renderTrashTable(items) {
+      const tbody = document.getElementById('trashTableBody');
+      if (!tbody) return;
+
+      if (!items || items.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="5" style="text-align:center; padding:3rem; color:#94a3b8;">
+              <div style="font-size:2.2rem; margin-bottom:8px;">🗑️</div>
+              <div style="font-weight:700; color:#475569; font-size:1.05rem;">ট্র্যাশ ক্যান সম্পূর্ণ খালি!</div>
+              <div style="font-size:0.84rem; color:#94a3b8; margin-top:4px;">কোনো ফাইল বা প্রশ্ন মুছে ফেলা হলে তা এখানে জমা থাকবে এবং পুনরুদ্ধার করা যাবে।</div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      const typeLabels = {
+        'pdf': { label: '📄 PDF ফাইল', color: '#dc2626', bg: '#fee2e2' },
+        'mcq': { label: '📝 MCQ প্রশ্ন', color: '#2563eb', bg: '#dbeafe' },
+        'cq': { label: '📑 CQ সৃজনশীল', color: '#7c3aed', bg: '#ede9fe' },
+        'modelTest': { label: '⏱️ মডেল টেস্ট', color: '#059669', bg: '#d1fae5' },
+        'note': { label: '🗒️ নোট / লেকচার', color: '#d97706', bg: '#fef3c7' }
+      };
+
+      tbody.innerHTML = items.map((item, idx) => {
+        const t = typeLabels[item.itemType] || { label: item.itemType || 'আইটেম', color: '#475569', bg: '#f1f5f9' };
+        let dateStr = 'অজ্ঞাত সময়';
+        try {
+          if (item.deletedAt) {
+            dateStr = new Date(item.deletedAt).toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' });
+          }
+        } catch(e) { dateStr = String(item.deletedAt || ''); }
+
+        const titleStr = item.title || (item.data && (item.data.title || item.data.question || item.data.stem)) || 'নামহীন ফাইল';
+
+        return `
+          <tr>
+            <td style="text-align: center; color: #64748b; font-weight: 600;">${idx + 1}</td>
+            <td>
+              <span style="display:inline-block; padding:3px 9px; border-radius:6px; font-size:0.76rem; font-weight:700; color:${t.color}; background:${t.bg};">
+                ${t.label}
+              </span>
+            </td>
+            <td>
+              <div style="font-weight:600; color:#1e293b;">${escapeHtml(titleStr)}</div>
+              ${item.details ? `<div style="font-size:0.78rem; color:#64748b; margin-top:2px;">${escapeHtml(item.details)}</div>` : ''}
+            </td>
+            <td style="font-size:0.82rem; color:#64748b; white-space:nowrap;">${dateStr}</td>
+            <td style="text-align:center; white-space:nowrap;">
+              <button type="button" class="btn btn-sm btn-primary" onclick="restoreTrashItem('${item._id}')" style="background:#059669; padding:5px 12px; margin-right:6px;" title="পুনরুদ্ধার / Restore">
+                ♻️ রিস্টোর
+              </button>
+              <button type="button" class="btn btn-sm btn-danger" onclick="deleteTrashPermanent('${item._id}')" style="padding:5px 12px;" title="স্থায়ীভাবে ডিলিট">
+                🗑️ স্থায়ী ডিলিট
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterTrashTable() {
+      const search = (document.getElementById('trashSearchInput')?.value || '').toLowerCase().trim();
+      const type = document.getElementById('trashTypeFilter')?.value || 'all';
+
+      let filtered = allTrashItems;
+      if (type !== 'all') {
+        filtered = filtered.filter(i => i.itemType === type);
+      }
+      if (search) {
+        filtered = filtered.filter(i => {
+          const t = (i.title || '').toLowerCase();
+          const d = (i.details || '').toLowerCase();
+          return t.includes(search) || d.includes(search);
+        });
+      }
+      renderTrashTable(filtered);
+    }
+
+    async function restoreTrashItem(id) {
+      if (!confirm('আপনি কি এই আইটেমটি পূর্বের জায়গায় রিস্টোর (Restore) করতে চান?')) return;
+      try {
+        const res = await fetch(`${API_BASE}/api/trash/${id}/restore`, { method: 'POST' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল হয়েছে!', data.message || 'আইটেমটি সফলভাবে পুনরুদ্ধার হয়েছে!', 'success');
+          await loadTrashItems();
+          // Reload other views
+          loadDatabaseItems();
+          loadPdfItems();
+          loadLiveExamItems();
+        } else {
+          showToast('ব্যর্থ', data.message || 'রিস্টোর করতে ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', err.message, 'error');
+      }
+    }
+
+    async function deleteTrashPermanent(id) {
+      if (!confirm('⚠️ সতর্কতা: আপনি কি স্থায়ীভাবে এই আইটেমটি ট্র্যাশ থেকে মুছে ফেলতে চান? এটি আর কখনো ফিরে পাওয়া যাবে না!')) return;
+      try {
+        const res = await fetch(`${API_BASE}/api/trash/${id}`, { method: 'DELETE' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('ডিলিট সম্পন্ন', 'আইটেমটি স্থায়ীভাবে মুছে ফেলা হয়েছে', 'success');
+          await loadTrashItems();
+        } else {
+          showToast('ব্যর্থ', data.message || 'ডিলিট করতে ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', err.message, 'error');
+      }
+    }
+
+    async function emptyTrashCan() {
+      if (!allTrashItems || allTrashItems.length === 0) {
+        showToast('তথ্য', 'ট্র্যাশ ক্যান ইতিমধ্যে খালি!', 'info');
+        return;
+      }
+      if (!confirm('⚠️ চূড়ান্ত সতর্কতা: ট্র্যাশ ক্যানের সকল উপাদান স্থায়ীভাবে মুছে ফেলা হবে। আপনি কি নিশ্চিত?')) return;
+      try {
+        const res = await fetch(`${API_BASE}/api/trash`, { method: 'DELETE' });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল', 'ট্র্যাশ ক্যান সম্পূর্ণ খালি করা হয়েছে', 'success');
+          await loadTrashItems();
+        } else {
+          showToast('ব্যর্থ', data.message || 'মুছতে ব্যর্থ হয়েছে', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', err.message, 'error');
+      }
+    }
+
+
     window.addEventListener('DOMContentLoaded', () => {
       checkServerHealth();
       setInterval(checkServerHealth, 15000);
+      try { loadLiveExamItems(); } catch(e) {}
+      try { loadTrashItems(); } catch(e) {}
     });
   
     // ==============================================
@@ -3626,6 +3924,22 @@
         document.getElementById('pdfSerialNo').value = item.serialNo || '';
       }
 
+      // পূর্বের ফাইল ডিফল্টভাবে নির্বাচন ও প্রদর্শন করা
+      const dropLabel = document.getElementById('pdfFileLabel');
+      if (dropLabel) {
+        const displayFileName = item.originalFileName || item.title || 'সংরক্ষিত PDF ফাইল';
+        dropLabel.innerHTML = `
+          <div style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <span style="font-size:1.4rem;">📄</span>
+            <div style="text-align:left;">
+              <strong style="color:#059669;">পূর্ববর্তী ফাইল নির্বাচন করা আছে: ${escapeHtml(displayFileName)}</strong>
+              <div style="font-size:0.75rem; color:#64748B;">(নতুন কোনো ফাইল আপলোড করতে না চাইলে এটিই সংরক্ষিত থাকবে)</div>
+            </div>
+          </div>
+        `;
+        dropLabel.style.color = '#059669';
+      }
+
       const submitBtn = document.getElementById('pdfSubmitBtn');
       if (submitBtn) {
         submitBtn.innerHTML = '<span>💾 পিডিএফ আপডেট সংরক্ষণ করুন</span>';
@@ -3645,12 +3959,23 @@
       cancelBtn.style.display = 'inline-flex';
 
       document.getElementById('pdfUploadForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      showToast('এডিট মোড', 'পিডিএফ তথ্য ফর্মে লোড হয়েছে, পরিবর্তন করে সংরক্ষণ করুন', 'info');
+      showToast('এডিট মোড', 'পিডিএফ তথ্য লোড হয়েছে (পূর্ববর্তী ফাইল ডিফল্টভাবে নির্বাচন করা আছে)', 'info');
     }
 
     function cancelPdfEdit() {
       editingPdfId = null;
       resetPdfForm();
+    }
+
+    function resetPdfForm() {
+      editingPdfId = null;
+      const form = document.getElementById('pdfUploadForm');
+      if (form) form.reset();
+      const label = document.getElementById('pdfFileLabel');
+      if (label) {
+        label.innerHTML = '📁 কম্পিউটার থেকে PDF ফাইল নির্বাচন করতে এখানে ক্লিক করুন';
+        label.style.color = '#1e293b';
+      }
       const submitBtn = document.getElementById('pdfSubmitBtn');
       if (submitBtn) {
         submitBtn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg><span>পিডিএফ আপলোড ও প্রকাশ করুন</span>';

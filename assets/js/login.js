@@ -877,6 +877,23 @@ function openServerConfigModal() {
     if (input) {
         input.value = localStorage.getItem('ICT_LIVE_API_URL') || getAuthApiBaseUrl();
     }
+    const wifiHint = document.getElementById('serverConfigWifiHint');
+    if (wifiHint) {
+        const mobileUrl = window.ICT_SUGGESTED_MOBILE_URL || localStorage.getItem('ICT_LAST_WIFI_URL');
+        if (mobileUrl) {
+            wifiHint.innerHTML = `
+                <div style="background: #E0F2FE; border: 1.5px solid #BAE6FD; border-radius: 12px; padding: 10px 14px; margin-top: 12px; font-size: 0.82rem; color: #0369A1; text-align: left;">
+                    <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                        <span>📱 একই Wi-Fi থেকে ফোনে যুক্ত হতে:</span>
+                    </div>
+                    <div style="font-size: 0.78rem; color: #475569; margin-bottom: 6px;">মোবাইলের ব্রাউজারে এই লিংকটি সরাসরি ওপেন করুন:</div>
+                    <a href="${mobileUrl}" target="_blank" style="color: #0284C7; font-weight: 800; word-break: break-all; text-decoration: underline;">${mobileUrl}</a>
+                </div>
+            `;
+        } else {
+            wifiHint.innerHTML = '';
+        }
+    }
     if (modal) modal.style.display = 'flex';
 }
 window.openServerConfigModal = openServerConfigModal;
@@ -925,11 +942,17 @@ async function checkServerConnectionStatus() {
         clearTimeout(timeoutId);
 
         if (res.ok) {
+            const data = await res.json().catch(() => ({}));
             if (statusDot) {
                 statusDot.className = 'server-status-dot';
                 statusDot.title = 'সার্ভার সচল (Online)';
             }
             if (statusText) statusText.textContent = 'সার্ভার সচল (Online)';
+            if (data.suggestedMobileUrl) {
+                window.ICT_SUGGESTED_MOBILE_URL = data.suggestedMobileUrl;
+                window.ICT_WIFI_IPS = data.wifiIps;
+                try { localStorage.setItem('ICT_LAST_WIFI_URL', data.suggestedMobileUrl); } catch(e){}
+            }
             return true;
         }
     } catch (e) {}

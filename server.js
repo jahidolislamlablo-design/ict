@@ -1160,9 +1160,26 @@ app.delete('/api/custom-options', (req, res) => {
   }
 });
 
-// হেলথ চেক API
+// হেলথ চেক API (মোবাইল কানেকশন সহজ করতে লোকাল নেটওয়ার্ক IP সহ)
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ success: true, status: 'online', port: PORT, timestamp: new Date() });
+  const os = require('os');
+  const interfaces = os.networkInterfaces();
+  const wifiIps = [];
+  for (const name of Object.keys(interfaces)) {
+    for (const iface of interfaces[name]) {
+      if (iface.family === 'IPv4' && !iface.internal) {
+        wifiIps.push(iface.address);
+      }
+    }
+  }
+  res.status(200).json({
+    success: true,
+    status: 'online',
+    port: PORT,
+    wifiIps,
+    suggestedMobileUrl: wifiIps.length > 0 ? `http://${wifiIps[0]}:${PORT}/login.html` : `http://localhost:${PORT}/login.html`,
+    timestamp: new Date()
+  });
 });
 
 // ১. সকল MCQ ফেচ করা (ফিল্টারিং সুবিধাসহ)

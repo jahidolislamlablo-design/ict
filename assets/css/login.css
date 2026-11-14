@@ -115,21 +115,21 @@ body.auth-page-body {
 }
 
 .neumorphic-icon-socket.interactive-avatar {
-    width: 74px;
-    height: 74px;
-    margin: 0 auto 3px auto;
+    width: 86px;
+    height: 86px;
+    margin: 0 auto 4px auto;
     cursor: pointer;
     overflow: visible;
 }
 
 .neumorphic-icon-socket .socket-icon {
     color: #007AFF;
-    font-size: 1.45rem;
+    font-size: 1.6rem;
     transition: transform 0.2s ease;
 }
 
 .neumorphic-icon-socket.interactive-avatar .socket-icon {
-    font-size: 1.75rem;
+    font-size: 2.1rem;
 }
 
 .neumorphic-icon-socket.interactive-avatar:hover .socket-icon {
@@ -147,21 +147,21 @@ body.auth-page-body {
 }
 
 .neumorphic-icon-socket.interactive-avatar .socket-avatar-preview {
-    width: 66px;
-    height: 66px;
+    width: 78px;
+    height: 78px;
 }
 
 /* Add Image tiny caption under user icon */
 .socket-avatar-caption {
     font-size: 0.68rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #64748B;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
     cursor: pointer;
     transition: color 0.2s ease;
     user-select: none;
-    margin-top: 3px;
+    margin-top: 4px;
     display: block;
     text-align: center;
 }
@@ -485,21 +485,22 @@ body.auth-page-body {
 
 /* Elongated / Wide "Create Account" Button (stretches along row) */
 .btn-wide-create {
+    flex: 1;
     background: #EEF2F6;
-    box-shadow: 4px 4px 10px #cdd5e0, -4px -4px 10px #ffffff;
-    border-radius: 24px;
-    padding: 9px 20px;
+    box-shadow: 4px 4px 12px #cdd5e0, -4px -4px 12px #ffffff;
+    border-radius: 50px;
+    padding: 10px 20px;
     color: #0066FF;
-    font-weight: 700;
-    font-size: 0.88rem;
+    font-weight: 800;
+    font-size: 0.94rem;
     line-height: 1.2;
     text-align: center;
-    border: 1.5px solid rgba(0, 102, 255, 0.15);
+    border: 1.5px solid rgba(0, 102, 255, 0.25);
     cursor: pointer;
     text-decoration: none;
     transition: all 0.22s ease;
     outline: none;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.4px;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
@@ -603,20 +604,22 @@ body.auth-page-body {
 }
 
 .guest-link-btn {
-    background: none;
-    border: none;
+    background: #EEF2F6;
+    border: 2px solid rgba(0, 102, 255, 0.35);
     color: #0066FF;
-    font-size: 1.02rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 800;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 6px 14px;
-    border-radius: 20px;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px 26px;
+    border-radius: 50px;
     transition: all 0.22s ease;
-    box-shadow: 2px 2px 6px rgba(0, 102, 255, 0.08);
-    background: rgba(0, 102, 255, 0.04);
+    box-shadow: 5px 5px 14px #cdd5e0, -5px -5px 14px #ffffff, inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.3px;
+    text-decoration: none;
 }
 
 .guest-link-btn:hover {
