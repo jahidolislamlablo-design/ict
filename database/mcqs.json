@@ -22872,7 +22872,7 @@
     "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 50",
     "question": "কাজের প্রয়োজনে রোবটকে কত ডিগ্রি কোণ পযর্ন্ত ঘুরানো যায়?\n[রা.বো.'১৯]",
     "options": [
       "৯০",
@@ -22883,7 +22883,7 @@
     "correctAnswer": "৩৬০",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.629Z",
-    "liveExamNo": "Live Exam 01"
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
