@@ -663,7 +663,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 49",
     "question": "ইন্টারনেট সংযোগের ক্ষেত্রে সবচেয়ে গুরুত্বপূর্ণ হলো-\t[চ. বো. '২৫]",
     "image": "",
     "options": [
@@ -675,7 +675,7 @@
     "correctAnswer": "IP Address",
     "explanation": "",
     "createdAt": "2026-11-04T13:27:53.164Z",
-    "liveExamNo": "Live Exam 3"
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
