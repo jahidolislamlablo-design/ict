@@ -25296,20 +25296,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e0b9",
     "serialNo": 112,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "ঢাকা বোর্ড",
+    "boardName": "",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "নিচের কোন ট্যাগে অ্যাট্রিবিউট থাকে?\t[ঢা.বো.'২৩]",
     "image": "",
     "options": [
@@ -25320,7 +25321,8 @@
     ],
     "correctAnswer": "শুরুর ট্যাগে",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.870Z"
+    "createdAt": "2026-11-04T13:27:53.870Z",
+    "liveExamNo": "Live Exam 49"
   },
   {
     "chapters": [],
