@@ -52583,21 +52583,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9855",
     "serialNo": 261,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "কুমিলস্না ভিক্টোরিয়া সরকারি কলেজ, কুমিলস্না",
+    "collegeName": "",
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "কোনটি বায়োইনফরমেট্রিক্সের ব্যবহার?\n[কুমিলস্না ভিক্টোরিয়া সরকারি কলেজ, কুমিলস্না]",
     "options": [
       "ড্রাইভিং প্রশিক্ষণ",
@@ -52607,7 +52608,8 @@
     ],
     "correctAnswer": "ডিএনএ ম্যাপিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.093Z"
+    "createdAt": "2026-11-02T16:02:04.093Z",
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
