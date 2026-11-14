@@ -5664,20 +5664,21 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "_id": "6aeb32daf84660475440e062",
     "serialNo": 25,
     "categoryTypes": [
       "Board Question",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 4: ওয়েব ডিজাইন পরিচিতি এবং HTML",
     "collegeName": "",
-    "boardName": "ময়মনসিংহ বোর্ড",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 09",
     "question": "সুভাষের গৃহীত পদক্ষেপসমূহ হচ্ছে–\t[ম. বো. '২৫]\ni. পাবলিক আইপির ব্যবহার\tii. ওয়েবপেইজ হোস্টিং\niii. ডোমেইন নেম রেজিস্ট্রেশন\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -5688,7 +5689,8 @@
     ],
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
-    "createdAt": "2026-11-04T13:27:53.368Z"
+    "createdAt": "2026-11-04T13:27:53.368Z",
+    "liveExamNo": "Live Exam 09"
   },
   {
     "chapters": [],
