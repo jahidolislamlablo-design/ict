@@ -499,7 +499,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 50",
     "question": "শারীরবৃত্তীয় বায়োমেট্রিক পদ্ধতি  [ সকল বোর্ড ২০২৬ ]\ni. ফিঙ্গার প্রিন্ট\nii. কি-স্ট্রোক\niii. ডিএনএ পর্যবেক্ষণ\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -510,7 +510,7 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.285Z",
-    "liveExamNo": "Live Exam 01"
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
