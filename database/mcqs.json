@@ -55293,13 +55293,14 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9872",
     "serialNo": 290,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -55307,7 +55308,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "অভিন্ন তথ্যভিত্তিক প্রশ্নোত্তর\nনিচের উদ্দীপকের আলোকে  প্রশ্নের উত্তর দাও:\nডাঃ রাফিয়া মাছ-মাংসের উৎপাদন বৃদ্ধির জন্য প্রাণীর জীন পরিবর্তন নিয়ে গবেষণা করেন। তিনি এক প্রাণীর জীন অন্য প্রাণীর দেহে প্রতিস্থাপন করে সফলতা অর্জন করেন।\nডাঃ রাফিয়ার তৈরি নতুন জিবকোষকে বলা হয় -\n[ভিকারুননিসা নূন স্কুল এন্ড কলেজ, ঢাকা]",
     "options": [
       "DNA",
@@ -55318,7 +55319,8 @@
     "correctAnswer": "GMO",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.170Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
