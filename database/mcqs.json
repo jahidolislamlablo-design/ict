@@ -51811,21 +51811,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae984d",
     "serialNo": 253,
     "categoryTypes": [
       "College Test Paper",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "নটর ডেম কলেজ, ঢাকা",
-    "boardName": "ঢাকা বোর্ড",
+    "collegeName": "",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 50",
     "question": "আচরণগত বায়োমেট্রিক্স আইডেন্টিফায়ার কোনটি?\t[নটর ডেম কলেজ, ঢাকা]",
     "options": [
       "চোখের রেটিনা",
@@ -51836,7 +51837,8 @@
     "correctAnswer": "হাতের স্বাক্ষর",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.078Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 50"
   },
   {
     "chapters": [],
