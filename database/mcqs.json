@@ -2558,7 +2558,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ইন্টারনেটের মাধ্যেমে ব্যবসা পরিচালনা করাকে কী বলে? [য.বো.'১৭]",
     "options": [
       "ই-মেইল",
@@ -2568,7 +2568,12 @@
     ],
     "correctAnswer": "ই-কমার্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.589Z"
+    "createdAt": "2026-11-02T16:02:03.589Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a9",
@@ -4086,7 +4091,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "কৃত্রিম বুদ্ধিমত্তার প্রয়োগক্ষেত্র হলো- \t[ব.বো.'২৩]\ni. কৃষি\t\nii. ই-কমার্স\niii. যুদ্ধক্ষেত্র\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -4097,7 +4102,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.744Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e2",
@@ -4459,7 +4469,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "বিশ্বগ্রাম প্রতিষ্ঠার প্রয়োজনীয় উপাদান হলো- \t[ব.বো.'১৭]\ni. কানেকটিভিটি\t\nii. ডেটা\niii. সক্ষমতা\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -4470,7 +4480,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.808Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f0",
@@ -6048,7 +6063,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 44",
     "question": "অফিসের যাবতীয় কাযর্ক্রমকে স্বয়ংক্রিয় করাকে বলা হয় -\t[চট্টগ্রাম কলেজ]",
     "options": [
       "অটোমেশন",
@@ -6059,10 +6074,12 @@
     "correctAnswer": "অটোমেশন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.996Z",
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -6134,7 +6151,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ই - মেইল হলো -\t[ইস্পাহানি পাবলিক স্কুল এন্ড কলেজ, ঢাকা]",
     "options": [
       "ইলেকট্রনিক মেইল",
@@ -6144,7 +6161,12 @@
     ],
     "correctAnswer": "ইলেকট্রনিক মেইল",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.002Z"
+    "createdAt": "2026-11-02T16:02:04.002Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae982f",
@@ -6328,7 +6350,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 44",
     "question": "ভাচুর্য়াল রিয়েলিটি\n229.\tHardware  ও Software  এর মাধ্যমে তৈরিকৃত বাস্তব ভিত্তিক কৃত্রিম পরিবেশকে কী বলে?\t[চট্টগ্রাম কলেজ]",
     "options": [
       "রোবটিক্স",
@@ -6339,12 +6361,14 @@
     "correctAnswer": "ভার্চুয়াল রিয়েলিটি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.023Z",
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 47",
       "Live Exam 47",
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -6528,7 +6552,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 44",
     "question": "কৃত্রিম বৃদ্ধিমত্তা সংযোজন করা হয়েছে কোন প্রজন্মের কম্পিউটারে?\n[ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজ, রংপুর]",
     "options": [
       "তৃতীয়",
@@ -6539,10 +6563,12 @@
     "correctAnswer": "পঞ্চম",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.037Z",
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -6618,7 +6644,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 44",
     "question": "রোবটের মস্তিষ্ক বলা হয় কোনটিকে?\t[রাজশাহী সরকারি সিটি কলেজ, রাজশাহী]",
     "options": [
       "অ্যাকুয়েটর",
@@ -6630,10 +6656,12 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.046Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -6674,7 +6702,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "রোবট হচ্ছে একটি -\t[আইডিয়াল স্কুল এন্ড কলেজ, ঢাকা]",
     "options": [
       "মহাকাশ গবেষণা যন্ত্র",
@@ -6684,7 +6712,12 @@
     ],
     "correctAnswer": "মানুষের বিকল্প যন্ত্র",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.050Z"
+    "createdAt": "2026-11-02T16:02:04.050Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9842",
@@ -7755,7 +7788,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "Virtual Reality ব্যবহৃত হয় -\n[আদমজী ক্যান্টনমেন্ট কলেজ, ঢাকা]\ni. শিক্ষায়\t\nii. চিকিৎসায়\niii. বিনোদনে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -7766,7 +7799,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.147Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae986b",
@@ -7918,7 +7956,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 17",
+    "modelTestNo": "Model Test 44",
     "question": "GPS এর মাধ্যমে যেকোনো চলমান যানবাহনের -\n[ক্যান্টনমেন্ট কলেজ, যশোর]\ni. নির্ভুল অবস্থান নির্ণয় করা যায়\nii. গতিবেগ নির্ণয় করা যায়\niii. গতিপথ নির্ণয় করা যায়\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -7930,7 +7968,11 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.165Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 17"
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9871",
@@ -7945,7 +7987,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 44",
     "question": "রোবটিক্স - এর সাধারণ বিষয়গুলো হলো -\n[বি এ এফ শাহীন কলেজ, যশোর]\ni. কৃত্রিম বৃদ্ধিমত্তা\t\nii. ইঞ্জিনিয়ারিং\niii. মনোবিদ্যা\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i",
@@ -7957,10 +7999,12 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.167Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -8138,7 +8182,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "নিচের উদ্দীপকের আলোকে  প্রশ্নের উত্তর দাও:\nআফজাল মিয়া কৃষিকাজ করে জীবিকা নিবার্হ করেন। সম্প্রতি তার এলাকায় বন্যা হওয়ায় তার অনেক ফসল নষ্ট হয়েছে। ভবিষ্যতে যেন এরূপ না হয় এ কারণে সে কৃষি বিভাগ থেকে উন্নত জাতের ধান সংগ্রহ করেছেন যেগুলো আকারে লম্বা হয় এবং বন্যা সহনশীল প্রজাতি।\nনতুন প্রজাতির ধান উদ্ভাবনে কোন প্রযুক্তি ব্যবহৃত হয়েছে?\n[মাইলস্টোন কলেজ, ঢাকা]",
     "options": [
       "ক্রায়োসার্জারি",
@@ -8148,7 +8192,12 @@
     ],
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.184Z"
+    "createdAt": "2026-11-02T16:02:04.184Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9879",
@@ -8214,7 +8263,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 44",
     "question": "নিচের উদ্দীপকের আলোকে  প্রশ্নের উত্তর দাও:\nপ্রাথমিক পর্যায়ে দিয়া পড়া- লেখার পাশাপাশি মিরপুর বেনারসি পলস্নী থেকে শাড়ি কিনে অন - লাইনের মাধ্যমে সেগুলো বিক্রয় করত। পরবতীের্ত তার সাইটে জনপ্রিয়তা বেড়ে যাওয়ায় দেশ - বিদেশে আরো অনেককেই সে একাজের জন্য নিযুক্ত করে, যারা অন-লাইনে অর্ডার গ্রহণ করে এবং সাপ্লাই এর ব্যবস্থা করে।\nদিয়ার কাজকর্মের মাধ্যমে -\t[রাজশাহী সরকারি সিটি কলেজ, রাজশাহী]\ni. সময় সাশ্রয় হয়\nii. কর্মসংস্থান সৃষ্টি হয়\niii. জটিলতা বৃদ্ধি পায়\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i",
@@ -8226,10 +8275,12 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.195Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -8572,7 +8623,7 @@
     "boardName": "",
     "examYear": "2014",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 44",
     "question": "চেকের আধুনিক সংস্করণকে কী নামে ডাকা হয়?\n[চট্টগ্রাম বিশ্ববিদ্যালয় ইউনিট সি-১ ব্যবসায় প্রশাসন অনুষদ ২০১৪-১৫]",
     "options": [
       "MICR",
@@ -8583,10 +8634,12 @@
     "correctAnswer": "MICR",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.221Z",
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -8738,7 +8791,7 @@
     "boardName": "",
     "examYear": "2013",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "অনলাইন ব্যাংকিং এর একটি উদাহরণ হলো -\t[ববি গ ইউনিট ২০১৩-১৪]",
     "options": [
       "ইন্টারনেট ব্যাংকিং",
@@ -8748,7 +8801,12 @@
     ],
     "correctAnswer": "ইন্টারনেট ব্যাংকিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.233Z"
+    "createdAt": "2026-11-02T16:02:04.233Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9890",
@@ -8940,7 +8998,7 @@
     "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "টুইটার হলো -\t[ঢাবি খ ইউনিট ২০১৭-১৮]",
     "options": [
       "সামাজিক যোগাযোগ সাইট",
@@ -8950,7 +9008,12 @@
     ],
     "correctAnswer": "সামাজিক যোগাযোগ সাইট",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.250Z"
+    "createdAt": "2026-11-02T16:02:04.250Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9898",
@@ -9199,7 +9262,7 @@
     "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 44",
     "question": "বায়োমেট্রিক্স কোথায় ব্যবহৃত হয় ?\t[রাবি কে ইউনিট ২০১৭-১৮]",
     "options": [
       "চিকিৎসা বিজ্ঞানে",
@@ -9210,10 +9273,12 @@
     "correctAnswer": "ব্যক্তি শনাক্তকরণে",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.264Z",
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -9229,7 +9294,7 @@
     "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "আঙুলের ছাপ নিয়ে ব্যক্তি শনাক্তকরণের প্রযুক্তি কোনটি?\n[চবি এ ইউনিট ২০১৭-১৮]",
     "options": [
       "জেনেটিক ইঞ্জিনিয়ারিং",
@@ -9239,7 +9304,12 @@
     ],
     "correctAnswer": "বায়োমেট্রিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.267Z"
+    "createdAt": "2026-11-02T16:02:04.267Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae98a3",
@@ -9485,7 +9555,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 44",
     "question": "২০১৬ সালের ICT উন্নয়ন সূচকে বাংলাদেশের অবস্থান কততম?\n[যশোর বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় ডি ইউনিট ২০১৬-১৭]",
     "options": [
       "১২৪ তম",
@@ -9496,10 +9566,12 @@
     "correctAnswer": "১৪৪ তম",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.282Z",
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 44",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 44",
+      "Live Exam 44"
     ]
   },
   {
@@ -9515,7 +9587,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "জাতীয় পরিচয়পত্র (স্মার্ট কার্ড) - এর মাধ্যমে কত ধরনের সেবা পাওয়া যাবে?\t[জবি ডি ইউনিট ২০১৬-১৭]",
     "options": [
       "২০",
@@ -9525,7 +9597,12 @@
     ],
     "correctAnswer": "২২",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.284Z"
+    "createdAt": "2026-11-02T16:02:04.284Z",
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae98ae",
@@ -21451,7 +21528,7 @@
     "boardName": "Jashore Board",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 44",
     "question": "(100)₁₀ গণনা করার জন্য কতটি বাইনারি ডিজিট প্রয়োজন?",
     "image": "",
     "options": [
@@ -21464,7 +21541,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc18",
@@ -21480,7 +21561,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 44",
     "question": "(100)₂ এবং (AA)₁₆ এর যোগফল কত?",
     "image": "",
     "options": [
@@ -21493,7 +21574,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc19",
@@ -23305,7 +23390,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "হেক্সাডেসিমাল পদ্ধতিতে ৮, অ, ঈ, ঊ ... পরের সংখ্যা নিচের কোনটি?",
     "image": "",
     "options": [
@@ -23317,7 +23402,12 @@
     "correctAnswer": "10",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc5a",
@@ -24660,7 +24750,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "২৫₁₀ এর সমতুল্য মান হবে-\ni. 113.2₈ii. 4B.4₁₆\niii. 110101.11₂\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -24672,7 +24762,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc8d",
