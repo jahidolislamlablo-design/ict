@@ -35629,7 +35629,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "মেশিনের ভাষায় রূপান্তরিত প্রোগ্রামকে কী বলা হয়?",
     "image": "",
     "options": [
@@ -35641,7 +35641,12 @@
     "correctAnswer": "অবজেক্ট প্রোগ্রাম",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.065Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2f5d",
@@ -35837,7 +35842,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "যে ভাষায় লিখিত প্রোগ্রাম কম্পিউটার সরাসরি বুঝতে পারে-",
     "image": "",
     "options": [
@@ -35849,7 +35854,12 @@
     "correctAnswer": "১ম প্রজন্মের ভাষা",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.066Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2f65",
@@ -36097,7 +36107,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "যে ভাষায় প্রোগ্রাম লেখা হয় সেই ভাষার ব্যাকরণগত ভুলকে কী বলে?",
     "image": "",
     "options": [
@@ -36109,7 +36119,12 @@
     "correctAnswer": "সিনট্যাক্স ভুল",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.066Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2f6f",
@@ -36409,7 +36424,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "‘C’ ভাষাটি কোন অপারেটিং সিস্টেমে ব্যবহার করে উদ্ভাবন করা হয়?",
     "image": "",
     "options": [
@@ -36421,7 +36436,12 @@
     "correctAnswer": "Unix",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.068Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2f7b",
@@ -36461,7 +36481,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "সি ভাষায় তৈরি করা প্রোগ্রাম ফাইলের এক্সটেনশন কোনটি?",
     "image": "",
     "options": [
@@ -36473,7 +36493,12 @@
     "correctAnswer": ".cpp",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.068Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2f7d",
@@ -36747,7 +36772,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "float টাইপ ডেটা ভেরিয়েবলের জন্য কম্পাইলার মেমোরিতে কত বিট জায়গা সংরক্ষণ করে?",
     "image": "",
     "options": [
@@ -36759,7 +36784,12 @@
     "correctAnswer": "32",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.068Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2f88",
@@ -37891,7 +37921,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "স্ট্রাকচার্ড প্রোগ্রামের গঠন-\ni. পর্যায়ক্রমিক\tii. সিদ্ধান্তমূলক\niii. লুপ\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -37903,7 +37933,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.071Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fb4",
@@ -37943,7 +37978,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "য় শুদ্ধ চলক হতে পারে-\ni. MyName\tii. My-Name\niii. My$Name\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -37955,7 +37990,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.071Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fb6",
@@ -38125,7 +38165,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "উপরের কোডে কোন ধরনের হেডার ফাইল আবশ্যক-\ni. stdio.h\tii. conio.h\niii. math.h\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -38137,7 +38177,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.071Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fbd",
@@ -38255,7 +38300,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "উদ্দীপকটি পড়ে ১০৩ ও ১০৪ নং প্রশ্নের উত্তর দাও:\nint main()\n{\nfloat x;\nprintf(“Enter the number.”);\nscanf(“%d”,&x);\nreturn 0;\n}\nউদ্দীপকে X হলো-",
     "image": "",
     "options": [
@@ -38267,7 +38312,12 @@
     "correctAnswer": "vairable",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.072Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fc2",
@@ -38359,7 +38409,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "উদ্দীপকটি পড়ে ১০৭ ও ১০৮ নং প্রশ্নের উত্তর দাও:\n#include<stdio.h>\nvoid main ( )\n{\nint x, a = 18, b = 15;\nx = (a>b)? a : b;\nprintf “%d”, x);\n}\nউদ্দীপকটির আউটপুট কি হবে?",
     "image": "",
     "options": [
@@ -38371,7 +38421,12 @@
     "correctAnswer": "18",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.072Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fc6",
@@ -38489,7 +38544,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "নিচের ফ্লোচার্ট থেকে ১১২ ও ১১৩ নং প্রশ্নের উত্তর দাও:\nউপরের ফ্লোচার্টে 3 নং ধাপের প্রতীকটির অর্থ কী?",
     "image": "/uploads/images/mcq_ch5_image8.png",
     "options": [
@@ -38501,7 +38556,12 @@
     "correctAnswer": "প্রক্রিয়াকরণ",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.072Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fcb",
@@ -38801,7 +38861,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "নিচের কোনটি টেক্সট এডিটর?",
     "image": "",
     "options": [
@@ -38813,7 +38873,12 @@
     "correctAnswer": "নোটপ্যাড",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.073Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fd7",
@@ -39165,7 +39230,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "উদ্দীপকে Printf (“ICT”) স্টেটম্যান্ট এর পূর্বে if (i = = 12 || i = = 18) continue; ব্যবহার করা হলে ICT লেখাটি কতবার প্রদর্শিত হবে?",
     "image": "",
     "options": [
@@ -39177,7 +39242,12 @@
     "correctAnswer": "4",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.074Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2fe5",
@@ -39581,7 +39651,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "প্রোগ্রামটির ভ্যারিয়েবলগুলো মেমোরিতে মোট কত বাইট জায়গা দখল করবে?",
     "image": "",
     "options": [
@@ -39593,7 +39663,12 @@
     "correctAnswer": "১২",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.075Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb2ff5",
@@ -39945,7 +40020,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "IEE কতৃর্ক কোন প্রোগ্রামিং ভাষা সর্বশ্রেষ্ঠ হিসাবে স্বীকৃতি পেয়েছে?",
     "image": "",
     "options": [
@@ -39957,7 +40032,12 @@
     "correctAnswer": "পাইথন",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.075Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb3003",
@@ -39971,7 +40051,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "স্ট্রাকচার্ড প্রোগ্রাম হলো-\ni. বেসিক\tii. ভিজুয়াল বেসিক\niii. সি\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -39983,7 +40063,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.075Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb3004",
@@ -40361,7 +40446,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "নিচের কোনগুলো সঠিক Keyword?\ni. scan\tii. double\niii. float\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -40373,7 +40458,12 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.076Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb3013",
@@ -40621,7 +40711,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "নিচের উদ্দীপকের আলোকে ১৯৪ ও ১৯৫ নং প্রশ্নের উত্তর দাও:\n#include <stdio.h>\nmain(){\nint C, S = 1;\nfor (C=2; C<= 10; C+= 3) {\nS=S+C; }\nprintf(\"%d\", S); }\nপ্রোগ্রামটি রান করালে আউটপুট কত হবে?",
     "image": "",
     "options": [
@@ -40633,7 +40723,12 @@
     "correctAnswer": "16",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.077Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb301d",
@@ -40907,7 +41002,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "অ্যালগরিদমের চিত্ররূপকে কী বলা হয়?",
     "image": "",
     "options": [
@@ -40919,7 +41014,12 @@
     "correctAnswer": "Flow Chart",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.077Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb3028",
@@ -41375,7 +41475,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "Integer type data কত মেমোরি দখল করে?\t[",
     "image": "",
     "options": [
@@ -41387,7 +41487,12 @@
     "correctAnswer": "২ বাইটস",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.077Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb303a",
@@ -41479,7 +41584,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "C ভাষায় || কে কোন ধরনের অপারেটর বলা হয়?",
     "image": "",
     "options": [
@@ -41491,7 +41596,12 @@
     "correctAnswer": "Logical",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.077Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb303e",
@@ -41609,7 +41719,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "যে স্টেটমেন্টের সাহায্যে উপাত্ত প্রদান করা হয় তাকে কী বলে?",
     "image": "",
     "options": [
@@ -41621,7 +41731,12 @@
     "correctAnswer": "আউটপুপ স্টেটমেন্ট",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.077Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb3043",
@@ -41921,7 +42036,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "Non-volatile মেমোরি কোনটি?",
     "image": "",
     "options": [
@@ -41933,7 +42048,12 @@
     "correctAnswer": "রম",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.078Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb304f",
@@ -43403,7 +43523,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 45",
     "question": "ইনপুট আউটপুট স্টেটমেন্ট এবং কনডিশনাল স্টেটমেন্ট\n#include < stdio.h>\tmain ( )\t{\nint a = 3, b;b = 2 * a;\nprintf(\"%d\", b);\nউদ্দীপকের প্রোগ্রামটি রান করলে b এর মান কত হবে?",
     "image": "",
     "options": [
@@ -43415,7 +43535,12 @@
     "correctAnswer": "৬",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.079Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 45",
+    "modelTestNos": [
+      "Model Test 45",
+      "Live Exam 45"
+    ]
   },
   {
     "_id": "6af015f629f22f72f1eb3088",
