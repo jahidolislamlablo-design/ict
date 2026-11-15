@@ -14,7 +14,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 46",
+    "modelTestNo": "Model Test 48",
     "question": "এইচটিএমএল কী?",
     "options": [
       "মার্কআপ ল্যাঙ্গুয়েজ",
@@ -26,8 +26,12 @@
     "explanation": "HTML হলো HyperText Markup Language",
     "createdAt": "2026-10-26T12:42:28.772Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 46",
-    "serialNo": 0
+    "liveExamNo": "Live Exam 48",
+    "serialNo": 0,
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9751",
@@ -317,7 +321,7 @@
     "boardName": "Sylhet Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 05",
+    "modelTestNo": "Model Test 48",
     "question": "আর্টিফিশিয়াল ইন্টেলিজেন্স-এ সবচেয়ে সফল ক্ষেত্র হিসেবে বিবেচনা করা হয় কোনটিকে?\t[সি. বো. '২৫]",
     "options": [
       "রোবটিক্স",
@@ -327,7 +331,12 @@
     ],
     "correctAnswer": "মেশিন লার্নিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.314Z"
+    "createdAt": "2026-11-02T16:02:03.314Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae975b",
@@ -516,7 +525,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 48",
     "question": "ক্রায়োসার্জারিতে ক্রায়োজনিক এজেন্ট হিসেবে ব্যবহৃত হয় কোনটি?\t\t[চ. বো. '২৫]",
     "options": [
       "অক্সিজেন গ্যাস",
@@ -527,10 +536,12 @@
     "correctAnswer": "অক্সিজেন গ্যাস",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.345Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -546,7 +557,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "ক্রায়োসার্জারি চিকিৎসায় নির্দিষ্ট শীতলতায় পৌঁছানোর জন্য ব্যবহৃত গ্যাস হলো—\t[সি. বো. '২৫; রা. বো. '১৯]\ni. \tতরল নাইট্রোজেন\t\nii. \tহিলিয়াম\niii. \tআর্গন\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -557,7 +568,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.347Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9763",
@@ -731,7 +747,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "কোনটি আন্তঃশাস্ত্রীয় বিজ্ঞান?\t[ঢা. বো. '২৫]",
     "options": [
       "রোবটিক্স",
@@ -741,7 +757,12 @@
     ],
     "correctAnswer": "বায়োইনফরমেটিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.374Z"
+    "createdAt": "2026-11-02T16:02:03.374Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae976a",
@@ -835,7 +856,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 48",
     "question": "স্যামন মাছের জিন স্থানান্তররে মাধ্যমে কোন মাছের আকৃতি বড় করা সম্ভব হয়েছে?\t[দি. বো. '২৫]",
     "options": [
       "কার্প",
@@ -847,10 +868,12 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.388Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -1104,7 +1127,7 @@
     "boardName": "Cumilla Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 07",
+    "modelTestNo": "Model Test 48",
     "question": "নিচের উদ্দীপকটি পড় এবং ৩৭ ও ৩৮ নং প্রশ্নের উত্তর দাও: [কু. বো. '২৫]\nবিজ্ঞানী সুমন ও ডাঃ শেফা যথাক্রমে আণবিক স্কেলের প্রযুক্তি এবং সিমুলেটেড সার্জারি নিয়ে পরীক্ষা-নিরীক্ষা করেন।\t\nবিজ্ঞানী সুমনের কাযর্ক্রম সংশ্লিষ্ট বিষয় কোনটি?",
     "options": [
       "ক্রায়োসার্জারি",
@@ -1114,7 +1137,12 @@
     ],
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.429Z"
+    "createdAt": "2026-11-02T16:02:03.429Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9778",
@@ -1342,7 +1370,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "বৈদ্যুতিক শক্তির ব্যাপক ব্যবহার ছিল কোন শিল্প বিপ্লবে? [রা.বো. ২৪]",
     "options": [
       "প্রথম",
@@ -1352,7 +1380,12 @@
     ],
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.459Z"
+    "createdAt": "2026-11-02T16:02:03.459Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9781",
@@ -1452,7 +1485,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "মানুষের মস্তিষ্কের মতো কাজ করার পদ্ধতিকে কী বলে? [চ.বো. ২৪]",
     "options": [
       "ডিপ লর্নিং",
@@ -1462,7 +1495,12 @@
     ],
     "correctAnswer": "নিউরাল নেটওয়ার্ক",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.474Z"
+    "createdAt": "2026-11-02T16:02:03.474Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9785",
@@ -1642,7 +1680,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "ক্রায়োসার্জারিতে কোন গ্যাস ব্যবহৃত হয়? [কু.বো. ২৪]",
     "options": [
       "আর্গন",
@@ -1652,7 +1690,12 @@
     ],
     "correctAnswer": "আর্গন",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.497Z"
+    "createdAt": "2026-11-02T16:02:03.497Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae978c",
@@ -1718,7 +1761,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "জেনেটিক ইঞ্জিনিয়ারিং ব্যবহৃত হয় [কু.বো. ২৪]\ni. DNA-এর সজ্জা পরিবর্তনে\nii. বংশগতির ধারা অনুসন্ধান\niii. স্বাক্ষর শনাক্তকরণে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -1729,7 +1772,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.511Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae978f",
@@ -2098,7 +2146,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "ন্যানো প্রযুক্তির মাধ্যমে সম্ভব হচ্ছে [সি.বো. ২৪]\ni. বৃহৎ স্কেলে পণ্যোৎপাদন\tii. সূক্ষ্ণ ও ছোট পণ্যোৎপাদন\niii. বর্জ্য পরিষ্কারকরণ\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -2109,7 +2157,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.557Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae979d",
@@ -3334,7 +3387,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "জীব সংক্রান্ত তথ্য ব্যবস্থাপনার কাজে কম্পিউটার প্রযু্ি‌ধসঢ়;রক্ত প্রয়োগ হলো- \t\t[চ.বো.'১৯]",
     "options": [
       "বায়োইনফরমেটিক্স",
@@ -3344,7 +3397,12 @@
     ],
     "correctAnswer": "বায়োইনফরমেটিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.681Z"
+    "createdAt": "2026-11-02T16:02:03.681Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97cb",
@@ -5059,7 +5117,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "বাবার ব্যবহৃত প্রযুক্তিটির সীমাবদ্ধতা হলো-\ni. দেশীয় প্রজাতির বিলুপ্তি\t\nii. ফলন কমে যাওয়া\niii. নতুন রোগ সৃষ্টি হতে পারে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -5070,7 +5128,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.915Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae980e",
@@ -5208,7 +5271,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "উদ্দীপকে যে বিষয়ে বলা হয়েছে তা হচ্ছে কিসের কল্যাণে-\ni. সংবাদপত্রেi\t\nii. তথ্য প্রযুক্তির\niii. ইন্টারনেট প্রযুক্তির\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -5219,7 +5282,12 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.932Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9814",
@@ -5818,7 +5886,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "অফিসের যাবতীয় কাযর্ক্রমকে স্বয়ংক্রিয় করাকে বলা হয় -\t[চট্টগ্রাম কলেজ]",
     "options": [
       "অটোমেশন",
@@ -5828,7 +5896,12 @@
     ],
     "correctAnswer": "অটোমেশন",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.996Z"
+    "createdAt": "2026-11-02T16:02:03.996Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae982c",
@@ -5921,7 +5994,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 48",
     "question": "ইমেল ঠিকানায় কয়টি অংশ থাকে?\t[হলিক্রস কলেজ, ঢাকা]",
     "options": [
       "২",
@@ -5932,10 +6005,12 @@
     "correctAnswer": "২",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.005Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -5951,7 +6026,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "ইন্টানেটের যাত্রা শুরু হয় কত সালে?\t[অমৃত লার দে কলেজ, বরিশাল]",
     "options": [
       "১৯৬৫",
@@ -5961,7 +6036,12 @@
     ],
     "correctAnswer": "১৯৬৯",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.008Z"
+    "createdAt": "2026-11-02T16:02:04.008Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9831",
@@ -6263,7 +6343,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "কৃত্রিম বৃদ্ধিমত্তা সংযোজন করা হয়েছে কোন প্রজন্মের কম্পিউটারে?\n[ক্যান্টনমেন্ট পাবলিক স্কুল এন্ড কলেজ, রংপুর]",
     "options": [
       "তৃতীয়",
@@ -6273,7 +6353,12 @@
     ],
     "correctAnswer": "পঞ্চম",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.037Z"
+    "createdAt": "2026-11-02T16:02:04.037Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae983d",
@@ -7059,7 +7144,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "পরিবেশ সুরক্ষার ক্ষেত্রে কোনটি ব্যবহৃত হয়?\n[অমৃত লাল দে মহাবিদ্যালয়,বরিশাল]",
     "options": [
       "রোবটিক্স",
@@ -7069,7 +7154,12 @@
     ],
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.108Z"
+    "createdAt": "2026-11-02T16:02:04.108Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae985c",
@@ -7286,7 +7376,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "প্লেজিয়ারিজম কোন অপরাধে সাথে জড়িত?\n[ইস্পাহানী পাবলিক স্কুল এন্ড কলেজ, কুমিলস্না]",
     "options": [
       "কপিরাইট লংঘন",
@@ -7297,7 +7387,12 @@
     "correctAnswer": "অন্যের লেখা চুরি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.129Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9865",
@@ -8340,7 +8435,7 @@
     "boardName": "",
     "examYear": "2013",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "SWIFT কী?\n[ঢাবি গ ইউনিট: বিজনেস স্টাডিজ অনুষদ ২০১৩-১৪; ইসলামী বিশ্ববিদ্যালয় ইউনিট জি ২০১৫-১৬]",
     "options": [
       "একটি ব্যাংক সমিতি",
@@ -8350,7 +8445,12 @@
     ],
     "correctAnswer": "একটি পরিশোধ পদ্ধতি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.229Z"
+    "createdAt": "2026-11-02T16:02:04.229Z",
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae988e",
@@ -21174,7 +21274,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 48",
     "question": "সুমেরিয়ান-ব্যবিলিয়ান সংখ্যা পদ্ধতি ছিল",
     "image": "",
     "options": [
@@ -21187,10 +21287,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -21291,7 +21393,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 45",
+    "modelTestNo": "Model Test 48",
     "question": "(101101.01)₂ এর সমকক্ষ মান কোনটি?",
     "image": "",
     "options": [
@@ -21304,7 +21406,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 45"
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc1f",
@@ -23513,7 +23619,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "অক্টাল পদ্ধতিতে ৭ এর পরের সংখ্যা কোনটি?",
     "image": "",
     "options": [
@@ -23525,7 +23631,12 @@
     "correctAnswer": "10",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc71",
