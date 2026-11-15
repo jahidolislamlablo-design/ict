@@ -27842,7 +27842,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটির আলোকে ১২ ও ১৩ নং প্রশ্নের উত্তর দাও:\n৩.   উদ্দীপকের লজিক গেইট আউটপুটে ১ পেতে হলে ইনপুট দিতে হবে—\nর. অ = ০, ই = ০, ঈ = ০\nরর. অ = ০, ই = ১, ঈ = ১\nররর. অ = ১, ই = ০, ঈ = ১\nনিচের কোনটি সঠিক?",
     "image": "/uploads/images/mcq_ch3_p2_image3.png",
     "options": [
@@ -27855,7 +27855,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.489Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c904",
@@ -27947,7 +27951,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "কোন গেটটি মৌলিক গেট নয়?",
     "image": "",
     "options": [
@@ -27959,7 +27963,12 @@
     "correctAnswer": "XOR",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c908",
@@ -28181,7 +28190,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "কোন ডিডিজটাল সার্কিটের ইনপুট এবং আউটপুট সংখ্যা সমান?",
     "image": "",
     "options": [
@@ -28193,7 +28202,12 @@
     "correctAnswer": "হাফ অ্যাডার",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c911",
@@ -28337,7 +28351,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "বুলিয়ান ফাংশন F=(A+B)(A+B̅) হলে F এর সরলীকৃত মান কোনটি?",
     "image": "",
     "options": [
@@ -28349,7 +28363,12 @@
     "correctAnswer": "A",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c917",
@@ -28524,7 +28543,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "বুলিয়ান অ্যালজেবরার মৌলিক উপপাদ্য কোনটি?",
     "image": "",
     "options": [
@@ -28536,7 +28555,12 @@
     "correctAnswer": "A.A=A",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c91e",
@@ -28654,7 +28678,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "সত্যক সারণিতে ৩টি ইনপুট দিলে কয়টি ধাপ হবে?",
     "image": "",
     "options": [
@@ -28666,7 +28690,12 @@
     "correctAnswer": "৮টি",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c923",
@@ -29886,7 +29915,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "ফ্লিপ-ফ্লপ ছাড়াও রেজিস্টারে আর কী থাকতে পারে?",
     "image": "",
     "options": [
@@ -29898,7 +29927,12 @@
     "correctAnswer": "কম্বিনেশনার গেইট",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c952",
@@ -30962,7 +30996,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "A ইনপুটের সাথে সংযুক্ত NOT Gate টি বাদ দিলে সরলীকৃত সমীকরণ হবে?",
     "image": "",
     "options": [
@@ -30974,7 +31008,12 @@
     "correctAnswer": "X=A⨁B",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c97b",
@@ -31092,7 +31131,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "উদ্দীপকে বর্তনীর অ্যান্ড গেইটের পরিবর্তে অর গেইট বসালে Y এর মান কত হবে?",
     "image": "",
     "options": [
@@ -31104,7 +31143,12 @@
     "correctAnswer": "1",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c980",
@@ -31196,7 +31240,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "সার্বজনীন গেইট এবং বিশেষ গেইট\nনিচের উদ্দীপকটি পড় এবং ৩০ ও ৩১ নং প্রশ্নের উত্তর দাও:\nউদ্দীপকের Y এর সমীকরণ কোনটি?",
     "image": "/uploads/images/mcq_ch3_p2_image31.png",
     "options": [
@@ -31208,7 +31252,12 @@
     "correctAnswer": "A̅B+AB̅",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c984",
@@ -31669,7 +31718,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "বাইনারি ডেটা একদিকে বা উভয়দিকে স্থানান্তর করতে পারে কোন রেজিস্টার?",
     "image": "",
     "options": [
@@ -31681,7 +31730,12 @@
     "correctAnswer": "শিফট",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c996",
@@ -31695,7 +31749,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের কোন বর্তনী গণনার কাজ করে?",
     "image": "",
     "options": [
@@ -31707,7 +31761,12 @@
     "correctAnswer": "কাউন্টার",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c997",
@@ -31721,7 +31780,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের চিত্রটি লক্ষ কর এবং ৭ ও ৮ নং প্রশ্নের উত্তর দাও:\nY এর মান কোনটি?",
     "image": "/uploads/images/mcq_ch3_p2_image39.png",
     "options": [
@@ -31733,7 +31792,12 @@
     "correctAnswer": "A̅+B",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c998",
@@ -31825,7 +31889,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "থেকে ৩১ গণনা করার জন্য রিপল কাউন্টারে কয়টি ফ্লিপফ্লপ ব্যবহার করতে হবে?",
     "image": "",
     "options": [
@@ -31837,7 +31901,12 @@
     "correctAnswer": "৫",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c99c",
@@ -31903,7 +31972,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "উদ্দীপকের ইনপুট O এর পরিবর্তে B হলে বর্তনীয় আউটপুট কত হবে?",
     "image": "",
     "options": [
@@ -31915,7 +31984,12 @@
     "correctAnswer": "(A ⨁ B)̅",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c99f",
@@ -32085,7 +32159,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "যে কোনো জটিল ইলেকট্রনিক্স সার্কিট তৈরি করা যায়\ni. মৌলিক গেইট দিয়ে\tii. বিশেষ গেইট দিয়ে\niii. সার্বজনীন গেইট দিয়ে\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -32097,7 +32171,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9a6",
@@ -32215,7 +32294,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের চিত্র হতে ১৭ নং প্রশ্নের উত্তর দাও:\nP এর সরলীকৃত মানের সমতুল্য গোইট কোনটি?",
     "image": "/uploads/images/mcq_ch3_p2_image44.png",
     "options": [
@@ -32227,7 +32306,12 @@
     "correctAnswer": "XOR",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9ab",
@@ -32371,7 +32455,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "কোন ডিডিজটাল সার্কিটের ইনপুট এবং আউটপুট সংখ্যা সমান?",
     "image": "",
     "options": [
@@ -32383,7 +32467,12 @@
     "correctAnswer": "হাফ অ্যাডার",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9b1",
@@ -32397,7 +32486,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "F = XY + X̅Y + X এর সরলীকৃত মান কত?",
     "image": "",
     "options": [
@@ -32409,7 +32498,12 @@
     "correctAnswer": "X + Y",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9b2",
@@ -33047,7 +33141,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "কোনটি মৌলিক উপপাদ্য?",
     "image": "",
     "options": [
@@ -33059,7 +33153,12 @@
     "correctAnswer": "A + 0 = A",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9cb",
@@ -33255,7 +33354,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "ডি-মরগ্যান এর উপপাদ্য কোনটি?",
     "image": "",
     "options": [
@@ -33267,7 +33366,12 @@
     "correctAnswer": "(AB)̅ = A̅ + B̅",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9d3",
@@ -33697,7 +33801,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি লক্ষ কর এবং ২৩৭ ও ২৩৮ নং প্রশ্নের উত্তর দাও:\nউদ্দীপকের লজিক সার্কিটের আউটপুট সমীকরণ কোন গেইটের সমতুল্য",
     "image": "/uploads/images/mcq_ch3_p2_image59.png",
     "options": [
@@ -33709,7 +33813,12 @@
     "correctAnswer": "X-NOR",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9e4",
@@ -33723,7 +33832,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "উদ্দীপকে সার্কিটের ইনপুট A, B ও C হলে কখন X = 1 হবে?",
     "image": "",
     "options": [
@@ -33735,7 +33844,12 @@
     "correctAnswer": "A = 0, B = 0, C = 0",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9e5",
@@ -33853,7 +33967,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি লক্ষ্য কর এবং ১৪১ ও ১৪২ নং প্রশ্নের উত্তর দাও:\n| A | B | Y |\n| :---: | :---: | :---: |\n| 0 | 0 | 1 |\n| 0 | 1 | 1 |\n| 1 | 0 | 1 |\n| 1 | 1 | 0 |\nউদ্দীপকের সত্যক সারণি যে গেইট নিদের্র্শ করে তা হলো–",
     "image": "",
     "options": [
@@ -33865,7 +33979,12 @@
     "correctAnswer": "NAND",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c9ea",
@@ -35023,7 +35142,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "A ও B এর বুলীয় যোগফল সিগন্যাল-",
     "image": "",
     "options": [
@@ -35035,7 +35154,12 @@
     "correctAnswer": "<img src=\"/uploads/images/mcq_ch3_p2_image93.png\" style=\"max-height: 48px; vertical-align: middle;\">",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0ca17",
