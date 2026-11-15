@@ -14,7 +14,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 46",
     "question": "এইচটিএমএল কী?",
     "options": [
       "মার্কআপ ল্যাঙ্গুয়েজ",
@@ -26,11 +26,13 @@
     "explanation": "HTML হলো HyperText Markup Language",
     "createdAt": "2026-10-26T12:42:28.772Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 46",
     "serialNo": 0,
     "modelTestNos": [
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -60,7 +62,11 @@
     "correctAnswer": "বটম-আপ",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.277Z",
-    "liveExamNo": "Live Exam 46"
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9752",
@@ -260,7 +266,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 47",
+    "modelTestNo": "Model Test 46",
     "question": "নিউরাল নেট কয়টি স্তর বিভক্ত?\t[চ. বো. '২৫]",
     "options": [
       "২",
@@ -271,12 +277,14 @@
     "correctAnswer": "৩",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.306Z",
-    "liveExamNo": "Live Exam 47",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 01",
       "Live Exam 01",
       "Model Test 47",
-      "Live Exam 47"
+      "Live Exam 47",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -327,7 +335,7 @@
     "boardName": "Sylhet Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 46",
     "question": "আর্টিফিশিয়াল ইন্টেলিজেন্স-এ সবচেয়ে সফল ক্ষেত্র হিসেবে বিবেচনা করা হয় কোনটিকে?\t[সি. বো. '২৫]",
     "options": [
       "রোবটিক্স",
@@ -338,10 +346,12 @@
     "correctAnswer": "মেশিন লার্নিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.314Z",
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -388,7 +398,7 @@
     "boardName": "Dinajpur Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 46",
     "question": "টেলিকনফারেন্সিং পদ্ধতি কে আবিষ্কার করেন?\t[দি. বো. '২৫]",
     "options": [
       "হার্বাট মার্শাল",
@@ -399,10 +409,12 @@
     "correctAnswer": "মরিটারফ",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.322Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -514,7 +526,11 @@
     "correctAnswer": "আর্গন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.343Z",
-    "liveExamNo": "Live Exam 46"
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9761",
@@ -813,7 +829,7 @@
     "boardName": "Chattogram Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 06",
+    "modelTestNo": "Model Test 46",
     "question": "সারা বেগম বিবর্তনের রহস্য উন্মোচনের কাজ করেন। তার গবেষণার জন্য বিভিন্ন উপাদান ও কৌশলের সমন্বিত বিষয়গুলো হলো-[চ.বো. '২৫]\ni. \tআণবিক জীববিদ্যা I মেডিসিন\nii. \tডেটাবেস ও প্রোগ্রামিং\niii. \tপদার্থবিদ্যা I রসায়ন\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -824,7 +840,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.381Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae976c",
@@ -2149,7 +2170,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 46",
     "question": "ব্যান্ডউইথ নির্ভর করে কোনটির উপর? [ব.বো. ২৪]",
     "options": [
       "প্রাপক",
@@ -2160,7 +2181,11 @@
     "correctAnswer": "মাধ্যম",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.554Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae979c",
@@ -2379,7 +2404,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "বিশ্বগ্রাম ধারণার সাথে কোন বিষয়টি বিশেষভাবে সম্পৃক্ত? \t[ঢা.বো.'১৬]",
     "options": [
       "গ্রামের সাথে শহররে সহজ যোগাযোগ",
@@ -2390,7 +2415,12 @@
     "correctAnswer": "ইন্টারনেট সুবিধার ব্যাপক প্রসার",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.576Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a4",
@@ -2438,7 +2468,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "ইন্টারনেট ব্যবহার করে কর্মসংস্থানের সুযোগকে কী বলা হয়?\n[চ.বো.'১৭]",
     "options": [
       "ই-কমার্স",
@@ -2448,7 +2478,12 @@
     ],
     "correctAnswer": "আউটসোর্সিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.581Z"
+    "createdAt": "2026-11-02T16:02:03.581Z",
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a6",
@@ -2546,7 +2581,7 @@
     "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 46",
     "question": "কম্পিউটার সংশ্লিষ্ট যন্ত্রপাতিকে সঠিকভাবে পরিচালনার জন্য নিচের কোনটি প্রয়োজন?: \t \t[ব.বো.'১৯]",
     "options": [
       "হার্ডওয়্যার",
@@ -2557,10 +2592,12 @@
     "correctAnswer": "সফটওয়্যার",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.594Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -2880,7 +2917,7 @@
     "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 46",
     "question": "কাজের প্রয়োজনে রোবটকে কত ডিগ্রি কোণ পযর্ন্ত ঘুরানো যায়?\n[রা.বো.'১৯]",
     "options": [
       "৯০",
@@ -2891,7 +2928,11 @@
     "correctAnswer": "৩৬০",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.629Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b6",
@@ -4511,7 +4552,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "জেনেটিক ইঞ্জিনিয়ারিংয়ের মাধ্যেমে- \t[কু.বো.,ব.বো.'১৬]\ni. জীবনের নতুন জিনোম আবিষ্কার করা যায়\n\nii. বাণিজ্যিকভাবে ইনসুলিন তৈরি করা যায\niii. খুব সহজে ব্যাক্তি শনাক্ত করা যায়\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -4522,7 +4563,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.822Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97f4",
@@ -4971,7 +5017,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "বন্ধুর চিকিৎসায় ব্যবহৃত পদ্ধতির প্রভাবে-\ni. পাশ্চর্-প্রতিক্রিয়া কম হবে\n\nii. রোগীর ব্যাথা কম হবে\niii. সুস্থ হতে সময় লাগবে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -4982,7 +5028,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.888Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9806",
@@ -5375,7 +5426,11 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.934Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 46"
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9815",
@@ -5626,7 +5681,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "Model Test 47",
+    "modelTestNo": "Model Test 46",
     "question": "উদ্দীপকটি পড়ে  প্রশ্নের উত্তর দাও:\nড. সিরাজ একজন কৃষিবিজ্ঞানী। সে এখন একটি উচ্চফলনশীল পেপে উদ্ভাবন করল যার প্রতিটির ওজন প্রায় ১৫ কেজি। \t[সি.বো.'১৬]\nড. সিরাজ এর ব্যবহৃত প্রযুক্তিটির নাম কী?",
     "options": [
       "বায়োইনফরমেটিকস",
@@ -5637,10 +5692,12 @@
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.964Z",
-    "liveExamNo": "Live Exam 47",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 47",
-      "Live Exam 47"
+      "Live Exam 47",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -6083,7 +6140,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 47",
+    "modelTestNo": "Model Test 46",
     "question": "ইমেল ঠিকানায় কয়টি অংশ থাকে?\t[হলিক্রস কলেজ, ঢাকা]",
     "options": [
       "২",
@@ -6094,14 +6151,16 @@
     "correctAnswer": "২",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.005Z",
-    "liveExamNo": "Live Exam 47",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 01",
       "Live Exam 01",
       "Model Test 48",
       "Live Exam 48",
       "Model Test 47",
-      "Live Exam 47"
+      "Live Exam 47",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -6363,7 +6422,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 47",
+    "modelTestNo": "Model Test 46",
     "question": "আর্টিফিসিয়াল ইন্টিলিজেন্স - এ কোনটি ব্যবহার করা হয়?\n[নটর ডেম কলেজ, ঢাকা]",
     "options": [
       "প্রোলগ",
@@ -6374,10 +6433,12 @@
     "correctAnswer": "প্রোলগ",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.032Z",
-    "liveExamNo": "Live Exam 47",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 47",
-      "Live Exam 47"
+      "Live Exam 47",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -6474,7 +6535,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "রোবটিক্স\nরোবটের কাজ কোনটি?\t[আইডিয়াল স্কুল এন্ড কলেজ,মতিঝিল, ঢাকা]",
     "options": [
       "প্রোগ্রাম চালনা করা",
@@ -6484,7 +6545,12 @@
     ],
     "correctAnswer": "প্রতিকূল কাজে সাহায্য করা",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.039Z"
+    "createdAt": "2026-11-02T16:02:04.039Z",
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae983e",
@@ -6783,7 +6849,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "মহাকাশ অভিযান\nকিউরিসিটি রোভার নামক মহাকাশযান কোন গ্রহে পাঠানো হয়েছে?\n[আব্দুল কাদের মোলস্না সিটি কলেজ, নরসিংদী]",
     "options": [
       "বুধ",
@@ -6793,7 +6859,12 @@
     ],
     "correctAnswer": "মঙ্গল",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.069Z"
+    "createdAt": "2026-11-02T16:02:04.069Z",
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae984a",
@@ -7014,7 +7085,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "বায়োলজিক্যাল ইনফমেশন ম্যানেজমেন্টের জন্য কম্পিউটার নির্ভর প্রযুক্তিকে বলা হয়?\t[নটর ডেম কলেজ, ঢাকা]",
     "options": [
       "বায়োমেট্রিক্স",
@@ -7024,7 +7095,12 @@
     ],
     "correctAnswer": "বায়োইনফরমেট্রিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.086Z"
+    "createdAt": "2026-11-02T16:02:04.086Z",
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9853",
@@ -7039,7 +7115,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "তথ্য প্রযুক্তির সাহায্যে জৈব রসায়ন ব্যবহার করে জীববিজ্ঞানের সমস্যার সমাধানকে কী বলা হয়?\t[ সরকারি কমার্স কলেজ, চট্টগ্রাম]",
     "options": [
       "ন্যানোটেকনোলজি",
@@ -7049,7 +7125,12 @@
     ],
     "correctAnswer": "বায়োইনফরমেট্রিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.087Z"
+    "createdAt": "2026-11-02T16:02:04.087Z",
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9854",
@@ -7194,7 +7275,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 47",
+    "modelTestNo": "Model Test 46",
     "question": "মানুষের শরীরে জিনের সংখ্যা প্রায় -\t[সোনার বাংলা কলেজ, কুমিলস্না]",
     "options": [
       "৩০,০০০",
@@ -7205,10 +7286,12 @@
     "correctAnswer": "৩০,০০০",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.102Z",
-    "liveExamNo": "Live Exam 47",
+    "liveExamNo": "Live Exam 46",
     "modelTestNos": [
       "Model Test 47",
-      "Live Exam 47"
+      "Live Exam 47",
+      "Model Test 46",
+      "Live Exam 46"
     ]
   },
   {
@@ -7224,7 +7307,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "ট্রান্সজেনিক উদ্ভিদ ও প্রাণী সৃষ্টিতে কাজ করে কোনটি?\n[চট্টগ্রাম কলেজ, চট্টগ্রাম]",
     "options": [
       "জেনেটিক ইঞ্জিনিয়ারিং",
@@ -7234,7 +7317,12 @@
     ],
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.105Z"
+    "createdAt": "2026-11-02T16:02:04.105Z",
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae985b",
@@ -24626,7 +24714,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 46",
     "question": "কোনটি ২৫০₈ এর পূর্ববর্তী সংখ্যা?",
     "image": "",
     "options": [
@@ -24638,7 +24726,12 @@
     "correctAnswer": "10100111",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 46",
+    "modelTestNos": [
+      "Model Test 46",
+      "Live Exam 46"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc93",
