@@ -136,7 +136,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 08",
+    "modelTestNo": "Model Test 47",
     "question": "হার্ডওয়্যার ও সফটওয়্যার এর  সমন্বয়ে চিত্রায়ণকে কী বলে?",
     "options": [
       "রোবটিক্স",
@@ -147,7 +147,11 @@
     "correctAnswer": "ভার্চুয়াল রিয়েলিটি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.296Z",
-    "liveExamNo": "Live Exam 08"
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9755",
@@ -256,7 +260,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 47",
     "question": "নিউরাল নেট কয়টি স্তর বিভক্ত?\t[চ. বো. '২৫]",
     "options": [
       "২",
@@ -267,10 +271,12 @@
     "correctAnswer": "৩",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.306Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 47",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 47",
+      "Live Exam 47"
     ]
   },
   {
@@ -668,7 +674,7 @@
     "boardName": "Mymensingh Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:\nডাঃ আহনাফ একজন যকৃত ক্যান্সাররে রোগীকে তরল নাইট্রোজেন ব্যবহার করে চিকিৎসা দেওয়ার সিদ্ধান্ত নেন। সফল অপারেশন সম্পন্ন করার লক্ষ্যে তিনি কম্পিউটার নিয়ন্ত্রিত কৃত্রিম পরিবেশের মাধ্যমে অভিজ্ঞতা অর্জন করেন।\t\nউদ্দীপকে উল্লিখিত চিকিৎসা পদ্ধতি কোনটি?   [ম. বো. '২৫]",
     "options": [
       "ক্রায়োসার্জারি",
@@ -679,7 +685,11 @@
     "correctAnswer": "ক্রায়োসার্জারি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.358Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9767",
@@ -1048,7 +1058,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "জীবাণুমুক্তকরণ কাজে কোনটি ব্যবহৃত হয়?\t[চ. বো. '২৫]",
     "options": [
       "ন্যানোটেকনোলজি",
@@ -1058,7 +1068,12 @@
     ],
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.416Z"
+    "createdAt": "2026-11-02T16:02:03.416Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9775",
@@ -1184,7 +1199,7 @@
     "boardName": "Chattogram Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 08",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও: [চ. বো. '২৫]\nবৃহৎ কর্মসংস্থান সৃষ্টি, কার্যকরী I সস্তায় শক্তি উৎপাদনসহ পানি I বায়ু দূষণ কমিয়ে আনার জন্য একটি প্রযুক্তি নিয়ে বিজ্ঞানীরা কাজ করে চলছে। এই প্রযুক্তিটি বর্তমানে খাদ্যদ্রব্য প্যাকেটজাত করতে ব্যাপকভাবে ব্যবহৃত হচ্ছে।\t\t\t\t\nউদ্দীপকে উল্লিখিত প্রযুক্তিটি কী?",
     "options": [
       "ন্যানোটেকনোলজি",
@@ -1194,7 +1209,12 @@
     ],
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.435Z"
+    "createdAt": "2026-11-02T16:02:03.435Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae977a",
@@ -1517,7 +1537,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 47",
     "question": "বিজ্ঞানী মাকসুদুল আলম কোন বিষয়ে গবেষণা করে বিশ্ব দরবারে খ্যাতি অর্জন করেন? [চ.বো. ২৪]",
     "options": [
       "ভুট্টা",
@@ -1528,7 +1548,11 @@
     "correctAnswer": "পাট",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.477Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9786",
@@ -2042,7 +2066,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:  [ব.বো. ২৪]\nআরিয়া স্কেলে পন্য উৎপাদন নিয়ে গবেষণা করে। তাদের উৎপাদিত পণ্য সূক্ষ্ণ, ছোট হলেও মজবুত ও টেকসই হয়। হাজিরার জন্য অফিসে তাকে একটি ডিভাইসে হাতের আঙ্গুলের ছাদ দিতে হয়।\nউদ্দীপকে ডিভাইসটি নিচের কোন প্রযুক্তির সাথে সম্পর্কিত",
     "options": [
       "কৃত্রিম বুদ্ধিমত্তু",
@@ -2052,7 +2076,12 @@
     ],
     "correctAnswer": "বায়োমেট্রিক",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.545Z"
+    "createdAt": "2026-11-02T16:02:03.545Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9799",
@@ -2434,7 +2463,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "কোনটি আউটসোসিং-এর মার্কেট প্লেস? \t[কু.বো.'১৭]",
     "options": [
       "টুইটার",
@@ -2444,7 +2473,12 @@
     ],
     "correctAnswer": "Iডেক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.583Z"
+    "createdAt": "2026-11-02T16:02:03.583Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97a7",
@@ -2734,7 +2768,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "কৃত্রিম বুদ্ধিমত্তায় প্রধানত ব্যবহৃত হয় কোনটি?\t[দি.বো.'১৭]",
     "options": [
       "PYTHON",
@@ -2744,7 +2778,12 @@
     ],
     "correctAnswer": "PROLOG",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.616Z"
+    "createdAt": "2026-11-02T16:02:03.616Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b2",
@@ -2784,7 +2823,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "রোবটিক্স কী? \t\t[কু.বো.'২৩]",
     "options": [
       "বোবট বিজ্ঞান",
@@ -2794,7 +2833,12 @@
     ],
     "correctAnswer": "বোবট বিজ্ঞান",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.621Z"
+    "createdAt": "2026-11-02T16:02:03.621Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b4",
@@ -3964,7 +4008,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "বহুপদী সমাপ্তিসূচক বহুনির্বাচনি প্রশ্নোত্তর\nAI এর ক্ষেত্রগুলো হলো- \t\t[চ.বো.'২৩]\ni. মেশিন লার্নিং\t\nii. রোবটিকস\niii. ওয়ার্ড প্রসেসিং\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -3975,7 +4019,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.739Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e1",
@@ -4042,7 +4091,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "বঙ্গবন্ধু স্যাটেলাইট-১ এর সুবিধা ভোগ করবে কারা? \t[চ.বো.'২৩]\ni. প্রতিরক্ষা বাহিনী\t\nii. অনলাইন ব্যাংকিং\niii. টেলিমেডিসিন\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -4053,7 +4102,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.751Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97e4",
@@ -5221,7 +5275,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "উদ্দীপকের কর্মকান্ডে-\ni. অর্থনৈতিক উন্নয়ন হবে\n\nii. চিকিৎসাক্ষেত্রে বিরূপ প্রভাব পড়বে\niii. জীববৈচিত্র্যের উদ্ভব হবে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -5232,7 +5286,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.925Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9812",
@@ -5407,7 +5466,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি পড়ে এবং  প্রশ্নের উত্তর দাও:\nশুভ সাহেব এর ছোট ভাই নীল ইউএন মিশনে গেলেন। একদিন একটি প্রযুক্তি ব্যবহার করে শুভ তার অসুস্থ মা এর সাথে নীলের কথা বলার ব্যবস্থা করলেন। আরেকদিন তিনি দ্বিতীয় আরেকটি প্রযুক্তি ব্যবহার করে নীলের সাথে মায়ের কথা I দেখার ব্যবস্থা করে দিলেন। \t[রা.বো.'১৬]\nউদ্দীপকে বিশ্বগ্রামের কোন উপাদানের ইঙ্গিত দেওয়া হয়েছে?",
     "options": [
       "শিক্ষা",
@@ -5417,7 +5476,12 @@
     ],
     "correctAnswer": "যোগাযোগ",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.947Z"
+    "createdAt": "2026-11-02T16:02:03.947Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9819",
@@ -5457,7 +5521,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি পড়ে এবং  প্রশ্নের উত্তর দাও:\nচার বন্ধু ভিন্ন ভিন্ন কোম্পানিতে কর্মকর্তা হিসেবে কর্মরত। এদের অফিসের প্রবেশ পথে কাউকে হাতের আঙুল বা কাউকে সম্পূর্ণ হাত একটি যন্ত্রের ওপর রেখে অফিসে ঢুকতে হয়। কাউকে একটি ক্যামেরার সামনে কয়েক মুহূর্ত রাখতে হয়। এদের প্রত্যেকের দাবি হচ্ছে, অফিসের উপস্থিতি I নিরাপত্তা নিশ্চিতকরণে স্ব-স্ব অফিসে ব্যবহৃহ পদ্ধতি অধিক কার্যকর। \t\t[চ.বো.'১৬]\nউদ্দীপকে অফিসের প্রবেশ পথে কোন প্রযুক্তি ব্যবহার করা হয়েছে?",
     "options": [
       "ভার্চুয়াল রিয়েলিটি",
@@ -5467,7 +5531,12 @@
     ],
     "correctAnswer": "বায়োমেট্রিক্স",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.953Z"
+    "createdAt": "2026-11-02T16:02:03.953Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae981b",
@@ -5557,7 +5626,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "উদ্দীপকটি পড়ে  প্রশ্নের উত্তর দাও:\nড. সিরাজ একজন কৃষিবিজ্ঞানী। সে এখন একটি উচ্চফলনশীল পেপে উদ্ভাবন করল যার প্রতিটির ওজন প্রায় ১৫ কেজি। \t[সি.বো.'১৬]\nড. সিরাজ এর ব্যবহৃত প্রযুক্তিটির নাম কী?",
     "options": [
       "বায়োইনফরমেটিকস",
@@ -5567,7 +5636,12 @@
     ],
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.964Z"
+    "createdAt": "2026-11-02T16:02:03.964Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae981f",
@@ -5607,7 +5681,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "নিচের উদ্দীপকটি পড়ে  প্রশ্নের উত্তর দাও:\nড. মুনির শিক্ষানবিশদেi কম্পিউটার নিয়ন্ত্রিত পরিবেশের মাধ্যেমে কৃত্রিমভাবে বাস্তবের অনুকরণে সাজাির্র প্রশিক্ষণ দেন যাতে কোনোরূপ ঝুঁকি না থাকে। একজন যকৃত ক্যান্সাররে রোগী তার কাছে এলে তিনি তাকে -১২০০ ঈ তাপমাত্রার মাধ্যমে চিকিৎসা দেন। \t[ব.বো.'১৬]\nপ্রশিক্ষণে ব্যবহৃত প্রযুক্তিটি হচ্ছে-",
     "options": [
       "ক্রায়োসর্জারি",
@@ -5618,7 +5692,12 @@
     "correctAnswer": "ভাচুর্য়াল রিয়েলিটি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.970Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9821",
@@ -5810,7 +5889,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "216.\tMarshall McLuhan  ১৯৬২ সালে যে গ্রন্থটি রচনা করেন তার নাম হচ্ছে -\t[সরকারি মজিদ মেমোরিয়াল সিটি কলেজ, খুলনা]",
     "options": [
       "Understanding Media",
@@ -5821,7 +5900,12 @@
     "correctAnswer": "The Gutenberg Galaxy",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.989Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9829",
@@ -5942,7 +6026,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "ঝরসঁষধঃরড়হ- এর প্রয়োগক্ষেত্র কোনটি?\n[রাজউক উত্তরা মডেল কলেজ, ঢাকা]",
     "options": [
       "ক্রায়োসার্জারিতে",
@@ -5952,7 +6036,12 @@
     ],
     "correctAnswer": "ভাচুর্য়াল রিয়েলিটি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.000Z"
+    "createdAt": "2026-11-02T16:02:04.000Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae982e",
@@ -5994,7 +6083,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 47",
     "question": "ইমেল ঠিকানায় কয়টি অংশ থাকে?\t[হলিক্রস কলেজ, ঢাকা]",
     "options": [
       "২",
@@ -6005,12 +6094,14 @@
     "correctAnswer": "২",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.005Z",
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 47",
     "modelTestNos": [
       "Model Test 01",
       "Live Exam 01",
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 47",
+      "Live Exam 47"
     ]
   },
   {
@@ -6157,7 +6248,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "ভাচুর্য়াল রিয়েলিটি\n229.\tHardware  ও Software  এর মাধ্যমে তৈরিকৃত বাস্তব ভিত্তিক কৃত্রিম পরিবেশকে কী বলে?\t[চট্টগ্রাম কলেজ]",
     "options": [
       "রোবটিক্স",
@@ -6167,7 +6258,12 @@
     ],
     "correctAnswer": "ভার্চুয়াল রিয়েলিটি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.023Z"
+    "createdAt": "2026-11-02T16:02:04.023Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9836",
@@ -6267,7 +6363,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "আর্টিফিসিয়াল ইন্টিলিজেন্স - এ কোনটি ব্যবহার করা হয়?\n[নটর ডেম কলেজ, ঢাকা]",
     "options": [
       "প্রোলগ",
@@ -6277,7 +6373,12 @@
     ],
     "correctAnswer": "প্রোলগ",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.032Z"
+    "createdAt": "2026-11-02T16:02:04.032Z",
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae983a",
@@ -7093,7 +7194,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 47",
     "question": "মানুষের শরীরে জিনের সংখ্যা প্রায় -\t[সোনার বাংলা কলেজ, কুমিলস্না]",
     "options": [
       "৩০,০০০",
@@ -7104,7 +7205,11 @@
     "correctAnswer": "৩০,০০০",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.102Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae985a",
@@ -7641,7 +7746,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "বায়োইনফরমেটিক্সের সফটওয়্যার টুলস হিসেবে ব্যবহৃত হয় -\n[যশোর সরকারি মহিলা কলেজ, যশোর]\ni. SQL\t\nii. CUDA\niii. Matlab\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -7652,7 +7757,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.161Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae986f",
@@ -24594,7 +24704,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 47",
     "question": "৪, ৮, ঈ, অনুক্রমটির পরের মান কত?",
     "image": "",
     "options": [
@@ -24606,7 +24716,12 @@
     "correctAnswer": "10",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 47",
+    "modelTestNos": [
+      "Model Test 47",
+      "Live Exam 47"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc96",
