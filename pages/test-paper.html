@@ -7,7 +7,7 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=7.0">
+    <link rel="stylesheet" href="../assets/css/style.css?v=7.5">
     <link rel="stylesheet" href="../assets/css/test-paper.css?v=4.6">
 </head>
 <body>
@@ -105,68 +105,181 @@
                     </div>
                 </div>
 
+                
                 <div class="colleges-grid">
-                    <div class="college-card" onclick="openCollegeModal('নটর ডেম কলেজ, ঢাকা')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">নটর ডেম কলেজ, ঢাকা</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> মতিঝিল, ঢাকা</div>
+                    <!-- নটর ডেম কলেজ, ঢাকা -->
+                    <div class="college-card" data-college-key="ndc" onclick="openCollegeModal('নটর ডেম কলেজ, ঢাকা')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">নটর ডেম কলেজ, ঢাকা</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> মতিঝিল, ঢাকা</div>
+                                <div class="card-counts-badge" id="college-stat-ndc"><i class="fa-regular fa-circle-question"></i> ৩১ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-ndc">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-ndc" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-ndc">0/31</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-ndc">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> বেইলি রোড, ঢাকা</div>
+                    <!-- ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ -->
+                    <div class="college-card" data-college-key="vnsc" onclick="openCollegeModal('ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> বেইলি রোড, ঢাকা</div>
+                                <div class="card-counts-badge" id="college-stat-vnsc"><i class="fa-regular fa-circle-question"></i> ২৪ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-vnsc">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-vnsc" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-vnsc">0/24</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-vnsc">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('রাজউক উত্তরা মডেল কলেজ')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">রাজউক উত্তরা মডেল কলেজ</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> উত্তরা, ঢাকা</div>
+                    <!-- রাজউক উত্তরা মডেল কলেজ -->
+                    <div class="college-card" data-college-key="rajuk" onclick="openCollegeModal('রাজউক উত্তরা মডেল কলেজ')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">রাজউক উত্তরা মডেল কলেজ</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> উত্তরা, ঢাকা</div>
+                                <div class="card-counts-badge" id="college-stat-rajuk"><i class="fa-regular fa-circle-question"></i> ২৮ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-rajuk">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-rajuk" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-rajuk">0/28</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-rajuk">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('ঢাকা রেসিডেনসিয়াল মডেল কলেজ')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">ঢাকা রেসিডেনসিয়াল মডেল কলেজ</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> মোহাম্মদপুর, ঢাকা</div>
+                    <!-- ঢাকা রেসিডেনসিয়াল মডেল কলেজ -->
+                    <div class="college-card" data-college-key="drmc" onclick="openCollegeModal('ঢাকা রেসিডেনসিয়াল মডেল কলেজ')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">ঢাকা রেসিডেনসিয়াল মডেল কলেজ</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> মোহাম্মদপুর, ঢাকা</div>
+                                <div class="card-counts-badge" id="college-stat-drmc"><i class="fa-regular fa-circle-question"></i> ২০ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-drmc">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-drmc" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-drmc">0/20</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-drmc">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('ঢাকা সিটি কলেজ')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">ঢাকা সিটি কলেজ</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> ধানমন্ডি, ঢাকা</div>
+                    <!-- ঢাকা সিটি কলেজ -->
+                    <div class="college-card" data-college-key="dcc" onclick="openCollegeModal('ঢাকা সিটি কলেজ')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">ঢাকা সিটি কলেজ</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> ধানমন্ডি, ঢাকা</div>
+                                <div class="card-counts-badge" id="college-stat-dcc"><i class="fa-regular fa-circle-question"></i> ১৮ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-dcc">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-dcc" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-dcc">0/18</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-dcc">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('চট্টগ্রাম কলেজ, চট্টগ্রাম')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">চট্টগ্রাম কলেজ, চট্টগ্রাম</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> চকবাজার, চট্টগ্রাম</div>
+                    <!-- চট্টগ্রাম কলেজ, চট্টগ্রাম -->
+                    <div class="college-card" data-college-key="ctg" onclick="openCollegeModal('চট্টগ্রাম কলেজ, চট্টগ্রাম')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">চট্টগ্রাম কলেজ, চট্টগ্রাম</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> চকবাজার, চট্টগ্রাম</div>
+                                <div class="card-counts-badge" id="college-stat-ctg"><i class="fa-regular fa-circle-question"></i> ১৮ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-ctg">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-ctg" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-ctg">0/18</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-ctg">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('রাজশাহী কলেজ, রাজশাহী')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">রাজশাহী কলেজ, রাজশাহী</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> বোয়ালিয়া, রাজশাহী</div>
+                    <!-- রাজশাহী কলেজ, রাজশাহী -->
+                    <div class="college-card" data-college-key="rajshahi" onclick="openCollegeModal('রাজশাহী কলেজ, রাজশাহী')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">রাজশাহী কলেজ, রাজশাহী</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> বোয়ালিয়া, রাজশাহী</div>
+                                <div class="card-counts-badge" id="college-stat-rajshahi"><i class="fa-regular fa-circle-question"></i> ১৬ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-rajshahi">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-rajshahi" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-rajshahi">0/16</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-rajshahi">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
-                    <div class="college-card" onclick="openCollegeModal('ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ')">
-                        <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
-                        <div>
-                            <div class="college-title">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ</div>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> রংপুর</div>
+                    <!-- ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ -->
+                    <div class="college-card" data-college-key="cpsc" onclick="openCollegeModal('ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ')">
+                        <div class="card-left-info">
+                            <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <div class="college-title">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ</div>
+                                <div class="college-location"><i class="fa-solid fa-location-dot"></i> রংপুর</div>
+                                <div class="card-counts-badge" id="college-stat-cpsc"><i class="fa-regular fa-circle-question"></i> ২২ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="college-ring-cpsc">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-college-cpsc" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-college-cpsc">0/22</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-college-cpsc">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
                 </div>
@@ -326,8 +439,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=7.0"></script>
-    <script src="../assets/js/main.js?v=7.0"></script>
-    <script src="../assets/js/test-paper.js?v=7.0"></script>
+    <script src="../assets/js/api.js?v=7.5"></script>
+    <script src="../assets/js/main.js?v=7.5"></script>
+    <script src="../assets/js/test-paper.js?v=7.5"></script>
 </body>
 </html>

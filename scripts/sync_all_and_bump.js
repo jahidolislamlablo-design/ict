@@ -29,26 +29,26 @@ htmlFiles.forEach(rel => {
     let content = fs.readFileSync(filePath, 'utf8');
 
     // Bump style.css
-    content = content.replace(/style\.css(\?v=[0-9.]+)?/g, 'style.css?v=7.0');
+    content = content.replace(/style\.css(\?v=[0-9.]+)?/g, 'style.css?v=7.5');
     // Bump api.js
-    content = content.replace(/api\.js(\?v=[0-9.]+)?/g, 'api.js?v=7.0');
+    content = content.replace(/api\.js(\?v=[0-9.]+)?/g, 'api.js?v=7.5');
     // Bump login.js
-    content = content.replace(/login\.js(\?v=[0-9.]+)?/g, 'login.js?v=7.0');
+    content = content.replace(/login\.js(\?v=[0-9.]+)?/g, 'login.js?v=7.5');
     // Bump profile.js
-    content = content.replace(/profile\.js(\?v=[0-9.]+)?/g, 'profile.js?v=7.0');
+    content = content.replace(/profile\.js(\?v=[0-9.]+)?/g, 'profile.js?v=7.5');
     // Bump chapter-prep.js
-    content = content.replace(/chapter-prep\.js(\?v=[0-9.]+)?/g, 'chapter-prep.js?v=7.0');
+    content = content.replace(/chapter-prep\.js(\?v=[0-9.]+)?/g, 'chapter-prep.js?v=7.5');
     // Bump board-question.js
-    content = content.replace(/board-question\.js(\?v=[0-9.]+)?/g, 'board-question.js?v=7.0');
+    content = content.replace(/board-question\.js(\?v=[0-9.]+)?/g, 'board-question.js?v=7.5');
     // Bump test-paper.js
-    content = content.replace(/test-paper\.js(\?v=[0-9.]+)?/g, 'test-paper.js?v=7.0');
+    content = content.replace(/test-paper\.js(\?v=[0-9.]+)?/g, 'test-paper.js?v=7.5');
     // Bump model-test.js
-    content = content.replace(/model-test\.js(\?v=[0-9.]+)?/g, 'model-test.js?v=7.0');
+    content = content.replace(/model-test\.js(\?v=[0-9.]+)?/g, 'model-test.js?v=7.5');
     // Bump main.js
-    content = content.replace(/main\.js(\?v=[0-9.]+)?/g, 'main.js?v=7.0');
+    content = content.replace(/main\.js(\?v=[0-9.]+)?/g, 'main.js?v=7.5');
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`Bumped cache version to v=7.0 in: ${rel}`);
+    console.log(`Bumped cache version to v=7.5 in: ${rel}`);
 });
 
 // 2. Sync all project files to OneDrive mirror

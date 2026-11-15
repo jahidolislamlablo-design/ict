@@ -2362,7 +2362,7 @@ function renderModernMCQCardHTML(q, index, options = {}) {
             <div class="modern-quiz-header" onclick="toggleQuestionRead('${qId}', '${cardId}')" style="cursor: pointer;" title="ক্লিক করে পড়া সম্পন্ন চিহ্নিত করুন">
                 <h3 class="modern-q-title">${qNum}. ${formatModernMCQContent(qText)}</h3>
                 <div class="mcq-read-toggle-box" onclick="event.stopPropagation(); toggleQuestionRead('${qId}', '${cardId}')" title="পড়া সম্পন্ন হিসেবে চিহ্নিত করুন">
-                    <span class="mcq-read-label">${isRead ? 'পড়া সম্পন্ন' : 'পড়া হয়েছে'}</span>
+                    <span class="mcq-read-label">পড়া হয়েছে</span>
                     <div class="mcq-read-checkbox ${isRead ? 'checked' : ''}">
                         <i class="fa-solid fa-check"></i>
                     </div>
@@ -2391,7 +2391,7 @@ function renderModernCQCardHTML(cq, index) {
                 <div style="font-weight: 700; color: #4F46E5; margin-bottom: 8px;">
                     <i class="fa-solid fa-feather-pointed"></i> উদ্দীপক-${qNum}:
                 </div>
-                <p style="margin: 0; line-height: 1.7; font-size: 1rem; color: #1E293B;">${resolveHtmlMediaUrls(cq.stem)}</p>
+                <p class="cq-stem-text" style="margin: 0; line-height: 1.7; font-size: 1rem;">${resolveHtmlMediaUrls(cq.stem)}</p>
                 ${cq.image ? `
                     <div style="margin: 14px 0 10px 0; text-align: center;">
                         <img src="${resolveMediaUrl(cq.image)}" alt="উদ্দীপক চিত্র" style="max-width: 100%; max-height: 380px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
@@ -2405,8 +2405,8 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(ক)</strong> ${cleanQ(cq.q_ka, "ক")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
-                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_ka, "ক") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                        <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_ka, "ক") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
@@ -2415,8 +2415,8 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(খ)</strong> ${cleanQ(cq.q_kha, "খ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
-                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_kha, "খ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                        <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_kha, "খ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
@@ -2425,8 +2425,8 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(গ)</strong> ${cleanQ(cq.q_ga, "গ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
-                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_ga, "গ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                        <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_ga, "গ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
 
@@ -2435,8 +2435,8 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(ঘ)</strong> ${cleanQ(cq.q_gha, "ঘ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style="color: #000000 !important; font-weight: 500;">
-                        <strong style="color: #1E293B;">উত্তর:</strong> ${cleanQ(cq.a_gha, "ঘ") || 'উত্তর সংযুক্ত করা হয়নি।'}
+                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                        <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_gha, "ঘ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
             </div>
@@ -3096,12 +3096,14 @@ function toggleQuestionRead(qId, cardId) {
 
         const label = card.querySelector('.mcq-read-label');
         if (label) {
-            label.textContent = isRead ? 'পড়া সম্পন্ন' : 'পড়া হয়েছে';
+            // Keep label static to prevent any width shifting
+            label.textContent = 'পড়া হয়েছে';
         }
     }
 
     // Refresh circular chart
     updateActiveCircularChart();
+    updateAllCardProgressRings();
 }
 window.toggleQuestionRead = toggleQuestionRead;
 
@@ -3183,3 +3185,111 @@ function updateActiveCircularChart() {
     if (remStat) remStat.textContent = `${toBanglaNum(remaining)} টি (${toBanglaNum(100 - pct)}%)`;
 }
 window.updateActiveCircularChart = updateActiveCircularChart;
+
+
+// =========================================================================
+// DYNAMIC CIRCULAR PROGRESS RING UPDATER FOR CHAPTER, BOARD & COLLEGE CARDS
+// =========================================================================
+async function updateAllCardProgressRings() {
+    try {
+        const readSet = getReadQuestionsSet();
+        let allMcqs = [];
+
+        if (window._cachedMCQs && Array.isArray(window._cachedMCQs) && window._cachedMCQs.length > 0) {
+            allMcqs = window._cachedMCQs;
+        } else if (typeof ApiService !== 'undefined' && ApiService.getMCQs) {
+            try {
+                allMcqs = await ApiService.getMCQs() || [];
+                window._cachedMCQs = allMcqs;
+            } catch(e){}
+        }
+
+        const updateRingUI = (ratioId, pctId, fillId, readCount, totalCount) => {
+            const total = Math.max(1, totalCount);
+            const read = Math.min(total, readCount);
+            const pct = ((read / total) * 100).toFixed(2);
+
+            const ratioEl = document.getElementById(ratioId);
+            if (ratioEl) ratioEl.textContent = `${read}/${total}`;
+
+            const pctEl = document.getElementById(pctId);
+            if (pctEl) pctEl.textContent = `${pct}% প্রশ্ন পড়া হয়েছে`;
+
+            const fillEl = document.getElementById(fillId);
+            if (fillEl) {
+                const circumference = 113.1;
+                const offset = circumference * (1 - (read / total));
+                fillEl.style.strokeDashoffset = offset;
+            }
+        };
+
+        // 1. Chapter Rings
+        const chapterRings = [
+            { id: 1, ratio: 'ring-ratio-ch-1', pct: 'ring-pct-ch-1', fill: 'ring-fill-ch-1', fallbackTotal: 352, match: m => m.chapter && (m.chapter.includes('Chapter 1') || m.chapter.includes('১ম') || m.chapter.includes('তথ্য ও যোগাযোগ')) },
+            { id: 2, ratio: 'ring-ratio-ch-2', pct: 'ring-pct-ch-2', fill: 'ring-fill-ch-2', fallbackTotal: 243, match: m => m.chapter && (m.chapter.includes('Chapter 2') || m.chapter.includes('২য়') || m.chapter.includes('কমিউনিকেশন')) },
+            { id: '3.1', ratio: 'ring-ratio-ch-3-1', pct: 'ring-pct-ch-3-1', fill: 'ring-fill-ch-3-1', fallbackTotal: 219, match: m => m.chapter && (m.chapter.includes('Chapter 3 (১ম') || m.chapter.includes('সংখ্যা পদ্ধতি')) },
+            { id: '3.2', ratio: 'ring-ratio-ch-3-2', pct: 'ring-pct-ch-3-2', fill: 'ring-fill-ch-3-2', fallbackTotal: 283, match: m => m.chapter && (m.chapter.includes('Chapter 3 (২য়') || m.chapter.includes('ডিজিটাল ডিভাইস')) },
+            { id: 4, ratio: 'ring-ratio-ch-4', pct: 'ring-pct-ch-4', fill: 'ring-fill-ch-4', fallbackTotal: 204, match: m => m.chapter && (m.chapter.includes('Chapter 4') || m.chapter.includes('৪র্থ') || m.chapter.includes('HTML') || m.chapter.includes('ওয়েব')) },
+            { id: 5, ratio: 'ring-ratio-ch-5', pct: 'ring-pct-ch-5', fill: 'ring-fill-ch-5', fallbackTotal: 402, match: m => m.chapter && (m.chapter.includes('Chapter 5') || m.chapter.includes('৫ম') || m.chapter.includes('প্রোগ্রামিং')) },
+            { id: 6, ratio: 'ring-ratio-ch-6', pct: 'ring-pct-ch-6', fill: 'ring-fill-ch-6', fallbackTotal: 187, match: m => m.chapter && (m.chapter.includes('Chapter 6') || m.chapter.includes('৬ষ্ঠ') || m.chapter.includes('ডেটাবেজ')) }
+        ];
+
+        chapterRings.forEach(ch => {
+            const matching = allMcqs.filter(ch.match);
+            const total = matching.length > 0 ? matching.length : ch.fallbackTotal;
+            const read = matching.filter(m => readSet.has(String(m._id))).length;
+            updateRingUI(ch.ratio, ch.pct, ch.fill, read, total);
+        });
+
+        // 2. Board Rings
+        const boardRings = [
+            { key: 'dhaka', ratio: 'ring-ratio-board-dhaka', pct: 'ring-pct-board-dhaka', fill: 'ring-fill-board-dhaka', fallbackTotal: 97 },
+            { key: 'rajshahi', ratio: 'ring-ratio-board-rajshahi', pct: 'ring-pct-board-rajshahi', fill: 'ring-fill-board-rajshahi', fallbackTotal: 61 },
+            { key: 'chattogram', ratio: 'ring-ratio-board-chattogram', pct: 'ring-pct-board-chattogram', fill: 'ring-fill-board-chattogram', fallbackTotal: 64 },
+            { key: 'jashore', ratio: 'ring-ratio-board-jashore', pct: 'ring-pct-board-jashore', fill: 'ring-fill-board-jashore', fallbackTotal: 68 },
+            { key: 'comilla', ratio: 'ring-ratio-board-comilla', pct: 'ring-pct-board-comilla', fill: 'ring-fill-board-comilla', fallbackTotal: 62 },
+            { key: 'sylhet', ratio: 'ring-ratio-board-sylhet', pct: 'ring-pct-board-sylhet', fill: 'ring-fill-board-sylhet', fallbackTotal: 55 },
+            { key: 'barishal', ratio: 'ring-ratio-board-barishal', pct: 'ring-pct-board-barishal', fill: 'ring-fill-board-barishal', fallbackTotal: 63 },
+            { key: 'dinajpur', ratio: 'ring-ratio-board-dinajpur', pct: 'ring-pct-board-dinajpur', fill: 'ring-fill-board-dinajpur', fallbackTotal: 59 },
+            { key: 'mymensingh', ratio: 'ring-ratio-board-mymensingh', pct: 'ring-pct-board-mymensingh', fill: 'ring-fill-board-mymensingh', fallbackTotal: 27 },
+            { key: 'madrasah', ratio: 'ring-ratio-board-madrasah', pct: 'ring-pct-board-madrasah', fill: 'ring-fill-board-madrasah', fallbackTotal: 15 }
+        ];
+
+        boardRings.forEach(br => {
+            const matching = allMcqs.filter(m => matchBoardName(m.boardName, br.key));
+            const total = matching.length > 0 ? matching.length : br.fallbackTotal;
+            const read = matching.filter(m => readSet.has(String(m._id))).length;
+            updateRingUI(br.ratio, br.pct, br.fill, read, total);
+        });
+
+        // 3. College Rings
+        const collegeRings = [
+            { key: 'ndc', name: 'নটর ডেম', ratio: 'ring-ratio-college-ndc', pct: 'ring-pct-college-ndc', fill: 'ring-fill-college-ndc', fallbackTotal: 31 },
+            { key: 'vnsc', name: 'ভিকারুননিসা', ratio: 'ring-ratio-college-vnsc', pct: 'ring-pct-college-vnsc', fill: 'ring-fill-college-vnsc', fallbackTotal: 24 },
+            { key: 'rajuk', name: 'রাজউক', ratio: 'ring-ratio-college-rajuk', pct: 'ring-pct-college-rajuk', fill: 'ring-fill-college-rajuk', fallbackTotal: 28 },
+            { key: 'drmc', name: 'রেসিডেনসিয়াল', ratio: 'ring-ratio-college-drmc', pct: 'ring-pct-college-drmc', fill: 'ring-fill-college-drmc', fallbackTotal: 20 },
+            { key: 'dcc', name: 'সিটি কলেজ', ratio: 'ring-ratio-college-dcc', pct: 'ring-pct-college-dcc', fill: 'ring-fill-college-dcc', fallbackTotal: 18 },
+            { key: 'ctg', name: 'চট্টগ্রাম কলেজ', ratio: 'ring-ratio-college-ctg', pct: 'ring-pct-college-ctg', fill: 'ring-fill-college-ctg', fallbackTotal: 18 },
+            { key: 'rajshahi', name: 'রাজশাহী কলেজ', ratio: 'ring-ratio-college-rajshahi', pct: 'ring-pct-college-rajshahi', fill: 'ring-fill-college-rajshahi', fallbackTotal: 16 },
+            { key: 'cpsc', name: 'ক্যান্টনমেন্ট', ratio: 'ring-ratio-college-cpsc', pct: 'ring-pct-college-cpsc', fill: 'ring-fill-college-cpsc', fallbackTotal: 22 }
+        ];
+
+        collegeRings.forEach(cr => {
+            const matching = allMcqs.filter(m => matchCollegeName(m.collegeName, cr.name));
+            const total = matching.length > 0 ? matching.length : cr.fallbackTotal;
+            const read = matching.filter(m => readSet.has(String(m._id))).length;
+            updateRingUI(cr.ratio, cr.pct, cr.fill, read, total);
+        });
+
+    } catch(err) {
+        console.warn('updateAllCardProgressRings error:', err);
+    }
+}
+window.updateAllCardProgressRings = updateAllCardProgressRings;
+
+// Trigger updates on DOMContentLoaded & load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateAllCardProgressRings);
+} else {
+    setTimeout(updateAllCardProgressRings, 100);
+}

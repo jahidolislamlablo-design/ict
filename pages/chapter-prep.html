@@ -7,7 +7,7 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=7.0">
+    <link rel="stylesheet" href="../assets/css/style.css?v=7.5">
     <link rel="stylesheet" href="../assets/css/chapter-prep.css?v=4.6">
 </head>
 <body>
@@ -82,151 +82,173 @@
                     </div>
                 </div>
 
+                
                 <div class="chapters-grid">
                     <!-- ১ম অধ্যায় -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('১ম অধ্যায়: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত', 1)">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="1" onclick="openChapterModal('১ম অধ্যায়: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত', 1)">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #EEF2FF; color: #4F46E5;">
                                 <i class="fa-solid fa-earth-americas"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>১ম অধ্যায়</span>
-                                <h3>তথ্য ও যোগাযোগ প্রযুক্তি</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">১ম অধ্যায়</span>
+                                <h3 class="card-main-title">তথ্য ও যোগাযোগ প্রযুক্তি</h3>
+                                <span class="card-counts-badge" id="ch-stat-1"><i class="fa-regular fa-circle-question"></i> ৩৫২ MCQ | ৪৪ CQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">ভার্চুয়াল রিয়েলিটি, কৃত্রিম বুদ্ধিমত্তা, বায়োমেট্রিক্স, ন্যানোটেকনোলজি ও ক্রায়োসার্জারি।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ১৪০টি MCQ | ২৮টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 85%;"></div></div>
-                                <span>৮৫%</span>
+                        <div class="card-right-progress" id="chapter-ring-1">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-1" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-1">0/352</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-1">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
                     <!-- ২য় অধ্যায় -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('২য় অধ্যায়: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং', 2)">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="2" onclick="openChapterModal('২য় অধ্যায়: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং', 2)">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #ECFEFF; color: #06B6D4;">
                                 <i class="fa-solid fa-network-wired"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>২য় অধ্যায়</span>
-                                <h3>কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">২য় অধ্যায়</span>
+                                <h3 class="card-main-title">কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3>
+                                <span class="card-counts-badge" id="ch-stat-2"><i class="fa-regular fa-circle-question"></i> ২৪৩ MCQ | ১৭ CQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">ডাটা কমিউনিকেশন মাধ্যম, ওয়াইফাই/ওয়াইম্যাক্স, নেটওয়ার্ক টপোলজি ও ক্লাউড কম্পিউটিং।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ১৬৫টি MCQ | ৩২টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 70%;"></div></div>
-                                <span>৭০%</span>
+                        <div class="card-right-progress" id="chapter-ring-2">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-2" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-2">0/243</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-2">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
                     <!-- ৩য় অধ্যায় ১ম অংশ -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('৩য় অধ্যায় (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)', '3.1')">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="3.1" onclick="openChapterModal('৩য় অধ্যায় (১ম অংশ): সংখ্যা পদ্ধতি (Number Systems)', '3.1')">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #FAF5FF; color: #8B5CF6;">
                                 <i class="fa-solid fa-calculator"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>৩য় অধ্যায় (১ম অংশ)</span>
-                                <h3>সংখ্যা পদ্ধতি</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">৩য় অধ্যায় (১ম অংশ)</span>
+                                <h3 class="card-main-title">সংখ্যা পদ্ধতি</h3>
+                                <span class="card-counts-badge" id="ch-stat-3-1"><i class="fa-regular fa-circle-question"></i> ২১৯ MCQ | ৩০ CQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">বাইনারি, অক্টাল, ডেসিমেল, হেক্সাডেসিমেল রূপান্তর, চিহ্নযুক্ত সংখ্যা ও ২ এর পরিপূরক।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ২১৭টি MCQ | ৩৫টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 90%;"></div></div>
-                                <span>৯০%</span>
+                        <div class="card-right-progress" id="chapter-ring-3-1">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-3-1" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-3-1">0/219</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-3-1">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
                     <!-- ৩য় অধ্যায় ২য় অংশ -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('৩য় অধ্যায় (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট', '3.2')">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="3.2" onclick="openChapterModal('৩য় অধ্যায় (২য় অংশ): ডিজিটাল ডিভাইস ও লজিক গেট', '3.2')">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #FFFBEB; color: #D97706;">
                                 <i class="fa-solid fa-microchip"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>৩য় অধ্যায় (২য় অংশ)</span>
-                                <h3>ডিজিটাল ডিভাইস</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">৩য় অধ্যায় (২য় অংশ)</span>
+                                <h3 class="card-main-title">ডিজিটাল ডিভাইস</h3>
+                                <span class="card-counts-badge" id="ch-stat-3-2"><i class="fa-regular fa-circle-question"></i> ২৮৩ MCQ | ৩৭ CQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">মৌলিক ও সার্বজনীন গেট, বুলিয়ান অ্যালজেবরা, ডিমরগানের উপপাদ্য, এনকোডার, ডিকোডার ও অ্যাডার।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ২৮৭টি MCQ | ৩০টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 60%;"></div></div>
-                                <span>৬০%</span>
+                        <div class="card-right-progress" id="chapter-ring-3-2">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-3-2" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-3-2">0/283</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-3-2">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
                     <!-- ৪র্থ অধ্যায় -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('৪র্থ অধ্যায়: ওয়েব ডিজাইন পরিচিতি এবং এইচটিএমএল (HTML)', 4)">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="4" onclick="openChapterModal('৪র্থ অধ্যায়: ওয়েব ডিজাইন পরিচিতি এবং এইচটিএমএল (HTML)', 4)">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #ECFDF5; color: #10B981;">
                                 <i class="fa-solid fa-code"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>৪র্থ অধ্যায়</span>
-                                <h3>ওয়েব ডিজাইন ও HTML</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">৪র্থ অধ্যায়</span>
+                                <h3 class="card-main-title">ওয়েব ডিজাইন ও HTML</h3>
+                                <span class="card-counts-badge" id="ch-stat-4"><i class="fa-regular fa-circle-question"></i> ২০৪ MCQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">ওয়েবসাইটের কাঠামো, HTML ট্যাগ ও সিনট্যাক্স, টেবিল, ইমেজ, লিংক এবং ওয়েব পাবলিশিং।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ১৭৫টি MCQ | ২৬টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 95%;"></div></div>
-                                <span>৯৫%</span>
+                        <div class="card-right-progress" id="chapter-ring-4">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-4" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-4">0/204</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-4">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
                     <!-- ৫ম অধ্যায় -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('৫ম অধ্যায়: প্রোগ্রামিং ভাষা (C Programming)', 5)">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="5" onclick="openChapterModal('৫ম অধ্যায়: প্রোগ্রামিং ভাষা (C Programming)', 5)">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #FEF2F2; color: #EF4444;">
                                 <i class="fa-solid fa-laptop-code"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>৫ম অধ্যায়</span>
-                                <h3>প্রোগ্রামিং ভাষা (C)</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">৫ম অধ্যায়</span>
+                                <h3 class="card-main-title">প্রোগ্রামিং ভাষা (C)</h3>
+                                <span class="card-counts-badge" id="ch-stat-5"><i class="fa-regular fa-circle-question"></i> ৪০২ MCQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">অ্যালগরিদম ও ফ্লোচার্ট, সি প্রোগ্রামের বেসিক গঠন, ডাটা টাইপ, লুপ (for, while) ও ফাংশন।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ৪০২টি MCQ | ৪০টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 50%;"></div></div>
-                                <span>৫০%</span>
+                        <div class="card-right-progress" id="chapter-ring-5">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-5" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-5">0/402</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-5">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
 
                     <!-- ৬ষ্ঠ অধ্যায় -->
-                    <div class="chapter-prep-card" onclick="openChapterModal('৬ষ্ঠ অধ্যায়: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)', 6)">
-                        <div class="chapter-card-top">
+                    <div class="chapter-prep-card" data-chapter-key="6" onclick="openChapterModal('৬ষ্ঠ অধ্যায়: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম (DBMS)', 6)">
+                        <div class="card-left-info">
                             <div class="chapter-badge-icon" style="background: #FDF2F8; color: #DB2777;">
                                 <i class="fa-solid fa-database"></i>
                             </div>
-                            <div class="chapter-heading">
-                                <span>৬ষ্ঠ অধ্যায়</span>
-                                <h3>ডাটাবেজ ম্যানেজমেন্ট সিস্টেম</h3>
+                            <div class="card-text-group">
+                                <span class="card-ch-num">৬ষ্ঠ অধ্যায়</span>
+                                <h3 class="card-main-title">ডাটাবেজ ম্যানেজমেন্ট সিস্টেম</h3>
+                                <span class="card-counts-badge" id="ch-stat-6"><i class="fa-regular fa-circle-question"></i> ১৮৭ MCQ</span>
                             </div>
                         </div>
-                        <p class="chapter-desc">রিলেশনাল ডাটাবেজ, প্রাইমারি ও ফরেন কী, এসকিউএল (SQL কুয়েরি) ও ডাটা সিকিউরিটি।</p>
-                        <div class="chapter-footer-stats">
-                            <span><i class="fa-regular fa-circle-question"></i> ১৮৭টি MCQ | ২২টি CQ</span>
-                            <div class="chapter-progress-wrapper">
-                                <div class="mini-progress-bar"><div class="mini-progress-fill" style="width: 40%;"></div></div>
-                                <span>৪০%</span>
+                        <div class="card-right-progress" id="chapter-ring-6">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-ch-6" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-ch-6">0/187</span>
                             </div>
+                            <span class="card-ring-pct" id="ring-pct-ch-6">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
                 </div>
@@ -415,8 +437,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=7.0"></script>
-    <script src="../assets/js/main.js?v=7.0"></script>
-    <script src="../assets/js/chapter-prep.js?v=7.0"></script>
+    <script src="../assets/js/api.js?v=7.5"></script>
+    <script src="../assets/js/main.js?v=7.5"></script>
+    <script src="../assets/js/chapter-prep.js?v=7.5"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=7.0">
+    <link rel="stylesheet" href="../assets/css/style.css?v=7.5">
     <link rel="stylesheet" href="../assets/css/board-question.css?v=4.6">
 </head>
 <body>
@@ -150,75 +150,225 @@
                     </div>
                 </div>
 
+                
                 <div class="boards-grid">
-                    <div class="board-card" onclick="openTypeModal('ঢাকা বোর্ড (DHAKA BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">ঢাকা বোর্ড</div>
-                            <div class="board-code">DHAKA BOARD</div>
+                    <!-- ঢাকা বোর্ড -->
+                    <div class="board-card" data-board-key="dhaka" onclick="openTypeModal('ঢাকা বোর্ড (DHAKA BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">ঢাকা বোর্ড</div>
+                                <div class="board-code">DHAKA BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-dhaka"><i class="fa-regular fa-circle-question"></i> ৯৭ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-dhaka">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-dhaka" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-dhaka">0/97</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-dhaka">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('রাজশাহী বোর্ড (RAJSHAHI BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">রাজশাহী বোর্ড</div>
-                            <div class="board-code">RAJSHAHI BOARD</div>
+
+                    <!-- রাজশাহী বোর্ড -->
+                    <div class="board-card" data-board-key="rajshahi" onclick="openTypeModal('রাজশাহী বোর্ড (RAJSHAHI BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">রাজশাহী বোর্ড</div>
+                                <div class="board-code">RAJSHAHI BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-rajshahi"><i class="fa-regular fa-circle-question"></i> ৬১ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-rajshahi">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-rajshahi" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-rajshahi">0/61</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-rajshahi">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('চট্টগ্রাম বোর্ড (CHATTOGRAM BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">চট্টগ্রাম বোর্ড</div>
-                            <div class="board-code">CHATTOGRAM BOARD</div>
+
+                    <!-- চট্টগ্রাম বোর্ড -->
+                    <div class="board-card" data-board-key="chattogram" onclick="openTypeModal('চট্টগ্রাম বোর্ড (CHATTOGRAM BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">চট্টগ্রাম বোর্ড</div>
+                                <div class="board-code">CHATTOGRAM BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-chattogram"><i class="fa-regular fa-circle-question"></i> ৬৪ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-chattogram">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-chattogram" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-chattogram">0/64</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-chattogram">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('যশোর বোর্ড (JASHORE BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">যশোর বোর্ড</div>
-                            <div class="board-code">JASHORE BOARD</div>
+
+                    <!-- যশোর বোর্ড -->
+                    <div class="board-card" data-board-key="jashore" onclick="openTypeModal('যশোর বোর্ড (JASHORE BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">যশোর বোর্ড</div>
+                                <div class="board-code">JASHORE BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-jashore"><i class="fa-regular fa-circle-question"></i> ৬৮ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-jashore">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-jashore" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-jashore">0/68</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-jashore">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('কুমিল্লা বোর্ড (COMILLA BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">কুমিল্লা বোর্ড</div>
-                            <div class="board-code">COMILLA BOARD</div>
+
+                    <!-- কুমিল্লা বোর্ড -->
+                    <div class="board-card" data-board-key="comilla" onclick="openTypeModal('কুমিল্লা বোর্ড (COMILLA BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">কুমিল্লা বোর্ড</div>
+                                <div class="board-code">COMILLA BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-comilla"><i class="fa-regular fa-circle-question"></i> ৬২ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-comilla">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-comilla" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-comilla">0/62</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-comilla">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('সিলেট বোর্ড (SYLHET BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">সিলেট বোর্ড</div>
-                            <div class="board-code">SYLHET BOARD</div>
+
+                    <!-- সিলেট বোর্ড -->
+                    <div class="board-card" data-board-key="sylhet" onclick="openTypeModal('সিলেট বোর্ড (SYLHET BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">সিলেট বোর্ড</div>
+                                <div class="board-code">SYLHET BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-sylhet"><i class="fa-regular fa-circle-question"></i> ৫৫ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-sylhet">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-sylhet" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-sylhet">0/55</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-sylhet">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('বরিশাল বোর্ড (BARISHAL BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">বরিশাল বোর্ড</div>
-                            <div class="board-code">BARISHAL BOARD</div>
+
+                    <!-- বরিশাল বোর্ড -->
+                    <div class="board-card" data-board-key="barishal" onclick="openTypeModal('বরিশাল বোর্ড (BARISHAL BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">বরিশাল বোর্ড</div>
+                                <div class="board-code">BARISHAL BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-barishal"><i class="fa-regular fa-circle-question"></i> ৬৩ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-barishal">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-barishal" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-barishal">0/63</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-barishal">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('দিনাজপুর বোর্ড (DINAJPUR BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">দিনাজপুর বোর্ড</div>
-                            <div class="board-code">DINAJPUR BOARD</div>
+
+                    <!-- দিনাজপুর বোর্ড -->
+                    <div class="board-card" data-board-key="dinajpur" onclick="openTypeModal('দিনাজপুর বোর্ড (DINAJPUR BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">দিনাজপুর বোর্ড</div>
+                                <div class="board-code">DINAJPUR BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-dinajpur"><i class="fa-regular fa-circle-question"></i> ৫৯ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-dinajpur">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-dinajpur" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-dinajpur">0/59</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-dinajpur">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('ময়মনসিংহ বোর্ড (MYMENSINGH BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <div>
-                            <div class="board-name">ময়মনসিংহ বোর্ড</div>
-                            <div class="board-code">MYMENSINGH BOARD</div>
+
+                    <!-- ময়মনসিংহ বোর্ড -->
+                    <div class="board-card" data-board-key="mymensingh" onclick="openTypeModal('ময়মনসিংহ বোর্ড (MYMENSINGH BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <div class="board-name">ময়মনসিংহ বোর্ড</div>
+                                <div class="board-code">MYMENSINGH BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-mymensingh"><i class="fa-regular fa-circle-question"></i> ২৭ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-mymensingh">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-mymensingh" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-mymensingh">0/27</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-mymensingh">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
-                    <div class="board-card" onclick="openTypeModal('মাদ্রাসা বোর্ড (MADRASAH BOARD)')">
-                        <div class="board-icon"><i class="fa-solid fa-mosque"></i></div>
-                        <div>
-                            <div class="board-name">মাদ্রাসা বোর্ড</div>
-                            <div class="board-code">MADRASAH BOARD</div>
+
+                    <!-- মাদ্রাসা বোর্ড -->
+                    <div class="board-card" data-board-key="madrasah" onclick="openTypeModal('মাদ্রাসা বোর্ড (MADRASAH BOARD)')">
+                        <div class="card-left-info">
+                            <div class="board-icon"><i class="fa-solid fa-mosque"></i></div>
+                            <div>
+                                <div class="board-name">মাদ্রাসা বোর্ড</div>
+                                <div class="board-code">MADRASAH BOARD</div>
+                                <div class="card-counts-badge" id="board-stat-madrasah"><i class="fa-regular fa-circle-question"></i> ১৫ MCQ</div>
+                            </div>
+                        </div>
+                        <div class="card-right-progress" id="board-ring-madrasah">
+                            <div class="card-ring-box">
+                                <svg class="card-ring-svg" viewBox="0 0 44 44">
+                                    <circle class="card-ring-bg" cx="22" cy="22" r="18"></circle>
+                                    <circle class="card-ring-fill" id="ring-fill-board-madrasah" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                                </svg>
+                                <span class="card-ring-ratio" id="ring-ratio-board-madrasah">0/15</span>
+                            </div>
+                            <span class="card-ring-pct" id="ring-pct-board-madrasah">0.00% প্রশ্ন পড়া হয়েছে</span>
                         </div>
                     </div>
                 </div>
@@ -378,8 +528,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=7.0"></script>
-    <script src="../assets/js/main.js?v=7.0"></script>
-    <script src="../assets/js/board-question.js?v=7.0"></script>
+    <script src="../assets/js/api.js?v=7.5"></script>
+    <script src="../assets/js/main.js?v=7.5"></script>
+    <script src="../assets/js/board-question.js?v=7.5"></script>
 </body>
 </html>
