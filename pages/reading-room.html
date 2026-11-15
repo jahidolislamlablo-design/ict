@@ -11,7 +11,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Global Style -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=8.0">
+    <link rel="stylesheet" href="../assets/css/style.css?v=8.5">
     <style>
         :root {
             --rr-green: #15803D;
@@ -1021,6 +1021,337 @@
             font-size: 0.74rem;
         }
 
+    
+        /* Medal and Rank styling */
+        .rr-medal-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            min-width: 38px;
+            flex-shrink: 0;
+        }
+        .rr-medal-box.gold { color: #D97706; }
+        .rr-medal-box.silver { color: #64748B; }
+        .rr-medal-box.bronze { color: #B45309; }
+
+        .rr-rank-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #F1F5F9;
+            color: #64748B;
+            font-size: 0.92rem;
+            font-weight: 800;
+            min-width: 26px;
+            flex-shrink: 0;
+        }
+
+        body.dark-mode .rr-rank-num {
+            background: #334155;
+            color: #CBD5E1;
+        }
+
+        /* User Detail View (Full Page View with Header & Footer) */
+        #reading-room-user-detail-view {
+            padding: 16px 20px 40px 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        @media (max-width: 640px) {
+            #reading-room-user-detail-view {
+                padding: 12px 14px 40px 14px;
+            }
+        }
+
+        .rr-detail-back-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .rr-detail-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            background: #F1F5F9;
+            color: #1E293B;
+            font-size: 0.88rem;
+            font-weight: 700;
+            border: 1px solid #E2E8F0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rr-detail-back-btn:hover {
+            background: #E2E8F0;
+            color: #0F172A;
+        }
+
+        body.dark-mode .rr-detail-back-btn {
+            background: #334155;
+            border-color: #475569;
+            color: #F8FAFC;
+        }
+
+        .rr-detail-user-card {
+            background: linear-gradient(135deg, #15803D 0%, #16A34A 100%);
+            border-radius: 20px;
+            padding: 24px 20px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(22, 163, 74, 0.22);
+            flex-wrap: wrap;
+        }
+
+        .rr-detail-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 3.5px solid #FFFFFF;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .rr-detail-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .rr-detail-info h2 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin: 0 0 6px 0;
+            color: #FFFFFF;
+        }
+
+        .rr-detail-badges {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .rr-detail-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.22);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            backdrop-filter: blur(4px);
+        }
+
+        /* 4 Stat Cards Grid: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া */
+        .rr-detail-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .rr-detail-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        .rr-stat-box {
+            background: #FFFFFF;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 14px 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        body.dark-mode .rr-stat-box {
+            background: #1E293B;
+            border-color: #334155;
+        }
+
+        .rr-stat-box-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #64748B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        body.dark-mode .rr-stat-box-title {
+            color: #94A3B8;
+        }
+
+        .rr-stat-box-val {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #1E293B;
+            line-height: 1.2;
+        }
+
+        body.dark-mode .rr-stat-box-val {
+            color: #F8FAFC;
+        }
+
+        .rr-stat-box-sub {
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #059669;
+        }
+
+        /* Participated Model Tests Section (Full Page Scroll, NO inner scroll) */
+        .rr-exam-section-card {
+            background: #FFFFFF;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 18px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+
+        body.dark-mode .rr-exam-section-card {
+            background: #1E293B;
+            border-color: #334155;
+        }
+
+        .rr-section-heading {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin: 0 0 16px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-bottom: 1.5px solid #F1F5F9;
+            padding-bottom: 12px;
+        }
+
+        body.dark-mode .rr-section-heading {
+            color: #F8FAFC;
+            border-color: #334155;
+        }
+
+        .rr-exam-full-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rr-exam-full-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            transition: all 0.2s;
+            gap: 12px;
+        }
+
+        .rr-exam-full-item:hover {
+            border-color: #93C5FD;
+            background: #EFF6FF;
+        }
+
+        body.dark-mode .rr-exam-full-item {
+            background: #0F172A;
+            border-color: #334155;
+        }
+
+        body.dark-mode .rr-exam-full-item:hover {
+            background: #172554;
+            border-color: #2563EB;
+        }
+
+        .rr-efi-left {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
+        }
+
+        .rr-efi-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        body.dark-mode .rr-efi-title {
+            color: #F8FAFC;
+        }
+
+        .rr-efi-sub {
+            font-size: 0.80rem;
+            color: #64748B;
+        }
+
+        body.dark-mode .rr-efi-sub {
+            color: #94A3B8;
+        }
+
+        .rr-efi-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .rr-efi-score {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #059669;
+            background: #ECFDF5;
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid #A7F3D0;
+        }
+
+        body.dark-mode .rr-efi-score {
+            background: #064E3B;
+            border-color: #059669;
+            color: #34D399;
+        }
+
+        .rr-efi-pct {
+            font-size: 0.80rem;
+            font-weight: 700;
+            color: #4F46E5;
+            background: #EEF2FF;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+
+        body.dark-mode .rr-efi-pct {
+            background: #312E81;
+            color: #A5B4FC;
+        }
+
     </style>
 </head>
 <body>
@@ -1071,6 +1402,7 @@
     </header>
 
     <div class="reading-room-app">
+    <div id="reading-room-main-view">
         <!-- Top App Bar -->
         <header class="rr-header">
             <div class="rr-header-left">
@@ -1230,11 +1562,13 @@
         <!-- Leaderboard List -->
         
         <!-- Leaderboard List with College Names -->
+        
+        <!-- Leaderboard List sorted strictly by Study Time (Highest to Lowest) -->
         <div class="rr-ranking-list" id="rankingListContainer">
-            <!-- Rank 1: Niloy -->
-            <div class="rr-rank-card" onclick="openUserProfileModal('Niloy', 'HSC 2027', 'নটর ডেম কলেজ, ঢাকা', '২ ঘণ্টা ৩০ মিনিট', '৫ সেশন', '৪ ঘণ্টা ৩০ মিনিট', '৯ সেশন', 'niloy')">
+            <!-- Rank 1: Niloy (৩ ঘণ্টা ৪০ মিনিট) -->
+            <div class="rr-rank-card" onclick="showUserDetailView('Niloy', 'HSC 2027', 'নটর ডেম কলেজ, ঢাকা', '৩ ঘণ্টা ৪০ মিনিট', '৫ সেশন', '১৮ ঘণ্টা ২০ মিনিট', '৬৪ ঘণ্টা ৫০ মিনিট', '১৪২ ঘণ্টা ৩০ মিনিট', '১৮৯ সেশন', 'niloy')">
                 <div class="rr-rank-left">
-                    <span class="rr-medal">🥇</span>
+                    <div class="rr-medal-box gold" title="১ম স্থান">🥇 ১</div>
                     <div class="rr-user-avatar-wrap">
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Niloy" class="rr-user-avatar">
                         <span class="live-indicator"></span>
@@ -1248,6 +1582,109 @@
                             <span class="rr-tag-pill">🏫 নটর ডেম কলেজ, ঢাকা</span>
                         </div>
                     </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">৩:৪০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 2: Psycho ♾️ (৩ ঘণ্টা ১৫ মিনিট) -->
+            <div class="rr-rank-card" onclick="showUserDetailView('Psycho ♾️', 'HSC 2026', 'ঢাকা কলেজ, ঢাকা', '৩ ঘণ্টা ১৫ মিনিট', '৫ সেশন', '১৬ ঘণ্টা ১০ মিনিট', '৫৮ ঘণ্টা ৩০ মিনিট', '১২৯ ঘণ্টা ১৫ মিনিট', '১৭৪ সেশন', 'psycho')">
+                <div class="rr-rank-left">
+                    <div class="rr-medal-box silver" title="২য় স্থান">🥈 ২</div>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Psycho" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Psycho ♾️
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2026</span>
+                            <span class="rr-tag-pill">🏫 ঢাকা কলেজ, ঢাকা</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">৩:১৫</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 3: Spider-man 🕸️ (২ ঘণ্টা ৫০ মিনিট) -->
+            <div class="rr-rank-card" onclick="showUserDetailView('Spider-man 🕸️', 'HSC 2026', 'রাজউক উত্তরা মডেল কলেজ', '২ ঘণ্টা ৫০ মিনিট', '৪ সেশন', '১৪ ঘণ্টা ২০ মিনিট', '৫২ ঘণ্টা ১০ মিনিট', '১১৮ ঘণ্টা ৪০ মিনিট', '১৫৬ সেশন', 'spiderman')">
+                <div class="rr-rank-left">
+                    <div class="rr-medal-box bronze" title="৩য় স্থান">🥉 ৩</div>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Spider-man" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Spider-man 🕸️
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2026</span>
+                            <span class="rr-tag-pill">🏫 রাজউক উত্তরা মডেল কলেজ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">২:৫০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 4: Mow (২ ঘণ্টা ১০ মিনিট - NO medal, just number 4) -->
+            <div class="rr-rank-card" onclick="showUserDetailView('Mow', 'HSC 2027', 'ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ', '২ ঘণ্টা ১০ মিনিট', '৩ সেশন', '১২ ঘণ্টা ৪০ মিনিট', '৪৫ ঘণ্টা ২০ মিনিট', '৯৮ ঘণ্টা ৫০ মিনিট', '১৩২ সেশন', 'mow')">
+                <div class="rr-rank-left">
+                    <div class="rr-rank-num">৪</div>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Mow" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Mow
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2027</span>
+                            <span class="rr-tag-pill">🏫 ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">২:১০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 5: Safayet (১ ঘণ্টা ৪০ মিনিট - NO medal, just number 5) -->
+            <div class="rr-rank-card" onclick="showUserDetailView('Safayet', 'HSC 2026', 'চট্টগ্রাম কলেজ, চট্টগ্রাম', '১ ঘণ্টা ৪০ মিনিট', '২ সেশন', '১০ ঘণ্টা ৩০ মিনিট', '৩৮ ঘণ্টা ৫০ মিনিট', '৮৪ ঘণ্টা ১০ মিনিট', '১১৪ সেশন', 'safayet')">
+                <div class="rr-rank-left">
+                    <div class="rr-rank-num">৫</div>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Safayet" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Safayet
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2026</span>
+                            <span class="rr-tag-pill">🏫 চট্টগ্রাম কলেজ, চট্টগ্রাম</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">১:৪০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+        </div>
                 </div>
                 <div class="rr-rank-time">
                     <span class="rr-time-val">২:৩০</span>
@@ -1356,326 +1793,90 @@
          USER PROFILE POPUP MODAL (Based on Image 2)
          ========================================================================= -->
     <!-- USER PROFILE POPUP MODAL -->
-    <div id="userProfileModal" class="rr-modal-overlay" onclick="if(event.target === this) closeUserProfileModal()">
-        <div class="rr-modal-card">
-            <!-- Scenic Pasture Banner (Clean Green Header without Chicken text) -->
-            <div class="rr-farm-banner">
-                <div class="rr-farm-hills"></div>
+    
+    </div><!-- End reading-room-main-view -->
+
+    <!-- =========================================================================
+         FULL PAGE STUDENT PROFILE VIEW (With Site Header, Footer & Natural Page Scroll)
+         ========================================================================= -->
+    <div id="reading-room-user-detail-view" style="display: none;">
+        <!-- Top Back Navigation -->
+        <div class="rr-detail-back-bar">
+            <button type="button" class="rr-detail-back-btn" onclick="hideUserDetailView()">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>লিডারবোর্ডে ফিরে যান</span>
+            </button>
+            <span style="font-size: 0.82rem; font-weight: 700; color: #16A34A;">
+                <i class="fa-solid fa-circle-check"></i> ভেরিফাইড প্রোফাইল
+            </span>
+        </div>
+
+        <!-- Student Hero Card -->
+        <div class="rr-detail-user-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="rr-detail-avatar" id="detailUserAvatar">
+            <div class="rr-detail-info">
+                <h2 id="detailUserName">Niloy</h2>
+                <div class="rr-detail-badges">
+                    <span class="rr-detail-pill" id="detailUserBatch"><i class="fa-solid fa-graduation-cap"></i> HSC 2027</span>
+                    <span class="rr-detail-pill" id="detailUserCollege"><i class="fa-solid fa-building-columns"></i> নটর ডেম কলেজ, ঢাকা</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৪টি স্ট্যাট কার্ড: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া -->
+        <div class="rr-detail-stats-grid">
+            <div class="rr-stat-box">
+                <span class="rr-stat-box-title">☀️ আজ</span>
+                <span class="rr-stat-box-val" id="detailStatToday">৩ ঘণ্টা ৪০ মিনিট</span>
+                <span class="rr-stat-box-sub" id="detailStatTodaySessions">৫টি সেশন</span>
+            </div>
+            <div class="rr-stat-box">
+                <span class="rr-stat-box-title">📅 এই সপ্তাহ</span>
+                <span class="rr-stat-box-val" id="detailStatWeek">১৮ ঘণ্টা ২০ মিনিট</span>
+                <span class="rr-stat-box-sub">সাপ্তাহিক রুটিন</span>
+            </div>
+            <div class="rr-stat-box">
+                <span class="rr-stat-box-title">🗓️ এই মাস</span>
+                <span class="rr-stat-box-val" id="detailStatMonth">৬৪ ঘণ্টা ৫০ মিনিট</span>
+                <span class="rr-stat-box-sub">মাসিক অগ্রগতি</span>
+            </div>
+            <div class="rr-stat-box">
+                <span class="rr-stat-box-title">🏆 সর্বমোট পড়া</span>
+                <span class="rr-stat-box-val" id="detailStatTotal">১৪২ ঘণ্টা ৩০ মিনিট</span>
+                <span class="rr-stat-box-sub" id="detailStatTotalSessions">১৮৯ সেশন</span>
+            </div>
+        </div>
+
+        <!-- অংশগ্রহণকৃত সকল মডেল টেস্ট ও ফলাফল (সম্পূর্ণ পেজ স্ক্রল হবে) -->
+        <div class="rr-exam-section-card">
+            <div class="rr-section-heading">
+                <div>
+                    <i class="fa-solid fa-stopwatch" style="color: #4F46E5; margin-right: 6px;"></i>
+                    <span>অংশগ্রহণকৃত মডেল টেস্ট ও পরীক্ষার ফলাফল</span>
+                </div>
+                <span class="badge badge-primary" id="detailExamTotalBadge" style="font-size: 0.78rem;">৬টি সম্পন্ন</span>
             </div>
 
-            <div class="rr-modal-body">
-                <!-- Avatar overlapping banner -->
-                <div class="rr-modal-avatar-wrapper">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="rr-modal-avatar" id="modalUserAvatar">
-                </div>
-
-                <div class="rr-modal-header-row">
-                    <h2 class="rr-modal-username" id="modalUserName">Niloy</h2>
-                    <button type="button" class="rr-follow-btn" id="modalFollowBtn" onclick="toggleFollowUser(this)">
-                        <i class="fa-solid fa-user-plus"></i> <span id="followBtnText">ফলো</span>
-                    </button>
-                </div>
-
-                <div class="rr-modal-badges">
-                    <span class="rr-tag-pill" id="modalUserBatch">📖 HSC 2027</span>
-                    <span class="rr-tag-pill" id="modalUserCollege">🏫 নটর ডেম কলেজ, ঢাকা</span>
-                </div>
-
-                <!-- Stats Rows -->
-                <div class="rr-stat-rows-container">
-                    <div class="rr-stat-row">
-                        <div class="rr-stat-row-label">
-                            <span style="font-size: 1.1rem;">☀️</span> আজ
-                        </div>
-                        <div class="rr-stat-row-val">
-                            <span id="modalStatTodayTime">২ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatTodaySessions">৫ সেশন</span>
-                        </div>
-                    </div>
-
-                    <div class="rr-stat-row">
-                        <div class="rr-stat-row-label">
-                            <span style="font-size: 1.1rem;">📅</span> এই সপ্তাহ
-                        </div>
-                        <div class="rr-stat-row-val">
-                            <span id="modalStatWeekTime">২ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatWeekSessions">৫ সেশন</span>
-                        </div>
-                    </div>
-
-                    <div class="rr-stat-row">
-                        <div class="rr-stat-row-label">
-                            <span style="font-size: 1.1rem;">🏆</span> সর্বমোট পড়া
-                        </div>
-                        <div class="rr-stat-row-val">
-                            <span id="modalStatTotalTime">২৪ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatTotalSessions">৪৯ সেশন</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ইউজার কতগুলো মডেল টেস্টে অংশগ্রহণ করেছে এবং কত পেয়েছে তার তালিকা -->
-                <div class="rr-user-exam-history-card">
-                    <div class="rr-exam-history-title">
-                        <i class="fa-solid fa-stopwatch" style="color: #4F46E5;"></i>
-                        <span>অংশগ্রহণকৃত মডেল টেস্ট ও পরীক্ষার ফলাফল</span>
-                    </div>
-                    <div class="rr-exam-history-list" id="modalUserExamList">
-                        <!-- Dynamically populated -->
-                    </div>
-                </div>
-
-                <div class="rr-joined-date">
-                    যোগ দিয়েছে ৫ নভেম্বর ২০২৬
-                </div>
-
-                <button type="button" class="rr-btn-confirm" onclick="closeUserProfileModal()">
-                    ঠিক আছে
-                </button>
+            <!-- Full list of exams (Natural page scroll) -->
+            <div class="rr-exam-full-list" id="detailExamFullList">
+                <!-- Dynamically populated -->
             </div>
+        </div>
+
+        <!-- Joined Date -->
+        <div style="text-align: center; color: #64748B; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;">
+            <i class="fa-regular fa-calendar-check" style="margin-right: 6px; color: #16A34A;"></i>
+            ICT Easy Learning এ যোগ দিয়েছে: ৫ নভেম্বর ২০২৬
+        </div>
+
+        <!-- Bottom Return Button -->
+        <div style="text-align: center;">
+            <button type="button" class="btn btn-secondary" onclick="hideUserDetailView()" style="border-radius: 9999px; padding: 10px 24px; font-weight: 700;">
+                <i class="fa-solid fa-arrow-left"></i> লিডারবোর্ডে ফিরে যান
+            </button>
         </div>
     </div>
-
-                <div class="rr-joined-date">
-                    যোগ দিয়েছে ৫ নভেম্বর ২০২৬
-                </div>
-
-                <button type="button" class="rr-btn-confirm" onclick="closeUserProfileModal()">
-                    ঠিক আছে
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        // Stopwatch / Study Session Timer
-        let studySeconds = 0;
-        let studyTimerInterval = null;
-        let isStudying = false;
-
-        function toBnDigits(num) {
-            const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-            return String(num).replace(/[0-9]/g, d => bn[d]);
-        }
-
-        function toggleStudySession() {
-            const btn = document.getElementById('btnToggleStudy');
-            const status = document.getElementById('studySessionStatus');
-            const target = document.getElementById('targetText');
-
-            if (!isStudying) {
-                isStudying = true;
-                btn.innerHTML = '<i class="fa-solid fa-pause"></i> পজ করুন';
-                btn.style.background = '#FEE2E2';
-                btn.style.color = '#DC2626';
-                status.innerHTML = '🟢 স্টাডি সেশন চলমান... একাগ্র হয়ে পড়ুন!';
-                
-                studyTimerInterval = setInterval(() => {
-                    studySeconds++;
-                    const mins = Math.floor(studySeconds / 60);
-                    document.getElementById('displayStudyTime').innerText = toBnDigits(mins);
-
-                    const targetMinutes = 510; // 8 hr 30 min = 510 min
-                    const percent = Math.min(100, Math.round((mins / targetMinutes) * 100));
-                    target.innerHTML = `${toBnDigits(percent)}% · ৮ ঘণ্টা ৩০ মিনিট`;
-                }, 1000);
-            } else {
-                isStudying = false;
-                clearInterval(studyTimerInterval);
-                btn.innerHTML = '<i class="fa-solid fa-play"></i> পুনরায় শুরু করুন';
-                btn.style.background = '#FFFFFF';
-                btn.style.color = '#15803D';
-                const mins = Math.floor(studySeconds / 60);
-                status.innerHTML = `সেশন সম্পন্ন! আজ মোট ${toBnDigits(mins)} মিনিট পড়েছেন।`;
-            }
-        }
-
-        // Time Filters
-        function switchTimeFilter(btn, type) {
-            document.querySelectorAll('.rr-filter-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
-
-        function switchSubTab(btn, type) {
-            document.querySelectorAll('.rr-subtab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
-
-        function openChatNotice() {
-            alert('গ্রুপ স্টাডি চ্যাট রুম লোড হচ্ছে... সহপাঠীদের সাথে প্রশ্নোত্তর আলোচনা করুন!');
-        }
-
-        // Modal Controls
-        
-        // Sample student mock exam records
-        const MOCK_EXAM_RECORDS = {
-            niloy: [
-                { title: 'Model Test 01', sub: 'পূর্ণাঙ্গ সিলেবাস (MCQ)', score: '২৫ / ২৫', pct: '১০০%' },
-                { title: 'Live Exam 02', sub: '১ম ও ২য় অধ্যায় লাইভ', score: '২৪ / ২৫', pct: '৯৬%' },
-                { title: 'Model Test 04', sub: 'HTML ও ওয়েব ডিজাইন', score: '২৩ / ২৫', pct: '৯২%' }
-            ],
-            psycho: [
-                { title: 'Live Exam 01', sub: '১ম অধ্যায় লাইভ স্পেশাল', score: '২৪ / ২৫', pct: '৯৬%' },
-                { title: 'Model Test 03', sub: 'সংখ্যা পদ্ধতি ও ডিজিটাল লজিক', score: '২৩ / ২৫', pct: '৯২%' },
-                { title: 'Model Test 02', sub: 'কমিউনিকেশন ও নেটওয়ার্কিং', score: '২২ / ২৫', pct: '৮৮%' }
-            ],
-            spiderman: [
-                { title: 'Model Test 02', sub: 'কমিউনিকেশন ও নেটওয়ার্কিং', score: '২২ / ২৫', pct: '৮৮%' },
-                { title: 'Live Exam 03', sub: 'সংখ্যা পদ্ধতি স্পেশাল লাইভ', score: '২১ / ২৫', pct: '৮৪%' }
-            ],
-            mow: [
-                { title: 'Model Test 01', sub: 'পূর্ণাঙ্গ সিলেবাস (MCQ)', score: '২১ / ২৫', pct: '৮৪%' },
-                { title: 'Model Test 05', sub: 'সি প্রোগ্রামিং মডেল টেস্ট', score: '২০ / ২৫', pct: '৮০%' }
-            ],
-            safayet: [
-                { title: 'Model Test 03', sub: 'সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস', score: '২০ / ২৫', pct: '৮০%' },
-                { title: 'Live Exam 02', sub: '১ম ও ২য় অধ্যায় লাইভ', score: '১৯ / ২৫', pct: '৭৬%' }
-            ]
-        };
-
-        // Modal Controls with Exam History
-        function openUserProfileModal(name, batch, college, todayTime, todaySessions, yestTime, yestSessions, userKey = '') {
-            document.getElementById('modalUserName').innerText = name;
-            document.getElementById('modalUserBatch').innerText = '📖 ' + (batch || 'HSC 2026');
-            document.getElementById('modalUserCollege').innerText = '🏫 ' + (college || 'শীর্ষ কলেজ');
-            document.getElementById('modalStatTodayTime').innerText = todayTime || '২ ঘণ্টা ৩০ মিনিট';
-            document.getElementById('modalStatTodaySessions').innerText = todaySessions || '৫ সেশন';
-            if (document.getElementById('modalStatWeekTime')) {
-                document.getElementById('modalStatWeekTime').innerText = yestTime || '৬ ঘণ্টা ৩০ মিনিট';
-            }
-
-            // Populate exam history
-            const listEl = document.getElementById('modalUserExamList');
-            if (listEl) {
-                listEl.innerHTML = '';
-                
-                // If it's the current logged in student
-                let exams = [];
-                if (userKey === 'me') {
-                    try {
-                        const submitted = JSON.parse(localStorage.getItem('ict_submitted_live_exams') || '{}');
-                        const keys = Object.keys(submitted);
-                        if (keys.length > 0) {
-                            exams = keys.map(k => {
-                                const it = submitted[k];
-                                const score = it.correctCount || it.score || 0;
-                                const total = it.total || 25;
-                                const pct = it.scorePercentage || Math.round((score / total) * 100);
-                                return {
-                                    title: it.examTitle || ('Model Test ' + k),
-                                    sub: 'সম্পন্ন মডেল টেস্ট',
-                                    score: toBnDigits(score) + ' / ' + toBnDigits(total),
-                                    pct: toBnDigits(pct) + '%'
-                                };
-                            });
-                        }
-                    } catch(e){}
-                }
-
-                if (exams.length === 0 && MOCK_EXAM_RECORDS[userKey]) {
-                    exams = MOCK_EXAM_RECORDS[userKey];
-                }
-
-                if (exams.length === 0) {
-                    // Default high score samples
-                    exams = [
-                        { title: 'Model Test 01', sub: 'পূর্ণাঙ্গ সিলেবাস (MCQ)', score: '২৩ / ২৫', pct: '৯২%' },
-                        { title: 'Live Exam 02', sub: '১ম ও ২য় অধ্যায়', score: '২০ / ২৫', pct: '৮০%' }
-                    ];
-                }
-
-                exams.forEach(ex => {
-                    const row = document.createElement('div');
-                    row.className = 'rr-exam-history-item';
-                    row.innerHTML = `
-                        <div class="rr-eh-left">
-                            <strong>${ex.title}</strong>
-                            <span>${ex.sub}</span>
-                        </div>
-                        <div class="rr-eh-score">
-                            <span class="eh-score-badge">${ex.score}</span>
-                            <span class="eh-pct-badge">${ex.pct}</span>
-                        </div>
-                    `;
-                    listEl.appendChild(row);
-                });
-            }
-            
-            document.getElementById('userProfileModal').style.display = 'flex';
-        }
-
-        // Sync logged-in student info to top bar and active profile
-        function syncLoggedInStudentReadingRoom() {
-            try {
-                let profile = null;
-                const raw = localStorage.getItem('ict_student_profile');
-                if (raw) profile = JSON.parse(raw);
-                if (profile && profile.name) {
-                    const avatar = profile.avatar || profile.photo || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80';
-                    const myAvatarEl = document.getElementById('myHeaderAvatar');
-                    if (myAvatarEl) myAvatarEl.src = avatar;
-
-                    const siteAv = document.getElementById('siteHeaderAvatar');
-                    if (siteAv) siteAv.src = avatar;
-
-                    const siteName = document.getElementById('siteHeaderUserName');
-                    if (siteName) siteName.textContent = profile.name;
-
-                    // Update user position text with college
-                    const colName = profile.college || profile.institute || 'ঢাকা কলেজ';
-                    const batch = profile.hscBatch || 'HSC 2026';
-                    
-                    const posEl = document.querySelector('.rr-position-text');
-                    if (posEl) {
-                        posEl.innerHTML = `<span style="color:#059669; font-weight:700;">${profile.name} (${batch})</span> · ${colName}`;
-                    }
-                }
-            } catch(e){}
-        }
-        document.addEventListener('DOMContentLoaded', syncLoggedInStudentReadingRoom);
-        setTimeout(syncLoggedInStudentReadingRoom, 100);
-
-        function closeUserProfileModal() {
-            document.getElementById('userProfileModal').style.display = 'none';
-        }
-
-        function toggleFollowUser(btn) {
-            const txt = document.getElementById('followBtnText');
-            if (btn.classList.contains('following')) {
-                btn.classList.remove('following');
-                btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> <span>ফলো</span>';
-            } else {
-                btn.classList.add('following');
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> <span>ফলো করা হয়েছে</span>';
-            }
-        }
-
-        // Apply dark mode if user selected
-        (function() {
-            try {
-                if (localStorage.getItem('ict_theme') === 'dark') {
-                    document.body.classList.add('dark-mode');
-                }
-            } catch(e){}
-        })();
-    </script>
-
-    <!-- ফুটার -->
-    <!-- প্ল্যাটফর্ম ফুটার -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-developer-card">
-                <div class="developer-avatar-wrapper">
-                    <img src="../assets/images/developer.jpg" alt="Jahidul Islam Lablo" class="developer-avatar-img">
-                </div>
-                <div class="developer-info-text">
-                    <span class="developer-role">Developer &amp; Owner</span>
-                    <h4 class="developer-name">JAHIDUL ISLAM LABLO</h4>
-                    <span class="developer-degree">BSc in CSE ( Uttara University)</span>
-                    <div class="footer-copyright-text">
-                        <span class="brand-copy-name">ICT EASY LEARNING</span> &copy; 2026. সর্বস্বত্ব সংরক্ষিত।
-                    </div>
-                </div>
-            </div>
-        </div>
+    
     </footer>
 
     <!-- মোবাইল বটম নেভিগেশন বার (সবসময় ৫টি বাটন ফিক্সড) -->
@@ -1703,8 +1904,8 @@
     </nav>
 
     <!-- Global App Scripts -->
-    <script src="../assets/js/api.js?v=8.0"></script>
-    <script src="../assets/js/main.js?v=8.0"></script>
+    <script src="../assets/js/api.js?v=8.5"></script>
+    <script src="../assets/js/main.js?v=8.5"></script>
 
 </body>
 </html>
