@@ -29,26 +29,26 @@ htmlFiles.forEach(rel => {
     let content = fs.readFileSync(filePath, 'utf8');
 
     // Bump style.css
-    content = content.replace(/style\.css(\?v=[0-9.]+)?/g, 'style.css?v=8.5');
+    content = content.replace(/style\.css(\?v=[0-9.]+)?/g, 'style.css?v=9.0');
     // Bump api.js
-    content = content.replace(/api\.js(\?v=[0-9.]+)?/g, 'api.js?v=8.5');
+    content = content.replace(/api\.js(\?v=[0-9.]+)?/g, 'api.js?v=9.0');
     // Bump login.js
-    content = content.replace(/login\.js(\?v=[0-9.]+)?/g, 'login.js?v=8.5');
+    content = content.replace(/login\.js(\?v=[0-9.]+)?/g, 'login.js?v=9.0');
     // Bump profile.js
-    content = content.replace(/profile\.js(\?v=[0-9.]+)?/g, 'profile.js?v=8.5');
+    content = content.replace(/profile\.js(\?v=[0-9.]+)?/g, 'profile.js?v=9.0');
     // Bump chapter-prep.js
-    content = content.replace(/chapter-prep\.js(\?v=[0-9.]+)?/g, 'chapter-prep.js?v=8.5');
+    content = content.replace(/chapter-prep\.js(\?v=[0-9.]+)?/g, 'chapter-prep.js?v=9.0');
     // Bump board-question.js
-    content = content.replace(/board-question\.js(\?v=[0-9.]+)?/g, 'board-question.js?v=8.5');
+    content = content.replace(/board-question\.js(\?v=[0-9.]+)?/g, 'board-question.js?v=9.0');
     // Bump test-paper.js
-    content = content.replace(/test-paper\.js(\?v=[0-9.]+)?/g, 'test-paper.js?v=8.5');
+    content = content.replace(/test-paper\.js(\?v=[0-9.]+)?/g, 'test-paper.js?v=9.0');
     // Bump model-test.js
-    content = content.replace(/model-test\.js(\?v=[0-9.]+)?/g, 'model-test.js?v=8.5');
+    content = content.replace(/model-test\.js(\?v=[0-9.]+)?/g, 'model-test.js?v=9.0');
     // Bump main.js
-    content = content.replace(/main\.js(\?v=[0-9.]+)?/g, 'main.js?v=8.5');
+    content = content.replace(/main\.js(\?v=[0-9.]+)?/g, 'main.js?v=9.0');
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`Bumped cache version to v=8.5 in: ${rel}`);
+    console.log(`Bumped cache version to v=9.0 in: ${rel}`);
 });
 
 // 2. Sync all project files to OneDrive mirror
@@ -89,4 +89,4 @@ itemsToSync.forEach(item => {
     console.log(`Synced ${item} -> OneDrive`);
 });
 
-console.log('✓ All files bumped and synced to OneDrive mirror!');
+console.log('✓ All files bumped to v=9.0 and synced to OneDrive mirror!');

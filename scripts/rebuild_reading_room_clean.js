@@ -1,0 +1,1652 @@
+const fs = require('fs');
+
+const htmlContent = `<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>রিডিং রুম (Reading Room) | ICT Easy Learning</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Global Style -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=9.0">
+    <style>
+        :root {
+            --rr-green: #15803D;
+            --rr-green-light: #22C55E;
+            --rr-bg: #F8FAFC;
+        }
+
+        body {
+            background-color: var(--rr-bg);
+            font-family: 'Hind Siliguri', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #1E293B;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Reading Room App Container - Desktop Full Container Width */
+        .reading-room-app {
+            max-width: 1200px !important;
+            width: 100% !important;
+            margin: 24px auto 50px auto !important;
+            min-height: calc(100vh - 180px) !important;
+            background: #FFFFFF !important;
+            border-radius: 20px !important;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06) !important;
+            position: relative !important;
+            padding-bottom: 40px !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+        }
+
+        @media (max-width: 768px) {
+            .reading-room-app {
+                max-width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                padding-bottom: 80px !important;
+            }
+        }
+
+        /* Top Nav Header inside Reading Room */
+        .rr-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .rr-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rr-back-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F1F5F9;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #475569;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .rr-back-btn:hover {
+            background: #E2E8F0;
+            color: #0F172A;
+        }
+
+        .rr-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        .rr-live-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FEE2E2;
+            color: #EF4444;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .rr-live-dot {
+            width: 7px;
+            height: 7px;
+            background: #EF4444;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        .rr-header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rr-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748B;
+            font-size: 1.1rem;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rr-header-icon:hover {
+            background: #F1F5F9;
+            color: #1E293B;
+        }
+
+        .rr-badge-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #EF4444;
+            color: #FFFFFF;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 1px 5px;
+            border-radius: 9999px;
+            border: 2px solid #FFFFFF;
+        }
+
+        .rr-header-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #22C55E;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* Hero Banner (Green Card) */
+        .rr-hero-banner {
+            margin: 20px 24px;
+            background: linear-gradient(135deg, #15803D 0%, #16A34A 100%);
+            border-radius: 20px;
+            padding: 24px;
+            color: #FFFFFF;
+            position: relative;
+            box-shadow: 0 10px 25px -5px rgba(21, 128, 61, 0.35);
+        }
+
+        .rr-hero-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .rr-hero-subtag {
+            font-size: 0.95rem;
+            font-weight: 600;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rr-target-pill {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rr-timer-big {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .rr-timer-unit {
+            font-size: 1.4rem;
+            font-weight: 600;
+            opacity: 0.85;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        .rr-hero-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .rr-timer-action-row {
+            margin-bottom: 18px;
+        }
+
+        .rr-btn-timer {
+            background: #FFFFFF;
+            color: #15803D;
+            border: none;
+            border-radius: 9999px;
+            padding: 10px 22px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+
+        .rr-btn-timer:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        .rr-timeline-bar {
+            display: flex;
+            gap: 4px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .rr-timeline-segment {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+
+        .rr-timeline-segment.active {
+            background: #FFFFFF;
+        }
+
+        .rr-timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        /* Carousel Indicator Dots */
+        .rr-dots-row {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .rr-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #CBD5E1;
+            transition: all 0.2s;
+        }
+
+        .rr-dot.active {
+            width: 18px;
+            border-radius: 9999px;
+            background: #16A34A;
+        }
+
+        /* Active Users Row */
+        .rr-active-users-section {
+            padding: 0 24px 20px 24px;
+        }
+
+        .rr-section-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rr-avatars-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scrollbar-width: thin;
+        }
+
+        .rr-avatars-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .rr-avatars-scroll::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+
+        .rr-user-bubble {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .rr-user-bubble:hover {
+            transform: translateY(-3px);
+        }
+
+        .rr-bubble-ring {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #22C55E, #10B981);
+            position: relative;
+        }
+
+        .rr-bubble-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #FFFFFF;
+        }
+
+        .rr-bubble-name {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            max-width: 65px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Time Filter Tabs (আজ, এই সপ্তাহ, এই মাস, সর্বমোট) */
+        .rr-filters-row {
+            display: flex;
+            gap: 10px;
+            padding: 0 24px 16px 24px;
+            border-bottom: 1px solid #F1F5F9;
+            overflow-x: auto;
+        }
+
+        .rr-filter-tab {
+            flex: 1;
+            min-width: 80px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: #F1F5F9;
+            border: 1px solid transparent;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: #64748B;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            white-space: nowrap !important;
+        }
+
+        .rr-filter-tab:hover {
+            background: #E2E8F0;
+            color: #1E293B;
+        }
+
+        .rr-filter-tab.active {
+            background: #16A34A;
+            color: #FFFFFF;
+            font-weight: 800;
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+        }
+
+        /* Subtabs (সবাই / ফলো করা | অবস্থান) */
+        .rr-subtab-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .rr-subtabs-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .rr-subtab-btn {
+            background: none;
+            border: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #94A3B8;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: color 0.2s;
+        }
+
+        .rr-subtab-btn.active {
+            color: #16A34A;
+            border-bottom: 2px solid #16A34A;
+        }
+
+        .rr-position-text {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #64748B;
+        }
+
+        /* Leaderboard Ranking List */
+        .rr-ranking-list {
+            padding: 0 24px 30px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .rr-rank-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 14px 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .rr-rank-card:hover {
+            border-color: #22C55E;
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .rr-rank-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Medals for Top 3 (🥇 ১, 🥈 ২, 🥉 ৩) and Clean Rank Badge for 4, 5 */
+        .rr-medal-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            line-height: 1;
+            min-width: 44px;
+        }
+
+        .rr-medal-box.gold {
+            background: #FEF3C7;
+            color: #B45309;
+            border: 1px solid #FCD34D;
+        }
+
+        .rr-medal-box.silver {
+            background: #F1F5F9;
+            color: #475569;
+            border: 1px solid #CBD5E1;
+        }
+
+        .rr-medal-box.bronze {
+            background: #FFEDD5;
+            color: #C2410C;
+            border: 1px solid #FDBA74;
+        }
+
+        .rr-rank-number {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #64748B;
+            min-width: 38px;
+            text-align: center;
+        }
+
+        .rr-user-avatar-wrap {
+            position: relative;
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+        }
+
+        .rr-user-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .live-indicator {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #22C55E;
+            border: 2px solid #FFFFFF;
+        }
+
+        .rr-user-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .rr-name-row {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #1E293B;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rr-name-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22C55E;
+        }
+
+        .rr-tags-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .rr-tag-pill {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #64748B;
+            background: #F1F5F9;
+            padding: 2px 8px;
+            border-radius: 9999px;
+        }
+
+        .rr-rank-time {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .rr-time-val {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #15803D;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .rr-time-unit {
+            font-size: 0.85rem;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        /* =========================================================================
+           FULL PAGE STUDENT PROFILE VIEW
+           ========================================================================= */
+        #reading-room-user-detail-view {
+            padding: 24px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        @media (max-width: 640px) {
+            #reading-room-user-detail-view {
+                padding: 16px 14px 40px 14px;
+            }
+        }
+
+        .rr-detail-back-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .rr-detail-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #F1F5F9;
+            color: #1E293B;
+            border: 1px solid #E2E8F0;
+            border-radius: 9999px;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rr-detail-back-btn:hover {
+            background: #E2E8F0;
+            border-color: #CBD5E1;
+        }
+
+        .rr-verified-badge {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #16A34A;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Student Hero Card */
+        .rr-detail-user-card {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            border-radius: 20px;
+            padding: 24px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+        }
+
+        @media (max-width: 640px) {
+            .rr-detail-user-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 14px;
+                padding: 20px 16px;
+            }
+        }
+
+        .rr-detail-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            border: 3.5px solid #FFFFFF;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .rr-detail-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .rr-detail-info h2 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+            color: #FFFFFF;
+        }
+
+        .rr-detail-badges {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .rr-detail-badges {
+                justify-content: center;
+            }
+        }
+
+        .rr-detail-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 5px 14px;
+            border-radius: 9999px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            backdrop-filter: blur(4px);
+        }
+
+        /* 4 Stat Cards Grid: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া */
+        .rr-detail-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .rr-detail-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        .rr-stat-box {
+            background: #FFFFFF;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 16px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.2s;
+        }
+
+        .rr-stat-box:hover {
+            border-color: #22C55E;
+            box-shadow: 0 4px 14px rgba(34, 197, 94, 0.1);
+        }
+
+        .rr-stat-box-title {
+            display: block;
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #64748B;
+            margin-bottom: 6px;
+            white-space: nowrap;
+        }
+
+        .rr-stat-box-val {
+            display: block;
+            font-size: 1.22rem;
+            font-weight: 800;
+            color: #15803D;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .rr-stat-box-sub {
+            display: block;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #94A3B8;
+        }
+
+        /* All Model Tests Section - Natural Page Scroll */
+        .rr-exam-section-card {
+            background: #FFFFFF;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .rr-section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            border-bottom: 1.5px solid #F1F5F9;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1E293B;
+        }
+
+        .rr-exam-full-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rr-exam-full-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 14px;
+            transition: all 0.2s;
+            gap: 14px;
+        }
+
+        .rr-exam-full-item:hover {
+            border-color: #93C5FD;
+            background: #EFF6FF;
+        }
+
+        .rr-efi-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 0;
+        }
+
+        .rr-efi-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        .rr-efi-sub {
+            font-size: 0.82rem;
+            color: #64748B;
+        }
+
+        .rr-efi-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .rr-efi-score {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #15803D;
+            background: #DCFCE7;
+            border: 1px solid #86EFAC;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .rr-efi-rank-pill {
+            font-size: 0.80rem;
+            font-weight: 700;
+            background: #FEF3C7;
+            color: #B45309;
+            padding: 3px 8px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        /* Dark Mode Support */
+        body.dark-mode {
+            background-color: #0B1120 !important;
+            color: #E2E8F0 !important;
+        }
+
+        body.dark-mode .reading-room-app {
+            background: #1E293B !important;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.3) !important;
+        }
+
+        body.dark-mode .rr-header {
+            background: #1E293B;
+            border-color: #334155;
+        }
+
+        body.dark-mode .rr-title,
+        body.dark-mode .rr-section-title,
+        body.dark-mode .rr-name-row,
+        body.dark-mode .rr-section-heading {
+            color: #F8FAFC !important;
+        }
+
+        body.dark-mode .rr-rank-card {
+            background: #0F172A;
+            border-color: #334155;
+        }
+
+        body.dark-mode .rr-rank-card:hover {
+            border-color: #22C55E;
+        }
+
+        body.dark-mode .rr-stat-box {
+            background: #0F172A;
+            border-color: #334155;
+        }
+
+        body.dark-mode .rr-exam-section-card {
+            background: #1E293B;
+            border-color: #334155;
+        }
+
+        body.dark-mode .rr-exam-full-item {
+            background: #0F172A;
+            border-color: #334155;
+        }
+
+        body.dark-mode .rr-exam-full-item:hover {
+            background: #172554;
+            border-color: #2563EB;
+        }
+
+        body.dark-mode .rr-efi-title {
+            color: #F8FAFC;
+        }
+
+        body.dark-mode .rr-efi-sub {
+            color: #94A3B8;
+        }
+
+        body.dark-mode .rr-detail-back-btn {
+            background: #334155;
+            color: #F8FAFC;
+            border-color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন বার -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand-group">
+                <button class="nav-back-btn desktop-back-btn" onclick="window.location.href='../index.html'" title="হোমে ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span id="back-btn-text">হোমে ফিরে যান</span>
+                </button>
+                <a href="../index.html" class="brand-link">
+                    <img src="../assets/images/icon.png" alt="ICT Easy Learning" class="brand-logo-img">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">ICT EASY LEARNING</span>
+                        <span class="brand-subtitle">এইচএসসি আইসিটি প্রস্তুতি</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-nav-wrapper">
+                <button class="nav-back-btn mobile-nav-back-btn" onclick="window.location.href='../index.html'" title="হোমে ফিরে যান">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="desktop-nav">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> প্র্যাকটিস</a></li>
+                    <li><a href="board-question.html"><i class="fa-solid fa-building-columns"></i> বোর্ড প্রশ্ন</a></li>
+                    <li><a href="test-paper.html"><i class="fa-solid fa-book-open"></i> টেস্ট পেপার</a></li>
+                    <li><a href="chapter-prep.html"><i class="fa-solid fa-layer-group"></i> অধ্যায়ভিত্তিক</a></li>
+                    <li><a href="model-test.html"><i class="fa-solid fa-stopwatch"></i> মডেল টেস্ট</a></li>
+                    <li><a href="pdf-suggestion.html"><i class="fa-solid fa-file-pdf"></i> সাজেশন</a></li>
+                    <li><a href="reading-room.html" class="active"><i class="fa-solid fa-users"></i> রিডিং রুম</a></li>
+                    <li><a href="favorite-question.html"><i class="fa-solid fa-star"></i> ফেভারিট প্রশ্ন</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="header-user-btn" title="প্রোফাইল">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="ইউজার প্রোফাইল" id="siteHeaderAvatar">
+                    <span class="header-user-name" id="siteHeaderUserName">প্রোফাইল</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Reading Room App -->
+    <div class="reading-room-app">
+        <!-- =========================================================================
+             MAIN READING ROOM VIEW (Leaderboard, Stopwatch, Active Users)
+             ========================================================================= -->
+        <div id="reading-room-main-view">
+            <!-- Top App Bar inside container -->
+            <header class="rr-header">
+                <div class="rr-header-left">
+                    <a href="../index.html" class="rr-back-btn" title="হোম পেজে ফিরুন">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                    <h1 class="rr-title">রিডিং রুম</h1>
+                    <div class="rr-live-pill">
+                        <span class="rr-live-dot"></span>
+                        <span id="headerLiveCount">১২৮</span>
+                    </div>
+                </div>
+
+                <div class="rr-header-right">
+                    <div class="rr-header-icon" title="গ্রুপ চ্যাট" onclick="openChatNotice()">
+                        <i class="fa-regular fa-comment-dots"></i>
+                        <span class="rr-badge-count">৯৯+</span>
+                    </div>
+                    <div class="rr-header-icon" title="লিডারবোর্ড">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <a href="profile.html">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="rr-header-avatar" id="myHeaderAvatar">
+                    </a>
+                </div>
+            </header>
+
+            <!-- Main Hero Card (Green) -->
+            <section class="rr-hero-banner">
+                <div class="rr-hero-top">
+                    <div class="rr-hero-subtag">
+                        <span style="font-size: 1.2rem; line-height: 1;">●</span> আজ পড়েছ
+                    </div>
+                    <div class="rr-target-pill">
+                        <i class="fa-solid fa-bullseye" style="color: #F87171;"></i> 
+                        <span id="targetText">০% · ৮ ঘণ্টা ৩০ মিনিট</span>
+                    </div>
+                </div>
+
+                <div class="rr-timer-big">
+                    <span id="displayStudyTime">০</span>
+                    <span class="rr-timer-unit">মিনিট</span>
+                </div>
+
+                <div class="rr-hero-desc" id="studySessionStatus">
+                    আজ এখনো কোনো সেশন শেষ হয়নি
+                </div>
+
+                <!-- Interactive Study Stopwatch Button -->
+                <div class="rr-timer-action-row">
+                    <button type="button" class="rr-btn-timer" id="btnToggleStudy" onclick="toggleStudySession()">
+                        <i class="fa-solid fa-play"></i> স্টাডি শুরু করুন
+                    </button>
+                </div>
+
+                <!-- Segmented Timeline Bar -->
+                <div class="rr-timeline-bar">
+                    <div class="rr-timeline-segment active"></div>
+                    <div class="rr-timeline-segment active"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                    <div class="rr-timeline-segment"></div>
+                </div>
+
+                <div class="rr-timeline-labels">
+                    <span>ভোর ৫টা</span>
+                    <span>দুপুর ১২টা</span>
+                    <span>সন্ধ্যা ৬টা</span>
+                    <span>রাত ১২টা</span>
+                </div>
+            </section>
+
+            <!-- Carousel Dots -->
+            <div class="rr-dots-row">
+                <div class="rr-dot active"></div>
+                <div class="rr-dot"></div>
+                <div class="rr-dot"></div>
+                <div class="rr-dot"></div>
+                <div class="rr-dot"></div>
+            </div>
+
+            <!-- Active Users Horizontal Row -->
+            <section class="rr-active-users-section">
+                <div class="rr-section-title">
+                    <span class="rr-live-dot" style="width: 9px; height: 9px;"></span> এখন পড়ছে ১২৮ জন
+                </div>
+                <div class="rr-avatars-scroll" id="activeUsersRow">
+                    <div class="rr-user-bubble" onclick="showUserDetailView('Orna😓', 'HSC 2026', 'বগুড়া সরকারি কলেজ', '১ ঘণ্টা ৪৫ মিনিট', '৩টি সেশন', '১০ ঘণ্টা ২০ মিনিট', '৪০ ঘণ্টা ৩০ মিনিট', '৮২ ঘণ্টা ১০ মিনিট', '১০২ সেশন', 'orna', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Orna" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">Orna😓</span>
+                    </div>
+
+                    <div class="rr-user-bubble" onclick="showUserDetailView('Niloy', 'HSC 2027', 'নটর ডেম কলেজ, ঢাকা', '৩ ঘণ্টা ৪০ মিনিট', '৫টি সেশন', '১৮ ঘণ্টা ২০ মিনিট', '৬৪ ঘণ্টা ৫০ মিনিট', '১৪২ ঘণ্টা ৩০ মিনিট', '১৮৯ সেশন', 'niloy', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Niloy" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">Niloy</span>
+                    </div>
+
+                    <div class="rr-user-bubble" onclick="showUserDetailView('Psycho ♾️', 'HSC 2026', 'ঢাকা কলেজ, ঢাকা', '৩ ঘণ্টা ১৫ মিনিট', '৫টি সেশন', '১৬ ঘণ্টা ১০ মিনিট', '৫৮ ঘণ্টা ৩০ মিনিট', '১২৯ ঘণ্টা ১৫ মিনিট', '১৭৪ সেশন', 'psycho', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Psycho" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">Psycho ♾️</span>
+                    </div>
+
+                    <div class="rr-user-bubble" onclick="showUserDetailView('Spider-man 🕸️', 'HSC 2026', 'রাজউক উত্তরা মডেল কলেজ', '২ ঘণ্টা ৫০ মিনিট', '৪টি সেশন', '১৪ ঘণ্টা ২০ মিনিট', '৫২ ঘণ্টা ১০ মিনিট', '১১৮ ঘণ্টা ৪০ মিনিট', '১৫৬ সেশন', 'spiderman', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Spider-man" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">Spider-man</span>
+                    </div>
+
+                    <div class="rr-user-bubble" onclick="showUserDetailView('Mow', 'HSC 2027', 'ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ', '২ ঘণ্টা ১০ মিনিট', '৩টি সেশন', '১২ ঘণ্টা ৫০ মিনিট', '৪৫ ঘণ্টা ২০ মিনিট', '৯৬ ঘণ্টা ৪০ মিনিট', '১২১ সেশন', 'mow', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Mow" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">Mow</span>
+                    </div>
+
+                    <div class="rr-user-bubble" onclick="showUserDetailView('Safayet', 'HSC 2026', 'চট্টগ্রাম কলেজ, চট্টগ্রাম', '১ ঘণ্টা ৪০ মিনিট', '২টি সেশন', '৯ ঘণ্টা ৩০ মিনিট', '৩৮ ঘণ্টা ১৫ মিনিট', '৭৮ ঘণ্টা ৫০ মিনিট', '৯৮ সেশন', 'safayet', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Safayet" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">Safayet</span>
+                    </div>
+
+                    <div class="rr-user-bubble" onclick="showUserDetailView('OMOR', 'HSC 2026', 'কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ', '২ ঘণ্টা ২০ মিনিট', '৪টি সেশন', '১৩ ঘণ্টা ১৫ মিনিট', '৪৮ ঘণ্টা ৪০ মিনিট', '১০৪ ঘণ্টা ২০ মিনিট', '১৩২ সেশন', 'omor', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80')">
+                        <div class="rr-bubble-ring">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="OMOR" class="rr-bubble-img">
+                        </div>
+                        <span class="rr-bubble-name">OMOR</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Filter Tabs (আজ, এই সপ্তাহ, এই মাস, সর্বমোট) -->
+            <div class="rr-filters-row">
+                <button type="button" class="rr-filter-tab active" onclick="switchTimeFilter(this, 'today')">আজ</button>
+                <button type="button" class="rr-filter-tab" onclick="switchTimeFilter(this, 'week')">এই সপ্তাহ</button>
+                <button type="button" class="rr-filter-tab" onclick="switchTimeFilter(this, 'month')">এই মাস</button>
+                <button type="button" class="rr-filter-tab" onclick="switchTimeFilter(this, 'all')">সর্বমোট</button>
+            </div>
+
+            <!-- Subheaders (সবাই / ফলো করা | তোমার অবস্থান) -->
+            <div class="rr-subtab-row">
+                <div class="rr-subtabs-group">
+                    <button type="button" class="rr-subtab-btn active" onclick="switchSubTab(this, 'all')">সবাই</button>
+                    <button type="button" class="rr-subtab-btn" onclick="switchSubTab(this, 'following')">ফলো করা</button>
+                </div>
+                <span class="rr-position-text">তোমার অবস্থান ১৪৩/১৯১</span>
+            </div>
+
+            <!-- Leaderboard List sorted strictly by Study Time (Highest to Lowest) -->
+            <div class="rr-ranking-list" id="rankingListContainer">
+                <!-- Rank 1: Niloy (৩ ঘণ্টা ৪০ মিনিট) - Medal 🥇 ১ -->
+                <div class="rr-rank-card" onclick="showUserDetailView('Niloy', 'HSC 2027', 'নটর ডেম কলেজ, ঢাকা', '৩ ঘণ্টা ৪০ মিনিট', '৫টি সেশন', '১৮ ঘণ্টা ২০ মিনিট', '৬৪ ঘণ্টা ৫০ মিনিট', '১৪২ ঘণ্টা ৩০ মিনিট', '১৮৯ সেশন', 'niloy', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80')">
+                    <div class="rr-rank-left">
+                        <div class="rr-medal-box gold" title="১ম স্থান">🥇 ১</div>
+                        <div class="rr-user-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Niloy" class="rr-user-avatar">
+                            <span class="live-indicator"></span>
+                        </div>
+                        <div class="rr-user-info">
+                            <div class="rr-name-row">
+                                <span class="rr-name-dot"></span> Niloy
+                            </div>
+                            <div class="rr-tags-row">
+                                <span class="rr-tag-pill">HSC 2027</span>
+                                <span class="rr-tag-pill">🏫 নটর ডেম কলেজ, ঢাকা</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rr-rank-time">
+                        <span class="rr-time-val">৩:৪০</span>
+                        <span class="rr-time-unit">ঘণ্টা</span>
+                    </div>
+                </div>
+
+                <!-- Rank 2: Psycho ♾️ (৩ ঘণ্টা ১৫ মিনিট) - Medal 🥈 ২ -->
+                <div class="rr-rank-card" onclick="showUserDetailView('Psycho ♾️', 'HSC 2026', 'ঢাকা কলেজ, ঢাকা', '৩ ঘণ্টা ১৫ মিনিট', '৫টি সেশন', '১৬ ঘণ্টা ১০ মিনিট', '৫৮ ঘণ্টা ৩০ মিনিট', '১২৯ ঘণ্টা ১৫ মিনিট', '১৭৪ সেশন', 'psycho', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80')">
+                    <div class="rr-rank-left">
+                        <div class="rr-medal-box silver" title="২য় স্থান">🥈 ২</div>
+                        <div class="rr-user-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Psycho" class="rr-user-avatar">
+                            <span class="live-indicator"></span>
+                        </div>
+                        <div class="rr-user-info">
+                            <div class="rr-name-row">
+                                <span class="rr-name-dot"></span> Psycho ♾️
+                            </div>
+                            <div class="rr-tags-row">
+                                <span class="rr-tag-pill">HSC 2026</span>
+                                <span class="rr-tag-pill">🏫 ঢাকা কলেজ, ঢাকা</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rr-rank-time">
+                        <span class="rr-time-val">৩:১৫</span>
+                        <span class="rr-time-unit">ঘণ্টা</span>
+                    </div>
+                </div>
+
+                <!-- Rank 3: Spider-man 🕸️ (২ ঘণ্টা ৫০ মিনিট) - Medal 🥉 ৩ -->
+                <div class="rr-rank-card" onclick="showUserDetailView('Spider-man 🕸️', 'HSC 2026', 'রাজউক উত্তরা মডেল কলেজ', '২ ঘণ্টা ৫০ মিনিট', '৪টি সেশন', '১৪ ঘণ্টা ২০ মিনিট', '৫২ ঘণ্টা ১০ মিনিট', '১১৮ ঘণ্টা ৪০ মিনিট', '১৫৬ সেশন', 'spiderman', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80')">
+                    <div class="rr-rank-left">
+                        <div class="rr-medal-box bronze" title="৩য় স্থান">🥉 ৩</div>
+                        <div class="rr-user-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Spider-man" class="rr-user-avatar">
+                            <span class="live-indicator"></span>
+                        </div>
+                        <div class="rr-user-info">
+                            <div class="rr-name-row">
+                                <span class="rr-name-dot"></span> Spider-man 🕸️
+                            </div>
+                            <div class="rr-tags-row">
+                                <span class="rr-tag-pill">HSC 2026</span>
+                                <span class="rr-tag-pill">🏫 রাজউক উত্তরা মডেল কলেজ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rr-rank-time">
+                        <span class="rr-time-val">২:৫০</span>
+                        <span class="rr-time-unit">ঘণ্টা</span>
+                    </div>
+                </div>
+
+                <!-- Rank 4: Mow (২ ঘণ্টা ১০ মিনিট) - No medal, clean rank number ४ -->
+                <div class="rr-rank-card" onclick="showUserDetailView('Mow', 'HSC 2027', 'ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ', '২ ঘণ্টা ১০ মিনিট', '৩টি সেশন', '১২ ঘণ্টা ৫০ মিনিট', '৪৫ ঘণ্টা ২০ মিনিট', '৯৬ ঘণ্টা ৪০ মিনিট', '১২১ সেশন', 'mow', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80')">
+                    <div class="rr-rank-left">
+                        <span class="rr-rank-number">৪</span>
+                        <div class="rr-user-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Mow" class="rr-user-avatar">
+                            <span class="live-indicator"></span>
+                        </div>
+                        <div class="rr-user-info">
+                            <div class="rr-name-row">
+                                <span class="rr-name-dot"></span> Mow
+                            </div>
+                            <div class="rr-tags-row">
+                                <span class="rr-tag-pill">HSC 2027</span>
+                                <span class="rr-tag-pill">🏫 ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rr-rank-time">
+                        <span class="rr-time-val">২:১০</span>
+                        <span class="rr-time-unit">ঘণ্টা</span>
+                    </div>
+                </div>
+
+                <!-- Rank 5: Safayet (১ ঘণ্টা ৪০ মিনিট) - No medal, clean rank number ৫ -->
+                <div class="rr-rank-card" onclick="showUserDetailView('Safayet', 'HSC 2026', 'চট্টগ্রাম কলেজ, চট্টগ্রাম', '১ ঘণ্টা ৪০ মিনিট', '২টি সেশন', '৯ ঘণ্টা ৩০ মিনিট', '৩৮ ঘণ্টা ১৫ মিনিট', '৭৮ ঘণ্টা ৫০ মিনিট', '৯৮ সেশন', 'safayet', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80')">
+                    <div class="rr-rank-left">
+                        <span class="rr-rank-number">৫</span>
+                        <div class="rr-user-avatar-wrap">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Safayet" class="rr-user-avatar">
+                            <span class="live-indicator"></span>
+                        </div>
+                        <div class="rr-user-info">
+                            <div class="rr-name-row">
+                                <span class="rr-name-dot"></span> Safayet
+                            </div>
+                            <div class="rr-tags-row">
+                                <span class="rr-tag-pill">HSC 2026</span>
+                                <span class="rr-tag-pill">🏫 চট্টগ্রাম কলেজ, চট্টগ্রাম</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rr-rank-time">
+                        <span class="rr-time-val">১:৪০</span>
+                        <span class="rr-time-unit">ঘণ্টা</span>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End reading-room-main-view -->
+
+        <!-- =========================================================================
+             FULL PAGE STUDENT PROFILE VIEW (With 4 Stat Cards, All Model Tests & Full Scroll)
+             ========================================================================= -->
+        <div id="reading-room-user-detail-view" style="display: none;">
+            <!-- Top Back Navigation -->
+            <div class="rr-detail-back-bar">
+                <button type="button" class="rr-detail-back-btn" onclick="hideUserDetailView()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>লিডারবোর্ডে ফিরে যান</span>
+                </button>
+                <span class="rr-verified-badge">
+                    <i class="fa-solid fa-circle-check"></i> ভেরিফাইড প্রোফাইল
+                </span>
+            </div>
+
+            <!-- Student Hero Card -->
+            <div class="rr-detail-user-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="rr-detail-avatar" id="detailUserAvatar">
+                <div class="rr-detail-info">
+                    <h2 id="detailUserName">Niloy</h2>
+                    <div class="rr-detail-badges">
+                        <span class="rr-detail-pill" id="detailUserBatch"><i class="fa-solid fa-graduation-cap"></i> HSC 2027</span>
+                        <span class="rr-detail-pill" id="detailUserCollege"><i class="fa-solid fa-building-columns"></i> নটর ডেম কলেজ, ঢাকা</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ৪টি স্ট্যাট কার্ড: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া -->
+            <div class="rr-detail-stats-grid">
+                <div class="rr-stat-box">
+                    <span class="rr-stat-box-title">☀️ আজ</span>
+                    <span class="rr-stat-box-val" id="detailStatToday">৩ ঘণ্টা ৪০ মিনিট</span>
+                    <span class="rr-stat-box-sub" id="detailStatTodaySessions">৫টি সেশন</span>
+                </div>
+                <div class="rr-stat-box">
+                    <span class="rr-stat-box-title">📅 এই সপ্তাহ</span>
+                    <span class="rr-stat-box-val" id="detailStatWeek">১৮ ঘণ্টা ২০ মিনিট</span>
+                    <span class="rr-stat-box-sub">সাপ্তাহিক রুটিন</span>
+                </div>
+                <div class="rr-stat-box">
+                    <span class="rr-stat-box-title">🗓️ এই মাস</span>
+                    <span class="rr-stat-box-val" id="detailStatMonth">৬৪ ঘণ্টা ৫০ মিনিট</span>
+                    <span class="rr-stat-box-sub">মাসিক অগ্রগতি</span>
+                </div>
+                <div class="rr-stat-box">
+                    <span class="rr-stat-box-title">🏆 সর্বমোট পড়া</span>
+                    <span class="rr-stat-box-val" id="detailStatTotal">১৪২ ঘণ্টা ৩০ মিনিট</span>
+                    <span class="rr-stat-box-sub" id="detailStatTotalSessions">১৮৯ সেশন</span>
+                </div>
+            </div>
+
+            <!-- অংশগ্রহণকৃত সকল মডেল টেস্ট ও ফলাফল (সম্পূর্ণ পেজ স্ক্রল হবে) -->
+            <div class="rr-exam-section-card">
+                <div class="rr-section-heading">
+                    <div>
+                        <i class="fa-solid fa-stopwatch" style="color: #4F46E5; margin-right: 6px;"></i>
+                        <span>অংশগ্রহণকৃত সকল মডেল টেস্ট ও পরীক্ষার ফলাফল</span>
+                    </div>
+                    <span class="badge badge-primary" id="detailExamTotalBadge" style="font-size: 0.78rem; background: #EEF2FF; color: #4F46E5; padding: 4px 10px; border-radius: 9999px; font-weight: 700;">৬টি সম্পন্ন</span>
+                </div>
+
+                <!-- Full list of exams (Natural page scroll, NO inner scroll box) -->
+                <div class="rr-exam-full-list" id="detailExamFullList">
+                    <!-- Dynamically populated by showUserDetailView -->
+                </div>
+            </div>
+
+            <!-- Joined Date Notice -->
+            <div style="text-align: center; color: #64748B; font-size: 0.88rem; font-weight: 600; margin-bottom: 24px;">
+                <i class="fa-regular fa-calendar-check" style="margin-right: 6px; color: #16A34A;"></i>
+                ICT Easy Learning এ যোগ দিয়েছে: ৫ নভেম্বর ২০২৬
+            </div>
+
+            <!-- Bottom Return Button -->
+            <div style="text-align: center; margin-bottom: 10px;">
+                <button type="button" class="rr-detail-back-btn" onclick="hideUserDetailView()" style="padding: 10px 28px; font-size: 0.95rem;">
+                    <i class="fa-solid fa-arrow-left"></i> লিডারবোর্ডে ফিরে যান
+                </button>
+            </div>
+        </div>
+    </div><!-- End reading-room-app -->
+
+    <!-- ফুটার (ডেভেলপার ইনফো কার্ড সহ) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-developer-card">
+                <div class="developer-avatar-wrapper">
+                    <img src="../assets/images/developer.jpg" alt="Jahidul Islam Lablo" class="developer-avatar-img">
+                </div>
+                <div class="developer-info-text">
+                    <span class="developer-role">Developer &amp; Owner</span>
+                    <h4 class="developer-name">JAHIDUL ISLAM LABLO</h4>
+                    <span class="developer-degree">BSc in CSE ( Uttara University)</span>
+                    <div class="footer-copyright-text">
+                        <span class="brand-copy-name">ICT EASY LEARNING</span> &copy; 2026. সর্বস্বত্ব সংরক্ষিত।
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- মোবাইল বটম নেভিগেশন বার (সবসময় ৫টি বাটন ফিক্সড) -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>প্র্যাকটিস</span>
+        </a>
+        <a href="model-test.html" class="nav-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span>মডেল টেস্ট</span>
+        </a>
+        <a href="pdf-suggestion.html" class="nav-item">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>সাজেশন</span>
+        </a>
+        <a href="students-ranking.html" class="nav-item">
+            <i class="fa-solid fa-trophy"></i>
+            <span class="nav-label-multiline">স্টুডেন্ট<br>র‌্যাংকিং</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>প্রোফাইল</span>
+        </a>
+    </nav>
+
+    <!-- Global App Scripts -->
+    <script src="../assets/js/api.js?v=9.0"></script>
+    <script src="../assets/js/main.js?v=9.0"></script>
+
+    <!-- Reading Room Interactive Logic -->
+    <script>
+        // Bangla Digits Helper
+        function toBnDigits(num) {
+            const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return String(num).replace(/[0-9]/g, d => bn[d]);
+        }
+
+        // Mock Database of Participated Model Tests for Each Student
+        const MOCK_EXAM_RECORDS = {
+            niloy: [
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১৪', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' },
+                { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - আইসিটি রিভিশন', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-১২', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' },
+                { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল টেস্ট', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-১০', score: '২৪ / ২৫', rank: '🥈 ২য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - ঢাকা বোর্ড স্পেশাল', sub: 'বোর্ড প্রশ্ন স্ট্যান্ডার্ড · ২০২৪-১১-০৮', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' },
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০২ - কমিউনিকেশন সিস্টেমস', sub: 'অধ্যায় ০২ · ২০২৪-১১-০৫', score: '২৪ / ২৫', rank: '🥇 ১ম স্থান', pct: '৯৬% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - নটর ডেম কলেজ প্রি-টেস্ট', sub: 'শীর্ষ কলেজ টেস্ট পেপার · ২০২৪-১১-০১', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' }
+            ],
+            psycho: [
+                { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - ১ম ও ২য় অধ্যায়', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১৪', score: '২৪ / ২৫', rank: '🥈 ২য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ · ২০২৪-১১-১২', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' },
+                { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল রিভিশন', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-০৯', score: '২৪ / ২৫', rank: '🥉 ৩য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - ঢাকা বোর্ড স্পেশাল', sub: 'বোর্ড স্ট্যান্ডার্ড · ২০২৪-১১-০৬', score: '২৪ / ২৫', rank: '🥈 ২য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - ঢাকা কলেজ প্রি-টেস্ট', sub: 'শীর্ষ কলেজ প্রশ্ন · ২০২৪-১১-০২', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' }
+            ],
+            spiderman: [
+                { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল রিভিশন', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-১৩', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' },
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ · ২০২৪-১১-১১', score: '২৪ / ২৫', rank: '🥉 ৩য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - ১ম ও ২য় অধ্যায়', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-০৮', score: '২২ / ২৫', rank: '৬ষ্ঠ স্থান', pct: '৮৮% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - রাজউক উত্তরা মডেল কলেজ', sub: 'টেস্ট পেপার · ২০২৪-১১-০৩', score: '২৪ / ২৫', rank: '🥈 ২য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'লাইভ চ্যালেঞ্জ এক্সাম - ৩য় অধ্যায় সংখ্যা পদ্ধতি', sub: 'অধ্যায় ০৩ · ২০২৪-১০-২৯', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' }
+            ],
+            mow: [
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ · ২০২৪-১১-১৩', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' },
+                { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল রিভিশন', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-১০', score: '২২ / ২৫', rank: '৫ম স্থান', pct: '৮৮% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ', sub: 'শীর্ষ কলেজ · ২০২৪-১১-০৫', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' },
+                { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - রাজশাহী বোর্ড', sub: 'বোর্ড প্রশ্ন · ২০২৪-১০-৩০', score: '২১ / ২৫', rank: '৭ম স্থান', pct: '৮৪% সঠিক' }
+            ],
+            safayet: [
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ · ২০২৪-১১-১২', score: '২২ / ২৫', rank: '৫ম স্থান', pct: '৮৮% সঠিক' },
+                { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - চট্টগ্রাম বোর্ড', sub: 'বোর্ড প্রশ্ন · ২০২৪-১১-০৮', score: '২৪ / ২৫', rank: '🥈 ২য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - চট্টগ্রাম কলেজ প্রি-টেস্ট', sub: 'শীর্ষ কলেজ · ২০২৪-১১-০৪', score: '২৩ / ২৫', rank: '🥉 ৩য় স্থান', pct: '৯২% সঠিক' },
+                { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল রিভিশন', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১০-৩১', score: '২১ / ২৫', rank: '৮ম স্থান', pct: '৮৪% সঠিক' }
+            ],
+            orna: [
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ · ২০২৪-১১-১৩', score: '২১ / ২৫', rank: '৭ম স্থান', pct: '৮৪% সঠিক' },
+                { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - রাজশাহী বোর্ড স্পেশাল', sub: 'বোর্ড প্রশ্ন · ২০২৪-১১-০৯', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - বগুড়া সরকারি কলেজ প্রি-টেস্ট', sub: 'শীর্ষ কলেজ · ২০২৪-১১-০৩', score: '২৪ / ২৫', rank: '🥈 ২য় স্থান', pct: '৯৬% সঠিক' }
+            ],
+            omor: [
+                { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ · ২০২৪-১১-১৪', score: '২৪ / ২৫', rank: '🥉 ৩য় স্থান', pct: '৯৬% সঠিক' },
+                { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - ১ম ও ২য় অধ্যায়', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১১', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' },
+                { title: 'কলেজ টেস্ট স্পেশাল - কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ', sub: 'শীর্ষ কলেজ · ২০২৪-১১-০৬', score: '২৫ / ২৫', rank: '🥇 ১ম স্থান', pct: '১০০% সঠিক' },
+                { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-০১', score: '২২ / ২৫', rank: '৫ম স্থান', pct: '৮৮% সঠিক' }
+            ]
+        };
+
+        // Fallback default exams if user is not in database
+        const DEFAULT_EXAMS = [
+            { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১৪', score: '২৩ / ২৫', rank: '৩য় স্থান', pct: '৯২% সঠিক' },
+            { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - ১ম ও ২য় অধ্যায়', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১২', score: '২৪ / ২৫', rank: '২য় স্থান', pct: '৯৬% সঠিক' },
+            { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল টেস্ট', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-০৮', score: '২২ / ২৫', rank: '৫ম স্থান', pct: '৮৮% সঠিক' },
+            { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - ঢাকা বোর্ড', sub: 'বোর্ড প্রশ্ন · ২০২৪-১১-০৪', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' }
+        ];
+
+        // SHOW FULL PAGE STUDENT DETAIL VIEW
+        function showUserDetailView(name, batch, college, todayTime, todaySessions, weekTime, monthTime, totalTime, totalSessions, userKey, avatarUrl) {
+            // Update Student Profile Information
+            const avatarEl = document.getElementById('detailUserAvatar');
+            if (avatarUrl) {
+                avatarEl.src = avatarUrl;
+            } else if (name === 'Niloy') {
+                avatarEl.src = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80';
+            } else if (name.includes('Psycho')) {
+                avatarEl.src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80';
+            } else if (name.includes('Spider-man')) {
+                avatarEl.src = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80';
+            } else if (name === 'Mow') {
+                avatarEl.src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80';
+            } else if (name === 'Orna😓') {
+                avatarEl.src = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80';
+            } else if (name === 'OMOR') {
+                avatarEl.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80';
+            } else {
+                avatarEl.src = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80';
+            }
+
+            document.getElementById('detailUserName').innerText = name || 'শিক্ষার্থী';
+            document.getElementById('detailUserBatch').innerHTML = '<i class="fa-solid fa-graduation-cap"></i> ' + (batch || 'HSC 2027');
+            document.getElementById('detailUserCollege').innerHTML = '<i class="fa-solid fa-building-columns"></i> ' + (college || 'নটর ডেম কলেজ, ঢাকা');
+
+            // 4 Study Stat Cards: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া
+            document.getElementById('detailStatToday').innerText = todayTime || '২ ঘণ্টা ৩০ মিনিট';
+            document.getElementById('detailStatTodaySessions').innerText = todaySessions || '৪টি সেশন';
+            document.getElementById('detailStatWeek').innerText = weekTime || '১৪ ঘণ্টা ২০ মিনিট';
+            document.getElementById('detailStatMonth').innerText = monthTime || '৫২ ঘণ্টা ১০ মিনিট';
+            document.getElementById('detailStatTotal').innerText = totalTime || '১১৮ ঘণ্টা ৪০ মিনিট';
+            document.getElementById('detailStatTotalSessions').innerText = totalSessions || '১৫৬ সেশন';
+
+            // Populate All Participated Model Tests (Natural full page scroll)
+            const exams = (userKey && MOCK_EXAM_RECORDS[userKey.toLowerCase()]) || DEFAULT_EXAMS;
+            const listEl = document.getElementById('detailExamFullList');
+            document.getElementById('detailExamTotalBadge').innerText = toBnDigits(exams.length) + 'টি সম্পন্ন';
+
+            listEl.innerHTML = exams.map(e => \`
+                <div class="rr-exam-full-item">
+                    <div class="rr-efi-left">
+                        <h4 class="rr-efi-title">\${e.title}</h4>
+                        <span class="rr-efi-sub"><i class="fa-regular fa-clock" style="margin-right: 4px;"></i>\${e.sub}</span>
+                    </div>
+                    <div class="rr-efi-right">
+                        <span class="rr-efi-rank-pill">\${e.rank}</span>
+                        <span class="rr-efi-score">\${e.score}</span>
+                    </div>
+                </div>
+            \`).join('');
+
+            // View Transition: Hide leaderboard and display full student detail view
+            document.getElementById('reading-room-main-view').style.display = 'none';
+            document.getElementById('reading-room-user-detail-view').style.display = 'block';
+
+            // Smooth Scroll to Top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Return back to Leaderboard view
+        function hideUserDetailView() {
+            document.getElementById('reading-room-user-detail-view').style.display = 'none';
+            document.getElementById('reading-room-main-view').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Backward compatibility alias for bubble or popup clicks
+        function openUserProfileModal(name, batch, college, todayTime, todaySessions, yestTime, yestSessions, userKey) {
+            showUserDetailView(name, batch, college, todayTime, todaySessions, '১৪ ঘণ্টা ২০ মিনিট', '৫২ ঘণ্টা ১০ মিনিট', '১১৮ ঘণ্টা ৪০ মিনিট', '১৫৬ সেশন', userKey);
+        }
+
+        function closeUserProfileModal() {
+            hideUserDetailView();
+        }
+
+        // Stopwatch / Study Session Timer Logic
+        let studySeconds = 0;
+        let studyTimerInterval = null;
+        let isStudying = false;
+
+        function toggleStudySession() {
+            const btn = document.getElementById('btnToggleStudy');
+            const status = document.getElementById('studySessionStatus');
+            const target = document.getElementById('targetText');
+
+            if (!isStudying) {
+                isStudying = true;
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i> পজ করুন';
+                btn.style.background = '#FEE2E2';
+                btn.style.color = '#DC2626';
+                status.innerHTML = '🟢 স্টাডি সেশন চলমান... মনোযোগ দিয়ে পড়ুন!';
+                
+                studyTimerInterval = setInterval(() => {
+                    studySeconds++;
+                    const mins = Math.floor(studySeconds / 60);
+                    document.getElementById('displayStudyTime').innerText = toBnDigits(mins);
+
+                    const targetMinutes = 510; // 8 hr 30 min = 510 min
+                    const percent = Math.min(100, Math.round((mins / targetMinutes) * 100));
+                    target.innerHTML = \`\${toBnDigits(percent)}% · ৮ ঘণ্টা ৩০ মিনিট\`;
+                }, 1000);
+            } else {
+                isStudying = false;
+                clearInterval(studyTimerInterval);
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> পুনরায় শুরু করুন';
+                btn.style.background = '#FFFFFF';
+                btn.style.color = '#15803D';
+                const mins = Math.floor(studySeconds / 60);
+                status.innerHTML = \`সেশন সম্পন্ন! আজ মোট \${toBnDigits(mins)} মিনিট পড়েছেন।\`;
+            }
+        }
+
+        // Time Filter Tabs Switcher
+        function switchTimeFilter(btn, type) {
+            document.querySelectorAll('.rr-filter-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function switchSubTab(btn, type) {
+            document.querySelectorAll('.rr-subtab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function openChatNotice() {
+            alert('গ্রুপ স্টাডি চ্যাট রুম লোড হচ্ছে... সহপাঠীদের সাথে প্রশ্নোত্তর আলোচনা করুন!');
+        }
+
+        // Sync Logged-in User Profile Header
+        function syncLoggedInStudent() {
+            try {
+                const raw = localStorage.getItem('ict_student_user');
+                if (raw) {
+                    const u = JSON.parse(raw);
+                    if (u.name) {
+                        const nameEl = document.getElementById('siteHeaderUserName');
+                        if (nameEl) nameEl.innerText = u.name;
+                    }
+                    if (u.avatar) {
+                        const a1 = document.getElementById('siteHeaderAvatar');
+                        const a2 = document.getElementById('myHeaderAvatar');
+                        if (a1) a1.src = u.avatar;
+                        if (a2) a2.src = u.avatar;
+                    }
+                }
+            } catch(e) {}
+        }
+
+        // Dark Mode Initialization
+        (function() {
+            try {
+                if (localStorage.getItem('ict_theme') === 'dark') {
+                    document.body.classList.add('dark-mode');
+                }
+            } catch(e) {}
+            syncLoggedInStudent();
+        })();
+    </script>
+</body>
+</html>
+`;
+
+fs.writeFileSync('pages/reading-room.html', htmlContent, 'utf8');
+console.log('Successfully rebuilt pages/reading-room.html! Total length:', htmlContent.length);
