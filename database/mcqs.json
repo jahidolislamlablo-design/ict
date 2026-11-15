@@ -9346,7 +9346,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 04",
+    "modelTestNo": "Model Test 99",
     "question": "বিট সিনক্রোনাইজেশন হচ্ছে  [সকল. বো. '২৬]\ni. বিট প্রেরণের সমন্বিত পদ্ধতি\nii. বিটের শুরু এবং শেষ বুঝানো\niii. ব্যান্ডউইথ বৃদ্ধি পাওয়া\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -9358,7 +9358,11 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.809Z",
-    "liveExamNo": "Live Exam 04"
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7274",
@@ -9406,7 +9410,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 10",
+    "modelTestNo": "Model Test 99",
     "question": "ডেটা স্থানান্তর বিটের বিন্যাস ব্যবস্থা হলো-\t[কু. বো. '২৫]",
     "image": "",
     "options": [
@@ -9418,7 +9422,11 @@
     "correctAnswer": "মেথড",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:45.822Z",
-    "liveExamNo": "Live Exam 10"
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7276",
@@ -9434,7 +9442,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "ব্যান্ডউইথ কী?\t[সি. বো. '২৫]",
     "image": "",
     "options": [
@@ -9445,7 +9453,12 @@
     ],
     "correctAnswer": "ডেটা স্থানান্তরের হার",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:45.831Z"
+    "createdAt": "2026-11-03T05:41:45.831Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7277",
@@ -9955,7 +9968,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "মোবাইল যোগাযোগ\nকোন প্রজন্মের মোবাইল ফোনের সাহায্যে 4k টিভি উপভোগ করা যায়?\t[রা. বো. '২৫, '২৪]",
     "image": "",
     "options": [
@@ -9966,7 +9979,12 @@
     ],
     "correctAnswer": "৫ম",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:45.983Z"
+    "createdAt": "2026-11-03T05:41:45.983Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac728b",
@@ -10085,7 +10103,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "উদ্দীপকের উল্লিখিত মোবাইল ফোনে ব্যবহৃত প্রজন্মের বৈশিষ্ট্য হলো-\ni. প্যাকেট সুইচিং এর পরিবর্তে IP ভিত্তিক নেটওয়ার্কের ব্যবহার\nii. চলনশীল ডিভাইস এর ক্ষেত্রে ডেটা ট্রান্সফার রেট 100 Mbps\niii. MIMO স্ট্যান্ডার্ডসম্পন্ন\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -10096,7 +10114,12 @@
     ],
     "correctAnswer": "i ও ii",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.019Z"
+    "createdAt": "2026-11-03T05:41:46.019Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7290",
@@ -10111,7 +10134,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "নিচের উদ্দীপকের আলোকে ২৮ ও ২৯ নং প্রশ্নের উত্তর দাও:\n'X' কলেজটি চারতলা ভবনবিশিষ্ট। কলেজ কর্তৃপক্ষ সিদ্ধান্ত নিয়েছেন বিভিন্ন তলায় অবস্থিত তাদের সকল কম্পিউটার একটি নির্দিষ্ট নেটওয়ার্কের আওতায় আনবেন।\t[য. বো. '২৫]\nX কলেজের নেটওয়ার্কটি যে ক্যাবলের মাধ্যমে গড়ে উঠতে পারে-\ni. টুইস্টেড পেয়ার\tii. কো-এক্সিয়াল\niii. অপটিক্যাল ফাইবার\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -10122,7 +10145,12 @@
     ],
     "correctAnswer": "i ও iii",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.033Z"
+    "createdAt": "2026-11-03T05:41:46.033Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7291",
@@ -10319,7 +10347,7 @@
     "boardName": "কুমিল্লা বোর্ড, ময়মনসিংহ বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "কোনটি প্রটোকল কনভার্টার?\t[কু. বো. '২৫; ম. বো. '২৪]",
     "image": "",
     "options": [
@@ -10330,7 +10358,12 @@
     ],
     "correctAnswer": "গেটওয়ে",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.090Z"
+    "createdAt": "2026-11-03T05:41:46.090Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7299",
@@ -10345,7 +10378,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "একটি LAN এর জন্য কয়টি সুইচ প্রয়োজন?\t[চ. বো. '২৫]",
     "image": "",
     "options": [
@@ -10356,7 +10389,12 @@
     ],
     "correctAnswer": "১",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.096Z"
+    "createdAt": "2026-11-03T05:41:46.096Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac729a",
@@ -10397,7 +10435,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "সুইচের বৈশিষ্ট্য হলো-\t[কু. বো. '২৫]\ni. ডেটা ফিল্টারিং\tii. ডেটা ব্রডকাস্টিং\niii. MAC অ্যাড্রেসের ব্যবহার\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -10408,7 +10446,12 @@
     ],
     "correctAnswer": "i ও iii",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.117Z"
+    "createdAt": "2026-11-03T05:41:46.117Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac729c",
@@ -10449,7 +10492,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "উদ্দীপকে কোন ধরনের নেটওয়ার্ক টপোলজি গড়ে উঠেছে?",
     "image": "",
     "options": [
@@ -10460,7 +10503,12 @@
     ],
     "correctAnswer": "স্টার",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.131Z"
+    "createdAt": "2026-11-03T05:41:46.131Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac729e",
@@ -10501,7 +10549,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "১০টি নোডবিশিষ্ট মেশ টপোলজিতে তারের সংখ্যা হবে-\t[ব. বো. '২৫]",
     "image": "",
     "options": [
@@ -10512,7 +10560,12 @@
     ],
     "correctAnswer": "৪৫",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.144Z"
+    "createdAt": "2026-11-03T05:41:46.144Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72a0",
@@ -10735,7 +10788,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "নিচের কোনটি ওয়্যারলেস ম্যান এর উদাহরণ? [রা.বো. ২৪]",
     "image": "",
     "options": [
@@ -10746,7 +10799,12 @@
     ],
     "correctAnswer": "ওয়াইম্যাক্স",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.210Z"
+    "createdAt": "2026-11-03T05:41:46.210Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72a9",
@@ -10813,7 +10871,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "রিয়েল টাইম অ্যাপ্লিকেশনে কোন ডেটা ট্রান্সমিশন পদ্ধতির প্রচলন বেশি? [রা.বো. ২৪]",
     "image": "",
     "options": [
@@ -10824,7 +10882,12 @@
     ],
     "correctAnswer": "আইসোক্রোনাস",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.227Z"
+    "createdAt": "2026-11-03T05:41:46.227Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72ac",
@@ -10865,7 +10928,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "নেটওয়ার্ক স্থাপনে ব্যবহৃত ক্যাবলটির বৈশিষ্ট্য হলো— [রা.বো. ২৪]\ni. এতে তারের সংখ্যা মোট তিন (৩) জোড়া\nii. 100 মিটারের বেশি দূরত্বে ডেটা প্রেরণ করা যায় না\niii. ব্যান্ডউইথ 10 Mbps থেকে 1 Gbps\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -10876,7 +10939,12 @@
     ],
     "correctAnswer": "ii ও iii",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.242Z"
+    "createdAt": "2026-11-03T05:41:46.242Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72ae",
@@ -12216,7 +12284,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "ডেটা ট্রান্সমিশন ডিলে সর্বনিম্ন হয়- \t[রা.বো.'১৬]",
     "image": "",
     "options": [
@@ -12227,7 +12295,12 @@
     ],
     "correctAnswer": "আইসোক্রোানাস",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.569Z"
+    "createdAt": "2026-11-03T05:41:46.569Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72e2",
@@ -12684,7 +12757,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "ফাইবার অপটিক ক্যাবলে কোন তরঙ্গদৈঘ্যর্ ব্যবহৃত হয়?\n[ব.বো.'২৩]",
     "image": "",
     "options": [
@@ -12695,7 +12768,12 @@
     ],
     "correctAnswer": "1500 nm",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.670Z"
+    "createdAt": "2026-11-03T05:41:46.670Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72f4",
@@ -12736,7 +12814,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "পিকোনোট কোনটির সাথে সংশ্লিষ্ট? \t [ব.বো.' ২৩]",
     "image": "",
     "options": [
@@ -12747,7 +12825,12 @@
     ],
     "correctAnswer": "ব্লটুথ",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.679Z"
+    "createdAt": "2026-11-03T05:41:46.679Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72f6",
@@ -13932,7 +14015,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "ক্লাউড কম্পিউটিং এর সুফল কোনটি? \t [দি.বো.১৬]",
     "image": "",
     "options": [
@@ -13943,7 +14026,12 @@
     ],
     "correctAnswer": "সশ্রয়ী ও সহজলভ্য",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.970Z"
+    "createdAt": "2026-11-03T05:41:46.970Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7324",
@@ -14608,7 +14696,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "মিঃ আরিফের তৈরি টপোলজির বৈশিস্ট্য হলো-\ni. এটি দ্বিমূখী ডাটা ব্যবস্থা\nii. ডাটা ট্রান্সমিশন অপেক্ষাকৃত ধীরগতিসম্পন্ন\niii. শুধু প্রাপক কম্পিউটার ডাটা গ্রহণ করে এবং অন্যগুলো অগ্রাহ্য করে\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -14619,7 +14707,12 @@
     ],
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:47.403Z"
+    "createdAt": "2026-11-03T05:41:47.403Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac733e",
@@ -15180,7 +15273,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "আইসিটি বিভাগের শিক্ষক দ্রুত আদান-প্রদানের জন্য কোন ধরনের টপোলজি ব্যবহার করেছেন?",
     "image": "",
     "options": [
@@ -15191,7 +15284,12 @@
     ],
     "correctAnswer": "মেশ",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:47.722Z"
+    "createdAt": "2026-11-03T05:41:47.722Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7354",
@@ -15440,7 +15538,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "একই সময়ে যোগাযোগ করার ক্ষেত্রে তাদের যে ডিভাইস প্রয়োজন- \t[কু.বো.'১৬]\ni. মোবাইল\tii. ওয়াকি-টকি\niii. রেডিও\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -15451,7 +15549,12 @@
     ],
     "correctAnswer": "i",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:47.867Z"
+    "createdAt": "2026-11-03T05:41:47.867Z",
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac735e",
@@ -21038,7 +21141,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "মিনিট এবং ঘণ্টার হিসাব, কোণের পরিমাপ ইত্যাদি কোন সংখ্যা পদ্ধতির উদাহরণ?",
     "image": "",
     "options": [
@@ -21051,7 +21154,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc1a",
@@ -21067,7 +21174,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 03",
     "question": "সুমেরিয়ান-ব্যবিলিয়ান সংখ্যা পদ্ধতি ছিল",
     "image": "",
     "options": [
@@ -21080,7 +21187,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc1b",
@@ -21305,7 +21416,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 3"
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc23",
@@ -21375,7 +21490,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "101101 এর বাইনারি কমপ্লিমেন্ট কোনটি?",
     "image": "",
     "options": [
@@ -21388,7 +21503,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc27",
@@ -21484,7 +21603,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "FF₁₆ এর পূর্বের সংখ্যা কোনটি?",
     "image": "",
     "options": [
@@ -21497,7 +21616,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc2b",
@@ -21595,7 +21718,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 03",
     "question": "10010₂-111.11011₂= ?",
     "image": "",
     "options": [
@@ -21608,7 +21731,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc2f",
@@ -21832,7 +21959,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 3"
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc37",
@@ -21899,7 +22030,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "নিচের কোন সংখ্যা পদ্ধতিটি নন-পজিশনাল সংখ্যা পদ্ধতি?",
     "image": "",
     "options": [
@@ -21911,7 +22042,12 @@
     "correctAnswer": "রোমান",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc3a",
@@ -22471,7 +22607,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "(1101.11)₂ = (X)₁₆ হলে X এর মান কত?",
     "image": "",
     "options": [
@@ -22484,7 +22620,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc4f",
@@ -23212,7 +23352,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "হেক্সাডেসিমেল সংখ্যা ৩উ এর সমতুল্য বাইনারি মান কত হবে?",
     "image": "",
     "options": [
@@ -23224,7 +23364,12 @@
     "correctAnswer": "111101",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc6b",
@@ -23969,7 +24114,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "\"ধ\" বর্ণটির ASCII-৪ মান কোনটি?",
     "image": "",
     "options": [
@@ -23981,7 +24126,12 @@
     "correctAnswer": "01100001",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc88",
@@ -24853,7 +25003,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "২ ইঅউ.৮ঈ কোন ধরনের সংখ্যা?",
     "image": "",
     "options": [
@@ -24865,7 +25015,12 @@
     "correctAnswer": "হেক্সাডেসিমেল",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcaa",
@@ -25113,7 +25268,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "গঝই-এর পূর্ণরূপ হচ্ছেু",
     "image": "",
     "options": [
@@ -25125,7 +25280,12 @@
     "correctAnswer": "Most Significant Bit",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcb4",
@@ -25139,7 +25299,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "(১২)₁₀ এর সমকক্ষ বাইনারি কোনটি?",
     "image": "",
     "options": [
@@ -25151,7 +25311,12 @@
     "correctAnswer": "(1100)₂",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcb5",
@@ -25165,7 +25330,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "(১০০১০১.১০১০১১)₂ এর হেক্সাডেসিমেল মান কত?",
     "image": "",
     "options": [
@@ -25177,7 +25342,12 @@
     "correctAnswer": "25.AC",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcb6",
@@ -25373,7 +25543,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "(২৫)₁₀ এর ১ এর পরিপূরক মান কোনটি?",
     "image": "",
     "options": [
@@ -25385,7 +25555,12 @@
     "correctAnswer": "11100110",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcbe",
@@ -25451,7 +25626,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "ু ৫ এর ২ এর পরিপূরক মান কত?",
     "image": "",
     "options": [
@@ -25463,7 +25638,12 @@
     "correctAnswer": "1011",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcc1",
@@ -25529,7 +25709,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "নিচের কোনটি ১৬ বিটের কোড?",
     "image": "",
     "options": [
@@ -25541,7 +25721,12 @@
     "correctAnswer": "UNICODE",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcc4",
@@ -25659,7 +25844,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "কোন কোড দশমিক সংখ্যাকে বাইনারি সংখ্যায় রূপান্তর করে?",
     "image": "",
     "options": [
@@ -25671,7 +25856,12 @@
     "correctAnswer": "BCD",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcc9",
@@ -25711,7 +25901,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "অভিন্ন তথ্যভিত্তিক প্রশ্নোত্তর\nউদ্দীপকটি পড়ে ১৮০ ও ১৮১ নং প্রশ্নের উত্তর দাও:\nক্লাসে শিক্ষক আতিককে তার বয়স জিজ্ঞেস করেন। আতিক বলল, তার বয়স (১০১০০)₂।\n\nআতিকের বয়সের সমকক্ষ সংখ্যা হলো—ু",
     "image": "",
     "options": [
@@ -25723,7 +25913,12 @@
     "correctAnswer": "(24)₈",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afccb",
@@ -25971,7 +26166,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "উদ্দীপকের রোল নং এর সমকক্ষ সংখ্যা হলো—\ni. (13)₁₀ii. (11)₁₆\niii. (15)₈\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -25983,7 +26178,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcd5",
@@ -26154,7 +26354,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "কোনটি ৮ বিটের কোড?\ni. ASCll Code    ii. EBCDIC Code   iii. BCD Code\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -26166,7 +26366,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcdc",
@@ -26258,7 +26463,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 03",
     "question": "১১১ সংখ্যাটি হতে পারেুু\ni. বাইনারি  ii. অকটাল   iii. ডেসিমেল\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -26270,7 +26475,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afce0",
@@ -26416,7 +26626,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 03",
     "question": "কোন সংখ্যাটি সবচেয়ে বড়?",
     "image": "",
     "options": [
@@ -26429,7 +26639,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afce6",
@@ -26484,7 +26698,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 3"
+    "liveExamNo": "Live Exam 03",
+    "modelTestNos": [
+      "Model Test 03",
+      "Live Exam 03"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afce8",
@@ -27313,7 +27531,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "বুলিয়ান গুণ প্রকাশের ক্ষেত্রে নিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -27325,7 +27543,12 @@
     "correctAnswer": "A.A=A",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c91a",
@@ -28171,7 +28394,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "X-NOR গইেটকে NOT গইেটের মধ্যে দিয়ে প্রবাহিত করলে-",
     "image": "",
     "options": [
@@ -28183,7 +28406,12 @@
     "correctAnswer": "XOR",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c93b",
@@ -28821,7 +29049,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "bit counter গণনা করতে পারে-",
     "image": "",
     "options": [
@@ -28833,7 +29061,12 @@
     "correctAnswer": "000-111 পযর্ন্ত",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c954",
@@ -30225,7 +30458,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 99",
     "question": "Y=ABC+C+BC-এর সরলীকৃত মান কত?",
     "image": "",
     "options": [
@@ -30237,7 +30470,12 @@
     "correctAnswer": "C",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 99",
+    "modelTestNos": [
+      "Model Test 99",
+      "Live Exam 99"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c98a",
