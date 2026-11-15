@@ -21867,7 +21867,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 48",
     "question": "সিগন্যালটির সমকক্ষ বাইনারি মান কোনটি?",
     "image": "/uploads/images/mcq_ch3_signal_1.png",
     "options": [
@@ -21880,10 +21880,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -22166,7 +22168,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 48",
     "question": "101101 এর বাইনারি কমপ্লিমেন্ট কোনটি?",
     "image": "",
     "options": [
@@ -22179,10 +22181,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -22283,7 +22287,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 48",
     "question": "FF₁₆ এর পূর্বের সংখ্যা কোনটি?",
     "image": "",
     "options": [
@@ -22296,10 +22300,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -22374,7 +22380,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "১০ ভিত্তিক সংখ্যা পদ্ধতি হলো\ni. ভারতীয় সংখ্যা পদ্ধতিii. মায়ান সংখ্যা পদ্ধতি\niii. চীন সংখ্যা পদ্ধতি\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -22386,7 +22392,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc2e",
@@ -22435,7 +22446,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 48",
     "question": "4 বিটবিশিষ্ট কোড কোনটি?",
     "image": "",
     "options": [
@@ -22448,7 +22459,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc30",
@@ -22576,7 +22591,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "কোন বর্তনী বাইনারি সংখ্যা যোগ করতে পারে?",
     "image": "",
     "options": [
@@ -22589,7 +22604,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc35",
@@ -22638,7 +22657,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 48",
     "question": "একটি ডিকোডারের আউটপুট ৬৪ পেতে হলে, ইনপুট কত দিতে হবে?",
     "image": "",
     "options": [
@@ -22651,10 +22670,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -22951,7 +22972,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "রামিসার রোল (77)₈\n\nক্লাসে ICT শিক্ষক (1011.11)₂ ও (1101.10)₂ এর যোগফল নির্ণয় করতে বললেন। আরিফ (11011.11)₂ লিখল। সে কত বেশি লিখল?",
     "image": "",
     "options": [
@@ -22964,7 +22985,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc42",
@@ -23576,7 +23601,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 48",
     "question": "অকটাল সংখ্যা পদ্ধতিতে ২৭৭ এর পরের সংখ্যাটি কত?",
     "image": "",
     "options": [
@@ -23589,7 +23614,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc58",
@@ -23603,7 +23632,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "FFF₁₆ এর পরবর্তী সংখ্যা",
     "image": "",
     "options": [
@@ -23615,7 +23644,12 @@
     "correctAnswer": "1000₁₆",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc59",
@@ -23629,7 +23663,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 44",
+    "modelTestNo": "Model Test 48",
     "question": "হেক্সাডেসিমাল পদ্ধতিতে ৮, অ, ঈ, ঊ ... পরের সংখ্যা নিচের কোনটি?",
     "image": "",
     "options": [
@@ -23642,10 +23676,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 44",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 44",
-      "Live Exam 44"
+      "Live Exam 44",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -24206,7 +24242,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "3D₁₆ ও AB₁₆ এর যোগফল কত?",
     "image": "",
     "options": [
@@ -24218,7 +24254,12 @@
     "correctAnswer": "E8₁₆",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc6f",
@@ -24497,7 +24538,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "বাইনারি ১০০০১০১১ এর ২'ং পড়সঢ়ষবসবহঃ এর মান কত?",
     "image": "",
     "options": [
@@ -24509,7 +24550,12 @@
     "correctAnswer": "ু১৩৯₁₀",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc7a",
@@ -24575,7 +24621,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "17 এর 2 এর পরিপূরক গঠন কর।",
     "image": "",
     "options": [
@@ -24587,7 +24633,12 @@
     "correctAnswer": "11101111",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc7d",
@@ -26173,7 +26224,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "(৭২)₁₀ এর BCD কোড কোনটি?",
     "image": "",
     "options": [
@@ -26185,7 +26236,12 @@
     "correctAnswer": "(01110010)₂",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcb8",
@@ -26365,7 +26421,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "প্যারিটি বিটযুক্ত কোড কত বির্টের?",
     "image": "",
     "options": [
@@ -26377,7 +26433,12 @@
     "correctAnswer": "8",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcbf",
@@ -26391,7 +26452,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "দশমিক সংখ্যা ১৩ এর ২'ঝ পড়সঢ়ষবসবহঃ কত?",
     "image": "",
     "options": [
@@ -26403,7 +26464,12 @@
     "correctAnswer": "11110011",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcc0",
@@ -26701,7 +26767,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 48",
     "question": "অভিন্ন তথ্যভিত্তিক প্রশ্নোত্তর\nউদ্দীপকটি পড়ে ১৮০ ও ১৮১ নং প্রশ্নের উত্তর দাও:\nক্লাসে শিক্ষক আতিককে তার বয়স জিজ্ঞেস করেন। আতিক বলল, তার বয়স (১০১০০)₂।\n\nআতিকের বয়সের সমকক্ষ সংখ্যা হলো—ু",
     "image": "",
     "options": [
@@ -26714,10 +26780,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -26966,7 +27034,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 48",
     "question": "উদ্দীপকের রোল নং এর সমকক্ষ সংখ্যা হলো—\ni. (13)₁₀ii. (11)₁₆\niii. (15)₈\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -26979,10 +27047,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -27159,7 +27229,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 42",
+    "modelTestNo": "Model Test 48",
     "question": "কোনটি ৮ বিটের কোড?\ni. ASCll Code    ii. EBCDIC Code   iii. BCD Code\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -27172,12 +27242,14 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 42",
+    "liveExamNo": "Live Exam 48",
     "modelTestNos": [
       "Model Test 03",
       "Live Exam 03",
       "Model Test 42",
-      "Live Exam 42"
+      "Live Exam 42",
+      "Model Test 48",
+      "Live Exam 48"
     ]
   },
   {
@@ -30391,7 +30463,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "অভিন্ন তথ্যভিত্তিক বহুনির্বাচনি প্রশ্ন ও উত্তর\nসত্যক সারণিটি দেখে প্রশ্নের উত্তর দাও:\n| ইনপুট | আউটপুট |  |\n| :---: | :---: | :---: |\n| P | Q | R |\n| ০ | ০ | ০ |\n| ০ | ১ | ১ |\n| ১ | ০ | ১ |\n| ১ | ১ | ১ |\nউদ্দীপকে কোন গেইটটির আউটপুট দেওয়া আছে?",
     "image": "",
     "options": [
@@ -30403,7 +30475,12 @@
     "correctAnswer": "OR",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.491Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c968",
@@ -35102,7 +35179,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 48",
     "question": "নিচের উদ্দীপকটি লক্ষ্য কর এবং   প্রশ্নের উত্তর দাও:\nউদ্দীপকে Y এর মান কত?",
     "image": "/uploads/images/mcq_ch3_p2_image41.png",
     "options": [
@@ -35114,7 +35191,12 @@
     "correctAnswer": "A̅",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.492Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 48",
+    "modelTestNos": [
+      "Model Test 48",
+      "Live Exam 48"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0ca1d",
