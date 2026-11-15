@@ -2870,6 +2870,24 @@ app.post('/api/profile', async (req, res) => {
   }
 });
 
+// হেল্পার: বাংলা ও ইংরেজি ডিজিট এবং ফোন নম্বর স্বাভাবিকীকরণ
+function normalizeBanglaDigitsServer(str) {
+  if (!str && str !== 0) return '';
+  const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+  return String(str).replace(/[০-৯]/g, d => bn.indexOf(d)).trim();
+}
+
+function normalizePhoneOrEmail(str) {
+  if (!str) return '';
+  let s = normalizeBanglaDigitsServer(str).trim();
+  if (s.includes('@')) {
+    return s.toLowerCase();
+  }
+  s = s.replace(/[\s\-\(\)\+]/g, '');
+  if (s.startsWith('880')) s = s.slice(2);
+  return s;
+}
+
 // ৫. ইউজার রেজিস্ট্রেশন ও অথেনটিকেশন (User Registration)
 app.post('/api/auth/register', async (req, res) => {
   try {
@@ -2885,15 +2903,22 @@ app.post('/api/auth/register', async (req, res) => {
       return res.status(400).json({ success: false, message: 'পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে!' });
     }
 
-    const cleanEmailOrNumber = emailOrNumber.trim();
+    const cleanInput = emailOrNumber.trim();
+    const normEmailOrNumber = normalizePhoneOrEmail(cleanInput);
+    const cleanPass = normalizeBanglaDigitsServer(password.trim());
     const cleanName = name.trim();
     const cleanCollege = (college || 'এইচএসসি পরীক্ষার্থী').trim();
     const cleanHscYear = (hscYear || 'HSC 2026').trim();
     const cleanAvatar = avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80';
 
     if (mongoose.connection.readyState === 1) {
-      // চেক করি এই emailOrNumber ইতিমধ্যে আছে কিনা
-      const existing = await Student.findOne({ emailOrNumber: cleanEmailOrNumber });
+      // চেক করি এই emailOrNumber ইতিমধ্যে আছে কিনা (exact বা normalized)
+      const existing = await Student.findOne({
+        $or: [
+          { emailOrNumber: cleanInput },
+          { emailOrNumber: normEmailOrNumber }
+        ]
+      });
       if (existing) {
         return res.status(400).json({
           success: false,
@@ -2907,8 +2932,8 @@ app.post('/api/auth/register', async (req, res) => {
       // নতুন স্টুডেন্ট তৈরি
       const newStudent = new Student({
         name: cleanName,
-        emailOrNumber: cleanEmailOrNumber,
-        password: password.trim(),
+        emailOrNumber: normEmailOrNumber,
+        password: cleanPass,
         college: cleanCollege,
         hscYear: cleanHscYear,
         avatar: cleanAvatar,
@@ -2941,7 +2966,10 @@ app.post('/api/auth/register', async (req, res) => {
       if (fs.existsSync(fallbackPath)) {
         list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
       }
-      const existing = list.find(s => s.emailOrNumber === cleanEmailOrNumber);
+      const existing = list.find(s => {
+        const sNorm = normalizePhoneOrEmail(s.emailOrNumber || s.email || '');
+        return sNorm === normEmailOrNumber || s.emailOrNumber === cleanInput;
+      });
       if (existing) {
         return res.status(400).json({
           success: false,
@@ -2952,8 +2980,8 @@ app.post('/api/auth/register', async (req, res) => {
       const newStudent = {
         _id: 'user_' + Date.now(),
         name: cleanName,
-        emailOrNumber: cleanEmailOrNumber,
-        password: password.trim(),
+        emailOrNumber: normEmailOrNumber,
+        password: cleanPass,
         college: cleanCollege,
         hscYear: cleanHscYear,
         avatar: cleanAvatar,
@@ -2989,17 +3017,38 @@ app.post('/api/auth/login', async (req, res) => {
     }
 
     const cleanInput = emailOrNumber.trim();
+    const normInput = normalizePhoneOrEmail(cleanInput);
     const cleanPass = password.trim();
+    const normPass = normalizeBanglaDigitsServer(cleanPass);
 
     let student = null;
     if (mongoose.connection.readyState === 1) {
-      student = await Student.findOne({ emailOrNumber: cleanInput });
+      student = await Student.findOne({
+        $or: [
+          { emailOrNumber: cleanInput },
+          { emailOrNumber: normInput },
+          { email: cleanInput },
+          { email: normInput }
+        ]
+      });
+
+      // If not found yet and it looks like a phone number, try suffix search
+      if (!student && /^\d{10,11}$/.test(normInput)) {
+        const last10 = normInput.slice(-10);
+        student = await Student.findOne({
+          emailOrNumber: { $regex: new RegExp(last10 + '$') }
+        });
+      }
     }
     if (!student) {
       const fallbackPath = path.join(__dirname, 'database', 'students.json');
       if (fs.existsSync(fallbackPath)) {
         const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-        student = list.find(s => s.emailOrNumber === cleanInput);
+        student = list.find(s => {
+          const sNorm = normalizePhoneOrEmail(s.emailOrNumber || s.email || '');
+          if (sNorm && (sNorm === normInput || (normInput.length >= 10 && sNorm.endsWith(normInput.slice(-10))))) return true;
+          return (s.emailOrNumber === cleanInput || s.email === cleanInput);
+        });
       }
     }
 
@@ -3010,7 +3059,8 @@ app.post('/api/auth/login', async (req, res) => {
       });
     }
 
-    if (student.password !== cleanPass) {
+    const studentPassNorm = normalizeBanglaDigitsServer(student.password || '');
+    if (student.password !== cleanPass && studentPassNorm !== normPass) {
       return res.status(400).json({
         success: false,
         message: 'ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা পাসওয়ার্ড রিসেট করুন।'
@@ -3027,7 +3077,7 @@ app.post('/api/auth/login', async (req, res) => {
       const fallbackPath = path.join(__dirname, 'database', 'students.json');
       if (fs.existsSync(fallbackPath)) {
         const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-        list.forEach(s => s.isCurrentUser = (s.emailOrNumber === cleanInput));
+        list.forEach(s => s.isCurrentUser = (s._id === student._id || s.emailOrNumber === student.emailOrNumber));
         fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
       }
     }
@@ -3048,7 +3098,7 @@ app.post('/api/auth/login', async (req, res) => {
       }
     });
   } catch (err) {
-    res.status(500).json({ success: false, message: 'লগইন ব্যর্থ হয়েছে: ' + err.message });
+    res.status(500).json({ success: false, message: 'লগইন ত্রুটি: ' + err.message });
   }
 });
 

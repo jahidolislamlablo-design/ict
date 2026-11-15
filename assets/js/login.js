@@ -84,10 +84,18 @@ function redirectToHome() {
 }
 window.redirectToHome = redirectToHome;
 
+let authAlertTimer = null;
+
 /**
  * লগইন/ক্রিয়েট একাউন্ট বাটনের ঠিক উপরে এরর বা স্বাগত মেসেজ প্রদর্শনকারী হেল্পার
+ * (ইউজার রিকোয়ারমেন্ট অনুযায়ী ৫ সেকেন্ড পর স্বয়ংক্রিয়ভাবে মুছে যাবে)
  */
 function setAuthAlert(message, type = 'error', viewId = null) {
+    if (authAlertTimer) {
+        clearTimeout(authAlertTimer);
+        authAlertTimer = null;
+    }
+
     let targetAlert = null;
     if (viewId === 'signup' || (!viewId && document.getElementById('signupView')?.classList.contains('active'))) {
         targetAlert = document.getElementById('signupAuthAlert');
@@ -120,8 +128,13 @@ function setAuthAlert(message, type = 'error', viewId = null) {
     targetAlert.innerHTML = `${icon}<span>${message}</span>`;
     targetAlert.style.display = 'flex';
 
-    // ব্যবহারকারীর দৃষ্টি আকর্ষণের জন্য সুন্দর স্মুথ স্ক্রোল (যদি ভিউ ছোট থাকে)
+    // ব্যবহারকারীর দৃষ্টি আকর্ষণের জন্য সুন্দর স্মুথ স্ক্রোল
     targetAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // ৫ সেকেন্ড পর স্বয়ংক্রিয়ভাবে মেসেজ চলে যাবে (Auto dismiss after 5s)
+    authAlertTimer = setTimeout(() => {
+        clearAuthAlerts();
+    }, 5000);
 }
 window.setAuthAlert = setAuthAlert;
 
@@ -355,12 +368,17 @@ async function handleCreateAccount(e) {
     const defaultAvatar = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80';
     const finalAvatar = uploadedAvatarDataUrl || defaultAvatar;
 
+    const normEmailOrNumber = emailOrNumber.includes('@') 
+        ? emailOrNumber.toLowerCase().trim() 
+        : normalizeBanglaDigits(emailOrNumber).replace(/[\s\-\(\)\+]/g, '').replace(/^880/, '0');
+    const normPass = normalizeBanglaDigits(password);
+
     const payload = {
         name: fullName,
-        emailOrNumber: emailOrNumber,
+        emailOrNumber: normEmailOrNumber,
         college: collegeName || 'এইচএসসি পরীক্ষার্থী',
         hscYear: hscYear || 'HSC 2026',
-        password: password,
+        password: normPass,
         avatar: finalAvatar
     };
 
@@ -508,6 +526,11 @@ async function handleLogin(e) {
     let loggedInUser = null;
     const baseUrl = getAuthApiBaseUrl();
 
+    const normInput = emailOrNumber.includes('@') 
+        ? emailOrNumber.toLowerCase().trim() 
+        : normalizeBanglaDigits(emailOrNumber).replace(/[\s\-\(\)\+]/g, '').replace(/^880/, '0');
+    const normPass = normalizeBanglaDigits(password);
+
     // ১. ব্যাকএন্ডের মাধ্যমে অথেনটিকেশন যাচাইকরণ
     try {
         const controller = new AbortController();
@@ -516,7 +539,7 @@ async function handleLogin(e) {
         const response = await fetch(`${baseUrl}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ emailOrNumber, password }),
+            body: JSON.stringify({ emailOrNumber: normInput, password: normPass }),
             signal: controller.signal
         });
         clearTimeout(timeoutId);
@@ -865,7 +888,7 @@ function showToast(message, type = 'info') {
     window.authToastTimeout = setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transform = 'translateX(-50%) translateY(-15px)';
-    }, 3200);
+    }, 5000);
 }
 
 /**

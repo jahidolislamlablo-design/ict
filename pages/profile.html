@@ -7,7 +7,7 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=5.3">
+    <link rel="stylesheet" href="../assets/css/style.css?v=7.0">
     <link rel="stylesheet" href="../assets/css/profile.css?v=4.7">
 </head>
 <body>
@@ -94,6 +94,26 @@
                         <button class="btn btn-sm" onclick="confirmLogout()" style="background: #FEE2E2; color: #DC2626; border: 1px solid #FCA5A5;">
                             <i class="fa-solid fa-right-from-bracket"></i> লগ আউট
                         </button>
+                    </div>
+
+                    <!-- ডার্ক ও লাইট মোড সোয়াপ বাটন (Dark/Light Mode Switcher) -->
+                    <div class="theme-swap-card" style="margin-top: 18px;">
+                        <div class="theme-swap-left">
+                            <div class="theme-swap-icon" id="themeStatusIcon">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                            <div class="theme-swap-text">
+                                <div class="theme-swap-title">স্ক্রিন মোড (থিম)</div>
+                                <div class="theme-swap-status" id="themeStatusText">লাইট মোড সক্রিয়</div>
+                            </div>
+                        </div>
+                        <label class="theme-switch-slider" title="ডার্ক ও লাইট মোড পরিবর্তন করুন">
+                            <input type="checkbox" id="themeToggleCheckbox" onchange="toggleScreenTheme(this.checked)">
+                            <span class="theme-slider-thumb">
+                                <i class="fa-solid fa-sun icon-sun"></i>
+                                <i class="fa-solid fa-moon icon-moon"></i>
+                            </span>
+                        </label>
                     </div>
                 </div>
 
@@ -396,8 +416,8 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="../assets/js/api.js?v=5.3"></script>
-    <script src="../assets/js/main.js?v=5.3"></script>
-    <script src="../assets/js/profile.js?v=4.7"></script>
+    <script src="../assets/js/api.js?v=7.0"></script>
+    <script src="../assets/js/main.js?v=7.0"></script>
+    <script src="../assets/js/profile.js?v=7.0"></script>
 </body>
 </html>

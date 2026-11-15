@@ -7,7 +7,7 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Universal Design System -->
-    <link rel="stylesheet" href="assets/css/style.css?v=5.3">
+    <link rel="stylesheet" href="assets/css/style.css?v=7.0">
     <style>
         /* Hero Automatic Image Slider Styles */
         .hero-slider-wrapper {
@@ -959,12 +959,36 @@
             </div>
 
             <!-- বিশেষ ফিচার কার্ড: ফেভারিট প্রশ্ন ও কোড কম্পাইলার (Test Paper ও PDF Suggestions এর নিচে) -->
-            <div class="special-tools-grid">
-                <!-- ফেভারিট প্রশ্ন -->
+            <div class="special-tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+                <!-- ১. ফেভারিট প্রশ্ন -->
                 <a href="pages/favorite-question.html" class="feature-box fav-feature">
-                    <div class="feature-icon-wrapper">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-star"></i></div>
+                    <h3>Favorite Question</h3>
+                    <p>অধ্যায়, কলেজ, বোর্ড ও মডেল টেস্টের প্রিয় প্রশ্নগুলো একসাথে</p>
+                    <span class="feature-badge"><i class="fa-solid fa-bookmark"></i> বুকমার্ককৃত</span>
+                </a>
+                <!-- ২. মডেল টেস্ট -->
+                <a href="pages/model-test.html" class="feature-box model-feature" style="border-color: #FECDD3;">
+                    <div class="feature-icon-wrapper" style="background: #FFF1F2; color: #E11D48;"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h3>Model Test</h3>
+                    <p>পূর্ণাঙ্গ ও অধ্যায়ভিত্তিক রিয়েল-টাইম টাইমারযুক্ত লাইভ এক্সাম</p>
+                    <span class="feature-badge" style="color: #E11D48; background: #FFF1F2;"><i class="fa-solid fa-play"></i> মডেল টেস্ট দিন</span>
+                </a>
+                <!-- ৩. রিডিং রুম -->
+                <a href="pages/reading-room.html" class="feature-box reading-feature" style="border-color: #BBF7D0;">
+                    <div class="feature-icon-wrapper" style="background: #F0FDF4; color: #16A34A;"><i class="fa-solid fa-users"></i></div>
+                    <h3>Reading Room</h3>
+                    <p>অনলাইন স্টাডি গ্রুপ, লাইভ পড়াশোনার টাইমার ও লিডারবোর্ড</p>
+                    <span class="feature-badge" style="color: #16A34A; background: #F0FDF4;"><i class="fa-solid fa-book-open-reader"></i> রিডিং রুমে যান</span>
+                </a>
+                <!-- ৪. কোড কম্পাইলার -->
+                <a href="pages/compiler.html" class="feature-box compiler-feature">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-code"></i></div>
+                    <h3>Code Compiler</h3>
+                    <p>HTML, CSS, JS, Python ও C প্রোগ্রামিং লাইভ কোড ও রান করুন</p>
+                    <span class="feature-badge"><i class="fa-solid fa-play"></i> লাইভ কোডিং</span>
+                </a>
+            </div>
                     <h3>Favorite Question</h3>
                     <p>অধ্যায়, বোর্ড, কলেজ ও মডেল টেস্টের প্রিয় সংরক্ষিত প্রশ্নাবলি</p>
                     <span class="feature-badge"><i class="fa-solid fa-bookmark"></i> ৪টি ক্যাটাগরি</span>
@@ -1026,7 +1050,7 @@
     </nav>
 
     <!-- স্ক্রিপ্টস -->
-    <script src="assets/js/api.js?v=5.3"></script>
-    <script src="assets/js/main.js?v=5.3"></script>
+    <script src="assets/js/api.js?v=7.0"></script>
+    <script src="assets/js/main.js?v=7.0"></script>
 </body>
 </html>

@@ -372,3 +372,43 @@ function confirmLogout() {
     }
 }
 window.confirmLogout = confirmLogout;
+
+
+// ==========================================
+// ডার্ক / লাইট মোড নিয়ন্ত্রণ (Theme Switcher)
+// ==========================================
+function initThemeMode() {
+    const savedTheme = localStorage.getItem('ict_theme') || 'light';
+    const isDark = savedTheme === 'dark';
+    applyThemeMode(isDark);
+    
+    const checkbox = document.getElementById('themeToggleCheckbox');
+    if (checkbox) checkbox.checked = isDark;
+}
+
+function toggleScreenTheme(isDark) {
+    applyThemeMode(isDark);
+    localStorage.setItem('ict_theme', isDark ? 'dark' : 'light');
+}
+window.toggleScreenTheme = toggleScreenTheme;
+
+function applyThemeMode(isDark) {
+    const icon = document.getElementById('themeStatusIcon');
+    const statusText = document.getElementById('themeStatusText');
+    const checkbox = document.getElementById('themeToggleCheckbox');
+
+    if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.body.classList.add('dark-mode');
+        if (icon) icon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        if (statusText) statusText.textContent = 'ডার্ক মোড সক্রিয়';
+        if (checkbox) checkbox.checked = true;
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        document.body.classList.remove('dark-mode');
+        if (icon) icon.innerHTML = '<i class="fa-solid fa-sun" style="color: #F59E0B;"></i>';
+        if (statusText) statusText.textContent = 'লাইট মোড সক্রিয়';
+        if (checkbox) checkbox.checked = false;
+    }
+}
+window.applyThemeMode = applyThemeMode;

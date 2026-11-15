@@ -181,7 +181,10 @@ async function loadCollegeMCQQuestions() {
                 ? renderModernMCQCardHTML(q, idx, { mode: 'study' }) 
                 : renderMCQCardHTML(q, idx);
         });
-        container.innerHTML = html;
+        let readCount = 0;
+        questions.forEach((q, idx) => { const qId = q.id ? String(q.id) : generateMCQUniqueId(q, idx); if (typeof isQuestionRead === 'function' && isQuestionRead(qId)) readCount++; });
+        const circHtml = (typeof buildCircularProgressHTML === 'function') ? buildCircularProgressHTML(questions.length, readCount, selectedCollege || 'শীর্ষস্থানীয় কলেজ / টেস্ট পেপার') : '';
+        container.innerHTML = circHtml + html;
 
     } catch (err) {
         console.error("Failed to load college MCQ:", err);

@@ -186,7 +186,10 @@ async function loadBoardMCQQuestions() {
                 ? renderModernMCQCardHTML(q, idx, { mode: 'study' }) 
                 : renderMCQCardHTML(q, idx);
         });
-        listContainer.innerHTML = html;
+        let readCount = 0;
+        questions.forEach((q, idx) => { const qId = q.id ? String(q.id) : generateMCQUniqueId(q, idx); if (typeof isQuestionRead === 'function' && isQuestionRead(qId)) readCount++; });
+        const circHtml = (typeof buildCircularProgressHTML === 'function') ? buildCircularProgressHTML(questions.length, readCount, (selectedBoard || 'বোর্ড প্রশ্ন') + ' (' + (selectedYear || '') + ')') : '';
+        listContainer.innerHTML = circHtml + html;
 
     } catch (err) {
         console.error("Failed to load board MCQ:", err);

@@ -82,7 +82,10 @@ async function loadDesktopChapterMCQs() {
         questions.forEach((q, idx) => {
             html += renderMCQCardHTML(q, idx);
         });
-        container.innerHTML = html;
+        let readCount = 0;
+        questions.forEach((q, idx) => { const qId = q.id ? String(q.id) : generateMCQUniqueId(q, idx); if (typeof isQuestionRead === 'function' && isQuestionRead(qId)) readCount++; });
+        const circHtml = (typeof buildCircularProgressHTML === 'function') ? buildCircularProgressHTML(questions.length, readCount, activeChapter || 'অধ্যায় প্রস্তুতি') : '';
+        container.innerHTML = circHtml + html;
     } catch(e) {
         container.innerHTML = '<div style="text-align:center; color:red; padding:30px;">প্রশ্ন লোড করতে সমস্যা হয়েছে</div>';
     }
@@ -105,7 +108,10 @@ async function loadDesktopChapterCQs() {
         questions.forEach((q, idx) => {
             html += renderCQCardHTML(q, idx);
         });
-        container.innerHTML = html;
+        let readCount = 0;
+        questions.forEach((q, idx) => { const qId = q.id ? String(q.id) : generateMCQUniqueId(q, idx); if (typeof isQuestionRead === 'function' && isQuestionRead(qId)) readCount++; });
+        const circHtml = (typeof buildCircularProgressHTML === 'function') ? buildCircularProgressHTML(questions.length, readCount, activeChapter || 'অধ্যায় প্রস্তুতি') : '';
+        container.innerHTML = circHtml + html;
     } catch(e) {
         container.innerHTML = '<div style="text-align:center; color:red; padding:30px;">সৃজনশীল প্রশ্ন লোড করতে সমস্যা হয়েছে</div>';
     }

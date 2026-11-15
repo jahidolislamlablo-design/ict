@@ -1,3 +1,15 @@
+
+// ict_theme_global_init
+(function() {
+    try {
+        if (localStorage.getItem('ict_theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (document.body) document.body.classList.add('dark-mode');
+            else document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
+        }
+    } catch(e) {}
+})();
+
 /**
  * ICT EASY LEARNING - API & DATA SERVICE
  * Node.js Express & MongoDB Backend Integration
@@ -2342,12 +2354,19 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     `;
 
     const cardId = (mode === 'exam') ? `model-mcq-card-${index}` : `modern-mcq-card-${index}`;
+    const isRead = isQuestionRead(qId);
 
     return `
-        <div class="modern-quiz-card" id="${cardId}" data-q-index="${index}" data-correct-index="${correctIndex}" data-q-id="${qId}">
+        <div class="modern-quiz-card ${isRead ? 'is-read-question' : ''}" id="${cardId}" data-q-index="${index}" data-correct-index="${correctIndex}" data-q-id="${qId}">
             ${contextHtml}
-            <div class="modern-quiz-header">
+            <div class="modern-quiz-header" onclick="toggleQuestionRead('${qId}', '${cardId}')" style="cursor: pointer;" title="ক্লিক করে পড়া সম্পন্ন চিহ্নিত করুন">
                 <h3 class="modern-q-title">${qNum}. ${formatModernMCQContent(qText)}</h3>
+                <div class="mcq-read-toggle-box" onclick="event.stopPropagation(); toggleQuestionRead('${qId}', '${cardId}')" title="পড়া সম্পন্ন হিসেবে চিহ্নিত করুন">
+                    <span class="mcq-read-label">${isRead ? 'পড়া সম্পন্ন' : 'পড়া হয়েছে'}</span>
+                    <div class="mcq-read-checkbox ${isRead ? 'checked' : ''}">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </div>
             </div>
             ${imageHtml}
             <div class="modern-options-list">
@@ -3023,3 +3042,144 @@ function getFavoriteQuestionsByCategory(cat) {
 window.saveQuestionToFavorites = saveQuestionToFavorites;
 window.removeQuestionFromFavorites = removeQuestionFromFavorites;
 window.getFavoriteQuestionsByCategory = getFavoriteQuestionsByCategory;
+
+
+// =========================================================================
+// READ QUESTION TRACKING & CIRCULAR PROGRESS WIDGET
+// =========================================================================
+function getReadQuestionsSet() {
+    try {
+        const raw = localStorage.getItem('ict_read_mcqs_v2');
+        if (raw) return new Set(JSON.parse(raw));
+    } catch(e) {}
+    return new Set();
+}
+
+function isQuestionRead(qId) {
+    if (!qId) return false;
+    const set = getReadQuestionsSet();
+    return set.has(String(qId));
+}
+window.isQuestionRead = isQuestionRead;
+
+function toggleQuestionRead(qId, cardId) {
+    if (!qId) return;
+    const strId = String(qId);
+    const set = getReadQuestionsSet();
+    const isCurrentlyRead = set.has(strId);
+
+    if (isCurrentlyRead) {
+        set.delete(strId);
+    } else {
+        set.add(strId);
+    }
+
+    try {
+        localStorage.setItem('ict_read_mcqs_v2', JSON.stringify(Array.from(set)));
+    } catch(e) {}
+
+    // Update DOM card appearance
+    const card = document.getElementById(cardId) || document.querySelector(`[data-q-id="${strId}"]`);
+    if (card) {
+        const isRead = !isCurrentlyRead;
+        if (isRead) {
+            card.classList.add('is-read-question');
+        } else {
+            card.classList.remove('is-read-question');
+        }
+
+        const checkbox = card.querySelector('.mcq-read-checkbox');
+        if (checkbox) {
+            if (isRead) checkbox.classList.add('checked');
+            else checkbox.classList.remove('checked');
+        }
+
+        const label = card.querySelector('.mcq-read-label');
+        if (label) {
+            label.textContent = isRead ? 'পড়া সম্পন্ন' : 'পড়া হয়েছে';
+        }
+    }
+
+    // Refresh circular chart
+    updateActiveCircularChart();
+}
+window.toggleQuestionRead = toggleQuestionRead;
+
+function buildCircularProgressHTML(totalCount, readCount, title = 'পড়ার অগ্রগতি') {
+    const total = Math.max(1, totalCount || 0);
+    const read = Math.min(total, Math.max(0, readCount || 0));
+    const remaining = Math.max(0, total - read);
+    const pct = Math.round((read / total) * 100);
+
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius; // ~282.74
+    const offset = circumference - (pct / 100) * circumference;
+
+    return `
+        <div class="circular-progress-widget" id="activeCircularProgressWidget" data-total="${total}">
+            <div class="circ-chart-wrap">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="${radius}" stroke="#E2E8F0" stroke-width="8" fill="none"></circle>
+                    <circle id="circProgressStroke" cx="50" cy="50" r="${radius}" stroke="#2563EB" stroke-width="8" stroke-linecap="round" fill="none"
+                        stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition: stroke-dashoffset 0.5s ease;"></circle>
+                </svg>
+                <div class="circ-center-info">
+                    <div class="circ-center-count" id="circCountDisplay">${toBanglaNum(read)}/${toBanglaNum(total)}</div>
+                    <div class="circ-center-pct" id="circPctDisplay">${toBanglaNum(pct)}% সম্পন্ন</div>
+                </div>
+            </div>
+            <div class="circ-stats-side">
+                <div class="circ-stats-title"><i class="fa-solid fa-chart-pie" style="color: #2563EB; margin-right: 6px;"></i> ${title}</div>
+                <div class="circ-stats-item">
+                    <span><i class="fa-solid fa-circle-check" style="color: #10B981; margin-right: 6px;"></i> পড়া হয়েছে:</span>
+                    <strong id="circReadStat" style="color: #10B981;">${toBanglaNum(read)} টি (${toBanglaNum(pct)}%)</strong>
+                </div>
+                <div class="circ-stats-item">
+                    <span><i class="fa-regular fa-circle" style="color: #94A3B8; margin-right: 6px;"></i> বাকি আছে:</span>
+                    <strong id="circRemStat" style="color: #64748B;">${toBanglaNum(remaining)} টি (${toBanglaNum(100 - pct)}%)</strong>
+                </div>
+            </div>
+        </div>
+    `;
+}
+window.buildCircularProgressHTML = buildCircularProgressHTML;
+
+function updateActiveCircularChart() {
+    const widget = document.getElementById('activeCircularProgressWidget');
+    if (!widget) return;
+
+    // Count how many questions on page are currently read
+    const allCards = document.querySelectorAll('.modern-quiz-card');
+    if (!allCards || allCards.length === 0) return;
+
+    let total = allCards.length;
+    let read = 0;
+    allCards.forEach(card => {
+        const qId = card.getAttribute('data-q-id');
+        if (qId && isQuestionRead(qId)) read++;
+        else if (card.classList.contains('is-read-question')) read++;
+    });
+
+    const remaining = total - read;
+    const pct = Math.round((read / total) * 100);
+
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (pct / 100) * circumference;
+
+    const stroke = document.getElementById('circProgressStroke');
+    if (stroke) stroke.style.strokeDashoffset = offset;
+
+    const countDisp = document.getElementById('circCountDisplay');
+    if (countDisp) countDisp.textContent = `${toBanglaNum(read)}/${toBanglaNum(total)}`;
+
+    const pctDisp = document.getElementById('circPctDisplay');
+    if (pctDisp) pctDisp.textContent = `${toBanglaNum(pct)}% সম্পন্ন`;
+
+    const readStat = document.getElementById('circReadStat');
+    if (readStat) readStat.textContent = `${toBanglaNum(read)} টি (${toBanglaNum(pct)}%)`;
+
+    const remStat = document.getElementById('circRemStat');
+    if (remStat) remStat.textContent = `${toBanglaNum(remaining)} টি (${toBanglaNum(100 - pct)}%)`;
+}
+window.updateActiveCircularChart = updateActiveCircularChart;

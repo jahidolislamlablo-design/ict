@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>রিডিং রুম (Reading Room) | ICT Easy Learning</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Global Style -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=7.0">
+    <style>
+        :root {
+            --rr-green: #15803D;
+            --rr-green-light: #22C55E;
+            --rr-bg: #F8FAFC;
+        }
+
+        body {
+            background-color: var(--rr-bg);
+            font-family: 'Hind Siliguri', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #1E293B;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .reading-room-app {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: #FFFFFF;
+            box-shadow: 0 0 35px rgba(0,0,0,0.06);
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        /* Top Nav Header */
+        .rr-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .rr-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rr-back-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F1F5F9;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #475569;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .rr-back-btn:hover {
+            background: #E2E8F0;
+            color: #0F172A;
+        }
+
+        .rr-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        .rr-live-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FEE2E2;
+            color: #EF4444;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .rr-live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #EF4444;
+            display: inline-block;
+            animation: pulseDot 1.5s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
+        .rr-header-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .rr-header-icon {
+            position: relative;
+            font-size: 1.25rem;
+            color: #475569;
+            cursor: pointer;
+        }
+
+        .rr-badge-count {
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            background: #EF4444;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 1px 5px;
+            border-radius: 999px;
+            border: 2px solid white;
+        }
+
+        .rr-header-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #E2E8F0;
+            border: 2px solid #22C55E;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* Hero Banner Card (Green) */
+        .rr-hero-banner {
+            margin: 0 16px 20px 16px;
+            background: linear-gradient(135deg, #15803D 0%, #16A34A 100%);
+            border-radius: 24px;
+            padding: 24px 20px 18px 20px;
+            color: #FFFFFF;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
+        }
+
+        .rr-hero-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .rr-hero-subtag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .rr-target-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .rr-timer-big {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 8px 0 6px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .rr-timer-unit {
+            font-size: 1.25rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .rr-hero-desc {
+            font-size: 0.95rem;
+            opacity: 0.88;
+            margin-bottom: 20px;
+        }
+
+        /* Timer control button inside hero */
+        .rr-timer-action-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .rr-btn-timer {
+            background: #FFFFFF;
+            color: #15803D;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+
+        .rr-btn-timer:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Timeline segmented ticks */
+        .rr-timeline-bar {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 8px;
+        }
+
+        .rr-timeline-segment {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 3px;
+        }
+
+        .rr-timeline-segment.active {
+            background: #FACC15;
+        }
+
+        .rr-timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            opacity: 0.85;
+        }
+
+        /* Carousel indicator dots */
+        .rr-dots-row {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        .rr-dot {
+            width: 20px;
+            height: 5px;
+            border-radius: 4px;
+            background: #E2E8F0;
+        }
+
+        .rr-dot.active {
+            background: #16A34A;
+        }
+
+        /* Active Reading Users Horizontal Section */
+        .rr-active-users-section {
+            padding: 10px 16px 18px 16px;
+        }
+
+        .rr-section-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rr-avatars-scroll {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .rr-avatars-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .rr-user-bubble {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            flex-shrink: 0;
+            width: 64px;
+        }
+
+        .rr-bubble-ring {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #EF4444 0%, #F97316 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.25);
+            transition: transform 0.2s;
+        }
+
+        .rr-bubble-ring:hover {
+            transform: scale(1.06);
+        }
+
+        .rr-bubble-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #FFFFFF;
+        }
+
+        .rr-bubble-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 64px;
+            text-align: center;
+        }
+
+        /* Filter Pill Tabs */
+        .rr-filters-row {
+            display: flex;
+            background: #F1F5F9;
+            padding: 4px;
+            border-radius: 999px;
+            margin: 0 16px 14px 16px;
+        }
+
+        .rr-filter-tab {
+            flex: 1;
+            padding: 8px 12px;
+            text-align: center;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #64748B;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rr-filter-tab.active {
+            background: #15803D;
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3);
+        }
+
+        /* Subheader */
+        .rr-subtab-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        .rr-subtabs-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .rr-subtab-btn {
+            background: #F1F5F9;
+            color: #475569;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .rr-subtab-btn.active {
+            background: #FFFFFF;
+            color: #15803D;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            border: 1px solid #E2E8F0;
+        }
+
+        .rr-position-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #64748B;
+        }
+
+        /* Leaderboard Items */
+        .rr-ranking-list {
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rr-rank-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FFF7ED;
+            border: 1px solid #FED7AA;
+            border-radius: 18px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rr-rank-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(249, 115, 22, 0.1);
+        }
+
+        .rr-rank-card:nth-child(even) {
+            background: #FFFFFF;
+            border-color: #F1F5F9;
+        }
+
+        .rr-rank-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rr-medal {
+            font-size: 1.4rem;
+            width: 28px;
+            text-align: center;
+        }
+
+        .rr-user-avatar-wrap {
+            position: relative;
+            width: 44px;
+            height: 44px;
+        }
+
+        .rr-user-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #F97316;
+        }
+
+        .rr-user-avatar-wrap .live-indicator {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #EF4444;
+            border: 2px solid white;
+        }
+
+        .rr-user-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .rr-name-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #1E293B;
+        }
+
+        .rr-name-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #EF4444;
+        }
+
+        .rr-tags-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rr-tag-pill {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            padding: 1px 8px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .rr-rank-time {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .rr-time-val {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #15803D;
+            line-height: 1.1;
+        }
+
+        .rr-time-unit {
+            font-size: 0.72rem;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        /* =========================================================================
+           USER PROFILE POPUP MODAL (Based on Image 2)
+           ========================================================================= */
+        .rr-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .rr-modal-card {
+            width: 100%;
+            max-width: 380px;
+            background: #FFFFFF;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        @keyframes modalFadeIn {
+            from { transform: scale(0.92) translateY(20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        /* Farm / Pasture Banner Header with Chickens */
+        .rr-farm-banner {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(180deg, #60A5FA 0%, #93C5FD 40%, #86EFAC 75%, #4ADE80 100%);
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .rr-farm-hills {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: #22C55E;
+            border-radius: 50% 50% 0 0 / 20px 20px 0 0;
+        }
+
+        .rr-chicken-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.92);
+            color: #15803D;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .rr-modal-body {
+            padding: 0 20px 20px 20px;
+            position: relative;
+            background: #FFFFFF;
+        }
+
+        .rr-modal-avatar-wrapper {
+            position: relative;
+            width: 76px;
+            height: 76px;
+            margin-top: -38px;
+            margin-bottom: 10px;
+        }
+
+        .rr-modal-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid #F97316;
+            background: #FFFFFF;
+            object-fit: cover;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+
+        .rr-modal-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .rr-modal-username {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        .rr-follow-btn {
+            background: #FFF7ED;
+            color: #C2410C;
+            border: 1.5px solid #FDBA74;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .rr-follow-btn.following {
+            background: #F0FDF4;
+            color: #15803D;
+            border-color: #86EFAC;
+        }
+
+        .rr-modal-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .rr-stat-rows-container {
+            border-top: 1px solid #F1F5F9;
+            padding-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .rr-stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .rr-stat-row-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .rr-stat-row-val {
+            font-weight: 800;
+            color: #0F172A;
+            font-size: 0.95rem;
+        }
+
+        .rr-stat-row-val span {
+            color: #64748B;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .rr-joined-date {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94A3B8;
+            margin-bottom: 16px;
+        }
+
+        .rr-btn-confirm {
+            width: 100%;
+            background: #E8F5E9;
+            color: #1B5E20;
+            border: none;
+            padding: 12px;
+            border-radius: 16px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rr-btn-confirm:hover {
+            background: #C8E6C9;
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-room-app">
+        <!-- Top App Bar -->
+        <header class="rr-header">
+            <div class="rr-header-left">
+                <a href="../index.html" class="rr-back-btn" title="হোম পেজে ফিরুন">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <h1 class="rr-title">রিডিং রুম</h1>
+                <div class="rr-live-pill">
+                    <span class="rr-live-dot"></span>
+                    <span id="headerLiveCount">১২৮</span>
+                </div>
+            </div>
+
+            <div class="rr-header-right">
+                <div class="rr-header-icon" title="গ্রুপ চ্যাট" onclick="openChatNotice()">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span class="rr-badge-count">৯৯+</span>
+                </div>
+                <div class="rr-header-icon" title="লিডারবোর্ড">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <a href="profile.html">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="rr-header-avatar" id="myHeaderAvatar">
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Hero Card (Green) -->
+        <section class="rr-hero-banner">
+            <div class="rr-hero-top">
+                <div class="rr-hero-subtag">
+                    <span style="font-size: 1.2rem; line-height: 1;">●</span> আজ পড়েছ
+                </div>
+                <div class="rr-target-pill">
+                    <i class="fa-solid fa-bullseye" style="color: #F87171;"></i> 
+                    <span id="targetText">০% · ৮ ঘণ্টা ৩০ মিনিট</span>
+                </div>
+            </div>
+
+            <div class="rr-timer-big">
+                <span id="displayStudyTime">০</span>
+                <span class="rr-timer-unit">মিনিট</span>
+            </div>
+
+            <div class="rr-hero-desc" id="studySessionStatus">
+                আজ এখনো কোনো সেশন শেষ হয়নি
+            </div>
+
+            <!-- Interactive Study Stopwatch Button -->
+            <div class="rr-timer-action-row">
+                <button type="button" class="rr-btn-timer" id="btnToggleStudy" onclick="toggleStudySession()">
+                    <i class="fa-solid fa-play"></i> স্টাডি শুরু করুন
+                </button>
+            </div>
+
+            <!-- Segmented Timeline Bar -->
+            <div class="rr-timeline-bar">
+                <div class="rr-timeline-segment active"></div>
+                <div class="rr-timeline-segment active"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+                <div class="rr-timeline-segment"></div>
+            </div>
+
+            <div class="rr-timeline-labels">
+                <span>ভোর ৫টা</span>
+                <span>দুপুর ১২টা</span>
+                <span>সন্ধ্যা ৬টা</span>
+                <span>রাত ১২টা</span>
+            </div>
+        </section>
+
+        <!-- Carousel Dots -->
+        <div class="rr-dots-row">
+            <div class="rr-dot active"></div>
+            <div class="rr-dot"></div>
+            <div class="rr-dot"></div>
+            <div class="rr-dot"></div>
+            <div class="rr-dot"></div>
+        </div>
+
+        <!-- Active Users Horizontal Row -->
+        <section class="rr-active-users-section">
+            <div class="rr-section-title">
+                <span class="rr-live-dot" style="width: 9px; height: 9px;"></span> এখন পড়ছে ১২৮ জন
+            </div>
+            <div class="rr-avatars-scroll" id="activeUsersRow">
+                <!-- Dynamically populated or static fallback matching image -->
+                <div class="rr-user-bubble" onclick="openUserProfileModal('Orna😓', 'HSC 2026', 'বগুড়া', '১:৪৫ ঘণ্টা', '৩ সেশন', '৩:৩০ ঘণ্টা', '৭ সেশন')">
+                    <div class="rr-bubble-ring">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Orna" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name">Orna😓</span>
+                </div>
+
+                <div class="rr-user-bubble" onclick="openUserProfileModal('Safayet', 'HSC 2026', 'ঢাকা', '২:১০ ঘণ্টা', '৪ সেশন', '৪:১৫ ঘণ্টা', '৮ সেশন')">
+                    <div class="rr-bubble-ring">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Safayet" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name">Safayet</span>
+                </div>
+
+                <div class="rr-user-bubble" onclick="openUserProfileModal('Mow', 'HSC 2027', 'রাজশাহী', '১:৫০ ঘণ্টা', '৩ সেশন', '২:৪০ ঘণ্টা', '৫ সেশন')">
+                    <div class="rr-bubble-ring">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Mow" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name">Mow</span>
+                </div>
+
+                <div class="rr-user-bubble" onclick="openUserProfileModal('OMOR', 'HSC 2026', 'কুমিল্লা', '২:২০ ঘণ্টা', '৪ সেশন', '৩:৫০ ঘণ্টা', '৬ সেশন')">
+                    <div class="rr-bubble-ring">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="OMOR" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name">OMOR</span>
+                </div>
+
+                <div class="rr-user-bubble" onclick="openUserProfileModal('Niloy', 'HSC 2027', 'সিরাজগঞ্জ', '২ ঘণ্টা ৩০ মিনিট', '৫ সেশন', '৪ ঘণ্টা ৩০ মিনিট', '৯ সেশন')">
+                    <div class="rr-bubble-ring">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Niloy" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name">Niloy</span>
+                </div>
+
+                <div class="rr-user-bubble" onclick="openUserProfileModal('Psycho ♾️', 'HSC 2026', 'সিরাজগঞ্জ', '২ ঘণ্টা ৩০ মিনিট', '৫ সেশন', '৪ ঘণ্টা ১৫ মিনিট', '৮ সেশন')">
+                    <div class="rr-bubble-ring">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Psycho" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name">Psycho ♾️</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Time Filter Tabs (আজ, গতকাল, এই সপ্তাহ, সর্বমোট) -->
+        <div class="rr-filters-row">
+            <button type="button" class="rr-filter-tab active" onclick="switchTimeFilter(this, 'today')">আজ</button>
+            <button type="button" class="rr-filter-tab" onclick="switchTimeFilter(this, 'yesterday')">গতকাল</button>
+            <button type="button" class="rr-filter-tab" onclick="switchTimeFilter(this, 'week')">এই সপ্তাহ</button>
+            <button type="button" class="rr-filter-tab" onclick="switchTimeFilter(this, 'all')">সর্বমোট</button>
+        </div>
+
+        <!-- Subheaders (সবাই / ফলো করা | তোমার অবস্থান) -->
+        <div class="rr-subtab-row">
+            <div class="rr-subtabs-group">
+                <button type="button" class="rr-subtab-btn active" onclick="switchSubTab(this, 'all')">সবাই</button>
+                <button type="button" class="rr-subtab-btn" onclick="switchSubTab(this, 'following')">ফলো করা</button>
+            </div>
+            <span class="rr-position-text">তোমার অবস্থান ১৪৩/১৯১</span>
+        </div>
+
+        <!-- Leaderboard List -->
+        <div class="rr-ranking-list" id="rankingListContainer">
+            <!-- Rank 1: Niloy -->
+            <div class="rr-rank-card" onclick="openUserProfileModal('Niloy', 'HSC 2027', 'সিরাজগঞ্জ', '২ ঘণ্টা ৩০ মিনিট', '৫ সেশন', '৪ ঘণ্টা ৩০ মিনিট', '৯ সেশন')">
+                <div class="rr-rank-left">
+                    <span class="rr-medal">🥇</span>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Niloy" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Niloy
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2027</span>
+                            <span class="rr-tag-pill">📍 সিরাজগঞ্জ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">২:৩০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 2: Psycho ♾️ -->
+            <div class="rr-rank-card" onclick="openUserProfileModal('Psycho ♾️', 'HSC 2026', 'সিরাজগঞ্জ', '২ ঘণ্টা ৩০ মিনিট', '৫ সেশন', '৪ ঘণ্টা ১৫ মিনিট', '৮ সেশন')">
+                <div class="rr-rank-left">
+                    <span class="rr-medal">🥇</span>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Psycho" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Psycho ♾️
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2026</span>
+                            <span class="rr-tag-pill">📍 সিরাজগঞ্জ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">২:৩০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 3: Spider-man 🕸️ -->
+            <div class="rr-rank-card" onclick="openUserProfileModal('Spider-man 🕸️', 'HSC 2026', 'ঢাকা', '২ ঘণ্টা ৩০ মিনিট', '৪ সেশন', '৩ ঘণ্টা ৫০ মিনিট', '৭ সেশন')">
+                <div class="rr-rank-left">
+                    <span class="rr-medal">🥇</span>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Spider-man" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Spider-man 🕸️
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2026</span>
+                            <span class="rr-tag-pill">📍 ঢাকা</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">২:৩০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 4: Mow -->
+            <div class="rr-rank-card" onclick="openUserProfileModal('Mow', 'HSC 2027', 'রাজশাহী', '১:৫০ ঘণ্টা', '৩ সেশন', '২:৪০ ঘণ্টা', '৫ সেশন')">
+                <div class="rr-rank-left">
+                    <span class="rr-medal" style="font-size: 1.1rem; color: #64748B; font-weight: 800;">৪</span>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Mow" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Mow
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2027</span>
+                            <span class="rr-tag-pill">📍 রাজশাহী</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">১:৫০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+
+            <!-- Rank 5: Safayet -->
+            <div class="rr-rank-card" onclick="openUserProfileModal('Safayet', 'HSC 2026', 'ঢাকা', '১:৪০ ঘণ্টা', '২ সেশন', '৩:১০ ঘণ্টা', '৫ সেশন')">
+                <div class="rr-rank-left">
+                    <span class="rr-medal" style="font-size: 1.1rem; color: #64748B; font-weight: 800;">৫</span>
+                    <div class="rr-user-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Safayet" class="rr-user-avatar">
+                        <span class="live-indicator"></span>
+                    </div>
+                    <div class="rr-user-info">
+                        <div class="rr-name-row">
+                            <span class="rr-name-dot"></span> Safayet
+                        </div>
+                        <div class="rr-tags-row">
+                            <span class="rr-tag-pill">HSC 2026</span>
+                            <span class="rr-tag-pill">📍 ঢাকা</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rr-rank-time">
+                    <span class="rr-time-val">১:৪০</span>
+                    <span class="rr-time-unit">ঘণ্টা</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         USER PROFILE POPUP MODAL (Based on Image 2)
+         ========================================================================= -->
+    <div id="userProfileModal" class="rr-modal-overlay" onclick="if(event.target === this) closeUserProfileModal()">
+        <div class="rr-modal-card">
+            <!-- Farm / Pasture Banner with Chickens -->
+            <div class="rr-farm-banner">
+                <div class="rr-chicken-badge">
+                    <span>🐔 আজ ৫টা মুরগি</span>
+                </div>
+                <div class="rr-farm-hills"></div>
+            </div>
+
+            <div class="rr-modal-body">
+                <!-- Avatar overlapping banner -->
+                <div class="rr-modal-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="rr-modal-avatar" id="modalUserAvatar">
+                </div>
+
+                <div class="rr-modal-header-row">
+                    <h2 class="rr-modal-username" id="modalUserName">Niloy</h2>
+                    <button type="button" class="rr-follow-btn" id="modalFollowBtn" onclick="toggleFollowUser(this)">
+                        <i class="fa-solid fa-user-plus"></i> <span id="followBtnText">ফলো</span>
+                    </button>
+                </div>
+
+                <div class="rr-modal-badges">
+                    <span class="rr-tag-pill" id="modalUserBatch">📖 HSC 2027</span>
+                    <span class="rr-tag-pill" id="modalUserLocation">📍 সিরাজগঞ্জ</span>
+                </div>
+
+                <!-- Stats Rows -->
+                <div class="rr-stat-rows-container">
+                    <div class="rr-stat-row">
+                        <div class="rr-stat-row-label">
+                            <span style="font-size: 1.1rem;">☀️</span> আজ
+                        </div>
+                        <div class="rr-stat-row-val">
+                            <span id="modalStatTodayTime">২ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatTodaySessions">৫ সেশন</span>
+                        </div>
+                    </div>
+
+                    <div class="rr-stat-row">
+                        <div class="rr-stat-row-label">
+                            <span style="font-size: 1.1rem;">🌙</span> গতকাল
+                        </div>
+                        <div class="rr-stat-row-val">
+                            <span id="modalStatYesterdayTime">৪ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatYesterdaySessions">৯ সেশন</span>
+                        </div>
+                    </div>
+
+                    <div class="rr-stat-row">
+                        <div class="rr-stat-row-label">
+                            <span style="font-size: 1.1rem;">📅</span> এই সপ্তাহ
+                        </div>
+                        <div class="rr-stat-row-val">
+                            <span id="modalStatWeekTime">২ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatWeekSessions">৫ সেশন</span>
+                        </div>
+                    </div>
+
+                    <div class="rr-stat-row">
+                        <div class="rr-stat-row-label">
+                            <span style="font-size: 1.1rem;">🏆</span> সর্বমোট
+                        </div>
+                        <div class="rr-stat-row-val">
+                            <span id="modalStatTotalTime">২৪ ঘণ্টা ৩০ মিনিট</span> · <span id="modalStatTotalSessions">৪৯ সেশন</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rr-joined-date">
+                    যোগ দিয়েছে ৫ নভেম্বর ২০২৬
+                </div>
+
+                <button type="button" class="rr-btn-confirm" onclick="closeUserProfileModal()">
+                    ঠিক আছে
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Stopwatch / Study Session Timer
+        let studySeconds = 0;
+        let studyTimerInterval = null;
+        let isStudying = false;
+
+        function toBnDigits(num) {
+            const bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return String(num).replace(/[0-9]/g, d => bn[d]);
+        }
+
+        function toggleStudySession() {
+            const btn = document.getElementById('btnToggleStudy');
+            const status = document.getElementById('studySessionStatus');
+            const target = document.getElementById('targetText');
+
+            if (!isStudying) {
+                isStudying = true;
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i> পজ করুন';
+                btn.style.background = '#FEE2E2';
+                btn.style.color = '#DC2626';
+                status.innerHTML = '🟢 স্টাডি সেশন চলমান... একাগ্র হয়ে পড়ুন!';
+                
+                studyTimerInterval = setInterval(() => {
+                    studySeconds++;
+                    const mins = Math.floor(studySeconds / 60);
+                    document.getElementById('displayStudyTime').innerText = toBnDigits(mins);
+
+                    const targetMinutes = 510; // 8 hr 30 min = 510 min
+                    const percent = Math.min(100, Math.round((mins / targetMinutes) * 100));
+                    target.innerHTML = `${toBnDigits(percent)}% · ৮ ঘণ্টা ৩০ মিনিট`;
+                }, 1000);
+            } else {
+                isStudying = false;
+                clearInterval(studyTimerInterval);
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> পুনরায় শুরু করুন';
+                btn.style.background = '#FFFFFF';
+                btn.style.color = '#15803D';
+                const mins = Math.floor(studySeconds / 60);
+                status.innerHTML = `সেশন সম্পন্ন! আজ মোট ${toBnDigits(mins)} মিনিট পড়েছেন।`;
+            }
+        }
+
+        // Time Filters
+        function switchTimeFilter(btn, type) {
+            document.querySelectorAll('.rr-filter-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function switchSubTab(btn, type) {
+            document.querySelectorAll('.rr-subtab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function openChatNotice() {
+            alert('গ্রুপ স্টাডি চ্যাট রুম লোড হচ্ছে... সহপাঠীদের সাথে প্রশ্নোত্তর আলোচনা করুন!');
+        }
+
+        // Modal Controls
+        function openUserProfileModal(name, batch, loc, todayTime, todaySessions, yestTime, yestSessions) {
+            document.getElementById('modalUserName').innerText = name;
+            document.getElementById('modalUserBatch').innerText = '📖 ' + batch;
+            document.getElementById('modalUserLocation').innerText = '📍 ' + loc;
+            document.getElementById('modalStatTodayTime').innerText = todayTime || '২ ঘণ্টা ৩০ মিনিট';
+            document.getElementById('modalStatTodaySessions').innerText = todaySessions || '৫ সেশন';
+            document.getElementById('modalStatYesterdayTime').innerText = yestTime || '৪ ঘণ্টা ৩০ মিনিট';
+            document.getElementById('modalStatYesterdaySessions').innerText = yestSessions || '৯ সেশন';
+            
+            document.getElementById('userProfileModal').style.display = 'flex';
+        }
+
+        function closeUserProfileModal() {
+            document.getElementById('userProfileModal').style.display = 'none';
+        }
+
+        function toggleFollowUser(btn) {
+            const txt = document.getElementById('followBtnText');
+            if (btn.classList.contains('following')) {
+                btn.classList.remove('following');
+                btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> <span>ফলো</span>';
+            } else {
+                btn.classList.add('following');
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> <span>ফলো করা হয়েছে</span>';
+            }
+        }
+
+        // Apply dark mode if user selected
+        (function() {
+            try {
+                if (localStorage.getItem('ict_theme') === 'dark') {
+                    document.body.classList.add('dark-mode');
+                }
+            } catch(e){}
+        })();
+    </script>
+</body>
+</html>
