@@ -119,7 +119,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 49",
     "question": "কোনটি আউটসোর্সিং এর মার্কেট প্লেস?\t[ব. বো. '২৫]",
     "options": [
       "ফেসবুক",
@@ -130,7 +130,11 @@
     "correctAnswer": "আপওয়ার্ক",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.294Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9754",
@@ -216,7 +220,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 43",
+    "modelTestNo": "Model Test 49",
     "question": "লুক্কায়িত স্তরের প্রযুক্তি কোনটি?\t[য. বো. '২৫]",
     "options": [
       "জেনেটিক ইঞ্জিনিয়ারিং",
@@ -227,10 +231,12 @@
     "correctAnswer": "কৃত্রিম বুদ্ধিমত্তা",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.300Z",
-    "liveExamNo": "Live Exam 43",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 43",
-      "Live Exam 43"
+      "Live Exam 43",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -687,7 +693,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 41",
+    "modelTestNo": "Model Test 49",
     "question": "ক্রায়োজনিক এজেন্ট হলো-\t[দি. বো. '২৫]\ni. \tতরল নাইট্রোজেন\t\nii. \tপ্রোপেন\niii. \tঅক্সিজেন\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -699,10 +705,12 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.354Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 41",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 41",
-      "Live Exam 41"
+      "Live Exam 41",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -1275,7 +1283,7 @@
     "boardName": "Chattogram Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 47",
+    "modelTestNo": "Model Test 49",
     "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও: [চ. বো. '২৫]\nবৃহৎ কর্মসংস্থান সৃষ্টি, কার্যকরী I সস্তায় শক্তি উৎপাদনসহ পানি I বায়ু দূষণ কমিয়ে আনার জন্য একটি প্রযুক্তি নিয়ে বিজ্ঞানীরা কাজ করে চলছে। এই প্রযুক্তিটি বর্তমানে খাদ্যদ্রব্য প্যাকেটজাত করতে ব্যাপকভাবে ব্যবহৃত হচ্ছে।\t\t\t\t\nউদ্দীপকে উল্লিখিত প্রযুক্তিটি কী?",
     "options": [
       "ন্যানোটেকনোলজি",
@@ -1286,10 +1294,12 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.435Z",
-    "liveExamNo": "Live Exam 47",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 47",
-      "Live Exam 47"
+      "Live Exam 47",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -1501,7 +1511,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 41",
+    "modelTestNo": "Model Test 49",
     "question": "বায়োইনফরমেটিক্সের গবেষণার ক্ষেত্রগুলো হলো [রা.বো. ২৪]\ni. জিনোম সিকোয়েন্স\nii. ডিএনএ বিশ্লেষণ\niii. রোবট নিয়ন্ত্রণ\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -1513,12 +1523,14 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.464Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 41",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 01",
       "Live Exam 01",
       "Model Test 41",
-      "Live Exam 41"
+      "Live Exam 41",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -1536,7 +1548,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 49",
     "question": "পণ্যের ডিজাইন তৈরিতে কোনটি প্রয়োজন? [রা.বো. ২৪]",
     "options": [
       "PAT",
@@ -1547,7 +1559,11 @@
     "correctAnswer": "CAD",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.466Z",
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9783",
@@ -1963,7 +1979,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 49",
     "question": "GMO এর পূর্ণরূপ কী? [ম.বো. ২৪]",
     "options": [
       "General Modified Organisms",
@@ -1975,7 +1991,11 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.519Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9792",
@@ -2966,7 +2986,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "রোবট গঠনে কয়টি নিদির্স্ট বিশেষত্ব রয়েছে? \t[দি.বো.'২৩]",
     "options": [
       "২",
@@ -2976,7 +2996,12 @@
     ],
     "correctAnswer": "৩",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.624Z"
+    "createdAt": "2026-11-02T16:02:03.624Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97b5",
@@ -3129,7 +3154,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "Model Test 49",
     "question": "ক্রায়োসার্জারিতেতে ব্যবহৃত প্রধান উপাদান- \t[য.বো.'১৯,ঢা.বো.'১৬]",
     "options": [
       "অক্সিজেন",
@@ -3140,10 +3165,12 @@
     "correctAnswer": "নাইট্রোজেন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.642Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 01",
-      "Live Exam 01"
+      "Live Exam 01",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -3684,7 +3711,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "ন্যানোটেকনোলজি\nটপ ডাউন পদ্ধতিতে কোন জিনিসকে নির্দিষ্ট আকারে দেওয়া হয়। এর সাথে সংশ্লিষ্ট প্রযুক্তি কোনটি? \t\t[চ.বো.১৯]",
     "options": [
       "বায়োমেটিক্স",
@@ -3694,7 +3721,12 @@
     ],
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.689Z"
+    "createdAt": "2026-11-02T16:02:03.689Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97d0",
@@ -11447,7 +11479,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 99",
+    "modelTestNo": "Model Test 49",
     "question": "রিয়েল টাইম অ্যাপ্লিকেশনে কোন ডেটা ট্রান্সমিশন পদ্ধতির প্রচলন বেশি? [রা.বো. ২৪]",
     "image": "",
     "options": [
@@ -11459,10 +11491,12 @@
     "correctAnswer": "আইসোক্রোনাস",
     "explanation": "",
     "createdAt": "2026-11-03T05:41:46.227Z",
-    "liveExamNo": "Live Exam 99",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 99",
-      "Live Exam 99"
+      "Live Exam 99",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -11691,7 +11725,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "উদ্দীপকটি পড় এবং ১৩ ও ১৪ নং প্রশ্নের উত্তর দাও:\nএকটি কক্ষে ১০টি কম্পিউটার চক্রাকারে পরস্পরের সাথে এমনভাবে যুক্ত আছে যাতে একটি কম্পিউটার নষ্ট হলে পুরো নেটওয়ার্ক অচল হয়ে পড়ে।\nকক্ষের নেটওয়ার্কে কোন টপোলজি ব্যবহৃত হয়েছে? [য. বো. ২৪]",
     "image": "",
     "options": [
@@ -11702,7 +11736,12 @@
     ],
     "correctAnswer": "রিং",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.290Z"
+    "createdAt": "2026-11-03T05:41:46.290Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72b5",
@@ -11769,7 +11808,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "কোন প্রজন্মের মোবাইল ফোনে প্রি-পেইড প্রথা চালু হয়েছে? [য. বো. ২৪]",
     "image": "",
     "options": [
@@ -11780,7 +11819,12 @@
     ],
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.309Z"
+    "createdAt": "2026-11-03T05:41:46.309Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72b8",
@@ -12003,7 +12047,7 @@
     "boardName": "ময়মনসিংহ বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "Single SMS এর মোড কোনটি? [ম.বো. ২৪]",
     "image": "",
     "options": [
@@ -12014,7 +12058,12 @@
     ],
     "correctAnswer": "ইউনিকাস্ট",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.363Z"
+    "createdAt": "2026-11-03T05:41:46.363Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72c1",
@@ -12678,7 +12727,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2017",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "একটি চ্যানেলের মধ্য দিয়ে ১০ সেকেন্ড ১,০০,০০০ বিট, ডেটা ট্রান্সফার হলে এর ব্যান্ডউইথ কত? \t [সি.বো.'১৭]",
     "image": "",
     "options": [
@@ -12689,7 +12738,12 @@
     ],
     "correctAnswer": "১০০০০ bps",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.530Z"
+    "createdAt": "2026-11-03T05:41:46.530Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac72db",
@@ -13915,7 +13969,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "কম্পিউটার নেটওয়ার্কিং\nIE.E.E 802.11 প্রযুক্তির সাহায্যে কোন নেটওয়ার্কটি তৈরি করা যাবে? \t[সি. বো.'১৯]",
     "image": "",
     "options": [
@@ -13926,7 +13980,12 @@
     ],
     "correctAnswer": "LAN",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.789Z"
+    "createdAt": "2026-11-03T05:41:46.789Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac730a",
@@ -13967,7 +14026,7 @@
     "boardName": "সকল বোর্ড",
     "examYear": "2018",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "Wi-Max কোন ধরনের নেটওয়ার্কে ব্যবহৃত হয়?\n[সকল বোর্ড ২০১৮]",
     "image": "",
     "options": [
@@ -13978,7 +14037,12 @@
     ],
     "correctAnswer": "MAN",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.800Z"
+    "createdAt": "2026-11-03T05:41:46.800Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac730c",
@@ -14409,7 +14473,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "স্টার টপোলজিতে কোন ডিভইসটি ব্যবহৃত হয়? \t[ব.বে.'১৬]",
     "image": "",
     "options": [
@@ -14420,7 +14484,12 @@
     ],
     "correctAnswer": "হাব",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:46.901Z"
+    "createdAt": "2026-11-03T05:41:46.901Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac731d",
@@ -14726,7 +14795,7 @@
     "boardName": "ঢাকা বোর্ড, চট্টগ্রাম বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "কম্পিউটার নেটওয়ার্কের উদেশ্য- \t[ঢা.বো.'২৩, চ.বো.'১৬]\ni. হার্ডওয়্যার রিসোর্স শেয়ার\nii. সফটওয়্যার রিসোর্স শেয়ার\niii. ইনফরমেশন শেয়ার\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -14737,7 +14806,12 @@
     ],
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
-    "createdAt": "2026-11-03T05:41:47.070Z"
+    "createdAt": "2026-11-03T05:41:47.070Z",
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6ae9741b8dfcb51410ac7329",
@@ -23015,7 +23089,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 49",
     "question": "হিন্দু-আরবীয় সংখ্যা পদ্ধতি কোনটি?",
     "image": "",
     "options": [
@@ -23028,7 +23102,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc47",
@@ -23465,7 +23543,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "পজিশনাল সংখ্যা পদ্ধতিতে কোনটি সত্য নয়?",
     "image": "",
     "options": [
@@ -23477,7 +23555,12 @@
     "correctAnswer": "বেস বিহীন",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc57",
@@ -25716,7 +25799,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "(২৯)₁₀ সংখ্যাটি বাইনারি মান কত?",
     "image": "",
     "options": [
@@ -25728,7 +25811,12 @@
     "correctAnswer": "11101",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcab",
@@ -25929,7 +26017,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 42",
+    "modelTestNo": "Model Test 49",
     "question": "(১১০১১১০.১)₂ এর হেক্সাডেসিমাল সংখ্যা কোনটি?",
     "image": "",
     "options": [
@@ -25942,10 +26030,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 42",
+    "liveExamNo": "Live Exam 49",
     "modelTestNos": [
       "Model Test 42",
-      "Live Exam 42"
+      "Live Exam 42",
+      "Model Test 49",
+      "Live Exam 49"
     ]
   },
   {
@@ -27563,7 +27653,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "রবিনের বর্তমান বয়স ১৯₁₀। কত বছর পর তার বয়স ১০০১১০₂ হবে?",
     "image": "",
     "options": [
@@ -27575,7 +27665,12 @@
     "correctAnswer": "10010₂",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcee",
@@ -28539,7 +28634,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 49",
     "question": "নিচের যুক্তি বর্তনীটির আউটপুট কোন লজিক নির্দেশ করে?",
     "image": "/uploads/images/mcq_ch3_p2_image7.png",
     "options": [
@@ -28551,7 +28646,12 @@
     "correctAnswer": "AND",
     "explanation": "",
     "createdAt": "2026-11-07T17:41:47.490Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 49",
+    "modelTestNos": [
+      "Model Test 49",
+      "Live Exam 49"
+    ]
   },
   {
     "_id": "6aef62db441e8a8634d0c925",
