@@ -2437,6 +2437,111 @@ app.get('/api/model-tests/:id', async (req, res) => {
 });
 
 // ৩. নতুন মডেল টেস্ট / লাইভ এক্সাম তৈরি করা
+
+// =========================================================================
+// HELPER: SYNC 25 MCQS TO A MODEL TEST FROM SELECTED CHAPTERS
+// =========================================================================
+async function syncModelTestMCQs(examNo, selectedChapters = [], targetCount = 25) {
+  try {
+    const rawNum = parseInt(examNo, 10);
+    if (isNaN(rawNum)) return { success: false, message: 'Invalid exam number' };
+    const paddedNum = rawNum < 10 ? '0' + rawNum : '' + rawNum;
+    const modelTestTag = 'Model Test ' + paddedNum;
+    const liveExamTag = 'Live Exam ' + paddedNum;
+
+    const jsonPath = path.join(__dirname, 'database', 'mcqs.json');
+    if (!fs.existsSync(jsonPath)) return { success: false, message: 'mcqs.json not found' };
+    let mcqs = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+
+    const matchChapter = (m, keys) => {
+      if (!keys || keys.length === 0 || keys.includes('all')) return true;
+      if (!m.chapter) return false;
+      const c = m.chapter;
+      return keys.some(k => {
+        if (k === '1') return c.includes('Chapter 1') || c.includes('১ম') || c.includes('তথ্য ও যোগাযোগ');
+        if (k === '2') return c.includes('Chapter 2') || c.includes('২য়') || c.includes('কমিউনিকেশন');
+        if (k === '3.1') return c.includes('Chapter 3 (১ম') || c.includes('সংখ্যা পদ্ধতি');
+        if (k === '3.2') return c.includes('Chapter 3 (২য়') || c.includes('ডিজিটাল ডিভাইস');
+        if (k === '4') return c.includes('Chapter 4') || c.includes('৪র্থ') || c.includes('HTML') || c.includes('ওয়েব');
+        if (k === '5') return c.includes('Chapter 5') || c.includes('৫ম') || c.includes('প্রোগ্রামিং');
+        if (k === '6') return c.includes('Chapter 6') || c.includes('৬ষ্ঠ') || c.includes('ডেটাবেজ');
+        return c.includes(k);
+      });
+    };
+
+    let candidates = mcqs.filter(m => matchChapter(m, selectedChapters));
+    if (candidates.length === 0) candidates = mcqs;
+
+    // Preserve already assigned questions for this test
+    const alreadyAssigned = candidates.filter(m => 
+      (m.modelTestNo && String(m.modelTestNo).includes(paddedNum)) ||
+      (m.liveExamNo && String(m.liveExamNo).includes(paddedNum)) ||
+      (Array.isArray(m.modelTestNos) && m.modelTestNos.some(t => String(t).includes(paddedNum)))
+    );
+
+    const needed = Math.max(0, targetCount - alreadyAssigned.length);
+    const unassigned = candidates.filter(m => !alreadyAssigned.includes(m));
+    const shuffled = unassigned.sort(() => 0.5 - Math.random());
+    const pickedNew = shuffled.slice(0, needed);
+
+    const finalSelected = [...alreadyAssigned, ...pickedNew].slice(0, targetCount);
+    const selectedIds = new Set(finalSelected.map(m => String(m._id)));
+
+    let updatedCount = 0;
+    mcqs = mcqs.map(m => {
+      if (selectedIds.has(String(m._id))) {
+        updatedCount++;
+        m.modelTestNo = modelTestTag;
+        m.liveExamNo = liveExamTag;
+        if (!Array.isArray(m.modelTestNos)) m.modelTestNos = [];
+        if (!m.modelTestNos.includes(modelTestTag)) m.modelTestNos.push(modelTestTag);
+        if (!m.modelTestNos.includes(liveExamTag)) m.modelTestNos.push(liveExamTag);
+      }
+      return m;
+    });
+
+    const destDirs = [
+      path.join(__dirname, 'database'),
+      'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+    ];
+    destDirs.forEach(dir => {
+      try {
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        fs.writeFileSync(path.join(dir, 'mcqs.json'), JSON.stringify(mcqs, null, 2), 'utf8');
+      } catch(e){}
+    });
+
+    if (isConnected && typeof Mcq !== 'undefined') {
+      try {
+        for (const m of finalSelected) {
+          await Mcq.findByIdAndUpdate(m._id, {
+            modelTestNo: modelTestTag,
+            liveExamNo: liveExamTag,
+            $addToSet: { modelTestNos: { $each: [modelTestTag, liveExamTag] } }
+          });
+        }
+      } catch(e){}
+    }
+
+    return { success: true, count: finalSelected.length, examNo: paddedNum, modelTestTag, liveExamTag };
+  } catch(err) {
+    console.error('syncModelTestMCQs error:', err);
+    return { success: false, error: err.message };
+  }
+}
+
+
+// ৫. মডেল টেস্টের জন্য অটোমেটিক ২৫টি MCQ সিংক করার এন্ডপয়েন্ট
+app.post('/api/model-tests/sync-mcqs', async (req, res) => {
+  try {
+    const { examNo, chapters, totalQuestions } = req.body;
+    const result = await syncModelTestMCQs(examNo, chapters, totalQuestions || 25);
+    res.json(result);
+  } catch(err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
 app.post('/api/model-tests', async (req, res) => {
   try {
     const {
@@ -2499,6 +2604,9 @@ app.post('/api/model-tests', async (req, res) => {
       });
     }
 
+    if (req.body.autoSyncMCQ !== false && Array.isArray(req.body.selectedChapters) && req.body.selectedChapters.length > 0) {
+      await syncModelTestMCQs(testDoc.examNo, req.body.selectedChapters, testDoc.totalQuestions || 25);
+    }
     autoPushToGitHub(`Add/Update Live Exam: ${testDoc.title || testDoc.examNo}`);
 
     res.status(201).json({
