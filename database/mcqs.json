@@ -519,7 +519,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 46",
+    "modelTestNo": "Model Test 42",
     "question": "ক্রায়োজনিক এজেন্ট কোনটি?\t[রা. বো. '২৫]",
     "options": [
       "হাইড্রোজেন",
@@ -530,10 +530,12 @@
     "correctAnswer": "আর্গন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.343Z",
-    "liveExamNo": "Live Exam 46",
+    "liveExamNo": "Live Exam 42",
     "modelTestNos": [
       "Model Test 46",
-      "Live Exam 46"
+      "Live Exam 46",
+      "Model Test 42",
+      "Live Exam 42"
     ]
   },
   {
@@ -3956,7 +3958,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "তথ্য ও যোগাযোগ প্রযুক্তি ব্যবহাiরে নৈতিকতা\nকম্পিউটার ইথিকস এর নির্দেশনা কয়টি? \t[সি.বো.'১৯; কু.বো.'১৭]",
     "options": [
       "৮",
@@ -3966,7 +3968,12 @@
     ],
     "correctAnswer": "১০",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.729Z"
+    "createdAt": "2026-11-02T16:02:03.729Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97dd",
@@ -4861,7 +4868,7 @@
     "boardName": "",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "নিচের উদ্দীপকটি পড় এবং প্রশ্নের উত্তর দাও:\nমি: 'ঢ' তুলার উন্নত জাত উদ্ভাবনে গবেষণা করেন। তিনি খরা সহিষ্ণু, অধিক ফলনশীল ও আগাম জাতের তুলা উদ্ভাবনে সাফল্য লাভ করেন। \t\t[ব.বো.'২৩]\nমিঃ ঢ গবেষণায় কোন প্রযুক্তি ব্যবহার করেন?",
     "options": [
       "বায়োইনফরমেটিকস",
@@ -4871,7 +4878,12 @@
     ],
     "correctAnswer": "জেনেটিক ইঞ্জিনিয়ারিং",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.861Z"
+    "createdAt": "2026-11-02T16:02:03.861Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae97ff",
@@ -5148,7 +5160,7 @@
     "boardName": "",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও:\nমিঃ সালাম উচ্চ ফলনশীল ধান উৎপাদনে নিয়ে গবেষণা করেছেন। তার কপালে টিউমার চিকিৎসক -20 C তাপমাত্রার তরল নাইট্রোজেন ব্যবহার করে অপসারণ করেন। \t[সি.বো.'১৯]\nগবেষণায় ব্যবহৃত প্রযু্ি‌ধসঢ়;রক্ত দ্বারা-\ni. বাণিজ্যিক ভাবে ইনসুলিন তৈরি কার যায়\n\nii. জীবের নতুন জিনোম আবিষ্কার করা যায়\niii. অর্থনৈতিক উন্নয়ন ঘটবে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
@@ -5159,7 +5171,12 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.903Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae980a",
@@ -8022,7 +8039,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 50",
+    "modelTestNo": "Model Test 42",
     "question": "অভিন্ন তথ্যভিত্তিক প্রশ্নোত্তর\nনিচের উদ্দীপকের আলোকে  প্রশ্নের উত্তর দাও:\nডাঃ রাফিয়া মাছ-মাংসের উৎপাদন বৃদ্ধির জন্য প্রাণীর জীন পরিবর্তন নিয়ে গবেষণা করেন। তিনি এক প্রাণীর জীন অন্য প্রাণীর দেহে প্রতিস্থাপন করে সফলতা অর্জন করেন।\nডাঃ রাফিয়ার তৈরি নতুন জিবকোষকে বলা হয় -\n[ভিকারুননিসা নূন স্কুল এন্ড কলেজ, ঢাকা]",
     "options": [
       "DNA",
@@ -8034,7 +8051,11 @@
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.170Z",
     "__v": 1,
-    "liveExamNo": "Live Exam 50"
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9873",
@@ -8422,7 +8443,7 @@
     "boardName": "",
     "examYear": "2021",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "কোনটি অনলাইন ভিডিও মিটিং প্লাটফর্ম নয়?\t[গুচ্ছ বি. ক ইউনিট ২০২১]",
     "options": [
       "হোয়াটসঅ্যাপ",
@@ -8432,7 +8453,12 @@
     ],
     "correctAnswer": "হোয়াটসঅ্যাপ",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.206Z"
+    "createdAt": "2026-11-02T16:02:04.206Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9882",
@@ -8766,7 +8792,7 @@
     "boardName": "",
     "examYear": "2014",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "ডিজিটাল মুদ্রার উদাহরণ -\t[রাবি ইউনিট ডি (জোড়) ২০১৪-১৫]",
     "options": [
       "ক্রেডিট কার্ড",
@@ -8776,7 +8802,12 @@
     ],
     "correctAnswer": "বিটকয়েন",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.231Z"
+    "createdAt": "2026-11-02T16:02:04.231Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae988f",
@@ -8922,7 +8953,7 @@
     "boardName": "",
     "examYear": "2014",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "এ যাবৎ আইপিও'i মাধ্যমে বিশ্বের সর্বোচ্চ অর্থ সংগ্রহকারী কোম্পানি আলিবাবা যে ব্যবসার সাথে জড়িত -\n[রাজশাহী বিশ্ববিদ্যালয় ইউনিট ডি জোড় ২০১৪-১৫]",
     "options": [
       "রিয়েল এস্টেট",
@@ -8933,7 +8964,12 @@
     "correctAnswer": "ই-কমার্স",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.245Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae9895",
@@ -9078,7 +9114,7 @@
     "boardName": "",
     "examYear": "2021",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "ভার্চুয়াল রিয়েলিটিতে কোন ধরনের ইমেজ ব্যবহার করা হয়?\n[গুবি ক ইউনিট ২০২১]",
     "options": [
       "একমাত্রিক",
@@ -9088,7 +9124,12 @@
     ],
     "correctAnswer": "ত্রিমাত্রিক",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.254Z"
+    "createdAt": "2026-11-02T16:02:04.254Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae989b",
@@ -9160,7 +9201,7 @@
     "boardName": "",
     "examYear": "2021",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "যে প্রোগ্রামিং ল্যাংগুয়েজ সাধারণত কৃত্রিম বুদ্ধিমত্তা প্রয়োগের ক্ষেত্রে ব্যবহৃত হয় না -\t[ঢাবি খ ইউনিট ২০২১]",
     "options": [
       "সি++",
@@ -9170,7 +9211,12 @@
     ],
     "correctAnswer": "ফক্সপ্রো",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.258Z"
+    "createdAt": "2026-11-02T16:02:04.258Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae989e",
@@ -9455,7 +9501,7 @@
     "boardName": "",
     "examYear": "2015",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "বাংলাদেশে সবর্প্রথম Q – cash চালু করে - \t[কৃষি বি ইউনিট ২০১৫-১৬]",
     "options": [
       "সোনালী ব্যাংক লিঃ",
@@ -9465,7 +9511,12 @@
     ],
     "correctAnswer": "জনতা ব্যাংক লিঃ",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.276Z"
+    "createdAt": "2026-11-02T16:02:04.276Z",
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6ae8b3fc04ce40b2c4ae98a9",
@@ -22547,7 +22598,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "101110₂ এর সমকক্ষ মান\ni. 56₈ii. 46₁₀\niii. 2F₁₆\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -22560,7 +22611,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc3b",
@@ -23010,7 +23065,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 02",
+    "modelTestNo": "Model Test 42",
     "question": "(11111110.1)₂ এর হেক্সাডেসিমাল সংখ্যা কোনটি?",
     "image": "",
     "options": [
@@ -23023,7 +23078,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 2"
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc4c",
@@ -23037,7 +23096,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "(1F)₁₆ এর আগের সংখ্যা এবং পরের সংখ্যার যোগফল কত?",
     "image": "",
     "options": [
@@ -23050,7 +23109,11 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc4d",
@@ -23150,7 +23213,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "১,৭, উ ধারাটির পরবর্তী মান কত?",
     "image": "",
     "options": [
@@ -23162,7 +23225,12 @@
     "correctAnswer": "13",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc51",
@@ -23556,7 +23624,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "4D₁₆ এর অকটাল মান হলো",
     "image": "",
     "options": [
@@ -23568,7 +23636,12 @@
     "correctAnswer": "115₈",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc60",
@@ -23689,7 +23762,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "3₁₆ + 5₈ = ?₁₆",
     "image": "",
     "options": [
@@ -23701,7 +23774,12 @@
     "correctAnswer": "8",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afc65",
@@ -25732,7 +25810,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "ডেসিমেল সংখ্যা পদ্ধতির ভিত্তি কত?",
     "image": "",
     "options": [
@@ -25744,7 +25822,12 @@
     "correctAnswer": "10",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcb2",
@@ -25758,7 +25841,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "(১১০১১১০.১)₂ এর হেক্সাডেসিমাল সংখ্যা কোনটি?",
     "image": "",
     "options": [
@@ -25770,7 +25853,12 @@
     "correctAnswer": "6E.8",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcb3",
@@ -25784,7 +25872,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 42",
     "question": "গঝই-এর পূর্ণরূপ হচ্ছেু",
     "image": "",
     "options": [
@@ -25797,10 +25885,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 42",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 42",
+      "Live Exam 42"
     ]
   },
   {
@@ -25815,7 +25905,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 42",
     "question": "(১২)₁₀ এর সমকক্ষ বাইনারি কোনটি?",
     "image": "",
     "options": [
@@ -25828,10 +25918,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 42",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 42",
+      "Live Exam 42"
     ]
   },
   {
@@ -26033,7 +26125,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "[২-এর পরিপূরক]\n\n২ এর পরিপূরক পদ্ধতিতে কোনটি ব্যবহার করা হয়?",
     "image": "",
     "options": [
@@ -26045,7 +26137,12 @@
     "correctAnswer": "যোগ করে",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcbd",
@@ -26225,7 +26322,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 42",
     "question": "নিচের কোনটি ১৬ বিটের কোড?",
     "image": "",
     "options": [
@@ -26238,10 +26335,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 42",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 42",
+      "Live Exam 42"
     ]
   },
   {
@@ -26849,7 +26948,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 42",
     "question": "(ু ২৯৩)₁₀ সংখ্যাটি রেজিস্টারে স্টোর করতে কমপক্ষে কত বিটের প্রয়োজন",
     "image": "",
     "options": [
@@ -26861,7 +26960,12 @@
     "correctAnswer": "16",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 42",
+    "modelTestNos": [
+      "Model Test 42",
+      "Live Exam 42"
+    ]
   },
   {
     "_id": "6aef4900541019a0004afcdb",
@@ -26875,7 +26979,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 42",
     "question": "কোনটি ৮ বিটের কোড?\ni. ASCll Code    ii. EBCDIC Code   iii. BCD Code\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -26888,10 +26992,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 42",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 42",
+      "Live Exam 42"
     ]
   },
   {
