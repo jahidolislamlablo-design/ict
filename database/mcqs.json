@@ -46103,7 +46103,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "উদ্দীপকের টেবিল দুটির মধ্যে বিদ্যমান রিলেশনশিপের ধরন কোনটি?",
     "image": "",
     "options": [
@@ -46115,7 +46115,12 @@
     "correctAnswer": "One to one",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.451Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cbed",
@@ -46155,7 +46160,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "SQL বাণিজ্যিকভাবে ব্যবহার শুরু হয় কত সালে?",
     "image": "",
     "options": [
@@ -46167,7 +46172,12 @@
     "correctAnswer": "১৯৭০",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.451Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cbef",
@@ -46207,7 +46217,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "DML এর পূর্ণনাম-",
     "image": "",
     "options": [
@@ -46219,7 +46229,12 @@
     "correctAnswer": "Data Manipulation language",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.451Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cbf1",
@@ -46441,7 +46456,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "DBMS এর পূর্ণরূপ কোনটি?",
     "image": "",
     "options": [
@@ -46453,7 +46468,12 @@
     "correctAnswer": "Database Management System",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.451Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cbfa",
@@ -46597,7 +46617,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "নিচের কোন RDBMS সফটওয়্যার ওয়েবসাইট ডিজাইনে বেশি ব্যবহৃত হয়?",
     "image": "",
     "options": [
@@ -46609,7 +46629,12 @@
     "correctAnswer": "MS-Access",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.453Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc00",
@@ -46753,7 +46778,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "কোনটি সর্বাধিক ব্যবহৃত অবাণিজ্যিক RDMBS সফটওয়্যার?",
     "image": "",
     "options": [
@@ -46765,7 +46790,12 @@
     "correctAnswer": "MYSQL",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.453Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc06",
@@ -46883,7 +46913,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "তৃতীয় ডেটা টেবিল তৈরি করার প্রয়োজন হয় কোন রিলেশনে?",
     "image": "",
     "options": [
@@ -46895,7 +46925,12 @@
     "correctAnswer": "Many to Many",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.453Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc0b",
@@ -46935,7 +46970,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "লজিক্যাল ডেটা টাইপে মেমোরিতে কত বাইট জায়গা লাগে?",
     "image": "",
     "options": [
@@ -46947,7 +46982,12 @@
     "correctAnswer": "1",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.453Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc0d",
@@ -47195,7 +47235,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "রিপোর্ট কী?",
     "image": "",
     "options": [
@@ -47207,7 +47247,12 @@
     "correctAnswer": "প্রতিবেদন আকারে উপস্থাপন",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.453Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc17",
@@ -47247,7 +47292,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডেটাবেজ থেকে কোন তথ্য খোঁজার জন্য কোনটি ব্যবহার করা হয়?",
     "image": "",
     "options": [
@@ -47259,7 +47304,12 @@
     "correctAnswer": "SQL",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc19",
@@ -47351,7 +47401,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "কুয়েরি কমান্ড দিলে কি দেখাবে?",
     "image": "",
     "options": [
@@ -47363,7 +47413,12 @@
     "correctAnswer": "শর্তানুযায়ী ফিল্ড",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc1d",
@@ -47455,7 +47510,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "টেবিলের ডেটা বা ফিল্ড নির্বাচন করে কুয়েরি করা হলে তাকে কী বলে?",
     "image": "",
     "options": [
@@ -47467,7 +47522,12 @@
     "correctAnswer": "সিলেক্ট কুয়েরি",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc21",
@@ -47481,7 +47541,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডেটা টেবিলকে সারাংশ আকারে প্রকাশ করা কোন ধরনের কুয়েরির কাজ?",
     "image": "",
     "options": [
@@ -47493,7 +47553,12 @@
     "correctAnswer": "Cross tab",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc22",
@@ -47507,7 +47572,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডেটাবেজের রেকর্ড মুছে ফেলার অপশন কোনটি?",
     "image": "",
     "options": [
@@ -47519,7 +47584,12 @@
     "correctAnswer": "delete record",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc23",
@@ -47559,7 +47629,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "এনক্রিপ্টকৃত ডেটাকে মূল অবস্থায় ফিরিয়ে আনতে কী করা হয়?",
     "image": "",
     "options": [
@@ -47571,7 +47641,12 @@
     "correctAnswer": "ডিক্রিপ্টিং",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc25",
@@ -47585,7 +47660,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডেটার গোপনীয়তা রক্ষা করাকে বলা হয়?",
     "image": "",
     "options": [
@@ -47597,7 +47672,12 @@
     "correctAnswer": "ডেটা এনক্রিপ্ট",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc26",
@@ -47611,7 +47691,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "Data Encryption কীভাবে করা হয়?",
     "image": "",
     "options": [
@@ -47623,7 +47703,12 @@
     "correctAnswer": "ডেটাকে Password এর মাধ্যমে পরিবর্তন করে",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc27",
@@ -47663,7 +47748,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডেটাকে এনক্রিপশন ও ডিক্রিপশন করার পদ্ধতিকে কি বলে?",
     "image": "",
     "options": [
@@ -47675,7 +47760,12 @@
     "correctAnswer": "ক্রিপ্টোগ্রাফি",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc29",
@@ -47871,7 +47961,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডিস্ট্রিবিউটেড ডেটাবেজ সিস্টেমের প্রধান বৈশিষ্ট্য হলো-\ni. ডিস্ট্রিবিউশন\tii. লজিক্যাল কো-রিলেশন\niii. অপটিমাইজেশন\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -47883,7 +47973,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.454Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc31",
@@ -47897,7 +47992,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "কোনটি DBMS এর সুবিধা?\ni. ডেটার অসংগতি রোধ করে\tii. ডেটাবেসের নিরাপত্তা বিধান করে\niii. বাস্তবায়ন ব্যয়বহুল\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -47909,7 +48004,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.455Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc32",
@@ -47975,7 +48075,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "ডেটাকে Sorting করার উদ্দেশ্য হচ্ছে-\ni. ছোট থেকে বড় আকারে সাজানো\nii. বড় থেকে ছোট আকারে সাজানো\niii. শব্দ বা সংখ্যার দৈর্ঘ্য অনুসারে সাজানো\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -47987,7 +48087,12 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.455Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc35",
@@ -48053,7 +48158,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "RDBMS এর বৈশিষ্ট্য হচ্ছে-\ni. নানা ধরনের চার্ট ব্যবহার করা যায়\nii. অ্যাপ্লিকেশন প্রোগ্রাম তৈরি করা যায়\niii. অবজেক্টের জন্য OLE টাইপ ব্যবহার করা যায়\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -48065,7 +48170,12 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.455Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc38",
@@ -48183,7 +48293,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "কোনটি RDBMS নয়?",
     "image": "",
     "options": [
@@ -48195,7 +48305,12 @@
     "correctAnswer": "Java",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.455Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc3d",
@@ -48287,7 +48402,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "নিচের টেবিলটি লক্ষ কর এবং ৮৩ ও ৮৪ নং প্রশ্নের উত্তর দাও:\n| Name | Designation | J-Date |\n| --- | --- | --- |\n| Mr. X | Manager | 10/18/2012 |\n| Mr. Y | S-Officer | 12/12/2014 |\n| Mr. Z | S-Officer | 12/15/2014 |\n| Mr. S | Manager | 05/25/2016 |\n| Mr. T | Manager | 05/25/2016 |\n| Mr. P | Manager | 11/20/2018 |\nউদ্দীপকের টেবিলটির Designation ফিল্ডে ডেটা এন্ট্রিতে কোন ধরনের ডেটা টাইড বেশি সুবিধাজনক?",
     "image": "",
     "options": [
@@ -48299,7 +48414,12 @@
     "correctAnswer": "Text",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.455Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc41",
@@ -48417,7 +48537,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 44",
     "question": "উদ্দীপকটি পড়ে ৮৮ নং প্রশ্নের উত্তর দাও:\n| ফিল্ড |\n| --- |\n| রোল নং |\n| ছবি |\n| ঠিকানা |\nফিল্ডসমূহের ডেটা টাইপ হচ্ছে যথাক্রমে-\ni. number, text, date and time\nii. number, OLE, Memo\niii. auto number, OLE, text\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -48429,7 +48549,12 @@
     "correctAnswer": "ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.456Z",
-    "__v": 0
+    "__v": 0,
+    "liveExamNo": "Live Exam 44",
+    "modelTestNos": [
+      "Model Test 44",
+      "Live Exam 44"
+    ]
   },
   {
     "_id": "6af01cbf268cb6b55a18cc46",
