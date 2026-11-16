@@ -375,40 +375,61 @@ window.confirmLogout = confirmLogout;
 
 
 // ==========================================
-// ডার্ক / লাইট মোড নিয়ন্ত্রণ (Theme Switcher)
+// স্ক্রিন মোড নিয়ন্ত্রণ (Permanently Light Mode)
 // ==========================================
 function initThemeMode() {
-    const savedTheme = localStorage.getItem('ict_theme') || 'light';
-    const isDark = savedTheme === 'dark';
-    applyThemeMode(isDark);
-    
-    const checkbox = document.getElementById('themeToggleCheckbox');
-    if (checkbox) checkbox.checked = isDark;
+    applyThemeMode(false);
 }
 
 function toggleScreenTheme(isDark) {
-    applyThemeMode(isDark);
-    localStorage.setItem('ict_theme', isDark ? 'dark' : 'light');
+    applyThemeMode(false);
 }
 window.toggleScreenTheme = toggleScreenTheme;
 
 function applyThemeMode(isDark) {
-    const icon = document.getElementById('themeStatusIcon');
-    const statusText = document.getElementById('themeStatusText');
-    const checkbox = document.getElementById('themeToggleCheckbox');
-
-    if (isDark) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        document.body.classList.add('dark-mode');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        if (statusText) statusText.textContent = 'ডার্ক মোড সক্রিয়';
-        if (checkbox) checkbox.checked = true;
-    } else {
-        document.documentElement.removeAttribute('data-theme');
-        document.body.classList.remove('dark-mode');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-sun" style="color: #F59E0B;"></i>';
-        if (statusText) statusText.textContent = 'লাইট মোড সক্রিয়';
-        if (checkbox) checkbox.checked = false;
-    }
+    document.documentElement.removeAttribute('data-theme');
+    document.documentElement.style.colorScheme = 'light';
+    document.body.classList.remove('dark-mode');
+    document.body.style.colorScheme = 'light';
+    localStorage.setItem('ict_theme', 'light');
 }
 window.applyThemeMode = applyThemeMode;
+
+
+async function updateProfileChapterProgress() {
+    try {
+        const readSet = (typeof getReadQuestionsSet === 'function') ? getReadQuestionsSet() : new Set();
+        let allMcqs = window._cachedMCQs || [];
+        if (allMcqs.length === 0 && typeof ApiService !== 'undefined' && typeof ApiService.getAllMCQ === 'function') {
+            allMcqs = await ApiService.getAllMCQ() || [];
+            window._cachedMCQs = allMcqs;
+        }
+
+        const chConfigs = [
+            { chNum: '১', match: m => m.chapter && (m.chapter.includes('Chapter 1') || m.chapter.includes('১ম') || m.chapter.includes('তথ্য ও যোগাযোগ')), totalFallback: 352 },
+            { chNum: '২', match: m => m.chapter && (m.chapter.includes('Chapter 2') || m.chapter.includes('২য়') || m.chapter.includes('কমিউনিকেশন')), totalFallback: 243 },
+            { chNum: '৩ (১ম)', match: m => m.chapter && (m.chapter.includes('Chapter 3 (১ম') || m.chapter.includes('সংখ্যা পদ্ধতি')), totalFallback: 219 },
+            { chNum: '৩ (২য়)', match: m => m.chapter && (m.chapter.includes('Chapter 3 (২য়') || m.chapter.includes('ডিজিটাল ডিভাইস')), totalFallback: 283 },
+            { chNum: '৪', match: m => m.chapter && (m.chapter.includes('Chapter 4') || m.chapter.includes('৪র্থ') || m.chapter.includes('HTML') || m.chapter.includes('ওয়েব')), totalFallback: 204 },
+            { chNum: '৫', match: m => m.chapter && (m.chapter.includes('Chapter 5') || m.chapter.includes('৫ম') || m.chapter.includes('প্রোগ্রামিং')), totalFallback: 402 },
+            { chNum: '৬', match: m => m.chapter && (m.chapter.includes('Chapter 6') || m.chapter.includes('৬ষ্ঠ') || m.chapter.includes('ডেটাবেজ')), totalFallback: 187 }
+        ];
+
+        const progressItems = document.querySelectorAll('.chapter-progress-list .progress-item');
+        progressItems.forEach((item, idx) => {
+            const cfg = chConfigs[idx];
+            if (!cfg) return;
+            const matching = allMcqs.filter(cfg.match);
+            const total = matching.length > 0 ? matching.length : cfg.totalFallback;
+            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
+            const pct = Math.round((read / total) * 100);
+
+            const pctEl = item.querySelector('strong');
+            if (pctEl) pctEl.textContent = pct + '%';
+            const fillEl = item.querySelector('.progress-fill');
+            if (fillEl) fillEl.style.width = pct + '%';
+        });
+    } catch(e) {}
+}
+window.updateProfileChapterProgress = updateProfileChapterProgress;
+document.addEventListener('DOMContentLoaded', updateProfileChapterProgress);

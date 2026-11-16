@@ -1,11 +1,18 @@
 
-// ict_theme_global_init
+// ict_theme_global_init - Enforce Light Mode permanently across all browsers
 (function() {
     try {
-        if (localStorage.getItem('ict_theme') === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            if (document.body) document.body.classList.add('dark-mode');
-            else document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
+        localStorage.setItem('ict_theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.style.colorScheme = 'light';
+        if (document.body) {
+            document.body.classList.remove('dark-mode');
+            document.body.style.colorScheme = 'light';
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.remove('dark-mode');
+                document.body.style.colorScheme = 'light';
+            });
         }
     } catch(e) {}
 })();
@@ -1464,17 +1471,44 @@ function hasCategory(item, catName) {
 
 function matchesChapter(itemChapter, chapterId) {
     if (!itemChapter || chapterId === undefined || chapterId === null || chapterId === 'all') return true;
-    const ic = String(itemChapter).toLowerCase();
+    const ic = String(itemChapter).toLowerCase().trim();
     const ch = String(chapterId).toLowerCase().trim();
 
-    if (ic.includes(ch) || ch.includes(ic)) return true;
+    if (ic === ch) return true;
 
+    // 3.1 & 3.2 specialized check
     if (ch === '3.1' || ch.includes('১ম অংশ') || ch.includes('সংখ্যা পদ্ধতি')) {
         return ic.includes('3.1') || ic.includes('১ম অংশ') || ic.includes('সংখ্যা পদ্ধতি') || 
-               (ic.includes('3') && !ic.includes('ডিজিটাল ডিভাইস') && !ic.includes('২য় অংশ') && !ic.includes('লজিক গেট'));
+               (ic.includes('chapter 3 (১ম') || ic.includes('chapter 3(১ম'));
     }
     if (ch === '3.2' || ch.includes('২য় অংশ') || ch.includes('ডিজিটাল ডিভাইস') || ch.includes('লজিক গেট')) {
-        return ic.includes('3.2') || ic.includes('২য় অংশ') || ic.includes('ডিজিটাল ডিভাইস') || ic.includes('লজিক গেট');
+        return ic.includes('3.2') || ic.includes('২য় অংশ') || ic.includes('ডিজিটাল ডিভাইস') || ic.includes('লজিক গেট') ||
+               (ic.includes('chapter 3 (২য়') || ic.includes('chapter 3(২য়'));
+    }
+
+    // Chapter 4 (HTML & Web Design)
+    if (ch === '4' || ch === '৪' || ch.includes('4th') || ch.includes('৪র্থ') || ch.includes('html') || ch.includes('ওয়েব') || ch.includes('ওয়েব')) {
+        return ic.includes('chapter 4') || ic.includes('৪র্থ') || ic.includes('html') || ic.includes('ওয়েব') || ic.includes('ওয়েব') || ic.includes('অধ্যায় ৪');
+    }
+
+    // Chapter 5 (C Programming)
+    if (ch === '5' || ch === '৫' || ch.includes('5th') || ch.includes('৫ম') || ch.includes('প্রোগ্রামিং') || ch.includes('c prog')) {
+        return ic.includes('chapter 5') || ic.includes('৫ম') || ic.includes('প্রোগ্রামিং') || ic.includes('অধ্যায় ৫');
+    }
+
+    // Chapter 6 (DBMS)
+    if (ch === '6' || ch === '৬' || ch.includes('6th') || ch.includes('৬ষ্ঠ') || ch.includes('ডাটাবেজ') || ch.includes('dbms')) {
+        return ic.includes('chapter 6') || ic.includes('৬ষ্ঠ') || ic.includes('ডাটাবেজ') || ic.includes('dbms') || ic.includes('অধ্যায় ৬');
+    }
+
+    // Chapter 1
+    if (ch === '1' || ch === '১' || ch.includes('1st') || ch.includes('১ম') || ch.includes('বিশ্ব ও বাংলাদেশ')) {
+        return ic.includes('chapter 1') || ic.includes('১ম') || ic.includes('বিশ্ব ও বাংলাদেশ') || ic.includes('অধ্যায় ১');
+    }
+
+    // Chapter 2
+    if (ch === '2' || ch === '২' || ch.includes('2nd') || ch.includes('২য়') || ch.includes('কমিউনিকেশন')) {
+        return ic.includes('chapter 2') || ic.includes('২য়') || ic.includes('কমিউনিকেশন') || ic.includes('অধ্যায় ২');
     }
 
     const banglaToEng = { '০':'0', '১':'1', '২':'2', '৩':'3', '৪':'4', '৫':'5', '৬':'6', '৭':'7', '৮':'8', '৯':'9' };
@@ -1484,11 +1518,6 @@ function matchesChapter(itemChapter, chapterId) {
     const chNum = (toEngNum(ch).match(/\b([0-9]+)\b/) || [])[1];
 
     if (icNum && chNum && icNum === chNum) return true;
-
-    const words = ch.replace(/[^a-zA-Z0-9\u0980-\u09FF\s]/g, ' ').split(/\s+/).filter(w => w.length > 2);
-    for (const w of words) {
-        if (ic.includes(w)) return true;
-    }
 
     return false;
 }
@@ -2381,7 +2410,7 @@ function renderModernCQCardHTML(cq, index) {
     const cleanQ = (text, prefix) => {
         if (!text) return '';
         const stripped = text.replace(new RegExp('^\\s*\\(' + prefix + '\\)\\s*'), '').trim();
-        return resolveHtmlMediaUrls(stripped);
+        return formatModernMCQContent(resolveHtmlMediaUrls(stripped));
     };
     const qNum = toBanglaNum(index + 1);
 
@@ -2391,7 +2420,7 @@ function renderModernCQCardHTML(cq, index) {
                 <div style="font-weight: 700; color: #4F46E5; margin-bottom: 8px;">
                     <i class="fa-solid fa-feather-pointed"></i> উদ্দীপক-${qNum}:
                 </div>
-                <p class="cq-stem-text" style="margin: 0; line-height: 1.7; font-size: 1rem;">${resolveHtmlMediaUrls(cq.stem)}</p>
+                <div class="cq-stem-text" style="margin: 0; line-height: 1.7; font-size: 1rem;">${formatModernMCQContent(resolveHtmlMediaUrls(cq.stem))}</div>
                 ${cq.image ? `
                     <div style="margin: 14px 0 10px 0; text-align: center;">
                         <img src="${resolveMediaUrl(cq.image)}" alt="উদ্দীপক চিত্র" style="max-width: 100%; max-height: 380px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
@@ -2405,7 +2434,7 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(ক)</strong> ${cleanQ(cq.q_ka, "ক")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                    <div class="modern-cq-sub-body" style="font-weight: 500;">
                         <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_ka, "ক") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
@@ -2415,7 +2444,7 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(খ)</strong> ${cleanQ(cq.q_kha, "খ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                    <div class="modern-cq-sub-body" style="font-weight: 500;">
                         <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_kha, "খ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
@@ -2425,7 +2454,7 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(গ)</strong> ${cleanQ(cq.q_ga, "গ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                    <div class="modern-cq-sub-body" style="font-weight: 500;">
                         <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_ga, "গ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
@@ -2435,7 +2464,7 @@ function renderModernCQCardHTML(cq, index) {
                         <span><strong>(ঘ)</strong> ${cleanQ(cq.q_gha, "ঘ")}</span>
                         <div class="modern-cq-arrow-circle"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
-                    <div class="modern-cq-sub-body" style=" font-weight: 500;">
+                    <div class="modern-cq-sub-body" style="font-weight: 500;">
                         <strong class="cq-ans-label">উত্তর:</strong> ${cleanQ(cq.a_gha, "ঘ") || 'উত্তর সংযুক্ত করা হয়নি।'}
                     </div>
                 </div>
@@ -2488,6 +2517,14 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
 
     if (parentCard.classList.contains('answered')) return;
     parentCard.classList.add('answered');
+
+    // Automatically mark question as read when answered in study mode
+    if (mode === 'study') {
+        const qId = parentCard.getAttribute('data-q-id');
+        if (qId && typeof isQuestionRead === 'function' && !isQuestionRead(qId)) {
+            toggleQuestionRead(qId, parentCard.id);
+        }
+    }
 
     if (typeof userAnswers !== 'undefined') {
         userAnswers[qIndex] = selectedIndex;
@@ -2977,6 +3014,8 @@ function restartCurrentModelTest() {
 function showMixedContentNoticeIfNeeded() {}
 
 window.CONFIG = CONFIG;
+ApiService.getMCQs = ApiService.getAllMCQ;
+ApiService.getAllMCQs = ApiService.getAllMCQ;
 window.ApiService = ApiService;
 window.MOCK_DATA = MOCK_DATA;
 window.toBanglaNum = toBanglaNum;
@@ -3197,10 +3236,14 @@ async function updateAllCardProgressRings() {
 
         if (window._cachedMCQs && Array.isArray(window._cachedMCQs) && window._cachedMCQs.length > 0) {
             allMcqs = window._cachedMCQs;
-        } else if (typeof ApiService !== 'undefined' && ApiService.getMCQs) {
+        } else if (typeof ApiService !== 'undefined') {
             try {
-                allMcqs = await ApiService.getMCQs() || [];
-                window._cachedMCQs = allMcqs;
+                if (typeof ApiService.getAllMCQ === 'function') {
+                    allMcqs = await ApiService.getAllMCQ() || [];
+                } else if (typeof ApiService.getMCQs === 'function') {
+                    allMcqs = await ApiService.getMCQs() || [];
+                }
+                if (allMcqs.length > 0) window._cachedMCQs = allMcqs;
             } catch(e){}
         }
 
@@ -3237,7 +3280,7 @@ async function updateAllCardProgressRings() {
         chapterRings.forEach(ch => {
             const matching = allMcqs.filter(ch.match);
             const total = matching.length > 0 ? matching.length : ch.fallbackTotal;
-            const read = matching.filter(m => readSet.has(String(m._id))).length;
+            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
             updateRingUI(ch.ratio, ch.pct, ch.fill, read, total);
         });
 
@@ -3258,7 +3301,7 @@ async function updateAllCardProgressRings() {
         boardRings.forEach(br => {
             const matching = allMcqs.filter(m => matchBoardName(m.boardName, br.key));
             const total = matching.length > 0 ? matching.length : br.fallbackTotal;
-            const read = matching.filter(m => readSet.has(String(m._id))).length;
+            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
             updateRingUI(br.ratio, br.pct, br.fill, read, total);
         });
 
@@ -3277,7 +3320,7 @@ async function updateAllCardProgressRings() {
         collegeRings.forEach(cr => {
             const matching = allMcqs.filter(m => matchCollegeName(m.collegeName, cr.name));
             const total = matching.length > 0 ? matching.length : cr.fallbackTotal;
-            const read = matching.filter(m => readSet.has(String(m._id))).length;
+            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
             updateRingUI(cr.ratio, cr.pct, cr.fill, read, total);
         });
 

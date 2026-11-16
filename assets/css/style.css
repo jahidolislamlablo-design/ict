@@ -1,3 +1,7 @@
+:root, html, body {
+    color-scheme: light !important;
+}
+
 /* ==========================================================================
    ICT EASY LEARNING - GLOBAL DESIGN SYSTEM
    Professional, Responsive, Modern EdTech Platform CSS
@@ -3102,7 +3106,7 @@ body.no-pull-refresh {
 /* ==========================================================================
    DARK THEME & THEME SWAP SWITCHER
    ========================================================================== */
-body.dark-mode, [data-theme="dark"] {
+.disabled-dark-mode, .disabled-theme-dark {
     --bg-page: #0F172A !important;
     --bg-card: #1E293B !important;
     --bg-card-subtle: #334155 !important;
@@ -3115,49 +3119,49 @@ body.dark-mode, [data-theme="dark"] {
     color: #F8FAFC !important;
 }
 
-body.dark-mode .site-header,
-body.dark-mode .site-footer,
-body.dark-mode .card,
-body.dark-mode .profile-card,
-body.dark-mode .metric-card,
-body.dark-mode .history-section,
-body.dark-mode .modal-window,
-body.dark-mode .bottom-sheet,
-body.dark-mode .modern-quiz-card:not(.is-read-question),
-body.dark-mode .modern-cq-card,
-body.dark-mode .feature-box,
-body.dark-mode .chapter-prep-card {
+.disabled-dark-mode .site-header,
+.disabled-dark-mode .site-footer,
+.disabled-dark-mode .card,
+.disabled-dark-mode .profile-card,
+.disabled-dark-mode .metric-card,
+.disabled-dark-mode .history-section,
+.disabled-dark-mode .modal-window,
+.disabled-dark-mode .bottom-sheet,
+.disabled-dark-mode .modern-quiz-card:not(.is-read-question),
+.disabled-dark-mode .modern-cq-card,
+.disabled-dark-mode .feature-box,
+.disabled-dark-mode .chapter-prep-card {
     background-color: #1E293B !important;
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .page-header-banner,
-body.dark-mode .header-nav-wrapper {
+.disabled-dark-mode .page-header-banner,
+.disabled-dark-mode .header-nav-wrapper {
     background: #1E293B !important;
     border-color: #334155 !important;
 }
 
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode strong {
+.disabled-dark-mode h1, .disabled-dark-mode h2, .disabled-dark-mode h3, .disabled-dark-mode h4, .disabled-dark-mode strong {
     color: #F8FAFC !important;
 }
 
-body.dark-mode p, body.dark-mode span:not(.badge):not(.nav-badge) {
+.disabled-dark-mode p, .disabled-dark-mode span:not(.badge):not(.nav-badge) {
     color: #CBD5E1;
 }
 
-body.dark-mode .modern-option-pill {
+.disabled-dark-mode .modern-option-pill {
     background: #1E293B !important;
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .theme-swap-card {
+.disabled-dark-mode .theme-swap-card {
     background: #0F172A !important;
     border-color: #334155 !important;
 }
 
-body.dark-mode .theme-swap-icon {
+.disabled-dark-mode .theme-swap-icon {
     background: #312E81 !important;
     color: #A5B4FC !important;
 }
@@ -3296,7 +3300,7 @@ body.dark-mode .theme-swap-icon {
     }
 }
 
-body.dark-mode .circular-progress-widget {
+.disabled-dark-mode .circular-progress-widget {
     background: #1E293B !important;
     border-color: #334155 !important;
 }
@@ -3330,7 +3334,7 @@ body.dark-mode .circular-progress-widget {
     line-height: 1.2;
 }
 
-body.dark-mode .circ-center-count {
+.disabled-dark-mode .circ-center-count {
     color: #F8FAFC !important;
 }
 
@@ -3356,7 +3360,7 @@ body.dark-mode .circ-center-count {
     margin-bottom: 2px;
 }
 
-body.dark-mode .circ-stats-title {
+.disabled-dark-mode .circ-stats-title {
     color: #F8FAFC !important;
 }
 
@@ -3368,7 +3372,7 @@ body.dark-mode .circ-stats-title {
     color: #475569;
 }
 
-body.dark-mode .circ-stats-item {
+.disabled-dark-mode .circ-stats-item {
     color: #CBD5E1 !important;
 }
 
@@ -3391,7 +3395,7 @@ body.dark-mode .circ-stats-item {
     box-shadow: 0 4px 18px rgba(59, 130, 246, 0.14) !important;
 }
 
-body.dark-mode .modern-quiz-card.is-read-question {
+.disabled-dark-mode .modern-quiz-card.is-read-question {
     background: #172554 !important; /* Dark blue in dark mode */
     border-color: #2563EB !important;
 }
@@ -3419,7 +3423,7 @@ body.dark-mode .modern-quiz-card.is-read-question {
     border-color: #93C5FD;
 }
 
-body.dark-mode .mcq-read-toggle-box {
+.disabled-dark-mode .mcq-read-toggle-box {
     background: #334155;
     border-color: #475569;
 }
@@ -3434,11 +3438,11 @@ body.dark-mode .mcq-read-toggle-box {
     color: #1D4ED8;
 }
 
-body.dark-mode .mcq-read-label {
+.disabled-dark-mode .mcq-read-label {
     color: #94A3B8;
 }
 
-body.dark-mode .modern-quiz-card.is-read-question .mcq-read-label {
+.disabled-dark-mode .modern-quiz-card.is-read-question .mcq-read-label {
     color: #93C5FD;
 }
 
@@ -3479,7 +3483,7 @@ body.dark-mode .modern-quiz-card.is-read-question .mcq-read-label {
     box-shadow: 0 4px 14px rgba(59, 130, 246, 0.12) !important;
 }
 
-body.dark-mode .modern-quiz-card.is-read-question {
+.disabled-dark-mode .modern-quiz-card.is-read-question {
     background: #172554 !important; /* Dark blue in dark mode */
     border-color: #2563EB !important;
 }
@@ -3532,9 +3536,9 @@ body.dark-mode .modern-quiz-card.is-read-question {
     box-shadow: 0 8px 20px rgba(0,0,0,0.07) !important;
 }
 
-body.dark-mode .chapter-prep-card,
-body.dark-mode .board-card,
-body.dark-mode .college-card {
+.disabled-dark-mode .chapter-prep-card,
+.disabled-dark-mode .board-card,
+.disabled-dark-mode .college-card {
     background: #1E293B !important;
     border-color: #334155 !important;
 }
@@ -3575,7 +3579,7 @@ body.dark-mode .college-card {
     line-height: 1.3;
 }
 
-body.dark-mode .card-main-title {
+.disabled-dark-mode .card-main-title {
     color: #F8FAFC !important;
 }
 
@@ -3585,7 +3589,7 @@ body.dark-mode .card-main-title {
     line-height: 1.3;
 }
 
-body.dark-mode .card-sub-title {
+.disabled-dark-mode .card-sub-title {
     color: #94A3B8 !important;
 }
 
@@ -3596,7 +3600,7 @@ body.dark-mode .card-sub-title {
     margin-top: 3px;
 }
 
-body.dark-mode .card-counts-badge {
+.disabled-dark-mode .card-counts-badge {
     color: #CBD5E1 !important;
 }
 
@@ -3633,7 +3637,7 @@ body.dark-mode .card-counts-badge {
     stroke-width: 4;
 }
 
-body.dark-mode .card-ring-bg {
+.disabled-dark-mode .card-ring-bg {
     stroke: #334155;
 }
 
@@ -3654,7 +3658,7 @@ body.dark-mode .card-ring-bg {
     text-align: center;
 }
 
-body.dark-mode .card-ring-ratio {
+.disabled-dark-mode .card-ring-ratio {
     color: #F8FAFC !important;
 }
 
@@ -3665,114 +3669,114 @@ body.dark-mode .card-ring-ratio {
     white-space: nowrap;
 }
 
-body.dark-mode .card-ring-pct {
+.disabled-dark-mode .card-ring-pct {
     color: #94A3B8 !important;
 }
 
 /* ==========================================================================
    COMPREHENSIVE DARK MODE OVERRIDES FOR MCQ & CQ
    ========================================================================== */
-body.dark-mode .interactive-view-container {
+.disabled-dark-mode .interactive-view-container {
     background-color: #0F172A !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .interactive-sub-header {
+.disabled-dark-mode .interactive-sub-header {
     background: #1E293B !important;
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .sub-header-title {
+.disabled-dark-mode .sub-header-title {
     color: #F8FAFC !important;
 }
 
-body.dark-mode .round-back-btn {
+.disabled-dark-mode .round-back-btn {
     background: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .modern-q-title {
+.disabled-dark-mode .modern-q-title {
     color: #F8FAFC !important;
 }
 
-body.dark-mode .modern-option-pill {
+.disabled-dark-mode .modern-option-pill {
     background: #1E293B !important;
     border: 1px solid #334155 !important;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.4), inset -2px -2px 5px rgba(255,255,255,0.04) !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .modern-option-pill:hover:not(.locked) {
+.disabled-dark-mode .modern-option-pill:hover:not(.locked) {
     background: #334155 !important;
     color: #FFFFFF !important;
 }
 
-body.dark-mode .option-radio-circle {
+.disabled-dark-mode .option-radio-circle {
     background: #0F172A !important;
     border-color: #64748B !important;
     box-shadow: none !important;
 }
 
-body.dark-mode .option-text {
+.disabled-dark-mode .option-text {
     color: #F8FAFC !important;
 }
 
-body.dark-mode .question-stem {
+.disabled-dark-mode .question-stem {
     background: #1E293B !important;
     color: #F1F5F9 !important;
     border-left: 4px solid #6366F1 !important;
 }
 
-body.dark-mode .modern-exp-btn {
+.disabled-dark-mode .modern-exp-btn {
     background: #334155 !important;
     color: #F8FAFC !important;
     border-color: #475569 !important;
 }
 
-body.dark-mode .modern-exp-box {
+.disabled-dark-mode .modern-exp-box {
     background: #1E293B !important;
     border: 1px solid #334155 !important;
     color: #F1F5F9 !important;
 }
 
 /* CQ in Dark Mode */
-body.dark-mode .modern-cq-card {
+.disabled-dark-mode .modern-cq-card {
     background: #1E293B !important;
     border-color: #334155 !important;
 }
 
-body.dark-mode .modern-cq-stem-box {
+.disabled-dark-mode .modern-cq-stem-box {
     background: #1E293B !important;
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .modern-cq-stem-box p,
-body.dark-mode .cq-stem-text {
+.disabled-dark-mode .modern-cq-stem-box p,
+.disabled-dark-mode .cq-stem-text {
     color: #E2E8F0 !important;
 }
 
-body.dark-mode .modern-cq-sub-pill {
+.disabled-dark-mode .modern-cq-sub-pill {
     background: #0F172A !important;
     border-color: #334155 !important;
 }
 
-body.dark-mode .modern-cq-sub-header {
+.disabled-dark-mode .modern-cq-sub-header {
     background: #1E293B !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .modern-cq-sub-body {
+.disabled-dark-mode .modern-cq-sub-body {
     background: #0F172A !important;
     color: #E2E8F0 !important;
 }
 
-body.dark-mode .cq-ans-label {
+.disabled-dark-mode .cq-ans-label {
     color: #60A5FA !important;
 }
 
-body.dark-mode .modern-cq-arrow-circle {
+.disabled-dark-mode .modern-cq-arrow-circle {
     background: #334155 !important;
     color: #F8FAFC !important;
 }

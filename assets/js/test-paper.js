@@ -32,6 +32,7 @@ function getCollegeIdFromName(name) {
 function selectTestYear(year) {
     selectedTestYear = year;
     testStep = 'colleges';
+        if (typeof updateAllCardProgressRings === 'function') updateAllCardProgressRings();
     const yearDisplay = document.getElementById('current-year-display');
     if (yearDisplay) yearDisplay.innerText = (typeof toBanglaNum === 'function') ? toBanglaNum(year) : year;
     updateTestPaperStep();

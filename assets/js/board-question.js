@@ -35,6 +35,7 @@ function getBoardCode(name) {
 function selectYear(year) {
     selectedYear = year;
     currentStep = 'boards';
+        if (typeof updateAllCardProgressRings === 'function') updateAllCardProgressRings();
     const yearBadge = document.getElementById('current-year-badge');
     if (yearBadge) yearBadge.innerText = (typeof toBanglaNum === 'function') ? toBanglaNum(year) : year;
     updateStepView();

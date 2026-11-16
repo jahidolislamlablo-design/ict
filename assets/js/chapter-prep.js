@@ -17,14 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getChapterIdFromTitle(title) {
     if (!title) return 1;
-    if (title.includes('১ম অংশ') || title.includes('সংখ্যা পদ্ধতি')) return '3.1';
-    if (title.includes('২য় অংশ') || title.includes('ডিজিটাল ডিভাইস') || title.includes('লজিক গেট')) return '3.2';
-    if (title.includes('১ম') || title.includes('1st')) return 1;
-    if (title.includes('২য়') || title.includes('2nd')) return 2;
-    if (title.includes('৩য়') || title.includes('3rd')) return '3.1';
-    if (title.includes('৪র্থ') || title.includes('4th')) return 4;
-    if (title.includes('৫ম') || title.includes('5th')) return 5;
-    if (title.includes('৬ষ্ঠ') || title.includes('6th')) return 6;
+    const str = String(title).toLowerCase();
+    if (str.includes('১ম অংশ') || str.includes('সংখ্যা পদ্ধতি') || str.includes('3.1')) return '3.1';
+    if (str.includes('২য় অংশ') || str.includes('ডিজিটাল ডিভাইস') || str.includes('লজিক গেট') || str.includes('3.2')) return '3.2';
+    if (str.includes('১ম') || str.includes('1st') || str.includes('chapter 1') || str.includes('অধ্যায় ১')) return 1;
+    if (str.includes('২য়') || str.includes('2nd') || str.includes('chapter 2') || str.includes('অধ্যায় ২')) return 2;
+    if (str.includes('৩য়') || str.includes('3rd') || str.includes('chapter 3') || str.includes('অধ্যায় ৩')) return '3.1';
+    if (str.includes('৪র্থ') || str.includes('4th') || str.includes('chapter 4') || str.includes('অধ্যায় ৪') || str.includes('html') || str.includes('ওয়েব') || str.includes('ওয়েব')) return 4;
+    if (str.includes('৫ম') || str.includes('5th') || str.includes('chapter 5') || str.includes('অধ্যায় ৫') || str.includes('c program') || str.includes('প্রোগ্রামিং')) return 5;
+    if (str.includes('৬ষ্ঠ') || str.includes('6th') || str.includes('chapter 6') || str.includes('অধ্যায় ৬') || str.includes('dbms') || str.includes('ডাটাবেজ')) return 6;
     return 1;
 }
 
@@ -232,7 +233,15 @@ async function loadMobileChapterMCQs() {
         questions.forEach((q, idx) => {
             html += renderModernMCQCardHTML(q, idx, { mode: 'study' });
         });
-        container.innerHTML = html;
+        let readCount = 0;
+        questions.forEach((q, idx) => {
+            const qId = q.id ? String(q.id) : generateMCQUniqueId(q, idx);
+            if (typeof isQuestionRead === 'function' && isQuestionRead(qId)) readCount++;
+        });
+        const circHtml = (typeof buildCircularProgressHTML === 'function') 
+            ? buildCircularProgressHTML(questions.length, readCount, activeChapter || 'অধ্যায় প্রস্তুতি') 
+            : '';
+        container.innerHTML = circHtml + html;
     } catch (err) {
         container.innerHTML = '<div style="text-align: center; padding: 30px; color: #E53E3E;">প্রশ্ন লোড করতে সমস্যা হয়েছে</div>';
     }
@@ -295,6 +304,7 @@ function goBackChapterPrep() {
         if (topToolbar) topToolbar.style.display = 'none';
         quizView.style.display = 'none'; document.querySelector('.container')?.classList.remove('fullscreen-mode');
         if (chapterListView) chapterListView.style.display = 'block';
+        if (typeof updateAllCardProgressRings === 'function') updateAllCardProgressRings();
         if (currentBreadcrumb) currentBreadcrumb.innerText = 'অধ্যায় নির্বাচন';
         if (backBtnText) backBtnText.innerText = 'হোমে ফিরে যান';
         window.scrollTo({ top: 0, behavior: 'smooth' });

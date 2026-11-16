@@ -525,23 +525,35 @@ const pdfFileFilter = (req, file, cb) => {
 function buildChapterRegex(ch) {
   if (!ch) return null;
   const str = ch.trim();
-  if (str === '3.1' || str.includes('১ম অংশ') || str.includes('সংখ্যা পদ্ধতি')) {
-    return new RegExp('(3.*1|১ম অংশ|সংখ্যা পদ্ধতি|Number System)', 'i');
+  if (str === "3.1" || str.includes("১ম অংশ") || str.includes("সংখ্যা পদ্ধতি")) {
+    return new RegExp("(3.*1|১ম অংশ|সংখ্যা পদ্ধতি|Number System)", "i");
   }
-  if (str === '3.2' || str.includes('২য় অংশ') || str.includes('ডিজিটাল ডিভাইস') || str.includes('লজিক গেট')) {
-    return new RegExp('(3.*2|২য় অংশ|ডিজিটাল ডিভাইস|লজিক গেট|Logic Gate)', 'i');
+  if (str === "3.2" || str.includes("২য় অংশ") || str.includes("ডিজিটাল ডিভাইস") || str.includes("লজিক গেট")) {
+    return new RegExp("(3.*2|২য় অংশ|ডিজিটাল ডিভাইস|লজিক গেট|Logic Gate)", "i");
+  }
+  if (str === "4" || str === "৪" || str.includes("4th") || str.includes("৪র্থ") || str.toLowerCase().includes("html") || str.includes("ওয়েব") || str.includes("ওয়েব")) {
+    return new RegExp("(chapter\\s*4|অধ্যায়\\s*4|৪র্থ\\s*অধ্যায়|অধ্যায়\\s*৪|html|ওয়েব|ওয়েব)", "i");
+  }
+  if (str === "5" || str === "৫" || str.includes("5th") || str.includes("৫ম") || str.toLowerCase().includes("program") || str.includes("প্রোগ্রামিং")) {
+    return new RegExp("(chapter\\s*5|অধ্যায়\\s*5|৫ম\\s*অধ্যায়|অধ্যায়\\s*৫|c program|প্রোগ্রামিং)", "i");
+  }
+  if (str === "6" || str === "৬" || str.includes("6th") || str.includes("৬ষ্ঠ") || str.toLowerCase().includes("dbms") || str.includes("ডাটাবেজ")) {
+    return new RegExp("(chapter\\s*6|অধ্যায়\\s*6|৬ষ্ঠ\\s*অধ্যায়|অধ্যায়\\s*৬|dbms|ডাটাবেজ)", "i");
+  }
+  if (str === "1" || str === "১" || str.includes("1st") || str.includes("১ম") || str.includes("বিশ্ব ও বাংলাদেশ")) {
+    return new RegExp("(chapter\\s*1|অধ্যায়\\s*1|১ম\\s*অধ্যায়|অধ্যায়\\s*১|বিশ্ব ও বাংলাদেশ)", "i");
+  }
+  if (str === "2" || str === "২" || str.includes("2nd") || str.includes("২য়") || str.includes("কমিউনিকেশন")) {
+    return new RegExp("(chapter\\s*2|অধ্যায়\\s*2|২য়\\s*অধ্যায়|অধ্যায়\\s*২|কমিউনিকেশন)", "i");
   }
   if (/^\d+$/.test(str)) {
     const num = parseInt(str, 10);
-    const banglaDigits = {'1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬'};
+    const banglaDigits = {"1":"১","2":"২","3":"৩","4":"৪","5":"৫","6":"৬"};
     const bDigit = banglaDigits[str] || str;
-    if (num === 3) {
-      return new RegExp('(chapter\\s*3|অধ্যায়\\s*৩|৩য়\\s*অধ্যায়|সংখ্যা পদ্ধতি|ডিজিটাল ডিভাইস)', 'i');
-    }
-    return new RegExp('(chapter\\s*' + str + '|অধ্যায়\\s*' + str + '|' + bDigit + 'ম\\s*অধ্যায়|অধ্যায়\\s*' + bDigit + ')', 'i');
+    return new RegExp("(chapter\\s*" + str + "|অধ্যায়\\s*" + str + "|" + bDigit + ".*অধ্যায়|অধ্যায়\\s*" + bDigit + ")", "i");
   }
-  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(escaped, 'i');
+  const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(escaped, "i");
 }
 
 

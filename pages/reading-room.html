@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+    <meta name="color-scheme" content="light">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>রিডিং রুম (Reading Room) | ICT Easy Learning</title>
@@ -64,12 +65,15 @@
             top: 0;
             z-index: 50;
             border-bottom: 1px solid #F1F5F9;
+            gap: 16px;
         }
 
         .rr-header-left {
             display: flex;
             align-items: center;
             gap: 12px;
+            min-width: 0;
+            flex-shrink: 0;
         }
 
         .rr-back-btn {
@@ -94,10 +98,12 @@
         }
 
         .rr-title {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: #1E293B;
             margin: 0;
+            white-space: nowrap;
+            line-height: 1.2;
         }
 
         .rr-live-pill {
@@ -110,6 +116,8 @@
             border-radius: 9999px;
             font-size: 0.85rem;
             font-weight: 700;
+            white-space: nowrap;
+            margin-right: 6px;
         }
 
         .rr-live-dot {
@@ -737,59 +745,74 @@
             backdrop-filter: blur(4px);
         }
 
-        /* 4 Stat Cards Grid: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া */
-        .rr-detail-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            margin-bottom: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .rr-detail-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-        }
-
-        .rr-stat-box {
+        /* ৪টি স্টাডি স্ট্যাটাস - উল্লম্ব লিস্ট ডিজাইন (ছবির মতো) */
+        .rr-detail-stats-list {
             background: #FFFFFF;
             border: 1.5px solid #E2E8F0;
-            border-radius: 16px;
-            padding: 16px 14px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            transition: all 0.2s;
+            border-radius: 18px;
+            padding: 4px 18px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
 
-        .rr-stat-box:hover {
-            border-color: #22C55E;
-            box-shadow: 0 4px 14px rgba(34, 197, 94, 0.1);
+        .rr-stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 4px;
+            border-bottom: 1px solid #F1F5F9;
+            gap: 12px;
         }
 
-        .rr-stat-box-title {
-            display: block;
-            font-size: 0.84rem;
+        .rr-stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .rr-stat-row-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.02rem;
             font-weight: 700;
-            color: #64748B;
-            margin-bottom: 6px;
+            color: #1E293B;
             white-space: nowrap;
         }
 
-        .rr-stat-box-val {
-            display: block;
-            font-size: 1.22rem;
-            font-weight: 800;
-            color: #15803D;
-            line-height: 1.2;
-            margin-bottom: 4px;
+        .rr-stat-row-icon {
+            font-size: 1.25rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .rr-stat-box-sub {
-            display: block;
-            font-size: 0.74rem;
-            font-weight: 600;
+        .rr-stat-row-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .rr-stat-row-val {
+            color: #15803D;
+            font-size: 1.05rem;
+            font-weight: 800;
+            font-family: 'Hind Siliguri', sans-serif;
+            letter-spacing: -0.2px;
+        }
+
+        .rr-stat-sep {
             color: #94A3B8;
+            font-size: 0.85rem;
+            margin: 0 1px;
+        }
+
+        .rr-stat-row-sub {
+            color: #64748B;
+            font-size: 0.90rem;
+            font-weight: 600;
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         /* All Model Tests Section - Natural Page Scroll */
@@ -808,7 +831,7 @@
             padding-bottom: 14px;
             margin-bottom: 14px;
             border-bottom: 1.5px solid #F1F5F9;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: #1E293B;
         }
@@ -823,12 +846,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 18px;
+            padding: 13px 16px;
             background: #F8FAFC;
             border: 1px solid #E2E8F0;
             border-radius: 14px;
             transition: all 0.2s;
             gap: 14px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .rr-exam-full-item:hover {
@@ -841,47 +866,172 @@
             flex-direction: column;
             gap: 4px;
             min-width: 0;
+            flex: 1;
         }
 
         .rr-efi-title {
-            font-size: 0.98rem;
-            font-weight: 800;
+            font-size: 0.92rem;
+            font-weight: 700;
             color: #1E293B;
             margin: 0;
+            line-height: 1.4;
+            word-break: break-word;
         }
 
         .rr-efi-sub {
-            font-size: 0.82rem;
+            font-size: 0.80rem;
             color: #64748B;
         }
 
         .rr-efi-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-shrink: 0;
         }
 
         .rr-efi-score {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: #15803D;
             background: #DCFCE7;
             border: 1px solid #86EFAC;
-            padding: 4px 12px;
-            border-radius: 10px;
+            padding: 3px 10px;
+            border-radius: 9px;
             font-family: 'Inter', sans-serif;
             white-space: nowrap;
         }
 
         .rr-efi-rank-pill {
-            font-size: 0.80rem;
+            font-size: 0.78rem;
             font-weight: 700;
             background: #FEF3C7;
             color: #B45309;
-            padding: 3px 8px;
+            padding: 2px 8px;
             border-radius: 8px;
             white-space: nowrap;
+        }
+
+        /* Responsive styling for Mobile */
+        @media (max-width: 640px) {
+            .rr-header {
+                padding: 12px 14px;
+                gap: 12px;
+            }
+
+            .rr-header-left {
+                gap: 8px;
+            }
+
+            .rr-title {
+                font-size: 1.05rem;
+                white-space: nowrap;
+            }
+
+            .rr-live-pill {
+                padding: 3px 8px;
+                font-size: 0.80rem;
+                margin-right: 4px;
+            }
+
+            .rr-header-right {
+                gap: 10px;
+            }
+
+            .rr-header-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            .rr-header-avatar {
+                width: 36px;
+                height: 36px;
+            }
+
+            .rr-detail-stats-list {
+                padding: 4px 14px;
+            }
+
+            .rr-stat-row {
+                padding: 13px 0;
+                gap: 8px;
+            }
+
+            .rr-stat-row-left {
+                font-size: 0.95rem;
+                gap: 8px;
+            }
+
+            .rr-stat-row-icon {
+                font-size: 1.15rem;
+            }
+
+            .rr-stat-row-right {
+                gap: 6px;
+            }
+
+            .rr-stat-row-val {
+                font-size: 0.96rem;
+            }
+
+            .rr-stat-row-sub {
+                font-size: 0.84rem;
+            }
+
+            /* Model tests layout on mobile: full width lines, no squeezing */
+            .rr-exam-section-card {
+                padding: 14px 12px;
+                border-radius: 16px;
+            }
+
+            .rr-section-heading {
+                font-size: 0.92rem;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .rr-exam-full-item {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px 12px;
+                gap: 8px;
+            }
+
+            .rr-efi-left {
+                width: 100%;
+            }
+
+            .rr-efi-title {
+                font-size: 0.88rem;
+                line-height: 1.35;
+                margin-bottom: 2px;
+            }
+
+            .rr-efi-sub {
+                font-size: 0.76rem;
+            }
+
+            .rr-efi-right {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                margin-top: 2px;
+                padding-top: 8px;
+                border-top: 1px dashed #E2E8F0;
+            }
+
+            .rr-efi-rank-pill {
+                font-size: 0.74rem;
+                padding: 2px 7px;
+            }
+
+            .rr-efi-score {
+                font-size: 0.95rem;
+                padding: 2px 8px;
+            }
         }
 
         /* Dark Mode Support */
@@ -916,9 +1066,25 @@
             border-color: #22C55E;
         }
 
-        body.dark-mode .rr-stat-box {
+        body.dark-mode .rr-detail-stats-list {
             background: #0F172A;
             border-color: #334155;
+        }
+
+        body.dark-mode .rr-stat-row {
+            border-bottom-color: #334155;
+        }
+
+        body.dark-mode .rr-stat-row-left {
+            color: #F8FAFC;
+        }
+
+        body.dark-mode .rr-stat-row-val {
+            color: #4ADE80;
+        }
+
+        body.dark-mode .rr-stat-row-sub {
+            color: #94A3B8;
         }
 
         body.dark-mode .rr-exam-section-card {
@@ -1007,9 +1173,6 @@
             <!-- Top App Bar inside container -->
             <header class="rr-header">
                 <div class="rr-header-left">
-                    <a href="../index.html" class="rr-back-btn" title="হোম পেজে ফিরুন">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </a>
                     <h1 class="rr-title">রিডিং রুম</h1>
                     <div class="rr-live-pill">
                         <span class="rr-live-dot"></span>
@@ -1317,27 +1480,51 @@
                 </div>
             </div>
 
-            <!-- ৪টি স্ট্যাট কার্ড: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া -->
-            <div class="rr-detail-stats-grid">
-                <div class="rr-stat-box">
-                    <span class="rr-stat-box-title">☀️ আজ</span>
-                    <span class="rr-stat-box-val" id="detailStatToday">৩ ঘণ্টা ৪০ মিনিট</span>
-                    <span class="rr-stat-box-sub" id="detailStatTodaySessions">৫টি সেশন</span>
+            <!-- ৪টি স্টাডি স্ট্যাটাস: আজ, এই সপ্তাহ, এই মাস, সর্বমোট (ছবির মতো উল্লম্ব লিস্ট) -->
+            <div class="rr-detail-stats-list">
+                <div class="rr-stat-row">
+                    <div class="rr-stat-row-left">
+                        <span class="rr-stat-row-icon">☀️</span>
+                        <span class="rr-stat-row-label">আজ</span>
+                    </div>
+                    <div class="rr-stat-row-right">
+                        <strong class="rr-stat-row-val" id="detailStatToday">৩ ঘণ্টা ৪০ মিনিট</strong>
+                        <span class="rr-stat-sep">•</span>
+                        <span class="rr-stat-row-sub" id="detailStatTodaySessions">৫টি সেশন</span>
+                    </div>
                 </div>
-                <div class="rr-stat-box">
-                    <span class="rr-stat-box-title">📅 এই সপ্তাহ</span>
-                    <span class="rr-stat-box-val" id="detailStatWeek">১৮ ঘণ্টা ২০ মিনিট</span>
-                    <span class="rr-stat-box-sub">সাপ্তাহিক রুটিন</span>
+                <div class="rr-stat-row">
+                    <div class="rr-stat-row-left">
+                        <span class="rr-stat-row-icon">📅</span>
+                        <span class="rr-stat-row-label">এই সপ্তাহ</span>
+                    </div>
+                    <div class="rr-stat-row-right">
+                        <strong class="rr-stat-row-val" id="detailStatWeek">১৮ ঘণ্টা ২০ মিনিট</strong>
+                        <span class="rr-stat-sep">•</span>
+                        <span class="rr-stat-row-sub">সাপ্তাহিক রুটিন</span>
+                    </div>
                 </div>
-                <div class="rr-stat-box">
-                    <span class="rr-stat-box-title">🗓️ এই মাস</span>
-                    <span class="rr-stat-box-val" id="detailStatMonth">৬৪ ঘণ্টা ৫০ মিনিট</span>
-                    <span class="rr-stat-box-sub">মাসিক অগ্রগতি</span>
+                <div class="rr-stat-row">
+                    <div class="rr-stat-row-left">
+                        <span class="rr-stat-row-icon">🗓️</span>
+                        <span class="rr-stat-row-label">এই মাস</span>
+                    </div>
+                    <div class="rr-stat-row-right">
+                        <strong class="rr-stat-row-val" id="detailStatMonth">৬৪ ঘণ্টা ৫০ মিনিট</strong>
+                        <span class="rr-stat-sep">•</span>
+                        <span class="rr-stat-row-sub">মাসিক অগ্রগতি</span>
+                    </div>
                 </div>
-                <div class="rr-stat-box">
-                    <span class="rr-stat-box-title">🏆 সর্বমোট পড়া</span>
-                    <span class="rr-stat-box-val" id="detailStatTotal">১৪২ ঘণ্টা ৩০ মিনিট</span>
-                    <span class="rr-stat-box-sub" id="detailStatTotalSessions">১৮৯ সেশন</span>
+                <div class="rr-stat-row">
+                    <div class="rr-stat-row-left">
+                        <span class="rr-stat-row-icon">🏆</span>
+                        <span class="rr-stat-row-label">সর্বমোট</span>
+                    </div>
+                    <div class="rr-stat-row-right">
+                        <strong class="rr-stat-row-val" id="detailStatTotal">১৪২ ঘণ্টা ৩০ মিনিট</strong>
+                        <span class="rr-stat-sep">•</span>
+                        <span class="rr-stat-row-sub" id="detailStatTotalSessions">১৮৯ সেশন</span>
+                    </div>
                 </div>
             </div>
 
@@ -1635,9 +1822,7 @@
         // Dark Mode Initialization
         (function() {
             try {
-                if (localStorage.getItem('ict_theme') === 'dark') {
-                    document.body.classList.add('dark-mode');
-                }
+                localStorage.setItem("ict_theme", "light"); document.body.classList.remove("dark-mode");
             } catch(e) {}
             syncLoggedInStudent();
         })();
