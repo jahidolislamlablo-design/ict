@@ -292,6 +292,7 @@ function updateStepView() {
         if (stepQuestions) stepQuestions.style.display = 'none';
         if (breadcrumbStep) breadcrumbStep.innerText = `${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedYear) : selectedYear} > বোর্ড নির্বাচন`;
         if (backBtnText) backBtnText.innerText = 'সাল পরিবর্তনে যান';
+        if (typeof updateAllCardProgressRings === 'function') updateAllCardProgressRings();
     } else if (currentStep === 'questions') {
         if (stepYears) stepYears.style.display = 'none';
         if (stepBoards) stepBoards.style.display = 'none';

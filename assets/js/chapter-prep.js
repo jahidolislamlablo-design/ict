@@ -42,6 +42,7 @@ function openChapterModal(chapterTitle, chapterId = null) {
 }
 
 function closeChapterModal() {
+    if (typeof updateAllCardProgressRings === 'function') updateAllCardProgressRings();
     const modal = document.getElementById('chapterModeModal');
     if (modal) modal.classList.remove('open');
 }

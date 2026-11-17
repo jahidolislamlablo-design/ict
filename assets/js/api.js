@@ -157,13 +157,18 @@ function mapBackendMcqToFrontend(item) {
         serialNo: item.serialNo || 0,
         chapter: item.chapter || '',
         chapter_id: item.chapter ? (item.chapter.match(/\d+/) ? parseInt(item.chapter.match(/\d+/)[0]) : 1) : 1,
-        board_id: item.boardName || '',
-        board_name: item.boardName || '',
-        year: item.examYear || '',
-        college: item.collegeName || '',
-        college_id: item.collegeName || '',
-        category_types: item.categoryTypes || [item.categoryType || 'Chapter Practice'],
-        category_type: item.categoryType || 'Chapter Practice'
+        board_id: item.boardName || item.board_name || item.board_id || '',
+        board_name: item.boardName || item.board_name || item.board_id || '',
+        boardName: item.boardName || item.board_name || item.board_id || '',
+        year: item.examYear || item.year || '',
+        examYear: item.examYear || item.year || '',
+        college: item.collegeName || item.college || item.college_id || '',
+        college_id: item.collegeName || item.college || item.college_id || '',
+        collegeName: item.collegeName || item.college || item.college_id || '',
+        category_types: item.categoryTypes || item.category_types || [item.categoryType || item.category_type || 'Chapter Practice'],
+        category_type: item.categoryType || item.category_type || 'Chapter Practice',
+        categoryTypes: item.categoryTypes || item.category_types || [item.categoryType || item.category_type || 'Chapter Practice'],
+        categoryType: item.categoryType || item.category_type || 'Chapter Practice'
     };
 }
 
@@ -1464,8 +1469,10 @@ function matchCollegeName(storedName, targetName) {
 
 function hasCategory(item, catName) {
     if (!item) return false;
-    if (Array.isArray(item.categoryTypes) && item.categoryTypes.includes(catName)) return true;
-    if (item.categoryType === catName) return true;
+    const cats = item.categoryTypes || item.category_types;
+    if (Array.isArray(cats) && cats.includes(catName)) return true;
+    const singleCat = item.categoryType || item.category_type;
+    if (singleCat === catName) return true;
     return false;
 }
 
@@ -2416,12 +2423,24 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     `;
 
     const isModelTest = (category === 'model_test') || (options.hideExplanation === true) || (mode === 'exam');
+    const isRead = isQuestionRead(qId);
+    const cardId = (mode === 'exam') ? `model-mcq-card-${index}` : `modern-mcq-card-${index}`;
+
+    const readToggleHtml = !isModelTest ? `
+        <div class="mcq-read-toggle-box" onclick="event.stopPropagation(); toggleQuestionRead('${qId}', '${cardId}')" title="পড়া সম্পন্ন হিসেবে চিহ্নিত করুন">
+            <span class="mcq-read-label">পড়া হয়েছে</span>
+            <div class="mcq-read-checkbox ${isRead ? 'checked' : ''}">
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>
+    ` : '';
 
     const expBtnAndBox = `
         <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: ${isModelTest ? 'flex-end' : 'space-between'}; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
             <button type="button" class="modern-exp-btn" onclick="toggleModernExp(this)" style="${isModelTest ? 'display: none;' : ''}">
                 <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
             </button>
+            ${readToggleHtml}
             ${favButtonHtml}
         </div>
         <div class="modern-exp-box" style="display: none; width: 100%; margin-top: 12px;">
@@ -2430,20 +2449,11 @@ function renderModernMCQCardHTML(q, index, options = {}) {
         </div>
     `;
 
-    const cardId = (mode === 'exam') ? `model-mcq-card-${index}` : `modern-mcq-card-${index}`;
-    const isRead = isQuestionRead(qId);
-
     return `
         <div class="modern-quiz-card ${isRead ? 'is-read-question' : ''}" id="${cardId}" data-q-index="${index}" data-correct-index="${correctIndex}" data-q-id="${qId}">
             ${contextHtml}
-            <div class="modern-quiz-header" onclick="toggleQuestionRead('${qId}', '${cardId}')" style="cursor: pointer;" title="ক্লিক করে পড়া সম্পন্ন চিহ্নিত করুন">
+            <div class="modern-quiz-header">
                 <h3 class="modern-q-title">${qNum}. ${formatModernMCQContent(qText)}</h3>
-                <div class="mcq-read-toggle-box" onclick="event.stopPropagation(); toggleQuestionRead('${qId}', '${cardId}')" title="পড়া সম্পন্ন হিসেবে চিহ্নিত করুন">
-                    <span class="mcq-read-label">পড়া হয়েছে</span>
-                    <div class="mcq-read-checkbox ${isRead ? 'checked' : ''}">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                </div>
             </div>
             ${imageHtml}
             <div class="modern-options-list">
@@ -3314,6 +3324,17 @@ async function updateAllCardProgressRings() {
             }
         };
 
+        const isMcqRead = (m, idx) => {
+            if (!m) return false;
+            const strId = String(m._id || m.id || '');
+            if (strId && readSet.has(strId)) return true;
+            if (typeof generateMCQUniqueId === 'function') {
+                const uid = generateMCQUniqueId(m, idx !== undefined ? idx : 0);
+                if (readSet.has(uid)) return true;
+            }
+            return false;
+        };
+
         // 1. Chapter Rings
         const chapterRings = [
             { id: 1, ratio: 'ring-ratio-ch-1', pct: 'ring-pct-ch-1', fill: 'ring-fill-ch-1', fallbackTotal: 352, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 1') || m.chapter.includes('১ম') || m.chapter.includes('তথ্য ও যোগাযোগ')) },
@@ -3328,7 +3349,7 @@ async function updateAllCardProgressRings() {
         chapterRings.forEach(ch => {
             const matching = allMcqs.filter(ch.match);
             const total = matching.length > 0 ? matching.length : ch.fallbackTotal;
-            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
+            const read = matching.filter((m, idx) => isMcqRead(m, idx)).length;
             updateRingUI(ch.ratio, ch.pct, ch.fill, read, total);
         });
 
@@ -3347,9 +3368,10 @@ async function updateAllCardProgressRings() {
         ];
 
         boardRings.forEach(br => {
-            const matching = allMcqs.filter(m => hasCategory(m, 'Board Question') && matchBoardName(m.boardName, br.key));
+            const matching = allMcqs.filter(m => (hasCategory(m, 'Board Question') || hasCategory(m, 'board')) && matchBoardName(m.boardName || m.board_name, br.key));
+            const targetQuestions = matching.slice(0, 25);
             const total = 25; // স্ট্যান্ডার্ড ২৫টি MCQ
-            const read = Math.min(25, matching.filter(m => readSet.has(String(m._id || m.id))).length);
+            const read = targetQuestions.filter((m, idx) => isMcqRead(m, idx)).length;
             updateRingUI(br.ratio, br.pct, br.fill, read, total);
         });
 
@@ -3366,9 +3388,10 @@ async function updateAllCardProgressRings() {
         ];
 
         collegeRings.forEach(cr => {
-            const matching = allMcqs.filter(m => hasCategory(m, 'College Test Paper') && matchCollegeName(m.collegeName, cr.name));
+            const matching = allMcqs.filter(m => (hasCategory(m, 'College Test Paper') || hasCategory(m, 'test-paper')) && matchCollegeName(m.collegeName || m.college, cr.name));
+            const targetQuestions = matching.slice(0, 25);
             const total = 25; // স্ট্যান্ডার্ড ২৫টি MCQ
-            const read = Math.min(25, matching.filter(m => readSet.has(String(m._id || m.id))).length);
+            const read = targetQuestions.filter((m, idx) => isMcqRead(m, idx)).length;
             updateRingUI(cr.ratio, cr.pct, cr.fill, read, total);
         });
 

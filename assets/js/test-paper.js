@@ -292,6 +292,7 @@ function updateTestPaperStep() {
         if (stepQuestions) stepQuestions.style.display = 'none';
         if (breadcrumbStep) breadcrumbStep.innerText = `${(typeof toBanglaNum === 'function') ? toBanglaNum(selectedTestYear) : selectedTestYear} > শীর্ষ কলেজ নির্বাচন`;
         if (backBtnText) backBtnText.innerText = 'সাল পরিবর্তনে যান';
+        if (typeof updateAllCardProgressRings === 'function') updateAllCardProgressRings();
     } else if (testStep === 'questions') {
         if (stepYears) stepYears.style.display = 'none';
         if (stepColleges) stepColleges.style.display = 'none';
