@@ -3712,30 +3712,41 @@ body.no-pull-refresh {
     }
 
     .card-right-progress {
-        min-width: 64px;
+        min-width: 66px;
         flex-shrink: 0;
-        gap: 2px;
+        gap: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .card-ring-box {
-        width: 46px;
-        height: 46px;
-        min-width: 46px;
-        min-height: 46px;
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
 
     .card-ring-svg {
-        width: 46px;
-        height: 46px;
+        width: 48px;
+        height: 48px;
     }
 
     .card-ring-ratio {
-        font-size: 0.65rem;
-        letter-spacing: -0.5px;
+        font-size: 0.68rem;
+        letter-spacing: -0.2px;
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
     }
 
     .card-ring-pct {
-        font-size: 0.60rem;
+        font-size: 0.62rem;
         white-space: nowrap;
     }
 }

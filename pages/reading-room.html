@@ -699,75 +699,192 @@
             gap: 5px;
         }
 
-        /* Student Hero Card */
+        /* Student Hero Card (ছবির মতো পরিচ্ছন্ন ও মার্জিত ডিজাইন) */
         .rr-detail-user-card {
-            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            background: #FFFFFF;
+            border: 1.5px solid #E2E8F0;
             border-radius: 20px;
-            padding: 24px;
-            color: #FFFFFF;
+            padding: 18px 22px;
+            color: #1E293B;
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
-        @media (max-width: 640px) {
-            .rr-detail-user-card {
-                flex-direction: column;
-                text-align: center;
-                gap: 14px;
-                padding: 20px 16px;
-            }
+        .rr-detail-user-card-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .rr-detail-avatar-wrap {
+            position: relative;
+            width: 74px;
+            height: 74px;
+            min-width: 74px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #22C55E, #10B981);
+            flex-shrink: 0;
         }
 
         .rr-detail-avatar {
-            width: 76px;
-            height: 76px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            border: 3.5px solid #FFFFFF;
+            border: 2.5px solid #FFFFFF;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            flex-shrink: 0;
+            display: block;
         }
 
         .rr-detail-info {
             flex: 1;
-            min-width: 200px;
+            min-width: 0;
         }
 
         .rr-detail-info h2 {
-            font-size: 1.45rem;
+            font-size: 1.35rem;
             font-weight: 800;
-            margin: 0 0 8px 0;
-            color: #FFFFFF;
+            margin: 0 0 6px 0;
+            color: #1E293B;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .rr-detail-badges {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
-        }
-
-        @media (max-width: 640px) {
-            .rr-detail-badges {
-                justify-content: center;
-            }
         }
 
         .rr-detail-pill {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 5px 14px;
+            gap: 5px;
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #15803D;
+        }
+
+        .rr-follow-btn {
+            background: #FFFFFF;
+            color: #16A34A;
+            border: 1.5px solid #16A34A;
             border-radius: 9999px;
-            font-size: 0.84rem;
-            font-weight: 600;
+            padding: 6px 18px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        .rr-follow-btn:hover {
+            background: #16A34A;
             color: #FFFFFF;
-            backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 640px) {
+            .rr-detail-user-card {
+                padding: 16px;
+                gap: 12px;
+            }
+            .rr-detail-avatar-wrap {
+                width: 64px;
+                height: 64px;
+                min-width: 64px;
+            }
+            .rr-detail-info h2 {
+                font-size: 1.2rem;
+            }
+            .rr-detail-pill {
+                font-size: 0.76rem;
+                padding: 2px 8px;
+            }
+            .rr-follow-btn {
+                padding: 5px 12px;
+                font-size: 0.82rem;
+            }
+        }
+
+        /* Floating Bottom Study Button */
+        .rr-floating-cta-wrap {
+            position: fixed;
+            bottom: 74px;
+            left: 0;
+            right: 0;
+            padding: 0 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            z-index: 990;
+            pointer-events: none;
+        }
+
+        .rr-floating-cta-btn {
+            pointer-events: auto;
+            width: 100%;
+            background: #15803D;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 9999px;
+            padding: 8px 12px 8px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 8px 24px rgba(21, 128, 61, 0.35);
+            cursor: pointer;
+            font-family: 'Hind Siliguri', sans-serif;
+            transition: all 0.25s ease;
+        }
+
+        .rr-floating-cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        .rr-floating-cta-btn.is-running {
+            background: #DC2626;
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.35);
+        }
+
+        .rr-floating-cta-btn.is-running .rr-cta-icon-circle {
+            background: #FEE2E2;
+            color: #DC2626;
+        }
+
+        .rr-cta-label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .rr-cta-icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #86EFAC;
+            color: #14532D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+            transition: all 0.2s;
         }
 
         /* ৪টি স্টাডি স্ট্যাটাস - উল্লম্ব লিস্ট ডিজাইন (ছবির মতো) */
@@ -1602,19 +1719,26 @@
                 </span>
             </div>
 
-            <!-- Student Hero Card -->
+            <!-- Student Hero Card (ছবির মতো পরিচ্ছন্ন ও মার্জিত ডিজাইন) -->
             <div class="rr-detail-user-card">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="rr-detail-avatar" id="detailUserAvatar">
-                <div class="rr-detail-info">
-                    <h2 id="detailUserName">Niloy</h2>
-                    <div class="rr-detail-badges">
-                        <span class="rr-detail-pill" id="detailUserBatch"><i class="fa-solid fa-graduation-cap"></i> HSC 2027</span>
-                        <span class="rr-detail-pill" id="detailUserCollege"><i class="fa-solid fa-building-columns"></i> নটর ডেম কলেজ, ঢাকা</span>
+                <div class="rr-detail-user-card-left">
+                    <div class="rr-detail-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="rr-detail-avatar" id="detailUserAvatar">
+                    </div>
+                    <div class="rr-detail-info">
+                        <h2 id="detailUserName">Niloy</h2>
+                        <div class="rr-detail-badges">
+                            <span class="rr-detail-pill" id="detailUserBatch"><i class="fa-solid fa-graduation-cap"></i> HSC 2027</span>
+                            <span class="rr-detail-pill" id="detailUserCollege"><i class="fa-solid fa-building-columns"></i> নটর ডেম কলেজ, ঢাকা</span>
+                        </div>
                     </div>
                 </div>
+                <button type="button" class="rr-follow-btn" id="detailFollowBtn" onclick="toggleFollowUser(this)">
+                    <i class="fa-solid fa-user-plus"></i> ফলো
+                </button>
             </div>
 
-            <!-- ৪টি স্টাডি স্ট্যাটাস: আজ, এই সপ্তাহ, এই মাস, সর্বমোট (ছবির মতো উল্লম্ব লিস্ট) -->
+            <!-- ৪টি স্টাডি স্ট্যাটাস: আজ, গতকাল, এই সপ্তাহ, সর্বমোট (ছবির মতো উল্লম্ব লিস্ট) -->
             <div class="rr-detail-stats-list">
                 <div class="rr-stat-row">
                     <div class="rr-stat-row-left">
@@ -1629,24 +1753,24 @@
                 </div>
                 <div class="rr-stat-row">
                     <div class="rr-stat-row-left">
-                        <span class="rr-stat-row-icon">📅</span>
-                        <span class="rr-stat-row-label">এই সপ্তাহ</span>
+                        <span class="rr-stat-row-icon">🌙</span>
+                        <span class="rr-stat-row-label">গতকাল</span>
                     </div>
                     <div class="rr-stat-row-right">
-                        <strong class="rr-stat-row-val" id="detailStatWeek">১৮ ঘণ্টা ২০ মিনিট</strong>
+                        <strong class="rr-stat-row-val" id="detailStatYesterday">৯ ঘণ্টা</strong>
                         <span class="rr-stat-sep">•</span>
-                        <span class="rr-stat-row-sub">সাপ্তাহিক রুটিন</span>
+                        <span class="rr-stat-row-sub" id="detailStatYesterdaySessions">১৮ সেশন</span>
                     </div>
                 </div>
                 <div class="rr-stat-row">
                     <div class="rr-stat-row-left">
-                        <span class="rr-stat-row-icon">🗓️</span>
-                        <span class="rr-stat-row-label">এই মাস</span>
+                        <span class="rr-stat-row-icon">📅</span>
+                        <span class="rr-stat-row-label">এই সপ্তাহ</span>
                     </div>
                     <div class="rr-stat-row-right">
-                        <strong class="rr-stat-row-val" id="detailStatMonth">৬৪ ঘণ্টা ৫০ মিনিট</strong>
+                        <strong class="rr-stat-row-val" id="detailStatWeek">১৬ ঘণ্টা</strong>
                         <span class="rr-stat-sep">•</span>
-                        <span class="rr-stat-row-sub">মাসিক অগ্রগতি</span>
+                        <span class="rr-stat-row-sub" id="detailStatWeekSessions">৩২ সেশন</span>
                     </div>
                 </div>
                 <div class="rr-stat-row">
@@ -1655,9 +1779,9 @@
                         <span class="rr-stat-row-label">সর্বমোট</span>
                     </div>
                     <div class="rr-stat-row-right">
-                        <strong class="rr-stat-row-val" id="detailStatTotal">১৪২ ঘণ্টা ৩০ মিনিট</strong>
+                        <strong class="rr-stat-row-val" id="detailStatTotal">১৯৯ ঘণ্টা</strong>
                         <span class="rr-stat-sep">•</span>
-                        <span class="rr-stat-row-sub" id="detailStatTotalSessions">১৮৯ সেশন</span>
+                        <span class="rr-stat-row-sub" id="detailStatTotalSessions">৩৯৮ সেশন</span>
                     </div>
                 </div>
             </div>
@@ -1692,6 +1816,16 @@
             </div>
         </div>
     </div><!-- End reading-room-app -->
+
+    <!-- Floating Bottom Study Button (ছবির মতো 'পড়া শুরু • ৩০ মিনিট') -->
+    <div class="rr-floating-cta-wrap" id="floatingStudyWrap">
+        <button type="button" class="rr-floating-cta-btn" id="btnBottomStudy" onclick="toggleStudySession()">
+            <span class="rr-cta-label" id="bottomCtaText">পড়া শুরু • ৩০ মিনিট</span>
+            <span class="rr-cta-icon-circle" id="bottomCtaIcon">
+                <i class="fa-solid fa-play"></i>
+            </span>
+        </button>
+    </div>
 
     <!-- ফুটার (ডেভেলপার ইনফো কার্ড সহ) -->
     <footer class="site-footer">
@@ -1748,6 +1882,10 @@
             return String(num).replace(/[0-9]/g, d => bn[d]);
         }
 
+        function padZero(n) {
+            return n < 10 ? '0' + n : String(n);
+        }
+
         // Mock Database of Participated Model Tests for Each Student
         const MOCK_EXAM_RECORDS = {
             niloy: [
@@ -1797,7 +1935,6 @@
             ]
         };
 
-        // Fallback default exams if user is not in database
         const DEFAULT_EXAMS = [
             { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১৪', score: '২৩ / ২৫', rank: '৩য় স্থান', pct: '৯২% সঠিক' },
             { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - ১ম ও ২য় অধ্যায়', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১২', score: '২৪ / ২৫', rank: '২য় স্থান', pct: '৯৬% সঠিক' },
@@ -1805,9 +1942,8 @@
             { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - ঢাকা বোর্ড', sub: 'বোর্ড প্রশ্ন · ২০২৪-১১-০৪', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' }
         ];
 
-        // SHOW FULL PAGE STUDENT DETAIL VIEW
-        function showUserDetailView(name, batch, college, todayTime, todaySessions, weekTime, monthTime, totalTime, totalSessions, userKey, avatarUrl) {
-            // Update Student Profile Information
+        // SHOW FULL PAGE STUDENT DETAIL VIEW (ছবির মতো উল্লম্ব লিস্ট)
+        function showUserDetailView(name, batch, college, todayTime, todaySessions, yestTime, yestSessions, weekTime, weekSessions, totalTime, totalSessions, userKey, avatarUrl) {
             const avatarEl = document.getElementById('detailUserAvatar');
             if (avatarUrl) {
                 avatarEl.src = avatarUrl;
@@ -1828,18 +1964,29 @@
             }
 
             document.getElementById('detailUserName').innerText = name || 'শিক্ষার্থী';
-            document.getElementById('detailUserBatch').innerHTML = '<i class="fa-solid fa-graduation-cap"></i> ' + (batch || 'HSC 2027');
-            document.getElementById('detailUserCollege').innerHTML = '<i class="fa-solid fa-building-columns"></i> ' + (college || 'নটর ডেম কলেজ, ঢাকা');
+            document.getElementById('detailUserBatch').innerHTML = '<i class="fa-solid fa-graduation-cap"></i> ' + (batch || 'HSC 2026');
+            document.getElementById('detailUserCollege').innerHTML = '<i class="fa-solid fa-building-columns"></i> ' + (college || 'ঢাকা কলেজ, ঢাকা');
 
-            // 4 Study Stat Cards: আজ, এই সপ্তাহ, এই মাস, সর্বমোট পড়া
-            document.getElementById('detailStatToday').innerText = todayTime || '২ ঘণ্টা ৩০ মিনিট';
-            document.getElementById('detailStatTodaySessions').innerText = todaySessions || '৪টি সেশন';
-            document.getElementById('detailStatWeek').innerText = weekTime || '১৪ ঘণ্টা ২০ মিনিট';
-            document.getElementById('detailStatMonth').innerText = monthTime || '৫২ ঘণ্টা ১০ মিনিট';
-            document.getElementById('detailStatTotal').innerText = totalTime || '১১৮ ঘণ্টা ৪০ মিনিট';
-            document.getElementById('detailStatTotalSessions').innerText = totalSessions || '১৫৬ সেশন';
+            // ৪টি স্টাডি স্ট্যাটাস মান সেট (আজ, গতকাল, এই সপ্তাহ, সর্বমোট)
+            document.getElementById('detailStatToday').innerText = todayTime || '৭ ঘণ্টা';
+            document.getElementById('detailStatTodaySessions').innerText = todaySessions || '১৪ সেশন';
 
-            // Populate All Participated Model Tests (Natural full page scroll)
+            const elYest = document.getElementById('detailStatYesterday');
+            const elYestSub = document.getElementById('detailStatYesterdaySessions');
+            if (elYest) elYest.innerText = yestTime || '৯ ঘণ্টা';
+            if (elYestSub) elYestSub.innerText = yestSessions || '১৮ সেশন';
+
+            const elWeek = document.getElementById('detailStatWeek');
+            const elWeekSub = document.getElementById('detailStatWeekSessions');
+            if (elWeek) elWeek.innerText = weekTime || '১৬ ঘণ্টা';
+            if (elWeekSub) elWeekSub.innerText = weekSessions || '৩২ সেশন';
+
+            const elTotal = document.getElementById('detailStatTotal');
+            const elTotalSub = document.getElementById('detailStatTotalSessions');
+            if (elTotal) elTotal.innerText = totalTime || '১৯৯ ঘণ্টা';
+            if (elTotalSub) elTotalSub.innerText = totalSessions || '৩৯৮ সেশন';
+
+            // মডেল টেস্ট তালিকা পপুলেট
             const exams = (userKey && MOCK_EXAM_RECORDS[userKey.toLowerCase()]) || DEFAULT_EXAMS;
             const listEl = document.getElementById('detailExamFullList');
             document.getElementById('detailExamTotalBadge').innerText = toBnDigits(exams.length) + 'টি সম্পন্ন';
@@ -1857,65 +2004,362 @@
                 </div>
             `).join('');
 
-            // View Transition: Hide leaderboard and display full student detail view
+            // ভিউ ট্রানজিশন
             document.getElementById('reading-room-main-view').style.display = 'none';
             document.getElementById('reading-room-user-detail-view').style.display = 'block';
-
-            // Smooth Scroll to Top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Return back to Leaderboard view
         function hideUserDetailView() {
             document.getElementById('reading-room-user-detail-view').style.display = 'none';
             document.getElementById('reading-room-main-view').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Backward compatibility alias for bubble or popup clicks
         function openUserProfileModal(name, batch, college, todayTime, todaySessions, yestTime, yestSessions, userKey) {
-            showUserDetailView(name, batch, college, todayTime, todaySessions, '১৪ ঘণ্টা ২০ মিনিট', '৫২ ঘণ্টা ১০ মিনিট', '১১৮ ঘণ্টা ৪০ মিনিট', '১৫৬ সেশন', userKey);
+            showUserDetailView(name, batch, college, todayTime, todaySessions, yestTime || '৯ ঘণ্টা', yestSessions || '১৮ সেশন', '১৬ ঘণ্টা', '৩২ সেশন', '১৯৯ ঘণ্টা', '৩৯৮ সেশন', userKey);
         }
 
         function closeUserProfileModal() {
             hideUserDetailView();
         }
 
-        // Stopwatch / Study Session Timer Logic
-        let studySeconds = 0;
+        function toggleFollowUser(btn) {
+            if (!btn) return;
+            if (btn.classList.contains('followed')) {
+                btn.classList.remove('followed');
+                btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> ফলো';
+                btn.style.background = '#FFFFFF';
+                btn.style.color = '#16A34A';
+            } else {
+                btn.classList.add('followed');
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> ফলো করা হয়েছে';
+                btn.style.background = '#16A34A';
+                btn.style.color = '#FFFFFF';
+            }
+        }
+
+        // ==========================================
+        // PERSISTENT STUDY STOPWATCH TIMER LOGIC
+        // ==========================================
         let studyTimerInterval = null;
         let isStudying = false;
 
-        function toggleStudySession() {
-            const btn = document.getElementById('btnToggleStudy');
-            const status = document.getElementById('studySessionStatus');
-            const target = document.getElementById('targetText');
+        function getTodayDateStr() {
+            const now = new Date();
+            return now.toISOString().split('T')[0];
+        }
 
-            if (!isStudying) {
-                isStudying = true;
-                btn.innerHTML = '<i class="fa-solid fa-pause"></i> পজ করুন';
-                btn.style.background = '#FEE2E2';
-                btn.style.color = '#DC2626';
-                status.innerHTML = '🟢 স্টাডি সেশন চলমান... মনোযোগ দিয়ে পড়ুন!';
-                
-                studyTimerInterval = setInterval(() => {
-                    studySeconds++;
-                    const mins = Math.floor(studySeconds / 60);
-                    document.getElementById('displayStudyTime').innerText = toBnDigits(mins);
+        function getCurrentStudySeconds() {
+            const todayStr = getTodayDateStr();
+            const savedDate = localStorage.getItem('ict_study_date');
 
-                    const targetMinutes = 510; // 8 hr 30 min = 510 min
-                    const percent = Math.min(100, Math.round((mins / targetMinutes) * 100));
-                    target.innerHTML = `${toBnDigits(percent)}% · ৮ ঘণ্টা ৩০ মিনিট`;
-                }, 1000);
-            } else {
-                isStudying = false;
-                clearInterval(studyTimerInterval);
-                btn.innerHTML = '<i class="fa-solid fa-play"></i> পুনরায় শুরু করুন';
-                btn.style.background = '#FFFFFF';
-                btn.style.color = '#15803D';
-                const mins = Math.floor(studySeconds / 60);
-                status.innerHTML = `সেশন সম্পন্ন! আজ মোট ${toBnDigits(mins)} মিনিট পড়েছেন।`;
+            if (savedDate && savedDate !== todayStr) {
+                // দিন পরিবর্তন হলে আগের দিনের স্টাডি টাইম গতকালের জন্য সংরক্ষণ
+                const prevAcc = parseInt(localStorage.getItem('ict_study_accumulated') || '0', 10);
+                if (prevAcc > 0) {
+                    localStorage.setItem('ict_study_yesterday', String(prevAcc));
+                }
+                localStorage.setItem('ict_study_accumulated', '0');
+                localStorage.setItem('ict_study_date', todayStr);
+                localStorage.setItem('ict_study_sessions', '0');
+            } else if (!savedDate) {
+                localStorage.setItem('ict_study_date', todayStr);
             }
+
+            const accumulated = parseInt(localStorage.getItem('ict_study_accumulated') || '0', 10);
+            const isRunning = localStorage.getItem('ict_study_running') === 'true';
+            const startTs = parseInt(localStorage.getItem('ict_study_start_ts') || '0', 10);
+
+            if (isRunning && startTs > 0) {
+                const elapsed = Math.max(0, Math.floor((Date.now() - startTs) / 1000));
+                return accumulated + elapsed;
+            }
+            return accumulated;
+        }
+
+        function updateStudyTimerDisplay() {
+            const totalSecs = getCurrentStudySeconds();
+            const isRunning = localStorage.getItem('ict_study_running') === 'true';
+
+            const displayEl = document.getElementById('displayStudyTime');
+            const unitEl = document.querySelector('.rr-timer-unit');
+            const statusEl = document.getElementById('studySessionStatus');
+            const targetEl = document.getElementById('targetText');
+            const btnHero = document.getElementById('btnToggleStudy');
+            const btnBottom = document.getElementById('btnBottomStudy');
+            const bottomText = document.getElementById('bottomCtaText');
+            const bottomIcon = document.getElementById('bottomCtaIcon');
+
+            const mins = Math.floor(totalSecs / 60);
+            const secs = totalSecs % 60;
+            const hrs = Math.floor(totalSecs / 3600);
+
+            // ১. বড় টাইমার ডিসপ্লে আপডেট
+            if (displayEl) {
+                if (totalSecs < 60) {
+                    displayEl.innerText = toBnDigits(totalSecs);
+                    if (unitEl) unitEl.innerText = 'সেকেন্ড';
+                } else if (totalSecs < 3600) {
+                    displayEl.innerText = toBnDigits(mins);
+                    if (unitEl) unitEl.innerText = secs > 0 ? 'মিনিট ' + toBnDigits(secs) + ' সে.' : 'মিনিট';
+                } else {
+                    const remMins = Math.floor((totalSecs % 3600) / 60);
+                    displayEl.innerText = toBnDigits(hrs) + ':' + (remMins < 10 ? '০' : '') + toBnDigits(remMins);
+                    if (unitEl) unitEl.innerText = 'ঘণ্টা';
+                }
+            }
+
+            // ২. সেশন স্ট্যাটাস টেক্সট আপডেট
+            if (statusEl) {
+                if (isRunning) {
+                    if (totalSecs < 60) {
+                        statusEl.innerHTML = `🟢 লাইভ স্টাডি সেশন চলমান... ${toBnDigits(totalSecs)} সেকেন্ড (মনোযোগ দিয়ে পড়ুন!)`;
+                    } else if (totalSecs < 3600) {
+                        statusEl.innerHTML = `🟢 লাইভ স্টাডি সেশন চলমান... ${toBnDigits(mins)} মিনিট ${toBnDigits(secs)} সেকেন্ড`;
+                    } else {
+                        const remMins = Math.floor((totalSecs % 3600) / 60);
+                        statusEl.innerHTML = `🟢 লাইভ স্টাডি সেশন চলমান... ${toBnDigits(hrs)} ঘণ্টা ${toBnDigits(remMins)} মিনিট`;
+                    }
+                } else {
+                    if (totalSecs > 0) {
+                        if (totalSecs < 60) {
+                            statusEl.innerHTML = `সেশন সম্পন্ন! আজ মোট ${toBnDigits(totalSecs)} সেকেন্ড পড়েছেন।`;
+                        } else {
+                            statusEl.innerHTML = `সেশন সম্পন্ন! আজ মোট ${toBnDigits(mins)} মিনিট পড়েছেন।`;
+                        }
+                    } else {
+                        statusEl.innerText = 'আজ এখনো কোনো সেশন শেষ হয়নি';
+                    }
+                }
+            }
+
+            // ৩. আজকের টার্গেট প্রগ্রেস পার্সেন্টেজ আপডেট
+            if (targetEl) {
+                const targetMinutes = 510; // ৮ ঘণ্টা ৩০ মিনিট = ৫১০ মিনিট
+                const pct = Math.min(100, Math.round((mins / targetMinutes) * 100));
+                targetEl.innerHTML = `${toBnDigits(pct)}% · ৮ ঘণ্টা ৩০ মিনিট`;
+            }
+
+            // ৪. হিরো বাটন ও ফ্লোটিং বটম বাটন স্টেট সিঙ্ক
+            if (isRunning) {
+                if (btnHero) {
+                    btnHero.innerHTML = '<i class="fa-solid fa-pause"></i> পজ করুন';
+                    btnHero.style.background = '#FEE2E2';
+                    btnHero.style.color = '#DC2626';
+                }
+                if (btnBottom) {
+                    btnBottom.classList.add('is-running');
+                }
+                if (bottomText) {
+                    bottomText.innerText = 'পড়া চলছে • পজ করুন';
+                }
+                if (bottomIcon) {
+                    bottomIcon.innerHTML = '<i class="fa-solid fa-pause"></i>';
+                }
+            } else {
+                if (btnHero) {
+                    btnHero.innerHTML = totalSecs > 0 ? '<i class="fa-solid fa-play"></i> পুনরায় শুরু করুন' : '<i class="fa-solid fa-play"></i> স্টাডি শুরু করুন';
+                    btnHero.style.background = '#FFFFFF';
+                    btnHero.style.color = '#15803D';
+                }
+                if (btnBottom) {
+                    btnBottom.classList.remove('is-running');
+                }
+                if (bottomText) {
+                    bottomText.innerText = totalSecs > 0 ? 'পড়া চালিয়ে যান • ৩০ মিনিট' : 'পড়া শুরু • ৩০ মিনিট';
+                }
+                if (bottomIcon) {
+                    bottomIcon.innerHTML = '<i class="fa-solid fa-play"></i>';
+                }
+            }
+
+            // ৫. লিডারবোর্ডে নিজের কার্ডের টাইম আপডেট
+            const myRankTimeEl = document.getElementById('myRankTimeVal');
+            if (myRankTimeEl) {
+                if (totalSecs < 60) {
+                    myRankTimeEl.innerText = '০:' + (totalSecs < 10 ? '০' : '') + toBnDigits(totalSecs);
+                } else if (totalSecs < 3600) {
+                    myRankTimeEl.innerText = toBnDigits(mins) + ':' + (secs < 10 ? '০' : '') + toBnDigits(secs);
+                } else {
+                    const remMins = Math.floor((totalSecs % 3600) / 60);
+                    myRankTimeEl.innerText = toBnDigits(hrs) + ':' + (remMins < 10 ? '০' : '') + toBnDigits(remMins);
+                }
+            }
+        }
+
+        function toggleStudySession() {
+            const isRunning = localStorage.getItem('ict_study_running') === 'true';
+
+            if (!isRunning) {
+                // স্টাডি শুরু
+                localStorage.setItem('ict_study_running', 'true');
+                localStorage.setItem('ict_study_start_ts', String(Date.now()));
+                if (!localStorage.getItem('ict_study_date')) {
+                    localStorage.setItem('ict_study_date', getTodayDateStr());
+                }
+
+                if (!studyTimerInterval) {
+                    studyTimerInterval = setInterval(updateStudyTimerDisplay, 1000);
+                }
+            } else {
+                // স্টাডি পজ
+                const startTs = parseInt(localStorage.getItem('ict_study_start_ts') || '0', 10);
+                const prevAcc = parseInt(localStorage.getItem('ict_study_accumulated') || '0', 10);
+                const elapsed = startTs > 0 ? Math.max(0, Math.floor((Date.now() - startTs) / 1000)) : 0;
+                const newAcc = prevAcc + elapsed;
+
+                localStorage.setItem('ict_study_accumulated', String(newAcc));
+                localStorage.setItem('ict_study_running', 'false');
+                localStorage.removeItem('ict_study_start_ts');
+
+                // সেশন কাউন্ট বৃদ্ধি (যদি কমপক্ষে ১০ সেকেন্ড পড়া হয়)
+                if (elapsed >= 10) {
+                    const sessions = parseInt(localStorage.getItem('ict_study_sessions') || '0', 10) + 1;
+                    localStorage.setItem('ict_study_sessions', String(sessions));
+                }
+
+                if (studyTimerInterval) {
+                    clearInterval(studyTimerInterval);
+                    studyTimerInterval = null;
+                }
+            }
+
+            updateStudyTimerDisplay();
+        }
+
+        // ==========================================
+        // SYNC LOGGED-IN STUDENT INTO READING ROOM
+        // ==========================================
+        function getLoggedInUser() {
+            try {
+                const raw1 = localStorage.getItem('ict_student_profile');
+                if (raw1) return JSON.parse(raw1);
+                const raw2 = localStorage.getItem('ict_student_user');
+                if (raw2) return JSON.parse(raw2);
+            } catch(e) {}
+            return null;
+        }
+
+        function syncLoggedInStudent() {
+            const user = getLoggedInUser();
+            if (!user) return;
+
+            const name = user.name || 'শিক্ষার্থী';
+            const college = user.college || 'এইচএসসি পরীক্ষার্থী';
+            const batch = user.hscYear || 'HSC 2026';
+            const avatar = user.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80';
+
+            // ১. হেডার নাম ও অবতার আপডেট
+            const nameEl = document.getElementById('siteHeaderUserName');
+            if (nameEl) nameEl.innerText = name;
+            const a1 = document.getElementById('siteHeaderAvatar');
+            const a2 = document.getElementById('myHeaderAvatar');
+            if (a1) a1.src = avatar;
+            if (a2) a2.src = avatar;
+
+            // ২. একটিভ ইউজার বাবল রো-তে কারেন্ট ইউজার যুক্ত করা (প্রথম বাবল হিসেবে)
+            const activeRow = document.getElementById('activeUsersRow');
+            if (activeRow && !document.getElementById('activeBubbleMe')) {
+                const myBubble = document.createElement('div');
+                myBubble.className = 'rr-user-bubble rr-bubble-me';
+                myBubble.id = 'activeBubbleMe';
+                myBubble.onclick = showMyUserProfile;
+                myBubble.innerHTML = `
+                    <div class="rr-bubble-ring" style="border: 2.5px solid #22C55E; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.4);">
+                        <img src="${avatar}" alt="${name}" class="rr-bubble-img">
+                    </div>
+                    <span class="rr-bubble-name" style="color: #15803D; font-weight: 800;">${name} (তুমি)</span>
+                `;
+                activeRow.prepend(myBubble);
+            }
+
+            // ৩. র‍্যাংকিং তালিকায় কারেন্ট ইউজারের কার্ড যোগ করা
+            const rankingContainer = document.getElementById('rankingListContainer');
+            if (rankingContainer && !document.getElementById('myRankingCard')) {
+                const myCard = document.createElement('div');
+                myCard.className = 'rr-rank-card rr-my-rank-card';
+                myCard.id = 'myRankingCard';
+                myCard.onclick = showMyUserProfile;
+                myCard.innerHTML = `
+                    <div class="rr-rank-left">
+                        <div class="rr-rank-medal-wrap">
+                            <span class="rr-rank-number" id="myRankNumber" style="font-weight: 800; color: #15803D;">#</span>
+                        </div>
+                        <div class="rr-user-avatar-wrap ring-green">
+                            <img src="${avatar}" alt="${name}" class="rr-user-avatar">
+                            <span class="live-indicator" style="background: #22C55E;"></span>
+                        </div>
+                        <div class="rr-user-info">
+                            <div class="rr-name-row">
+                                <span class="rr-name-dot green"></span> ${name}
+                                <span style="font-size:0.72rem; background:#DCFCE7; color:#15803D; font-weight:700; padding:1px 6px; border-radius:9999px; margin-left:4px;">তুমি</span>
+                            </div>
+                            <div class="rr-tags-row">
+                                <span class="rr-tag-pill">${batch}</span>
+                                <span class="rr-tag-pill college-pill">🏛️ ${college}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rr-rank-time">
+                        <span class="rr-time-val" id="myRankTimeVal">০:০০</span>
+                        <span class="rr-time-unit">মিনিট</span>
+                    </div>
+                `;
+                // তালিকার শুরুতে বা ৪ নম্বরে ইনসার্ট
+                rankingContainer.prepend(myCard);
+            }
+
+            // ৪. 'তোমার অবস্থান' টেক্সট আপডেট
+            const posEl = document.querySelector('.rr-position-text');
+            if (posEl) {
+                posEl.innerText = 'তোমার অবস্থান ১/১৯২';
+            }
+        }
+
+        // নিজের প্রোফাইল কার্ড দেখানো (ছবির মতো ৪টি উল্লম্ব সারি সহ)
+        function showMyUserProfile() {
+            const user = getLoggedInUser();
+            const name = user ? user.name : 'আমার প্রোফাইল';
+            const college = user ? user.college : 'এইচএসসি পরীক্ষার্থী';
+            const batch = user ? user.hscYear : 'HSC 2026';
+            const avatar = user ? user.avatar : '';
+
+            const totalSecs = getCurrentStudySeconds();
+            const mins = Math.floor(totalSecs / 60);
+            const hrs = Math.floor(totalSecs / 3600);
+            const sessions = parseInt(localStorage.getItem('ict_study_sessions') || '1', 10);
+            const yestSecs = parseInt(localStorage.getItem('ict_study_yesterday') || '0', 10);
+            const yestMins = Math.floor(yestSecs / 60);
+
+            let todayTimeStr = '';
+            if (totalSecs < 60) {
+                todayTimeStr = toBnDigits(totalSecs) + ' সেকেন্ড';
+            } else if (totalSecs < 3600) {
+                todayTimeStr = toBnDigits(mins) + ' মিনিট';
+            } else {
+                const remMins = Math.floor((totalSecs % 3600) / 60);
+                todayTimeStr = toBnDigits(hrs) + ' ঘণ্টা ' + toBnDigits(remMins) + ' মিনিট';
+            }
+
+            const yestTimeStr = yestMins > 0 ? toBnDigits(yestMins) + ' মিনিট' : '৯ ঘণ্টা';
+            const yestSessionsStr = yestMins > 0 ? toBnDigits(Math.max(1, Math.round(yestMins / 30))) + ' সেশন' : '১৮ সেশন';
+
+            showUserDetailView(
+                name,
+                batch,
+                college,
+                todayTimeStr,
+                toBnDigits(sessions) + 'টি সেশন',
+                yestTimeStr,
+                yestSessionsStr,
+                '১৬ ঘণ্টা',
+                '৩২ সেশন',
+                '১৯৯ ঘণ্টা',
+                '৩৯৮ সেশন',
+                'me',
+                avatar
+            );
         }
 
         // Time Filter Tabs Switcher
@@ -1933,33 +2377,26 @@
             alert('গ্রুপ স্টাডি চ্যাট রুম লোড হচ্ছে... সহপাঠীদের সাথে প্রশ্নোত্তর আলোচনা করুন!');
         }
 
-        // Sync Logged-in User Profile Header
-        function syncLoggedInStudent() {
-            try {
-                const raw = localStorage.getItem('ict_student_user');
-                if (raw) {
-                    const u = JSON.parse(raw);
-                    if (u.name) {
-                        const nameEl = document.getElementById('siteHeaderUserName');
-                        if (nameEl) nameEl.innerText = u.name;
-                    }
-                    if (u.avatar) {
-                        const a1 = document.getElementById('siteHeaderAvatar');
-                        const a2 = document.getElementById('myHeaderAvatar');
-                        if (a1) a1.src = u.avatar;
-                        if (a2) a2.src = u.avatar;
-                    }
-                }
-            } catch(e) {}
-        }
+        // পেজ লোড ও টাইমার ইনিশিয়ালাইজেশন
+        document.addEventListener('DOMContentLoaded', () => {
+            syncLoggedInStudent();
+            updateStudyTimerDisplay();
+
+            const isRunning = localStorage.getItem('ict_study_running') === 'true';
+            if (isRunning) {
+                studyTimerInterval = setInterval(updateStudyTimerDisplay, 1000);
+            }
+        });
 
         // Dark Mode Initialization
         (function() {
             try {
                 localStorage.setItem("ict_theme", "light"); document.body.classList.remove("dark-mode");
             } catch(e) {}
-            syncLoggedInStudent();
         })();
+    </script>
+</body>
+</html>
     </script>
 </body>
 </html>

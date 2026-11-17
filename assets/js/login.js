@@ -69,6 +69,100 @@ function getAuthApiBaseUrl() {
 }
 window.getAuthApiBaseUrl = getAuthApiBaseUrl;
 
+// ==========================================
+// ক্লাউড একাউন্ট সিঙ্ক হেল্পার (Cross-Device Cloud Sync via keyvalue.immanuel.co)
+// ==========================================
+const CLOUD_KV_APPKEY = 'nxr3z06b';
+
+function b64UrlEncode(str) {
+    try {
+        return btoa(unescape(encodeURIComponent(str)))
+            .replace(/\+/g, '-')
+            .replace(/\//g, '_')
+            .replace(/=+$/, '');
+    } catch(e) {
+        return '';
+    }
+}
+
+function b64UrlDecode(str) {
+    try {
+        let base64 = str.replace(/-/g, '+').replace(/_/g, '/');
+        while (base64.length % 4) base64 += '=';
+        return decodeURIComponent(escape(atob(base64)));
+    } catch(e) {
+        return '';
+    }
+}
+
+async function saveAccountToCloud(accountObj) {
+    try {
+        const num = normalizeBanglaDigits(accountObj.emailOrNumber || accountObj.email || '');
+        const cleanKey = 'acc' + num.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!cleanKey || cleanKey === 'acc') return false;
+
+        const compactStr = [
+            normalizeBanglaDigits(accountObj.password || ''),
+            accountObj.name || '',
+            accountObj.college || 'এইচএসসি পরীক্ষার্থী',
+            accountObj.hscYear || 'HSC 2026',
+            accountObj.points !== undefined ? accountObj.points : 25,
+            accountObj.avatar || '',
+            accountObj.testsCompleted || 0
+        ].join('~~');
+
+        const enc = b64UrlEncode(compactStr);
+        if (!enc) return false;
+
+        const url = `https://keyvalue.immanuel.co/api/KeyVal/UpdateValue/${CLOUD_KV_APPKEY}/${cleanKey}/${enc}`;
+        await fetch(url, { method: 'POST', mode: 'cors' });
+        return true;
+    } catch(err) {
+        console.warn('saveAccountToCloud error:', err);
+        return false;
+    }
+}
+window.saveAccountToCloud = saveAccountToCloud;
+
+async function fetchAccountFromCloud(emailOrNumber) {
+    try {
+        const num = normalizeBanglaDigits(emailOrNumber || '');
+        const cleanKey = 'acc' + num.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!cleanKey || cleanKey === 'acc') return null;
+
+        const url = `https://keyvalue.immanuel.co/api/KeyVal/GetValue/${CLOUD_KV_APPKEY}/${cleanKey}`;
+        const res = await fetch(url, { cache: 'no-cache', mode: 'cors' });
+        if (!res.ok) return null;
+
+        const raw = await res.text();
+        const clean = raw.trim().replace(/^"|"$/g, '');
+        if (!clean || clean === 'null' || clean.includes('<html')) return null;
+
+        const dec = b64UrlDecode(clean);
+        if (!dec) return null;
+
+        if (dec.includes('~~')) {
+            const [password, name, college, hscYear, points, avatar, testsCompleted] = dec.split('~~');
+            return {
+                name: name || '',
+                emailOrNumber: num,
+                college: college || 'এইচএসসি পরীক্ষার্থী',
+                hscYear: hscYear || 'HSC 2026',
+                password: password || '',
+                avatar: avatar || '',
+                points: points !== undefined ? Number(points) : 25,
+                testsCompleted: testsCompleted !== undefined ? Number(testsCompleted) : 0
+            };
+        } else {
+            return JSON.parse(dec);
+        }
+    } catch(err) {
+        console.warn('fetchAccountFromCloud error:', err);
+        return null;
+    }
+}
+window.fetchAccountFromCloud = fetchAccountFromCloud;
+
 /**
  * নিরাপদভাবে ওয়েবসাইটের হোম পেজে নিয়ে যাওয়ার হেল্পার (GitHub Pages ও Localhost উভয় ক্ষেত্রে নির্ভুল)
  */
@@ -474,6 +568,22 @@ async function handleCreateAccount(e) {
     });
     localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
 
+    // ৩. ক্লাউড কেভি ডাটাবেজে একাউন্ট সিঙ্ক (যেকোনো ডিভাইস থেকে যেন সরাসরি লগইন করা যায়)
+    try {
+        await saveAccountToCloud({
+            name: profile.name,
+            emailOrNumber: emailOrNumber,
+            college: profile.college,
+            hscYear: profile.hscYear,
+            password: password,
+            avatar: profile.avatar,
+            points: profile.points,
+            testsCompleted: profile.testsCompleted
+        });
+    } catch(cErr) {
+        console.warn('Cloud sync error on registration:', cErr);
+    }
+
     // বাটনের ঠিক উপরে স্বাগত মেসেজ প্রদর্শন
     if (backendSuccess) {
         setAuthAlert(`স্বাগতম, ${fullName}! অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে এবং সার্ভারে জমা হয়েছে।`, 'success', 'signup');
@@ -594,10 +704,20 @@ async function handleLogin(e) {
         const cleanInput = normalizeBanglaDigits(emailOrNumber).toLowerCase();
         const cleanPass = normalizeBanglaDigits(password);
 
-        const matchedAccount = allAccounts.find(a => {
+        let matchedAccount = allAccounts.find(a => {
             const userNum = normalizeBanglaDigits(a.emailOrNumber || a.email || '').toLowerCase();
             return userNum === cleanInput || ((a.emailOrNumber || a.email || '').toLowerCase() === emailOrNumber.toLowerCase());
         });
+
+        // ৩. অন্য ডিভাইস থেকে একাউন্ট করা হলে ক্লাউড কেভি ডাটাবেজ থেকে রিয়েল-টাইম ফেচ
+        if (!matchedAccount) {
+            try {
+                const cloudAcc = await fetchAccountFromCloud(emailOrNumber);
+                if (cloudAcc && cloudAcc.password) {
+                    matchedAccount = cloudAcc;
+                }
+            } catch(e) {}
+        }
 
         if (!matchedAccount) {
             setAuthAlert('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট পাওয়া যায় নি! সঠিক তথ্য দিন অথবা Create Account করুন।', 'error', 'login');
@@ -748,13 +868,22 @@ async function handleResetPassword(e) {
         console.warn('Backend reset password network error:', err.message);
     }
 
-    // ২. লোকাল অ্যাকাউন্ট আপডেট
+    // ২. লোকাল ও ক্লাউড অ্যাকাউন্ট আপডেট
     let accounts = [];
     try {
         accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
     } catch (e) { accounts = []; }
 
-    const targetAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
+    let targetAccount = accounts.find(a => a.emailOrNumber === emailOrNumber);
+    if (!targetAccount) {
+        try {
+            const cloudAcc = await fetchAccountFromCloud(emailOrNumber);
+            if (cloudAcc) {
+                targetAccount = cloudAcc;
+                accounts.push(targetAccount);
+            }
+        } catch(e) {}
+    }
 
     if (!resetDone && !targetAccount) {
         setAuthAlert('এই ইমেইল বা নম্বর দিয়ে কোনো অ্যাকাউন্ট খুঁজে পাওয়া যায়নি!', 'error', 'forgot');
@@ -768,6 +897,9 @@ async function handleResetPassword(e) {
     if (targetAccount) {
         targetAccount.password = newPassword;
         localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
+        try {
+            await saveAccountToCloud(targetAccount);
+        } catch(e) {}
     }
 
     setAuthAlert('পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! নতুন পাসওয়ার্ড দিয়ে লগইন করুন।', 'success', 'forgot');

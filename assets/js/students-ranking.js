@@ -40,13 +40,52 @@ async function loadRankingsData() {
             currentLoggedInUser = res.currentUser || null;
         } else {
             // Fallback to static fetch
-            const staticRes = await fetch('../database/students.json');
-            if (staticRes.ok) {
-                const list = await staticRes.json();
-                list.sort((a, b) => (b.points || 0) - (a.points || 0));
-                allStudentsData = list.map((s, idx) => ({ ...s, position: idx + 1 }));
-                currentLoggedInUser = allStudentsData.find(s => s.isCurrentUser) || allStudentsData[0];
+            let list = [];
+            try {
+                const staticRes = await fetch('../database/students.json');
+                if (staticRes.ok) {
+                    list = await staticRes.json();
+                }
+            } catch (e) {
+                list = [];
             }
+
+            // লোকাল প্রোফাইল ও রেজিস্টার্ড ইউজার মার্জ
+            const localProfile = JSON.parse(localStorage.getItem('ict_student_profile') || 'null');
+            let accounts = [];
+            try {
+                accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+            } catch(e) {}
+
+            accounts.forEach(acc => {
+                const cleanPhone = (acc.emailOrNumber || acc.email || '').toLowerCase();
+                const exists = list.some(s => (s.emailOrNumber || s.phone || '').toLowerCase() === cleanPhone || s.name === acc.name);
+                if (!exists) {
+                    list.push({
+                        id: 'acc_' + cleanPhone,
+                        name: acc.name,
+                        college: acc.college || 'এইচএসসি পরীক্ষার্থী',
+                        hscYear: acc.hscYear || 'HSC 2026',
+                        points: acc.points !== undefined ? acc.points : 25,
+                        testsCompleted: acc.testsCompleted || 0,
+                        avatar: acc.avatar || '',
+                        isCurrentUser: false
+                    });
+                }
+            });
+
+            if (localProfile) {
+                const myIdx = list.findIndex(s => s.name === localProfile.name || (s.emailOrNumber && s.emailOrNumber === localProfile.emailOrNumber));
+                if (myIdx !== -1) {
+                    list[myIdx] = { ...list[myIdx], ...localProfile, isCurrentUser: true };
+                } else {
+                    list.unshift({ ...localProfile, isCurrentUser: true });
+                }
+            }
+
+            list.sort((a, b) => (b.points || 0) - (a.points || 0));
+            allStudentsData = list.map((s, idx) => ({ ...s, position: idx + 1 }));
+            currentLoggedInUser = allStudentsData.find(s => s.isCurrentUser) || (localProfile ? { ...localProfile, position: 1 } : allStudentsData[0]);
         }
 
         // টপে "আপনার প্রোফাইল" কার্ড ফিক্সড রেন্ডার

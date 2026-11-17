@@ -1554,7 +1554,7 @@ const ApiService = {
         return Promise.resolve(MOCK_DATA.pdfSuggestions);
     },
 
-    // ১. বোর্ড প্রশ্ন লোড (MCQ)
+    // ১. বোর্ড প্রশ্ন লোড (MCQ - স্ট্যান্ডার্ড ২৫টি প্রশ্ন)
     async getBoardMCQ(boardCode, year) {
         try {
             let endpoint = '/api/mcqs?categoryType=Board Question';
@@ -1567,30 +1567,38 @@ const ApiService = {
 
             const res = await fetchFromBackend(endpoint);
             if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
-                return res.data.map(mapBackendMcqToFrontend);
+                return res.data.slice(0, 25).map(mapBackendMcqToFrontend);
             }
         } catch (e) {}
 
         const allMcqs = await fetchStaticJson('mcqs.json');
         if (allMcqs.length > 0) {
-            const filtered = allMcqs.filter(item => {
+            const boardOnly = allMcqs.filter(item => {
                 if (!hasCategory(item, 'Board Question')) return false;
                 if (boardCode && boardCode !== 'all') {
                     if (!matchBoardName(item.boardName, boardCode)) return false;
                 }
-                if (year) {
-                    if (String(item.examYear) !== String(year)) return false;
-                }
                 return true;
             });
-            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
+
+            let finalSet = [];
+            if (year) {
+                const yearMatches = boardOnly.filter(item => String(item.examYear) === String(year));
+                const otherYears = boardOnly.filter(item => String(item.examYear) !== String(year));
+                // নির্বাচিত সালের প্রশ্ন প্রথমে থাকবে, ২৫ পূর্ণ না হলে একই বোর্ডের অন্যান্য প্রশ্ন যুক্ত হবে
+                finalSet = [...yearMatches, ...otherYears].slice(0, 25);
+            } else {
+                finalSet = boardOnly.slice(0, 25);
+            }
+
+            if (finalSet.length > 0) return finalSet.map(mapBackendMcqToFrontend);
         }
 
         return MOCK_DATA.questions.filter(q => {
             const matchBoard = !boardCode || q.board_id === boardCode;
             const matchYear = !year || q.year === year;
             return matchBoard && matchYear;
-        });
+        }).slice(0, 25);
     },
 
     // ২. বোর্ড সৃজনশীল প্রশ্ন লোড (CQ)
@@ -1817,7 +1825,7 @@ const ApiService = {
         return [];
     },
 
-    // ৮. টেস্ট পেপার / কলেজ ভিত্তিক MCQ
+    // ৮. টেস্ট পেপার / কলেজ ভিত্তিক MCQ (স্ট্যান্ডার্ড ২৫টি প্রশ্ন)
     async getCollegeMCQ(collegeId) {
         try {
             let endpoint = `/api/mcqs?categoryType=College Test Paper`;
@@ -1825,7 +1833,7 @@ const ApiService = {
 
             const res = await fetchFromBackend(endpoint);
             if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
-                return res.data.map(mapBackendMcqToFrontend);
+                return res.data.slice(0, 25).map(mapBackendMcqToFrontend);
             }
         } catch (e) {}
 
@@ -1838,7 +1846,7 @@ const ApiService = {
                 }
                 return true;
             });
-            if (filtered.length > 0) return filtered.map(mapBackendMcqToFrontend);
+            if (filtered.length > 0) return filtered.slice(0, 25).map(mapBackendMcqToFrontend);
         }
         return [];
     },
@@ -1923,13 +1931,53 @@ const ApiService = {
             } catch (e) {}
         }
 
+        if (!students) students = [];
+
+        // ১. কারেন্ট ইউজারকে র‍্যাংকিংয়ে অন্তর্ভুক্ত করা
         const localProfile = JSON.parse(localStorage.getItem('ict_student_profile') || 'null');
-        if (localProfile && Array.isArray(students)) {
-            const myIdx = students.findIndex(s => s.isCurrentUser || s.name === localProfile.name);
+        if (localProfile) {
+            const cleanMyPhone = typeof normalizeBanglaDigits === 'function' ? normalizeBanglaDigits(localProfile.emailOrNumber || '').toLowerCase() : (localProfile.emailOrNumber || '').toLowerCase();
+            const myIdx = students.findIndex(s => {
+                const sPhone = typeof normalizeBanglaDigits === 'function' ? normalizeBanglaDigits(s.emailOrNumber || '').toLowerCase() : (s.emailOrNumber || '').toLowerCase();
+                return (cleanMyPhone && sPhone === cleanMyPhone) || (s.name && s.name === localProfile.name);
+            });
             if (myIdx >= 0) {
-                students[myIdx] = { ...students[myIdx], ...localProfile };
+                students[myIdx] = { ...students[myIdx], ...localProfile, isCurrentUser: true };
+            } else {
+                students.push({
+                    name: localProfile.name,
+                    college: localProfile.college || 'এইচএসসি পরীক্ষার্থী',
+                    avatar: localProfile.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
+                    points: localProfile.points !== undefined ? localProfile.points : 25,
+                    testsCompleted: localProfile.testsCompleted || 0,
+                    isCurrentUser: true,
+                    emailOrNumber: localProfile.emailOrNumber || ''
+                });
             }
         }
+
+        // ২. লোকাল রেজিস্ট্রি থেকে সকল একাউন্ট অন্তর্ভুক্ত করা
+        try {
+            const localAccs = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
+            localAccs.forEach(acc => {
+                const accPhone = typeof normalizeBanglaDigits === 'function' ? normalizeBanglaDigits(acc.emailOrNumber || '').toLowerCase() : (acc.emailOrNumber || '').toLowerCase();
+                const exists = students.some(s => {
+                    const sPhone = typeof normalizeBanglaDigits === 'function' ? normalizeBanglaDigits(s.emailOrNumber || '').toLowerCase() : (s.emailOrNumber || '').toLowerCase();
+                    return (accPhone && sPhone === accPhone) || (s.name && s.name === acc.name);
+                });
+                if (!exists) {
+                    students.push({
+                        name: acc.name,
+                        college: acc.college || 'এইচএসসি পরীক্ষার্থী',
+                        avatar: acc.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
+                        points: acc.points !== undefined ? acc.points : 25,
+                        testsCompleted: acc.testsCompleted || 0,
+                        isCurrentUser: false,
+                        emailOrNumber: acc.emailOrNumber || ''
+                    });
+                }
+            });
+        } catch(e) {}
 
         students.sort((a, b) => (b.points || 0) - (a.points || 0));
         const ranked = students.map((s, idx) => ({ ...s, position: idx + 1 }));
@@ -3284,43 +3332,43 @@ async function updateAllCardProgressRings() {
             updateRingUI(ch.ratio, ch.pct, ch.fill, read, total);
         });
 
-        // 2. Board Rings
+        // 2. Board Rings (প্রতিটি বোর্ডে স্ট্যান্ডার্ড ২৫টি MCQ প্রশ্ন)
         const boardRings = [
-            { key: 'dhaka', ratio: 'ring-ratio-board-dhaka', pct: 'ring-pct-board-dhaka', fill: 'ring-fill-board-dhaka', fallbackTotal: 97 },
-            { key: 'rajshahi', ratio: 'ring-ratio-board-rajshahi', pct: 'ring-pct-board-rajshahi', fill: 'ring-fill-board-rajshahi', fallbackTotal: 61 },
-            { key: 'chattogram', ratio: 'ring-ratio-board-chattogram', pct: 'ring-pct-board-chattogram', fill: 'ring-fill-board-chattogram', fallbackTotal: 64 },
-            { key: 'jashore', ratio: 'ring-ratio-board-jashore', pct: 'ring-pct-board-jashore', fill: 'ring-fill-board-jashore', fallbackTotal: 68 },
-            { key: 'comilla', ratio: 'ring-ratio-board-comilla', pct: 'ring-pct-board-comilla', fill: 'ring-fill-board-comilla', fallbackTotal: 62 },
-            { key: 'sylhet', ratio: 'ring-ratio-board-sylhet', pct: 'ring-pct-board-sylhet', fill: 'ring-fill-board-sylhet', fallbackTotal: 55 },
-            { key: 'barishal', ratio: 'ring-ratio-board-barishal', pct: 'ring-pct-board-barishal', fill: 'ring-fill-board-barishal', fallbackTotal: 63 },
-            { key: 'dinajpur', ratio: 'ring-ratio-board-dinajpur', pct: 'ring-pct-board-dinajpur', fill: 'ring-fill-board-dinajpur', fallbackTotal: 59 },
-            { key: 'mymensingh', ratio: 'ring-ratio-board-mymensingh', pct: 'ring-pct-board-mymensingh', fill: 'ring-fill-board-mymensingh', fallbackTotal: 27 },
-            { key: 'madrasah', ratio: 'ring-ratio-board-madrasah', pct: 'ring-pct-board-madrasah', fill: 'ring-fill-board-madrasah', fallbackTotal: 15 }
+            { key: 'dhaka', ratio: 'ring-ratio-board-dhaka', pct: 'ring-pct-board-dhaka', fill: 'ring-fill-board-dhaka' },
+            { key: 'rajshahi', ratio: 'ring-ratio-board-rajshahi', pct: 'ring-pct-board-rajshahi', fill: 'ring-fill-board-rajshahi' },
+            { key: 'chattogram', ratio: 'ring-ratio-board-chattogram', pct: 'ring-pct-board-chattogram', fill: 'ring-fill-board-chattogram' },
+            { key: 'jashore', ratio: 'ring-ratio-board-jashore', pct: 'ring-pct-board-jashore', fill: 'ring-fill-board-jashore' },
+            { key: 'comilla', ratio: 'ring-ratio-board-comilla', pct: 'ring-pct-board-comilla', fill: 'ring-fill-board-comilla' },
+            { key: 'sylhet', ratio: 'ring-ratio-board-sylhet', pct: 'ring-pct-board-sylhet', fill: 'ring-fill-board-sylhet' },
+            { key: 'barishal', ratio: 'ring-ratio-board-barishal', pct: 'ring-pct-board-barishal', fill: 'ring-fill-board-barishal' },
+            { key: 'dinajpur', ratio: 'ring-ratio-board-dinajpur', pct: 'ring-pct-board-dinajpur', fill: 'ring-fill-board-dinajpur' },
+            { key: 'mymensingh', ratio: 'ring-ratio-board-mymensingh', pct: 'ring-pct-board-mymensingh', fill: 'ring-fill-board-mymensingh' },
+            { key: 'madrasah', ratio: 'ring-ratio-board-madrasah', pct: 'ring-pct-board-madrasah', fill: 'ring-fill-board-madrasah' }
         ];
 
         boardRings.forEach(br => {
             const matching = allMcqs.filter(m => hasCategory(m, 'Board Question') && matchBoardName(m.boardName, br.key));
-            const total = matching.length > 0 ? matching.length : br.fallbackTotal;
-            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
+            const total = 25; // স্ট্যান্ডার্ড ২৫টি MCQ
+            const read = Math.min(25, matching.filter(m => readSet.has(String(m._id || m.id))).length);
             updateRingUI(br.ratio, br.pct, br.fill, read, total);
         });
 
-        // 3. College Rings
+        // 3. College Rings (প্রতিটি কলেজে স্ট্যান্ডার্ড ২৫টি MCQ প্রশ্ন)
         const collegeRings = [
-            { key: 'ndc', name: 'নটর ডেম', ratio: 'ring-ratio-college-ndc', pct: 'ring-pct-college-ndc', fill: 'ring-fill-college-ndc', fallbackTotal: 31 },
-            { key: 'vnsc', name: 'ভিকারুননিসা', ratio: 'ring-ratio-college-vnsc', pct: 'ring-pct-college-vnsc', fill: 'ring-fill-college-vnsc', fallbackTotal: 24 },
-            { key: 'rajuk', name: 'রাজউক', ratio: 'ring-ratio-college-rajuk', pct: 'ring-pct-college-rajuk', fill: 'ring-fill-college-rajuk', fallbackTotal: 28 },
-            { key: 'drmc', name: 'রেসিডেনসিয়াল', ratio: 'ring-ratio-college-drmc', pct: 'ring-pct-college-drmc', fill: 'ring-fill-college-drmc', fallbackTotal: 20 },
-            { key: 'dcc', name: 'সিটি কলেজ', ratio: 'ring-ratio-college-dcc', pct: 'ring-pct-college-dcc', fill: 'ring-fill-college-dcc', fallbackTotal: 18 },
-            { key: 'ctg', name: 'চট্টগ্রাম কলেজ', ratio: 'ring-ratio-college-ctg', pct: 'ring-pct-college-ctg', fill: 'ring-fill-college-ctg', fallbackTotal: 18 },
-            { key: 'rajshahi', name: 'রাজশাহী কলেজ', ratio: 'ring-ratio-college-rajshahi', pct: 'ring-pct-college-rajshahi', fill: 'ring-fill-college-rajshahi', fallbackTotal: 16 },
-            { key: 'cpsc', name: 'ক্যান্টনমেন্ট', ratio: 'ring-ratio-college-cpsc', pct: 'ring-pct-college-cpsc', fill: 'ring-fill-college-cpsc', fallbackTotal: 22 }
+            { key: 'ndc', name: 'নটর ডেম', ratio: 'ring-ratio-college-ndc', pct: 'ring-pct-college-ndc', fill: 'ring-fill-college-ndc' },
+            { key: 'vnsc', name: 'ভিকারুননিসা', ratio: 'ring-ratio-college-vnsc', pct: 'ring-pct-college-vnsc', fill: 'ring-fill-college-vnsc' },
+            { key: 'rajuk', name: 'রাজউক', ratio: 'ring-ratio-college-rajuk', pct: 'ring-pct-college-rajuk', fill: 'ring-fill-college-rajuk' },
+            { key: 'drmc', name: 'রেসিডেনসিয়াল', ratio: 'ring-ratio-college-drmc', pct: 'ring-pct-college-drmc', fill: 'ring-fill-college-drmc' },
+            { key: 'dcc', name: 'সিটি কলেজ', ratio: 'ring-ratio-college-dcc', pct: 'ring-pct-college-dcc', fill: 'ring-fill-college-dcc' },
+            { key: 'ctg', name: 'চট্টগ্রাম কলেজ', ratio: 'ring-ratio-college-ctg', pct: 'ring-pct-college-ctg', fill: 'ring-fill-college-ctg' },
+            { key: 'rajshahi', name: 'রাজশাহী কলেজ', ratio: 'ring-ratio-college-rajshahi', pct: 'ring-pct-college-rajshahi', fill: 'ring-fill-college-rajshahi' },
+            { key: 'cpsc', name: 'ক্যান্টনমেন্ট', ratio: 'ring-ratio-college-cpsc', pct: 'ring-pct-college-cpsc', fill: 'ring-fill-college-cpsc' }
         ];
 
         collegeRings.forEach(cr => {
             const matching = allMcqs.filter(m => hasCategory(m, 'College Test Paper') && matchCollegeName(m.collegeName, cr.name));
-            const total = matching.length > 0 ? matching.length : cr.fallbackTotal;
-            const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
+            const total = 25; // স্ট্যান্ডার্ড ২৫টি MCQ
+            const read = Math.min(25, matching.filter(m => readSet.has(String(m._id || m.id))).length);
             updateRingUI(cr.ratio, cr.pct, cr.fill, read, total);
         });
 
