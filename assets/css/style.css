@@ -3613,21 +3613,24 @@ body.no-pull-refresh {
     flex-shrink: 0;
     gap: 4px;
     text-align: center;
-    min-width: 80px;
+    min-width: 76px;
 }
 
 .card-ring-box {
     position: relative;
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .card-ring-svg {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     transform: rotate(-90deg);
 }
 
@@ -3651,11 +3654,14 @@ body.no-pull-refresh {
 
 .card-ring-ratio {
     position: absolute;
-    font-size: 0.72rem;
+    font-size: 0.70rem;
     font-weight: 800;
     color: #1E293B;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.3px;
     text-align: center;
+    white-space: nowrap;
+    line-height: 1;
+    font-family: 'Inter', sans-serif;
 }
 
 .disabled-dark-mode .card-ring-ratio {
@@ -3663,14 +3669,75 @@ body.no-pull-refresh {
 }
 
 .card-ring-pct {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 700;
     color: #1E293B;
     white-space: nowrap;
+    line-height: 1.2;
 }
 
 .disabled-dark-mode .card-ring-pct {
     color: #94A3B8 !important;
+}
+
+@media (max-width: 640px) {
+    .chapter-prep-card, .board-card, .college-card {
+        padding: 12px 14px !important;
+        gap: 10px !important;
+    }
+
+    .card-left-info {
+        gap: 10px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .board-icon, .card-icon-box {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 1.05rem;
+    }
+
+    .board-name, .card-main-title {
+        font-size: 0.95rem;
+    }
+
+    .board-code, .card-sub-title {
+        font-size: 0.78rem;
+    }
+
+    .card-counts-badge {
+        font-size: 0.72rem;
+    }
+
+    .card-right-progress {
+        min-width: 64px;
+        flex-shrink: 0;
+        gap: 2px;
+    }
+
+    .card-ring-box {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        min-height: 46px;
+    }
+
+    .card-ring-svg {
+        width: 46px;
+        height: 46px;
+    }
+
+    .card-ring-ratio {
+        font-size: 0.65rem;
+        letter-spacing: -0.5px;
+    }
+
+    .card-ring-pct {
+        font-size: 0.60rem;
+        white-space: nowrap;
+    }
 }
 
 /* ==========================================================================

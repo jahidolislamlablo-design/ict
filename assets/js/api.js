@@ -1403,9 +1403,10 @@ function resolveHtmlMediaUrls(html) {
 
 
 function matchBoardName(storedName, boardCode) {
-    if (!storedName || !boardCode || boardCode === 'all') return true;
-    const s = storedName.toLowerCase();
-    const c = boardCode.toLowerCase();
+    if (!storedName || !boardCode) return false;
+    if (boardCode === 'all') return true;
+    const s = storedName.toLowerCase().trim();
+    const c = boardCode.toLowerCase().trim();
     if (s.includes(c) || c.includes(s)) return true;
 
     const boardMap = {
@@ -1423,32 +1424,31 @@ function matchBoardName(storedName, boardCode) {
 
     for (const [key, aliases] of Object.entries(boardMap)) {
         const matchesQuery = aliases.some(a => c.includes(a));
-        if (matchesQuery) {
-            return aliases.some(a => s.includes(a));
-        }
+        const matchesStored = aliases.some(a => s.includes(a));
+        if (matchesQuery && matchesStored) return true;
     }
     return false;
 }
 
 function matchCollegeName(storedName, targetName) {
-    if (!storedName || !targetName) return true;
-    const a = storedName.toLowerCase();
-    const b = targetName.toLowerCase();
+    if (!storedName || !targetName) return false;
+    const a = storedName.toLowerCase().trim();
+    const b = targetName.toLowerCase().trim();
     if (a.includes(b) || b.includes(a)) return true;
 
     const groups = [
         ['notre dame', 'নটর ডেম', 'ndc'],
         ['viqarunnisa', 'ভিকারুননিসা', 'vnsc'],
         ['rajuk', 'রাজউক'],
-        ['residential', 'রেসিডেনসিয়াল', 'drmc'],
+        ['residential', 'রেসিডেনসিয়াল', 'রেসিডেনসিয়াল', 'drmc'],
         ['dhaka college', 'ঢাকা কলেজ', 'dc'],
-        ['city college', 'সিটি কলেজ', 'dcc', 'dc', 'ঢাকা সিটি কলেজ'],
+        ['city college', 'সিটি কলেজ', 'dcc', 'ঢাকা সিটি কলেজ'],
         ['chattogram', 'chittagong', 'চট্টগ্রাম', 'ctg'],
         ['rajshahi', 'রাজশাহী'],
         ['cantonment', 'ক্যান্টনমেন্ট', 'cpsc'],
-        ['ideal', 'আইডিয়াল'],
+        ['ideal', 'আইডিয়াল', 'আইডিয়াল'],
         ['mohsin', 'মহসিন'],
-        ['victoria', 'ভিক্টোরিয়া'],
+        ['victoria', 'ভিক্টোরিয়া', 'ভিক্টোরিয়া'],
         ['mc college', 'এম সি কলেজ', 'এমসি কলেজ'],
         ['bm college', 'বিএম কলেজ', 'বি এম কলেজ'],
         ['ananda mohan', 'আনন্দ মোহন']
@@ -2518,8 +2518,8 @@ function handleModernOptionClick(element, qIndex, selectedIndex, correctIndex, m
     if (parentCard.classList.contains('answered')) return;
     parentCard.classList.add('answered');
 
-    // Automatically mark question as read when answered in study mode
-    if (mode === 'study') {
+    // Automatically mark question as read when answered in study or practice mode
+    if (mode !== 'exam') {
         const qId = parentCard.getAttribute('data-q-id');
         if (qId && typeof isQuestionRead === 'function' && !isQuestionRead(qId)) {
             toggleQuestionRead(qId, parentCard.id);
@@ -3250,13 +3250,13 @@ async function updateAllCardProgressRings() {
         const updateRingUI = (ratioId, pctId, fillId, readCount, totalCount) => {
             const total = Math.max(1, totalCount);
             const read = Math.min(total, readCount);
-            const pct = ((read / total) * 100).toFixed(2);
+            const pct = Math.round((read / total) * 100);
 
             const ratioEl = document.getElementById(ratioId);
             if (ratioEl) ratioEl.textContent = `${read}/${total}`;
 
             const pctEl = document.getElementById(pctId);
-            if (pctEl) pctEl.textContent = `${pct}% প্রশ্ন পড়া হয়েছে`;
+            if (pctEl) pctEl.textContent = `${pct}% পড়া হয়েছে`;
 
             const fillEl = document.getElementById(fillId);
             if (fillEl) {
@@ -3268,13 +3268,13 @@ async function updateAllCardProgressRings() {
 
         // 1. Chapter Rings
         const chapterRings = [
-            { id: 1, ratio: 'ring-ratio-ch-1', pct: 'ring-pct-ch-1', fill: 'ring-fill-ch-1', fallbackTotal: 352, match: m => m.chapter && (m.chapter.includes('Chapter 1') || m.chapter.includes('১ম') || m.chapter.includes('তথ্য ও যোগাযোগ')) },
-            { id: 2, ratio: 'ring-ratio-ch-2', pct: 'ring-pct-ch-2', fill: 'ring-fill-ch-2', fallbackTotal: 243, match: m => m.chapter && (m.chapter.includes('Chapter 2') || m.chapter.includes('২য়') || m.chapter.includes('কমিউনিকেশন')) },
-            { id: '3.1', ratio: 'ring-ratio-ch-3-1', pct: 'ring-pct-ch-3-1', fill: 'ring-fill-ch-3-1', fallbackTotal: 219, match: m => m.chapter && (m.chapter.includes('Chapter 3 (১ম') || m.chapter.includes('সংখ্যা পদ্ধতি')) },
-            { id: '3.2', ratio: 'ring-ratio-ch-3-2', pct: 'ring-pct-ch-3-2', fill: 'ring-fill-ch-3-2', fallbackTotal: 283, match: m => m.chapter && (m.chapter.includes('Chapter 3 (২য়') || m.chapter.includes('ডিজিটাল ডিভাইস')) },
-            { id: 4, ratio: 'ring-ratio-ch-4', pct: 'ring-pct-ch-4', fill: 'ring-fill-ch-4', fallbackTotal: 204, match: m => m.chapter && (m.chapter.includes('Chapter 4') || m.chapter.includes('৪র্থ') || m.chapter.includes('HTML') || m.chapter.includes('ওয়েব')) },
-            { id: 5, ratio: 'ring-ratio-ch-5', pct: 'ring-pct-ch-5', fill: 'ring-fill-ch-5', fallbackTotal: 402, match: m => m.chapter && (m.chapter.includes('Chapter 5') || m.chapter.includes('৫ম') || m.chapter.includes('প্রোগ্রামিং')) },
-            { id: 6, ratio: 'ring-ratio-ch-6', pct: 'ring-pct-ch-6', fill: 'ring-fill-ch-6', fallbackTotal: 187, match: m => m.chapter && (m.chapter.includes('Chapter 6') || m.chapter.includes('৬ষ্ঠ') || m.chapter.includes('ডেটাবেজ')) }
+            { id: 1, ratio: 'ring-ratio-ch-1', pct: 'ring-pct-ch-1', fill: 'ring-fill-ch-1', fallbackTotal: 352, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 1') || m.chapter.includes('১ম') || m.chapter.includes('তথ্য ও যোগাযোগ')) },
+            { id: 2, ratio: 'ring-ratio-ch-2', pct: 'ring-pct-ch-2', fill: 'ring-fill-ch-2', fallbackTotal: 243, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 2') || m.chapter.includes('২য়') || m.chapter.includes('কমিউনিকেশন')) },
+            { id: '3.1', ratio: 'ring-ratio-ch-3-1', pct: 'ring-pct-ch-3-1', fill: 'ring-fill-ch-3-1', fallbackTotal: 219, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 3 (১ম') || m.chapter.includes('সংখ্যা পদ্ধতি')) },
+            { id: '3.2', ratio: 'ring-ratio-ch-3-2', pct: 'ring-pct-ch-3-2', fill: 'ring-fill-ch-3-2', fallbackTotal: 283, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 3 (২য়') || m.chapter.includes('ডিজিটাল ডিভাইস')) },
+            { id: 4, ratio: 'ring-ratio-ch-4', pct: 'ring-pct-ch-4', fill: 'ring-fill-ch-4', fallbackTotal: 204, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 4') || m.chapter.includes('৪র্থ') || m.chapter.includes('HTML') || m.chapter.includes('ওয়েব') || m.chapter.includes('ওয়েব')) },
+            { id: 5, ratio: 'ring-ratio-ch-5', pct: 'ring-pct-ch-5', fill: 'ring-fill-ch-5', fallbackTotal: 402, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 5') || m.chapter.includes('৫ম') || m.chapter.includes('প্রোগ্রামিং')) },
+            { id: 6, ratio: 'ring-ratio-ch-6', pct: 'ring-pct-ch-6', fill: 'ring-fill-ch-6', fallbackTotal: 187, match: m => hasCategory(m, 'Chapter Practice') && m.chapter && (m.chapter.includes('Chapter 6') || m.chapter.includes('৬ষ্ঠ') || m.chapter.includes('ডেটাবেজ') || m.chapter.includes('ডাটাবেজ')) }
         ];
 
         chapterRings.forEach(ch => {
@@ -3299,7 +3299,7 @@ async function updateAllCardProgressRings() {
         ];
 
         boardRings.forEach(br => {
-            const matching = allMcqs.filter(m => matchBoardName(m.boardName, br.key));
+            const matching = allMcqs.filter(m => hasCategory(m, 'Board Question') && matchBoardName(m.boardName, br.key));
             const total = matching.length > 0 ? matching.length : br.fallbackTotal;
             const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
             updateRingUI(br.ratio, br.pct, br.fill, read, total);
@@ -3318,7 +3318,7 @@ async function updateAllCardProgressRings() {
         ];
 
         collegeRings.forEach(cr => {
-            const matching = allMcqs.filter(m => matchCollegeName(m.collegeName, cr.name));
+            const matching = allMcqs.filter(m => hasCategory(m, 'College Test Paper') && matchCollegeName(m.collegeName, cr.name));
             const total = matching.length > 0 ? matching.length : cr.fallbackTotal;
             const read = matching.filter(m => readSet.has(String(m._id || m.id))).length;
             updateRingUI(cr.ratio, cr.pct, cr.fill, read, total);

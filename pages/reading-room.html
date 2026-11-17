@@ -71,34 +71,17 @@
         .rr-header-left {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             min-width: 0;
             flex-shrink: 0;
         }
 
         .rr-back-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #F1F5F9;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: #475569;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .rr-back-btn:hover {
-            background: #E2E8F0;
-            color: #0F172A;
+            display: none !important;
         }
 
         .rr-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: #1E293B;
             margin: 0;
@@ -112,12 +95,12 @@
             gap: 6px;
             background: #FEE2E2;
             color: #EF4444;
-            padding: 4px 10px;
+            padding: 3px 9px;
             border-radius: 9999px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
             white-space: nowrap;
-            margin-right: 6px;
+            margin-right: 14px;
         }
 
         .rr-live-dot {
@@ -484,9 +467,10 @@
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
             border-radius: 16px;
-            padding: 14px 18px;
+            padding: 12px 16px;
             cursor: pointer;
             transition: all 0.2s ease;
+            gap: 10px;
         }
 
         .rr-rank-card:hover {
@@ -498,54 +482,58 @@
         .rr-rank-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
+            min-width: 0;
+            flex: 1;
         }
 
-        /* Medals for Top 3 (🥇 ১, 🥈 ২, 🥉 ৩) and Clean Rank Badge for 4, 5 */
-        .rr-medal-box {
-            display: inline-flex;
+        /* Ribbon Medal Icon for Ranks (Sleek, Compact, No oversized yellow box) */
+        .rr-rank-medal-wrap {
+            width: 24px;
+            min-width: 24px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            line-height: 1;
-            min-width: 44px;
+            flex-shrink: 0;
         }
 
-        .rr-medal-box.gold {
-            background: #FEF3C7;
-            color: #B45309;
-            border: 1px solid #FCD34D;
-        }
-
-        .rr-medal-box.silver {
-            background: #F1F5F9;
-            color: #475569;
-            border: 1px solid #CBD5E1;
-        }
-
-        .rr-medal-box.bronze {
-            background: #FFEDD5;
-            color: #C2410C;
-            border: 1px solid #FDBA74;
+        .rr-medal-svg {
+            display: block;
+            width: 22px;
+            height: 30px;
+            flex-shrink: 0;
         }
 
         .rr-rank-number {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: #64748B;
-            min-width: 38px;
+            min-width: 24px;
             text-align: center;
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         .rr-user-avatar-wrap {
             position: relative;
-            width: 46px;
-            height: 46px;
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: 50%;
+            padding: 2px;
+            background: #E2E8F0;
             flex-shrink: 0;
+        }
+
+        .rr-user-avatar-wrap.ring-pink {
+            background: linear-gradient(135deg, #F43F5E, #FB7185);
+        }
+
+        .rr-user-avatar-wrap.ring-green {
+            background: linear-gradient(135deg, #22C55E, #10B981);
+        }
+
+        .rr-user-avatar-wrap.ring-blue {
+            background: linear-gradient(135deg, #3B82F6, #60A5FA);
         }
 
         .rr-user-avatar {
@@ -553,16 +541,17 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
+            border: 2px solid #FFFFFF;
         }
 
         .live-indicator {
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 11px;
-            height: 11px;
+            bottom: -1px;
+            right: -1px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            background: #22C55E;
+            background: #EF4444;
             border: 2px solid #FFFFFF;
         }
 
@@ -570,57 +559,93 @@
             display: flex;
             flex-direction: column;
             gap: 3px;
+            min-width: 0;
+            flex: 1;
+            overflow: hidden;
         }
 
         .rr-name-row {
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 800;
             color: #1E293B;
             display: flex;
             align-items: center;
             gap: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .rr-name-dot {
             width: 6px;
             height: 6px;
             border-radius: 50%;
+            background: #EF4444;
+            flex-shrink: 0;
+            display: inline-block;
+        }
+
+        .rr-name-dot.green {
             background: #22C55E;
         }
 
         .rr-tags-row {
             display: flex;
             align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
+            gap: 5px;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         .rr-tag-pill {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            color: #64748B;
+            color: #475569;
             background: #F1F5F9;
-            padding: 2px 8px;
-            border-radius: 9999px;
+            border: 1px solid #E2E8F0;
+            padding: 1.5px 7px;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .rr-tag-pill.college-pill {
+            max-width: 135px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex-shrink: 1;
         }
 
         .rr-rank-time {
             display: flex;
-            align-items: baseline;
-            gap: 4px;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            flex-shrink: 0;
+            min-width: 48px;
+            text-align: right;
         }
 
         .rr-time-val {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: #15803D;
             font-family: 'Inter', sans-serif;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
 
         .rr-time-unit {
-            font-size: 0.85rem;
+            font-size: 0.72rem;
             color: #64748B;
             font-weight: 600;
+            line-height: 1.1;
+            margin-top: 2px;
         }
 
         /* =========================================================================
@@ -914,9 +939,13 @@
 
         /* Responsive styling for Mobile */
         @media (max-width: 640px) {
+            .mobile-nav-back-btn {
+                display: none !important;
+            }
+
             .rr-header {
-                padding: 12px 14px;
-                gap: 12px;
+                padding: 10px 12px;
+                gap: 10px;
             }
 
             .rr-header-left {
@@ -924,29 +953,96 @@
             }
 
             .rr-title {
-                font-size: 1.05rem;
+                font-size: 0.95rem;
                 white-space: nowrap;
             }
 
             .rr-live-pill {
-                padding: 3px 8px;
-                font-size: 0.80rem;
-                margin-right: 4px;
+                padding: 2px 7px;
+                font-size: 0.76rem;
+                margin-right: 12px;
             }
 
             .rr-header-right {
-                gap: 10px;
+                gap: 8px;
             }
 
             .rr-header-icon {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
+                width: 34px;
+                height: 34px;
+                font-size: 0.95rem;
             }
 
             .rr-header-avatar {
-                width: 36px;
-                height: 36px;
+                width: 34px;
+                height: 34px;
+            }
+
+            /* Leaderboard Mobile Styling: exactly matching target design */
+            .rr-ranking-list {
+                padding: 0 12px 24px 12px;
+                gap: 10px;
+            }
+
+            .rr-rank-card {
+                padding: 10px 12px !important;
+                gap: 8px !important;
+                border-radius: 14px;
+            }
+
+            .rr-rank-left {
+                gap: 8px !important;
+            }
+
+            .rr-rank-medal-wrap {
+                width: 20px;
+                min-width: 20px;
+            }
+
+            .rr-medal-svg {
+                width: 19px;
+                height: 26px;
+            }
+
+            .rr-rank-number {
+                font-size: 0.95rem;
+                min-width: 20px;
+            }
+
+            .rr-user-avatar-wrap {
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
+            }
+
+            .rr-name-row {
+                font-size: 0.88rem;
+                gap: 5px;
+            }
+
+            .rr-tags-row {
+                gap: 4px;
+            }
+
+            .rr-tag-pill {
+                font-size: 0.68rem;
+                padding: 1px 6px;
+            }
+
+            .rr-tag-pill.college-pill {
+                max-width: 105px;
+            }
+
+            .rr-rank-time {
+                min-width: 44px;
+            }
+
+            .rr-time-val {
+                font-size: 1.05rem;
+            }
+
+            .rr-time-unit {
+                font-size: 0.68rem;
             }
 
             .rr-detail-stats-list {
@@ -1331,11 +1427,20 @@
 
             <!-- Leaderboard List sorted strictly by Study Time (Highest to Lowest) -->
             <div class="rr-ranking-list" id="rankingListContainer">
-                <!-- Rank 1: Niloy (৩ ঘণ্টা ৪০ মিনিট) - Medal 🥇 ১ -->
+                <!-- Rank 1: Niloy (৩ ঘণ্টা ৪০ মিনিট) -->
                 <div class="rr-rank-card" onclick="showUserDetailView('Niloy', 'HSC 2027', 'নটর ডেম কলেজ, ঢাকা', '৩ ঘণ্টা ৪০ মিনিট', '৫টি সেশন', '১৮ ঘণ্টা ২০ মিনিট', '৬৪ ঘণ্টা ৫০ মিনিট', '১৪২ ঘণ্টা ৩০ মিনিট', '১৮৯ সেশন', 'niloy', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80')">
                     <div class="rr-rank-left">
-                        <div class="rr-medal-box gold" title="১ম স্থান">🥇 ১</div>
-                        <div class="rr-user-avatar-wrap">
+                        <div class="rr-rank-medal-wrap">
+                            <svg class="rr-medal-svg" viewBox="0 0 24 32" width="22" height="30" fill="none">
+                                <path d="M7 2 L12 11 L9 11 L5 2 Z" fill="#3B82F6"/>
+                                <path d="M17 2 L12 11 L15 11 L19 2 Z" fill="#EF4444"/>
+                                <path d="M11 2 L12 11 L13 11 L13 2 Z" fill="#F8FAFC"/>
+                                <circle cx="12" cy="20" r="8.5" fill="#F59E0B" stroke="#D97706" stroke-width="1.2"/>
+                                <circle cx="12" cy="20" r="6.5" fill="#FBBF24"/>
+                                <text x="12" y="23.5" font-family="'Inter', sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">১</text>
+                            </svg>
+                        </div>
+                        <div class="rr-user-avatar-wrap ring-pink">
                             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Niloy" class="rr-user-avatar">
                             <span class="live-indicator"></span>
                         </div>
@@ -1345,7 +1450,7 @@
                             </div>
                             <div class="rr-tags-row">
                                 <span class="rr-tag-pill">HSC 2027</span>
-                                <span class="rr-tag-pill">🏫 নটর ডেম কলেজ, ঢাকা</span>
+                                <span class="rr-tag-pill college-pill">🏛️ নটর ডেম কলেজ</span>
                             </div>
                         </div>
                     </div>
@@ -1355,11 +1460,20 @@
                     </div>
                 </div>
 
-                <!-- Rank 2: Psycho ♾️ (৩ ঘণ্টা ১৫ মিনিট) - Medal 🥈 ২ -->
+                <!-- Rank 2: Psycho ♾️ (৩ ঘণ্টা ১৫ মিনিট) -->
                 <div class="rr-rank-card" onclick="showUserDetailView('Psycho ♾️', 'HSC 2026', 'ঢাকা কলেজ, ঢাকা', '৩ ঘণ্টা ১৫ মিনিট', '৫টি সেশন', '১৬ ঘণ্টা ১০ মিনিট', '৫৮ ঘণ্টা ৩০ মিনিট', '১২৯ ঘণ্টা ১৫ মিনিট', '১৭৪ সেশন', 'psycho', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80')">
                     <div class="rr-rank-left">
-                        <div class="rr-medal-box silver" title="২য় স্থান">🥈 ২</div>
-                        <div class="rr-user-avatar-wrap">
+                        <div class="rr-rank-medal-wrap">
+                            <svg class="rr-medal-svg" viewBox="0 0 24 32" width="22" height="30" fill="none">
+                                <path d="M7 2 L12 11 L9 11 L5 2 Z" fill="#3B82F6"/>
+                                <path d="M17 2 L12 11 L15 11 L19 2 Z" fill="#EF4444"/>
+                                <path d="M11 2 L12 11 L13 11 L13 2 Z" fill="#F8FAFC"/>
+                                <circle cx="12" cy="20" r="8.5" fill="#94A3B8" stroke="#64748B" stroke-width="1.2"/>
+                                <circle cx="12" cy="20" r="6.5" fill="#CBD5E1"/>
+                                <text x="12" y="23.5" font-family="'Inter', sans-serif" font-size="9" font-weight="800" fill="#1E293B" text-anchor="middle">২</text>
+                            </svg>
+                        </div>
+                        <div class="rr-user-avatar-wrap ring-pink">
                             <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Psycho" class="rr-user-avatar">
                             <span class="live-indicator"></span>
                         </div>
@@ -1369,7 +1483,7 @@
                             </div>
                             <div class="rr-tags-row">
                                 <span class="rr-tag-pill">HSC 2026</span>
-                                <span class="rr-tag-pill">🏫 ঢাকা কলেজ, ঢাকা</span>
+                                <span class="rr-tag-pill college-pill">🏛️ ঢাকা কলেজ</span>
                             </div>
                         </div>
                     </div>
@@ -1379,21 +1493,30 @@
                     </div>
                 </div>
 
-                <!-- Rank 3: Spider-man 🕸️ (২ ঘণ্টা ৫০ মিনিট) - Medal 🥉 ৩ -->
+                <!-- Rank 3: Spider-man 🕸️ (২ ঘণ্টা ৫০ মিনিট) -->
                 <div class="rr-rank-card" onclick="showUserDetailView('Spider-man 🕸️', 'HSC 2026', 'রাজউক উত্তরা মডেল কলেজ', '২ ঘণ্টা ৫০ মিনিট', '৪টি সেশন', '১৪ ঘণ্টা ২০ মিনিট', '৫২ ঘণ্টা ১০ মিনিট', '১১৮ ঘণ্টা ৪০ মিনিট', '১৫৬ সেশন', 'spiderman', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80')">
                     <div class="rr-rank-left">
-                        <div class="rr-medal-box bronze" title="৩য় স্থান">🥉 ৩</div>
-                        <div class="rr-user-avatar-wrap">
+                        <div class="rr-rank-medal-wrap">
+                            <svg class="rr-medal-svg" viewBox="0 0 24 32" width="22" height="30" fill="none">
+                                <path d="M7 2 L12 11 L9 11 L5 2 Z" fill="#3B82F6"/>
+                                <path d="M17 2 L12 11 L15 11 L19 2 Z" fill="#EF4444"/>
+                                <path d="M11 2 L12 11 L13 11 L13 2 Z" fill="#F8FAFC"/>
+                                <circle cx="12" cy="20" r="8.5" fill="#D97706" stroke="#B45309" stroke-width="1.2"/>
+                                <circle cx="12" cy="20" r="6.5" fill="#FDBA74"/>
+                                <text x="12" y="23.5" font-family="'Inter', sans-serif" font-size="9" font-weight="800" fill="#7C2D12" text-anchor="middle">৩</text>
+                            </svg>
+                        </div>
+                        <div class="rr-user-avatar-wrap ring-green">
                             <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Spider-man" class="rr-user-avatar">
                             <span class="live-indicator"></span>
                         </div>
                         <div class="rr-user-info">
                             <div class="rr-name-row">
-                                <span class="rr-name-dot"></span> Spider-man 🕸️
+                                <span class="rr-name-dot green"></span> Spider-man 🕸️
                             </div>
                             <div class="rr-tags-row">
                                 <span class="rr-tag-pill">HSC 2026</span>
-                                <span class="rr-tag-pill">🏫 রাজউক উত্তরা মডেল কলেজ</span>
+                                <span class="rr-tag-pill college-pill">🏛️ রাজউক উত্তরা মডেল</span>
                             </div>
                         </div>
                     </div>
@@ -1403,11 +1526,20 @@
                     </div>
                 </div>
 
-                <!-- Rank 4: Mow (২ ঘণ্টা ১০ মিনিট) - No medal, clean rank number ४ -->
+                <!-- Rank 4: Mow (২ ঘণ্টা ১০ মিনিট) -->
                 <div class="rr-rank-card" onclick="showUserDetailView('Mow', 'HSC 2027', 'ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ', '২ ঘণ্টা ১০ মিনিট', '৩টি সেশন', '১২ ঘণ্টা ৫০ মিনিট', '৪৫ ঘণ্টা ২০ মিনিট', '৯৬ ঘণ্টা ৪০ মিনিট', '১২১ সেশন', 'mow', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80')">
                     <div class="rr-rank-left">
-                        <span class="rr-rank-number">৪</span>
-                        <div class="rr-user-avatar-wrap">
+                        <div class="rr-rank-medal-wrap">
+                            <svg class="rr-medal-svg" viewBox="0 0 24 32" width="22" height="30" fill="none">
+                                <path d="M7 2 L12 11 L9 11 L5 2 Z" fill="#3B82F6"/>
+                                <path d="M17 2 L12 11 L15 11 L19 2 Z" fill="#EF4444"/>
+                                <path d="M11 2 L12 11 L13 11 L13 2 Z" fill="#F8FAFC"/>
+                                <circle cx="12" cy="20" r="8.5" fill="#94A3B8" stroke="#64748B" stroke-width="1.2"/>
+                                <circle cx="12" cy="20" r="6.5" fill="#E2E8F0"/>
+                                <text x="12" y="23.5" font-family="'Inter', sans-serif" font-size="9" font-weight="800" fill="#334155" text-anchor="middle">৪</text>
+                            </svg>
+                        </div>
+                        <div class="rr-user-avatar-wrap ring-blue">
                             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Mow" class="rr-user-avatar">
                             <span class="live-indicator"></span>
                         </div>
@@ -1417,7 +1549,7 @@
                             </div>
                             <div class="rr-tags-row">
                                 <span class="rr-tag-pill">HSC 2027</span>
-                                <span class="rr-tag-pill">🏫 ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</span>
+                                <span class="rr-tag-pill college-pill">🏛️ ভিকারুননিসা নূন</span>
                             </div>
                         </div>
                     </div>
@@ -1427,21 +1559,23 @@
                     </div>
                 </div>
 
-                <!-- Rank 5: Safayet (১ ঘণ্টা ৪০ মিনিট) - No medal, clean rank number ৫ -->
+                <!-- Rank 5: Safayet (১ ঘণ্টা ৪০ মিনিট) -->
                 <div class="rr-rank-card" onclick="showUserDetailView('Safayet', 'HSC 2026', 'চট্টগ্রাম কলেজ, চট্টগ্রাম', '১ ঘণ্টা ৪০ মিনিট', '২টি সেশন', '৯ ঘণ্টা ৩০ মিনিট', '৩৮ ঘণ্টা ১৫ মিনিট', '৭৮ ঘণ্টা ৫০ মিনিট', '৯৮ সেশন', 'safayet', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80')">
                     <div class="rr-rank-left">
-                        <span class="rr-rank-number">৫</span>
+                        <div class="rr-rank-medal-wrap">
+                            <span class="rr-rank-number">৫</span>
+                        </div>
                         <div class="rr-user-avatar-wrap">
                             <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Safayet" class="rr-user-avatar">
                             <span class="live-indicator"></span>
                         </div>
                         <div class="rr-user-info">
                             <div class="rr-name-row">
-                                <span class="rr-name-dot"></span> Safayet
+                                <span class="rr-name-dot green"></span> Safayet
                             </div>
                             <div class="rr-tags-row">
                                 <span class="rr-tag-pill">HSC 2026</span>
-                                <span class="rr-tag-pill">🏫 চট্টগ্রাম কলেজ, চট্টগ্রাম</span>
+                                <span class="rr-tag-pill college-pill">🏛️ চট্টগ্রাম কলেজ</span>
                             </div>
                         </div>
                     </div>
