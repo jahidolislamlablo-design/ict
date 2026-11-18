@@ -1243,8 +1243,7 @@
       "Board Question",
       "College Test Paper",
       "Chapter Practice",
-      "Live Exam",
-      "Model Test"
+      "Live Exam"
     ],
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
@@ -1252,7 +1251,7 @@
     "boardName": "Dhaka Board",
     "examYear": "2026",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 01",
+    "modelTestNo": "",
     "question": "সিম্যুলেশন করার জন্য বিশেষায়িত সফটওয়্যার হলো-\t[সি. বো. '২৫]",
     "options": [
       "CAD",
@@ -1263,7 +1262,7 @@
     "correctAnswer": "CAD",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.298Z",
-    "liveExamNo": "Live Exam 01",
+    "liveExamNo": "",
     "modelTestNos": [
       "Model Test 01",
       "Live Exam 01"
