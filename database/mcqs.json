@@ -59392,17 +59392,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae98a1",
     "serialNo": 337,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "রাবি কে ইউনিট ২০১৭-১৮",
+    "collegeName": "Govt. Hazi Muhammad Mohsin College",
     "boardName": "",
     "examYear": "2017",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 41",
-    "question": "বায়োমেট্রিক্স কোথায় ব্যবহৃত হয় ?\t[রাবি কে ইউনিট ২০১৭-১৮]",
+    "question": "বায়োমেট্রিক্স কোথায় ব্যবহৃত হয় ?",
     "options": [
       "চিকিৎসা বিজ্ঞানে",
       "শিক্ষাক্ষেত্রে",
