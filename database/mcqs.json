@@ -59132,17 +59132,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae989d",
     "serialNo": 333,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ঢাবি খ ইউনিট ২০২১",
+    "collegeName": "Viqarunnisa Noon School & College",
     "boardName": "",
     "examYear": "2021",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 42",
-    "question": "যে প্রোগ্রামিং ল্যাংগুয়েজ সাধারণত কৃত্রিম বুদ্ধিমত্তা প্রয়োগের ক্ষেত্রে ব্যবহৃত হয় না -\t[ঢাবি খ ইউনিট ২০২১]",
+    "question": "যে প্রোগ্রামিং ল্যাংগুয়েজ সাধারণত কৃত্রিম বুদ্ধিমত্তা প্রয়োগের ক্ষেত্রে ব্যবহৃত হয় না",
     "options": [
       "সি++",
       "ম্যাটল্যাব",
