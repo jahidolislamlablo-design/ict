@@ -59463,17 +59463,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae98a2",
     "serialNo": 338,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "চবি এ ইউনিট ২০১৭-১৮",
+    "collegeName": "Dhaka College, Dhaka",
     "boardName": "",
     "examYear": "2017",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 44",
-    "question": "আঙুলের ছাপ নিয়ে ব্যক্তি শনাক্তকরণের প্রযুক্তি কোনটি?\n[চবি এ ইউনিট ২০১৭-১৮]",
+    "question": "আঙুলের ছাপ নিয়ে ব্যক্তি শনাক্তকরণের প্রযুক্তি কোনটি?",
     "options": [
       "জেনেটিক ইঞ্জিনিয়ারিং",
       "ন্যানোটেকনোলজি",
