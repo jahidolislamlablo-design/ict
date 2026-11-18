@@ -57683,22 +57683,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9887",
     "serialNo": 311,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "জাককানইবি ডি ইউনিট ২০১৭-১৮",
+    "collegeName": "Dhaka City College",
     "boardName": "",
     "examYear": "2017",
-    "testPaperName": "",
-    "modelTestNo": "",
-    "question": "ব্যাংকের চেকের চেক নম্বর লেখা I পড়া হয় কোন পদ্ধতিতে?\n[জাককানইবি ডি ইউনিট ২০১৭-১৮]",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
+    "modelTestNo": "Model Test 06",
+    "question": "ব্যাংকের চেকের চেক নম্বর লেখা I পড়া হয় কোন পদ্ধতিতে?",
     "options": [
       "MUCR",
       "MYCR",
@@ -57707,7 +57707,8 @@
     ],
     "correctAnswer": "MICR",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.218Z"
+    "createdAt": "2026-11-02T16:02:04.218Z",
+    "liveExamNo": "Live Exam 6"
   },
   {
     "chapters": [],
