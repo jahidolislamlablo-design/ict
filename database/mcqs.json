@@ -58214,17 +58214,19 @@
     "_id": "6ae8b3fc04ce40b2c4ae988f",
     "serialNo": 319,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "College Test Paper",
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ববি গ ইউনিট ২০১৩-১৪",
+    "collegeName": "Dhaka City College",
     "boardName": "",
-    "examYear": "2013",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 44",
-    "question": "অনলাইন ব্যাংকিং এর একটি উদাহরণ হলো -\t[ববি গ ইউনিট ২০১৩-১৪]",
+    "question": "অনলাইন ব্যাংকিং এর একটি উদাহরণ হলো -",
     "options": [
       "ইন্টারনেট ব্যাংকিং",
       "টেলিগ্রাফিক মানি ট্রান্সফার",
