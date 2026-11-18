@@ -59591,22 +59591,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98a4",
     "serialNo": 340,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট বি (শিফট ৩) ২০১৬-১৭",
+    "collegeName": "Viqarunnisa Noon School & College",
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "বায়োমেট্রিক পদ্ধতিতে সিম কার্ড নিবন্ধনে বাংলাদেম বিশ্বের ....... তম দেশ।\t[বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট বি (শিফট ৩) ২০১৬-১৭]",
+    "question": "বায়োমেট্রিক পদ্ধতিতে সিম কার্ড নিবন্ধনে বাংলাদেম বিশ্বের ....... তম দেশ।",
     "options": [
       "প্রথম",
       "দ্বিতীয়",
@@ -59615,7 +59613,8 @@
     ],
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.269Z"
+    "createdAt": "2026-11-02T16:02:04.269Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
