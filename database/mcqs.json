@@ -58737,17 +58737,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae9897",
     "serialNo": 327,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ঢাবি খ ইউনিট ২০১৭-১৮",
+    "collegeName": "Chittagong College, Chittagong",
     "boardName": "",
     "examYear": "2017",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 44",
-    "question": "টুইটার হলো -\t[ঢাবি খ ইউনিট ২০১৭-১৮]",
+    "question": "টুইটার হলো -",
     "options": [
       "সামাজিক যোগাযোগ সাইট",
       "সামাজিক সংগঠন",
