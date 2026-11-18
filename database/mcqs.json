@@ -59064,22 +59064,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae989c",
     "serialNo": 332,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "রারি এইচ ইউনিট ২০১৭-১৮",
+    "collegeName": "Ananda Mohan College, Mymensingh",
     "boardName": "",
     "examYear": "2017",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "ভাচুর্য়াল রিয়েলিটি মূলত -\t[রারি এইচ ইউনিট ২০১৭-১৮]",
+    "question": "ভাচুর্য়াল রিয়েলিটি মূলত -",
     "options": [
       "কম্পিউটার প্রযুক্তি I সিমুলেশন তত্ত্বের ওপর প্রতিষ্ঠিত",
       "একটি ত্রিমাত্রিক কৃত্রিম পরিবেশ",
@@ -59089,7 +59087,8 @@
     "correctAnswer": "ক ও খ উভয়ই",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.256Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
