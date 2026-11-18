@@ -59655,22 +59655,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98a5",
     "serialNo": 341,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "গুবি ক ইউনিট ২০২১",
+    "collegeName": "",
     "boardName": "",
     "examYear": "2021",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "অদ্বিতীয়ভাবে একজন ব্যক্তিকে শনাক্ত করার জন্য কোন তথ্যটি ব্যবহৃত হয় না?\t[গুবি ক ইউনিট ২০২১]",
+    "question": "অদ্বিতীয়ভাবে একজন ব্যক্তিকে শনাক্ত করার জন্য কোন তথ্যটি ব্যবহৃত হয় না?",
     "options": [
       "চোখের মণি",
       "কণ্ঠস্বর",
@@ -59680,7 +59678,8 @@
     "correctAnswer": "চোখের মণি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.270Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
