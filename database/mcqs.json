@@ -60182,17 +60182,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae98ad",
     "serialNo": 349,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "জবি ডি ইউনিট ২০১৬-১৭",
+    "collegeName": "",
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
     "modelTestNo": "Model Test 44",
-    "question": "জাতীয় পরিচয়পত্র (স্মার্ট কার্ড) - এর মাধ্যমে কত ধরনের সেবা পাওয়া যাবে?\t[জবি ডি ইউনিট ২০১৬-১৭]",
+    "question": "জাতীয় পরিচয়পত্র (স্মার্ট কার্ড) - এর মাধ্যমে কত ধরনের সেবা পাওয়া যাবে?",
     "options": [
       "২০",
       "২১",
