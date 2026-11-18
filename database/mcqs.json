@@ -57427,17 +57427,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae9883",
     "serialNo": 307,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ঢাবি ঘ ইউনিট: সামাজিক বিজ্ঞান অনুষদ ২০১৪-১৫",
+    "collegeName": "RAJUK Uttara Model College",
     "boardName": "",
-    "examYear": "2014",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 41",
-    "question": "GIS এর অর্থ কী?\t[ঢাবি ঘ ইউনিট: সামাজিক বিজ্ঞান অনুষদ ২০১৪-১৫]",
+    "question": "GIS এর অর্থ কী?",
     "options": [
       "জিওগ্রাফিক ইনফরমেশন সার্ভিস",
       "জিওগ্রাফিক ইনফরমেশন সিস্টেম",
