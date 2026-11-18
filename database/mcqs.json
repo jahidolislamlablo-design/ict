@@ -57357,22 +57357,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9882",
     "serialNo": 306,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বাংলাদেশ মেরিন একাডেমি বি ইউনিট ২০১৬-১৭",
+    "collegeName": "RAJUK Uttara Model College",
     "boardName": "",
     "examYear": "2016",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "GPS কী কাজে লাগে?\t[বাংলাদেশ মেরিন একাডেমি বি ইউনিট ২০১৬-১৭]",
+    "question": "GPS কী কাজে লাগে?",
     "options": [
       "আয়তন নির্ণয়ে",
       "অবস্থান নির্ণয়ে",
@@ -57381,7 +57379,8 @@
     ],
     "correctAnswer": "অবস্থান নির্ণয়ে",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.207Z"
+    "createdAt": "2026-11-02T16:02:04.207Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
