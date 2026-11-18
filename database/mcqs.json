@@ -57162,7 +57162,6 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae987f",
     "serialNo": 303,
@@ -57172,10 +57171,10 @@
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "আব্দুল কাদেi মোলস্না সিটি কলেজ, নরসিংদী",
+    "collegeName": "Govt. Hazi Muhammad Mohsin College",
     "boardName": "",
     "examYear": "2025",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
     "question": "উদ্দীপকের নতুন যন্ত্রটি করে -\n[আব্দুল কাদের মোলস্না সিটি কলেজ, নরসিংদী]\ni. ঝুঁকিপূর্ণ কাজ\nii. কর্মী শনাক্তকরণ\niii. ভারী যন্ত্রাংশ পরিবহন\n\nনিচের কোনটি সঠিক?",
     "options": [
@@ -57187,7 +57186,8 @@
     "correctAnswer": "i ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.203Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
