@@ -57033,7 +57033,6 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae987d",
     "serialNo": 301,
@@ -57043,12 +57042,12 @@
     ],
     "categoryType": "College Test Paper",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বীরশ্রেষ্ঠ মুন্সী আব্দুর রউফ পাবলিক কলেজম, ঢাকা",
-    "boardName": "ঢাকা বোর্ড",
+    "collegeName": "",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "উদ্দীপকের কর্মকা- - [বীরশ্রেষ্ঠ মুন্সী আব্দুর রউফ পাবলিক কলেজম, ঢাকা]\ni. চিতিৎসাক্ষেত্রে নেতিবাচক প্রভাব ফেলবে\nii. অর্থনৈতিক উন্নয়ন ঘটবে\niii. জীববৈচিত্র্যের সৃষ্টি হবে\n\nনিচের কোনটি সঠিক?",
+    "question": "উদ্দীপকের কর্মকা- \ni. চিতিৎসাক্ষেত্রে নেতিবাচক প্রভাব ফেলবে\nii. অর্থনৈতিক উন্নয়ন ঘটবে\niii. জীববৈচিত্র্যের সৃষ্টি হবে\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i",
       "ii",
@@ -57058,7 +57057,8 @@
     "correctAnswer": "i, ii ও iii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.199Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
