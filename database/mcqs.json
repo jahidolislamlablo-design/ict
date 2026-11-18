@@ -58670,17 +58670,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae9896",
     "serialNo": 326,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "রাজশাহী বিশ্ববিদ্যালয় ডি ইউনিট ২০১২-১৩",
+    "collegeName": "Ideal School & College, Motijheel",
     "boardName": "",
-    "examYear": "2012",
-    "testPaperName": "",
+    "examYear": "2019",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 41",
-    "question": "ইলেকট্রনিক ব্যাংকিং - এর সম্পূরক নয় -\n[রাজশাহী বিশ্ববিদ্যালয় ডি ইউনিট ২০১২-১৩]",
+    "question": "ইলেকট্রনিক ব্যাংকিং - এর সম্পূরক নয় -",
     "options": [
       "POS",
       "FDR",
