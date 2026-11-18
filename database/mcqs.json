@@ -58538,17 +58538,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae9894",
     "serialNo": 324,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "রাজশাহী বিশ্ববিদ্যালয় ইউনিট ডি জোড় ২০১৪-১৫",
+    "collegeName": "Adamjee Cantonment College",
     "boardName": "",
-    "examYear": "2014",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "Model Test 42",
-    "question": "এ যাবৎ আইপিও'i মাধ্যমে বিশ্বের সর্বোচ্চ অর্থ সংগ্রহকারী কোম্পানি আলিবাবা যে ব্যবসার সাথে জড়িত -\n[রাজশাহী বিশ্ববিদ্যালয় ইউনিট ডি জোড় ২০১৪-১৫]",
+    "question": "এ যাবৎ আইপিও'i মাধ্যমে বিশ্বের সর্বোচ্চ অর্থ সংগ্রহকারী কোম্পানি আলিবাবা যে ব্যবসার সাথে জড়িত -",
     "options": [
       "রিয়েল এস্টেট",
       "তেল ও গ্যাস",
