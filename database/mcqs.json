@@ -57491,22 +57491,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9884",
     "serialNo": 308,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বরিশাল বিশ্ববিদ্যালয় খ ইউনিট ২০১৩-১৪",
+    "collegeName": "Chittagong College, Chittagong",
     "boardName": "",
-    "examYear": "2013",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "ই- মেইল কে আবিষ্কার করেন?\t[বরিশাল বিশ্ববিদ্যালয় খ ইউনিট ২০১৩-১৪]",
+    "question": "ই- মেইল কে আবিষ্কার করেন?",
     "options": [
       "এএম পনিয়াটক",
       "রে টমলিনসন",
@@ -57516,7 +57514,8 @@
     "correctAnswer": "রে টমলিনসন",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.213Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
