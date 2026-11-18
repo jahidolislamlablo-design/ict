@@ -58801,22 +58801,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9898",
     "serialNo": 328,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ঢাকা বিশ্ববিদ্যালয় খ ইউনিট ২০১৩-১৪; চট্টগ্রাম বিশ্ববিদ্যালয় এফ - ৩ ইউনিট; জীববিজ্ঞান অনুষদ ২০১৫-১৬",
+    "collegeName": "Notre Dame College, Dhaka",
     "boardName": "",
-    "examYear": "2013",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "ফেসবুকের প্রতিষ্ঠাতা -\n[ঢাকা বিশ্ববিদ্যালয় খ ইউনিট ২০১৩-১৪; চট্টগ্রাম বিশ্ববিদ্যালয় এফ - ৩ ইউনিট; জীববিজ্ঞান অনুষদ ২০১৫-১৬]",
+    "question": "ফেসবুকের প্রতিষ্ঠাতা -",
     "options": [
       "বিল গেটস",
       "টিম বার্ণাস লি",
@@ -58825,7 +58823,8 @@
     ],
     "correctAnswer": "মার্ক জুকারবার্গ",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.251Z"
+    "createdAt": "2026-11-02T16:02:04.251Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
