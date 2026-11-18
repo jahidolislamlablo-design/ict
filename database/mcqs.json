@@ -60046,7 +60046,6 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98ab",
     "serialNo": 347,
@@ -60057,10 +60056,10 @@
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
     "boardName": "",
-    "examYear": "",
+    "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "E – GP  এর পূর্ণরূপ কী?\t[জবি ডি ইউনিট ২০১৪-১৫]",
+    "question": "E – GP  এর পূর্ণরূপ কী?",
     "options": [
       "Electric Government Procedure",
       "Electronic Governmental Procedure",
@@ -60069,7 +60068,8 @@
     ],
     "correctAnswer": "Electronic Government Procurement",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.281Z"
+    "createdAt": "2026-11-02T16:02:04.281Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
