@@ -58406,22 +58406,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9892",
     "serialNo": 322,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বরিশাল বিশ্ববিদ্যালয় গ ইউনিট ২০১৫-১৬",
+    "collegeName": "Dhaka College, Dhaka",
     "boardName": "",
-    "examYear": "2015",
-    "testPaperName": "",
-    "modelTestNo": "",
-    "question": "E-retailing বলতে কী বোঝায়?\n[বরিশাল বিশ্ববিদ্যালয় গ ইউনিট ২০১৫-১৬]",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
+    "modelTestNo": "Model Test 09",
+    "question": "E-retailing বলতে কী বোঝায়?",
     "options": [
       "ICT নির্ভর যোগাযোগ ব্যবস্থা গড়ে তোলা",
       "ডেবিট কার্ডের মাধ্যমে বিক্রয়",
@@ -58431,7 +58431,8 @@
     "correctAnswer": "ইন্টারনেটের মাধ্যমে খুচরা বিক্রয়",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.240Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": "Live Exam 09"
   },
   {
     "chapters": [],
