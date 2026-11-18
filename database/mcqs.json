@@ -58342,22 +58342,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9891",
     "serialNo": 321,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "রাজশাহী বিশ্ববিদ্যালয় ইউনিট ডি ২০১৬-১৭",
+    "collegeName": "Adamjee Cantonment College",
     "boardName": "",
     "examYear": "2016",
-    "testPaperName": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "'Cyber Monday' পরিভাষাটি নিচের কোনটি সাথে সম্পৃক্ত?\n[রাজশাহী বিশ্ববিদ্যালয় ইউনিট ডি ২০১৬-১৭]",
+    "question": "'Cyber Monday' পরিভাষাটি নিচের কোনটি সাথে সম্পৃক্ত?",
     "options": [
       "ক্রেডিট অনলাইন",
       "কেনাকাটা অনলাইন",
@@ -58366,7 +58364,8 @@
     ],
     "correctAnswer": "কেনাকাটা অনলাইন",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.237Z"
+    "createdAt": "2026-11-02T16:02:04.237Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
