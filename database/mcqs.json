@@ -57747,22 +57747,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9888",
     "serialNo": 312,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বরিশাল বিশ্ববিদ্যালয় গ ইউনিট ২০১৫-১৬; কুমিলস্না বিশ্ববিদ্যালয় সি ইউনিট বিজনেস স্টাডিজ অনুষদ ২০১৫-১৬; জগন্নাথ বিশ্ববিদ্যালয় সি ইউনিট ২০১৩-১৪",
+    "collegeName": "Viqarunnisa Noon School & College",
     "boardName": "",
-    "examYear": "2015",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "MICR চেক বলতে কী বোঝায়?\n[বরিশাল বিশ্ববিদ্যালয় গ ইউনিট ২০১৫-১৬; কুমিলস্না বিশ্ববিদ্যালয় সি ইউনিট বিজনেস স্টাডিজ অনুষদ ২০১৫-১৬; জগন্নাথ বিশ্ববিদ্যালয় সি ইউনিট ২০১৩-১৪]",
+    "question": "MICR চেক বলতে কী বোঝায়?",
     "options": [
       "Magnetic Ink Cheque Recognition",
       "Magnetic Information Character Recognition",
@@ -57772,7 +57770,8 @@
     "correctAnswer": "Magnetic Ink Character Recognition",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.219Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
