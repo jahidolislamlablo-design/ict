@@ -60246,22 +60246,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98ae",
     "serialNo": 350,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট সি ২০১৫-১৬",
+    "collegeName": "",
     "boardName": "",
-    "examYear": "2015",
+    "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "প্রযুক্তি দ্বারা ক্ষতিগ্রস্থা বিপন্ন পেশার তালিকায় শীর্ষে রয়েছে নিম্নের কোনটি? \t[বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট সি ২০১৫-১৬]",
+    "question": "প্রযুক্তি দ্বারা ক্ষতিগ্রস্থা বিপন্ন পেশার তালিকায় শীর্ষে রয়েছে নিম্নের কোনটি?",
     "options": [
       "ডাকপিয়ন",
       "কৃষক",
@@ -60270,7 +60268,8 @@
     ],
     "correctAnswer": "ডাকপিয়ন",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.285Z"
+    "createdAt": "2026-11-02T16:02:04.285Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
