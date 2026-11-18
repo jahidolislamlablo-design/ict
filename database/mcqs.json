@@ -59595,15 +59595,17 @@
     "_id": "6ae8b3fc04ce40b2c4ae98a4",
     "serialNo": 340,
     "categoryTypes": [
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "Viqarunnisa Noon School & College",
     "boardName": "",
     "examYear": "2016",
-    "testPaperName": "",
-    "modelTestNo": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
+    "modelTestNo": "Model Test 08",
     "question": "বায়োমেট্রিক পদ্ধতিতে সিম কার্ড নিবন্ধনে বাংলাদেম বিশ্বের ....... তম দেশ।",
     "options": [
       "প্রথম",
@@ -59614,7 +59616,7 @@
     "correctAnswer": "দ্বিতীয়",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.269Z",
-    "liveExamNo": ""
+    "liveExamNo": "Live Exam 08"
   },
   {
     "chapters": [],
