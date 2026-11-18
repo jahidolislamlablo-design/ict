@@ -1,0 +1,116 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 10
+n‡q _v‡K| †ewki fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv e¨envi Kiv
+nq| G ai‡bi KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi K‡i mve-‡gby
+ˆZwi Kiv n‡q _v‡K| c¶všÍ‡i, hLb †Kv‡bv GKwU I‡qemvB‡U †cBR¸‡jv
+wbw`©ó μgvbymv‡i wfwRU Kivi cÖ‡qvRb nq ZLb wmKz‡qÝ ev wjwbqvi
+KvVv‡gv e¨envi Kiv nq| GB ai‡bi †cBR¸‡jv‡Z mvaviYZ Next,
+Previous, Last, First BZ¨vw` wjsK e¨envi K‡i BDRvi †cBR wfwRU
+Ki‡Z cv‡i| A_©vr G KvVv‡gvi gva¨‡g B‡”QgZ wbw`©ó †cB‡R hvIqv hvq
+bv|
+ZvB wjwbqvi I nvqivwK©K¨vj KvVv‡gvi g‡a¨ nvqivwK©K¨vj KvVv‡gv AwaK
+myweavRbK|
+17| This is our national flower
+[PÆMÖvg ‡evW©-2019]
+(K) AvBwc A¨v‡Wªm Kx?
+(L) ʻI‡qe eªvDRvi I mvP© BwÄb GK bqʼ -e¨vL¨v Ki|
+(M) eªvDRv‡i DÏxc‡Ki b¨vq wPÎ-1 Gi djvdj †c‡Z cÖ‡qvRbxq
+HTML ‡KvW wjL|
+(N) ʻDÏxc‡Ki wPÎ-2 Gi I‡qemvBU KvVv‡gvwU eo wkÿv cÖwZôv‡bi Rb¨
+Av`k© bq|ʼ -Dw³wUi mZ¨Zv hvPvBc~e©K gZvgZ `vI|
+17 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡U hy³ cÖwZwU Kw¤úDUv‡ii GKwU wbR¯^ wVKvbv _v‡K| GB
+wVKvbv‡K AvBwc A¨v‡Wªm ev Internet Protocol Address e‡j|
+(L) I‡qe eªvDRvi n‡jv Ggb GKwU mdUIq¨vi hvi gva¨‡g GKRb e¨enviKvix
+†h‡Kv‡bv I‡qe‡cBR, Iqvì© IqvBW I‡q‡e A_ev ‡jvKvj Gwiqv
+†bUIqv‡K© Aew¯’Z †Kv‡bv I‡qemvB‡Ui †h‡Kv‡bv ‡jLv, Qwe Ges Ab¨vb¨
+Z‡_¨i AbymÜvb, WvDb‡jvW wKsev ‡`L‡Z cv‡ib| g~jZ I‡qe †cBR
+cÖ`k©bB I‡qe eªvDRv‡ii KvR| D‡jøL‡hvM¨ I‡qe eªvDRvimg~n n‡jv ¸Mj
+†μvg, gwRjv dvqvid·, mvdvwi BZ¨vw`|
+Aciw`‡K, mvP© BwÄb GKwU mdUIq¨vi Uyj hv Iqvì© IqvBW I‡qe †_‡K
+Bbdi‡gkb Lyu‡R †ei K‡i| †hgb- Google, yahoo, Bing, MSN,
+wccxwjKv BZ¨vw`|
+(M) eªvDRv‡i DÏxc‡Ki b¨vq wPÎ-1 Gi djvdj †c‡Z cÖ‡qvRbxq HTML
+‡KvW wb¤œiƒc:
+<!DOCTYPE <html>
+<head>
+<title>HTML Code</title>
+</head>
+<body style="text-align: center;">
+<p>This is our national flower.</p>
+<figure style="display: inline-block;">
+<img src="water lily.jpeg">
+<figcaption style="border: 1px solid;"> Water lily.jpeg
+</figcaption>
+</figure>
+</body>
+</html>
+(N) DÏxc‡Ki wPÎ-2 I‡qe KvVv‡gvwU n‡jv wjwbqvi KvVv‡gv| G ai‡bi KvVv‡gv
+eo wk¶v cªwZôv‡bi Rb¨ Av`k© bq| wb‡Pi Dw³wUi mZ¨Zv hvPvB Kiv
+n‡jv-
+wjwbqvi KvVv‡gv‡Z I‡qemvB‡Ui †cBR¸‡jv GKwU wbw`©ó Abyμ‡g (G‡Ki
+ci GK) mvRv‡bv _v‡K Ges †Kvb †cB‡Ri ci ‡Kvb †cBR Avm‡e Zv
+wb‡`©wkZ _v‡K e‡j G‡K wjwbqvi KvVv‡gv e‡j| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i ‡`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| G ai‡bi †cBR¸‡jv‡Z mvaviYZ Next, Previous, Fag,
+Last BZ¨vw` wj¼ e¨envi Kiv n‡q _v‡K| G c×wZ‡Z ‡cBR¸‡jv GKwUi
+ci Av‡iKwU avivevwnKfv‡e wjsK Kiv _v‡K| G‡¶‡Î I‡qemvB‡U †Kv‡bv
+GKwU †cBR wfwRU Ki‡Z n‡j Av‡M Zvi c~e©eZ©x †cBR wfwRU Ki‡Z nq|
+A_©vr G‡Z mivmwi †Kv‡bv †cB‡R hvIqv hvq bv| ZvB eo ai‡bi ev AwaK
+msL¨K I‡qe †cBR wewkó I‡qemvB‡Ui †¶‡Î GB KvVv‡gv Dchy³ bq|
+AZGe ejv hvq Òwjwbqvi KvVv‡gv eo wk¶v cÖwZôv‡bi Rb¨ Av`k© bqÓ-
+Dw³wU h_v_©|
+18| `„k¨Kí-1: Bjv I AvbRyg `yB evÜex wg‡j HTML w`‡q First, Last,
+Next, Previous wjsKwewkó GKwU I‡qemvBU ˆZwi K‡i| I‡qemvBUwU
+`ªæZ eªvDR Kiv †M‡jI Z_¨ wbqwgZ Avc‡WU Ki‡Z mgm¨v nIqvq Zviv
+PHP, MySQL BZ¨vw` Uzjm w`‡q I‡qemvBUwU cwieZ©‡bi wm×všÍ †bq|
+[ewikvj ‡evW©-2019]
+(K) nvBcviwjsK Kx?
+(L) I‡qe †nvw÷s ¸iæZ¡c~Y© †Kb? e¨vL¨v Ki|
+(M) I‡qemvBUwUi ÷ªvKPvi e¨vL¨v Ki|
+(N) DÏxc‡K D‡jøwLZ wm×v‡šÍi †hŠw³KZv we‡kølY Ki|
+18 bs cÖ‡kœi DËi
+(K) nvBcviwj¼ n‡”Q GKwU I‡qe †cB‡Ri †Kvb GKwU As‡ki mv‡_ 'ev †Kvb
+†cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri ms‡hvM ¯’vcb Kiv|
+(L) I‡qe †nvw÷s n‡jv I‡qemvBU ev I‡qe †cBR B›Uvi‡b‡U cÖ`k©‡bi Rb¨
+cÖ‡qvRbxq cªwμqv| G Rb¨ I‡qemvBUwU‡K B›Uvi‡bU mshy³ †Kv‡bv
+mvf©v‡ii †g‡gvwi ev †÷v‡i‡R msi¶Y Rgv ivL‡Z n‡e| I‡qe †nvw÷s bv
+Ki‡j I‡qemvBUwU‡Z ‡Kv‡bv cÖ‡ek _vK‡e bv ev GwU Ab¨ †KD eªvDR
+Ki‡Z cvi‡e bv| ZvB I‡qe †cBR ˆZwi Kivi ci Zv †h †Kv‡bv GKwU
+wbf©i‡hvM¨ I‡qe mvf©v‡i †nv÷ Kiv cÖ‡qvRb|
+(M) Bjv I AvbRyg `yB evÜex wg‡j HTML w`‡q †h I‡qe mvBU ‡Zwi K‡i
+†mwU wjwbqvi ÷ªvKPvi| wb‡P wjwbqvi ÷ªvKPviwU e¨vL¨v Kiv n‡jv-
+‡h I‡qemvB‡Ui †cBR¸‡jv GKwU wbw`©ó Abyμ‡g (G‡Ki ci GK) mvRv‡bv
+_v‡K Ges †Kvb †cB‡Ri ci †Kvb †cBR Avm‡e Zv wb‡`©wkZ _v‡K Zv‡K
+wjwbqvi KvVv‡gv ev wmKz‡qwÝqvj msMVb e‡j| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i ‡`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| ‡cB‡Ri msL¨v Kg n‡j G ai‡bi KvVv‡gv Dc‡hvMx |
+wPÎ: wjwbqvi KvVv‡gv
+G ai‡bi KvVv‡gv‡Z g~j †cBR †_‡K ïiæ n‡q WKz‡g‡›Ui cieZ©x avc¸‡jv
+m¤ú‡K© eY©bv K‡i| G ai‡bi †cBR¸‡jv‡Z mvavibZ Next; Preview,
+Fast, Last BZ¨vw` wj¼ e¨envi Kiv n‡q _v‡K| d‡j mn‡R †cBR
+Avc‡jvW Kiv hvq Ges `ªæZ ‡cBR eªvDR Kiv hvq|
+(N) `„k¨Kí-1 G DwjøwLZ wm×všÍwU †hŠw³K| KviY-
+HTML w`‡q ïay ÷¨vwUK I‡qemvBU ˆZwi Kiv †M‡jI WvBbvwgK I‡qe
+mvBU ˆZwi Kiv hvq bv|
+÷¨vwUK I‡qe mvB‡Ui Amyweav-
+1| Kb‡U›U Avc‡WU Ki‡Z cÖPzi mgq jv‡M|
+2| I‡qemvB‡Ui AvKvi e„w× †c‡j Kb‡U›U¸‡jv mn‡R wbqš¿Y Kiv hvq bv|
+3| gvbm¤§Z I‡qe †cBR wWRvBwbs AZ¨šÍ Kómva¨ Ges mgqmv‡c¶|
+Java Script, ASP.NET GLb PHP, MySQL BZ¨vw` Uzjm
+e¨envi K‡i WvBbvwgK I‡qemvBU ˆZwii gva¨‡g D³ Amyweav mg~n `~i
+Kiv hvq|
+WvqbvwgK I‡qemvB‡Ui myweavmg~n:
+ G ai‡bi I‡qemvB‡U cwieZ©bkxj Z_¨ ev B›Uv‡iw±f I‡qe ‡cBR
+_v‡K|
+ ivb UvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i|
+ WvqbvwgK I‡qemvBU Dbœq‡b †WUv‡eR e¨eüZ nq Ges ‡WUv‡e‡R
+Kz‡qixi gva¨‡g wewfbœ cwieZ©bkxj K‡›U›U ˆZwi Ki‡Z Mv‡i|
+ WvqbvwgK I‡qemvBU Lye Nb Nb †cB‡Ri f¨vjy ev K‡›U›U cwieZ©b
+Ki‡Z cv‡i Ges e¨enviKvix‡`i wbKU n‡Z BbcyU MªnY Ki‡Z cv‡i|
+Dc‡iv³ Av‡jvPbv n‡Z †`Lv hvq, I‡qemvBwU‡K ÷¨vwUK ‡_‡K PHP,
+MySQL e¨envi K‡i WvBbvwgK I‡qemvBU iæcvß‡ii wm×všÍwU †hŠw³K|
+19| wkjv‡`i K‡j‡Ri I‡qemvBUwU mvf©vi Ges eªvDRKvixi g‡a¨ DfgyLx †WUv
+mieivn K‡i| wkjv GKwU I‡qe‡cR ˆZwi K‡i hv‡Z “ourboard”
+‡jLvwU‡Z wK¬K Ki‡j “www.e-board.edu.bd” I‡qemvBUwU cÖ`wk©Z
+nq|

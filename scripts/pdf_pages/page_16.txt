@@ -1,0 +1,119 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 16
+HTML †cB‡R B‡gR hy³ Kivi Rb¨ <img> U¨vM e¨eüZ nq| Image
+U¨v‡Mi mvnv‡h¨ Qwe‡K wj¼ †`Iqvi Rb¨ Sre A¨vwUªweD‡Ui gva¨‡g Qwei
+Drm wba©viY K‡i w`‡Z nq| <img> U¨v‡Mi ïiæ i‡q‡Q wKš‘ †kl †bB|
+29| cÖwgZv GKwU I‡qemvBU ˆZwii Rb¨ Home.html, Admission.html
+Ges Result.html bv‡g 3wU †cBR ˆZwi Kij| Result.html †cB‡R
+wbgœiƒc djvdj cÖ`wk©Z nq:
+Roll 	Name 	GPA
+101 	Karim 	5.00
+102 	Afrin 	4.75
+103 	Zakia 	4.50
+AZtci †m Home †cBR †_‡K Ab¨vb¨ †cB‡R hvIqvi e¨e¯’v Kij|
+wm‡jU †evW© -2017]
+(K) AvBwc A¨v‡Wªm Kx? 	1
+(L) †nvw÷s I‡qemvBU cvewj‡Kk‡bi GKwU ¸iæZ¡c~Y© avc- eywS‡q †jL| 2
+(M) Result.html †c‡Ri †UwejwU ˆZwii html †KvW wjL| 	3
+(N) cÖwgZvi me©‡kl M„nxZ e¨e¯’vi cÖ‡qvRbxqZv g~j¨vqb Ki| 	4
+29 bs cÖ‡kœi DËi
+(K) AvBwc A¨v‡Wªm n‡jv B›Uvi‡b‡U cÖwZwU Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv|
+(L) B›Uvi‡b‡U I‡q‡ei dvBj¸‡jv †Kv‡bv mvf©v‡i ivLv‡K I‡qe †nvw÷s ejv
+nq| I‡qe †nvw÷s n‡jv ¯’vb (A_©vr mvf©vi †¯úm) †hLv‡b †U·U, MÖvwd·,
+AwWI, wfwWI m¤^wjZ I‡qe †cB‡R ivLv nq| I‡qe †nvw÷s Qvov
+I‡qemvBU cÖ`wk©Z nq bv ZvB †nvw÷s I‡qemvBU cvewj‡Kk‡bi GKwU
+¸iæZ¡c~Y© avc|
+(M) Result.html †cB‡Ri †UwejwU ˆZwii HTML †KvW wb‡P †`Iqv n‡jv-
+<!DOCTYPE html>
+<html>
+<body>
+<table border = "1">
+<tr>
+<th> Roll </th>
+<th> Name </th>
+<th> GPA </th>
+</tr>
+<tr>
+<td>101 </td>
+<td> Karim </td>
+<td>500</td>
+</tr>
+<tr>
+<td> 102 </td>
+<td> Afrin </td>
+<td> 4.75 </td>
+</tr>
+<tr>
+<td>> 103 </td>
+<td> Zakia </td>
+<td> 4.50 </td>
+</tr>
+</table>
+</body>
+</html>
+(N) cÖwgZvi me©‡kl M„nxZ e¨e¯’vwU n‡”Q wj¼ ¯’vcb Kiv| wj¼ e¨e¯’vwU‡K
+nvBcviwj¼ ejv nq|
+wewfbœ ai‡bi Z_¨vewji †fZi fvP©yqvj ms‡hvM ¯’vcb Kivi e¨e¯’vB n‡”Q
+nvBcviwj¼| eZ©gv‡b GUv Qvov I‡qemvBU KíbvI Kiv hvq bv| KviY
+eZ©gv‡b cÖ‡Z¨KwU I‡qemvBU-Gi g~j UwcK&m wj÷ A_ev †gby ˆZwi K‡i
+Gi †_‡K mve-UwcKm ˆZwi Kiv nq †hLv‡b wbw`©ó Topics m¤ú‡K©
+Av‡jvPbv Kiv nq| G ÷ªvKPv‡ii †¶Î g~j welq w`‡q †gby ev wj÷ ˆZwi
+Ki‡Z nq| AZtci G g~j welq Gi wj÷ ev †gby †_‡K GKwU‡K m~Pbv ev
+c_ cÖ`k©K a‡i Avi GKwU mve UwcK&m ˆZwi Ki‡Z nq hv GKwU wbw`©ó
+welq m¤ú‡K© Av‡jvPbvi m~Pbv wn‡m‡e KvR K‡i| G ai‡bi wWRvBb
+e¨env‡ii gva¨‡g BDRvi‡`i Z_¨ MÖn‡Yi †¶‡Î AwZwi³ ¯^vaxbZv cÖ`vb
+Kiv hvq| djkÖæwZ‡Z BDRviiv †cBRwU e¨env‡ii †¶‡Î AwaK
+¯^v”Q›`¨‡eva K‡i| wj‡¼i gva¨‡g BDRviiv cÖ‡qvRb Abyhvqx mn‡RB
+I‡q‡ei GK †cBR †_‡K Ab¨ †cB‡R Abvqv‡m †h‡Z cvi‡e Ges I‡qe
+†cBRwUi †Kvb As‡k BDRvi Ae¯’vb Ki‡Q, Zv Rvbv Zvi R‡b¨ mnR‡eva¨
+n‡e| wUª wWRvB‡bi †¶‡Î †nvg †cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ
+msw¶ß AvKv‡i _v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i
+wUª-i cieZ©x †cBR¸‡jv‡Z hvIqv hvq|
+nvBcviwj¼-Gi e¨e¯’v bv _vK‡j I‡qemvB‡Ui †cB‡Ri Ae¯’v A‡bK eo
+n‡e| Zv‡Z A‡bK mgm¨v †`Lv †`‡e| GKwU eo dvBj WvDb‡jvW Ki‡Z
+mgq †ewk jvM‡e| Zv‡Z BDRviiv wei³ n‡e ZvQvov †Kv‡bv welq‡K Lyu‡R
+†c‡Z †¯Œvj Ki‡Z n‡e| †Kv‡bv wbw`©ó c‡q‡›U †bwf‡MU Kiv A‡bK K‡ói
+e¨vcvi A_ev nvBcviwj‡¼i gva¨‡g mn‡RB †mwU Kiv hvq| ZvQvov GKwU
+I‡qemvBU †_‡K Ab¨ I‡qemvB‡U †h‡ZI nvBcviwj¼ Qvov m¤¢e bq|
+myZivs ejv hvq I‡qemvB‡U nvBcviwj‡¼i cÖ‡qvRbxqZv A‡bK †ewk|
+30| `yB eÜy Avwbm Ges BKevj I‡qe‡cBR ˆZwii cÖwk¶Y †bq| Avwbm wPÎ-1
+Ges BKevj wPÎ-2 Gi KvVv‡gv †e‡Q wb‡q I‡qe‡cBR ˆZwi K‡i|
+[ewikvj †evW©-2017]
+(K) AvBwc A¨v‡Wªm Kx? 	1
+(L) I‡qe †c‡Ri mv‡_ eªvDRv‡ii m¤úK© e¨vL¨v Ki| 	2
+(M) BKev‡ji I‡qe †cBR ÷ªvKPvi kbv³ K‡i e¨vL¨v Ki| 	3
+(N) DÏxc‡Ki ÷ªvKPvi `ywUi g‡a¨ †KvbwUi e¨envi AwaK myweavRbK-
+we‡kølYc~e©K gZvgZ `vI| 	4
+30 bs cÖ‡kœi DËi
+(K) AvBwc A¨v‡Wªm n‡jv B›Uvi‡b‡U cÖwZwU Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv|
+(L) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv Iqvì© IqvBW I‡qe I
+B›Uvi‡bU eªvDRv‡i e¨env‡ii Rb¨ Dchy³| eªvDRv‡ii gva¨‡g B›Uvi‡b‡U
+I‡qe †cBR cÖ`k©‡bi KvR K‡i| c„w_exi wewfbœ †`‡ki mvf©v‡i ivLv I‡qe
+†cBR eªvDRv‡ii gva¨‡g cÖ`wk©Z nq| ZvB I‡qe †cBR I eªvDRvi G‡K
+Ac‡ii mv‡_ m¤úwK©Z|
+(M) BKev‡ji I‡qe †cBRwU n‡jv wjwbqvi KvVv‡gv| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i †`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| †cB‡Ri msL¨v Kg n‡j G ai‡bi KvVv‡gv Dc‡hvMx| G ai‡bi
+KvVv‡gv‡Z g~j †cBR †_‡K ïiæ n‡q WKz‡g‡›Ui cieZ©x avc¸‡jv m¤ú‡K©
+eY©bv K‡i| G ai‡bi †cBR¸‡jv‡Z mvaviYZ Next, Previous, Fast,
+Last BZ¨vw` wj¼ e¨envi Kiv n‡q _v‡K|
+(N) DÏxc‡K wPÎ-1 Gi ÷ªvKPviwU n‡jv wUª ev nvqvivwK©K¨vj ÷ªvKPvi Ges wPÎ-
+2 Gi ÷ªvKPviwU n‡jv wjwbqvi ÷ªvKPvi| G `ywU ÷ªvKPv‡ii g‡a¨ wPÎ-1
+A_©vr wUª ev nvqvivwK©K¨vj ÷ªvKPviwU e¨envi AwaK myweavRbK| G
+KvVv‡gv‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i _v‡K| we¯ÍvwiZ
+Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i cieZ©x †cBR¸‡jv‡Z hvIqv
+hvq| I‡qemvB‡Ui KvVv‡gvi g‡a¨ nvqvivwK©K¨vj KvVv‡gv me‡P‡q mnR I
+RbwcÖq| †ewki fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv e¨envi Kiv nq|
+G ai‡bi KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi K‡i mve-†gby ˆZwi
+Kiv n‡q _v‡K|
+31| DÏxcKwU jÿ Ki I wb‡Pi cÖkœ¸‡jvi DËi `vI|
+<html>
+<head> <title> ICT </title> </head>
+<body>
+<h3> COLLEGE RESULT </h3>
+<table>
+<tr>
+<th> Roll </th> <th> Name </th> <th> Result </th>
+1 	2 	3
+wPÎ-2
+wPÎ-1

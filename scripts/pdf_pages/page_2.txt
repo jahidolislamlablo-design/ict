@@ -1,0 +1,129 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 2
+HTML cÖavbZ †Kvb †cÖvMÖvwgs j¨v½y‡qR bq eis GwU GKwU gvK©-Avc
+j¨v½y‡qR hv U¨v‡Mi Dci wfwË K‡i KvR K‡i, d‡j A¶‡ii eo I †QvU
+nIqvi c‡¶ GB fvlvi †Kvb `vqe×Zv †bB|
+(M) DÏxc‡K †cRwU g~jZ GKwU wj‡÷i †Uwej, †hLv‡b †ek wKQy we‡kl U¨vM I
+A¨vwUªweDU e¨envi Kiv n‡q‡Q| wb‡¤œ †cRwU‡Z e¨eüZ we‡kl U¨vM I
+A¨vwUªweDU m¤ú‡K© Av‡jvPbv Kiv n‡jv:
+1| Ol U¨vM: AW©vi wj÷ ˆZwii †¶‡Î GB U¨vMwU e¨envi Kiv nq| GB
+U¨v‡Mi gva¨‡g †ivgvb b¤^i, wWwRUvj b¤^i BZ¨vw`i gva¨‡g wj÷ ˆZwi
+Kiv hvq|
+2| Ul U¨vM: AvbAW©viW wj÷ ˆZwi Ki‡Z GB U¨vMwU e¨envi Kiv nq|
+GB U¨v‡Mi gva¨‡g wewfbœ ai‡bi ey‡jU c‡q›U ‰Zwi Kiv hvq|
+3| align A¨vwUªweDU: HTML -G e¨eüZ Ab¨Zg we‡kl A¨vwUªweDU n‡”Q
+align GB A¨vwUªweDU w`‡q GKwU U¨v‡Mi Dcv`vb †Kv_vq em‡e Zv
+wba©viY K‡i †`Iqv m¤¢e|
+4| Type A¨vwUªweDU: †Kvb AW©vi ev AvbAW©vi wj‡÷ ey‡jU ÷vBj †Kgb
+n‡e Zv g~jZ UvBc (type) A¨vwUªweDU Øviv wb‡`©k Kiv nq| GB
+A¨vwUªweD‡U e¨eüZ gvb ev f¨vjy n‡Z cv‡i disc, square, i BZ¨vw`|
+5| border A¨vwUªweDU: GKwU †Uwe‡ji eW©vi wba©viY Ki‡Z GB A¨vwUªweDU
+e¨envi Kiv nq|
+(N) I‡qe †cRwU cÖ`k©‡bi Rb¨ cÖ‡qvRbxq HTML Code n‡”Q:
+<html>
+<head> <title> List </title> </head>
+<body>
+<table border = "2">
+<tr>
+<td>
+<ol>
+<li> Month
+<ul type = "circle">
+<li> January </li>
+<li> February </li>
+</ul>
+</li>
+<li> Day
+<ul type="square">
+<li> Sunday </li>
+<li> Monday </li>
+</ul>
+</li>
+</ol>.
+</td>
+</tr>
+</table>
+</body>
+</html>
+3| Subject:
+3. English
+4. Bangla
+5. ICT [ivRkvnx ‡evW©-2023]
+(K) nvBcviwjsK Kx?
+(L) I‡qemvBU cvewjwks e¨vL¨v Ki|
+(M) wPÎ-1 cÖ`k©‡bi Rb¨ HTML ‡KvwWs wjL|
+(N) wPÎ-2 I‡qe †cBR cÖ`k©‡bi Rb¨ HTML ‡KvwWs wjL|
+3 bs cÖ‡kœi DËi
+(K) nvBcviwj¼ n‡”Q GKwU I‡qe †cB‡Ri †Kvb GKwU As‡ki mv‡_ ev †Kvb
+†cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri ms‡hvM ¯’vcb Kiv|
+(L) I‡qe †cR ˆZwi Kivi ci I‡qe mvf©v‡i †nvw÷s Kivi cÖwμqv‡K
+I‡qemvBU cvewjwks e‡j| mnR fvlvq, B›Uvi‡b‡U Kb‡U›Uev welq e¯Íy
+cÖKvk Kivi cÖwμqv n‡PQ I‡qemvBU cvewjwks| GB I‡qemvBwU g~jZ
+GKwU mvf©v‡i cvewjk Ki‡Z nq d‡j wKQz avcmg~‡ni gva¨‡g KvRwU
+cwic~Y© nq| GB avc¸‡jv wb¤œiƒc:
+1| I‡qe‡cBR wWRvBb I ˆZwi|
+2| I‡qe †nvw÷s Kiv|
+3| GKwU †Wv‡gBb †bg †iwR‡÷ªkb|
+4| I‡qe mvf©v‡i I‡qemvBUwU †cªiY|
+(M) wPÎ-1 cÖ`k©‡bi Rb¨ HTML †KvWwU wbgœiƒc:
+<html>
+<head> <title> HTML List </title> </head>
+<body> 	.
+<p align = "left"> Subject </p>
+<ol type = "1" start = "3">
+<li> English </li>
+<li> Bangla </li>
+<li> ICT </li>
+</ol>
+</body>
+</html>
+(N) wPÎ-2 I‡qe‡cB‡R cÖ`k©‡bi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> HTML TABLE </title> </head>
+<body>
+<table border = "1">
+<tr>
+<th colspan ="2"> Result Sheet </th>
+</tr>
+<tr>
+<td align = "center"> Name </td>
+<td rowspan = "2" align = "center"> GPA </td>
+</tr>
+<tr>
+<td align = "center"> Roll </td>
+</tr>
+</table>
+</body>
+</html>
+4| X K‡j‡Ri Øv`k †kÖwYi QvÎx Avqkv HTML e¨envi K‡i WKz‡g›U ˆZwi
+Kij Ges Google Chrome e¨envi K‡i wb¤œiƒc AvDUcyU †`L‡Z †cj:
+2H2 + O2 = 2H2O [Kzwgjøv ‡evW©-2023]
+(K) eªvDRvi Kx?
+(L) <br> U¨vM e¨vL¨v Ki|
+(M) DÏxc‡Ki Av‡jv‡K DcwiD³ djvdj †c‡Z html code wjL|
+(N) D³ djvdjwUi cwie‡Z© hw` (H + O)2 = H2 + 2HO + O2 ‡c‡Z
+PvI Z‡e †Zvgv‡K †Kv_vq Kx cwieZ©b Ki‡Z n‡e we‡kølY Ki|
+4 bs cÖ‡kœi DËi
+(K) I‡qemvBU¸‡jv Ny‡i †`Lvi Ab¨ Z_v I‡qe eªvDR Kivi Rb¨ †h mKj
+mdUIq¨vi e¨envi Kiv nq Zv‡K I‡qe eªvDRvi e‡j|
+(L) ‡h mKj U¨v‡Mi ïiæ Av‡Q wKš‘ Zvi †kl †Kvb U¨vM †bB, Ggb U¨vMmg~n‡K
+G¤úwU (empty) U¨vM e‡j| <br> GKwU AwZ cwiwPZ Ges eûj e¨eüZ
+G¤úwU U¨vM | <br> U¨vM GKwU GKK jvBb weiwZ mwbœ‡ek Kivqg <br>
+U¨vM wVKvbv ev KweZv †jLvi ‡¶‡Î me‡P‡q †ewk e¨eüZ nq| GQvov GKB
+c¨vivMÖvv‡d jvBb ‡eªK w`‡Z <br> U¨vMwU e¨eüZ nq|
+(M) DÏxc‡K X K‡j‡Ri Øv`k †kªYxi QvÎx Av‡qkv HTML e¨envi K‡i
+WKz‡g›U ˆZwi Kij Ges eªvDRvi wbgœiƒc AvDUcyU †`Lv‡jv:
+2H2 + O2 =2H2O
+AZÎe, D³ djvdj †`Lvi Rb¨ HTML †KvWwU n‡e-
+<html>
+<head> <title> HTML Subscript </title> </head>
+<body>
+<p> 2H <sub> 2 </sub> + O <sub>2 </sub> = 2H
+sub> 2 </sub> O </p>
+</body>
+</html>
+(N) D³ djvdjwUi cwie‡Z© hw` (H + O)2 = H2 + 2HO +O2 ‡c‡Z PvB,
+Z‡e ʻMʼ bs cÖ‡kœ e¨eüZ †Kv‡Wi gv‡S †ek wKQz cwieZ©b Avb‡Z n‡e, GB
+Name
+Roll GPA
+Result Sheet

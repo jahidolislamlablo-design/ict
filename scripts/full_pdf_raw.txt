@@ -1,0 +1,2552 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 1
+welq: Z_¨ I †hvM‡hvM cÖhyw³
+Aa¨vq-04 (I‡qe wWRvBb cwiwPwZ Ges 	HTML)
+Board Questions
+1|
+A & H Company Ltd.
+Order List Unorder
+List
+i. Book
+ii. Paper
+iii. Note Book
+ Marker
+ Ink
+ Pencil
+`„k¨Kí-1 	`„k¨Kí-2
+`„k¨Kí-3
+[XvKv ‡evW©-2023]
+(K) Iqvi †d«g Kx?
+(L) HTML G †KvbwU WKz‡g‡›Ui Ask bq, Z‡e †jLv Riæwi?
+(M) DÏxc‡Ki `„k¨Kí-1 Gi g‡Zv I‡qe‡cBR ˆZwii Rb¨ cÖ‡qvRbxq
+HTML †KvW wjL|
+(N) `„k¨Kí-1 Ges `„k¨Kí-3 G cÖwZdwjZ I‡qemvB‡Ui KvVv‡gvi g‡a¨
+†KvbwU AwaK myweavRbK?
+1 bs cÖ‡kœi DËi
+(K) Iqvi‡d«g ej‡Z GKwU I‡qemvB‡Ui wfRy¨qvj MvBW‡K †evSv‡bv n‡q‡Q hv
+GKwU I‡qemvB‡Ui K¼vi KvVv‡gvi cÖwZwbwaZ¡ K‡i| A_©v, GwU I‡qemvBU
+ˆZwii cwiKíbv ev w¯Œb eøy wcÖ›U n‡”Q Iqvi‡d«g|
+(L) mvaviYZ HTML dvB‡j <!DOCTYPE html> bv‡g GKwU U¨vM
+e¨eüZ nq| GwU GKwU WKz‡g›U UvBc wWK¬v‡ikb U¨vM| Gi Øviv eªvDRvi
+eyS‡Z cv‡i †h WKz‡g›UwU HTML 5 ÷¨vÛvW© AbymiY K‡i †jLv n‡q‡Q
+Ges †mB Abyhvqx †iÛvi cÖ`k©b K‡i| GwU g~jZ WKz‡g‡›Ui Ask bq, Z‡e
+†jLv Riæwi|
+(M) DÏxc‡Ki `„k¨Kí-1 Gi g‡Zv I‡qe‡cBR ˆZwii Rb¨ HTML †KvWwU
+n‡jv:
+<html>
+<head> <title> HTML List </title> </head>
+<body>
+<table border = "2">
+<tr>
+<th colspan = "2" align = "center"> A & H
+Company Ltd </th>
+</tr>
+<tr>
+<td align = "center"> Order List </td>
+<td align = "center"> Unorder List </td>
+</tr>
+<tr>
+<tr align = "left">
+<ol type = "i">
+<li> Book </li.
+<li> Paper </li>
+<li> Note Book </li>
+</ol>
+</td>
+<td align = "left">
+<ul type = "square">
+<li> Marker </li>
+<li> Ink </li>
+<li> Pencil </li>
+</ul>
+</td>
+</tr>
+</table>
+</body>
+</html>
+(N) DÏxc‡Ki `„k¨Kí-2 Gi I‡qemvBU KvVv‡gvwU n‡jv nvqvivwK©K¨vj ev wUª
+KvVv‡gv |
+I‡qemvBU KvVv‡gvi g‡a¨ nvqvivwK©K¨vjB Z_¨ Dc¯’vc‡b me‡P‡q mnR I
+DËg| †ewkifvM AbjvBb wm‡÷gB G c×wZ e¨envi K‡i| G ai‡Yi
+KvVv‡gv‡Z g~j Topics Gi wj÷ A_ev ‡gby ˆZwi Kiv _v‡K Ges g~j
+Topics †_‡K Sub-Topics ˆZwi Kiv _v‡K| cÖwZwU Sub-Topics G
+wbw`©ó welq m¤ú‡K© Av‡jvPbv Kiv._v‡K| G ai‡Yi KvVv‡gv e¨env‡ii
+gva¨‡g Z_¨ MÖn‡Yi †¶‡Î e¨enviKvix m‡e©v”P ¯^vaxbZv †fvM K‡i _v‡K|
+wjs‡Ki gva¨‡g Zv‡`I cÖ‡qvRb Abyhvqx mn‡RB I‡q‡ei GK ‡cBR †_‡K
+Avi GK †cB‡R Abvqv‡m †h‡Z cv‡ib Ges I‡qe ‡cBRwUi †Kvb As‡k
+wZwb Ae¯’vb Ki‡Qb Zv Rvbv Zvi c‡¶ mnRmva¨ nq| nvqvivwK©K¨vj
+KvVv‡gvi †nvg‡cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß, AvKv‡i
+_v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ nvBcvi wj¼ e¨envi K‡i †nvg †cBR †_‡K
+Ab¨vb¨ †cB‡R hvIqv hvq| 	.
+DÏxc‡Ki wPÎ-3 Gi I‡qemvBU KvVv‡gvwU n‡”Q I‡qe wjsKW ev †bUIqvK©
+KvVv‡gv| †bUIqvK© KvVv‡gv‡Z me¸‡jv †cB‡Ri G‡K Ac‡ii mv‡_ wjsK
+_v‡K A_©vr GKwU †gBb †cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri †hgb wjsK _v‡K
+wVK †Zgwb Ab¨vb¨ †cB‡Ri mv‡_I †gBb †cB‡Ri wjsK _v‡K| †d«g
+e¨envi K‡i ˆZwi Kiv I‡qe †cR¸‡jv‡K GB †bUIqv‡K©i gva¨‡g wjsK
+Kiv n‡q _v‡K hv‡Z †d«‡gi g‡a¨ Ab¨vb¨ †cB‡Ri wjsK¸wj †gby AvKv‡i
+ivLv nq| GB †d«gwU mvaviYZ w¯’i _v‡K Ges †Kvb GKwU wjsK wbe©vPb
+Ki‡j Hu †cBRwU A‡c¶vK…Z eo †d«‡gi g‡a¨ †`Lvq| e¨env‡ii w`K †_‡K
+†bUIqvK© KvVv‡gv mnR n‡jI †cR evovi mv‡_ mv‡_ Gi ÷ªvKPvi MVb
+RwUj n‡q hvq|
+hw`I I‡qe wjsKW ev †bUIqvK© KvVv‡gv‡Z GK †cBR †_‡K mn‡RB Ab¨
+†cB‡R hvIqv hvq ZeyI nvqvivwK© ev †gbyB I‡qe WKz‡g‡›Ui †¶‡Î me‡P‡q
+mnR Ges hyw³c~Y© Ges GB KvVv‡gv e¨envi KivB AwaK myweavRbK|
+2| cv‡ki wPÎwU jÿ¨ Ki Ges wb‡Pi cÖkœ¸‡jvi DËi `vI:
+1. Month
+o January
+o February
+2. Day
+ Sunday
+ Monday
+[ivRkvnx ‡evW©-2023]
+(K) A¨vwUªweDU Kv‡K e‡j?
+(L) “HTML GKwU †Km †mbwmwUf fvlv bq”-e¨vL¨v Ki|
+(M) DÏxc‡Ki †cRwU ˆZwi‡Z Kx Kx we‡kl U¨vM I A¨vwUªweDU e¨envi
+Kiv n‡q‡Q?
+(N) I‡qe †cRwU cÖ`k©‡bi Rb¨ cÖ‡qvRbxq HTML Code wjL|
+2 bs cÖ‡kœi DËi
+(K) A¨vwUªweDU n‡”Q Ggb wKQy kã ¸”Q hv U¨v‡Mi ˆewkó¨ wba©viK wb‡`©k wnmv‡e
+KvR K‡i|
+(L) mvaviYZ †h fvlv¸‡jv Z_v †cÖvMÖvwgs fvlv¸‡jv eo A¶‡ii I ‡QvU A¶‡ii
+eY©‡K kbv³ Ki‡Z cv‡i Zv‡`i †Km †mbwmwUf (Casc Sensitive) fvlv
+e‡j| HTML g~jZ I‡qe‡cBR Ges I‡qe Avhvwcø‡Kkb ˆZwii Rb¨
+e¨eüZ GKwU gvK©Avc j¨vs¸‡qR| HTML c~Y©iƒc Hyper Text
+Markup language Gi gva¨‡g I‡qe WKz‡g‡›Ui wewfbœ ai‡Yi Dcv`vb
+DcKiY ˆZwi Kiv hvq| GBPwUGgG‡j e¨eüZ U¨vM A¨vwUªweDU †KvbwUB
+†Km †mbwmwUf bq, Z‡e A¨vwUªweD‡Ui gvb ev f¨vjy †Km †mbwmwUf nq|
+www.xyz.edu.bd I‡qemvBUwU wfwRU K‡i
+ivwRe †`‡L †h I‡qemvBUwUi †h †Kv‡bv †cBR
+†_‡K Ab¨ †cB‡R hvIqv hvq|
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 2
+HTML cÖavbZ †Kvb †cÖvMÖvwgs j¨v½y‡qR bq eis GwU GKwU gvK©-Avc
+j¨v½y‡qR hv U¨v‡Mi Dci wfwË K‡i KvR K‡i, d‡j A¶‡ii eo I †QvU
+nIqvi c‡¶ GB fvlvi †Kvb `vqe×Zv †bB|
+(M) DÏxc‡K †cRwU g~jZ GKwU wj‡÷i †Uwej, †hLv‡b †ek wKQy we‡kl U¨vM I
+A¨vwUªweDU e¨envi Kiv n‡q‡Q| wb‡¤œ †cRwU‡Z e¨eüZ we‡kl U¨vM I
+A¨vwUªweDU m¤ú‡K© Av‡jvPbv Kiv n‡jv:
+1| Ol U¨vM: AW©vi wj÷ ˆZwii †¶‡Î GB U¨vMwU e¨envi Kiv nq| GB
+U¨v‡Mi gva¨‡g †ivgvb b¤^i, wWwRUvj b¤^i BZ¨vw`i gva¨‡g wj÷ ˆZwi
+Kiv hvq|
+2| Ul U¨vM: AvbAW©viW wj÷ ˆZwi Ki‡Z GB U¨vMwU e¨envi Kiv nq|
+GB U¨v‡Mi gva¨‡g wewfbœ ai‡bi ey‡jU c‡q›U ‰Zwi Kiv hvq|
+3| align A¨vwUªweDU: HTML -G e¨eüZ Ab¨Zg we‡kl A¨vwUªweDU n‡”Q
+align GB A¨vwUªweDU w`‡q GKwU U¨v‡Mi Dcv`vb †Kv_vq em‡e Zv
+wba©viY K‡i †`Iqv m¤¢e|
+4| Type A¨vwUªweDU: †Kvb AW©vi ev AvbAW©vi wj‡÷ ey‡jU ÷vBj †Kgb
+n‡e Zv g~jZ UvBc (type) A¨vwUªweDU Øviv wb‡`©k Kiv nq| GB
+A¨vwUªweD‡U e¨eüZ gvb ev f¨vjy n‡Z cv‡i disc, square, i BZ¨vw`|
+5| border A¨vwUªweDU: GKwU †Uwe‡ji eW©vi wba©viY Ki‡Z GB A¨vwUªweDU
+e¨envi Kiv nq|
+(N) I‡qe †cRwU cÖ`k©‡bi Rb¨ cÖ‡qvRbxq HTML Code n‡”Q:
+<html>
+<head> <title> List </title> </head>
+<body>
+<table border = "2">
+<tr>
+<td>
+<ol>
+<li> Month
+<ul type = "circle">
+<li> January </li>
+<li> February </li>
+</ul>
+</li>
+<li> Day
+<ul type="square">
+<li> Sunday </li>
+<li> Monday </li>
+</ul>
+</li>
+</ol>.
+</td>
+</tr>
+</table>
+</body>
+</html>
+3| Subject:
+3. English
+4. Bangla
+5. ICT [ivRkvnx ‡evW©-2023]
+(K) nvBcviwjsK Kx?
+(L) I‡qemvBU cvewjwks e¨vL¨v Ki|
+(M) wPÎ-1 cÖ`k©‡bi Rb¨ HTML ‡KvwWs wjL|
+(N) wPÎ-2 I‡qe †cBR cÖ`k©‡bi Rb¨ HTML ‡KvwWs wjL|
+3 bs cÖ‡kœi DËi
+(K) nvBcviwj¼ n‡”Q GKwU I‡qe †cB‡Ri †Kvb GKwU As‡ki mv‡_ ev †Kvb
+†cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri ms‡hvM ¯’vcb Kiv|
+(L) I‡qe †cR ˆZwi Kivi ci I‡qe mvf©v‡i †nvw÷s Kivi cÖwμqv‡K
+I‡qemvBU cvewjwks e‡j| mnR fvlvq, B›Uvi‡b‡U Kb‡U›Uev welq e¯Íy
+cÖKvk Kivi cÖwμqv n‡PQ I‡qemvBU cvewjwks| GB I‡qemvBwU g~jZ
+GKwU mvf©v‡i cvewjk Ki‡Z nq d‡j wKQz avcmg~‡ni gva¨‡g KvRwU
+cwic~Y© nq| GB avc¸‡jv wb¤œiƒc:
+1| I‡qe‡cBR wWRvBb I ˆZwi|
+2| I‡qe †nvw÷s Kiv|
+3| GKwU †Wv‡gBb †bg †iwR‡÷ªkb|
+4| I‡qe mvf©v‡i I‡qemvBUwU †cªiY|
+(M) wPÎ-1 cÖ`k©‡bi Rb¨ HTML †KvWwU wbgœiƒc:
+<html>
+<head> <title> HTML List </title> </head>
+<body> 	.
+<p align = "left"> Subject </p>
+<ol type = "1" start = "3">
+<li> English </li>
+<li> Bangla </li>
+<li> ICT </li>
+</ol>
+</body>
+</html>
+(N) wPÎ-2 I‡qe‡cB‡R cÖ`k©‡bi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> HTML TABLE </title> </head>
+<body>
+<table border = "1">
+<tr>
+<th colspan ="2"> Result Sheet </th>
+</tr>
+<tr>
+<td align = "center"> Name </td>
+<td rowspan = "2" align = "center"> GPA </td>
+</tr>
+<tr>
+<td align = "center"> Roll </td>
+</tr>
+</table>
+</body>
+</html>
+4| X K‡j‡Ri Øv`k †kÖwYi QvÎx Avqkv HTML e¨envi K‡i WKz‡g›U ˆZwi
+Kij Ges Google Chrome e¨envi K‡i wb¤œiƒc AvDUcyU †`L‡Z †cj:
+2H2 + O2 = 2H2O [Kzwgjøv ‡evW©-2023]
+(K) eªvDRvi Kx?
+(L) <br> U¨vM e¨vL¨v Ki|
+(M) DÏxc‡Ki Av‡jv‡K DcwiD³ djvdj †c‡Z html code wjL|
+(N) D³ djvdjwUi cwie‡Z© hw` (H + O)2 = H2 + 2HO + O2 ‡c‡Z
+PvI Z‡e †Zvgv‡K †Kv_vq Kx cwieZ©b Ki‡Z n‡e we‡kølY Ki|
+4 bs cÖ‡kœi DËi
+(K) I‡qemvBU¸‡jv Ny‡i †`Lvi Ab¨ Z_v I‡qe eªvDR Kivi Rb¨ †h mKj
+mdUIq¨vi e¨envi Kiv nq Zv‡K I‡qe eªvDRvi e‡j|
+(L) ‡h mKj U¨v‡Mi ïiæ Av‡Q wKš‘ Zvi †kl †Kvb U¨vM †bB, Ggb U¨vMmg~n‡K
+G¤úwU (empty) U¨vM e‡j| <br> GKwU AwZ cwiwPZ Ges eûj e¨eüZ
+G¤úwU U¨vM | <br> U¨vM GKwU GKK jvBb weiwZ mwbœ‡ek Kivqg <br>
+U¨vM wVKvbv ev KweZv †jLvi ‡¶‡Î me‡P‡q †ewk e¨eüZ nq| GQvov GKB
+c¨vivMÖvv‡d jvBb ‡eªK w`‡Z <br> U¨vMwU e¨eüZ nq|
+(M) DÏxc‡K X K‡j‡Ri Øv`k †kªYxi QvÎx Av‡qkv HTML e¨envi K‡i
+WKz‡g›U ˆZwi Kij Ges eªvDRvi wbgœiƒc AvDUcyU †`Lv‡jv:
+2H2 + O2 =2H2O
+AZÎe, D³ djvdj †`Lvi Rb¨ HTML †KvWwU n‡e-
+<html>
+<head> <title> HTML Subscript </title> </head>
+<body>
+<p> 2H <sub> 2 </sub> + O <sub>2 </sub> = 2H
+sub> 2 </sub> O </p>
+</body>
+</html>
+(N) D³ djvdjwUi cwie‡Z© hw` (H + O)2 = H2 + 2HO +O2 ‡c‡Z PvB,
+Z‡e ʻMʼ bs cÖ‡kœ e¨eüZ †Kv‡Wi gv‡S †ek wKQz cwieZ©b Avb‡Z n‡e, GB
+Name
+Roll GPA
+Result Sheet
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 3
+cwieZ©‡bi gv‡S cÖavb cwieZ©bwU n‡”Q Avgv‡`i mvew¯ŒÞ U¨v‡Mi cwie‡Z©
+mycviw¯ŒÞ U¨vM e¨envi Ki‡Z n‡e| wb‡¤œ cwiewZ©Z †KvWwU †`Lv‡bv n‡jv:
+<html>
+<head> <title> HTML Superscript </title> </head>
+<body>
+<p> (H + O) <sup> 2 </sup> = H <sup> 2 </sup>
++ 2HO + O <sup> 2 </sup> <p>
+</body>
+</html>
+D³ †KvWwU‡Z †`Lv hv‡”Q, <p> U¨v‡Mi wfZ‡i mgxKiY †jLvi Rb¨
+<sub> U¨v‡Mi cwie‡Z© <sup> U¨vM e¨envi Kiv n‡q‡Q|
+5| wb‡Pi wPÎwU †`L Ges cÖkœ¸‡jvi DËi `vI:
+Science 	Commerce 	Humanities
+Physics 	Accounting 	History
+Chemistry 	Management 	Islamic History
+[Kzwgjøv ‡evW©-2023]
+(K) WvBbvwgK I‡qemvBU Kx?
+(L) ‡Wv‡gBb †bg IP Address Gi cwic~iK -e¨vL¨v Ki|
+(M) DÏxc‡Ki wPÎwU AvDUcyU wn‡m‡e cvIqvi Rb¨ HTML ‡KvWwU
+wjL|
+(N) hw` DÏxc‡Ki †Uwe‡ji †KvW mvwi‡K (Row) ¯Í‡¤¢ (Column) Ges
+¯Í¤¢‡K mvwi‡Z cwiYZ Kiv nq Zvn‡j KxKx cwieZ©b n‡e -we‡kølY
+Ki|
+5 bs cÖ‡kœi DËi
+(K) ‡h mKj I‡qemvB‡Ui †WUvi gvb I‡qe †UK‡bvjwR †jvwWs ev †cBR Pvjy
+Kivi ci cwieZ©b Kiv hvq Zv‡K WvBbvwgK I‡qemvBU e‡j|
+(L) ‡bUIqv‡K© †h‡Kv‡bv Kw¤úDUvi‡K †Pbvi R‡b¨ †h Dcvqmg~n Av‡Q Gi
+GKwU n‡jv AvBwc A¨v‡Wªm Ges Ab¨wU n‡jv †U·U wbf©i †Wv‡gBb †bg
+wm‡÷g (wWGbGm)| †Wv‡gBb †bgI AvBwc A¨v‡Wªm Gi gZ GKwU ¯^Zš¿
+I‡qe mvBU‡K wb‡`©k K‡i| Z‡e AvBwc A¨v‡Wªm msL¨vwfwËK nIqvq GwU
+g‡b ivLv KóKi hvi Rb¨ A¶i wfwËK †Wv‡gBb †bBg e¨envi Kiv AwaK
+myweavRbK| GB †Wv‡gBb †b‡gi gva¨‡gB mviv we‡k¦i †h‡Kv‡bv cÖv‡šÍi
+B›Uvi‡bU e¨enviKvixiv †h‡Kv‡bv I‡qe mvBU‡K mn‡R Lyu‡R cvq| AZGe
+ejv hvq, †Wv‡gBb †bg IP Address Gi cwic~iK|
+(M) DÏxc‡Ki wPÎwU AvDUcyU wn‡m‡e cvIqvi Rb¨ HTML ‡KvWwU †jLv
+n‡jv:
+<html>
+<head> <title> Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<td align = "center"> Science </td>
+<td align = "center"> Commerce </td>
+<td align = "center"> Humanities </td>
+</tr>
+<tr>
+<td align = "center"> Physics </td>
+<td align = "center"> Accounting </td>
+<td align = "center"> History </td>
+</tr>
+<tr>
+<td align = "center"> Chemistry </td>
+<td align = "center"> Management </td>
+<td align = "center" Islamic History </td>
+</tr>
+</table>
+</body>
+</html>
+(N) hw` DÏxc‡Ki †Uwe‡ji †KvW mvwi‡K ¯Í‡¤¢ Ges ¯Í¤¢‡K mvwi‡Z cwiYZ Kiv
+nq Zvn‡j wb‡¤œv³ †KvWwU cvIqv hv‡e-
+<html>
+<head> <title> Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<td align = "center"> Science </td>
+<td align = "center"> Physics </td>
+<td align = "center"> Chemistry </td>
+</tr>
+<tr>
+<td align = "center"> Commerce </td>
+<td align = "center"> Accounting </td>
+<td align = "center"> Management </td>
+</tr>
+<tr>
+<td align = "center" > Humanities </td>
+<td align = "center" > History </td>
+<td align = "center" Islamic History </td>
+</tr>
+</table>
+</body>
+</html>
+Ges D³ †KvWwUi djvdj n‡e:
+Science 	Physics 	Chemistry
+Commerce 	Accounting 	Management
+Humanities 	History 	Islamic History
+6| Mango:
+Seasonal Fruit
+A. Green
+B. Red
+Jack Fruit:
+National Fruit
+ Green
+ Yellow
+wPÎ- 1
+[h‡kvi ‡evW©-2023]
+GKRb dj e¨vemvqx Zvi cÖwZôv‡bi Rb¨ GKwU I‡qemvBU ˆZwi K‡i †bq|
+†hLv‡b d‡ji weei‡Yi Rb¨ GKwU I‡qe‡cR Av‡Q hvi AvDUcyU wPÎ- 1
+Gi b¨vq| Zvi I‡qemvB‡Ui d‡ji `vg wbqwgZ Avc‡WU nq bv| d‡j
+†μZviv fzj Z_¨ cvq|
+(K) A¨vwUªweDU Kx?
+(L) ʻAvBwc wVKvbvB n‡”Q †Wv‡gBb †bBg Gi MvwYwZK iƒcʼ -e¨vL¨v Ki|
+(M) wPÎ- 1 Gi b¨vq djvdj †c‡Z HTML ‡KvW wjL|
+(N) DÏxc‡Ki mv‡c‡ÿ MÖvnK‡`i mwVK Z_¨ †c‡Z e¨emvqxi KiYxq Kx?
+gZvgZ `vI|
+6 bs cÖ‡kœi DËi
+(K) A¨vwUªweDU n‡”Q Ggb wKQz kã ¸”Q hv U¨v‡Mi ˆewkó¨ wba©viK wb‡`©k
+wn‡m‡e KvR K‡i|
+(L) ‡bUIqv‡K© †h‡Kv‡bv Kw¤úDUvi‡K †Pbvi R‡b¨ †h Dcvqmg~n Av‡Q Gi
+GKwU n‡jv AvBwc A¨v‡Wªm Ges Ab¨wU n‡jv †U·U wbf©i †Wv‡gBb †bg
+wm‡÷g (wWGbGm)| †Wv‡gBb †bgI AvBwc A¨v‡Wªm Gi gZ GKwU ¯^Zš¿
+I‡qe mvBU‡K wb‡`©k K‡i| Z‡e AvBwc A¨v‡Wªm msL¨vwfwËK nIqvq GwU
+g‡b ivLv KóKi hvi Rb¨ A¶i wfwËK †Wv‡gBb †bBg e¨envi Kiv AwaK
+myweavRbK| GB †Wv‡gBb †b‡gi gva¨‡gB mviv we‡k¦i †h‡Kv‡bv cªv‡šÍi
+B›Uvi‡bU e¨enviKvixiv †h‡Kv‡bv I‡qe mvBU‡K mn‡R Lyu‡R cvq|
+(M) wPÎ- 1 Gi b¨vq djvdj †c‡Z = ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> List </title> </head>
+<body>
+<ul type = "none">
+<li> Mango:
+<ul type = "none">
+<li> Seasonal Fruit
+<ol type ="A">
+<li> Green </li>
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 4
+<li> Red </li>
+</ol>
+</li>
+</ul>
+</li>
+<li> Jack Fruit:
+<ul type = "none">
+<li> National Fruit
+<ul type = "square"
+<li> Green </li>
+<li> Yellow </li>
+</ul>
+</li>
+</ul>
+</li>
+<ul>
+</body>
+</html>
+(N) DÏxc‡Ki I‡qemvBUwU‡Z: d‡ji wbqwgZ Avc‡WU cvIqv hv‡”Q bv A_©vr
+I‡qemvBwU GKwU ÷¨vwU‡K I‡qemvBU ÷¨vwUK I‡qemvB‡U I‡qe‡cR
+†jvwWs ev Pvjyi ci †WUvi gvb cwieZ©b Kiv hvq bv| A_©vr G‡Z wWwRUvj
+ev †μZv‡`i †_‡K, mivmwi BbcyU †bqvi e¨e¯’v bv _vKvq gZvgZ cª`v‡bi
+e¨e¯’v _v‡K bv| d‡j †μZviv f‚j Z_¨ †c‡qI wKQz Rvbv‡Z cv‡i bv ev
+Z_¨ Avc‡WU w`‡Z cv‡i bv| GLb I‡qemvBUwU‡Z MÖvnK‡`i mwVK Z_¨
+cÖ`v‡bi Rb¨ KiYxq KvR n‡”Q I‡qemvBUwU‡K WvqbvwgK I‡qemvB‡U
+cwieZ©b Kiv| WvqbvwgK I‡qemvB‡U †WUvi gvb I‡qe‡cB‡R †jvwWs ev
+Pvjy Kivi ciI cwieZ©b Kiv hvq| ïay html w`‡q GKwU ÷¨vwUK
+I‡qe‡cBR ˆZwi Ki‡Z cviv hvq| Gici wmGmGg (CSS) e¨envi K‡i
+H †cRwU‡K Av‡iKUz DbœZ Kiv hvq| Gici Rvfvw¯ŒÞ e¨envi Ki‡j H
+I‡qe‡cBRwU WvqbvwgK nIqv ïiæ nq| me‡k‡l wcGBPwc, GGmwc/
+†RGmwc Ges mv‡_ †WUv‡eR w`‡q c~Y©v½ WvqbvwgK I‡qemvBU Ki‡Z cviv
+hvq| myZivs, DÏxc‡Ki ÷¨vwUK I‡qemvBUwU‡K Z_¨ Avc‡WU cÖ`v‡bi Rb¨
+A_©vr WvqbvwgK I‡qemvB‡U iƒcvšÍ‡ii Rb¨ HTML fvlvi mv‡_ w¯ŒwÞs
+fvlv †hgb-wcGBPwc , GGmwc fvlv Ges †WUv‡eR Gi e¨envi cÖ‡qvRb|
+7| nvwee GKwU I‡qemvBU ˆZwi Kij hvi †nvg‡c‡Ri mv‡_ 3wU g~j
+I‡qe‡cR mshy³| Avevi cÖwZwU g~j †c‡Ri mv‡_ 2wU K‡i I‡qe‡cR
+mshy³| I‡qemvBUwUi †nvg‡c‡R K‡j‡Ri bvg I Qwe mshy³|
+[PÆMÖvg ‡evW©-2023]
+(K) mvP© BwÄb Kx?
+(L) I‡qe †cB‡Ri mv‡_ eªvDRvi m¤úwK©Z -e¨vL¨v Ki|
+(M) nvwe‡ei I‡qemvBUwUi KvVv‡gv eY©bv Ki|
+(N) DÏxc‡Ki I‡qemvBUwUi †nvg‡c‡Ri Rb¨ HTML ‡KvW wjL| Ges
+e¨eüZ U¨vMmg~n e¨vL¨v Ki|
+7 bs cÖ‡kœi DËi
+(K) mvP© BwÄb n‡”Q Ggb GK ai‡bi Uyj hvi mvnv‡h¨ B›Uvi‡b‡Ui AR¯ª I‡qe
+mvf©vi †_‡K mn‡RB †h‡Kv‡bv Z_¨ Lyu‡R †ei Kiv hvq|
+(L) B›Uvi‡bU e¨enviKvix‡`i †`Lvi Dc‡hvMx B›Uvi‡b‡Ui mv‡_ mshy³ mvf©v‡i
+ivLv dvBj‡K I‡qe‡cBR e‡j| Ges B›Uvi‡bU e¨envi K‡i I‡qemvBU
+wfwR‡Ui D‡Ï‡k¨ e¨enviKvix †h mdUIq¨vi e¨envi K‡i _v‡Kb, Zv‡K
+I‡qe eªvDRvi ev eªvDRvi e‡j| A_©vr GKwU I‡qe †cBR †`L‡Z n‡j ev
+†Kv‡bv Z_¨ mÜv‡bi cª‡qvRb n‡j, hw` GK BDRvi IB I‡qe †cBR
+†`L‡Z Pvq, Zv‡K Aek¨B eªvDRvi e¨envi Ki‡Z n‡e| †Kbbv
+B›Uvi‡cÖUv‡ii b¨vq I‡qe‡cB‡R wjwLZ †KvW¸‡jv Abyev` K‡i BDRv‡ii
+Kv‡Q cÖKvk K‡i eªvDRvi| AZGe, Avgiv ej‡Z cvwi,I‡qe †cB‡Ri mv‡_
+eªvDRvi m¤úwK©Z|
+(M) nvwe‡ei I‡qemvBwUi KvUv‡gv n‡”Q nvqvivwK©K¨vj ev wUª KvVv‡gv|
+I‡qemvBU KvVv‡gvi g‡a¨ nvqvivwK©K¨vjB Z_¨ Dc¯’vc‡b me‡P‡q mnR I
+DËg| †ewkifvM AbjvBb wm‡÷gB G c×wZ e¨envi K‡i| G ai‡bi
+KvVv‡gv‡Z g~j Topics Gi wj÷ A_ev ‡gby ˆZwi Kiv _v‡K Ges g~j
+Topics †_‡K Sub-Topics ‰Zwi Kiv _v‡K| cÖwZwU Sub-Topics G
+wbw`©ó welq m¤ú‡K© Av‡jvPbv Kiv _v‡K| G ai‡bi KvVv‡gv e¨env‡ii
+gva¨‡g Z_¨ MÖn‡Yi †¶‡Î e¨enviKvix m‡e©v”P ¯^vaxbZv †fvM K‡i _v‡K|
+wj‡¼i gva¨‡g Zv‡`i cÖ‡qvRb Abyhvqx mn‡RB I‡q‡ei GK †cBR †_‡K
+Avi GK †cB‡R Abvqv‡m †h‡Z cv‡ib Ges I‡qe †cBRwUi †Kvb As‡k
+wZwb Ae¯’vb Ki‡Qb Zv Rvbv Zvi c‡¶ mnRmva¨ nq| nvqvivwK©K¨vj
+KvVv‡gvi †nvg‡cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i _v‡K|
+we¯ÍvwiZ Z‡_¨i Rb¨ nvBcvi wj¼ e¨envi K‡i †nvg †cBR †_‡K Ab¨vb¨
+†cB‡R hvIqv hvq|
+(N) DÏxc‡K †`Lv hv‡”Q, nvwee GKwU I‡qemvBU ˆZwi Kij hvi †nvg‡cB‡Ri
+mv‡_ 3wU g~j I‡qe‡cBR mshy³| Avevi cÖwZwU g~j †c‡Ri mv‡_ 2wU K‡i
+I‡qe‡cR mshy³| Ges I‡qemvBUwUi †nvg‡c‡R K‡j‡Ri bvg I Qwe
+mshy³|
+AZGe, I‡qemvBwUi †nvg‡cB‡Ri Rb¨ html †KvWwU wbgœiƒc:
+<htmL>
+<head> <title> Home Page </title> </head>
+<body>
+<h1> Home Page </h1>
+<h3> College Name </h3>
+<img src ="homepage.jpg">
+<ul type = "square">
+<li> <a href = "aboutus.com" About Us
+</a></li>
+<li> <a href = "Contact .com"> Contact </a> </li>
+<li> <a href = "department.com" All Department </a>
+</ul>
+</body>
+</html>
+D³ †Kv‡W e¨eüZ U¨vMmg~n e¨vL¨v Kiv n‡jv:
+1| html U¨vM: <html> U¨vM Øviv html WKz‡g‡›Ui g~j‡K cªwZwbwaZ¡
+Kiv nq|
+2| head U¨vM: GB <head> U¨vM mKj †gUv‡WUvi aviK wn‡m‡e KvR
+K‡i|
+3| title U¨vM: <title> U¨vM Øviv html WKz‡g›UwUi UvB‡Uj ev wk‡ivbvg
+cÖKvk Kiv nq|
+4| body U¨vM: <body> U¨vM w`‡q WKz‡g›UwUi ewW‡K wb‡`©k K‡i A_©vr
+GLv‡bB hveZxq, Z_¨ †jLv n‡q _v‡K|
+5| img U¨vM: <img> U¨vM GKwU dvKv U¨vM hv g~jZ html WKz‡g‡›U
+Qwe ms‡hvR‡bi Rb¨ †bIqv nq|
+6| Ul U¨vM: <ul> U¨vMwU e¨eüZ nq AvbAW©viW wj÷ ‰Zwi‡Z Z_v
+ey‡jU c‡q›U ˆZwi Ki‡Z |
+7| li U¨vM: <li> U¨vMwU e¨eüZ nq wjw÷s Ki‡Z| AW©viW ev AvbW©viW,
+Dfq †¶‡ÎB Gi e¨envi i‡q‡Q|
+8| Produce List
+1. Book
+2. Pen
+3. Bag
+wPÎ bs-1 	wPÎ bs- 2
+[PÆMÖvg ‡evW©-2023]
+(K) A¨vwUªweDU Kx?
+(L) html fvlv †Km-‡mbwmwUf bq -e¨vL¨v Ki|
+(M) wPÎ bs- 1Gi gZ I‡qe‡cBR ˆZwii Rb¨ html ‡KvwWs wjL|
+(N) DÏxc‡Ki wPÎ bs- 2 Gi gZ I‡qe‡cBR ˆZwii Rb¨ html ‡KvwWs
+wjL|
+8 bs cÖ‡kœi DËi
+(K) A¨vwUªweDU n‡”Q Ggb wKQz kã ¸”Q hv U¨v‡Mi ˆewkó¨ wba©viK wb‡`©k
+wn‡m‡e KvR K‡i|
+(L) mvaviYZ †h fvlv¸‡jv Z_v †cÖvMÖvwgs fvlv¸‡jv eo A¶‡ii I ‡QvU A¶‡ii
+eY©‡K kbv³ Ki‡Z cv‡i Zv‡`i †Km †mbwmwUf (Casc Sensitive) fvlv
+e‡j| HTML g~jZ I‡qe‡cBR Ges I‡qe Avhvwcø‡Kkb ˆZwii Rb¨
+e¨eüZ GKwU gvK©Avc j¨vs¸‡qR| HTML c~Y©iƒc Hyper Text
+Markup language Gi gva¨‡g I‡qe WKz‡g‡›Ui wewfbœ ai‡Yi Dcv`vb
+DcKiY ˆZwi Kiv hvq| GBPwUGgG‡j e¨eüZ U¨vM A¨vwUªweDU †KvbwUB
+†Km †mbwmwUf bq, Z‡e A¨vwUªweD‡Ui gvb ev f¨vjy †Km †mbwmwUf nq|
+SL 	ABC Company
+A 	Monitor Rose.jpg
+B 	Keyboard
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 5
+HTML cÖavbZ †Kvb †cÖvMÖvwgs j¨v½y‡qR bq eis GwU GKwU gvK©-Avc
+j¨v½y‡qR hv U¨v‡Mi Dci wfwË K‡i KvR K‡i, d‡j A¶‡ii eo I †QvU
+nIqvi c‡¶ GB fvlvi †Kvb `vqe×Zv †bB|
+(M) wPÎ-1 Gi gZ gZ I‡qe‡cBR ˆZwii Rb¨ html ‡KvwWs wb‡¤œ †`Lv‡bv
+n‡jv:
+<html>
+<head> <title> List </title> </head>
+<body>
+<p> <u> Product List </u> </p>
+<ol type = "1">
+<li> Book </li>
+<li> Pen </li>
+<li>Bag </li>
+</ol>
+</body>
+</html>
+(N) wPÎ bs- 2 Gi gZ I‡qe‡cBR ˆZwii Rb¨ html ‡KvwWswU n‡e:
+<html>
+<head> <title> Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<th align = "center" > SL </th>
+<th align = "center" colspan = "2"> ABC Company </th>
+</tr>
+<tr>
+<td align = "center"> A </td>
+<td align =" center"> Monitor </td>
+<td align = "center" rowspan = "2" > <img src = "Rose.
+jpg </td>
+<tr>
+<td align = "center> B </td>
+<td align = "center" > Keyboard </td>
+</tr>
+</table>
+</body>
+</html>
+9|
+< html >
+<body>
+<ul>
+<li> Bangladesh </li>
+</ul>
+</ body >
+</ html >
+(`„k¨Kí-1)
+ Bangladesh
+o Dhaka
+o Rajshahi
+o S
+ylhet
+o K
+hulna
+(`„k¨Kí-2)
+൤ABcollege. edu. bd
+image. jpg ൨
+(`„k¨Kí-3)
+[ewikvj ‡evW©-2023]
+(K) AvBwc A¨v‡Wªm Kx?
+(L) img GKwU G¤úwU Gwj‡g›U †Kb? e¨vL¨v Ki
+(M) `„k¨Kí-1 e¨envi K‡i `„k¨Kí-2 cvIqvi Rb¨ HTML ‡KvW wjL|
+(N) `„k¨Kí-1 I `„k¨Kí-3 e¨envi K‡i bZzb GKwU I‡qe‡cR ˆZwi
+Kivi Rb¨ HTML ‡KvW wjL|
+9 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡U hy³ cÖwZwU Kw¤úDUv‡ii GKwU wbR¯^ wVKvbv _v‡K| GB
+wVKvbv‡K AvBwc A¨v‡Wªm ev Internet Protocol Address e‡j|
+(L) mvaviYZ †h U¨vMmg~‡ni ïay ïiæi U¨vM we`¨gvb wKšÍ G‡`i †kl U¨vM _v‡K
+bv, Zv‡`i G¤úwU U¨vM ev Lvwj ev dvKv U¨vM e‡j| HTML WKz‡g›U Qwe
+ms‡hvR‡bi Rb¨ e¨eüZ U¨vM n‡”Q image U¨vM| image U¨vM †jLvi
+wmbU¨v· n‡”Q <img src = "Qwei bvg. Qwei di‡gU">|
+D³ wmbU¨v‡·B †`Lv hv‡”Q, <img> U¨v‡Mi ïiæ _vK‡jI Gi ‡kl U¨vM
+wn‡m‡e †Kvb U¨vM (‡hgb: <html> ............... </html>) †bB| d‡j
+img U¨v‡Mi †Kej GwUªweDU we`¨gvb, wfZ‡i †Kvb Gwj‡g›U †bB| A_©vr
+img GKwU G¤úwU Gwj‡g‡›Ui U¨vM|
+(M) `„k¨Kí-1 e¨envi K‡i `„k¨Kí-2 cvIqvi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> List </title> </head>
+<body>
+<ul>
+<li> Bangladesh </li>
+</ul>
+<ul type = "circle">
+<li> Dhaka </li>
+<li> Rajshahi </li>
+<li> Sylhet </li>
+<li> Khulna </li>
+</ul>
+</body>
+</html>
+(N) `„k¨Kí-1 I `„k¨Kí-3 e¨envi K‡i bZzb GKwU I‡qe‡cR ˆZwi Kivi Rb¨
+HTML ‡KvWwU wb‡¤œ †jLv n‡jv:
+<html>
+<head> <title> ABC College </title> </head>
+<body>
+<h3> Welcome to Our College Website </h3>
+<a href = "ABcollege.edu.bd"> ABcollege </a>
+<img src = "image.jpg">
+<p> Our College located in: </p>
+<ul> <li> Bangladesh </li> </ul>
+<ul type ="circle">
+<li> Dhaka </li>
+<li> Rajshahi </li>
+<li> Sylhet </li>
+<li> Khulna </li>
+</ul>
+</body>
+</html>
+10|
+C. Coffee
+D. Tea
+ Black
+ Green
+E. Milk
+`„k¨Kí-1 	`„k¨Kí-2
+[wm‡jU ‡evW©-2023]
+(K) WvqbvwgK I‡qemvBU Kx?
+(L) I‡qemvBU cvewjwks e¨vL¨v Ki|
+(M) `„k¨Kí-1 †K AvDUcyU wn‡m‡e cÖ`k©‡bi Rb¨ HTML ‡KvW wjL|
+(N) `„k¨Kí-2 Gi Rb¨ HTML ‡KvW wjL Ges e¨eüZ U¨vMmg~‡ni eY©bv
+`vI|
+10 bs cÖ‡kœi DËi
+Result
+ICT CQ 	MCQ
+45 	25
+English 	95
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 6
+(K) ‡h mKj I‡qemvB‡Ui †WUvi gvb I‡qe †UK‡bvjwR †jvwWs ev ‡cBR Pvjy
+Kivi ci cwieZ©b Kiv hvq Zv‡K WvBbvwgK I‡qemvBU e‡j| .
+(L) I‡qe †cR ˆZwi Kivi ci I‡qe mvf©v‡i †nvw÷s Kivi cÖwμqv‡K
+I‡qemvBU cvewjwks e‡j| mnR fvlvq, B›Uvi‡b‡U Kb‡U›Uev welq e¯Íy
+cÖKvk Kivi cÖwμqv n‡PQ I‡qemvBU cvewjwks| GB I‡qemvBwU g~jZ
+GKwU mvf©v‡i cvewjk Ki‡Z nq d‡j wKQz avcmg~‡ni gva¨‡g KvRwU
+cwic~Y© nq| GB avc¸‡jv wb¤œiƒc:
+1| I‡qe‡cBR wWRvBb I ˆZwi|
+2| I‡qe †nvw÷s Kiv|
+3| GKwU †Wv‡gBb †bg †iwR‡÷ªkb|
+4| I‡qe mvf©v‡i I‡qemvBUwU †cªiY|
+(M) `„k¨Kí-1 †K AvDUcyU wn‡m‡e cÖ`k©‡bi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<body>
+<head> <title> List </title> </head>
+<ol type = "A" start = "3">
+<li> Coffee </li>
+<li> Tea
+<ul type ="disc">
+<li> Black </li>
+<li> Green </li>
+</ul>
+</li>
+<li> Milk </li>
+</ol>
+</body>
+</html>
+(N) `„k¨Kí-2 Gi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> Result Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<th colspan = "3" align = “center> Result
+</th>
+</tr>
+<tr>
+<td rowspan = "2" align = "center" > <u> [CT </u> </td>
+<td align = "left"> CQ </td>
+<td align ="left"> MCQ </td>
+</tr>
+<tr>
+<td align = "center> 45 </td>
+<td align = "center> 25 </td>
+</tr>
+<tr>
+<td align = "center"> <u> English </u> </td>
+<td colspan = "2" align = "center" > 95 </td>
+</tr>
+</table>
+</body>
+</html>
+wb‡q e¨eüZ U¨vM¸‡jvi eYb©v †`Iqv n‡jv:
+<html> ⟶ html| WKz‡g›U‡K †evSv‡Z GB U¨vM e¨envi nq|
+HTML Gi g~j‡K †evSv‡Z <html> U¨vM e¨eüZ nq|
+<head> ⟶ mKj ai‡bi †gUv‡WUvi K‡›UBbvi wn‡m‡e <head> e¨eüZ
+nq|
+<title> ⟶ wk‡ivbvg ev UvB‡Uj †evSv‡Z GB U¨vM e¨eüZ nq|
+<body> ⟶ GB U¨v‡Mi wfZ‡iB g~jZ me html Dcv`vb we¯Í…Z _v‡K|
+<table> ⟶ †Uwej ˆZwii Rb¨ <table> U¨vM e¨eüZ nq|
+<tr> ⟶ †Uwe‡ji Row ev mvwi ˆZwii Rb¨ <tr> ... </tr> U¨vMwU
+e¨eüZ nq|
+<th> ⟶ ‡Uwe‡ji †nwWs w`‡Z <th> e¨envi Kiv nq|
+<td> ⟶ †Uwe‡ji WvUv BbcyU w`‡Z <td> ... </td> U¨vM e¨envi Kiv
+nq|
+11|
+2. ICT Book Writer Name:
+o Mr. X
+o Mr. Y
+3. Bangla Book Writer Name:
+ Mr. A
+ Mr. B
+`„k¨Kí-1
+Marks Sheet
+Roll
+No.
+Bangla 	English
+1st 	2nd 	1st 	2nd
+001 	85 	67 	58 	70
+002 	65 	75 	60 	55
+003 	72 	61 	48 	63
+`„k¨Kí-2
+[w`bvRcyi ‡evW©-2023]
+(K) ‡nvw÷s Kx?
+(L) ‡Wv‡gb †bBg Gi ¸iæZ¡ e¨vL¨v Ki|?
+(M) `„k¨Kí-1 Gi Rb¨ cÖ‡qvRbxq HTML ‡KvW wjL|
+(N) `„k¨Kí-2 I‡qe‡c‡R cÖ`k©b Kiv wK m¤¢e? †Zvgvi gZvg‡Zi
+†hŠw³KZv we‡kølY Ki|
+11 bs cÖ‡kœi DËi
+(K) I‡qemvBU‡K B›Uvi‡b‡Ui mv‡_ hy³ †Kv‡bv I‡qe mvf©v‡i msiÿY Kiv‡K
+I‡qe †nvw÷s e‡j|
+(L) ‡bUIqv‡K© †h‡Kv‡bv Kw¤úDUvi‡K †Pbvi R‡b¨ †h Dcvqmg~n Av‡Q Gi
+GKwU n‡jv AvBwc A¨v‡Wªm Ges Ab¨wU n‡jv †U·U wbf©i †Wv‡gBb †bg
+wm‡÷g (wWGbGm)| †Wv‡gBb †bgI AvBwc A¨v‡Wªm Gi gZ GKwU ¯^Zš¿
+I‡qe mvBU‡K wb‡`©k K‡i| Z‡e AvBwc A¨v‡Wªm msL¨vwfwËK nIqvq GwU
+g‡b ivLv KóKi hvi Rb¨ A¶i wfwËK †Wv‡gBb †bBg e¨envi Kiv AwaK
+myweavRbK| GB †Wv‡gBb †b‡gi gva¨‡gB mviv we‡k¦i †h‡Kv‡bv cÖv‡šÍi
+B›Uvi‡bU e¨enviKvixiv †h‡Kv‡bv I‡qe mvBU‡K mn‡R Lyu‡R cvq|
+(M) `„k¨Kí-1 Gi Rb¨ cÖ‡qvRbxq HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> List </title> </head>
+<body>
+<ol type = "1" start = "2">"
+<li> ICT Book Writer Name: </li>
+<ul type = "circle">
+<li> Mr. X </li>
+<li> Mr. Y </li> </ul>
+<li> Bangla Book Writer Name: </li>
+<ul type = "square">
+<li> Mr. A </li>>
+<li> Mr. B </li>
+</ul>
+</ol>
+</body>
+</html>
+(N) `„k¨Kí-2 I‡qe‡c‡R cÖ`k©b Kiv m¤¢e| Avgvi gZvg‡Zi †hŠw³KZv
+wn‡m‡e wb‡¤œi HTML ‡KvWwU †`Lv‡bv n‡jv:
+<html>
+<head> <title> Table Marks Sheet </title> </head>
+<body>
+<table align = "center"> border = "1">
+<caption> <b> Marks sheet </b> </caption>
+<tr>
+<th rowspan = "2"> Roll No. </th>
+<th colspan = "2"> Bangla </th>
+<th colspan = "2"> English </th>
+</tr>
+<tr>
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 7
+<td align = "center"> 1st </td>
+<td align = "center" 2nd </td>
+<td align = "center"> 1st </td>
+<td align = "center"> 2nd </td>
+</tr>
+<tr>
+<td align = "center" > 001 </td>
+<td align = "center" > 85 </td>
+<td align = "center"> 67 </td>
+<td align = "center" > 58 </td>
+<td align = "center"> 70 </td>
+</tr>
+<tr>
+<td align = "center" > 002 </td>
+<td align = "center" > 65 </td>
+<td align = "center" > 75 </td>
+<td align = "center" > 60 </td>
+<td align = "center" > 55 </td>
+</tr>
+<tr>
+<td align = "center" > 003 </td>
+<td align = "center" > 72 </td>
+<td align = "center" > 61 </td>
+<td align = "center" > 48 </td>
+<td align = "center" > 63 </td>
+</tr>
+</table>
+</body>
+</html>
+12|
+wPÎ-1 	wPÎ-2
+[gqgbwmsn ‡evW©-2023]
+(K) AvBwc A¨v‡Wªm Kx?
+(L) Wire Frame Kx? e¨vL¨v Ki|
+(M) wPÎ-1 G †Kvb ai‡Yi I‡qemvBU ÷ªvKPvi e¨envi Kiv n‡q‡Q?
+(N) wPÎ-2 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ HTML ‡KvW wjL|
+[wPÎwU photo.jpg, Size = 100 × 80]
+12 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡U hy³ cÖwZwU Kw¤úDUv‡ii GKwU wbR¯^ wVKvbv _v‡K| GB
+wVKvbv‡K AvBwc A¨v‡Wªm ev Internet Protocol Address e‡j|
+(L) Iq¨vi‡d«wgs nj KvVv‡gvMZ ¯Í‡i GKwU I‡qemvBU cwi‡lev wWRvBb Kivi
+GKwU Dcvq: GKwU Iq¨vi‡d«g mvaviYZ GKwU c„ôvi mvgwqK Ges
+Kvh©KwiZv †j AvDU Ki‡Z e¨eüZ nq hv e¨enviKvixi Pvwn`v Ges
+e¨enviKvixi ågY‡K we‡ePbv K‡i ‰Zwi Kiv nq| Iq¨vi‡d«g¸wj wfR&yqvj
+wWRvBb Ges welqe¯‘ ‡hvM Kivi Av‡M GKwU c„ôvi †gŠwjK KvVv‡gv ¯’vcb
+Kivi Rb¨ weKvk cÖwμqvi cÖ_g w`‡K e¨envi Kiv nq| GKwU Iq¨vi‡d«‡gi
+D‡Ïk¨ nj m„Rbkxj ch©vqwU Pvjy nIqvi Av‡M †÷K‡nvìvi Ges cÖKí
+`‡ji Aby‡gv`b †c‡Z GKwU cÖK‡íi cÖ_g w`‡K GKwU c„ôvi Pvÿzm Dcjwä
+cÖ`vb Kiv|
+(M) wPÎ-1 Gi I‡qemvBU KvVv‡gvwU n‡”Q nvBweªW KvVv‡gv GLv‡b wjsKW I wUª
+KvVv‡gvi mgš^q NUv‡bv n‡q‡Q| mvaviYZ GKwU ‡KŠkj e¨envi K‡i
+KLbI GKwU I‡qemvBU ˆZwi Kiv nq bv| eis GKvwaK †KŠk‡ji mgš^‡q
+GKwU I‡qemvBU wWRvBb Kiv n‡q _v‡K| wUª ÷ªvKPvi e¨envi K‡i †Kv‡bv
+I‡qemvBU nvW©wW‡¯‹ †ewk RvqMv `Lj K‡i| ZvB GKvwaK †KŠkj e¨envi
+K‡i I‡qemvBU ˆZwi nq| Z‡i GK I‡qe‡cBR †_‡K Av‡iK I‡qe‡cB‡R
+hvIqvi Rb¨ hv e¨envi Kiv nq †hgb: wjsK, evUb ‡gby BZ¨vw` Aek¨B
+¯úó n‡Z n‡e| hw` wjsK ¸‡jv †Kv‡bv ‡cB‡Ri Dc‡i ev‡g w`‡K †`qv nq
+Z‡e GKB wjsK †cB‡Ri wb‡PI †`qv DwPr| DÏxc‡Ki wPÎ-1 G Gfv‡eB
+I‡qe wjsK KvVv‡gv e¨eüZ n‡q‡Q HOME, Result, Images †c‡Ri
+g‡a¨ Ges Result †_‡K XI, XII, Test I‡qe‡cB‡R wUª ÷ªvKPv‡i †i‡L,
+`yB ai‡bi I‡qe KvVv‡gvi †cR wjsK Kiv n‡q‡Q|
+(N) wPÎ-1 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ HTML ‡KvWwU wb¤œiƒc: †hLv‡b
+ms‡hvwRZ wPÎwU photo.jpg Ges mvBR Size100 × 80
+<html>
+<head> <title> Table & Image </title> </head>
+<body>
+<table border = "2">
+<tr>
+<th colspan = "2" align = "center"> Bangladesh </th>
+</tr>
+<tr>
+<td align = "center"> <img src = "photo.jpg" height =
+"100" width = "80"> <br> photo </td>
+<td>
+<ol>
+<li> Dhaka </li>
+<li> Dinajpur </li>
+<li> Rangpur </li>
+</ol>
+</td>
+</tr>
+<tr>
+<td colspan = "2" align = center">
+Welcome
+</td>
+</tr>
+</table>
+</body>
+</html>
+13|
+wPÎ-1 	wPÎ-2
+[XvKv ‡evW©-2019]
+www.board.edu.bd I‡qemvB‡Ui gva¨‡g ICT b¤^i †`L‡Z n‡j
+“board” Gi Dci wK¬K Ki‡Z n‡e|
+(K) FTP wK?
+(L) I‡qemvBU I I‡qe‡cBR GK bq- e¨vL¨v Ki|
+(M) wPÎ-1 G †Kvb ai‡Yi I‡qemvBU ÷ªvKPvi e¨envi Kiv n‡q‡Q? e¨vL¨v
+Ki|
+(N) wPÎ-2 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ html ‡KvW wjL|
+13 bs cÖ‡kœi DËi
+(K) FTP ev File Transfer Protocol n‡”Q GwU B›Uvi‡bU gva¨g e¨envi
+K‡i dvBj Av`vb-cÖ`v‡bi Rb¨ e¨eüZ ‡cÖv‡UvKj (Protocol)|
+(L) B›Uvi‡bU Z_v I‡q‡e †jLv, AwWI, wfwWI, w¯’i wPÎ, Gwb‡gkb BZ¨vw` Z_¨
+ivLvi †cBR‡K e‡j I‡qe‡cBR | myZivs Avgiv ej‡Z cvwi, B›Uvi‡bU
+e¨enviKvix‡`i †`Lvi Dc‡qvMx B›Uvi‡b‡Ui mv‡_ mshy³ wewfbœ †`‡ki
+mvf©v‡i ivLv dvBj‡K I‡qe‡cBR e‡j| Avevi GKB †Wv‡gB‡bi Aax‡b
+ci¯úi ms‡hvM‡hvM¨ GKvwaK I‡qe‡c‡Ri mgwó‡K I‡qemvBU e‡j| GK
+ev GKvwaK I‡qe‡cB‡Ri mgš^‡q I‡qemvBU ˆZwi nq|
+(M) wPÎ-1 n‡jv †gby ev nvivwK©K¨vj I‡qe ÷ªvKPvi|
+nvqvivwK© ev †gbyB m¤¢eZ I‡qe WKz‡g‡›Ui me‡P‡q mnR Ges hyw³c~Y©|
+G‡K wUª KvVv‡gv e‡j| GB MVb c×wZ‡Z g~j UwcK Gi wj÷ A_ev †gby
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 8
+ˆZwi K‡i Gi †_‡K mve-UwcKm ˆZwi Ki‡Z nq| †hLv‡b Avgiv wbw`©ó
+UwcK m¤ú‡K© Av‡jvPbv Kwi| AZtci GB g~j wel‡qi †gby †_‡K GKwU‡K
+c_ cÖ`k©b a‡i Avi GKwU mve UwcKm ˆZwi Ki‡Z nq hv GKwU wbw`©ó
+welq m¤ú‡K© Av‡jvPbv K‡i|
+G ai‡Yi wWRvBb e¨env‡ii gva¨‡g BRvi‡`i Z_¨ MÖn‡Yi †ÿ‡Î AwZwi³
+¯^vaxbZv cÖ`vb Kiv hvq| djkÖæwZ‡Z BDRviiv †cBRwU e¨env‡ii †ÿ‡Î
+AwaK ¯^v”Q›`¨ †eva K‡i| wjs‡Ki gva¨‡g BDRviiv cÖ‡qvRb Abyhvqx
+mn‡RB I‡q‡ei GK †cBR †_‡K Ab¨ †cB‡R Abvqv‡m †h‡Z cv‡i I
+I‡qe‡cBRwUi †Kvb As‡k BDRvi Ae¯’vb Ki‡Q, Zv Zvi Rb¨ Rvbv
+mnR‡eva nq| GB wWRvB‡bi †ÿ‡Î †nvg †cBRwU‡Z mg¯Í WKz‡g‡›Ui
+c~Y©v½ wPÎ mswÿß AvKv‡i _v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg‡cB‡R wjsK
+e¨envi K‡i Gi cieZ©x †cBR¸‡jv‡Z hvIqv hvq|
+(N) wPÎ-2 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>TABLE TEMPLATE</title>
+</head>
+<body>
+<table border="1">
+<caption>HSC-2019</caption>
+<tr>
+<th align="center" colspan="2">ICT</th>
+</tr>
+<tr height="200">
+<td align="center">Subject</td>
+<td align="center">Board</td>
+</tr>
+</table>
+</body>
+</html>
+14|
+`„k¨Kí-1 	`„k¨Kí-2
+[ivRkvnx ‡evW©-2019]
+(K) I‡qemvBU Kx?
+(L) ‡Wv‡gBb †bg AwØZxq- e¨vL¨v Ki|
+(M) `„k¨Kí-1 Gi cÖ_g jvBb me‡P‡q eo, wØZxq jvBb me‡P‡q †QvU
+†nwWs Ges Z…Zxq jvBb c¨vivMÖvd wb‡q HTML ‡KvW wjL|
+(N) `„k¨Kí-2 Gi †Uwej ˆZwii HTML ‡KvW wjL †hLv‡b, Book G
+wK¬K Ki‡j book.com I‡qemvBUwU Pvjy n‡e|
+14 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †c‡Ri mgwó‡K I‡qemvBU e‡j|
+(L) ‡Wv‡gBb †bBg n‡”Q B›Uvi‡b‡U GK ev GKvwaK AvBwc A¨v‡Wªm‡K
+mbv³Ki‡Yi Rb¨ GKwU AwØZxq AvjdvwbD‡gwiK (K¨v‡i±vi Ges bv¤^vi
+m¤^wjZ) wVKvbv| †hgb shikkha.org GKwU †Wv‡gBb †bBg| GB
+†Wv‡gBb †bBg e¨envi K‡i 172.168.10.1 AvBwc bv¤^vi Kw¤úDUvi‡K
+Lyu‡R †ei Kiv hvq| Ab¨fv‡e ejv hvq †h, I‡qe mvB‡Ui gva¨‡g B›Uvi‡b‡U
+Dcw¯’wZ wKsev Z_¨ Av`vb-cÖ`vb Kivi Rb¨ GKwU AwØZxq wVKvbv cÖ‡qvRb
+hv †Wv‡gBb †bBg wnmv‡e cwiwPZ|
+(M) `„k¨Kí-1 Gi HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td align="center">
+<h1 align="center">>WELCOME ICT LAB</h1>
+<h2 align="center">WELCOME ICT LAB</h2>
+<palign="center">>A<sub>2</sub>B<sup>
+2</sup></p>
+</td>
+</tr>
+</table>
+</body>
+</html>
+(N) DÏxcK Abymv‡i `„k¨Kí-2 Gi †Uwej ˆZwii HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td align="center" width="100">
+<a href="https://www.book.com">Book</a>
+</td>
+<td align="center" width="100">
+<img src="book.jpg" width="50" height="50">
+<p>Book.jpg</p>
+</td>
+</tr>
+</table>
+</body>
+</html>
+15| AvBwmwU wkÿK K¬v‡m html covw”Q‡jb| wZwb QvÎ‡`i †UwejwUi duvKv N‡i
+Logo.jpg wPÎwU cÖ`k©bmn m¤ú~Y© †UwejwU ˆZwii html code wj‡L
+†`Lv‡jb|
+A 	B
+C 	D
+E 	F
+wPÎ-1
+Zvici QvÎ‡`i wb‡Pi Aby‡”Q`wUi gZ AvDUcyU cvIqvi Rb¨ html code
+wjL‡Z ej‡jb:
+Quick brown fox
+Jumps over the lazydog
+and then it fall
+prey to a lion.
+wPÎ-2
+[Kzwgjøv ‡evW©-2019]
+(K) mvP© BwÄb Kx?
+(L) IP A¨v‡Wª‡mi †Wv‡gBb †bg e¨envi Kiv myweavRbK -e¨vL¨v Ki|
+(M) QvÎ‡`i ˆZwi html code ‡Kgb Zv †`LvI|
+(N) DÏxc‡Ki duvKv N‡i QwewU ms‡hvR‡bi †ÿ‡Î mveavbZv D‡jøLc~e©K
+†UwejwU ˆZwii html ‡KvW wjL|?
+15 bs cÖ‡kœi DËi
+(K) mvP© BwÄb n‡”Q Ggb GK ai‡bi Uyj hvi mvnv‡h¨ B›Uvi‡b‡Ui AR¯ª I‡qe
+mvf©vi †_‡K mn‡RB †h‡Kv‡bv Z_¨ Lyu‡R †ei Kiv hvq|
+(L) AvBwc †bUIqvK© Z_v B›Uvi‡b‡Ui mv‡_ mshy³ cÖwZwU Kw¤úDUv‡ii GKwU
+c„_K wbR¯^ wVKvbv _v‡K, Zv‡K AvBwc G‡Wªm e‡j| AvBwc G‡Wªm‡K
+b¤^‡ii mvnv‡h¨ wPwýZ Kiv nq hv g‡b ivLv KóKi| ZvB AvBwc G‡Wªm‡K
+mn‡R e¨envi‡hvM¨ Kivi Rb¨ b¤^‡ii cwie‡Z© wewfbœ Bs‡iwR K¨v‡i±v‡ii
+gva¨‡g cÖKvk Kiv hvq| K¨v‡i±vi d‡g© †`qv Giƒc bvg‡K †Wv‡gBb †bg
+e‡j| mn‡R g‡b ivLv hvq e‡j GwU AvBwc G‡Wªm Gi †P‡q myweavRbK|
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 9
+(M) QvÎ‡`i ˆZwi html code ‡KvW wb¤œiƒc n‡Z cv‡i:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<strong>Quick</strong><i>brown</i><u>fox</u><br>
+<del>Jumps over</del>the lazy<sup>dog</sup><br>
+and<sub>then</sub><strong><i>it fall</i></strong><br>
+<u> <i>prey</i> to a <i> lion. </i></u>
+</body>
+</html>
+(N) DÏxc‡Ki duvKv N‡i QwewU ms‡hvR‡bi †ÿ‡Î †UwejwU ˆZwii html ‡KvW
+wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td>A</td>
+<td colspan="2">B</td>
+</tr>
+<tr>
+<td>C</td>
+<td>D</td>
+<td rowspan="2"
+width="200"><img src="logo.jpg"></td>
+</tr>
+<tr>
+<td>E</td>
+<td>F</td>
+</tr>
+</table>
+</body>
+</html>
+16| wb‡Pi DÏxcKwU jÿ¨ Ki:
+`„k¨Kí-1 	`„k¨Kí-2
+Student-Info
+Roll 	Name 	Address 	Result
+5001 	Rima 	Dhaka 	3.5
+5002 	Moon 	Sylhet 	4.7
+5003 	Jui 	Dhaka 	5.0
+5004 	Koli 	Cumilla 	3.8
+`„k¨Kí-3
+[h‡kvi ‡evW©-2019]
+(K) eªvDRvi Kx?
+(L) ʻAvBwc wVKvbv n‡”Q †Wv‡gBb †bBg Gi MvwYwZK iƒcʼ -e¨vL¨v Ki|
+(M) `„k¨Kí-3 I‡qe‡c‡R cÖ`k©‡bi Rb¨ HTML ‡KvW wjL|
+(N) `„k¨Kí-1 Ges `„k¨Kí-2 Gi I‡qemvBU KvVv‡gvi g‡a¨ †KvbwU
+AwaK myweavRbK- hyw³mn wjL|
+16 bs cÖ‡kœi DËi
+(K) I‡qemvBU¸‡jv Ny‡i ‡`Lvi Rb¨ Z_v I‡qe eªvDR Kivi Rb¨ †h mKj
+mdUIq¨vi e¨envi Kiv nq Zv‡K I‡qe eªvDRvi e‡j|
+(L) B›Uvi‡b‡U hy³ cªwZwU Kw¤úDUv‡ii GKwU wVKvbv _v‡K| G wVKvbv‡K AvBwc
+G¨v‡Wªm (IP Address) ejv nq|
+AvBwc G¨v‡Wª‡mi Rb¨ msL¨v e¨envi Kiv nq hv g‡b ivLv KóKi| AvBwc
+G¨v‡Wªm‡K mn‡R g‡b ivLv Ges e¨envi‡hvM¨ Kivi Rb¨ Bs‡iwR A¶‡ii
+†Kv‡bv bvg e¨envi Kiv nq| K¨v‡i±vi d‡g©i †`qv Kw¤úDUv‡ii Giƒc
+bvg‡K †Wv‡gBb †bg ejv nq| †hgb, AvBwc G¨v‡Wªm 173.248.140.183
+Gi cwie‡Z© www.rafkhata.com †Wv‡gBb †bg e¨envi Kiv hvq| A_©vr
+†Wv‡gBb †bBg Gi MvwYwZK iƒc n‡”Q AvBwc G‡Wªm|
+(M) `„k¨Kí-3 I‡qe‡c‡R cÖ`k©‡bi Rb¨ HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<caption style="text-align:center;">
+<strong>Student-Info</strong></caption>
+<tr>
+<th>Roll</th>
+<th>Name</th>
+<th>Address</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>5001</td>
+<td>Rima</td>
+<td>Dhaka</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Moon</td>
+<td>Sylhet</td>
+<td>4.7</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Jui</td>
+<td>Dhaka</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>5004</td>
+<td>Koli</td>
+<td>Cumilla</td>
+<td>3.8</td>
+</tr>
+</table>
+</body>
+</html>
+(N) `„k¨Kí-1 n‡”Q wmKz‡qÝ ev wjwbqvi KvVv‡gv| Avi `„k¨Kí-2 wUª ev
+nvqvivwK©K¨vj KvVv‡gv| G `ywU KvVv‡gvi g‡a¨ `„k¨Kí-2 G D‡jøwLZ wUª ev
+nvqivwK©K¨vj KvVv‡gv AwaK myweavRbK| wb‡P hyw³mn Gi KviY eY©bv Kiv
+n‡jv-
+wUª ev nvqvivwK©K¨vj KvVv‡gv‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i
+_v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i cieZ©x
+†cBR¸‡jv‡Z hvIqv hvq| I‡qemvB‡Ui KvVv‡gvi g‡a¨ nvqvivwK©K¨vj
+KvVv‡gv me‡P‡q mnR I RbwcÖq| G c×wZ‡Z wewfbœ kvLv¸‡jv‡K,
+Avjv`vfv‡e mshy³ Kiv n‡q _v‡K| †nvg‡cBR, mve-‡gby I Ab¨vb¨
+†cB‡Ri wj¼ _v‡K| G‡Z K‡i I‡qemvB‡Ui wfwRUiiv mn‡RB eyS‡Z cv‡i
+†Kvb As‡k Zvi cÖ‡qvRbxq Z_¨¸‡jv i‡q‡Q| wewfbœ cÖwZôv‡bi I‡qemvBU
+†hgb- †Kv‡bv ¯‹zj, K‡jR ev e¨emvwqK cÖwZôv‡bi I‡qemvBU G ai‡bi
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 10
+n‡q _v‡K| †ewki fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv e¨envi Kiv
+nq| G ai‡bi KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi K‡i mve-‡gby
+ˆZwi Kiv n‡q _v‡K| c¶všÍ‡i, hLb †Kv‡bv GKwU I‡qemvB‡U †cBR¸‡jv
+wbw`©ó μgvbymv‡i wfwRU Kivi cÖ‡qvRb nq ZLb wmKz‡qÝ ev wjwbqvi
+KvVv‡gv e¨envi Kiv nq| GB ai‡bi †cBR¸‡jv‡Z mvaviYZ Next,
+Previous, Last, First BZ¨vw` wjsK e¨envi K‡i BDRvi †cBR wfwRU
+Ki‡Z cv‡i| A_©vr G KvVv‡gvi gva¨‡g B‡”QgZ wbw`©ó †cB‡R hvIqv hvq
+bv|
+ZvB wjwbqvi I nvqivwK©K¨vj KvVv‡gvi g‡a¨ nvqivwK©K¨vj KvVv‡gv AwaK
+myweavRbK|
+17| This is our national flower
+[PÆMÖvg ‡evW©-2019]
+(K) AvBwc A¨v‡Wªm Kx?
+(L) ʻI‡qe eªvDRvi I mvP© BwÄb GK bqʼ -e¨vL¨v Ki|
+(M) eªvDRv‡i DÏxc‡Ki b¨vq wPÎ-1 Gi djvdj †c‡Z cÖ‡qvRbxq
+HTML ‡KvW wjL|
+(N) ʻDÏxc‡Ki wPÎ-2 Gi I‡qemvBU KvVv‡gvwU eo wkÿv cÖwZôv‡bi Rb¨
+Av`k© bq|ʼ -Dw³wUi mZ¨Zv hvPvBc~e©K gZvgZ `vI|
+17 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡U hy³ cÖwZwU Kw¤úDUv‡ii GKwU wbR¯^ wVKvbv _v‡K| GB
+wVKvbv‡K AvBwc A¨v‡Wªm ev Internet Protocol Address e‡j|
+(L) I‡qe eªvDRvi n‡jv Ggb GKwU mdUIq¨vi hvi gva¨‡g GKRb e¨enviKvix
+†h‡Kv‡bv I‡qe‡cBR, Iqvì© IqvBW I‡q‡e A_ev ‡jvKvj Gwiqv
+†bUIqv‡K© Aew¯’Z †Kv‡bv I‡qemvB‡Ui †h‡Kv‡bv ‡jLv, Qwe Ges Ab¨vb¨
+Z‡_¨i AbymÜvb, WvDb‡jvW wKsev ‡`L‡Z cv‡ib| g~jZ I‡qe †cBR
+cÖ`k©bB I‡qe eªvDRv‡ii KvR| D‡jøL‡hvM¨ I‡qe eªvDRvimg~n n‡jv ¸Mj
+†μvg, gwRjv dvqvid·, mvdvwi BZ¨vw`|
+Aciw`‡K, mvP© BwÄb GKwU mdUIq¨vi Uyj hv Iqvì© IqvBW I‡qe †_‡K
+Bbdi‡gkb Lyu‡R †ei K‡i| †hgb- Google, yahoo, Bing, MSN,
+wccxwjKv BZ¨vw`|
+(M) eªvDRv‡i DÏxc‡Ki b¨vq wPÎ-1 Gi djvdj †c‡Z cÖ‡qvRbxq HTML
+‡KvW wb¤œiƒc:
+<!DOCTYPE <html>
+<head>
+<title>HTML Code</title>
+</head>
+<body style="text-align: center;">
+<p>This is our national flower.</p>
+<figure style="display: inline-block;">
+<img src="water lily.jpeg">
+<figcaption style="border: 1px solid;"> Water lily.jpeg
+</figcaption>
+</figure>
+</body>
+</html>
+(N) DÏxc‡Ki wPÎ-2 I‡qe KvVv‡gvwU n‡jv wjwbqvi KvVv‡gv| G ai‡bi KvVv‡gv
+eo wk¶v cªwZôv‡bi Rb¨ Av`k© bq| wb‡Pi Dw³wUi mZ¨Zv hvPvB Kiv
+n‡jv-
+wjwbqvi KvVv‡gv‡Z I‡qemvB‡Ui †cBR¸‡jv GKwU wbw`©ó Abyμ‡g (G‡Ki
+ci GK) mvRv‡bv _v‡K Ges †Kvb †cB‡Ri ci ‡Kvb †cBR Avm‡e Zv
+wb‡`©wkZ _v‡K e‡j G‡K wjwbqvi KvVv‡gv e‡j| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i ‡`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| G ai‡bi †cBR¸‡jv‡Z mvaviYZ Next, Previous, Fag,
+Last BZ¨vw` wj¼ e¨envi Kiv n‡q _v‡K| G c×wZ‡Z ‡cBR¸‡jv GKwUi
+ci Av‡iKwU avivevwnKfv‡e wjsK Kiv _v‡K| G‡¶‡Î I‡qemvB‡U †Kv‡bv
+GKwU †cBR wfwRU Ki‡Z n‡j Av‡M Zvi c~e©eZ©x †cBR wfwRU Ki‡Z nq|
+A_©vr G‡Z mivmwi †Kv‡bv †cB‡R hvIqv hvq bv| ZvB eo ai‡bi ev AwaK
+msL¨K I‡qe †cBR wewkó I‡qemvB‡Ui †¶‡Î GB KvVv‡gv Dchy³ bq|
+AZGe ejv hvq Òwjwbqvi KvVv‡gv eo wk¶v cÖwZôv‡bi Rb¨ Av`k© bqÓ-
+Dw³wU h_v_©|
+18| `„k¨Kí-1: Bjv I AvbRyg `yB evÜex wg‡j HTML w`‡q First, Last,
+Next, Previous wjsKwewkó GKwU I‡qemvBU ˆZwi K‡i| I‡qemvBUwU
+`ªæZ eªvDR Kiv †M‡jI Z_¨ wbqwgZ Avc‡WU Ki‡Z mgm¨v nIqvq Zviv
+PHP, MySQL BZ¨vw` Uzjm w`‡q I‡qemvBUwU cwieZ©‡bi wm×všÍ †bq|
+[ewikvj ‡evW©-2019]
+(K) nvBcviwjsK Kx?
+(L) I‡qe †nvw÷s ¸iæZ¡c~Y© †Kb? e¨vL¨v Ki|
+(M) I‡qemvBUwUi ÷ªvKPvi e¨vL¨v Ki|
+(N) DÏxc‡K D‡jøwLZ wm×v‡šÍi †hŠw³KZv we‡kølY Ki|
+18 bs cÖ‡kœi DËi
+(K) nvBcviwj¼ n‡”Q GKwU I‡qe †cB‡Ri †Kvb GKwU As‡ki mv‡_ 'ev †Kvb
+†cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri ms‡hvM ¯’vcb Kiv|
+(L) I‡qe †nvw÷s n‡jv I‡qemvBU ev I‡qe †cBR B›Uvi‡b‡U cÖ`k©‡bi Rb¨
+cÖ‡qvRbxq cªwμqv| G Rb¨ I‡qemvBUwU‡K B›Uvi‡bU mshy³ †Kv‡bv
+mvf©v‡ii †g‡gvwi ev †÷v‡i‡R msi¶Y Rgv ivL‡Z n‡e| I‡qe †nvw÷s bv
+Ki‡j I‡qemvBUwU‡Z ‡Kv‡bv cÖ‡ek _vK‡e bv ev GwU Ab¨ †KD eªvDR
+Ki‡Z cvi‡e bv| ZvB I‡qe †cBR ˆZwi Kivi ci Zv †h †Kv‡bv GKwU
+wbf©i‡hvM¨ I‡qe mvf©v‡i †nv÷ Kiv cÖ‡qvRb|
+(M) Bjv I AvbRyg `yB evÜex wg‡j HTML w`‡q †h I‡qe mvBU ‡Zwi K‡i
+†mwU wjwbqvi ÷ªvKPvi| wb‡P wjwbqvi ÷ªvKPviwU e¨vL¨v Kiv n‡jv-
+‡h I‡qemvB‡Ui †cBR¸‡jv GKwU wbw`©ó Abyμ‡g (G‡Ki ci GK) mvRv‡bv
+_v‡K Ges †Kvb †cB‡Ri ci †Kvb †cBR Avm‡e Zv wb‡`©wkZ _v‡K Zv‡K
+wjwbqvi KvVv‡gv ev wmKz‡qwÝqvj msMVb e‡j| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i ‡`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| ‡cB‡Ri msL¨v Kg n‡j G ai‡bi KvVv‡gv Dc‡hvMx |
+wPÎ: wjwbqvi KvVv‡gv
+G ai‡bi KvVv‡gv‡Z g~j †cBR †_‡K ïiæ n‡q WKz‡g‡›Ui cieZ©x avc¸‡jv
+m¤ú‡K© eY©bv K‡i| G ai‡bi †cBR¸‡jv‡Z mvavibZ Next; Preview,
+Fast, Last BZ¨vw` wj¼ e¨envi Kiv n‡q _v‡K| d‡j mn‡R †cBR
+Avc‡jvW Kiv hvq Ges `ªæZ ‡cBR eªvDR Kiv hvq|
+(N) `„k¨Kí-1 G DwjøwLZ wm×všÍwU †hŠw³K| KviY-
+HTML w`‡q ïay ÷¨vwUK I‡qemvBU ˆZwi Kiv †M‡jI WvBbvwgK I‡qe
+mvBU ˆZwi Kiv hvq bv|
+÷¨vwUK I‡qe mvB‡Ui Amyweav-
+1| Kb‡U›U Avc‡WU Ki‡Z cÖPzi mgq jv‡M|
+2| I‡qemvB‡Ui AvKvi e„w× †c‡j Kb‡U›U¸‡jv mn‡R wbqš¿Y Kiv hvq bv|
+3| gvbm¤§Z I‡qe †cBR wWRvBwbs AZ¨šÍ Kómva¨ Ges mgqmv‡c¶|
+Java Script, ASP.NET GLb PHP, MySQL BZ¨vw` Uzjm
+e¨envi K‡i WvBbvwgK I‡qemvBU ˆZwii gva¨‡g D³ Amyweav mg~n `~i
+Kiv hvq|
+WvqbvwgK I‡qemvB‡Ui myweavmg~n:
+ G ai‡bi I‡qemvB‡U cwieZ©bkxj Z_¨ ev B›Uv‡iw±f I‡qe ‡cBR
+_v‡K|
+ ivb UvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i|
+ WvqbvwgK I‡qemvBU Dbœq‡b †WUv‡eR e¨eüZ nq Ges ‡WUv‡e‡R
+Kz‡qixi gva¨‡g wewfbœ cwieZ©bkxj K‡›U›U ˆZwi Ki‡Z Mv‡i|
+ WvqbvwgK I‡qemvBU Lye Nb Nb †cB‡Ri f¨vjy ev K‡›U›U cwieZ©b
+Ki‡Z cv‡i Ges e¨enviKvix‡`i wbKU n‡Z BbcyU MªnY Ki‡Z cv‡i|
+Dc‡iv³ Av‡jvPbv n‡Z †`Lv hvq, I‡qemvBwU‡K ÷¨vwUK ‡_‡K PHP,
+MySQL e¨envi K‡i WvBbvwgK I‡qemvBU iæcvß‡ii wm×všÍwU †hŠw³K|
+19| wkjv‡`i K‡j‡Ri I‡qemvBUwU mvf©vi Ges eªvDRKvixi g‡a¨ DfgyLx †WUv
+mieivn K‡i| wkjv GKwU I‡qe‡cR ˆZwi K‡i hv‡Z “ourboard”
+‡jLvwU‡Z wK¬K Ki‡j “www.e-board.edu.bd” I‡qemvBUwU cÖ`wk©Z
+nq|
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 11
+[wm‡jU ‡evW©-2019]
+(K) <hr> Kx?
+(L) nvBcviwjsK U¨v‡Mi Avewk¨K A¨vwUªweDUwU e¨vL¨v Ki|
+(M) wkjv‡`i K‡j‡Ri I‡qemvBUwU e¨vL¨v Ki|
+(N) ʻwkjvi ˆZwiK…Z †cRwU GKwU I‡qe †cvU©vjʼ -HTML ‡KvWmn
+we‡kølY Ki|
+19 bs cÖ‡kœi DËi
+(K) GwU GKwU HTML U¨vM hv mgvšÍivj jvBb ˆZwi‡Z e¨eüZ nq|
+(L) nvBcviwjsK U¨v‡Mi Avewk¨K A¨vwUªweDU n‡jv href| href A¨vwUªweDUwU
+wjs‡Ki wVKvbv ev MšÍe¨ wba©viY K‡i| Gi wmbU¨v· ev MVbwU wbgœiƒc:
+<a href= “url”>link text</a>
+GLv‡b url As‡k wjs‡Ki m¤ú~Y© wVKvbvwU wjL‡Z nq|
+(M) wkjv‡`i K‡j‡Ri I‡qe mvBUwU n‡jv WvBbvwgK I‡qemvBU| KviY
+I‡qemvBUwU mvf©vi Ges eªvDRKvixi g‡a¨ DfgyLx †WUv mieivn K‡i A_©vr
+e¨enviKvixi wbKU n‡Z BbcyU †bIqvi e¨e¯’v _v‡K| †h mKj
+I‡qemvB‡Ui †WUvi gvb I‡qe‡cBR ‡jvwWs ev Pvjy Kivi ci cwieZ©b Kiv
+hvq Zv‡K WvBbvwgK I‡qemvBU e‡j| WvBbvwgK I‡qemvBU ˆZwii R‡b¨
+HTML fvlvi mv‡_ w¯ŒwÞs fvlv †hgb- wcGBPwc (PHP) ev GGmwc
+(ASP) Ges Gi mv‡_ †WUv‡eR cÖ‡qvRb-
+WvqbvwgK I‡qemvBU-Gi ˆewkó¨:
+ cwieZ©bkxj Z_¨ ev B›UviA¨vKwUf I‡qe‡cR _v‡K|
+ ivbUvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i|
+ ‡WUv‡eR e¨eüZ d‡j Kz‡qwi K‡i Z_¨ †ei Kivi my‡hvM _v‡K|
+ e¨enviKvix Z_¨ cÖ`vb ev Z_¨ Avc‡WU Ki‡Z cv‡i|
+(N) I‡qe †cvU©vj n‡”Q GKwU I‡qemvB‡Ui g‡a¨ wewfbœ wjsK, K‡›U›U I mvwf©m
+ev †mevi msMÖn hv e¨enviKvix‡`i‡K Z_¨ Rvbv‡bvi Rb¨ mnR‡eva¨fv‡e
+Dc¯’vcb Kiv nq| I‡qemvB‡Ui ‡h †Kv‡bv GKwU mvwf©m I‡qe †cvU©v‡ji
+GKwU Ask n‡Z cv‡i| wkjvi I‡qe †c‡Ri ourboard †jLvwU‡Z wK¬K
+Ki‡j www.e-board.edu.bd I‡qemvBUwU‡Z cÖ`wk©Z nq hv GKwU
+wjsK| AZGe wkjvi ˆZwiK…Z †cRwU, GKwU I‡qe ‡cvU©vj|
+HTML ‡KvWwU wb¤œiƒc-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Board</title>
+</head>
+<body>
+<a href="https//www.e-board.edu.bd">ourboard</a>
+</body>
+</html>
+20| cwÎKvi AbjvBb fvm©‡bi B-‡ccvi cÖ_g †cBR †_‡K cici cÖwZwU †cBR
+mvRv‡bv _v‡K| G Rb¨ cvVKM‡Yi G ai‡bi cwÎKv covi cÖwZ AvMÖn w`b
+w`b e„w× cv‡”Q| 'K' bvgK eûRvwZK ‡Kv¤úvwbi I‡qemvBU ˆZwi Kivi
+†¶‡Î †Lqvj iv‡L hv‡Z Zv‡`i cÖwZôv‡bi †h †Kv‡bv Z_¨ Lyu‡R †c‡Z
+Amyweav bv nq| KviY G ai‡bi I‡qemvB‡Ui †cBR¸‡jv A‡bKw`K †_‡K
+mshy³ _v‡K| ZvQvov †mŠ›`h© e„w×i w`‡KI bRi †`q| 'L' †Kv¤úvwb Zv‡`i
+I‡qemvB‡Ui †cBR¸‡jv Ggbfv‡e ˆZwi K‡i‡Q hvi g~j †cB‡Ri mv‡_
+Ab¨vb¨ †cBR¸‡jv mshy³ _v‡K|
+[w`bvRcyi ‡evW©-2019]
+(K) nvBcviwjsK Kx?
+(L) ‡nvw÷s I‡qemvBU cvewjwks Gi GKwU ¸iæZ¡c~Y© avc- e¨vL¨v Ki|
+(M) DÏxc‡K cwÎKvi I‡qe †cBR †h KvVv‡gvq web¨¯Í Zv e¨vL¨v Ki|
+(N) ʻKʼ I ʻLʼ ‡Kv¤úvwbi I‡qe †cB‡Ri KvVv‡gvi g‡a¨ †KvbwUi e¨envi
+myweavRbK-hyw³g~jK gZvgZ `vI|
+20 bs cÖ‡kœi DËi
+(K) nvBcviwj®‹ n‡”Q GKwU I‡qe †cB‡Ri †Kvb GKwU As‡ki mv‡_ ev †Kvb
+†cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri ms‡hvM ¯’vcb Kiv|
+(L) I‡qe †nvw÷s: n‡jv I‡qemvBU ev I‡qe †cBR B›Uvi‡b‡U cÖ`k©‡bi Z_v
+cvewjwks Gi Rb¨ cÖ‡qvRbxq cÖwμqv| G Rb¨ I‡qe mvBUwU‡K B›Uvi‡b‡Ui
+mv‡_ hy³: †Kv‡bv mvf©v‡ii ‡g‡gvwi‡Z Rgv ivL‡Z n‡e| I‡qe †nvw÷s bv
+Ki‡j I‡qemvBUwU‡Z †Kv‡bv cÖ‡ek _vK‡e bv ev GwU Ab¨ †KD eªvDR
+Ki‡Z cvi‡e bv| ZvB I‡qe †cBR ˆZwi Kivi ci Zv †Kvb GKwU
+wbf©i‡hvM¨ I‡qe mvf©v‡i †nv÷ Kiv cÖ‡qvRb|
+(M) DÏxc‡Ki cwÎKvi I‡qe‡cBR wjwbqvi KvVv‡gvq web¨¯Í| I‡qe‡cBR
+WKz‡g›U‡K Organize Kivi R‡b¨ GKwU Ab¨Zg c×wZ n‡”Q Linear
+A_ev Sequential Organization| G c×wZ‡Z †nvg †cBR n‡”Q m~Pbv
+ev Title| G ÷ªvKPv‡i cÖ‡Z¨KwU †cBR n‡”Q AbyμwgK| cieZ©x Ges
+c~e©eZ©x †cB‡Ri g‡a¨ gyf (Move) Kivi †¶‡Î GLv‡b wjsK e¨envi Kiv
+nq| WKz‡g›UwU Lye eo bv n‡j A_©vr †cB‡Ri msL¨v hw` Kg nq Z‡e
+Linear organization e¨envi Kiv fv‡jv| †Kbbv G ‡¶‡Î WKz‡g‡›Ui
+†h‡Kv‡bv Ask‡K mn‡RB Lyu‡R †ei Kiv hvq| G †¶‡Î m¤ú~Y©
+†cÖ‡R‡›Uk‡bi Home page †_‡KB hvÎv ïiæ Kiv nq Ges H me
+†cB‡RB WKz‡g‡›Ui mvigg© ev cieZ©x avc¸‡jv m¤ú‡K© eY©bv _v‡K|
+wjwbqvi AM©vbvB‡Rkb‡K (Linear organization) Ab¨fv‡eI e¨envi
+Kiv hvq| G‡¶‡Î GKwU wbw`©ó ¯’vb (point) †_‡K kvLv †ei n‡q Av‡m
+Ges wew”Qbœ Ask cieZ©x‡Z g~j kvLvi mv‡_ cybivq ms‡hvM ¯’vcb K‡i|
+wPÎ: wjwbqi KvVv‡gv
+(N) DÏxcK Abymv‡i †Kv¤úvbx-K Gi I‡qe †cB‡Ri KvVv‡gv n‡jv nvBweW ev
+Kw¤^‡bkb ev wgkÖ KvVv‡gv| †Kv¤úvwb-L Gi I‡qe ‡cB‡Ri KvVv‡gv n‡jv
+I‡qe wj¼ ev †bUIqvK© KvVv‡gv| G `ywU KvVv‡gvi g‡a¨ Kw¤^‡bkb ev wgkÖ
+KvVv‡gv †ewk myweavRbK|KviY-
+Kw¤^‡bkb ÷ªvKPv‡ii GKvwaK ÷ªvKPvi e¨envi K‡i I‡qemvBU wWRvBb
+Kiv nq| A‡bK mgq wjwbqvi KvVv‡gv Ges nvqviviwKK¨vj KvVv‡gvi
+gva¨‡g wgkÖ KvVv‡gv ˆZwi Kiv hvq| GKvwaK ÷ªvKPvi e¨env‡ii d‡j I‡qe
+mvB‡Ui †mŠ›`h© †hgb e„w× cvq †Zgwb wfwRUi‡`i Rb¨ wfwRU KivI mnR
+nq|
+Aciw`‡K, †h ai‡bi I‡qemvBU KvVv‡gv‡Z me¸‡jv †c‡RiB G‡K Ac‡ii
+mv‡_ wjsK, _v‡K Zv‡K †bUIqvK© KvVv‡gv ejv nq| ïaygvÎ †bUIqvK©
+KvVv‡gv e¨envi K‡i ˆZwi Kiv I‡qemvBU nvW©wW‡¯‹ †ewk RvqMv `Lj
+K‡i| ZvB GKvwaK ÷ªvKPvi A_©vr Kw¤^‡bkb ÷ªvKPvi e¨envi K‡i
+I‡qemvBU MVb Kiv †ewk myweavRbK|
+21| ïaygvÎ HTML e¨envi K‡i P›`bv g‡Wj K‡j‡Ri GKwU I‡qemvBU
+ˆZwi Kiv nq| mvBUwUi †nvg †c‡R ict.jpg bv‡gi 200×300px AvKv‡i
+GKwU Qwe Av‡Q| QwewUi wb‡P notice.html bv‡gi notice ‡c‡Ri GKwU
+wjsK Av‡Q| Qwei Dc‡i “welcome to Chandana Model
+College” †jLvwU bxj i‡O cÖ`wk©Z nq | mvBUwU †Z wfwRUi‡`i
+gZvg‡Zi †Kvb e¨e¯’v †bB|
+[XvKv, h‡kvi, wm‡jU I w`bvRcyi †evW©-2018]
+(K) I‡qe †cv©Uvj Kx? 	1
+(L) ‡nvw÷s †Kb cÖ‡qvRb eywS‡q wjL| 	2
+(M) DÏxc‡K DwjøwLZ †nvg †cR ˆZwii Rb¨ HTML ‡KvW wjL| 	3
+(N) I‡qemvBUwU‡Z wfwRU‡`i gZvgZ MÖn‡Y M„nxZ cÖ‡qvRbxqZv c`‡ÿc
+we‡kølY Ki| 	4
+21 bs cÖ‡kœi DËi
+(K) I‡qe †cvUv©j n‡”Q GKwU I‡qemvB‡Ui g‡a¨ wewfbœ wjsK, Kb‡U›U I mvwf©m
+ev †mevi msMÖn hv e¨enviKvix‡`i‡K Z_¨ Rvbv‡bvi Rb¨ mnR‡eva¨fv‡e
+Dc¯’vcb Kiv nq|
+(L) ‡Kv‡bv mvBU‡K wbw`©ó †Kvb mvfv©‡i ¯’vcb Ges D³ I‡qe mvBUwUi hveZxq
+Kvh©μg cwiPvjbvi Rb¨ cÖ‡qvRbxq AeKvVv‡gvMZ, myweav cÖ`vb Kiv nq
+I‡qe †nvw÷s n‡”Q g~jZ AbjvB‡b I‡qe Avc‡jvW Kivi mvfv©i ev
+Kw¤úDUv‡ii nvW©wW‡¯‹i RvqMv| A_v©r G RvqMv‡Z I‡qe ‡cBR ev I‡qe
+mvBU AbjvB‡b ivLv nq| I‡qe‡cBR AbjvB‡b ivLv bv n‡j I‡qe †cBR
+†`Lv hvq bv| ZvB †nvw÷s I‡qe mvBU cvewjwks Gi Rb¨ cÖ‡qvRbxq|
+(M) DÏxc‡K DwjøwLZ †nvg †cBR ‰Zwii †KvW wb‡P †`Lv‡bv n‡jv
+<!DOCTYPE html>
+<html>
+<head>
+<tile>Chandana Model College</tile>
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 12
+</head>
+<body>
+<h2>font color="blue">Welcome
+to Chandana Model College</font></h2>
+<img src="ict.jpg"width="200"height="300">
+<a href=notice.html>notice</a>
+</body>
+</html>
+(N) DÏxc‡K mvBUwU‡Z wfwRUi‡`i gZvgZ cÖ`v‡bi †Kv‡bv e¨e¯’v †bB| ZvB
+DÏxc‡Ki mvBUwU n‡jv ÷¨vwUK I‡qemvBU| ‡hme I‡qemvB‡Ui †WUvi
+gvb I‡qe‡cR †jvwWs ev Pvjy Kivi ci cwieZ©b Kiv hvq bv Zv‡K ÷¨vwUK
+I‡qemvBU e‡j| I‡qemvBUwU‡Z wfwRUi‡`i gZvgZ MÖn‡Y M„nxZ
+cÖ‡qvRbxq c`‡ÿc n‡jv mvBUwU‡K WvBbvwgK Kiv| †hme I‡qemvB‡Ui
+‡WUvi gvb I‡qe‡cR †jvwWs ev Pvjy Kivi ci cwieZ©b Kiv hvq Zv‡K
+WvBbvwgK I‡qe‡cR e‡j | kyay HTML w`‡q ÷¨vwUK I‡qec‡R ˆZwi
+Kiv hvq| Gi mv‡_ mvaviYZ PHP, ASP, JSP, fvlv e¨envi K‡i
+WvBbvwgK I‡qe‡cBR ˆZwi Kiv hvq| WvBbvwgK I‡qemvB‡U
+e¨enviKvix‡`i wbKU n‡Z BbcyU †`Iqvi e¨e¯’v _v‡K eZ©gv‡b G ai‡bi
+I‡qemvB‡Ui Pvwn`v me‡P‡q †ewk|
+22| wb‡Pi DÏxcKwU jÿ Ki:
+[ivRkvnx, Kzwgjøv, PÆMÖvg I ewikvj †evW©-2018]
+(K) HTTP Kx? 	1
+(L) I‡qe †cB‡Ri mv‡_ eªvDRv‡ii m¤úK© e¨vL¨v Ki| 	2
+(M) DÏxc‡Ki wPÎ 1 †`‡L I‡qe mvB‡Ui KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxc‡Ki wPÎ 2 †K I‡qe †cBR cÖ`k©‡bi Rb¨ †KvW wjL| 	4
+22 bs cÖ‡kœi DËi
+(K) HTTP Gi c~Y©bvg Hyper text Transfer Protocol| B›Uvi‡b‡U
+TCP/IP cÖ‡UvK‡ji gva¨‡g †h cÖ‡UvKj I‡qe mvf© I‡qe K¬v‡q‡›Ui g‡a¨
+†WUv Av`vb cÖ`vb K‡i ZvB HTTP|
+(L) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv IqvBW I‡qe I B›Uvi‡b‡U
+I‡qe eªvDRv‡i e¨env‡ii Rb¨ Dchy³| eªvDRv‡ii gva¨‡g B›Uvi‡b‡U I‡qe
+†cBR cÖ`©k‡bi KvR K‡i| c„w_exi wewfbœ †`‡ki mvfv©‡i ivLv I‡qe †cBR
+eªvBRv‡ii gva¨‡g cÖ`wk©Z nq| ZvB I‡qe †cBR I eªvDRvi G‡K Ac‡ii
+mv‡_ m¤úwK©Z|
+(M) DÏxc‡Ki wPÎ 1 Gi I‡qemvBU KvVv‡gvwU n‡”Q I‡qe wjsKW ev ‡bUIqvK©
+KvVv‡gv| ‡bUIqvK© KvVv‡gv‡Z me¸‡jv †cB‡R G‡K Ac‡ii mv‡_ wjsKW
+_v‡K A_v©r GKwU †gBb ‡cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri mvv‡_I †gBb
+†cB‡Ri wjsKW _v‡K| †d«g e¨envi K‡i ˆZwi Kiv I‡qe †cR¸‡jv‡K GB
+†bUIqv‡K©i gva¨‡g wjsK Kiv n‡q _v‡K hv‡Z †d«‡gi g‡a¨ Ab¨vb¨
+†cBR¸wj †gby AvKv‡i ivLv nq| GB †d«g mvaviYZ w¯’i _v‡K Ges †Kvb
+GKwU wjsK wbev©Pb Ki‡j H †cBRwU A‡cÿvK…Z eo †d«‡gi g‡a¨ †`Lvq|
+(N) DÏxc‡K wPÎ 2 †K I‡qe †cB‡R cÖ`k©‡bi HTML †KvW wbg¤œiƒc-
+<!DOCTYPE html>
+<html>
+<body>
+<h4><u>Subject list</u></h4>
+<ol type="1">
+<<li>Bangla</li>
+<li>English</li>
+<li>Ict</li>
+</ol>
+</body>
+</html>
+23| www.pabnaaliamadrasah.edu.bd bv‡g gv`ivmvi mvB‡U cÖvqB
+cÖwZôv‡bi wewfbœ Kvh©μ‡gi Qwe I wfwWI Avc‡jvW m¤¢e n‡”Q bv| GKRb
+IT BwÄwbqv‡ii mv‡_ cigvk© Kiv n‡j wZwb Rvbv‡jb GLb †Zv Qwe/wfwWI
+ivL‡Z www.youtube.com Gi gZ A‡bK I‡qe mvBU i‡q‡Q| Aa¨ÿ
+g‡nv`q ej‡jb Zvn‡j gv`ivmvi wbRm&¦ I‡qe mvB‡Ui e¨enviKvixiv Zv
+†`L‡Z cv‡e bv| BwÄwbqvi mv‡ne ej‡jb ZvI m¤¢e| [gv`ivmv †evW© -2018]
+(K) d›U †cÖvcvwU© Kx? 	1
+(L) AvB.wc A¨v‡Wªm w`‡qI I‡qemvBU wfwRU Kiv m¤¢e wKfv‡e e¨vL¨v
+Ki|
+2
+(M) gv`ivmviwUi I‡qe mvB‡Ui †Wv‡gBb UvB‡ci Av‡jvPbv Ki| 	3
+(N) BwÄwbqvi mv‡n‡ei m¤¢ve¨ mgvavb Kx n‡Z cv‡i Zv eY©bv Ki| 	4
+23 bs cÖ‡kœi DËi
+(K) d›U †cÖvcvwU n‡jv- Size, Color Ges Face|
+(L) Domain Ges AvBwc A¨v‡Wªm GKwU AciwUi cwic~iK| myZvivs AvBwc
+A¨v‡Wªm w`‡qI I‡qe mvBU wfwRU Kiv m¤¢e| IP Adress Gi Rb¨ e¨eüZ
+eo msL¨v g‡b ivLv KóKi| ZvB IP Adress ‡K mn‡R e¨envi Kivi Rb¨
+Bs‡iwR Aÿ‡ii †Kv‡bv bvg e¨envi Kiv nq| K¨v‡i±vi d‡g© †`Iqv
+Kw¤úDUv‡ii Giƒc bvg‡K Domain Name e‡j| ‡hgb I‡qe mvB‡Ui
+Rb¨ †Wv‡gBb †bBg www.google.com Gi cwie‡Z© Gi IP Adress
+216.58.216.164 e¨envi Kiv n‡j GKB mvBU cÖ`wk©Z n‡e|
+(M) gv`ivmvwUi I‡qe mvB‡Ui †Wv‡gBb UvBc wb‡P Av‡jvPbv Kiv n‡jv:
+‡Kv‡bv I‡qe mvBU wfwRU Ki‡Z n‡j eªvDRv‡ii A¨v‡Wªm ev‡i †h wVKvbv
+wjwL †mUv‡K ejv nq †Wv‡gBb| GKwU †Wv‡gBb ‡bg Gi WU (.) G c‡ii
+AskUzKz‡K Top Level Domain ejv nq| Uc †j‡fj †Wv‡gBb‡K `yB
+fv‡M fvM Kiv nq| h_v- 1. ‡R‡bwiK †Wv‡gBb I 2. K¨vw›Uª †Wv‡gBb|
+gv`ivmvi I‡qe mvBUwU n‡”Q www.pabnaaliamadrasah.edu.bd
+GLv‡b www n‡”Q domain name, .edu ‡R‡bwiK †Wv‡gBb hv wkÿv
+cÖwZôv‡bi †ÿ‡Î e¨eüZ nq Ges .bd n‡”Q Kvw›Uª †Wv‡gBb| †R‡bwiK
+†Wv‡gB‡bi mv‡_ Kvw›Uª †Wv‡gBb hy³ Kiv nq hv‡Z AviI ¯úófv‡e †evSv
+hvq †Wv‡gBbwU †Kvb †`‡ki| A_v©r DÏxc‡Ki gv`ivmvwUi I‡qemvBUwU
+evsjv‡`‡ki GKwU wkÿvcÖwZôv‡bi I‡qe mvBU eySv‡”Q|
+(N) BwÄwbqvi mv‡n‡ei m¤¢ve¨ mgvavb n‡e D³ I‡qe mvB‡Ui mv‡_ BDwUD‡ei
+wVKvbv wjsK K‡i †`Iqv | wewfbœ Qwehy³ dvB‡ji mv‡_I wjsK Kiv hv‡Z
+†h †KD D³ gv`ivmvi I‡qe mvBU wfwRU Ki‡jB D³ I‡qemvBU †_‡K
+wfwWI †`Lvi Rb¨ mivmwi BDwUDe †_‡K †`L‡Z cvi‡e|
+GKwU I‡qemvB‡Ui †Kv_vI wK¬K K‡i Ab¨ GKwU I‡qemvB‡U hvIqvi wj¼
+†`Iqv nq | †hgb, <a href type="picture.html">pic</a>
+GKwU I‡qemvB‡Ui †Kv_vI wK¬K K‡ii Ab¨ GKwU I‡qemvB‡U hvIqvi wj¼
+<a href=http:/www.youtube.com>Visit youtube</a>
+24| kvnwiqvi mv‡ne Ggb GKwU †QvU I‡qe †cBR ˆZwi Ki‡Z PvB‡jb †hLv‡b
+Institute.png bv‡gi GKwU Qwe I wb‡Pi †Uwei ¸‡jv _vK‡e:
+[XvKv †evW©-2017]
+(K) HTML Syntax Kx? 	1
+(L) eZ©gv‡b I‡qe †cB‡R Hyperlink GKwU ¸iæZ¡c~Y© Dcv`vb- e¨vL¨v
+Ki| 	2
+(M) DÏxc‡K 2q †Uwe‡ji Z_¨vewj gwRjv dvqvid· I‡qe eªvDRv‡i
+†`Lvi Rb¨ HTML Gi mvnv‡h¨ cÖ‡qvRbxq †KvW wjL| 	3
+(N) 1g †Uwe‡ji dvuKv †m‡j DÏxc‡K DwjøwLZ bv‡gi Qwemn 1g †Uwe‡ji
+Z_¨ I‡qe eªvDRv‡i †`Lvi Rb¨ HTML †KvW wj‡L I‡qe †cB‡R
+B‡gR e¨venv‡ii ¸iæZ¡ e¨vL¨v Ki| 	4
+24 bs cÖ‡kœi DËi
+PAG
+PAG
+PAG
+PAG 	PAG
+wPÎ-1
+Subject list
+1. Bangla
+2. English
+3. ICT
+wPÎ-2
+Serial
+No
+Institute
+Picture
+01
+1g †Uwej
+Employee Information
+ID
+No
+Emp.
+Name Salary
+1001 Nafis
+50,000
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 13
+(K) ‡Kv‡bv mywbw`©ó j¨vs¸‡qR Øviv †h ixwZ‡Z †Kv‡bv †cÖvMÖv‡gi †÷U‡g›U iwPZ
+nq †m my¯úó ixwZB D³ j¨vs¸‡q‡Ri †ÿ‡Î HTML Syntax wnmv‡e
+we‡ewPZ nq|
+(L) GK †cB‡Ri m‡½ Ab¨ †cB‡Ri ev GKB †cB‡Ri wewfbœ As‡ki g‡a¨
+ms‡hvM Kivi c×wZwU hLb nvBcvi‡U·‡U _v‡K ZLb Zv‡K ejv nq
+nvBcviwjsK| wj‡¼i wmb‡U·wU wb¤œiƒc:
+<a href="url">link text </a>
+nvBcviwj‡¼ wK¬K K‡i GKB WKz‡g‡›Ui wfbœ †Kv‡bv Ae¯’v‡b A_ev wfbœ
+†Kv‡bv WKz‡g‡›Ui wfbœ †Kv‡bv †cB‡R hvIqv hvq| m¤úwK©Z Z_¨ cÖ`k©b
+K‡i Rvbv hvq| eªvDRviKvixi mgq mvkÖh nq| ZvB eZ©gv‡b I‡qe †cB‡R
+Hyperlink GKwU ¸iæZ¡c~Y© Dcv`vb|
+(M) DÏxc‡K 2q †Uwe‡ji Z_¨vewj gwRjv dvqvid· I‡qe eªvDRv‡i †`Lvi
+Rb¨ HTML Gi mvnv‡h¨ cÖ‡qvRbxq †KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<caption>Employee Information</caption>
+<tr>
+<th>ID No </th>
+<th>Emp. Name </th>
+<th>Salary</th>
+</tr>
+<tr>
+<td>1001</td>
+<td>Nafis</td>
+<td rowapan="2">50,000</td></tr>
+</tr>
+<tr>
+<td>1005</td>
+<td>sajal</td>
+</tr>
+</table>
+</body>
+</html>
+(N) 1g †Uwe‡j dvuKv †m‡j DÏxc‡K DwjøwLZ bv‡gi Qwemn 1g †Uwe‡ji Z_¨
+I‡qe eªvDRv‡i †`Lvi Rb¨ HTML †KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr>
+<th>Serial No</th>
+<th>Institute Picture</th>
+</tr>
+<tr>
+<td>01</td>
+<td>img src=="institute.png"width="50"hight="50"</td>
+</tr>
+</table>
+</body>
+</html>
+I‡qe †cB‡R B‡gR e¨env‡ii ¸iæZ¡ wb¤œiƒc:
+1. I‡qe †cÖ‡R‡›Uk‡b B‡gR e¨env‡ii gva¨‡g mn‡RB †U·‡Ui cwigvY
+Kwg‡q Av‡b |
+2. B‡g‡Ri e¨envi n‡”Q gvby‡li `„wó AvK©l‡Yi GKwU DrK…ó Dcvq|
+3. B‡gR‡K wj¼ wnmv‡e †bwf‡Mkb Uzjm e¨envi K‡i I‡qec‡cRwU
+AviI `k©bxq K‡i †Zvjv hvq|
+myZivs B‡gR hvB †nvK bv †Kb `k©b‡hvM¨ Dcv`vb¸‡jv ms‡hvRb I‡qe
+†cÖ‡R‡›Ukb‡K AviI †ewk we‡klZ¡ cÖ`vb K‡i|
+25| wg. z m¨vi K¬v‡m html †cÖvMÖvwgs †`Lvw”Q‡jb| wZwb GKwU I‡qe †cBR c
+WªvB‡f wcKPvi †dvìv‡ii g‡a¨ ivLv logo.jpg bvgK GKwU B‡gR hy³
+Ki‡jb hvi mvBR 500×300 wc‡·j| AZtci wZwb QvÎ‡`i ej‡jb
+†Zvgiv Ggb GKwU html ‡KvW †jL hv‡Z D³ B‡g‡Ri Dci wK¬K Ki‡j
+www.xeducationboard.edu.bd I‡qe mvBwU cÖ`k©b Kiv hvq|
+AZtci wZwb wb‡Pi †UwejwU ˆZwii html †KvW wjL‡jb
+Student Name 	Compulsory 	Optional
+Harry Porter Bangla English ICT Physics
+Math
+Biology
+[ivRkvnx †evW©-2017]
+(K) I‡qemvBU Kx? 	1
+(L) <Font> U¨v‡Mi A¨vwUªweDUmg~n e¨vL¨v Ki| 	2
+(M) QvÎ‡`i html ‡KvW wKiƒc n‡e Zv †`LvI Ges †KvWwU‡Z †hme
+A¨vwUªweDU e¨eüZ n‡q‡Q Zv‡`i e¨vL¨v `vI| 	3
+(N) hw` DÏxc‡Ki †Uwe‡j mKj mvwi‡K (Row) ¯Í‡¤¢ (Column) Ges
+mKj ¯Í¤¢‡K mvwi‡Z (Row) cwiYZ Kiv nq Zvn‡j †h †Uwej ˆZwi
+nq Zv ˆZwii Rb¨ html †KvW ‡jL| 	4
+25 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †cB‡Ri mgwóB n‡jv I‡qe mvBU|
+(L) d›U wmbU¨v· n‡”Q
+< font face = "fontname" size = "sizenumber" color =
+"color name > Text </font>
+GLv‡b font U¨v‡Mi A¨vwUªweDU n‡”Q font, size I color
+face A¨vwUªweDU wewfbœ d‡›Ui bvg enb Ki‡e Ges size d‡›Ui mvBR
+cwieZ©‡bi †ÿ‡Î e¨eüZ nq| color d‡›Ui is wbav©iY nq|
+(M) DÏxc‡K DwjøwLZ QvÎ‡`i html ‡KvW wb¤iƒc:
+<!DOCTYPE html>
+<html>
+<body>
+<a href=="www.xeducationboard.edu.bd"edu.bd">
+<img src="logo.jpg"width"="500"height="300"></a>
+</body>
+</html>
+GLv‡b, wj‡¼i A¨vwUªweDU n‡”Q href hv href A¨vwUªweD‡Ui wVKvbv wbav©iY
+K‡i| url As‡k m¤ú~Y© A¨v‡Wªm wjL‡Z nq|
+<img> U¨vM Gi A¨vwUªweDU n‡”Q, src Ges <img> U¨vMwU empty
+A_v©r GwU †Kej A¨vwUªweDU enb K‡i Ges †Kv‡bv †K¬vwRs U¨vM †bB|
+src n‡jv source hv †cB‡R B‡gRwU cÖ`k©b Kiv n‡e| †cB‡R B‡gR hy³
+Kivi mgq †mvm© A¨vwUªweD‡Ui mv‡_ B‡g‡Ri D”PZv (height) Ges cÖk¯ÍZv
+(width) KZ wc‡·j n‡e Zv wbav©iY K‡i †`qv hvq| GLb logo.jpg †Z
+wK¬K K‡i www.xeducationboard.edu.bd bvgK I‡qe mvBUwU‡Z
+mn‡R cvIqv hv‡e|
+(N) hw` DÏxc‡Ki †Uwe‡ji mKj mvwi‡K (Row) ¯Í‡¤¢ (Column) Ges mKj
+¯Í¤¢‡K (Column) mvwi‡Z cwiYZ Kiv nq Zvn‡j †h †Uwej ˆZwi n‡e Zv
+wb¤œiƒc:
+Student Name 	Harry Porter
+Compulsory
+Bangla
+English
+ICT
+Optional 	Physics 	Math 	Biology
+D³ †UwejwUi html ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr>
+<th>Student Name</th>
+<td colspan>"3"align="center"> Harry Porter </td>
+</tr>
+<tr>
+<th rowspan="3"> compulsory </th>
+<td colspan>"3"align="center"=Bangla</td>
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 14
+</tr>
+<tr>
+<td colspan>"3"align="center"=English</td>
+</tr>
+<tr>
+<td colspan>"3"align="center"=ICT</td>
+</tr>
+<tr>
+<th>Optional</th>
+<td>Physics</td>
+<td>Math</td>
+<td>Biology</td>
+</tr>
+</table>
+</body>
+</html>
+26| XYZ College, Dhaka
+Available Honor’s Subject
+1. Bangla
+2. English
+3. Mathematics
+4. Accounting [h‡kvi †evW© -2017]
+(K) I‡qe †cBR Kx? 	1
+(L) ‡Wv‡gBb †b‡gi ¸iæZ¡ e¨vL¨v Ki| 	2
+(M) DÏxcKwU †Zvgvi K‡j‡Ri I‡qemvB‡Z †nvg †cB‡R cÖ`©k‡bi Rb¨
+HTML †KvW wjL| 	3
+(N) m¤§vb wel‡q bv‡gi ZvwjKv wb‡q Serial no Ges Subject Name
+GB `yBwU †Uwej †nwWs `yB Kjv‡gi GKwU (eWv©imn) †Uwej ˆZwii
+HTML †KvW wjL| 	4
+26 bs cÖ‡kœi DËi
+(K) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv B›Uvi‡bU e¨enviKvix‡`i
+†`Lvi Rb¨ wewfbœ †`‡ki mvfv©‡i ivLv nq|
+(L) cÖwZwU I‡qemvB‡Ui †h ¯^Zš¿ bvg _v‡K Zv‡K †Wv‡gBb †bg ejv nq|
+†Wv‡gBb †bg n‡e GK I AwØZxq| †Wv‡gBb †bg †K K‡Vvifv‡e wbqš¿jY
+Kiv nq, hv‡Z K‡i GKB bvg Ab¨ ‡KD bv cvq| DNS c×wZ‡Z †Wv‡gBb
+†bg‡K wbqš¿Y Kiv nq| B›Uvi‡b‡U †Wv‡gBb †bg wKb‡Z cvIqv hvq, Z‡e
+†h †Wv‡gBb †bg GL‡bv †KD wK‡‡b †d‡jwb, ‡m¸‡jv †Kej †Kbv hv‡e|
+‡Wv‡gBb †b‡gi WU Gi c‡ii AskwU‡K Uc †j‡fj †Wv‡gBb e‡j| GwU
+†`‡L mn‡R eySv hvq cÖwZôvbwU ‡Kvb ai‡bi| GRb¨ †h‡Kvb ai‡bi
+I‡qemvB‡Ui Rb¨ †Wv‡gBb †bg AZ¨šÍ ¸iæZ¡c~Y©|
+(M) DÏxcKwU Avgvi K‡j‡Ri I‡qemvB‡Ui †nvg †cB‡R cÖ`k©‡bi Rb¨
+HTML †KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<h1> XYZ College, Dhaka </h1>
+<h4> Available Honor’s Subject </h4>
+<ol>
+<li> Bangla </li>
+<li> English </li>
+<li> Mathematics </li>
+<li> Accounting </li>
+</ol>
+</body>
+</html>
+(N) DÏxc‡K DwjøwLZ m¤§vb wel‡q bv‡gi ZvwjKv wb‡q Serial no Ges
+Subject Name GB `yBwU †Uwej †nwWs `yB Kjv‡gi GKwU eWv©imn
+†Uwej ˆZwii HTML †KvW wb¤œiƒc:
+Available Honor’s Subject
+Serial No 	Subject name
+1 	Bangla
+2 	English
+3 	Mathematics
+4 	Accounting
+HTML ‡KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<caption> Available Honor’s Subject </caption>
+<tr>
+<th align ="center"> Serial No </th>
+<th align ="center"> Subject Name</th>
+</tr>
+<tr>
+<td align ="center"> 1 </td>
+<td align ="center"> Bangla </td>
+</tr>
+<td align ="center">2</td>
+<td align ="center">English</td>
+</tr>
+<tr>
+<td align ="center">3</td>
+<td align ="center"> Mathematics </td>
+</tr>
+<tr>
+<td align ="center"> 4 </td>
+<td align ="center"> Accounting </td>
+</tr>
+</table>
+</body>
+</html>
+27| wb‡Pi DÏxcKwU j¶ Ki-
+`„k¨Kí-1
+`„k¨Kí-2
+Roll 	Subject
+201 	Bangla
+202 	English
+203 	ICT [Kzwgjøv †evW©-2017]
+(K) g‡Wg Kx? 	1
+(L) ÔAv‡jvi MwZ‡Z †WUv †cÖiY m¤¢eÕ- e¨vL¨v Ki| 	2
+(M) DÏxc‡Ki `„k¨Kí-1 I‡qemvBU KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxc‡Ki `„k¨Kí-2 †K I‡qe †cB‡R cÖ`k©‡bi Rb¨ HTML-Gi
+cÖ‡qvRbxq †KvWmg~n wjL| 	4
+27 bs cÖ‡kœi DËi
+(K) g‡Wg n‡jv GKwU KwgDwb‡Kkb wWfvBm hv Z_¨‡K GK Kw¤úDUvi †_‡K
+Ab¨ Kw¤úDUv‡i †Uwj‡dvb e¨e¯’vi gva¨‡g †cŠu‡Q †`q|
+(L) AcwUK¨vj dvBevi K¨ve‡ji gva¨‡g Av‡jvi MwZ‡Z †WUv †cÖiY m¤¢e|
+AcwUK¨vj dvBevi n‡jv Kv‡Pi Zš‘i ˆZwi GK ai‡bi K¨vej hvi gva¨‡g
+Av‡jvi MwZ‡Z †WUv Av`vb-cÖ`vb Kiv nq| GB K¨ve‡ji ga¨ w`‡q †WUv
+¯’vbvšÍ‡ii †¶‡Î †jRvi iwk¥ e¨envi Kiv nq| Av‡jvi c~Y© Af¨šÍixY
+cÖwZdjb Kv‡R jvwM‡q AcwUK¨vj dvBevi KvR K‡i| G K¨ve‡ji we‡klZ¡
+n‡jv GwU B‡jKwUªK¨vj wmMb¨v‡ji cwie‡Z© Av‡jvK ev jvBU wmMb¨vj
+UªvÝwgU K‡i| Gi gva¨‡g Av‡jvi MwZ‡Z †WUv †cÖiY m¤¢e|
+Home page
+Page-2
+Page-5
+Page-1
+Page-4	Page-3
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 15
+(M) DÏxc‡Ki `„k¨Kí-1 Gi I‡qemvBU KvVv‡gvwU n‡jv nvqviviwKK¨vj ev wUª
+KvVv‡gv|
+I‡qemvBU KvVv‡gvi g‡a¨ nvqviviwKK¨vjB me‡P‡q mnR, RbwcÖq I
+hyw³c~Y©| †ewkifvM AbjvBb wm‡÷gB G c×wZ e¨envi K‡i| G ai‡bi
+KvVv‡gv‡Z g~j Topics Gi wj÷ A_ev †gby ˆZwi Kiv _v‡K Ges g~j
+Topics †_‡K Sub-Topics ˆZwi Kiv _v‡K| cÖwZwU Sub-Topics G
+wbw`©ó welq m¤ú‡K© Av‡jvPbv Kiv _v‡K| G ai‡bi KvVv‡gv e¨env‡ii
+gva¨‡g Z_¨ MÖn‡Yi †¶‡Î e¨enviKvix AwZwi³ ¯^vaxbZv †fvM K‡i _v‡K|
+wj‡¼i gva¨‡g Zv‡`i cÖ‡qvRb Abyhvqx mn‡RB I‡q‡ei GK †cBR †_‡K
+Avi GK †cB‡R Abvqv‡m †h‡Z cv‡ib Ges I‡qe †cBRwUi †Kvb As‡k
+wZwb Ae¯’vb Ki‡Qb Zv Rvbv Zvi c‡¶ mnRmva¨ nq| nvqviviwKK¨vj
+KvVv‡gvi †nvg‡cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i _v‡K|
+we¯ÍvwiZ Z‡_¨i Rb¨ wj¼ e¨envi K‡i †nvg †cBR †_‡K Ab¨vb¨ †cB‡R
+hvIqv hvq|
+(N) DÏxc‡Ki `„k¨Kí-2 †K I‡qe‡cB‡R cÖ`k©‡bi Rb¨ HTML Gi
+cÖ‡qvRbxq †KvWmg~n wb‡P ˆZwi Kiv n‡jv-
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr>
+<th> Roll </th>
+<th> Subject </th>
+</tr>
+<tr>
+<td> 201 </td>
+<td> Bangla </td>
+</tr>
+<tr>
+<td> 202 </td>
+<td> English </ td>
+</tr>
+<tr>
+<td> 203 </td>
+<td> ICT </td>
+</tr>
+</table>
+</body>
+</html>
+28| w``vi Test cix¶vi djvdj cÖ`k©‡bi Rb¨ wb‡Pi I‡qe‡cBRwU ˆZwi K‡i
+Ges test.html bv‡g †mf K‡i iv‡L:
+Test Result
+Roll 	Group 	Name 	Result
+image.
+jpg
+101 	Hum. 	Reza 	A+
+102 	Hum. 	Eva 	B
+103 	Hum. 	Jaber 	A–
+104 	Hum. 	Joni 	C [PÆMÖvg †evW© -2017]
+(K) I‡qemvBU Kx? 	1
+(L) HTML-Gi e¨env‡ii myweav eY©bv Ki| 	2
+(M) DÏxc‡Ki test.html dvBjwU ˆZwii Rb¨ HTML †KvW wjL| 3
+(N) Image.jpg Gi Dci wK¬K Ki‡j www.moedu.gov.bd
+I‡qemvBUwU cÖ`k©b Kivi html †KvW wj‡L I‡qe †cB‡R D³
+U¨v‡Mi f~wgKv we‡kølY Ki| 	4
+28 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †cB‡Ri mgwóB n‡jv I‡qemvBU|
+(L) HTML ev Hyper Text Markup Language n‡jv I‡qe †cBR
+†jLvi GKwU ¯^Zš¿ fvlv| HTML e¨env‡ii eûwea myweav i‡q‡Q| †hgb:
+1. HTML fvlv †kLv I di‡gwUs Kiv mnR|
+2. cÖvq me ai‡bi eªvDRvi mg_©b K‡i|
+3. GwU BDRvi †d«Ûwj| †cÖvMÖvwgs m¤ú‡K© aviYv †bB Ggb e¨w³I mn‡R
+wkL‡Z cv‡i|
+4. HTML G ˆZwi Kiv †h †Kv‡bv dvBj/mvBU‡K i¶Yv‡e¶Y I
+Avc‡WU Kiv hvq|
+5. HTML-G ˆZwi Kiv dvBj †jvW Ki‡Z mgqI Kg jv‡M|
+(M) DÏxc‡Ki test.html dvBjwU ˆZwii Rb¨ HTML †KvW:
+<!DOCTYPE html>
+<html>
+<body>
+<table border = "1">
+<tr>
+<th colspan = "4" align = "center"> Test Result </th>
+<td rowspan = "6"> <img src = "image.jpg"> </td>
+</tr>
+<tr>
+<th> Roll </th>
+<th> Group </th>
+<th> Name </th>
+<th> Result </th>
+</tr>
+<tr>
+<td>101 </td>
+<td>Hum </td>
+<td>> Raza </td>
+<td>> A+ </td>
+</tr>
+<tr>
+<td>102 </td>
+<td>> Hum. </td>
+<td>> Eva </td>
+<td>B</td>
+</tr>
+<tr>
+<td>103 </td>
+<td> Hum.</td>
+<td> Jaber </td>
+<td>> A– </td>
+</tr>
+<tr>
+<td>104 </td>
+<td> Hum. </td>
+<td>> Joni </td>
+<td> C </td>
+</tr>
+</table>
+</body>
+</html>
+(N) Image.jpg Gi Dci wK¬K Ki‡j www.moedu.gov.bd I‡qemvBUwU
+cÖ`k©b Kivi Rb¨ G‡`i g‡a¨ wj¼ Ki‡Z n‡e| wj¼ Kivi Rb¨ nvBcviwj¼
+A¨vwUªweDU ev <a href = "URL"> Link text </a> e¨envi Ki‡Z
+n‡e-
+<html>
+<body>
+<a href = http://www.moedu.gov.bd>
+<img src = "image.jpg" width = "50" height = "50"></a>
+</body>
+</html>
+GLv‡b A¨v¼i U¨vM <a> I B‡gR U¨vM <img> e¨eüZ n‡q‡Q| HTML
+U¨vM <a> Øviv nvBcviwj¼ ¯’vcb Kiv nq| U¨vM <a> Gi mv‡_ href
+A¨vwUªweDU †hvM Ki‡Z nq| Gi ïiæ nq <a> w`‡q Ges †kl nq </a>
+w`‡q|
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 16
+HTML †cB‡R B‡gR hy³ Kivi Rb¨ <img> U¨vM e¨eüZ nq| Image
+U¨v‡Mi mvnv‡h¨ Qwe‡K wj¼ †`Iqvi Rb¨ Sre A¨vwUªweD‡Ui gva¨‡g Qwei
+Drm wba©viY K‡i w`‡Z nq| <img> U¨v‡Mi ïiæ i‡q‡Q wKš‘ †kl †bB|
+29| cÖwgZv GKwU I‡qemvBU ˆZwii Rb¨ Home.html, Admission.html
+Ges Result.html bv‡g 3wU †cBR ˆZwi Kij| Result.html †cB‡R
+wbgœiƒc djvdj cÖ`wk©Z nq:
+Roll 	Name 	GPA
+101 	Karim 	5.00
+102 	Afrin 	4.75
+103 	Zakia 	4.50
+AZtci †m Home †cBR †_‡K Ab¨vb¨ †cB‡R hvIqvi e¨e¯’v Kij|
+wm‡jU †evW© -2017]
+(K) AvBwc A¨v‡Wªm Kx? 	1
+(L) †nvw÷s I‡qemvBU cvewj‡Kk‡bi GKwU ¸iæZ¡c~Y© avc- eywS‡q †jL| 2
+(M) Result.html †c‡Ri †UwejwU ˆZwii html †KvW wjL| 	3
+(N) cÖwgZvi me©‡kl M„nxZ e¨e¯’vi cÖ‡qvRbxqZv g~j¨vqb Ki| 	4
+29 bs cÖ‡kœi DËi
+(K) AvBwc A¨v‡Wªm n‡jv B›Uvi‡b‡U cÖwZwU Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv|
+(L) B›Uvi‡b‡U I‡q‡ei dvBj¸‡jv †Kv‡bv mvf©v‡i ivLv‡K I‡qe †nvw÷s ejv
+nq| I‡qe †nvw÷s n‡jv ¯’vb (A_©vr mvf©vi †¯úm) †hLv‡b †U·U, MÖvwd·,
+AwWI, wfwWI m¤^wjZ I‡qe †cB‡R ivLv nq| I‡qe †nvw÷s Qvov
+I‡qemvBU cÖ`wk©Z nq bv ZvB †nvw÷s I‡qemvBU cvewj‡Kk‡bi GKwU
+¸iæZ¡c~Y© avc|
+(M) Result.html †cB‡Ri †UwejwU ˆZwii HTML †KvW wb‡P †`Iqv n‡jv-
+<!DOCTYPE html>
+<html>
+<body>
+<table border = "1">
+<tr>
+<th> Roll </th>
+<th> Name </th>
+<th> GPA </th>
+</tr>
+<tr>
+<td>101 </td>
+<td> Karim </td>
+<td>500</td>
+</tr>
+<tr>
+<td> 102 </td>
+<td> Afrin </td>
+<td> 4.75 </td>
+</tr>
+<tr>
+<td>> 103 </td>
+<td> Zakia </td>
+<td> 4.50 </td>
+</tr>
+</table>
+</body>
+</html>
+(N) cÖwgZvi me©‡kl M„nxZ e¨e¯’vwU n‡”Q wj¼ ¯’vcb Kiv| wj¼ e¨e¯’vwU‡K
+nvBcviwj¼ ejv nq|
+wewfbœ ai‡bi Z_¨vewji †fZi fvP©yqvj ms‡hvM ¯’vcb Kivi e¨e¯’vB n‡”Q
+nvBcviwj¼| eZ©gv‡b GUv Qvov I‡qemvBU KíbvI Kiv hvq bv| KviY
+eZ©gv‡b cÖ‡Z¨KwU I‡qemvBU-Gi g~j UwcK&m wj÷ A_ev †gby ˆZwi K‡i
+Gi †_‡K mve-UwcKm ˆZwi Kiv nq †hLv‡b wbw`©ó Topics m¤ú‡K©
+Av‡jvPbv Kiv nq| G ÷ªvKPv‡ii †¶Î g~j welq w`‡q †gby ev wj÷ ˆZwi
+Ki‡Z nq| AZtci G g~j welq Gi wj÷ ev †gby †_‡K GKwU‡K m~Pbv ev
+c_ cÖ`k©K a‡i Avi GKwU mve UwcK&m ˆZwi Ki‡Z nq hv GKwU wbw`©ó
+welq m¤ú‡K© Av‡jvPbvi m~Pbv wn‡m‡e KvR K‡i| G ai‡bi wWRvBb
+e¨env‡ii gva¨‡g BDRvi‡`i Z_¨ MÖn‡Yi †¶‡Î AwZwi³ ¯^vaxbZv cÖ`vb
+Kiv hvq| djkÖæwZ‡Z BDRviiv †cBRwU e¨env‡ii †¶‡Î AwaK
+¯^v”Q›`¨‡eva K‡i| wj‡¼i gva¨‡g BDRviiv cÖ‡qvRb Abyhvqx mn‡RB
+I‡q‡ei GK †cBR †_‡K Ab¨ †cB‡R Abvqv‡m †h‡Z cvi‡e Ges I‡qe
+†cBRwUi †Kvb As‡k BDRvi Ae¯’vb Ki‡Q, Zv Rvbv Zvi R‡b¨ mnR‡eva¨
+n‡e| wUª wWRvB‡bi †¶‡Î †nvg †cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ
+msw¶ß AvKv‡i _v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i
+wUª-i cieZ©x †cBR¸‡jv‡Z hvIqv hvq|
+nvBcviwj¼-Gi e¨e¯’v bv _vK‡j I‡qemvB‡Ui †cB‡Ri Ae¯’v A‡bK eo
+n‡e| Zv‡Z A‡bK mgm¨v †`Lv †`‡e| GKwU eo dvBj WvDb‡jvW Ki‡Z
+mgq †ewk jvM‡e| Zv‡Z BDRviiv wei³ n‡e ZvQvov †Kv‡bv welq‡K Lyu‡R
+†c‡Z †¯Œvj Ki‡Z n‡e| †Kv‡bv wbw`©ó c‡q‡›U †bwf‡MU Kiv A‡bK K‡ói
+e¨vcvi A_ev nvBcviwj‡¼i gva¨‡g mn‡RB †mwU Kiv hvq| ZvQvov GKwU
+I‡qemvBU †_‡K Ab¨ I‡qemvB‡U †h‡ZI nvBcviwj¼ Qvov m¤¢e bq|
+myZivs ejv hvq I‡qemvB‡U nvBcviwj‡¼i cÖ‡qvRbxqZv A‡bK †ewk|
+30| `yB eÜy Avwbm Ges BKevj I‡qe‡cBR ˆZwii cÖwk¶Y †bq| Avwbm wPÎ-1
+Ges BKevj wPÎ-2 Gi KvVv‡gv †e‡Q wb‡q I‡qe‡cBR ˆZwi K‡i|
+[ewikvj †evW©-2017]
+(K) AvBwc A¨v‡Wªm Kx? 	1
+(L) I‡qe †c‡Ri mv‡_ eªvDRv‡ii m¤úK© e¨vL¨v Ki| 	2
+(M) BKev‡ji I‡qe †cBR ÷ªvKPvi kbv³ K‡i e¨vL¨v Ki| 	3
+(N) DÏxc‡Ki ÷ªvKPvi `ywUi g‡a¨ †KvbwUi e¨envi AwaK myweavRbK-
+we‡kølYc~e©K gZvgZ `vI| 	4
+30 bs cÖ‡kœi DËi
+(K) AvBwc A¨v‡Wªm n‡jv B›Uvi‡b‡U cÖwZwU Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv|
+(L) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv Iqvì© IqvBW I‡qe I
+B›Uvi‡bU eªvDRv‡i e¨env‡ii Rb¨ Dchy³| eªvDRv‡ii gva¨‡g B›Uvi‡b‡U
+I‡qe †cBR cÖ`k©‡bi KvR K‡i| c„w_exi wewfbœ †`‡ki mvf©v‡i ivLv I‡qe
+†cBR eªvDRv‡ii gva¨‡g cÖ`wk©Z nq| ZvB I‡qe †cBR I eªvDRvi G‡K
+Ac‡ii mv‡_ m¤úwK©Z|
+(M) BKev‡ji I‡qe †cBRwU n‡jv wjwbqvi KvVv‡gv| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i †`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| †cB‡Ri msL¨v Kg n‡j G ai‡bi KvVv‡gv Dc‡hvMx| G ai‡bi
+KvVv‡gv‡Z g~j †cBR †_‡K ïiæ n‡q WKz‡g‡›Ui cieZ©x avc¸‡jv m¤ú‡K©
+eY©bv K‡i| G ai‡bi †cBR¸‡jv‡Z mvaviYZ Next, Previous, Fast,
+Last BZ¨vw` wj¼ e¨envi Kiv n‡q _v‡K|
+(N) DÏxc‡K wPÎ-1 Gi ÷ªvKPviwU n‡jv wUª ev nvqvivwK©K¨vj ÷ªvKPvi Ges wPÎ-
+2 Gi ÷ªvKPviwU n‡jv wjwbqvi ÷ªvKPvi| G `ywU ÷ªvKPv‡ii g‡a¨ wPÎ-1
+A_©vr wUª ev nvqvivwK©K¨vj ÷ªvKPviwU e¨envi AwaK myweavRbK| G
+KvVv‡gv‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i _v‡K| we¯ÍvwiZ
+Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i cieZ©x †cBR¸‡jv‡Z hvIqv
+hvq| I‡qemvB‡Ui KvVv‡gvi g‡a¨ nvqvivwK©K¨vj KvVv‡gv me‡P‡q mnR I
+RbwcÖq| †ewki fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv e¨envi Kiv nq|
+G ai‡bi KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi K‡i mve-†gby ˆZwi
+Kiv n‡q _v‡K|
+31| DÏxcKwU jÿ Ki I wb‡Pi cÖkœ¸‡jvi DËi `vI|
+<html>
+<head> <title> ICT </title> </head>
+<body>
+<h3> COLLEGE RESULT </h3>
+<table>
+<tr>
+<th> Roll </th> <th> Name </th> <th> Result </th>
+1 	2 	3
+wPÎ-2
+wPÎ-1
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 17
+</tr>
+<tr>
+<td> 501 </td> <td> Sumaiya </td>
+<td> <a href = "Exam Result.html"> My Test
+Result </a> </td>
+</tr>
+</table>
+</body>
+</html> [w`bvRcyi †evW© -2017]
+(K) eªvDRvi Kx? 	1
+(L) ÒIP Address Gi †P‡q Domain Name e¨envi myweavRbKÓ-
+e¨vL¨v Ki| 	2
+(M) DÏxc‡Ki †gŠwjK KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxcKwU B›Uvi‡b‡U †`Lvi cÖ‡qvRbxq c`‡¶‡ci mc‡¶ †Zvgvi
+gZvgZ `vI| 	4
+31 bs cÖ‡kœi DËi
+(K) eªvDRvi n‡jv Iqvì© IqvBW I‡qe wi‡mvm© †_‡K Z_¨ Lyu‡R †ei Kiv,
+Dc¯’vcb Kiv Ges msi¶Y Kivi GKwU A¨vwcø‡Kkb mdUIq¨vi|
+(L) "IP Address Gi †P‡q Domain Name e¨envi myweavRbK| KviY IP
+Address Gi Rb¨ msL¨v g‡b ivLv KóKi| ZvB IP Address †K mn‡R
+e¨envi‡hvM¨ Kivi Rb¨ Bs‡iwR A¶‡ii †Kvb bvg e¨envi Kiv nq|
+K¨v‡i±vi d‡g©i †`qv Kw¤úDUv‡ii Giƒc bvg‡K †Wv‡gBb †bg e‡j| †hgb
+AvBwc 	G¨v‡Wªm 	173.248.140.183 	Gi 	cwie‡Z©
+www.facebook.com †Wv‡gBb †bg e¨envi Kiv hvq|
+(M) DÏxc‡Ki †KvWwU HTML fvlvq wjLv n‡q‡Q| wb‡P HTML Gi †gŠwjK
+KvVv‡gv e¨vL¨v Kiv n‡jv-
+HTML U¨vM: HTML Gi hveZxq Gwj‡g›U ivL‡Z n‡e GKwU g~j
+Gwj‡g‡›Ui †fZ‡i| †mwU n‡”Q html.
+Head U¨vM: †n‡Wi †fZ‡i I‡qe †cBR m¤ú‡K© Z_¨ †`Iqv, wewfbœ
+†mwUsm wVK Kiv, ÷vBj, w¯ŒÞ Gme wbqš¿Y Kiv BZ¨vw` KvR Kiv nq|
+Title U¨vM: <head> U¨v‡Mi †fZ‡i <title> U¨vM wjL‡Z nq| G U¨v‡Mi
+gv‡S hv wKQy †jLv nq Zv eªvDRv‡ii UvB‡Uj ev‡i †`Lv hvq|
+Body U¨vM: I‡qe †cB‡Ri `„k¨gvb mewKQy †`Iqv nq ewWi †fZ‡i|
+GKwU I‡qe †cB‡Ri hveZxq Kb‡U›U (Image, Text, Table, Form,
+Frame, Paragraph, Heading etc.) GB †mKk‡b wjL‡Z nq|
+(N) DÏxcKwU B›Uvi‡b‡U †`Lvi cÖ‡qvRbxq c`‡¶c n‡”Q I‡qemvBU cvewjwks|
+wb‡P I‡qemvBU cvewjwks Gi mc‡¶ Avgvi gZvgZ †`Iqv n‡jv-
+I‡qemvBU Ggb GKwU Kw¤úDUv‡i ivL‡Z nq, †hb †mB Kw¤úDUviwU
+me©¶Y mPj _v‡K Ges B›Uvi‡b‡Ui m‡½ hy³ _v‡K| †mB m‡½ Av‡iKwU
+wRwbm _vK‡Z nq, hv‡K e‡j cvewjK AvBwc A¨v‡Wªm (IP Address)|
+GwU n‡”Q B›Uvi‡b‡U IB Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv| e¨w³MZ Kv‡R
+†hme Kw¤úDUvi e¨envi Kiv nq, †mLv‡b Aek¨ B›Uvi‡bU ms‡hvM _vK‡jI
+wbw`©ó cvewjK AvBwc A¨v‡Wªm _v‡K bv| B›Uvi‡bU ms‡hvM`vZv cÖwZôv‡bi
+m‡½ †hvMv‡hvM K‡i cvewjK AvBwc A¨v‡Wªm msMÖn Kiv hvq| Z‡e †KDB
+Zvi e¨w³MZ Kw¤úDUvi 24 NÈv Pvjy ivL‡e bv, ZvB wewfbœ cÖwZôvb I‡qe
+†nvw÷s †mev cÖ`vb K‡i, †hLv‡b I‡qemvBU ivLv I cvewjk Kiv hvq|
+AvBwc A¨v‡Wªm e¨envi K‡i I‡qemvBU eªvDR Kiv †M‡jI †KD ev¯Í‡e
+AvBwc A¨v‡Wªm g‡b iv‡L bv| ZvB I‡qemvB‡U †Wv‡gBb bvg e¨envi Kiv
+nq| B›Uvi‡b‡U †Wv‡gBb bvg wKb‡Z cvIqv hvq| Z‡e †h †Wv‡gBb bvg
+GL‡bv †KD wK‡b †d‡jwb, †m¸‡jvB †Kej †Kbv hv‡e| Zvici †Wv‡gBb
+bv‡gi m‡½ I‡qe †nvw÷s mvf©v‡ii GKwU ms‡hvM cÖwZôv Ki‡Z nq| Zvn‡j
+†KD I‡qe eªvDRv‡ii A¨v‡Wªm ev‡i IB †Wv‡gBb bvg wj‡L G›Uvi wK Pvc‡j
+DÏxcKwU B›Uvi‡b‡U †`L‡Z cv‡e|
+A_©vr, Dc‡iv³ c`‡¶c¸‡jv MÖnY Ki‡j DÏxcKwU B›Uvi‡b‡U †`Lv hv‡e
+e‡j Avwg g‡b Kwi|
+32| KwigbMi gv`ivmv I‡qemvB‡U Aa¨¶ I wk¶KgÐjxi Qwe Qvov ZvwjKv
+†`Iqv Av‡Q| m¤úªwZ wk¶v gš¿Yvj‡qi Pvwn`v †gvZv‡eK Aa¨¶ g‡nv`q
+Qwemn I‡qemvBU cvewjk Kivi Rb¨ ICT wk¶K‡K ej‡j, wZwb Rvbv‡jb
+eZ©gvb Ae¯’vq gv`ivmvi I‡qemvB‡U Qwe Avc‡jvW Kiv m¤¢e bq| D³
+mgm¨v mgvav‡bi Rb¨ Aa¨¶ g‡nv`q ICT wk¶K‡K we‡kl‡Ái civgk©
+†bIqvi Rb¨ wb‡`©k w`‡jb| 	[gv`ªvmv †evW© -2017]
+(K) K¬v‡q›U mvf©vi Kx? 	1
+(L) Ò†Uw÷s I wWevwMs GK bq|Ó -eY©bv Ki| 	2
+(M) DÏxc‡Ki Av‡jv‡K gv`ªvmvi I‡qemvBUwUi eZ©gvb Ae¯’v eY©bv Ki| 3
+(N) mgm¨v mgvav‡b we‡kl‡Ái gZvgZ Kxiƒc n‡Z cv‡i-civgk© `vI| 4
+32 bs cÖ‡kœi DËi
+(K) †Kw›`ªqfv‡e †WUv †÷vi, wbivcËv wbwðZ Kiv, wewfbœ A¨vwcø‡Kkb Pvjv‡bv
+Ges †bUIqvK© Pvjv‡bvi GKwU Dchy³ †bUIqvK© n‡jv- K¬v‡q›U mvf©vi
+†bUIqvK©|
+(L) †Uw÷s I wWevwMs GK bq| KviY- †Uw÷s n‡”Q †Kvb †cÖvMÖvg †KvwWs m¤úbœ
+Kivi ci †cÖvMÖvgwUi †h ai‡bi AvDUcyU ev djvdj nIqv DwPZ Zv wVK
+g‡Zv Avm‡Q wK-bv ev ivb Ki‡Q wK-bv Zv hvPvB Kiv| Aciw`‡K †cÖvMÖv‡g
+†h †Kv‡bv f~j wPwýZ K‡i evM (Bug) K‡i wWevM (Debug) Kiv|
+(M) DÏxc‡Ki gv`ªvmvi I‡qemvB‡U †h‡nZz Aa¨¶ g‡nv`‡qi Qwe Avc‡jvW Kiv
+m¤¢e bq, weavq eZ©gv‡b I‡qemvBUwU ÷¨vwUK Ae¯’vq i‡q‡Q| A_©vr GwU
+GKwU ÷¨vwUK I‡qemvBU| †hme I‡qe mvB‡Ui †WUvi gvb I‡qe‡cBR
+†jvwWs ev Pvjy Kivi ci cwieZ©b Kiv hvq bv, Zv‡K ÷¨vwUK I‡qemvBU
+e‡j| G ai‡bi I‡qe †cBR ev I‡qe mvBU ïaygvÎ HTML fvlv w`‡q
+ˆZwi nq| d‡j e¨enviKvix wbw`©ó Kb‡U›U e¨ZxZ Ab¨ †Kv‡bv wKQy †hgb-
+Qwe, †cÖvdvBj, AwWI Ges wfwWI Avc‡jvW Ki‡Z cv‡i bv| †Kv‡bv iKg
+†WUv‡e‡Ri ms‡hvM _v‡K bv| ZvB wk¶v gš¿Yvj‡qi Pvwn`v †gvZv‡eK
+Aa¨¶ g‡nv`‡qi Qwe AvBwmwU wk¶K Avc‡jvW Ki‡Z cv‡i wb|
+(N) DÏxc‡Ki mgm¨v mgvav‡b we‡kl‡Ái gZvgZ WvBbvwgK I‡qemvBU n‡Z
+cv‡i †Kbbv G ai‡bi I‡qemvBUwU cÖwZôv‡bi Pvwn`v Abyhvqx cwieZ©b n‡q
+cÖ`wk©Z nq| eZ©gv‡b WvBbvwgK I‡qemvB‡Ui Pvwn`v me‡P‡q †ewk| ivb
+UvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i| †WUv‡eR
+Kz‡qwii gva¨‡g wewfbœ cwieZ©bkxj Kb‡U›U ˆZwi Kiv hvq| e¨enviKvix‡`i
+wbKU n‡Z BbcyU †`Iqvi e¨e¯’v _v‡K| A‡bK †ewk Z_¨eûj nq| ZvQvov
+AvKl©Yxq I B›UviA¨vKwUf †j-AvDU ˆZwi Kiv hvq| WvBbvwgK I‡qemvBU
+ˆZwi Ki‡Z †cÖvMÖvwgs j¨vs¸‡qR wn‡m‡e Javascript, PHP, Net, ASP
+BZ¨vw` e¨eüZ nq| †WUv‡e‡Ri mv‡_ I‡qemvBU hy³ Kivi Rb¨ MS
+Access, My SQL (My Structured Query Language) e¨envi
+Kiv nq| d‡j cÖwZôv‡bi Pvwn`v †gvZv‡eK ms‡hvRb I ms‡kvab Ki‡Z
+cvi‡e|
+33| wb‡Pi DÏxcKwU jÿ Ki-
+`„k¨Kí-1
+`„k¨Kí-2
+ïf I‡qe †cBR ˆZwii cÖwk¶Y †bq| †m wb‡Ri cwiPq I Qwe msewjZ
+GKwU I‡qe †cBR ˆZwi K‡i Zv eªvDRv‡i ivb K‡i wb‡Ri Kw¤úDUv‡i
+†`‡L| †m Zvi I‡qe †cBRwU‡K AviI Z_¨ mg„× K‡i shouvo.net bv‡g
+Pvjy Kivi wm×všÍ †bq| ïf Zvi eÜy ivûj‡K G K_v ej‡j †m e‡j, ÒAvR
+iv‡ZB B›Uvi‡b‡U †Zvgvi I‡qe †cBR †`LeÓ| Rev‡e ïf e‡j, ÒGLbB
+†`L‡Z cv‡e bv| Avgv‡K AviI wKQy cvewjwks-Gi KvR Ki‡Z n‡e|Ó
+[XvKv †evW© -2016]
+(K) I‡qemvBU Kx? 	1
+(L) I‡qe †cB‡Ri mv‡_ eªvDRv‡ii m¤úK© e¨vL¨v Ki| 	2
+(M) `„k¨Kí-1 G I‡qemvB‡Ui KvVv‡gvwU e¨vL¨v Ki| 	3
+(N) `„k¨Kí-2 G ïfi Dw³i †hŠw³KZv we‡kølY Ki| 	4
+Home Page
+P-2
+P-1 P-3
+P-4
+P-5
+P-6
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 18
+33 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †cB‡Ri mgwóB n‡jv I‡qemvBU|
+(L) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv Iqvì© IqvBW I‡qe I
+B›Uvi‡bU eªvDRv‡i e¨env‡ii Rb¨ Dchy³| eªvDRv‡ii gva¨‡g B›Uvi‡b‡U
+I‡qe †cBR cÖ`k©‡bi KvR K‡i| c„w_exi wewfbœ †`‡ki mvf©v‡i ivLv I‡qe
+†cBR eªvDRv‡ii gva¨‡g cÖ`wk©Z nq| I‡qe eªvDRvi GKRb e¨enviKvix‡K
+`ªæZ Ges mn‡R I‡qe †cB‡Ri mv‡_ Z_¨ Av`vb-cÖ`v‡b mvnv‡h¨ K‡i| ZvB
+I‡qe †cBR I eªvDRvi G‡K Ac‡ii mv‡_ m¤úwK©Z|
+(M) DÏxc‡Ki `„k¨Kí n‡jv:
+D³ KvVv‡gvwU wUª ev nvqviviwKK¨vj KvVv‡gv| wUª KvVv‡gv‡Z mg¯Í
+WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i _v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg
+†cB‡R wj¼ e¨envi K‡i cieZ©x †cBR¸‡jv‡Z hvIqv hvq| I‡qemvB‡Ui
+KvVv‡gvi g‡a¨ nvqvivivwKK¨vj KvVv‡gv me‡P‡q mnR I RbwcÖq| †ewki
+fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv e¨envi Kiv nq| G ai‡bi
+KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi K‡i mve-‡gby ˆZwi Kiv n‡q
+_v‡K| I‡qe mvBUwfwËK g¨vMvwRb covi †¶‡Î GwU GKwU Av`k© KvVv‡gv|
+Gi Ab¨Zg ˆewkó¨ n‡jv wj‡¼i gva¨‡g e¨enviKvixiv Lye mn‡RB I‡q‡ei
+GK †cBR †_‡K Ab¨ †cB‡R †h‡Z cv‡i Ges †cBRwUi †Kvb As‡k
+BDRvi Ae¯’vb Ki‡Q Zv Zvi Rb¨ Rvbv mnR‡eva¨ nq|
+(N) DÏxc‡K `„k¨Kí-2 Gi ïfi Dw³i †hŠw³KZv h_vh_| KviY my›`i,
+AvKl©Yxq Ges A_©c~Y© I‡qe †cBR ˆZwi ev I‡qe wWRvBwbs Ki‡Z n‡j
+wbw`©ó μg AbymiY K‡i KvR Ki‡Z n‡e| G‡¶‡Î wb‡Pi c`‡¶c¸‡jv
+AbymiY Ki‡Z n‡e|
+I‡qemvBU Ggb GKwU Kw¤úDUv‡i ivL‡Z nq, †hb †mB Kw¤úDUviwU
+me©¶Y mPj _v‡K Ges B›Uvi‡b‡Ui m‡½ hy³ _v‡K| †mB m‡½ Av‡iKwU
+wRwbm _vK‡Z nq, hv‡K e‡j cvewjK AvBwc A¨v‡Wªm (IP Address)|
+GwU n‡”Q B›Uvi‡b‡U H Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv| e¨w³MZ Kv‡R
+†hme Kw¤úDUvi e¨envi Kiv nq, †mLv‡b Aek¨ B›Uvi‡bU ms‡hvM _vK‡jI
+wbw`©ó cvewjK AvBwc A¨v‡Wªm _v‡K bv| B›Uvi‡bU ms‡hvM`vZv cÖwZôv‡bi
+m‡½ †hvMv‡hvM K‡i cvewjK AvBwc A¨v‡Wªm msMÖn Kiv hvq| Z‡e †KDB
+Zvi e¨w³MZ Kw¤úDUvi 24 NÈv Pvjy ivL‡e bv, ZvB wewfbœ cÖwZôvb I‡qe
+†nvw÷s †mev cÖ`vb K‡i, †hLv‡b I‡qemvBU ivLv I cvewjk Kiv hvq|
+AvBwc A¨v‡Wªm e¨envi K‡i I‡qemvBU eªvDR Kiv †M‡jI †KD ev¯Í‡e
+AvBwc A¨v‡Wªm g‡b iv‡L bv| ZvB I‡qemvB‡U †Wv‡gBb bvg e¨envi Kiv
+nq| B›Uvi‡b‡U †Wv‡gBb bvg wKb‡Z cvIqv hvq| Z‡e †h †Wv‡gBb bvg
+GL‡bv †KD wK‡b †d‡jwb, †m¸‡jvB †Kej †Kbv hv‡e| Zvici †Wv‡gBb
+bv‡gi m‡½ I‡qe †nvw÷s mvf©v‡ii GKwU ms‡hvM cÖwZôv Ki‡Z nq| Zvn‡j
+†KD I‡qe eªvDRv‡ii A¨v‡Wªm ev‡i H †Wv‡gBb bvg wj‡L G›Uvi wK Pvc‡j
+I‡qe †cBRwU B›Uvi‡b‡U †`L‡Z cv‡e|
+D³ KvR¸‡jv m¤ú~Y©fv‡e †kl n‡jB B›Uvi‡b‡U I‡qe †cBR †`Lv hv‡e|
+myZivs ïfi Dw³wU †hŠw³K|
+34| Av‡jvi †mvcvb we`¨vjq KZ©…c¶ GKwU I‡qemvBU ‰Zwii K_v fve‡Q| †nvg
+†c‡R "ampus.JPG" bvgK GKwU Qwe, Information Technology,
+Physical Science 4 Biological Science kvLv¸‡jvi μgvbyewZ©
+ZvwjKv Ges "Notice Board" bvgK GKwU wj¼ _vK‡e| KZ©…c¶ GKwU
+mdUIq¨vi dv‡g©i wZbRb we‡klÁ‡K WvK‡jb| we‡klÁ `j `yB ai‡bi
+mgvavb w`‡jb| cª_g c×wZ‡Z LiP Kg wKš‘ wbqwgZ †WUv Avc‡WU Ki‡Z
+mgm¨v n‡e| wØZxq c×wZ‡Z LiP †ewk wKš‘ wbqwgZ †WUv Avc‡WU Kiv
+hv‡e| 	[ivRkvnx †evW© -2016]
+(K) Tag Kx? 	1
+(L) "www.mangoinfo.com" e¨vL¨v Ki | 	2
+(M) DÏxc‡K D‡jøwLZ †nvg †cBR ‰Zwii Rb¨ HTML †KvW wjL| 3
+(N) we‡klÁ `‡ji mgvavbØ‡qi g‡a¨ †KvbwU Av‡jvi †mvcvb we`¨vj‡qi
+Rb¨ DËg? we‡kølYc~e©K gZvgZ `vI| 	4
+34 bs cÖ‡kœi DËi
+(K) U¨vM n‡jv “< >” eÖv‡K‡Ui g‡a¨ Aew¯’Z mywbw`©ó †Kv‡bv wb‡`©‡ki
+mvs‡KwZK wPý ev kã|
+(L) "www.mangoinfo.com" GKwU †Kv¤úvwbi I‡qe A¨v‡Wªm| I‡qe
+A¨v‡Wªm‡K †Wv‡gBb †bg bv‡g AwfwnZ Kiv nq| †Wv‡gBb †bg Ggb GKwU
+mvf©vi Kw¤úDUvi hv B›Uvi‡b‡Ui mv‡_ hy³ _v‡K| GB bvg e¨envi K‡i
+†Kv¤úvwbi I‡qemvBU Lyu‡R cv‡e| GKwU †Wv‡gB‡bi `yB ev Z‡ZvwaK Ask
+_v‡K| cÖwZwU Ask‡K (WU) Øviv fvM Kiv nq| A_©vr
+www. 	mangoinfo. 	com
+↓ 	↓ 	↓
+Host name Third
+level domain
+Second level domain
+GLv‡b †Kv¤úvwbi ev
+cÖwZôv‡bi bvg †`Iqv _v‡K
+Top level domain
+‡Kv¤úvwb ev cÖwZôv‡bi
+aib
+(M) DÏxc‡K DwjøwLZ ÒAv‡jvi †mvcvbÓ we`¨vj‡qi KZ©…c‡¶i I‡qemvBU
+ˆZwii j‡¶¨ DwjøwLZ Z_¨ msewjZ †nvg‡cBR ˆZwii Rb¨ wb‡gœ HTML
+†KvW †jLv n‡jv :
+<! DOCTYPE html>
+<html>
+<head>
+<title> Alor Sopan School</title>
+</head>
+<body>
+<img src="campus.jpg" width="100" height="100">
+<ol>
+<li>information Technology</li>
+<li>physical Science</li>
+<li>Biological Science</li>
+</ol>
+<a href=" Notice Board.html">Notice Board</a>
+</body>
+</html>
+(N) DÏxc‡K DwjøwLZ we‡klÁ `‡ji mgvavbØ‡qi g‡a¨ "Av‡jvi †mvcvb"
+we`¨vj‡qi Rb¨ wØZxq c×wZwU DËg| GB c×wZwU n‡jv WvBbvwgK
+I‡qemvBU| G c×wZwU DËg KviY, G‡¶‡Î I‡qemvBU¸‡jv e¨enviKvixi
+Pvwn`v Abyhvqx cwieZ©b n‡q cÖ`wk©Z nq| eZ©gv‡b WvBbvwgK I‡qemvB‡Ui
+Pvwn`v me‡P‡q †ewk| ivb UvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U
+cwieZ©b n‡Z cv‡i| †WUv‡eR Kz‡qwii gva¨‡g wewfbœ cwieZ©bkxj Kb‡U›U
+ˆZwi Kiv hvq| e¨enviKvix‡`i wbKU n‡Z BbcyU †`Iqvi e¨e¯’v _v‡K|
+A‡bK †ewk Z_¨eûj nq| ZvQvov AvKl©Yxq I B›UviA¨vKwUf †j-AvDU
+ˆZwi Kiv hvq| WvBbvwgK I‡qe †cBR ˆZwi Ki‡Z †cÖvMÖvwgs j¨vs¸‡qR
+wn‡m‡e Javascript, PHP, Net, ASP BZ¨vw` e¨eüZ nq| †WUv‡e‡Ri
+mv‡_ I‡qemvBU hy³ Kivi Rb¨ MS Access, MySQL My
+Structured Query Language) e¨envi Kiv nq|
+Ab¨w`‡K, ÷¨vwUK I‡qe †cBR AcwiewZ©Z A_©vr c~e© †_‡K ˆZwiK…Z wKQy
+Z_¨ cÖ`k©b Kiv _v‡K Ges cÖwZeviB GKB Z_¨ cÖ`vb K‡i| GKgvÎ hLb
+I‡qe †Wfjcvi dvB‡j cwieZ©b K‡ib ZLbB cwieZ©b †`Lvq| G I‡qe
+†cB‡R me e¨enviKvixi Kv‡Q GKB Z_¨ cÖ`wk©Z nq| G ai‡bi †cBR
+ˆZwi Kiv mnR wKš‘ Avc‡WU Kiv KwVb| †QvU ai‡bi †Kv¤úvwb Zv‡`i Z_¨
+cÖ`k©‡bi Rb¨ mvaviYZ ÷¨vwUK I‡qemvBU ˆZwi Kiv nq|
+myZivs Av‡jvi †mvcvb we`¨vj‡qi Rb¨ WvBbvwgK I‡qemvBUwUB DËg|
+35| wb‡Pi DÏxcKwU j¶ Ki:
+[h‡kvi †evW© -2016]
+(K) mvP© BwÄb Kx? 	1
+(L) †Wv‡gBb †bBg G www _v‡K †Kb? e¨vL¨v Ki| 	2
+(M) DÏxc‡Ki Aby‡”Q`wU I‡q‡e cÖKv‡ki cª‡qvRbxq U¨vMmg~n e¨vL¨v Ki|
+3
+(N) DÏxc‡K Aby‡”Q`wU evsjvq ˆZwi Kivi KiYxq welqmg~n ms‡¶‡c
+Av‡jvPbv Ki| 	4
+Home Page
+P-2	P-1
+P-3 	P-4 	P-5 	P-6
+This is my home page
+Bangladesh is land of
+rivers and cannals
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 19
+35 bs cÖ‡kœi DËi
+(K) mvP© BwÄb n‡”Q Ggb GK ai‡bi Uzj hvi mvnv‡h¨ B›Uvi‡b‡Ui ARmª I‡qe
+mvf©vi †_‡K mn‡RB †h‡Kv‡bv Z_¨ Lyu‡R ‡ei Kiv hvq|
+(L) GKB †Wv‡gBb †b‡gi Aax‡b m¤úK©hy³ GKvwaK I‡qe †cBR _v‡K|
+mvf©v‡ii mgš^‡q MwVZ GK wekvj †bUIqvK© hv mviv we‡k¦i mg¯Í I‡qe
+†cB‡Ri msMÖn _v‡K| www ev world wide web n‡”Q c„w_exi wewfbœ
+†`‡ki mvf©v‡i ivLv ci¯ú‡ii ms‡hvM‡hvM¨ webpage hv B›Uvi‡b‡Ui
+gva¨‡g I‡qe eÖvDRvi mdUIq¨vi e¨envi K‡i †`Lv hvq| GRb¨ †Wv‡gBb
+†bB‡g www _v‡K|
+(M) DÏxc‡Ki Aby‡”Q`wU I‡q‡e cÖKv‡ki cª‡qvRbxq U¨vMmg~n wbP †`Iqv n‡jv-
+<html>
+<body>
+<p><b><u>This is my home page</u></b><br>
+Bangladesh is a land <br> of <br> rivers and canals. </p>
+</body>
+</html>
+Dc‡iv³ †Kv‡W e¨eüZ U¨vMmg‚n wb‡P e¨vL¨v Kiv n‡jv-
+HTML U¨vM: cÖ‡Z¨K HTML WKz‡g‡›U Aek¨B dvB‡ji ïiæ‡Z
+<html> U¨vM Ges dvB‡ji †k‡l </html> U¨vM wjL‡Z nq| Ab¨vb¨
+Z_¨¸‡jv Gi †fZ‡i hv‡”Q|
+Body U¨vM: †cB‡Ri Kb‡U›U, †U·U, B‡gR Ges wjsK BZ¨vw` G As‡k
+_v‡K| eÖvDRv‡ii G As‡k _vKv me Z_¨vw` e¨enviKvix‡K †`Lvq|
+Paragraph U¨vM: HTML G cÖ`wk©Z wbw`©ó WKz‡g›U‡K Paragraph
+AvKv‡i cÖKvk Ki‡Z <p> U¨vM e¨eüZ nq| Bold U¨vM: HTML G
+cÖ`wk©Z wbw`©ó WKz‡g›U‡K bold Ki‡Z <b> U¨vM e¨eüZ nq|
+Underline U¨vM: HTML G cª`wk©Z wbw`©ó WKz‡g›U‡K underline
+Ki‡Z <u> U¨vM e¨eüZ nq|
+Break U¨vM: HTML WKz‡g‡›U †h‡Kv‡bv jvB‡bi gv‡Si †Kvb Ask‡K
+†f‡½ bZzb jvBb ˆZwi Ki‡Z <hr> U¨vM e¨eüZ nq|
+(N) DÏxc‡K †h AvDUcyUwU †`Lv‡bv n‡q‡Q Zv hw` evsjvq †c‡Z PvB Zvn‡j Gi
+Abyev` Ki‡j nq ÒGwU Avgvi †nvg †cBRÓ| wKš‘ G‡K mivmwi HTML
+G †jLv hv‡e bv| wb‡Pi c`‡¶c¸‡jv wb‡Z n‡e|
+1. †Kv‡bv †U·U GwWUi †hgb Microsoft Word (Ms Word) GB K_vwU
+evsjvq wjL‡Z n‡e|
+2. Gici H †jLvwU Kwc K‡i †KvW wj‡L <font face = Gici †h d‡›U
+†jLvwU UvBc Kiv n‡qwQj †m d›UwUi bvg Bbfv‡U©W Kgvi †fZi wjL‡Z
+n‡e Ges Ctrl+V Kx †P‡c †jLvwU Paste Ki‡Z n‡e| †hgb-
+<!DOCTYPE html>
+<html>
+<body>
+<font face = "sutonnyMJ"> GwU Avgvi †nvg †cBR
+<font face="sutonnyMJ">
+</font>
+</body>
+</html>
+Zvn‡jB AvDUcy‡U evsjv †jLv †`Lv‡e|
+36| AvBwmwU wk¶K Avmgv g¨vWvg I‡qe‡cBR ˆZwii Rb¨ wk¶v_©x‡`i wb‡Pi
+wP‡Îi g‡Zv I‡qe‡cBR KvVv‡gvi civgk© w`‡jb| wk¶v_©x‡`i g‡a¨ Anbv
+wPÎ-1 Ges AwiÎ wPÎ-2 bs KvVv‡gv †e‡Q wb‡q I‡qe‡cBR ˆZwi Kij|
+[Kzwgjøv †evW© -2016]
+(K) †nvg †cBR Kx? 	1
+(L) I‡qe‡cBR wWRvB‡b HTML Gi ¸iæZ¡ e¨vL¨v Ki| 	2
+(M) Anbvi I‡qe †cBR ÷ªvKPviwU kbv³ K‡i e¨vL¨v Ki| 	3
+(N) DÏxc‡K ÷ªvKPvi `ywUi g‡a¨ AwiÎ'i ÷ªvKPviwU ¯^v”Q‡›`¨ e¨envi Kiv
+hvq we‡kølYc~e©K gZvgZ `vI| 	4
+36 bs cÖ‡kœi DËi
+(K) ‡nvg‡cBR n‡jv GKwU I‡qe †cB‡Ri †K›`Öxq ev g~j Ask hv †Kv‡bv
+I‡qemvB‡U cÖ‡ek Ki‡j me©cÖ_g cÖ`wk©Z nq|
+(L) I‡qe †cBR wWRvB‡b GBPwUGgGj Gi A‡bK ¸iæZ¡ i‡q‡Q| KviY
+GBPwUGgG‡ji mvnv‡h¨-
+1. †Kv‡bv †cB‡Ri Z_¨‡K †h‡Kv‡bv ¯’v‡b miv‡bv hvq|
+2. cÖwZwU eÖvDRvi HTML mg_©b K‡i|
+3. †kLv I e¨envi Kivi c×wZ mnR|
+4. †cB‡Ri mvBR Kg nIqvq LiP Kg c‡o|
+(M) DÏxc‡K DwjøwLZ Anbvi I‡qe †cBRwU A_©vr wPÎ-1 n‡jv wjwbqvi KvVv‡gv
+ev wmKz‡qÝ mvBU ÷ªvKPvi| wmKz‡qÝ mvBU ÷ªvKPvi n‡jv GKwU
+I‡qemvB‡Ui †cBR¸‡jv wbw`©ó wmKz‡qÝ Abymv‡i wfwRU Kiv| G ai‡bi
+÷ªvKPv‡i I‡qe †cB‡Ri Z_¨¸‡jv mvwie×fv‡e GKwUi ci GKwU wj¼ Kiv
+_v‡K| †Kvb †cB‡Ri ci †Kvb †cBR Avm‡e Zv I‡qe †cBR wWRvBb
+Kivi mgq wVK Kiv n‡q _v‡K| G ai‡bi †cBR¸‡jv‡Z mvaviYZ Next,
+Previous, Last, First BZ¨vw` wj¼ e¨envi Kiv nq| wjwbqvi KvVv‡gv ev
+wmKz‡qÝ mvBU ÷ªvKPvi n‡jv I‡qemvBU wWRvBb ÷ªvKPv‡ii g‡a¨ me‡P‡q
+mnR| G c×wZ‡Z †cBR¸‡jv GKwUi ci Av‡iKwU Gfv‡e wmKz‡qÝ AW©vi
+Abzhvqx wj¼ Kiv _v‡K|
+(N) DÏxc‡K DwjøwLZ Anbvi I‡qe †cBRwU n‡jv wjwbqvi KvVv‡gv Ges AwiÎ
+Gi I‡qe †cBRwU n‡jv wUª ev nvqvivwK©K¨vj KvVv‡gv| GB `ywU I‡qe †cBR
+Gi g‡a¨ AwiÎ Gi I‡qe †cBRwU ¯^v”Q‡›`¨ e¨envi Kiv hvq|
+wUª ev nvqvivwK©K¨vj KvVv‡gv‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ, msw¶ß AvKv‡i
+_v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i cieZ©x
+†cBR¸‡jv‡Z hvIqv hvq| I‡qemvB‡Ui, KvVv‡gvi g‡a¨ nvqvivwK©K¨vj
+KvVv‡gv me‡P‡q mnR I RbwcÖq| G c×wZ‡Z I‡qemvB‡Ui wewfbœ
+kvLv¸‡jv‡K Avjv`vfv‡e mshy³ Kiv n‡q _v‡K| †nvg‡cBR, mve-‡gby I
+Ab¨vb¨ †cB‡Ri wj¼ _v‡K| G‡Z K‡i I‡qemvB‡Ui wfwRUiiv mn‡RB
+eyS‡Z cv‡i †Kvb As‡k Zvi cÖ‡qvRbxq Z_¨¸‡jv i‡q‡Q| wewfbœ cÖwZôv‡bi
+I‡qemvBU †hgb- †Kv‡bv ¯‹zj, K‡jR ev e¨emvwqK cÖwZôv‡bi I‡qemvBU
+G ai‡bi n‡q _v‡K| †ewki fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv
+e¨envi Kiv nq| G ai‡bi KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi
+K‡i mve-‡gby ˆZwi Kiv n‡q _v‡K|
+37| 'X' cÖwZôv‡bi †nvg †cB‡R cÖwZôv‡bi cÖkvmwbK fe‡bi Qwe †`Iqv Av‡Q|
+Employee.html I Product.html bv‡g `y'wU I‡qe‡cBR †nvg
+†cB‡Ri mv‡_ wj¼ Kiv Av‡Q| I‡qemvBUwU B›Uvi‡b‡U _vK‡j we‡k¦i
+m‡PZb gvbyl cÖwZôvb m¤ú‡K© Rvb‡Z cvi‡e|
+[PUªMÖvg †evW© -2016]
+(K) URL Kx? 	1
+(L) ÒcÖwZwbqZ cwieZ©bkxj Z‡_¨i I‡qemvBUÓ e¨vL¨v Ki| 	2
+(M) DÏxc‡K DwjøwLZ cÖwZôvbwUi †nvg †cBR ˆZwii html †KvW †jL| 3
+(N) DÏxc‡Ki Av‡jv‡K m‡PZb gvby‡li `„wó‡MvPi Kivi cÖ‡qvRbxq
+c`‡¶c Kx n‡Z cv‡i? hyw³mn e¨vL¨v Ki| 	4
+37 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡Ui I‡qe †cBR¸‡jv‡K †h mvf©v‡i ivLv nq Zvi GKwU wbw`©ó
+BDwbK A¨v‡WÖm _v‡K, hv‡K URL (Uniform Resource Locator) ev
+I‡qe A¨v‡Wªm e‡j|
+(L) cÖwZwbqZ cwieZ©bkxj Z‡_¨i I‡qemvBU n‡jv WvBbvwgK I‡qemvBU| G
+ai‡bi I‡qemvB‡Ui Pvwn`v me‡P‡q †ewk| ivb UvB‡gi mgq †cB‡Ri
+wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i| †WUv‡eR Kz‡qwii gva¨‡g wewfbœ
+cwieZ©bkxj Kb‡U›U ˆZwi Kiv hvq| e¨enviKvix‡`i wbKU n‡Z BbcyU
+†`Iqvi e¨e¯’v _v‡K| A‡bK †ewk Z_¨eûj nq| ZvQvov AvKl©Yxq I
+B›UviA¨vKwUf †j- AvDU ˆZwi Kiv hvq| WvBbvwgK I‡qe †cBR ˆZwi
+Ki‡Z †cÖvMÖvwgs j¨vs¸‡qR wn‡m‡e Javascript, PHP, Net, ASP
+BZ¨vw` e¨eüZ nq| †WUv‡e‡Ri mv‡_' I‡qemvBU hy³ Kivi Rb¨ (MS
+Access, Mz SQL My Structured Query Language) e¨envi
+Kiv nq|
+evsjv‡`k b`x I Lv‡ji †`k </font>
+GLv‡b †jLvwU †c÷ Ki‡Z n‡e Z‡e Zv mivmwi
+Gfv‡e †`Lv‡e bv| output G †`Lv hv‡e|
+1 	2 	3
+wPÎ-1
+wPÎ-2
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 20
+(M) DÏxc‡K DwjøwLZ cÖwZôvbwUi †nvg †cBR ˆZwii html †KvWwU n‡jv|
+<!DOCTYPE html>
+<html>
+<body>
+<a href="www.employee.html"> Employee </a>
+<a href="www.product.html"> Product </a>
+</body>
+</html>
+(N) DÏxc‡Ki Av‡jv‡K m‡PZb gvby‡li `„wó‡MvPi Kivi cÖ‡qvRbxq c`‡¶c
+n‡jv I‡qe cvewjwks| wb‡P Zv e¨vL¨v Kiv n‡jv-
+I‡qemvBU Ggb GKwU Kw¤úDUv‡i ivL‡Z nq, †hb †mB Kw¤úDUviwU
+me©¶Y mPj _v‡K Ges B›Uvi‡b‡Ui m‡½ hy³ _v‡K| ‡mB m‡½ Av‡iKwU
+wRwbm _vK‡Z nq, hv‡K e‡j cvewjK AvBwc A¨v‡Wªm (IP Address)|
+GwU n‡”Q B›Uvi‡b‡U H Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv| e¨w³MZ Kv‡R
+†hme Kw¤úDUvi e¨envi Kiv nq, †mLv‡b Aek¨ B›Uvi‡bU ms‡hvM _vK‡jI
+wbw`©ó cvewjK AvBwc A¨v‡Wªm _v‡K bv| B›Uvi‡bU ms‡hvM`vZv cÖwZôv‡bi
+m‡½ †hvMv‡hvM K‡i cvewjK AvBwc A¨v‡WÖm msMÖn Kiv hvq| Z‡e †KDB
+Zvi e¨w³MZ Kw¤úDUvi 24 NÈv Pvjy ivL‡e bv, ZvB wewfbœ cÖwZôvb I‡qe
+†nvw÷s †mev cÖ`vb K‡i, †hLv‡b I‡qemvBU ivLv I cvewjk Kiv hvq|
+AvBwc A¨v‡Wªm e¨envi K‡i I‡qemvBU eÖvDR Kiv †M‡jI †KD ev¯Í‡e
+AvBwc A¨v‡Wªm g‡b iv‡L bv| ZvB I‡qemvB‡U †Wv‡gBb bvg e¨envi Kiv
+nq| B›Uvi‡b‡U †Wv‡gBb bvg wKb‡Z cvIqv hvq| Z‡e †h †Wv‡gBb bvg
+GL‡bv †KD wK‡b †d‡jwb, †m¸‡jvB †Kej †Kbv hv‡e| Zvici †Wv‡gBb
+bv‡gi m‡½ I‡qe †nvw÷s mvf©v‡ii GKwU ms‡hvM cÖwZôv Ki‡Z nq| Zvn‡j
+†KD I‡qe eÖvDRv‡ii A¨v‡WÖm ev‡i IB †Wv‡gBb bvg wj‡L G›Uvi wK Pvc‡j
+I‡qe mvBUwU B›Uvi‡b‡U †`L‡Z cv‡e| D³ KvR¸‡jv m¤ú~Y©fv‡e †kl
+n‡jB B›Uvi‡b‡U I‡qe †cBR †`Lv hv‡e Ges m‡PZb gvbz‡li `„wó †MvPi
+Kiv m¤¢e n‡e|
+38| eZ©gv‡b 'X' K‡jR Zv‡`i Kvh©μg myôyfv‡e cwiPvjbvi Rb¨ Website
+ˆZwii wm×všÍ MÖnY K‡i‡Q| GBRb¨ ïaygvÎ html e¨envi K‡i wk¶v_©x‡`i
+bvg, wcZvi bvg, Rb¥ZvwiL, †ivj b¤^i I †mKkb wdì mshy³ K‡i
+Student's information bvgK †Uwej ˆZwi K‡i| Z‡e miKviI eZ©gv‡b
+mKj ¯‹zj K‡j‡Ri nvjbvMv` Z_¨ Dc¯’vc‡bi Rb¨ I‡qemvBU ˆZwi Kivi
+wb‡`©k w`‡q‡Qb|
+[wm‡jU †evW© -2016]
+(K) †Wv‡gBb †bg Kx? 	1
+(L) †h cªhyw³ SzuwKc~Y© KvR‡K mnR K‡i‡Q Zv e¨vL¨v Ki | 	2
+(M) DÏxc‡K DwjøwLZ †UwejwU wWRvB‡bi Rb¨ cÖ‡qvRbxq HTML †KvW
+†jL| 	3
+(N) KZ©„ c‡¶i M„nxZ e¨e¯’vq miKv‡ii wb‡`©k cy‡ivcywi ev¯Íevqb Ki‡Z
+n‡j hv hv KiYxq we‡kølYc~e©K gZvgZ `vI| 	4
+38 bs cÖ‡kœi DËi
+(K) †Wv‡gBb †bg ev DNS n‡”Q AvBwc A¨v‡Wª‡mi GKwU AvjdvwbD‡gwiK
+K¨v‡i±vi ev b¤^i msewjZ wVKvbv|
+(L) †ivewU· cÖhyw³ SzuwKc~Y© KvR‡K mnR K‡i‡Q| KviLvbvq Kw¤úDUvi wbqwš¿Z
+†ive‡Ui mvnv‡h¨ bvbviKg wec¾bK I cwikÖgmva¨ KvR †hgb- I‡qwìs,
+XvjvB, fvix gvjvgvj DVv- bvgv, hš¿vsk ms‡hvRb, Mvwo is Kiv BZ¨vw`
+KvR Kiv nq| eZ©gv‡b †evgv wbw®ŒKiY, fvix KjKviLvbv, gnvKv‡k †iveU,
+wgwjUvwi, wmwKDwiwU (cÖwZi¶v), D×vi, gvbylwenxb Mvwo cvwbi wb‡P
+Kg©‡cv‡hvMx hvb †Uwj Acv‡ikb, †gwW‡Kj mvR©vwi GgbwK eZ©gv‡b DbœZ
+†`‡k evmvevwo‡Z ˆ`bw›`b Kv‡R, we‡bv`‡b †iveU Gi mvnv‡h¨ KvR K‡i
+KvR‡K mnR K‡i‡Q|
+(M) DÏxc‡K DwjøwLZ †UwejwU wWRvB‡bi Rb¨ cÖ‡qvRbxq GBPwUGgGj †KvW:
+<!DOCTYPE html>
+<html>
+<head>
+<title> Table </title>
+</head>
+<body>
+<table Border – "1" width= "100">
+<caption> Student's Information </caption>
+<tr>
+<th> Student's Name</th>
+<th> Father's Name </th>
+<th> Date of Birth </th>
+<th> Roll No </th>
+<th> Section </th>
+</tr>
+<tr>
+<td> Zarin Tasnim </td>
+<td>Zahidur Rahman </td>
+<td> 10-03-2000</td>
+<td> 1101 </td>
+<td>SC </td>
+</tr>
+<tr>
+<td> Razana Onse </td>
+<td>> Saiful Alam </td>
+<td> 15-05-2000</td>
+<td>1102 </td>
+<td>Se </td>
+</tr>
+</table>
+</body>
+</html>
+(N) DÏxc‡K DwjøwLZ KZ©…c‡¶i M„nxZ e¨e¯’vq miKv‡ii wb‡`©k cy‡ivcywi
+ev¯Íevqb Ki‡Z n‡j I‡qe cvewjwks Ki‡Z n‡e| I‡qe cvewjwks n‡jv
+B›Uvi‡b‡U Kb‡U›U ev welqe¯Íz cvewjk ev cÖKvk, Kivi GKwU c×wZ|
+B›Uvi‡b‡U GKwU I‡qe †cBR cvewjk Kivi c`‡¶c¸‡jv wbgœiƒc :
+I‡qemvBU Ggb GKwU Kw¤úDUv‡i ivL‡Z nq, †hb †mB Kw¤úDUviwU
+me©¶Y mPj _v‡K Ges B›Uvi‡b‡Ui m‡½ hy³ _v‡K| †mB m‡½ Av‡iKwU
+wRwbm _vK‡Z nq, hv‡K e‡j cvewjK AvBwc A¨v‡Wªm (IP Address)|
+GwU n‡”Q B›Uvi‡b‡U H Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv| e¨w³MZ Kv‡R
+†hme Kw¤úDUvi e¨envi Kiv nq, †mLv‡b Aek¨ B›Uvi‡bU ms‡hvM _vK‡jI
+wbw`©ó cvewjK AvBwc A¨v‡WÖm _v‡K bv| B›Uvi‡bU ms‡hvM`vZv cÖwZôv‡bi
+m‡½ †hvMv‡hvM K‡i cvewjK AvBwc A¨v‡WÖm msMÖn Kiv hvq| Z‡e †KDB
+Zvi e¨w³MZ Kw¤úDUvi 24 NÈv Pvjy ivL‡e bv, ZvB wewfbœ cÖwZôvb I‡qe
+†nvw÷s †mev cÖ`vb K‡i, †hLv‡b I‡qemvBU ivLv I cvewjk Kiv hvq|
+AvBwc A¨v‡WÖm e¨envi K‡i I‡qemvBU eÖvDR Kiv †M‡jI †KD ev¯Í‡e
+AvBwc A¨v‡WÖm g‡b iv‡L bv| ZvB I‡qehmvB‡U †Wv‡gBb bvg e¨envi Kiv
+nq| B›Uvi‡b‡U †Wv‡gBb bvg wKb‡Z cvIqv hvq| Z‡e †h †Wv‡gBb bvg
+GL‡bv †KD wK‡b †d‡jwb, †m¸‡jvB †Kej †Kbv hv‡e| Zvici †Wv‡gBb
+bv‡gi m‡½ I‡qe †nvw÷s mvf©v‡ii GKwU ms‡hvM cÖwZôv Ki‡Z nq| Zvn‡j
+†KD I‡qe eÖvDRv‡ii A¨v‡Wªm ev‡i IB †Wv‡gBb bvg wj‡L G›Uvi wK Pvc‡j
+DÏxcKwU B›Uvi‡b‡U †`L‡Z cv‡e| Dc‡iv³ c`‡¶c¸‡jv MÖnY Ki‡j
+miKv‡ii wb‡`©k cy‡ivcywi ev¯Íevqb Kiv hv‡e|
+39| ‡gvnb GKwU I‡qemvBU eÖvDR Ki‡Z wM‡q †`‡L I‡qemvBUwUi cÖwZwU
+†cB‡R †h‡Z n‡jB evievi †nvg †cB‡R Avm‡Z nq| Avi †nvg †cBRwU
+bvbv ai‡bi bv›`wbK weÁvc‡b mvRv‡bv| hv‡Z K‡i mevB AvK…ó nq|
+cÖ_gevi e¨envi Ki‡Z wM‡q †m wKQzUv ¯^v”Q›`¨ †eva K‡i| wKš‘ †m
+I‡qemvB‡Ui GKwU Qwe eÖvDR Ki‡Z wM‡q †`‡L †cBRwU †jvW n‡Z †ewk
+mgq †bq| ZvQvov †cBRwU †`Lv †M‡jI mKj Qwe eÖvDRvi cÖ`k©b Ki‡Z
+cvi‡Q bv| G‡Z †m wei³ nq|
+[ewikvj †evW© -2016]
+(K) GBPwUGgGj U¨vM Kx? 	1
+(L) †Wv‡gBb †bg †iwR‡÷ªkb Ki‡Z nq †Kb? 	2
+(M) DÏxc‡Ki I‡qemvBUwUi KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxc‡K DwjøwLZ mgm¨v mgvav‡b †Zvgvi mywPwšÍZ gZvgZ `vI| 4
+39 bs cÖ‡kœi DËi
+(K) GBPwUGgGj U¨vM n‡jv GBPwUGgGj WKz‡g‡›Ui mv‡_ Gg‡e‡WW †KvwWs
+wb‡`©kvewj|
+(L) AvBwc A¨v‡Wªm‡K mn‡R e¨envi Kivi Rb¨ Bs‡iwR A¶‡ii †Kv‡bv GKwU
+bvg e¨envi Kiv nq| K¨v‡i±vi d‡g© †`Iqv Kw¤úDUv‡i Giƒc bvgB
+†Wv‡gBb †bg| cÖwZwU †Wv‡gBb †bg BDwbK Ges Gi mv‡_ GKwU BDwbK
+--- PAGE_BREAK ---
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 21
+AvBwc A¨v‡Wªm eivÏ Kiv nq| GKwU †Wv‡gBb †bBg mvf©v‡i †iwR‡÷ªkb
+Ki‡j Zv mviv we‡k¦ AwØZxq bv‡g wPwýZ nq Ges GKwU wbw`©ó mgq ch©šÍ
+H A¨v‡WªmwU Avi Ab¨ †KD e¨envi Ki‡Z cv‡i bv| G Kvi‡Y †Wv‡gBb
+†bBg †iwR‡÷ªkb Ki‡Z nq|
+(M) DÏxc‡Ki I‡qe †cBRwU n‡jv wjwbqvi KvVv‡gv| hLb †Kv‡bv I‡qemvB‡Ui
+†cBR¸‡jv μgvbymv‡i †`Lvi cÖ‡qvRb c‡o ZLb wjwbqvi KvVv‡gv e¨envi
+Kiv nq| †cB‡Ri msL¨v Kg n‡j G ai‡bi KvVv‡gv Dc‡hvMx| G ai‡bi
+KvVv‡gv‡Z cÖwZwU †cB‡R †h‡Z n‡j †nvg †cB‡R †h‡Z nq| Avi †nvg
+†cBRwU bvbvb ai‡bi bv›`wbK weÁvc‡b mvRv‡bv _v‡K| g~j †cBR †_‡K
+ïiæ n‡q WKz‡g‡›Ui cieZ©x avc¸‡jv m¤ú‡K© eY©bv K‡i| G ai‡bi
+†cBR¸‡jv‡Z mvaviYZ Next, Previous, Fast, Last BZ¨vw` wj¼
+e¨envi Kiv n‡q _v‡K|
+(N) DÏxc‡K DwjøwLZ mgm¨v mgvav‡b Avgvi mywPšÍ gZvgZ n‡jv Qwei mvBR
+hw` †ewk nq Zvn‡j Zv Kwg‡q wb‡Z n‡e Ges B›Uvi‡bU w¯úW †ewk Av‡Q
+wK bv Zv †`‡L wb‡Z n‡e| GQvovI I‡qemvBUwU‡K †WwW‡K‡UW mvf©v‡i
+Avc‡jvW Kiv hvq| KviY †kqviW mvf©v‡i †nvw÷s‡qi mgq mvf©v‡ii
+†g‡gvwi †¯úm I wi‡mvm© Ab¨‡`i mv‡_ †kqvi Ki‡Z nq d‡j †ewki fvM
+mg‡q mvf©v‡ii Kvh©μg axi n‡q hvq Ges I‡qemvBU eÖvDR Ki‡j †cBR
+Avm‡Z A‡bK mgq jv‡M| ZvQvov †kqviW mvf©v‡i wfwRUi aviY¶gZv
+Pwjøk nvRvi| e¨enviKvixi msL¨v evo‡Z _vK‡j G MwZ Kg‡Z _v‡K| G‡Z
+K‡i I‡qe‡cB‡Ri B‡gR Avc‡jvW I WvDb‡jvW n‡Z mgq jv‡M|
+Ab¨w`‡K †WwW‡K‡UW| mvf©v‡i Ab¨ †Kv‡bv †kqvi †nvìvi _v‡K bv Ges
+wbivcËvI A‡bK †ewk| G ai‡bi I‡qemvBU¸‡jv ÷¨vwUK Gi cwie‡Z©
+WvBbvwgK nq Ges †WUv‡eR e¨envi Kiv nq| d‡j I‡qemvB‡Ui †h‡Kv‡bv
+†cBR Avc‡jvW I WvDb‡jvW n‡Z Kg mgq jv‡M| hv e¨enviKvixi Rb¨
+weiw³i KviY nq bv|
+40| D”P gva¨wg‡Ki wk¶v_©x‡`i `ywU MÖæ‡c fvM K‡i K‡j‡Ri wbR¯^ I‡qemvBU
+ˆZwii Rb¨ ejv n‡jv| cÖ_g MÖæc HTML, CSS BZ¨vw` e¨envi K‡i
+I‡qemvBUwU cÖ¯ÍyZ K‡i| wePviKgÐjx 2q MÖæ‡ci I‡‡qemvBUwU K‡j‡Ri
+Rb¨ cQ›` K‡ib| ICT wk¶K K‡j‡Ri I‡qemvBUwUi †nvg †c‡Ri
+Ministry of education †jLvwUi mv‡_ www.moedu.gov.bd I‡qe
+A¨v‡WªmwU hy³ K‡ib|
+[w`bvRcyi †evW© -2016]
+(K) AvBwc A¨v‡WÖm Kx? 	1
+(L) <img> ezwS‡q †jL| 	2
+(M) DÏxc‡Ki ICT wk¶‡Ki M„nxZ Kvh©μ‡gi mswkøó †KvW e¨vL¨v Ki| 3
+(N) wePvi‡Kiv †Kvb †hŠw³KZvq 2q MÖæ‡ci I‡qemvBUwU cQ›` K‡ib?
+e¨vL¨v Ki| 	4
+40 bs cÖ‡kœi DËi
+(K) AvBwc A¨v‡Wªm n‡jv B›Uvi‡b‡U cÖwZwU Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv|
+(L) GKwU I‡qe †cB‡Ri ¸iæZ¡c~Y© Dcv`vbmg~‡ni GKwU n‡”Q B‡gR| GKwU
+I‡qe †cBR‡K my›`i I AvKl©Yxq K‡i †Zvjvi Rb¨ e¨vbvimn B‡gR ev wPÎ
+hy³ Ki‡Z nq| HTML †cB‡R <img> U¨vM Øviv wba©viY Kiv nq|
+<img> U¨vMwU k~b¨ A_©vr GwU †Kej A¨vwUÖweDU enb K‡i Ges Gi †Kv‡bv
+closing U¨vM †bB| †cB‡R †Kv‡bv wPÎ ev B‡gR e¨envi Ki‡Z n‡j sre
+(source ) A¨vwUÖweDU e¨envi Ki‡Z n‡e|
+(M) GKwU I‡qemvB‡U A‡bK¸‡jv I‡qe †cBR _vK‡Z cv‡i| GKwU I‡qe
+†cBR n‡Z Ab¨ Av‡iKwU I‡qe †cB‡R hvIqvi Rb¨ HTML wj¼ e¨envi
+Kiv nq| †Kv‡bv WKz‡g‡›Ui Af¨šÍ‡i nvBcviwj‡¼i MšÍe¨‡K wba©viY Kivi
+Rb¨ A¨v¼i e¨eüZ nq| nvBcviwj¼ I A¨v¼i DfqB wba©viY Ki‡Z
+HTML. A¨v¼i Gwj‡g›U <a> e¨eüZ nq|
+<a> U¨vM e¨envi K‡i wj¼ ˆZwi Kiv nq| Gi closing U¨vM n‡jv </a>
+| wj‡¼ wK¬K Ki‡j †Kv_vq hv‡e Zv wbw`©ó Kivi Rb href A¨vwUÖweDU
+e¨envi Kiv nq|
+<a href="http://www.moeedu.gov.bd/">Ministry of Education
+</a>
+(N) wePviKiv 2q MÖæ‡ci I‡qemvBUwU †ewk cQ›` K‡ib KviY †mB
+I‡qemvBUwU wQj WvBbvwgK I‡qemvBU| G I‡qemvB‡Ui gva¨‡g K‡jRwU
+wbgœwjwLZ KvR¸‡jv Ki‡Z cvi‡e-
+DÏxc‡K 1g MÖæc I 2q MÖæc `zB ai‡bi I‡qe †cBR K‡j‡Ri Rb¨ ˆZwi
+K‡iwQ‡jb| 1g MÖæc HTML, CSS e¨envi K‡i K‡j‡Ri ÷¨vwUK
+I‡qemvBU ˆZwi K‡i‡Q| Ab¨w`‡K 2q MÖæc HTML. CSS, Mysql.
+php e¨envi K‡i GKwU WvBbvwgK I‡qemvBU ˆZwi K‡i‡Q|
+1g MÖæc †h ÷¨vwUK I‡qemvBU ˆZwi K‡i‡Q †mB I‡qemvB‡U Kb‡U›U
+Avc‡jvW n‡Z †ewk mgq jv‡M| I‡qemvB‡Ui AvKvi e„w×i mv‡_ mv‡_
+Kb‡U›U¸‡jv wbqš¿Y Kiv KwVb n‡q hvh| gvbm¤§Z I‡qemvBU wWRvBb Kiv
+Kómva¨ I mgq mv‡c¶| ZvQvov e¨enviKvixi wbKU n‡Z BbczU †bIqvi
+e¨e¯’v _v‡K bv| Ab¨w`‡K 2q MÖæc †h WvBbvwgK I‡qemvBU ˆZwi K‡i‡Q
+†mB I‡qemvB‡U cwieZ©bkxj Z_¨ ev B›UviA¨vKwUf I‡qe †cBR _v‡K|
+ivbUvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i|
+†WUv‡eR e¨env‡ii d‡j Kz‡qwi K‡i Z_¨ †ei Kiv hvq| e¨enviKvix Z_¨
+cÖ`vb ev Z_¨ Avc‡WU Ki‡Z cv‡i| G Kvi‡Y wePvi‡Kiv 2q MÖæc-Gi
+I‡qemvBUwU cQ›` K‡ib|

@@ -1,0 +1,120 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 11
+[wm‡jU ‡evW©-2019]
+(K) <hr> Kx?
+(L) nvBcviwjsK U¨v‡Mi Avewk¨K A¨vwUªweDUwU e¨vL¨v Ki|
+(M) wkjv‡`i K‡j‡Ri I‡qemvBUwU e¨vL¨v Ki|
+(N) ʻwkjvi ˆZwiK…Z †cRwU GKwU I‡qe †cvU©vjʼ -HTML ‡KvWmn
+we‡kølY Ki|
+19 bs cÖ‡kœi DËi
+(K) GwU GKwU HTML U¨vM hv mgvšÍivj jvBb ˆZwi‡Z e¨eüZ nq|
+(L) nvBcviwjsK U¨v‡Mi Avewk¨K A¨vwUªweDU n‡jv href| href A¨vwUªweDUwU
+wjs‡Ki wVKvbv ev MšÍe¨ wba©viY K‡i| Gi wmbU¨v· ev MVbwU wbgœiƒc:
+<a href= “url”>link text</a>
+GLv‡b url As‡k wjs‡Ki m¤ú~Y© wVKvbvwU wjL‡Z nq|
+(M) wkjv‡`i K‡j‡Ri I‡qe mvBUwU n‡jv WvBbvwgK I‡qemvBU| KviY
+I‡qemvBUwU mvf©vi Ges eªvDRKvixi g‡a¨ DfgyLx †WUv mieivn K‡i A_©vr
+e¨enviKvixi wbKU n‡Z BbcyU †bIqvi e¨e¯’v _v‡K| †h mKj
+I‡qemvB‡Ui †WUvi gvb I‡qe‡cBR ‡jvwWs ev Pvjy Kivi ci cwieZ©b Kiv
+hvq Zv‡K WvBbvwgK I‡qemvBU e‡j| WvBbvwgK I‡qemvBU ˆZwii R‡b¨
+HTML fvlvi mv‡_ w¯ŒwÞs fvlv †hgb- wcGBPwc (PHP) ev GGmwc
+(ASP) Ges Gi mv‡_ †WUv‡eR cÖ‡qvRb-
+WvqbvwgK I‡qemvBU-Gi ˆewkó¨:
+ cwieZ©bkxj Z_¨ ev B›UviA¨vKwUf I‡qe‡cR _v‡K|
+ ivbUvB‡gi mgq †cB‡Ri wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i|
+ ‡WUv‡eR e¨eüZ d‡j Kz‡qwi K‡i Z_¨ †ei Kivi my‡hvM _v‡K|
+ e¨enviKvix Z_¨ cÖ`vb ev Z_¨ Avc‡WU Ki‡Z cv‡i|
+(N) I‡qe †cvU©vj n‡”Q GKwU I‡qemvB‡Ui g‡a¨ wewfbœ wjsK, K‡›U›U I mvwf©m
+ev †mevi msMÖn hv e¨enviKvix‡`i‡K Z_¨ Rvbv‡bvi Rb¨ mnR‡eva¨fv‡e
+Dc¯’vcb Kiv nq| I‡qemvB‡Ui ‡h †Kv‡bv GKwU mvwf©m I‡qe †cvU©v‡ji
+GKwU Ask n‡Z cv‡i| wkjvi I‡qe †c‡Ri ourboard †jLvwU‡Z wK¬K
+Ki‡j www.e-board.edu.bd I‡qemvBUwU‡Z cÖ`wk©Z nq hv GKwU
+wjsK| AZGe wkjvi ˆZwiK…Z †cRwU, GKwU I‡qe ‡cvU©vj|
+HTML ‡KvWwU wb¤œiƒc-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Board</title>
+</head>
+<body>
+<a href="https//www.e-board.edu.bd">ourboard</a>
+</body>
+</html>
+20| cwÎKvi AbjvBb fvm©‡bi B-‡ccvi cÖ_g †cBR †_‡K cici cÖwZwU †cBR
+mvRv‡bv _v‡K| G Rb¨ cvVKM‡Yi G ai‡bi cwÎKv covi cÖwZ AvMÖn w`b
+w`b e„w× cv‡”Q| 'K' bvgK eûRvwZK ‡Kv¤úvwbi I‡qemvBU ˆZwi Kivi
+†¶‡Î †Lqvj iv‡L hv‡Z Zv‡`i cÖwZôv‡bi †h †Kv‡bv Z_¨ Lyu‡R †c‡Z
+Amyweav bv nq| KviY G ai‡bi I‡qemvB‡Ui †cBR¸‡jv A‡bKw`K †_‡K
+mshy³ _v‡K| ZvQvov †mŠ›`h© e„w×i w`‡KI bRi †`q| 'L' †Kv¤úvwb Zv‡`i
+I‡qemvB‡Ui †cBR¸‡jv Ggbfv‡e ˆZwi K‡i‡Q hvi g~j †cB‡Ri mv‡_
+Ab¨vb¨ †cBR¸‡jv mshy³ _v‡K|
+[w`bvRcyi ‡evW©-2019]
+(K) nvBcviwjsK Kx?
+(L) ‡nvw÷s I‡qemvBU cvewjwks Gi GKwU ¸iæZ¡c~Y© avc- e¨vL¨v Ki|
+(M) DÏxc‡K cwÎKvi I‡qe †cBR †h KvVv‡gvq web¨¯Í Zv e¨vL¨v Ki|
+(N) ʻKʼ I ʻLʼ ‡Kv¤úvwbi I‡qe †cB‡Ri KvVv‡gvi g‡a¨ †KvbwUi e¨envi
+myweavRbK-hyw³g~jK gZvgZ `vI|
+20 bs cÖ‡kœi DËi
+(K) nvBcviwj®‹ n‡”Q GKwU I‡qe †cB‡Ri †Kvb GKwU As‡ki mv‡_ ev †Kvb
+†cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri ms‡hvM ¯’vcb Kiv|
+(L) I‡qe †nvw÷s: n‡jv I‡qemvBU ev I‡qe †cBR B›Uvi‡b‡U cÖ`k©‡bi Z_v
+cvewjwks Gi Rb¨ cÖ‡qvRbxq cÖwμqv| G Rb¨ I‡qe mvBUwU‡K B›Uvi‡b‡Ui
+mv‡_ hy³: †Kv‡bv mvf©v‡ii ‡g‡gvwi‡Z Rgv ivL‡Z n‡e| I‡qe †nvw÷s bv
+Ki‡j I‡qemvBUwU‡Z †Kv‡bv cÖ‡ek _vK‡e bv ev GwU Ab¨ †KD eªvDR
+Ki‡Z cvi‡e bv| ZvB I‡qe †cBR ˆZwi Kivi ci Zv †Kvb GKwU
+wbf©i‡hvM¨ I‡qe mvf©v‡i †nv÷ Kiv cÖ‡qvRb|
+(M) DÏxc‡Ki cwÎKvi I‡qe‡cBR wjwbqvi KvVv‡gvq web¨¯Í| I‡qe‡cBR
+WKz‡g›U‡K Organize Kivi R‡b¨ GKwU Ab¨Zg c×wZ n‡”Q Linear
+A_ev Sequential Organization| G c×wZ‡Z †nvg †cBR n‡”Q m~Pbv
+ev Title| G ÷ªvKPv‡i cÖ‡Z¨KwU †cBR n‡”Q AbyμwgK| cieZ©x Ges
+c~e©eZ©x †cB‡Ri g‡a¨ gyf (Move) Kivi †¶‡Î GLv‡b wjsK e¨envi Kiv
+nq| WKz‡g›UwU Lye eo bv n‡j A_©vr †cB‡Ri msL¨v hw` Kg nq Z‡e
+Linear organization e¨envi Kiv fv‡jv| †Kbbv G ‡¶‡Î WKz‡g‡›Ui
+†h‡Kv‡bv Ask‡K mn‡RB Lyu‡R †ei Kiv hvq| G †¶‡Î m¤ú~Y©
+†cÖ‡R‡›Uk‡bi Home page †_‡KB hvÎv ïiæ Kiv nq Ges H me
+†cB‡RB WKz‡g‡›Ui mvigg© ev cieZ©x avc¸‡jv m¤ú‡K© eY©bv _v‡K|
+wjwbqvi AM©vbvB‡Rkb‡K (Linear organization) Ab¨fv‡eI e¨envi
+Kiv hvq| G‡¶‡Î GKwU wbw`©ó ¯’vb (point) †_‡K kvLv †ei n‡q Av‡m
+Ges wew”Qbœ Ask cieZ©x‡Z g~j kvLvi mv‡_ cybivq ms‡hvM ¯’vcb K‡i|
+wPÎ: wjwbqi KvVv‡gv
+(N) DÏxcK Abymv‡i †Kv¤úvbx-K Gi I‡qe †cB‡Ri KvVv‡gv n‡jv nvBweW ev
+Kw¤^‡bkb ev wgkÖ KvVv‡gv| †Kv¤úvwb-L Gi I‡qe ‡cB‡Ri KvVv‡gv n‡jv
+I‡qe wj¼ ev †bUIqvK© KvVv‡gv| G `ywU KvVv‡gvi g‡a¨ Kw¤^‡bkb ev wgkÖ
+KvVv‡gv †ewk myweavRbK|KviY-
+Kw¤^‡bkb ÷ªvKPv‡ii GKvwaK ÷ªvKPvi e¨envi K‡i I‡qemvBU wWRvBb
+Kiv nq| A‡bK mgq wjwbqvi KvVv‡gv Ges nvqviviwKK¨vj KvVv‡gvi
+gva¨‡g wgkÖ KvVv‡gv ˆZwi Kiv hvq| GKvwaK ÷ªvKPvi e¨env‡ii d‡j I‡qe
+mvB‡Ui †mŠ›`h© †hgb e„w× cvq †Zgwb wfwRUi‡`i Rb¨ wfwRU KivI mnR
+nq|
+Aciw`‡K, †h ai‡bi I‡qemvBU KvVv‡gv‡Z me¸‡jv †c‡RiB G‡K Ac‡ii
+mv‡_ wjsK, _v‡K Zv‡K †bUIqvK© KvVv‡gv ejv nq| ïaygvÎ †bUIqvK©
+KvVv‡gv e¨envi K‡i ˆZwi Kiv I‡qemvBU nvW©wW‡¯‹ †ewk RvqMv `Lj
+K‡i| ZvB GKvwaK ÷ªvKPvi A_©vr Kw¤^‡bkb ÷ªvKPvi e¨envi K‡i
+I‡qemvBU MVb Kiv †ewk myweavRbK|
+21| ïaygvÎ HTML e¨envi K‡i P›`bv g‡Wj K‡j‡Ri GKwU I‡qemvBU
+ˆZwi Kiv nq| mvBUwUi †nvg †c‡R ict.jpg bv‡gi 200×300px AvKv‡i
+GKwU Qwe Av‡Q| QwewUi wb‡P notice.html bv‡gi notice ‡c‡Ri GKwU
+wjsK Av‡Q| Qwei Dc‡i “welcome to Chandana Model
+College” †jLvwU bxj i‡O cÖ`wk©Z nq | mvBUwU †Z wfwRUi‡`i
+gZvg‡Zi †Kvb e¨e¯’v †bB|
+[XvKv, h‡kvi, wm‡jU I w`bvRcyi †evW©-2018]
+(K) I‡qe †cv©Uvj Kx? 	1
+(L) ‡nvw÷s †Kb cÖ‡qvRb eywS‡q wjL| 	2
+(M) DÏxc‡K DwjøwLZ †nvg †cR ˆZwii Rb¨ HTML ‡KvW wjL| 	3
+(N) I‡qemvBUwU‡Z wfwRU‡`i gZvgZ MÖn‡Y M„nxZ cÖ‡qvRbxqZv c`‡ÿc
+we‡kølY Ki| 	4
+21 bs cÖ‡kœi DËi
+(K) I‡qe †cvUv©j n‡”Q GKwU I‡qemvB‡Ui g‡a¨ wewfbœ wjsK, Kb‡U›U I mvwf©m
+ev †mevi msMÖn hv e¨enviKvix‡`i‡K Z_¨ Rvbv‡bvi Rb¨ mnR‡eva¨fv‡e
+Dc¯’vcb Kiv nq|
+(L) ‡Kv‡bv mvBU‡K wbw`©ó †Kvb mvfv©‡i ¯’vcb Ges D³ I‡qe mvBUwUi hveZxq
+Kvh©μg cwiPvjbvi Rb¨ cÖ‡qvRbxq AeKvVv‡gvMZ, myweav cÖ`vb Kiv nq
+I‡qe †nvw÷s n‡”Q g~jZ AbjvB‡b I‡qe Avc‡jvW Kivi mvfv©i ev
+Kw¤úDUv‡ii nvW©wW‡¯‹i RvqMv| A_v©r G RvqMv‡Z I‡qe ‡cBR ev I‡qe
+mvBU AbjvB‡b ivLv nq| I‡qe‡cBR AbjvB‡b ivLv bv n‡j I‡qe †cBR
+†`Lv hvq bv| ZvB †nvw÷s I‡qe mvBU cvewjwks Gi Rb¨ cÖ‡qvRbxq|
+(M) DÏxc‡K DwjøwLZ †nvg †cBR ‰Zwii †KvW wb‡P †`Lv‡bv n‡jv
+<!DOCTYPE html>
+<html>
+<head>
+<tile>Chandana Model College</tile>

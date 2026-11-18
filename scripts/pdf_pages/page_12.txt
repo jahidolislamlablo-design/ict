@@ -1,0 +1,130 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 12
+</head>
+<body>
+<h2>font color="blue">Welcome
+to Chandana Model College</font></h2>
+<img src="ict.jpg"width="200"height="300">
+<a href=notice.html>notice</a>
+</body>
+</html>
+(N) DÏxc‡K mvBUwU‡Z wfwRUi‡`i gZvgZ cÖ`v‡bi †Kv‡bv e¨e¯’v †bB| ZvB
+DÏxc‡Ki mvBUwU n‡jv ÷¨vwUK I‡qemvBU| ‡hme I‡qemvB‡Ui †WUvi
+gvb I‡qe‡cR †jvwWs ev Pvjy Kivi ci cwieZ©b Kiv hvq bv Zv‡K ÷¨vwUK
+I‡qemvBU e‡j| I‡qemvBUwU‡Z wfwRUi‡`i gZvgZ MÖn‡Y M„nxZ
+cÖ‡qvRbxq c`‡ÿc n‡jv mvBUwU‡K WvBbvwgK Kiv| †hme I‡qemvB‡Ui
+‡WUvi gvb I‡qe‡cR †jvwWs ev Pvjy Kivi ci cwieZ©b Kiv hvq Zv‡K
+WvBbvwgK I‡qe‡cR e‡j | kyay HTML w`‡q ÷¨vwUK I‡qec‡R ˆZwi
+Kiv hvq| Gi mv‡_ mvaviYZ PHP, ASP, JSP, fvlv e¨envi K‡i
+WvBbvwgK I‡qe‡cBR ˆZwi Kiv hvq| WvBbvwgK I‡qemvB‡U
+e¨enviKvix‡`i wbKU n‡Z BbcyU †`Iqvi e¨e¯’v _v‡K eZ©gv‡b G ai‡bi
+I‡qemvB‡Ui Pvwn`v me‡P‡q †ewk|
+22| wb‡Pi DÏxcKwU jÿ Ki:
+[ivRkvnx, Kzwgjøv, PÆMÖvg I ewikvj †evW©-2018]
+(K) HTTP Kx? 	1
+(L) I‡qe †cB‡Ri mv‡_ eªvDRv‡ii m¤úK© e¨vL¨v Ki| 	2
+(M) DÏxc‡Ki wPÎ 1 †`‡L I‡qe mvB‡Ui KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxc‡Ki wPÎ 2 †K I‡qe †cBR cÖ`k©‡bi Rb¨ †KvW wjL| 	4
+22 bs cÖ‡kœi DËi
+(K) HTTP Gi c~Y©bvg Hyper text Transfer Protocol| B›Uvi‡b‡U
+TCP/IP cÖ‡UvK‡ji gva¨‡g †h cÖ‡UvKj I‡qe mvf© I‡qe K¬v‡q‡›Ui g‡a¨
+†WUv Av`vb cÖ`vb K‡i ZvB HTTP|
+(L) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv IqvBW I‡qe I B›Uvi‡b‡U
+I‡qe eªvDRv‡i e¨env‡ii Rb¨ Dchy³| eªvDRv‡ii gva¨‡g B›Uvi‡b‡U I‡qe
+†cBR cÖ`©k‡bi KvR K‡i| c„w_exi wewfbœ †`‡ki mvfv©‡i ivLv I‡qe †cBR
+eªvBRv‡ii gva¨‡g cÖ`wk©Z nq| ZvB I‡qe †cBR I eªvDRvi G‡K Ac‡ii
+mv‡_ m¤úwK©Z|
+(M) DÏxc‡Ki wPÎ 1 Gi I‡qemvBU KvVv‡gvwU n‡”Q I‡qe wjsKW ev ‡bUIqvK©
+KvVv‡gv| ‡bUIqvK© KvVv‡gv‡Z me¸‡jv †cB‡R G‡K Ac‡ii mv‡_ wjsKW
+_v‡K A_v©r GKwU †gBb ‡cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri mvv‡_I †gBb
+†cB‡Ri wjsKW _v‡K| †d«g e¨envi K‡i ˆZwi Kiv I‡qe †cR¸‡jv‡K GB
+†bUIqv‡K©i gva¨‡g wjsK Kiv n‡q _v‡K hv‡Z †d«‡gi g‡a¨ Ab¨vb¨
+†cBR¸wj †gby AvKv‡i ivLv nq| GB †d«g mvaviYZ w¯’i _v‡K Ges †Kvb
+GKwU wjsK wbev©Pb Ki‡j H †cBRwU A‡cÿvK…Z eo †d«‡gi g‡a¨ †`Lvq|
+(N) DÏxc‡K wPÎ 2 †K I‡qe †cB‡R cÖ`k©‡bi HTML †KvW wbg¤œiƒc-
+<!DOCTYPE html>
+<html>
+<body>
+<h4><u>Subject list</u></h4>
+<ol type="1">
+<<li>Bangla</li>
+<li>English</li>
+<li>Ict</li>
+</ol>
+</body>
+</html>
+23| www.pabnaaliamadrasah.edu.bd bv‡g gv`ivmvi mvB‡U cÖvqB
+cÖwZôv‡bi wewfbœ Kvh©μ‡gi Qwe I wfwWI Avc‡jvW m¤¢e n‡”Q bv| GKRb
+IT BwÄwbqv‡ii mv‡_ cigvk© Kiv n‡j wZwb Rvbv‡jb GLb †Zv Qwe/wfwWI
+ivL‡Z www.youtube.com Gi gZ A‡bK I‡qe mvBU i‡q‡Q| Aa¨ÿ
+g‡nv`q ej‡jb Zvn‡j gv`ivmvi wbRm&¦ I‡qe mvB‡Ui e¨enviKvixiv Zv
+†`L‡Z cv‡e bv| BwÄwbqvi mv‡ne ej‡jb ZvI m¤¢e| [gv`ivmv †evW© -2018]
+(K) d›U †cÖvcvwU© Kx? 	1
+(L) AvB.wc A¨v‡Wªm w`‡qI I‡qemvBU wfwRU Kiv m¤¢e wKfv‡e e¨vL¨v
+Ki|
+2
+(M) gv`ivmviwUi I‡qe mvB‡Ui †Wv‡gBb UvB‡ci Av‡jvPbv Ki| 	3
+(N) BwÄwbqvi mv‡n‡ei m¤¢ve¨ mgvavb Kx n‡Z cv‡i Zv eY©bv Ki| 	4
+23 bs cÖ‡kœi DËi
+(K) d›U †cÖvcvwU n‡jv- Size, Color Ges Face|
+(L) Domain Ges AvBwc A¨v‡Wªm GKwU AciwUi cwic~iK| myZvivs AvBwc
+A¨v‡Wªm w`‡qI I‡qe mvBU wfwRU Kiv m¤¢e| IP Adress Gi Rb¨ e¨eüZ
+eo msL¨v g‡b ivLv KóKi| ZvB IP Adress ‡K mn‡R e¨envi Kivi Rb¨
+Bs‡iwR Aÿ‡ii †Kv‡bv bvg e¨envi Kiv nq| K¨v‡i±vi d‡g© †`Iqv
+Kw¤úDUv‡ii Giƒc bvg‡K Domain Name e‡j| ‡hgb I‡qe mvB‡Ui
+Rb¨ †Wv‡gBb †bBg www.google.com Gi cwie‡Z© Gi IP Adress
+216.58.216.164 e¨envi Kiv n‡j GKB mvBU cÖ`wk©Z n‡e|
+(M) gv`ivmvwUi I‡qe mvB‡Ui †Wv‡gBb UvBc wb‡P Av‡jvPbv Kiv n‡jv:
+‡Kv‡bv I‡qe mvBU wfwRU Ki‡Z n‡j eªvDRv‡ii A¨v‡Wªm ev‡i †h wVKvbv
+wjwL †mUv‡K ejv nq †Wv‡gBb| GKwU †Wv‡gBb ‡bg Gi WU (.) G c‡ii
+AskUzKz‡K Top Level Domain ejv nq| Uc †j‡fj †Wv‡gBb‡K `yB
+fv‡M fvM Kiv nq| h_v- 1. ‡R‡bwiK †Wv‡gBb I 2. K¨vw›Uª †Wv‡gBb|
+gv`ivmvi I‡qe mvBUwU n‡”Q www.pabnaaliamadrasah.edu.bd
+GLv‡b www n‡”Q domain name, .edu ‡R‡bwiK †Wv‡gBb hv wkÿv
+cÖwZôv‡bi †ÿ‡Î e¨eüZ nq Ges .bd n‡”Q Kvw›Uª †Wv‡gBb| †R‡bwiK
+†Wv‡gB‡bi mv‡_ Kvw›Uª †Wv‡gBb hy³ Kiv nq hv‡Z AviI ¯úófv‡e †evSv
+hvq †Wv‡gBbwU †Kvb †`‡ki| A_v©r DÏxc‡Ki gv`ivmvwUi I‡qemvBUwU
+evsjv‡`‡ki GKwU wkÿvcÖwZôv‡bi I‡qe mvBU eySv‡”Q|
+(N) BwÄwbqvi mv‡n‡ei m¤¢ve¨ mgvavb n‡e D³ I‡qe mvB‡Ui mv‡_ BDwUD‡ei
+wVKvbv wjsK K‡i †`Iqv | wewfbœ Qwehy³ dvB‡ji mv‡_I wjsK Kiv hv‡Z
+†h †KD D³ gv`ivmvi I‡qe mvBU wfwRU Ki‡jB D³ I‡qemvBU †_‡K
+wfwWI †`Lvi Rb¨ mivmwi BDwUDe †_‡K †`L‡Z cvi‡e|
+GKwU I‡qemvB‡Ui †Kv_vI wK¬K K‡i Ab¨ GKwU I‡qemvB‡U hvIqvi wj¼
+†`Iqv nq | †hgb, <a href type="picture.html">pic</a>
+GKwU I‡qemvB‡Ui †Kv_vI wK¬K K‡ii Ab¨ GKwU I‡qemvB‡U hvIqvi wj¼
+<a href=http:/www.youtube.com>Visit youtube</a>
+24| kvnwiqvi mv‡ne Ggb GKwU †QvU I‡qe †cBR ˆZwi Ki‡Z PvB‡jb †hLv‡b
+Institute.png bv‡gi GKwU Qwe I wb‡Pi †Uwei ¸‡jv _vK‡e:
+[XvKv †evW©-2017]
+(K) HTML Syntax Kx? 	1
+(L) eZ©gv‡b I‡qe †cB‡R Hyperlink GKwU ¸iæZ¡c~Y© Dcv`vb- e¨vL¨v
+Ki| 	2
+(M) DÏxc‡K 2q †Uwe‡ji Z_¨vewj gwRjv dvqvid· I‡qe eªvDRv‡i
+†`Lvi Rb¨ HTML Gi mvnv‡h¨ cÖ‡qvRbxq †KvW wjL| 	3
+(N) 1g †Uwe‡ji dvuKv †m‡j DÏxc‡K DwjøwLZ bv‡gi Qwemn 1g †Uwe‡ji
+Z_¨ I‡qe eªvDRv‡i †`Lvi Rb¨ HTML †KvW wj‡L I‡qe †cB‡R
+B‡gR e¨venv‡ii ¸iæZ¡ e¨vL¨v Ki| 	4
+24 bs cÖ‡kœi DËi
+PAG
+PAG
+PAG
+PAG 	PAG
+wPÎ-1
+Subject list
+1. Bangla
+2. English
+3. ICT
+wPÎ-2
+Serial
+No
+Institute
+Picture
+01
+1g †Uwej
+Employee Information
+ID
+No
+Emp.
+Name Salary
+1001 Nafis
+50,000

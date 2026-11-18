@@ -1,0 +1,122 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 9
+(M) QvÎ‡`i ˆZwi html code ‡KvW wb¤œiƒc n‡Z cv‡i:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<strong>Quick</strong><i>brown</i><u>fox</u><br>
+<del>Jumps over</del>the lazy<sup>dog</sup><br>
+and<sub>then</sub><strong><i>it fall</i></strong><br>
+<u> <i>prey</i> to a <i> lion. </i></u>
+</body>
+</html>
+(N) DÏxc‡Ki duvKv N‡i QwewU ms‡hvR‡bi †ÿ‡Î †UwejwU ˆZwii html ‡KvW
+wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td>A</td>
+<td colspan="2">B</td>
+</tr>
+<tr>
+<td>C</td>
+<td>D</td>
+<td rowspan="2"
+width="200"><img src="logo.jpg"></td>
+</tr>
+<tr>
+<td>E</td>
+<td>F</td>
+</tr>
+</table>
+</body>
+</html>
+16| wb‡Pi DÏxcKwU jÿ¨ Ki:
+`„k¨Kí-1 	`„k¨Kí-2
+Student-Info
+Roll 	Name 	Address 	Result
+5001 	Rima 	Dhaka 	3.5
+5002 	Moon 	Sylhet 	4.7
+5003 	Jui 	Dhaka 	5.0
+5004 	Koli 	Cumilla 	3.8
+`„k¨Kí-3
+[h‡kvi ‡evW©-2019]
+(K) eªvDRvi Kx?
+(L) ʻAvBwc wVKvbv n‡”Q †Wv‡gBb †bBg Gi MvwYwZK iƒcʼ -e¨vL¨v Ki|
+(M) `„k¨Kí-3 I‡qe‡c‡R cÖ`k©‡bi Rb¨ HTML ‡KvW wjL|
+(N) `„k¨Kí-1 Ges `„k¨Kí-2 Gi I‡qemvBU KvVv‡gvi g‡a¨ †KvbwU
+AwaK myweavRbK- hyw³mn wjL|
+16 bs cÖ‡kœi DËi
+(K) I‡qemvBU¸‡jv Ny‡i ‡`Lvi Rb¨ Z_v I‡qe eªvDR Kivi Rb¨ †h mKj
+mdUIq¨vi e¨envi Kiv nq Zv‡K I‡qe eªvDRvi e‡j|
+(L) B›Uvi‡b‡U hy³ cªwZwU Kw¤úDUv‡ii GKwU wVKvbv _v‡K| G wVKvbv‡K AvBwc
+G¨v‡Wªm (IP Address) ejv nq|
+AvBwc G¨v‡Wª‡mi Rb¨ msL¨v e¨envi Kiv nq hv g‡b ivLv KóKi| AvBwc
+G¨v‡Wªm‡K mn‡R g‡b ivLv Ges e¨envi‡hvM¨ Kivi Rb¨ Bs‡iwR A¶‡ii
+†Kv‡bv bvg e¨envi Kiv nq| K¨v‡i±vi d‡g©i †`qv Kw¤úDUv‡ii Giƒc
+bvg‡K †Wv‡gBb †bg ejv nq| †hgb, AvBwc G¨v‡Wªm 173.248.140.183
+Gi cwie‡Z© www.rafkhata.com †Wv‡gBb †bg e¨envi Kiv hvq| A_©vr
+†Wv‡gBb †bBg Gi MvwYwZK iƒc n‡”Q AvBwc G‡Wªm|
+(M) `„k¨Kí-3 I‡qe‡c‡R cÖ`k©‡bi Rb¨ HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<caption style="text-align:center;">
+<strong>Student-Info</strong></caption>
+<tr>
+<th>Roll</th>
+<th>Name</th>
+<th>Address</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>5001</td>
+<td>Rima</td>
+<td>Dhaka</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Moon</td>
+<td>Sylhet</td>
+<td>4.7</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Jui</td>
+<td>Dhaka</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>5004</td>
+<td>Koli</td>
+<td>Cumilla</td>
+<td>3.8</td>
+</tr>
+</table>
+</body>
+</html>
+(N) `„k¨Kí-1 n‡”Q wmKz‡qÝ ev wjwbqvi KvVv‡gv| Avi `„k¨Kí-2 wUª ev
+nvqvivwK©K¨vj KvVv‡gv| G `ywU KvVv‡gvi g‡a¨ `„k¨Kí-2 G D‡jøwLZ wUª ev
+nvqivwK©K¨vj KvVv‡gv AwaK myweavRbK| wb‡P hyw³mn Gi KviY eY©bv Kiv
+n‡jv-
+wUª ev nvqvivwK©K¨vj KvVv‡gv‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i
+_v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i cieZ©x
+†cBR¸‡jv‡Z hvIqv hvq| I‡qemvB‡Ui KvVv‡gvi g‡a¨ nvqvivwK©K¨vj
+KvVv‡gv me‡P‡q mnR I RbwcÖq| G c×wZ‡Z wewfbœ kvLv¸‡jv‡K,
+Avjv`vfv‡e mshy³ Kiv n‡q _v‡K| †nvg‡cBR, mve-‡gby I Ab¨vb¨
+†cB‡Ri wj¼ _v‡K| G‡Z K‡i I‡qemvB‡Ui wfwRUiiv mn‡RB eyS‡Z cv‡i
+†Kvb As‡k Zvi cÖ‡qvRbxq Z_¨¸‡jv i‡q‡Q| wewfbœ cÖwZôv‡bi I‡qemvBU
+†hgb- †Kv‡bv ¯‹zj, K‡jR ev e¨emvwqK cÖwZôv‡bi I‡qemvBU G ai‡bi

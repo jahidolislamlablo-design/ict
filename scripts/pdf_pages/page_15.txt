@@ -1,0 +1,124 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 15
+(M) DÏxc‡Ki `„k¨Kí-1 Gi I‡qemvBU KvVv‡gvwU n‡jv nvqviviwKK¨vj ev wUª
+KvVv‡gv|
+I‡qemvBU KvVv‡gvi g‡a¨ nvqviviwKK¨vjB me‡P‡q mnR, RbwcÖq I
+hyw³c~Y©| †ewkifvM AbjvBb wm‡÷gB G c×wZ e¨envi K‡i| G ai‡bi
+KvVv‡gv‡Z g~j Topics Gi wj÷ A_ev †gby ˆZwi Kiv _v‡K Ges g~j
+Topics †_‡K Sub-Topics ˆZwi Kiv _v‡K| cÖwZwU Sub-Topics G
+wbw`©ó welq m¤ú‡K© Av‡jvPbv Kiv _v‡K| G ai‡bi KvVv‡gv e¨env‡ii
+gva¨‡g Z_¨ MÖn‡Yi †¶‡Î e¨enviKvix AwZwi³ ¯^vaxbZv †fvM K‡i _v‡K|
+wj‡¼i gva¨‡g Zv‡`i cÖ‡qvRb Abyhvqx mn‡RB I‡q‡ei GK †cBR †_‡K
+Avi GK †cB‡R Abvqv‡m †h‡Z cv‡ib Ges I‡qe †cBRwUi †Kvb As‡k
+wZwb Ae¯’vb Ki‡Qb Zv Rvbv Zvi c‡¶ mnRmva¨ nq| nvqviviwKK¨vj
+KvVv‡gvi †nvg‡cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß AvKv‡i _v‡K|
+we¯ÍvwiZ Z‡_¨i Rb¨ wj¼ e¨envi K‡i †nvg †cBR †_‡K Ab¨vb¨ †cB‡R
+hvIqv hvq|
+(N) DÏxc‡Ki `„k¨Kí-2 †K I‡qe‡cB‡R cÖ`k©‡bi Rb¨ HTML Gi
+cÖ‡qvRbxq †KvWmg~n wb‡P ˆZwi Kiv n‡jv-
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr>
+<th> Roll </th>
+<th> Subject </th>
+</tr>
+<tr>
+<td> 201 </td>
+<td> Bangla </td>
+</tr>
+<tr>
+<td> 202 </td>
+<td> English </ td>
+</tr>
+<tr>
+<td> 203 </td>
+<td> ICT </td>
+</tr>
+</table>
+</body>
+</html>
+28| w``vi Test cix¶vi djvdj cÖ`k©‡bi Rb¨ wb‡Pi I‡qe‡cBRwU ˆZwi K‡i
+Ges test.html bv‡g †mf K‡i iv‡L:
+Test Result
+Roll 	Group 	Name 	Result
+image.
+jpg
+101 	Hum. 	Reza 	A+
+102 	Hum. 	Eva 	B
+103 	Hum. 	Jaber 	A–
+104 	Hum. 	Joni 	C [PÆMÖvg †evW© -2017]
+(K) I‡qemvBU Kx? 	1
+(L) HTML-Gi e¨env‡ii myweav eY©bv Ki| 	2
+(M) DÏxc‡Ki test.html dvBjwU ˆZwii Rb¨ HTML †KvW wjL| 3
+(N) Image.jpg Gi Dci wK¬K Ki‡j www.moedu.gov.bd
+I‡qemvBUwU cÖ`k©b Kivi html †KvW wj‡L I‡qe †cB‡R D³
+U¨v‡Mi f~wgKv we‡kølY Ki| 	4
+28 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †cB‡Ri mgwóB n‡jv I‡qemvBU|
+(L) HTML ev Hyper Text Markup Language n‡jv I‡qe †cBR
+†jLvi GKwU ¯^Zš¿ fvlv| HTML e¨env‡ii eûwea myweav i‡q‡Q| †hgb:
+1. HTML fvlv †kLv I di‡gwUs Kiv mnR|
+2. cÖvq me ai‡bi eªvDRvi mg_©b K‡i|
+3. GwU BDRvi †d«Ûwj| †cÖvMÖvwgs m¤ú‡K© aviYv †bB Ggb e¨w³I mn‡R
+wkL‡Z cv‡i|
+4. HTML G ˆZwi Kiv †h †Kv‡bv dvBj/mvBU‡K i¶Yv‡e¶Y I
+Avc‡WU Kiv hvq|
+5. HTML-G ˆZwi Kiv dvBj †jvW Ki‡Z mgqI Kg jv‡M|
+(M) DÏxc‡Ki test.html dvBjwU ˆZwii Rb¨ HTML †KvW:
+<!DOCTYPE html>
+<html>
+<body>
+<table border = "1">
+<tr>
+<th colspan = "4" align = "center"> Test Result </th>
+<td rowspan = "6"> <img src = "image.jpg"> </td>
+</tr>
+<tr>
+<th> Roll </th>
+<th> Group </th>
+<th> Name </th>
+<th> Result </th>
+</tr>
+<tr>
+<td>101 </td>
+<td>Hum </td>
+<td>> Raza </td>
+<td>> A+ </td>
+</tr>
+<tr>
+<td>102 </td>
+<td>> Hum. </td>
+<td>> Eva </td>
+<td>B</td>
+</tr>
+<tr>
+<td>103 </td>
+<td> Hum.</td>
+<td> Jaber </td>
+<td>> A– </td>
+</tr>
+<tr>
+<td>104 </td>
+<td> Hum. </td>
+<td>> Joni </td>
+<td> C </td>
+</tr>
+</table>
+</body>
+</html>
+(N) Image.jpg Gi Dci wK¬K Ki‡j www.moedu.gov.bd I‡qemvBUwU
+cÖ`k©b Kivi Rb¨ G‡`i g‡a¨ wj¼ Ki‡Z n‡e| wj¼ Kivi Rb¨ nvBcviwj¼
+A¨vwUªweDU ev <a href = "URL"> Link text </a> e¨envi Ki‡Z
+n‡e-
+<html>
+<body>
+<a href = http://www.moedu.gov.bd>
+<img src = "image.jpg" width = "50" height = "50"></a>
+</body>
+</html>
+GLv‡b A¨v¼i U¨vM <a> I B‡gR U¨vM <img> e¨eüZ n‡q‡Q| HTML
+U¨vM <a> Øviv nvBcviwj¼ ¯’vcb Kiv nq| U¨vM <a> Gi mv‡_ href
+A¨vwUªweDU †hvM Ki‡Z nq| Gi ïiæ nq <a> w`‡q Ges †kl nq </a>
+w`‡q|

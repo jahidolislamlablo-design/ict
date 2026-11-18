@@ -1,0 +1,121 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 14
+</tr>
+<tr>
+<td colspan>"3"align="center"=English</td>
+</tr>
+<tr>
+<td colspan>"3"align="center"=ICT</td>
+</tr>
+<tr>
+<th>Optional</th>
+<td>Physics</td>
+<td>Math</td>
+<td>Biology</td>
+</tr>
+</table>
+</body>
+</html>
+26| XYZ College, Dhaka
+Available Honor’s Subject
+1. Bangla
+2. English
+3. Mathematics
+4. Accounting [h‡kvi †evW© -2017]
+(K) I‡qe †cBR Kx? 	1
+(L) ‡Wv‡gBb †b‡gi ¸iæZ¡ e¨vL¨v Ki| 	2
+(M) DÏxcKwU †Zvgvi K‡j‡Ri I‡qemvB‡Z †nvg †cB‡R cÖ`©k‡bi Rb¨
+HTML †KvW wjL| 	3
+(N) m¤§vb wel‡q bv‡gi ZvwjKv wb‡q Serial no Ges Subject Name
+GB `yBwU †Uwej †nwWs `yB Kjv‡gi GKwU (eWv©imn) †Uwej ˆZwii
+HTML †KvW wjL| 	4
+26 bs cÖ‡kœi DËi
+(K) I‡qe †cBR n‡jv GK ai‡bi I‡qe WKz‡g›U hv B›Uvi‡bU e¨enviKvix‡`i
+†`Lvi Rb¨ wewfbœ †`‡ki mvfv©‡i ivLv nq|
+(L) cÖwZwU I‡qemvB‡Ui †h ¯^Zš¿ bvg _v‡K Zv‡K †Wv‡gBb †bg ejv nq|
+†Wv‡gBb †bg n‡e GK I AwØZxq| †Wv‡gBb †bg †K K‡Vvifv‡e wbqš¿jY
+Kiv nq, hv‡Z K‡i GKB bvg Ab¨ ‡KD bv cvq| DNS c×wZ‡Z †Wv‡gBb
+†bg‡K wbqš¿Y Kiv nq| B›Uvi‡b‡U †Wv‡gBb †bg wKb‡Z cvIqv hvq, Z‡e
+†h †Wv‡gBb †bg GL‡bv †KD wK‡‡b †d‡jwb, ‡m¸‡jv †Kej †Kbv hv‡e|
+‡Wv‡gBb †b‡gi WU Gi c‡ii AskwU‡K Uc †j‡fj †Wv‡gBb e‡j| GwU
+†`‡L mn‡R eySv hvq cÖwZôvbwU ‡Kvb ai‡bi| GRb¨ †h‡Kvb ai‡bi
+I‡qemvB‡Ui Rb¨ †Wv‡gBb †bg AZ¨šÍ ¸iæZ¡c~Y©|
+(M) DÏxcKwU Avgvi K‡j‡Ri I‡qemvB‡Ui †nvg †cB‡R cÖ`k©‡bi Rb¨
+HTML †KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<h1> XYZ College, Dhaka </h1>
+<h4> Available Honor’s Subject </h4>
+<ol>
+<li> Bangla </li>
+<li> English </li>
+<li> Mathematics </li>
+<li> Accounting </li>
+</ol>
+</body>
+</html>
+(N) DÏxc‡K DwjøwLZ m¤§vb wel‡q bv‡gi ZvwjKv wb‡q Serial no Ges
+Subject Name GB `yBwU †Uwej †nwWs `yB Kjv‡gi GKwU eWv©imn
+†Uwej ˆZwii HTML †KvW wb¤œiƒc:
+Available Honor’s Subject
+Serial No 	Subject name
+1 	Bangla
+2 	English
+3 	Mathematics
+4 	Accounting
+HTML ‡KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<caption> Available Honor’s Subject </caption>
+<tr>
+<th align ="center"> Serial No </th>
+<th align ="center"> Subject Name</th>
+</tr>
+<tr>
+<td align ="center"> 1 </td>
+<td align ="center"> Bangla </td>
+</tr>
+<td align ="center">2</td>
+<td align ="center">English</td>
+</tr>
+<tr>
+<td align ="center">3</td>
+<td align ="center"> Mathematics </td>
+</tr>
+<tr>
+<td align ="center"> 4 </td>
+<td align ="center"> Accounting </td>
+</tr>
+</table>
+</body>
+</html>
+27| wb‡Pi DÏxcKwU j¶ Ki-
+`„k¨Kí-1
+`„k¨Kí-2
+Roll 	Subject
+201 	Bangla
+202 	English
+203 	ICT [Kzwgjøv †evW©-2017]
+(K) g‡Wg Kx? 	1
+(L) ÔAv‡jvi MwZ‡Z †WUv †cÖiY m¤¢eÕ- e¨vL¨v Ki| 	2
+(M) DÏxc‡Ki `„k¨Kí-1 I‡qemvBU KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxc‡Ki `„k¨Kí-2 †K I‡qe †cB‡R cÖ`k©‡bi Rb¨ HTML-Gi
+cÖ‡qvRbxq †KvWmg~n wjL| 	4
+27 bs cÖ‡kœi DËi
+(K) g‡Wg n‡jv GKwU KwgDwb‡Kkb wWfvBm hv Z_¨‡K GK Kw¤úDUvi †_‡K
+Ab¨ Kw¤úDUv‡i †Uwj‡dvb e¨e¯’vi gva¨‡g †cŠu‡Q †`q|
+(L) AcwUK¨vj dvBevi K¨ve‡ji gva¨‡g Av‡jvi MwZ‡Z †WUv †cÖiY m¤¢e|
+AcwUK¨vj dvBevi n‡jv Kv‡Pi Zš‘i ˆZwi GK ai‡bi K¨vej hvi gva¨‡g
+Av‡jvi MwZ‡Z †WUv Av`vb-cÖ`vb Kiv nq| GB K¨ve‡ji ga¨ w`‡q †WUv
+¯’vbvšÍ‡ii †¶‡Î †jRvi iwk¥ e¨envi Kiv nq| Av‡jvi c~Y© Af¨šÍixY
+cÖwZdjb Kv‡R jvwM‡q AcwUK¨vj dvBevi KvR K‡i| G K¨ve‡ji we‡klZ¡
+n‡jv GwU B‡jKwUªK¨vj wmMb¨v‡ji cwie‡Z© Av‡jvK ev jvBU wmMb¨vj
+UªvÝwgU K‡i| Gi gva¨‡g Av‡jvi MwZ‡Z †WUv †cÖiY m¤¢e|
+Home page
+Page-2
+Page-5
+Page-1
+Page-4	Page-3

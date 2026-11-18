@@ -1,0 +1,130 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 6
+(K) ‡h mKj I‡qemvB‡Ui †WUvi gvb I‡qe †UK‡bvjwR †jvwWs ev ‡cBR Pvjy
+Kivi ci cwieZ©b Kiv hvq Zv‡K WvBbvwgK I‡qemvBU e‡j| .
+(L) I‡qe †cR ˆZwi Kivi ci I‡qe mvf©v‡i †nvw÷s Kivi cÖwμqv‡K
+I‡qemvBU cvewjwks e‡j| mnR fvlvq, B›Uvi‡b‡U Kb‡U›Uev welq e¯Íy
+cÖKvk Kivi cÖwμqv n‡PQ I‡qemvBU cvewjwks| GB I‡qemvBwU g~jZ
+GKwU mvf©v‡i cvewjk Ki‡Z nq d‡j wKQz avcmg~‡ni gva¨‡g KvRwU
+cwic~Y© nq| GB avc¸‡jv wb¤œiƒc:
+1| I‡qe‡cBR wWRvBb I ˆZwi|
+2| I‡qe †nvw÷s Kiv|
+3| GKwU †Wv‡gBb †bg †iwR‡÷ªkb|
+4| I‡qe mvf©v‡i I‡qemvBUwU †cªiY|
+(M) `„k¨Kí-1 †K AvDUcyU wn‡m‡e cÖ`k©‡bi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<body>
+<head> <title> List </title> </head>
+<ol type = "A" start = "3">
+<li> Coffee </li>
+<li> Tea
+<ul type ="disc">
+<li> Black </li>
+<li> Green </li>
+</ul>
+</li>
+<li> Milk </li>
+</ol>
+</body>
+</html>
+(N) `„k¨Kí-2 Gi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> Result Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<th colspan = "3" align = “center> Result
+</th>
+</tr>
+<tr>
+<td rowspan = "2" align = "center" > <u> [CT </u> </td>
+<td align = "left"> CQ </td>
+<td align ="left"> MCQ </td>
+</tr>
+<tr>
+<td align = "center> 45 </td>
+<td align = "center> 25 </td>
+</tr>
+<tr>
+<td align = "center"> <u> English </u> </td>
+<td colspan = "2" align = "center" > 95 </td>
+</tr>
+</table>
+</body>
+</html>
+wb‡q e¨eüZ U¨vM¸‡jvi eYb©v †`Iqv n‡jv:
+<html> ⟶ html| WKz‡g›U‡K †evSv‡Z GB U¨vM e¨envi nq|
+HTML Gi g~j‡K †evSv‡Z <html> U¨vM e¨eüZ nq|
+<head> ⟶ mKj ai‡bi †gUv‡WUvi K‡›UBbvi wn‡m‡e <head> e¨eüZ
+nq|
+<title> ⟶ wk‡ivbvg ev UvB‡Uj †evSv‡Z GB U¨vM e¨eüZ nq|
+<body> ⟶ GB U¨v‡Mi wfZ‡iB g~jZ me html Dcv`vb we¯Í…Z _v‡K|
+<table> ⟶ †Uwej ˆZwii Rb¨ <table> U¨vM e¨eüZ nq|
+<tr> ⟶ †Uwe‡ji Row ev mvwi ˆZwii Rb¨ <tr> ... </tr> U¨vMwU
+e¨eüZ nq|
+<th> ⟶ ‡Uwe‡ji †nwWs w`‡Z <th> e¨envi Kiv nq|
+<td> ⟶ †Uwe‡ji WvUv BbcyU w`‡Z <td> ... </td> U¨vM e¨envi Kiv
+nq|
+11|
+2. ICT Book Writer Name:
+o Mr. X
+o Mr. Y
+3. Bangla Book Writer Name:
+ Mr. A
+ Mr. B
+`„k¨Kí-1
+Marks Sheet
+Roll
+No.
+Bangla 	English
+1st 	2nd 	1st 	2nd
+001 	85 	67 	58 	70
+002 	65 	75 	60 	55
+003 	72 	61 	48 	63
+`„k¨Kí-2
+[w`bvRcyi ‡evW©-2023]
+(K) ‡nvw÷s Kx?
+(L) ‡Wv‡gb †bBg Gi ¸iæZ¡ e¨vL¨v Ki|?
+(M) `„k¨Kí-1 Gi Rb¨ cÖ‡qvRbxq HTML ‡KvW wjL|
+(N) `„k¨Kí-2 I‡qe‡c‡R cÖ`k©b Kiv wK m¤¢e? †Zvgvi gZvg‡Zi
+†hŠw³KZv we‡kølY Ki|
+11 bs cÖ‡kœi DËi
+(K) I‡qemvBU‡K B›Uvi‡b‡Ui mv‡_ hy³ †Kv‡bv I‡qe mvf©v‡i msiÿY Kiv‡K
+I‡qe †nvw÷s e‡j|
+(L) ‡bUIqv‡K© †h‡Kv‡bv Kw¤úDUvi‡K †Pbvi R‡b¨ †h Dcvqmg~n Av‡Q Gi
+GKwU n‡jv AvBwc A¨v‡Wªm Ges Ab¨wU n‡jv †U·U wbf©i †Wv‡gBb †bg
+wm‡÷g (wWGbGm)| †Wv‡gBb †bgI AvBwc A¨v‡Wªm Gi gZ GKwU ¯^Zš¿
+I‡qe mvBU‡K wb‡`©k K‡i| Z‡e AvBwc A¨v‡Wªm msL¨vwfwËK nIqvq GwU
+g‡b ivLv KóKi hvi Rb¨ A¶i wfwËK †Wv‡gBb †bBg e¨envi Kiv AwaK
+myweavRbK| GB †Wv‡gBb †b‡gi gva¨‡gB mviv we‡k¦i †h‡Kv‡bv cÖv‡šÍi
+B›Uvi‡bU e¨enviKvixiv †h‡Kv‡bv I‡qe mvBU‡K mn‡R Lyu‡R cvq|
+(M) `„k¨Kí-1 Gi Rb¨ cÖ‡qvRbxq HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> List </title> </head>
+<body>
+<ol type = "1" start = "2">"
+<li> ICT Book Writer Name: </li>
+<ul type = "circle">
+<li> Mr. X </li>
+<li> Mr. Y </li> </ul>
+<li> Bangla Book Writer Name: </li>
+<ul type = "square">
+<li> Mr. A </li>>
+<li> Mr. B </li>
+</ul>
+</ol>
+</body>
+</html>
+(N) `„k¨Kí-2 I‡qe‡c‡R cÖ`k©b Kiv m¤¢e| Avgvi gZvg‡Zi †hŠw³KZv
+wn‡m‡e wb‡¤œi HTML ‡KvWwU †`Lv‡bv n‡jv:
+<html>
+<head> <title> Table Marks Sheet </title> </head>
+<body>
+<table align = "center"> border = "1">
+<caption> <b> Marks sheet </b> </caption>
+<tr>
+<th rowspan = "2"> Roll No. </th>
+<th colspan = "2"> Bangla </th>
+<th colspan = "2"> English </th>
+</tr>
+<tr>

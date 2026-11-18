@@ -1,0 +1,127 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 3
+cwieZ©‡bi gv‡S cÖavb cwieZ©bwU n‡”Q Avgv‡`i mvew¯ŒÞ U¨v‡Mi cwie‡Z©
+mycviw¯ŒÞ U¨vM e¨envi Ki‡Z n‡e| wb‡¤œ cwiewZ©Z †KvWwU †`Lv‡bv n‡jv:
+<html>
+<head> <title> HTML Superscript </title> </head>
+<body>
+<p> (H + O) <sup> 2 </sup> = H <sup> 2 </sup>
++ 2HO + O <sup> 2 </sup> <p>
+</body>
+</html>
+D³ †KvWwU‡Z †`Lv hv‡”Q, <p> U¨v‡Mi wfZ‡i mgxKiY †jLvi Rb¨
+<sub> U¨v‡Mi cwie‡Z© <sup> U¨vM e¨envi Kiv n‡q‡Q|
+5| wb‡Pi wPÎwU †`L Ges cÖkœ¸‡jvi DËi `vI:
+Science 	Commerce 	Humanities
+Physics 	Accounting 	History
+Chemistry 	Management 	Islamic History
+[Kzwgjøv ‡evW©-2023]
+(K) WvBbvwgK I‡qemvBU Kx?
+(L) ‡Wv‡gBb †bg IP Address Gi cwic~iK -e¨vL¨v Ki|
+(M) DÏxc‡Ki wPÎwU AvDUcyU wn‡m‡e cvIqvi Rb¨ HTML ‡KvWwU
+wjL|
+(N) hw` DÏxc‡Ki †Uwe‡ji †KvW mvwi‡K (Row) ¯Í‡¤¢ (Column) Ges
+¯Í¤¢‡K mvwi‡Z cwiYZ Kiv nq Zvn‡j KxKx cwieZ©b n‡e -we‡kølY
+Ki|
+5 bs cÖ‡kœi DËi
+(K) ‡h mKj I‡qemvB‡Ui †WUvi gvb I‡qe †UK‡bvjwR †jvwWs ev †cBR Pvjy
+Kivi ci cwieZ©b Kiv hvq Zv‡K WvBbvwgK I‡qemvBU e‡j|
+(L) ‡bUIqv‡K© †h‡Kv‡bv Kw¤úDUvi‡K †Pbvi R‡b¨ †h Dcvqmg~n Av‡Q Gi
+GKwU n‡jv AvBwc A¨v‡Wªm Ges Ab¨wU n‡jv †U·U wbf©i †Wv‡gBb †bg
+wm‡÷g (wWGbGm)| †Wv‡gBb †bgI AvBwc A¨v‡Wªm Gi gZ GKwU ¯^Zš¿
+I‡qe mvBU‡K wb‡`©k K‡i| Z‡e AvBwc A¨v‡Wªm msL¨vwfwËK nIqvq GwU
+g‡b ivLv KóKi hvi Rb¨ A¶i wfwËK †Wv‡gBb †bBg e¨envi Kiv AwaK
+myweavRbK| GB †Wv‡gBb †b‡gi gva¨‡gB mviv we‡k¦i †h‡Kv‡bv cÖv‡šÍi
+B›Uvi‡bU e¨enviKvixiv †h‡Kv‡bv I‡qe mvBU‡K mn‡R Lyu‡R cvq| AZGe
+ejv hvq, †Wv‡gBb †bg IP Address Gi cwic~iK|
+(M) DÏxc‡Ki wPÎwU AvDUcyU wn‡m‡e cvIqvi Rb¨ HTML ‡KvWwU †jLv
+n‡jv:
+<html>
+<head> <title> Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<td align = "center"> Science </td>
+<td align = "center"> Commerce </td>
+<td align = "center"> Humanities </td>
+</tr>
+<tr>
+<td align = "center"> Physics </td>
+<td align = "center"> Accounting </td>
+<td align = "center"> History </td>
+</tr>
+<tr>
+<td align = "center"> Chemistry </td>
+<td align = "center"> Management </td>
+<td align = "center" Islamic History </td>
+</tr>
+</table>
+</body>
+</html>
+(N) hw` DÏxc‡Ki †Uwe‡ji †KvW mvwi‡K ¯Í‡¤¢ Ges ¯Í¤¢‡K mvwi‡Z cwiYZ Kiv
+nq Zvn‡j wb‡¤œv³ †KvWwU cvIqv hv‡e-
+<html>
+<head> <title> Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<td align = "center"> Science </td>
+<td align = "center"> Physics </td>
+<td align = "center"> Chemistry </td>
+</tr>
+<tr>
+<td align = "center"> Commerce </td>
+<td align = "center"> Accounting </td>
+<td align = "center"> Management </td>
+</tr>
+<tr>
+<td align = "center" > Humanities </td>
+<td align = "center" > History </td>
+<td align = "center" Islamic History </td>
+</tr>
+</table>
+</body>
+</html>
+Ges D³ †KvWwUi djvdj n‡e:
+Science 	Physics 	Chemistry
+Commerce 	Accounting 	Management
+Humanities 	History 	Islamic History
+6| Mango:
+Seasonal Fruit
+A. Green
+B. Red
+Jack Fruit:
+National Fruit
+ Green
+ Yellow
+wPÎ- 1
+[h‡kvi ‡evW©-2023]
+GKRb dj e¨vemvqx Zvi cÖwZôv‡bi Rb¨ GKwU I‡qemvBU ˆZwi K‡i †bq|
+†hLv‡b d‡ji weei‡Yi Rb¨ GKwU I‡qe‡cR Av‡Q hvi AvDUcyU wPÎ- 1
+Gi b¨vq| Zvi I‡qemvB‡Ui d‡ji `vg wbqwgZ Avc‡WU nq bv| d‡j
+†μZviv fzj Z_¨ cvq|
+(K) A¨vwUªweDU Kx?
+(L) ʻAvBwc wVKvbvB n‡”Q †Wv‡gBb †bBg Gi MvwYwZK iƒcʼ -e¨vL¨v Ki|
+(M) wPÎ- 1 Gi b¨vq djvdj †c‡Z HTML ‡KvW wjL|
+(N) DÏxc‡Ki mv‡c‡ÿ MÖvnK‡`i mwVK Z_¨ †c‡Z e¨emvqxi KiYxq Kx?
+gZvgZ `vI|
+6 bs cÖ‡kœi DËi
+(K) A¨vwUªweDU n‡”Q Ggb wKQz kã ¸”Q hv U¨v‡Mi ˆewkó¨ wba©viK wb‡`©k
+wn‡m‡e KvR K‡i|
+(L) ‡bUIqv‡K© †h‡Kv‡bv Kw¤úDUvi‡K †Pbvi R‡b¨ †h Dcvqmg~n Av‡Q Gi
+GKwU n‡jv AvBwc A¨v‡Wªm Ges Ab¨wU n‡jv †U·U wbf©i †Wv‡gBb †bg
+wm‡÷g (wWGbGm)| †Wv‡gBb †bgI AvBwc A¨v‡Wªm Gi gZ GKwU ¯^Zš¿
+I‡qe mvBU‡K wb‡`©k K‡i| Z‡e AvBwc A¨v‡Wªm msL¨vwfwËK nIqvq GwU
+g‡b ivLv KóKi hvi Rb¨ A¶i wfwËK †Wv‡gBb †bBg e¨envi Kiv AwaK
+myweavRbK| GB †Wv‡gBb †b‡gi gva¨‡gB mviv we‡k¦i †h‡Kv‡bv cªv‡šÍi
+B›Uvi‡bU e¨enviKvixiv †h‡Kv‡bv I‡qe mvBU‡K mn‡R Lyu‡R cvq|
+(M) wPÎ- 1 Gi b¨vq djvdj †c‡Z = ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> List </title> </head>
+<body>
+<ul type = "none">
+<li> Mango:
+<ul type = "none">
+<li> Seasonal Fruit
+<ol type ="A">
+<li> Green </li>

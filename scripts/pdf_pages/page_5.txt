@@ -1,0 +1,127 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 5
+HTML cÖavbZ †Kvb †cÖvMÖvwgs j¨v½y‡qR bq eis GwU GKwU gvK©-Avc
+j¨v½y‡qR hv U¨v‡Mi Dci wfwË K‡i KvR K‡i, d‡j A¶‡ii eo I †QvU
+nIqvi c‡¶ GB fvlvi †Kvb `vqe×Zv †bB|
+(M) wPÎ-1 Gi gZ gZ I‡qe‡cBR ˆZwii Rb¨ html ‡KvwWs wb‡¤œ †`Lv‡bv
+n‡jv:
+<html>
+<head> <title> List </title> </head>
+<body>
+<p> <u> Product List </u> </p>
+<ol type = "1">
+<li> Book </li>
+<li> Pen </li>
+<li>Bag </li>
+</ol>
+</body>
+</html>
+(N) wPÎ bs- 2 Gi gZ I‡qe‡cBR ˆZwii Rb¨ html ‡KvwWswU n‡e:
+<html>
+<head> <title> Table </title> </head>
+<body>
+<table border = "1">
+<tr>
+<th align = "center" > SL </th>
+<th align = "center" colspan = "2"> ABC Company </th>
+</tr>
+<tr>
+<td align = "center"> A </td>
+<td align =" center"> Monitor </td>
+<td align = "center" rowspan = "2" > <img src = "Rose.
+jpg </td>
+<tr>
+<td align = "center> B </td>
+<td align = "center" > Keyboard </td>
+</tr>
+</table>
+</body>
+</html>
+9|
+< html >
+<body>
+<ul>
+<li> Bangladesh </li>
+</ul>
+</ body >
+</ html >
+(`„k¨Kí-1)
+ Bangladesh
+o Dhaka
+o Rajshahi
+o S
+ylhet
+o K
+hulna
+(`„k¨Kí-2)
+൤ABcollege. edu. bd
+image. jpg ൨
+(`„k¨Kí-3)
+[ewikvj ‡evW©-2023]
+(K) AvBwc A¨v‡Wªm Kx?
+(L) img GKwU G¤úwU Gwj‡g›U †Kb? e¨vL¨v Ki
+(M) `„k¨Kí-1 e¨envi K‡i `„k¨Kí-2 cvIqvi Rb¨ HTML ‡KvW wjL|
+(N) `„k¨Kí-1 I `„k¨Kí-3 e¨envi K‡i bZzb GKwU I‡qe‡cR ˆZwi
+Kivi Rb¨ HTML ‡KvW wjL|
+9 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡U hy³ cÖwZwU Kw¤úDUv‡ii GKwU wbR¯^ wVKvbv _v‡K| GB
+wVKvbv‡K AvBwc A¨v‡Wªm ev Internet Protocol Address e‡j|
+(L) mvaviYZ †h U¨vMmg~‡ni ïay ïiæi U¨vM we`¨gvb wKšÍ G‡`i †kl U¨vM _v‡K
+bv, Zv‡`i G¤úwU U¨vM ev Lvwj ev dvKv U¨vM e‡j| HTML WKz‡g›U Qwe
+ms‡hvR‡bi Rb¨ e¨eüZ U¨vM n‡”Q image U¨vM| image U¨vM †jLvi
+wmbU¨v· n‡”Q <img src = "Qwei bvg. Qwei di‡gU">|
+D³ wmbU¨v‡·B †`Lv hv‡”Q, <img> U¨v‡Mi ïiæ _vK‡jI Gi ‡kl U¨vM
+wn‡m‡e †Kvb U¨vM (‡hgb: <html> ............... </html>) †bB| d‡j
+img U¨v‡Mi †Kej GwUªweDU we`¨gvb, wfZ‡i †Kvb Gwj‡g›U †bB| A_©vr
+img GKwU G¤úwU Gwj‡g‡›Ui U¨vM|
+(M) `„k¨Kí-1 e¨envi K‡i `„k¨Kí-2 cvIqvi Rb¨ HTML ‡KvWwU wb¤œiƒc:
+<html>
+<head> <title> List </title> </head>
+<body>
+<ul>
+<li> Bangladesh </li>
+</ul>
+<ul type = "circle">
+<li> Dhaka </li>
+<li> Rajshahi </li>
+<li> Sylhet </li>
+<li> Khulna </li>
+</ul>
+</body>
+</html>
+(N) `„k¨Kí-1 I `„k¨Kí-3 e¨envi K‡i bZzb GKwU I‡qe‡cR ˆZwi Kivi Rb¨
+HTML ‡KvWwU wb‡¤œ †jLv n‡jv:
+<html>
+<head> <title> ABC College </title> </head>
+<body>
+<h3> Welcome to Our College Website </h3>
+<a href = "ABcollege.edu.bd"> ABcollege </a>
+<img src = "image.jpg">
+<p> Our College located in: </p>
+<ul> <li> Bangladesh </li> </ul>
+<ul type ="circle">
+<li> Dhaka </li>
+<li> Rajshahi </li>
+<li> Sylhet </li>
+<li> Khulna </li>
+</ul>
+</body>
+</html>
+10|
+C. Coffee
+D. Tea
+ Black
+ Green
+E. Milk
+`„k¨Kí-1 	`„k¨Kí-2
+[wm‡jU ‡evW©-2023]
+(K) WvqbvwgK I‡qemvBU Kx?
+(L) I‡qemvBU cvewjwks e¨vL¨v Ki|
+(M) `„k¨Kí-1 †K AvDUcyU wn‡m‡e cÖ`k©‡bi Rb¨ HTML ‡KvW wjL|
+(N) `„k¨Kí-2 Gi Rb¨ HTML ‡KvW wjL Ges e¨eüZ U¨vMmg~‡ni eY©bv
+`vI|
+10 bs cÖ‡kœi DËi
+Result
+ICT CQ 	MCQ
+45 	25
+English 	95

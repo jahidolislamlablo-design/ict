@@ -1,0 +1,120 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 19
+35 bs cÖ‡kœi DËi
+(K) mvP© BwÄb n‡”Q Ggb GK ai‡bi Uzj hvi mvnv‡h¨ B›Uvi‡b‡Ui ARmª I‡qe
+mvf©vi †_‡K mn‡RB †h‡Kv‡bv Z_¨ Lyu‡R ‡ei Kiv hvq|
+(L) GKB †Wv‡gBb †b‡gi Aax‡b m¤úK©hy³ GKvwaK I‡qe †cBR _v‡K|
+mvf©v‡ii mgš^‡q MwVZ GK wekvj †bUIqvK© hv mviv we‡k¦i mg¯Í I‡qe
+†cB‡Ri msMÖn _v‡K| www ev world wide web n‡”Q c„w_exi wewfbœ
+†`‡ki mvf©v‡i ivLv ci¯ú‡ii ms‡hvM‡hvM¨ webpage hv B›Uvi‡b‡Ui
+gva¨‡g I‡qe eÖvDRvi mdUIq¨vi e¨envi K‡i †`Lv hvq| GRb¨ †Wv‡gBb
+†bB‡g www _v‡K|
+(M) DÏxc‡Ki Aby‡”Q`wU I‡q‡e cÖKv‡ki cª‡qvRbxq U¨vMmg~n wbP †`Iqv n‡jv-
+<html>
+<body>
+<p><b><u>This is my home page</u></b><br>
+Bangladesh is a land <br> of <br> rivers and canals. </p>
+</body>
+</html>
+Dc‡iv³ †Kv‡W e¨eüZ U¨vMmg‚n wb‡P e¨vL¨v Kiv n‡jv-
+HTML U¨vM: cÖ‡Z¨K HTML WKz‡g‡›U Aek¨B dvB‡ji ïiæ‡Z
+<html> U¨vM Ges dvB‡ji †k‡l </html> U¨vM wjL‡Z nq| Ab¨vb¨
+Z_¨¸‡jv Gi †fZ‡i hv‡”Q|
+Body U¨vM: †cB‡Ri Kb‡U›U, †U·U, B‡gR Ges wjsK BZ¨vw` G As‡k
+_v‡K| eÖvDRv‡ii G As‡k _vKv me Z_¨vw` e¨enviKvix‡K †`Lvq|
+Paragraph U¨vM: HTML G cÖ`wk©Z wbw`©ó WKz‡g›U‡K Paragraph
+AvKv‡i cÖKvk Ki‡Z <p> U¨vM e¨eüZ nq| Bold U¨vM: HTML G
+cÖ`wk©Z wbw`©ó WKz‡g›U‡K bold Ki‡Z <b> U¨vM e¨eüZ nq|
+Underline U¨vM: HTML G cª`wk©Z wbw`©ó WKz‡g›U‡K underline
+Ki‡Z <u> U¨vM e¨eüZ nq|
+Break U¨vM: HTML WKz‡g‡›U †h‡Kv‡bv jvB‡bi gv‡Si †Kvb Ask‡K
+†f‡½ bZzb jvBb ˆZwi Ki‡Z <hr> U¨vM e¨eüZ nq|
+(N) DÏxc‡K †h AvDUcyUwU †`Lv‡bv n‡q‡Q Zv hw` evsjvq †c‡Z PvB Zvn‡j Gi
+Abyev` Ki‡j nq ÒGwU Avgvi †nvg †cBRÓ| wKš‘ G‡K mivmwi HTML
+G †jLv hv‡e bv| wb‡Pi c`‡¶c¸‡jv wb‡Z n‡e|
+1. †Kv‡bv †U·U GwWUi †hgb Microsoft Word (Ms Word) GB K_vwU
+evsjvq wjL‡Z n‡e|
+2. Gici H †jLvwU Kwc K‡i †KvW wj‡L <font face = Gici †h d‡›U
+†jLvwU UvBc Kiv n‡qwQj †m d›UwUi bvg Bbfv‡U©W Kgvi †fZi wjL‡Z
+n‡e Ges Ctrl+V Kx †P‡c †jLvwU Paste Ki‡Z n‡e| †hgb-
+<!DOCTYPE html>
+<html>
+<body>
+<font face = "sutonnyMJ"> GwU Avgvi †nvg †cBR
+<font face="sutonnyMJ">
+</font>
+</body>
+</html>
+Zvn‡jB AvDUcy‡U evsjv †jLv †`Lv‡e|
+36| AvBwmwU wk¶K Avmgv g¨vWvg I‡qe‡cBR ˆZwii Rb¨ wk¶v_©x‡`i wb‡Pi
+wP‡Îi g‡Zv I‡qe‡cBR KvVv‡gvi civgk© w`‡jb| wk¶v_©x‡`i g‡a¨ Anbv
+wPÎ-1 Ges AwiÎ wPÎ-2 bs KvVv‡gv †e‡Q wb‡q I‡qe‡cBR ˆZwi Kij|
+[Kzwgjøv †evW© -2016]
+(K) †nvg †cBR Kx? 	1
+(L) I‡qe‡cBR wWRvB‡b HTML Gi ¸iæZ¡ e¨vL¨v Ki| 	2
+(M) Anbvi I‡qe †cBR ÷ªvKPviwU kbv³ K‡i e¨vL¨v Ki| 	3
+(N) DÏxc‡K ÷ªvKPvi `ywUi g‡a¨ AwiÎ'i ÷ªvKPviwU ¯^v”Q‡›`¨ e¨envi Kiv
+hvq we‡kølYc~e©K gZvgZ `vI| 	4
+36 bs cÖ‡kœi DËi
+(K) ‡nvg‡cBR n‡jv GKwU I‡qe †cB‡Ri †K›`Öxq ev g~j Ask hv †Kv‡bv
+I‡qemvB‡U cÖ‡ek Ki‡j me©cÖ_g cÖ`wk©Z nq|
+(L) I‡qe †cBR wWRvB‡b GBPwUGgGj Gi A‡bK ¸iæZ¡ i‡q‡Q| KviY
+GBPwUGgG‡ji mvnv‡h¨-
+1. †Kv‡bv †cB‡Ri Z_¨‡K †h‡Kv‡bv ¯’v‡b miv‡bv hvq|
+2. cÖwZwU eÖvDRvi HTML mg_©b K‡i|
+3. †kLv I e¨envi Kivi c×wZ mnR|
+4. †cB‡Ri mvBR Kg nIqvq LiP Kg c‡o|
+(M) DÏxc‡K DwjøwLZ Anbvi I‡qe †cBRwU A_©vr wPÎ-1 n‡jv wjwbqvi KvVv‡gv
+ev wmKz‡qÝ mvBU ÷ªvKPvi| wmKz‡qÝ mvBU ÷ªvKPvi n‡jv GKwU
+I‡qemvB‡Ui †cBR¸‡jv wbw`©ó wmKz‡qÝ Abymv‡i wfwRU Kiv| G ai‡bi
+÷ªvKPv‡i I‡qe †cB‡Ri Z_¨¸‡jv mvwie×fv‡e GKwUi ci GKwU wj¼ Kiv
+_v‡K| †Kvb †cB‡Ri ci †Kvb †cBR Avm‡e Zv I‡qe †cBR wWRvBb
+Kivi mgq wVK Kiv n‡q _v‡K| G ai‡bi †cBR¸‡jv‡Z mvaviYZ Next,
+Previous, Last, First BZ¨vw` wj¼ e¨envi Kiv nq| wjwbqvi KvVv‡gv ev
+wmKz‡qÝ mvBU ÷ªvKPvi n‡jv I‡qemvBU wWRvBb ÷ªvKPv‡ii g‡a¨ me‡P‡q
+mnR| G c×wZ‡Z †cBR¸‡jv GKwUi ci Av‡iKwU Gfv‡e wmKz‡qÝ AW©vi
+Abzhvqx wj¼ Kiv _v‡K|
+(N) DÏxc‡K DwjøwLZ Anbvi I‡qe †cBRwU n‡jv wjwbqvi KvVv‡gv Ges AwiÎ
+Gi I‡qe †cBRwU n‡jv wUª ev nvqvivwK©K¨vj KvVv‡gv| GB `ywU I‡qe †cBR
+Gi g‡a¨ AwiÎ Gi I‡qe †cBRwU ¯^v”Q‡›`¨ e¨envi Kiv hvq|
+wUª ev nvqvivwK©K¨vj KvVv‡gv‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ, msw¶ß AvKv‡i
+_v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg †cB‡R wj¼ e¨envi K‡i cieZ©x
+†cBR¸‡jv‡Z hvIqv hvq| I‡qemvB‡Ui, KvVv‡gvi g‡a¨ nvqvivwK©K¨vj
+KvVv‡gv me‡P‡q mnR I RbwcÖq| G c×wZ‡Z I‡qemvB‡Ui wewfbœ
+kvLv¸‡jv‡K Avjv`vfv‡e mshy³ Kiv n‡q _v‡K| †nvg‡cBR, mve-‡gby I
+Ab¨vb¨ †cB‡Ri wj¼ _v‡K| G‡Z K‡i I‡qemvB‡Ui wfwRUiiv mn‡RB
+eyS‡Z cv‡i †Kvb As‡k Zvi cÖ‡qvRbxq Z_¨¸‡jv i‡q‡Q| wewfbœ cÖwZôv‡bi
+I‡qemvBU †hgb- †Kv‡bv ¯‹zj, K‡jR ev e¨emvwqK cÖwZôv‡bi I‡qemvBU
+G ai‡bi n‡q _v‡K| †ewki fvM AbjvBb wm‡÷‡g G ai‡bi KvVv‡gv
+e¨envi Kiv nq| G ai‡bi KvVv‡gv‡Z g~j wel‡qi ZvwjKv ev †gby ˆZwi
+K‡i mve-‡gby ˆZwi Kiv n‡q _v‡K|
+37| 'X' cÖwZôv‡bi †nvg †cB‡R cÖwZôv‡bi cÖkvmwbK fe‡bi Qwe †`Iqv Av‡Q|
+Employee.html I Product.html bv‡g `y'wU I‡qe‡cBR †nvg
+†cB‡Ri mv‡_ wj¼ Kiv Av‡Q| I‡qemvBUwU B›Uvi‡b‡U _vK‡j we‡k¦i
+m‡PZb gvbyl cÖwZôvb m¤ú‡K© Rvb‡Z cvi‡e|
+[PUªMÖvg †evW© -2016]
+(K) URL Kx? 	1
+(L) ÒcÖwZwbqZ cwieZ©bkxj Z‡_¨i I‡qemvBUÓ e¨vL¨v Ki| 	2
+(M) DÏxc‡K DwjøwLZ cÖwZôvbwUi †nvg †cBR ˆZwii html †KvW †jL| 3
+(N) DÏxc‡Ki Av‡jv‡K m‡PZb gvby‡li `„wó‡MvPi Kivi cÖ‡qvRbxq
+c`‡¶c Kx n‡Z cv‡i? hyw³mn e¨vL¨v Ki| 	4
+37 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡Ui I‡qe †cBR¸‡jv‡K †h mvf©v‡i ivLv nq Zvi GKwU wbw`©ó
+BDwbK A¨v‡WÖm _v‡K, hv‡K URL (Uniform Resource Locator) ev
+I‡qe A¨v‡Wªm e‡j|
+(L) cÖwZwbqZ cwieZ©bkxj Z‡_¨i I‡qemvBU n‡jv WvBbvwgK I‡qemvBU| G
+ai‡bi I‡qemvB‡Ui Pvwn`v me‡P‡q †ewk| ivb UvB‡gi mgq †cB‡Ri
+wWRvBb ev Kb‡U›U cwieZ©b n‡Z cv‡i| †WUv‡eR Kz‡qwii gva¨‡g wewfbœ
+cwieZ©bkxj Kb‡U›U ˆZwi Kiv hvq| e¨enviKvix‡`i wbKU n‡Z BbcyU
+†`Iqvi e¨e¯’v _v‡K| A‡bK †ewk Z_¨eûj nq| ZvQvov AvKl©Yxq I
+B›UviA¨vKwUf †j- AvDU ˆZwi Kiv hvq| WvBbvwgK I‡qe †cBR ˆZwi
+Ki‡Z †cÖvMÖvwgs j¨vs¸‡qR wn‡m‡e Javascript, PHP, Net, ASP
+BZ¨vw` e¨eüZ nq| †WUv‡e‡Ri mv‡_' I‡qemvBU hy³ Kivi Rb¨ (MS
+Access, Mz SQL My Structured Query Language) e¨envi
+Kiv nq|
+evsjv‡`k b`x I Lv‡ji †`k </font>
+GLv‡b †jLvwU †c÷ Ki‡Z n‡e Z‡e Zv mivmwi
+Gfv‡e †`Lv‡e bv| output G †`Lv hv‡e|
+1 	2 	3
+wPÎ-1
+wPÎ-2

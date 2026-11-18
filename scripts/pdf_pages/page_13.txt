@@ -1,0 +1,126 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 13
+(K) ‡Kv‡bv mywbw`©ó j¨vs¸‡qR Øviv †h ixwZ‡Z †Kv‡bv †cÖvMÖv‡gi †÷U‡g›U iwPZ
+nq †m my¯úó ixwZB D³ j¨vs¸‡q‡Ri †ÿ‡Î HTML Syntax wnmv‡e
+we‡ewPZ nq|
+(L) GK †cB‡Ri m‡½ Ab¨ †cB‡Ri ev GKB †cB‡Ri wewfbœ As‡ki g‡a¨
+ms‡hvM Kivi c×wZwU hLb nvBcvi‡U·‡U _v‡K ZLb Zv‡K ejv nq
+nvBcviwjsK| wj‡¼i wmb‡U·wU wb¤œiƒc:
+<a href="url">link text </a>
+nvBcviwj‡¼ wK¬K K‡i GKB WKz‡g‡›Ui wfbœ †Kv‡bv Ae¯’v‡b A_ev wfbœ
+†Kv‡bv WKz‡g‡›Ui wfbœ †Kv‡bv †cB‡R hvIqv hvq| m¤úwK©Z Z_¨ cÖ`k©b
+K‡i Rvbv hvq| eªvDRviKvixi mgq mvkÖh nq| ZvB eZ©gv‡b I‡qe †cB‡R
+Hyperlink GKwU ¸iæZ¡c~Y© Dcv`vb|
+(M) DÏxc‡K 2q †Uwe‡ji Z_¨vewj gwRjv dvqvid· I‡qe eªvDRv‡i †`Lvi
+Rb¨ HTML Gi mvnv‡h¨ cÖ‡qvRbxq †KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<caption>Employee Information</caption>
+<tr>
+<th>ID No </th>
+<th>Emp. Name </th>
+<th>Salary</th>
+</tr>
+<tr>
+<td>1001</td>
+<td>Nafis</td>
+<td rowapan="2">50,000</td></tr>
+</tr>
+<tr>
+<td>1005</td>
+<td>sajal</td>
+</tr>
+</table>
+</body>
+</html>
+(N) 1g †Uwe‡j dvuKv †m‡j DÏxc‡K DwjøwLZ bv‡gi Qwemn 1g †Uwe‡ji Z_¨
+I‡qe eªvDRv‡i †`Lvi Rb¨ HTML †KvW wb¤œiæc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr>
+<th>Serial No</th>
+<th>Institute Picture</th>
+</tr>
+<tr>
+<td>01</td>
+<td>img src=="institute.png"width="50"hight="50"</td>
+</tr>
+</table>
+</body>
+</html>
+I‡qe †cB‡R B‡gR e¨env‡ii ¸iæZ¡ wb¤œiƒc:
+1. I‡qe †cÖ‡R‡›Uk‡b B‡gR e¨env‡ii gva¨‡g mn‡RB †U·‡Ui cwigvY
+Kwg‡q Av‡b |
+2. B‡g‡Ri e¨envi n‡”Q gvby‡li `„wó AvK©l‡Yi GKwU DrK…ó Dcvq|
+3. B‡gR‡K wj¼ wnmv‡e †bwf‡Mkb Uzjm e¨envi K‡i I‡qec‡cRwU
+AviI `k©bxq K‡i †Zvjv hvq|
+myZivs B‡gR hvB †nvK bv †Kb `k©b‡hvM¨ Dcv`vb¸‡jv ms‡hvRb I‡qe
+†cÖ‡R‡›Ukb‡K AviI †ewk we‡klZ¡ cÖ`vb K‡i|
+25| wg. z m¨vi K¬v‡m html †cÖvMÖvwgs †`Lvw”Q‡jb| wZwb GKwU I‡qe †cBR c
+WªvB‡f wcKPvi †dvìv‡ii g‡a¨ ivLv logo.jpg bvgK GKwU B‡gR hy³
+Ki‡jb hvi mvBR 500×300 wc‡·j| AZtci wZwb QvÎ‡`i ej‡jb
+†Zvgiv Ggb GKwU html ‡KvW †jL hv‡Z D³ B‡g‡Ri Dci wK¬K Ki‡j
+www.xeducationboard.edu.bd I‡qe mvBwU cÖ`k©b Kiv hvq|
+AZtci wZwb wb‡Pi †UwejwU ˆZwii html †KvW wjL‡jb
+Student Name 	Compulsory 	Optional
+Harry Porter Bangla English ICT Physics
+Math
+Biology
+[ivRkvnx †evW©-2017]
+(K) I‡qemvBU Kx? 	1
+(L) <Font> U¨v‡Mi A¨vwUªweDUmg~n e¨vL¨v Ki| 	2
+(M) QvÎ‡`i html ‡KvW wKiƒc n‡e Zv †`LvI Ges †KvWwU‡Z †hme
+A¨vwUªweDU e¨eüZ n‡q‡Q Zv‡`i e¨vL¨v `vI| 	3
+(N) hw` DÏxc‡Ki †Uwe‡j mKj mvwi‡K (Row) ¯Í‡¤¢ (Column) Ges
+mKj ¯Í¤¢‡K mvwi‡Z (Row) cwiYZ Kiv nq Zvn‡j †h †Uwej ˆZwi
+nq Zv ˆZwii Rb¨ html †KvW ‡jL| 	4
+25 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †cB‡Ri mgwóB n‡jv I‡qe mvBU|
+(L) d›U wmbU¨v· n‡”Q
+< font face = "fontname" size = "sizenumber" color =
+"color name > Text </font>
+GLv‡b font U¨v‡Mi A¨vwUªweDU n‡”Q font, size I color
+face A¨vwUªweDU wewfbœ d‡›Ui bvg enb Ki‡e Ges size d‡›Ui mvBR
+cwieZ©‡bi †ÿ‡Î e¨eüZ nq| color d‡›Ui is wbav©iY nq|
+(M) DÏxc‡K DwjøwLZ QvÎ‡`i html ‡KvW wb¤iƒc:
+<!DOCTYPE html>
+<html>
+<body>
+<a href=="www.xeducationboard.edu.bd"edu.bd">
+<img src="logo.jpg"width"="500"height="300"></a>
+</body>
+</html>
+GLv‡b, wj‡¼i A¨vwUªweDU n‡”Q href hv href A¨vwUªweD‡Ui wVKvbv wbav©iY
+K‡i| url As‡k m¤ú~Y© A¨v‡Wªm wjL‡Z nq|
+<img> U¨vM Gi A¨vwUªweDU n‡”Q, src Ges <img> U¨vMwU empty
+A_v©r GwU †Kej A¨vwUªweDU enb K‡i Ges †Kv‡bv †K¬vwRs U¨vM †bB|
+src n‡jv source hv †cB‡R B‡gRwU cÖ`k©b Kiv n‡e| †cB‡R B‡gR hy³
+Kivi mgq †mvm© A¨vwUªweD‡Ui mv‡_ B‡g‡Ri D”PZv (height) Ges cÖk¯ÍZv
+(width) KZ wc‡·j n‡e Zv wbav©iY K‡i †`qv hvq| GLb logo.jpg †Z
+wK¬K K‡i www.xeducationboard.edu.bd bvgK I‡qe mvBUwU‡Z
+mn‡R cvIqv hv‡e|
+(N) hw` DÏxc‡Ki †Uwe‡ji mKj mvwi‡K (Row) ¯Í‡¤¢ (Column) Ges mKj
+¯Í¤¢‡K (Column) mvwi‡Z cwiYZ Kiv nq Zvn‡j †h †Uwej ˆZwi n‡e Zv
+wb¤œiƒc:
+Student Name 	Harry Porter
+Compulsory
+Bangla
+English
+ICT
+Optional 	Physics 	Math 	Biology
+D³ †UwejwUi html ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr>
+<th>Student Name</th>
+<td colspan>"3"align="center"> Harry Porter </td>
+</tr>
+<tr>
+<th rowspan="3"> compulsory </th>
+<td colspan>"3"align="center"=Bangla</td>

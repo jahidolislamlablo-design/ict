@@ -1,0 +1,126 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 20
+(M) DÏxc‡K DwjøwLZ cÖwZôvbwUi †nvg †cBR ˆZwii html †KvWwU n‡jv|
+<!DOCTYPE html>
+<html>
+<body>
+<a href="www.employee.html"> Employee </a>
+<a href="www.product.html"> Product </a>
+</body>
+</html>
+(N) DÏxc‡Ki Av‡jv‡K m‡PZb gvby‡li `„wó‡MvPi Kivi cÖ‡qvRbxq c`‡¶c
+n‡jv I‡qe cvewjwks| wb‡P Zv e¨vL¨v Kiv n‡jv-
+I‡qemvBU Ggb GKwU Kw¤úDUv‡i ivL‡Z nq, †hb †mB Kw¤úDUviwU
+me©¶Y mPj _v‡K Ges B›Uvi‡b‡Ui m‡½ hy³ _v‡K| ‡mB m‡½ Av‡iKwU
+wRwbm _vK‡Z nq, hv‡K e‡j cvewjK AvBwc A¨v‡Wªm (IP Address)|
+GwU n‡”Q B›Uvi‡b‡U H Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv| e¨w³MZ Kv‡R
+†hme Kw¤úDUvi e¨envi Kiv nq, †mLv‡b Aek¨ B›Uvi‡bU ms‡hvM _vK‡jI
+wbw`©ó cvewjK AvBwc A¨v‡Wªm _v‡K bv| B›Uvi‡bU ms‡hvM`vZv cÖwZôv‡bi
+m‡½ †hvMv‡hvM K‡i cvewjK AvBwc A¨v‡WÖm msMÖn Kiv hvq| Z‡e †KDB
+Zvi e¨w³MZ Kw¤úDUvi 24 NÈv Pvjy ivL‡e bv, ZvB wewfbœ cÖwZôvb I‡qe
+†nvw÷s †mev cÖ`vb K‡i, †hLv‡b I‡qemvBU ivLv I cvewjk Kiv hvq|
+AvBwc A¨v‡Wªm e¨envi K‡i I‡qemvBU eÖvDR Kiv †M‡jI †KD ev¯Í‡e
+AvBwc A¨v‡Wªm g‡b iv‡L bv| ZvB I‡qemvB‡U †Wv‡gBb bvg e¨envi Kiv
+nq| B›Uvi‡b‡U †Wv‡gBb bvg wKb‡Z cvIqv hvq| Z‡e †h †Wv‡gBb bvg
+GL‡bv †KD wK‡b †d‡jwb, †m¸‡jvB †Kej †Kbv hv‡e| Zvici †Wv‡gBb
+bv‡gi m‡½ I‡qe †nvw÷s mvf©v‡ii GKwU ms‡hvM cÖwZôv Ki‡Z nq| Zvn‡j
+†KD I‡qe eÖvDRv‡ii A¨v‡WÖm ev‡i IB †Wv‡gBb bvg wj‡L G›Uvi wK Pvc‡j
+I‡qe mvBUwU B›Uvi‡b‡U †`L‡Z cv‡e| D³ KvR¸‡jv m¤ú~Y©fv‡e †kl
+n‡jB B›Uvi‡b‡U I‡qe †cBR †`Lv hv‡e Ges m‡PZb gvbz‡li `„wó †MvPi
+Kiv m¤¢e n‡e|
+38| eZ©gv‡b 'X' K‡jR Zv‡`i Kvh©μg myôyfv‡e cwiPvjbvi Rb¨ Website
+ˆZwii wm×všÍ MÖnY K‡i‡Q| GBRb¨ ïaygvÎ html e¨envi K‡i wk¶v_©x‡`i
+bvg, wcZvi bvg, Rb¥ZvwiL, †ivj b¤^i I †mKkb wdì mshy³ K‡i
+Student's information bvgK †Uwej ˆZwi K‡i| Z‡e miKviI eZ©gv‡b
+mKj ¯‹zj K‡j‡Ri nvjbvMv` Z_¨ Dc¯’vc‡bi Rb¨ I‡qemvBU ˆZwi Kivi
+wb‡`©k w`‡q‡Qb|
+[wm‡jU †evW© -2016]
+(K) †Wv‡gBb †bg Kx? 	1
+(L) †h cªhyw³ SzuwKc~Y© KvR‡K mnR K‡i‡Q Zv e¨vL¨v Ki | 	2
+(M) DÏxc‡K DwjøwLZ †UwejwU wWRvB‡bi Rb¨ cÖ‡qvRbxq HTML †KvW
+†jL| 	3
+(N) KZ©„ c‡¶i M„nxZ e¨e¯’vq miKv‡ii wb‡`©k cy‡ivcywi ev¯Íevqb Ki‡Z
+n‡j hv hv KiYxq we‡kølYc~e©K gZvgZ `vI| 	4
+38 bs cÖ‡kœi DËi
+(K) †Wv‡gBb †bg ev DNS n‡”Q AvBwc A¨v‡Wª‡mi GKwU AvjdvwbD‡gwiK
+K¨v‡i±vi ev b¤^i msewjZ wVKvbv|
+(L) †ivewU· cÖhyw³ SzuwKc~Y© KvR‡K mnR K‡i‡Q| KviLvbvq Kw¤úDUvi wbqwš¿Z
+†ive‡Ui mvnv‡h¨ bvbviKg wec¾bK I cwikÖgmva¨ KvR †hgb- I‡qwìs,
+XvjvB, fvix gvjvgvj DVv- bvgv, hš¿vsk ms‡hvRb, Mvwo is Kiv BZ¨vw`
+KvR Kiv nq| eZ©gv‡b †evgv wbw®ŒKiY, fvix KjKviLvbv, gnvKv‡k †iveU,
+wgwjUvwi, wmwKDwiwU (cÖwZi¶v), D×vi, gvbylwenxb Mvwo cvwbi wb‡P
+Kg©‡cv‡hvMx hvb †Uwj Acv‡ikb, †gwW‡Kj mvR©vwi GgbwK eZ©gv‡b DbœZ
+†`‡k evmvevwo‡Z ˆ`bw›`b Kv‡R, we‡bv`‡b †iveU Gi mvnv‡h¨ KvR K‡i
+KvR‡K mnR K‡i‡Q|
+(M) DÏxc‡K DwjøwLZ †UwejwU wWRvB‡bi Rb¨ cÖ‡qvRbxq GBPwUGgGj †KvW:
+<!DOCTYPE html>
+<html>
+<head>
+<title> Table </title>
+</head>
+<body>
+<table Border – "1" width= "100">
+<caption> Student's Information </caption>
+<tr>
+<th> Student's Name</th>
+<th> Father's Name </th>
+<th> Date of Birth </th>
+<th> Roll No </th>
+<th> Section </th>
+</tr>
+<tr>
+<td> Zarin Tasnim </td>
+<td>Zahidur Rahman </td>
+<td> 10-03-2000</td>
+<td> 1101 </td>
+<td>SC </td>
+</tr>
+<tr>
+<td> Razana Onse </td>
+<td>> Saiful Alam </td>
+<td> 15-05-2000</td>
+<td>1102 </td>
+<td>Se </td>
+</tr>
+</table>
+</body>
+</html>
+(N) DÏxc‡K DwjøwLZ KZ©…c‡¶i M„nxZ e¨e¯’vq miKv‡ii wb‡`©k cy‡ivcywi
+ev¯Íevqb Ki‡Z n‡j I‡qe cvewjwks Ki‡Z n‡e| I‡qe cvewjwks n‡jv
+B›Uvi‡b‡U Kb‡U›U ev welqe¯Íz cvewjk ev cÖKvk, Kivi GKwU c×wZ|
+B›Uvi‡b‡U GKwU I‡qe †cBR cvewjk Kivi c`‡¶c¸‡jv wbgœiƒc :
+I‡qemvBU Ggb GKwU Kw¤úDUv‡i ivL‡Z nq, †hb †mB Kw¤úDUviwU
+me©¶Y mPj _v‡K Ges B›Uvi‡b‡Ui m‡½ hy³ _v‡K| †mB m‡½ Av‡iKwU
+wRwbm _vK‡Z nq, hv‡K e‡j cvewjK AvBwc A¨v‡Wªm (IP Address)|
+GwU n‡”Q B›Uvi‡b‡U H Kw¤úDUv‡ii GKwU wbw`©ó wVKvbv| e¨w³MZ Kv‡R
+†hme Kw¤úDUvi e¨envi Kiv nq, †mLv‡b Aek¨ B›Uvi‡bU ms‡hvM _vK‡jI
+wbw`©ó cvewjK AvBwc A¨v‡WÖm _v‡K bv| B›Uvi‡bU ms‡hvM`vZv cÖwZôv‡bi
+m‡½ †hvMv‡hvM K‡i cvewjK AvBwc A¨v‡WÖm msMÖn Kiv hvq| Z‡e †KDB
+Zvi e¨w³MZ Kw¤úDUvi 24 NÈv Pvjy ivL‡e bv, ZvB wewfbœ cÖwZôvb I‡qe
+†nvw÷s †mev cÖ`vb K‡i, †hLv‡b I‡qemvBU ivLv I cvewjk Kiv hvq|
+AvBwc A¨v‡WÖm e¨envi K‡i I‡qemvBU eÖvDR Kiv †M‡jI †KD ev¯Í‡e
+AvBwc A¨v‡WÖm g‡b iv‡L bv| ZvB I‡qehmvB‡U †Wv‡gBb bvg e¨envi Kiv
+nq| B›Uvi‡b‡U †Wv‡gBb bvg wKb‡Z cvIqv hvq| Z‡e †h †Wv‡gBb bvg
+GL‡bv †KD wK‡b †d‡jwb, †m¸‡jvB †Kej †Kbv hv‡e| Zvici †Wv‡gBb
+bv‡gi m‡½ I‡qe †nvw÷s mvf©v‡ii GKwU ms‡hvM cÖwZôv Ki‡Z nq| Zvn‡j
+†KD I‡qe eÖvDRv‡ii A¨v‡Wªm ev‡i IB †Wv‡gBb bvg wj‡L G›Uvi wK Pvc‡j
+DÏxcKwU B›Uvi‡b‡U †`L‡Z cv‡e| Dc‡iv³ c`‡¶c¸‡jv MÖnY Ki‡j
+miKv‡ii wb‡`©k cy‡ivcywi ev¯Íevqb Kiv hv‡e|
+39| ‡gvnb GKwU I‡qemvBU eÖvDR Ki‡Z wM‡q †`‡L I‡qemvBUwUi cÖwZwU
+†cB‡R †h‡Z n‡jB evievi †nvg †cB‡R Avm‡Z nq| Avi †nvg †cBRwU
+bvbv ai‡bi bv›`wbK weÁvc‡b mvRv‡bv| hv‡Z K‡i mevB AvK…ó nq|
+cÖ_gevi e¨envi Ki‡Z wM‡q †m wKQzUv ¯^v”Q›`¨ †eva K‡i| wKš‘ †m
+I‡qemvB‡Ui GKwU Qwe eÖvDR Ki‡Z wM‡q †`‡L †cBRwU †jvW n‡Z †ewk
+mgq †bq| ZvQvov †cBRwU †`Lv †M‡jI mKj Qwe eÖvDRvi cÖ`k©b Ki‡Z
+cvi‡Q bv| G‡Z †m wei³ nq|
+[ewikvj †evW© -2016]
+(K) GBPwUGgGj U¨vM Kx? 	1
+(L) †Wv‡gBb †bg †iwR‡÷ªkb Ki‡Z nq †Kb? 	2
+(M) DÏxc‡Ki I‡qemvBUwUi KvVv‡gv e¨vL¨v Ki| 	3
+(N) DÏxc‡K DwjøwLZ mgm¨v mgvav‡b †Zvgvi mywPwšÍZ gZvgZ `vI| 4
+39 bs cÖ‡kœi DËi
+(K) GBPwUGgGj U¨vM n‡jv GBPwUGgGj WKz‡g‡›Ui mv‡_ Gg‡e‡WW †KvwWs
+wb‡`©kvewj|
+(L) AvBwc A¨v‡Wªm‡K mn‡R e¨envi Kivi Rb¨ Bs‡iwR A¶‡ii †Kv‡bv GKwU
+bvg e¨envi Kiv nq| K¨v‡i±vi d‡g© †`Iqv Kw¤úDUv‡i Giƒc bvgB
+†Wv‡gBb †bg| cÖwZwU †Wv‡gBb †bg BDwbK Ges Gi mv‡_ GKwU BDwbK

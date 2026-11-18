@@ -1,0 +1,113 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 7
+<td align = "center"> 1st </td>
+<td align = "center" 2nd </td>
+<td align = "center"> 1st </td>
+<td align = "center"> 2nd </td>
+</tr>
+<tr>
+<td align = "center" > 001 </td>
+<td align = "center" > 85 </td>
+<td align = "center"> 67 </td>
+<td align = "center" > 58 </td>
+<td align = "center"> 70 </td>
+</tr>
+<tr>
+<td align = "center" > 002 </td>
+<td align = "center" > 65 </td>
+<td align = "center" > 75 </td>
+<td align = "center" > 60 </td>
+<td align = "center" > 55 </td>
+</tr>
+<tr>
+<td align = "center" > 003 </td>
+<td align = "center" > 72 </td>
+<td align = "center" > 61 </td>
+<td align = "center" > 48 </td>
+<td align = "center" > 63 </td>
+</tr>
+</table>
+</body>
+</html>
+12|
+wPÎ-1 	wPÎ-2
+[gqgbwmsn ‡evW©-2023]
+(K) AvBwc A¨v‡Wªm Kx?
+(L) Wire Frame Kx? e¨vL¨v Ki|
+(M) wPÎ-1 G †Kvb ai‡Yi I‡qemvBU ÷ªvKPvi e¨envi Kiv n‡q‡Q?
+(N) wPÎ-2 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ HTML ‡KvW wjL|
+[wPÎwU photo.jpg, Size = 100 × 80]
+12 bs cÖ‡kœi DËi
+(K) B›Uvi‡b‡U hy³ cÖwZwU Kw¤úDUv‡ii GKwU wbR¯^ wVKvbv _v‡K| GB
+wVKvbv‡K AvBwc A¨v‡Wªm ev Internet Protocol Address e‡j|
+(L) Iq¨vi‡d«wgs nj KvVv‡gvMZ ¯Í‡i GKwU I‡qemvBU cwi‡lev wWRvBb Kivi
+GKwU Dcvq: GKwU Iq¨vi‡d«g mvaviYZ GKwU c„ôvi mvgwqK Ges
+Kvh©KwiZv †j AvDU Ki‡Z e¨eüZ nq hv e¨enviKvixi Pvwn`v Ges
+e¨enviKvixi ågY‡K we‡ePbv K‡i ‰Zwi Kiv nq| Iq¨vi‡d«g¸wj wfR&yqvj
+wWRvBb Ges welqe¯‘ ‡hvM Kivi Av‡M GKwU c„ôvi †gŠwjK KvVv‡gv ¯’vcb
+Kivi Rb¨ weKvk cÖwμqvi cÖ_g w`‡K e¨envi Kiv nq| GKwU Iq¨vi‡d«‡gi
+D‡Ïk¨ nj m„Rbkxj ch©vqwU Pvjy nIqvi Av‡M †÷K‡nvìvi Ges cÖKí
+`‡ji Aby‡gv`b †c‡Z GKwU cÖK‡íi cÖ_g w`‡K GKwU c„ôvi Pvÿzm Dcjwä
+cÖ`vb Kiv|
+(M) wPÎ-1 Gi I‡qemvBU KvVv‡gvwU n‡”Q nvBweªW KvVv‡gv GLv‡b wjsKW I wUª
+KvVv‡gvi mgš^q NUv‡bv n‡q‡Q| mvaviYZ GKwU ‡KŠkj e¨envi K‡i
+KLbI GKwU I‡qemvBU ˆZwi Kiv nq bv| eis GKvwaK †KŠk‡ji mgš^‡q
+GKwU I‡qemvBU wWRvBb Kiv n‡q _v‡K| wUª ÷ªvKPvi e¨envi K‡i †Kv‡bv
+I‡qemvBU nvW©wW‡¯‹ †ewk RvqMv `Lj K‡i| ZvB GKvwaK †KŠkj e¨envi
+K‡i I‡qemvBU ˆZwi nq| Z‡i GK I‡qe‡cBR †_‡K Av‡iK I‡qe‡cB‡R
+hvIqvi Rb¨ hv e¨envi Kiv nq †hgb: wjsK, evUb ‡gby BZ¨vw` Aek¨B
+¯úó n‡Z n‡e| hw` wjsK ¸‡jv †Kv‡bv ‡cB‡Ri Dc‡i ev‡g w`‡K †`qv nq
+Z‡e GKB wjsK †cB‡Ri wb‡PI †`qv DwPr| DÏxc‡Ki wPÎ-1 G Gfv‡eB
+I‡qe wjsK KvVv‡gv e¨eüZ n‡q‡Q HOME, Result, Images †c‡Ri
+g‡a¨ Ges Result †_‡K XI, XII, Test I‡qe‡cB‡R wUª ÷ªvKPv‡i †i‡L,
+`yB ai‡bi I‡qe KvVv‡gvi †cR wjsK Kiv n‡q‡Q|
+(N) wPÎ-1 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ HTML ‡KvWwU wb¤œiƒc: †hLv‡b
+ms‡hvwRZ wPÎwU photo.jpg Ges mvBR Size100 × 80
+<html>
+<head> <title> Table & Image </title> </head>
+<body>
+<table border = "2">
+<tr>
+<th colspan = "2" align = "center"> Bangladesh </th>
+</tr>
+<tr>
+<td align = "center"> <img src = "photo.jpg" height =
+"100" width = "80"> <br> photo </td>
+<td>
+<ol>
+<li> Dhaka </li>
+<li> Dinajpur </li>
+<li> Rangpur </li>
+</ol>
+</td>
+</tr>
+<tr>
+<td colspan = "2" align = center">
+Welcome
+</td>
+</tr>
+</table>
+</body>
+</html>
+13|
+wPÎ-1 	wPÎ-2
+[XvKv ‡evW©-2019]
+www.board.edu.bd I‡qemvB‡Ui gva¨‡g ICT b¤^i †`L‡Z n‡j
+“board” Gi Dci wK¬K Ki‡Z n‡e|
+(K) FTP wK?
+(L) I‡qemvBU I I‡qe‡cBR GK bq- e¨vL¨v Ki|
+(M) wPÎ-1 G †Kvb ai‡Yi I‡qemvBU ÷ªvKPvi e¨envi Kiv n‡q‡Q? e¨vL¨v
+Ki|
+(N) wPÎ-2 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ html ‡KvW wjL|
+13 bs cÖ‡kœi DËi
+(K) FTP ev File Transfer Protocol n‡”Q GwU B›Uvi‡bU gva¨g e¨envi
+K‡i dvBj Av`vb-cÖ`v‡bi Rb¨ e¨eüZ ‡cÖv‡UvKj (Protocol)|
+(L) B›Uvi‡bU Z_v I‡q‡e †jLv, AwWI, wfwWI, w¯’i wPÎ, Gwb‡gkb BZ¨vw` Z_¨
+ivLvi †cBR‡K e‡j I‡qe‡cBR | myZivs Avgiv ej‡Z cvwi, B›Uvi‡bU
+e¨enviKvix‡`i †`Lvi Dc‡qvMx B›Uvi‡b‡Ui mv‡_ mshy³ wewfbœ †`‡ki
+mvf©v‡i ivLv dvBj‡K I‡qe‡cBR e‡j| Avevi GKB †Wv‡gB‡bi Aax‡b
+ci¯úi ms‡hvM‡hvM¨ GKvwaK I‡qe‡c‡Ri mgwó‡K I‡qemvBU e‡j| GK
+ev GKvwaK I‡qe‡cB‡Ri mgš^‡q I‡qemvBU ˆZwi nq|
+(M) wPÎ-1 n‡jv †gby ev nvivwK©K¨vj I‡qe ÷ªvKPvi|
+nvqvivwK© ev †gbyB m¤¢eZ I‡qe WKz‡g‡›Ui me‡P‡q mnR Ges hyw³c~Y©|
+G‡K wUª KvVv‡gv e‡j| GB MVb c×wZ‡Z g~j UwcK Gi wj÷ A_ev †gby

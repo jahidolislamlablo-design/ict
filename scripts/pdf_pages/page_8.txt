@@ -1,0 +1,119 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 8
+ˆZwi K‡i Gi †_‡K mve-UwcKm ˆZwi Ki‡Z nq| †hLv‡b Avgiv wbw`©ó
+UwcK m¤ú‡K© Av‡jvPbv Kwi| AZtci GB g~j wel‡qi †gby †_‡K GKwU‡K
+c_ cÖ`k©b a‡i Avi GKwU mve UwcKm ˆZwi Ki‡Z nq hv GKwU wbw`©ó
+welq m¤ú‡K© Av‡jvPbv K‡i|
+G ai‡Yi wWRvBb e¨env‡ii gva¨‡g BRvi‡`i Z_¨ MÖn‡Yi †ÿ‡Î AwZwi³
+¯^vaxbZv cÖ`vb Kiv hvq| djkÖæwZ‡Z BDRviiv †cBRwU e¨env‡ii †ÿ‡Î
+AwaK ¯^v”Q›`¨ †eva K‡i| wjs‡Ki gva¨‡g BDRviiv cÖ‡qvRb Abyhvqx
+mn‡RB I‡q‡ei GK †cBR †_‡K Ab¨ †cB‡R Abvqv‡m †h‡Z cv‡i I
+I‡qe‡cBRwUi †Kvb As‡k BDRvi Ae¯’vb Ki‡Q, Zv Zvi Rb¨ Rvbv
+mnR‡eva nq| GB wWRvB‡bi †ÿ‡Î †nvg †cBRwU‡Z mg¯Í WKz‡g‡›Ui
+c~Y©v½ wPÎ mswÿß AvKv‡i _v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ †nvg‡cB‡R wjsK
+e¨envi K‡i Gi cieZ©x †cBR¸‡jv‡Z hvIqv hvq|
+(N) wPÎ-2 I‡qe eªvDRv‡i cÖ`k©‡bi Rb¨ HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>TABLE TEMPLATE</title>
+</head>
+<body>
+<table border="1">
+<caption>HSC-2019</caption>
+<tr>
+<th align="center" colspan="2">ICT</th>
+</tr>
+<tr height="200">
+<td align="center">Subject</td>
+<td align="center">Board</td>
+</tr>
+</table>
+</body>
+</html>
+14|
+`„k¨Kí-1 	`„k¨Kí-2
+[ivRkvnx ‡evW©-2019]
+(K) I‡qemvBU Kx?
+(L) ‡Wv‡gBb †bg AwØZxq- e¨vL¨v Ki|
+(M) `„k¨Kí-1 Gi cÖ_g jvBb me‡P‡q eo, wØZxq jvBb me‡P‡q †QvU
+†nwWs Ges Z…Zxq jvBb c¨vivMÖvd wb‡q HTML ‡KvW wjL|
+(N) `„k¨Kí-2 Gi †Uwej ˆZwii HTML ‡KvW wjL †hLv‡b, Book G
+wK¬K Ki‡j book.com I‡qemvBUwU Pvjy n‡e|
+14 bs cÖ‡kœi DËi
+(K) GKB †Wv‡gB‡bi Aax‡b GKvwaK I‡qe †c‡Ri mgwó‡K I‡qemvBU e‡j|
+(L) ‡Wv‡gBb †bBg n‡”Q B›Uvi‡b‡U GK ev GKvwaK AvBwc A¨v‡Wªm‡K
+mbv³Ki‡Yi Rb¨ GKwU AwØZxq AvjdvwbD‡gwiK (K¨v‡i±vi Ges bv¤^vi
+m¤^wjZ) wVKvbv| †hgb shikkha.org GKwU †Wv‡gBb †bBg| GB
+†Wv‡gBb †bBg e¨envi K‡i 172.168.10.1 AvBwc bv¤^vi Kw¤úDUvi‡K
+Lyu‡R †ei Kiv hvq| Ab¨fv‡e ejv hvq †h, I‡qe mvB‡Ui gva¨‡g B›Uvi‡b‡U
+Dcw¯’wZ wKsev Z_¨ Av`vb-cÖ`vb Kivi Rb¨ GKwU AwØZxq wVKvbv cÖ‡qvRb
+hv †Wv‡gBb †bBg wnmv‡e cwiwPZ|
+(M) `„k¨Kí-1 Gi HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td align="center">
+<h1 align="center">>WELCOME ICT LAB</h1>
+<h2 align="center">WELCOME ICT LAB</h2>
+<palign="center">>A<sub>2</sub>B<sup>
+2</sup></p>
+</td>
+</tr>
+</table>
+</body>
+</html>
+(N) DÏxcK Abymv‡i `„k¨Kí-2 Gi †Uwej ˆZwii HTML ‡KvW wb¤œiƒc:
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Code</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td align="center" width="100">
+<a href="https://www.book.com">Book</a>
+</td>
+<td align="center" width="100">
+<img src="book.jpg" width="50" height="50">
+<p>Book.jpg</p>
+</td>
+</tr>
+</table>
+</body>
+</html>
+15| AvBwmwU wkÿK K¬v‡m html covw”Q‡jb| wZwb QvÎ‡`i †UwejwUi duvKv N‡i
+Logo.jpg wPÎwU cÖ`k©bmn m¤ú~Y© †UwejwU ˆZwii html code wj‡L
+†`Lv‡jb|
+A 	B
+C 	D
+E 	F
+wPÎ-1
+Zvici QvÎ‡`i wb‡Pi Aby‡”Q`wUi gZ AvDUcyU cvIqvi Rb¨ html code
+wjL‡Z ej‡jb:
+Quick brown fox
+Jumps over the lazydog
+and then it fall
+prey to a lion.
+wPÎ-2
+[Kzwgjøv ‡evW©-2019]
+(K) mvP© BwÄb Kx?
+(L) IP A¨v‡Wª‡mi †Wv‡gBb †bg e¨envi Kiv myweavRbK -e¨vL¨v Ki|
+(M) QvÎ‡`i ˆZwi html code ‡Kgb Zv †`LvI|
+(N) DÏxc‡Ki duvKv N‡i QwewU ms‡hvR‡bi †ÿ‡Î mveavbZv D‡jøLc~e©K
+†UwejwU ˆZwii html ‡KvW wjL|?
+15 bs cÖ‡kœi DËi
+(K) mvP© BwÄb n‡”Q Ggb GK ai‡bi Uyj hvi mvnv‡h¨ B›Uvi‡b‡Ui AR¯ª I‡qe
+mvf©vi †_‡K mn‡RB †h‡Kv‡bv Z_¨ Lyu‡R †ei Kiv hvq|
+(L) AvBwc †bUIqvK© Z_v B›Uvi‡b‡Ui mv‡_ mshy³ cÖwZwU Kw¤úDUv‡ii GKwU
+c„_K wbR¯^ wVKvbv _v‡K, Zv‡K AvBwc G‡Wªm e‡j| AvBwc G‡Wªm‡K
+b¤^‡ii mvnv‡h¨ wPwýZ Kiv nq hv g‡b ivLv KóKi| ZvB AvBwc G‡Wªm‡K
+mn‡R e¨envi‡hvM¨ Kivi Rb¨ b¤^‡ii cwie‡Z© wewfbœ Bs‡iwR K¨v‡i±v‡ii
+gva¨‡g cÖKvk Kiv hvq| K¨v‡i±vi d‡g© †`qv Giƒc bvg‡K †Wv‡gBb †bg
+e‡j| mn‡R g‡b ivLv hvq e‡j GwU AvBwc G‡Wªm Gi †P‡q myweavRbK|

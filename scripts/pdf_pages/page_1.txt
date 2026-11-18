@@ -1,0 +1,119 @@
+Computer Compose & IT Service 	Pabna Sadar, Pabna
+Kw¤úDUvi K‡¤úvR I AvBwU †mev ** cvebv m`i, cvebv ** 01736-328444 ** †h-‡Kv‡bv K‡¤úv‡R mv‡_ AvwQ, Bb kv Avjøvn| 	Page 1
+welq: Z_¨ I †hvM‡hvM cÖhyw³
+Aa¨vq-04 (I‡qe wWRvBb cwiwPwZ Ges 	HTML)
+Board Questions
+1|
+A & H Company Ltd.
+Order List Unorder
+List
+i. Book
+ii. Paper
+iii. Note Book
+ Marker
+ Ink
+ Pencil
+`„k¨Kí-1 	`„k¨Kí-2
+`„k¨Kí-3
+[XvKv ‡evW©-2023]
+(K) Iqvi †d«g Kx?
+(L) HTML G †KvbwU WKz‡g‡›Ui Ask bq, Z‡e †jLv Riæwi?
+(M) DÏxc‡Ki `„k¨Kí-1 Gi g‡Zv I‡qe‡cBR ˆZwii Rb¨ cÖ‡qvRbxq
+HTML †KvW wjL|
+(N) `„k¨Kí-1 Ges `„k¨Kí-3 G cÖwZdwjZ I‡qemvB‡Ui KvVv‡gvi g‡a¨
+†KvbwU AwaK myweavRbK?
+1 bs cÖ‡kœi DËi
+(K) Iqvi‡d«g ej‡Z GKwU I‡qemvB‡Ui wfRy¨qvj MvBW‡K †evSv‡bv n‡q‡Q hv
+GKwU I‡qemvB‡Ui K¼vi KvVv‡gvi cÖwZwbwaZ¡ K‡i| A_©v, GwU I‡qemvBU
+ˆZwii cwiKíbv ev w¯Œb eøy wcÖ›U n‡”Q Iqvi‡d«g|
+(L) mvaviYZ HTML dvB‡j <!DOCTYPE html> bv‡g GKwU U¨vM
+e¨eüZ nq| GwU GKwU WKz‡g›U UvBc wWK¬v‡ikb U¨vM| Gi Øviv eªvDRvi
+eyS‡Z cv‡i †h WKz‡g›UwU HTML 5 ÷¨vÛvW© AbymiY K‡i †jLv n‡q‡Q
+Ges †mB Abyhvqx †iÛvi cÖ`k©b K‡i| GwU g~jZ WKz‡g‡›Ui Ask bq, Z‡e
+†jLv Riæwi|
+(M) DÏxc‡Ki `„k¨Kí-1 Gi g‡Zv I‡qe‡cBR ˆZwii Rb¨ HTML †KvWwU
+n‡jv:
+<html>
+<head> <title> HTML List </title> </head>
+<body>
+<table border = "2">
+<tr>
+<th colspan = "2" align = "center"> A & H
+Company Ltd </th>
+</tr>
+<tr>
+<td align = "center"> Order List </td>
+<td align = "center"> Unorder List </td>
+</tr>
+<tr>
+<tr align = "left">
+<ol type = "i">
+<li> Book </li.
+<li> Paper </li>
+<li> Note Book </li>
+</ol>
+</td>
+<td align = "left">
+<ul type = "square">
+<li> Marker </li>
+<li> Ink </li>
+<li> Pencil </li>
+</ul>
+</td>
+</tr>
+</table>
+</body>
+</html>
+(N) DÏxc‡Ki `„k¨Kí-2 Gi I‡qemvBU KvVv‡gvwU n‡jv nvqvivwK©K¨vj ev wUª
+KvVv‡gv |
+I‡qemvBU KvVv‡gvi g‡a¨ nvqvivwK©K¨vjB Z_¨ Dc¯’vc‡b me‡P‡q mnR I
+DËg| †ewkifvM AbjvBb wm‡÷gB G c×wZ e¨envi K‡i| G ai‡Yi
+KvVv‡gv‡Z g~j Topics Gi wj÷ A_ev ‡gby ˆZwi Kiv _v‡K Ges g~j
+Topics †_‡K Sub-Topics ˆZwi Kiv _v‡K| cÖwZwU Sub-Topics G
+wbw`©ó welq m¤ú‡K© Av‡jvPbv Kiv._v‡K| G ai‡Yi KvVv‡gv e¨env‡ii
+gva¨‡g Z_¨ MÖn‡Yi †¶‡Î e¨enviKvix m‡e©v”P ¯^vaxbZv †fvM K‡i _v‡K|
+wjs‡Ki gva¨‡g Zv‡`I cÖ‡qvRb Abyhvqx mn‡RB I‡q‡ei GK ‡cBR †_‡K
+Avi GK †cB‡R Abvqv‡m †h‡Z cv‡ib Ges I‡qe ‡cBRwUi †Kvb As‡k
+wZwb Ae¯’vb Ki‡Qb Zv Rvbv Zvi c‡¶ mnRmva¨ nq| nvqvivwK©K¨vj
+KvVv‡gvi †nvg‡cBRwU‡Z mg¯Í WKz‡g‡›Ui c~Y©v½ wPÎ msw¶ß, AvKv‡i
+_v‡K| we¯ÍvwiZ Z‡_¨i Rb¨ nvBcvi wj¼ e¨envi K‡i †nvg †cBR †_‡K
+Ab¨vb¨ †cB‡R hvIqv hvq| 	.
+DÏxc‡Ki wPÎ-3 Gi I‡qemvBU KvVv‡gvwU n‡”Q I‡qe wjsKW ev †bUIqvK©
+KvVv‡gv| †bUIqvK© KvVv‡gv‡Z me¸‡jv †cB‡Ri G‡K Ac‡ii mv‡_ wjsK
+_v‡K A_©vr GKwU †gBb †cB‡Ri mv‡_ Ab¨vb¨ †cB‡Ri †hgb wjsK _v‡K
+wVK †Zgwb Ab¨vb¨ †cB‡Ri mv‡_I †gBb †cB‡Ri wjsK _v‡K| †d«g
+e¨envi K‡i ˆZwi Kiv I‡qe †cR¸‡jv‡K GB †bUIqv‡K©i gva¨‡g wjsK
+Kiv n‡q _v‡K hv‡Z †d«‡gi g‡a¨ Ab¨vb¨ †cB‡Ri wjsK¸wj †gby AvKv‡i
+ivLv nq| GB †d«gwU mvaviYZ w¯’i _v‡K Ges †Kvb GKwU wjsK wbe©vPb
+Ki‡j Hu †cBRwU A‡c¶vK…Z eo †d«‡gi g‡a¨ †`Lvq| e¨env‡ii w`K †_‡K
+†bUIqvK© KvVv‡gv mnR n‡jI †cR evovi mv‡_ mv‡_ Gi ÷ªvKPvi MVb
+RwUj n‡q hvq|
+hw`I I‡qe wjsKW ev †bUIqvK© KvVv‡gv‡Z GK †cBR †_‡K mn‡RB Ab¨
+†cB‡R hvIqv hvq ZeyI nvqvivwK© ev †gbyB I‡qe WKz‡g‡›Ui †¶‡Î me‡P‡q
+mnR Ges hyw³c~Y© Ges GB KvVv‡gv e¨envi KivB AwaK myweavRbK|
+2| cv‡ki wPÎwU jÿ¨ Ki Ges wb‡Pi cÖkœ¸‡jvi DËi `vI:
+1. Month
+o January
+o February
+2. Day
+ Sunday
+ Monday
+[ivRkvnx ‡evW©-2023]
+(K) A¨vwUªweDU Kv‡K e‡j?
+(L) “HTML GKwU †Km †mbwmwUf fvlv bq”-e¨vL¨v Ki|
+(M) DÏxc‡Ki †cRwU ˆZwi‡Z Kx Kx we‡kl U¨vM I A¨vwUªweDU e¨envi
+Kiv n‡q‡Q?
+(N) I‡qe †cRwU cÖ`k©‡bi Rb¨ cÖ‡qvRbxq HTML Code wjL|
+2 bs cÖ‡kœi DËi
+(K) A¨vwUªweDU n‡”Q Ggb wKQy kã ¸”Q hv U¨v‡Mi ˆewkó¨ wba©viK wb‡`©k wnmv‡e
+KvR K‡i|
+(L) mvaviYZ †h fvlv¸‡jv Z_v †cÖvMÖvwgs fvlv¸‡jv eo A¶‡ii I ‡QvU A¶‡ii
+eY©‡K kbv³ Ki‡Z cv‡i Zv‡`i †Km †mbwmwUf (Casc Sensitive) fvlv
+e‡j| HTML g~jZ I‡qe‡cBR Ges I‡qe Avhvwcø‡Kkb ˆZwii Rb¨
+e¨eüZ GKwU gvK©Avc j¨vs¸‡qR| HTML c~Y©iƒc Hyper Text
+Markup language Gi gva¨‡g I‡qe WKz‡g‡›Ui wewfbœ ai‡Yi Dcv`vb
+DcKiY ˆZwi Kiv hvq| GBPwUGgG‡j e¨eüZ U¨vM A¨vwUªweDU †KvbwUB
+†Km †mbwmwUf bq, Z‡e A¨vwUªweD‡Ui gvb ev f¨vjy †Km †mbwmwUf nq|
+www.xyz.edu.bd I‡qemvBUwU wfwRU K‡i
+ivwRe †`‡L †h I‡qemvBUwUi †h †Kv‡bv †cBR
+†_‡K Ab¨ †cB‡R hvIqv hvq|
