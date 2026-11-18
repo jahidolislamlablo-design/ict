@@ -4513,7 +4513,6 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9763",
     "serialNo": 19,
@@ -4524,7 +4523,7 @@
     "categoryType": "Board Question",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
     "collegeName": "",
-    "boardName": "যশোর বোর্ড",
+    "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
@@ -4538,7 +4537,8 @@
     "correctAnswer": "i ও ii",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.350Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
