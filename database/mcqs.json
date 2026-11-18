@@ -58147,17 +58147,18 @@
     "_id": "6ae8b3fc04ce40b2c4ae988e",
     "serialNo": 318,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "রাবি ইউনিট ডি (জোড়) ২০১৪-১৫",
+    "collegeName": "",
     "boardName": "",
-    "examYear": "2014",
+    "examYear": "",
     "testPaperName": "",
     "modelTestNo": "Model Test 42",
-    "question": "ডিজিটাল মুদ্রার উদাহরণ -\t[রাবি ইউনিট ডি (জোড়) ২০১৪-১৫]",
+    "question": "ডিজিটাল মুদ্রার উদাহরণ -",
     "options": [
       "ক্রেডিট কার্ড",
       "বিটকয়েন",
