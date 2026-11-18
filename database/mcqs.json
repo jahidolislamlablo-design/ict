@@ -58603,22 +58603,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9895",
     "serialNo": 325,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট সি ২০১৩-১৪",
+    "collegeName": "Chittagong College, Chittagong",
     "boardName": "",
-    "examYear": "2013",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "আওতা বিচারে কোনটি বড়?\n[বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট সি ২০১৩-১৪]",
+    "question": "আওতা বিচারে কোনটি বড়?",
     "options": [
       "ই-রিটেইলিং",
       "ই-মার্কেটিং",
@@ -58627,7 +58625,8 @@
     ],
     "correctAnswer": "ই-বিজনেস",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.247Z"
+    "createdAt": "2026-11-02T16:02:04.247Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
