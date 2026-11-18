@@ -59527,7 +59527,6 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98a3",
     "serialNo": 339,
@@ -59536,12 +59535,12 @@
     ],
     "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "",
+    "collegeName": "Ideal School & College, Motijheel",
     "boardName": "",
-    "examYear": "",
-    "testPaperName": "",
+    "examYear": "2025",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "বায়োমেট্রিক্স পদ্ধতিতে সিমকার্ড নিবন্ধন শুরু করা ১ম I ২য় দেশ কী কী?\t[বেগম রোকেয়া বিশ্ববিদ্যালয় ইউনিট সি ২০১৫-১৬]",
+    "question": "বায়োমেট্রিক্স পদ্ধতিতে সিমকার্ড নিবন্ধন শুরু করা ১ম I ২য় দেশ কী কী?",
     "options": [
       "বাংলাদেশ ও ভারত",
       "বাংলাদেশ ও পাকিস্তান",
@@ -59551,7 +59550,8 @@
     "correctAnswer": "পাকিস্তান ও বাংলাদেশ",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:04.268Z",
-    "__v": 1
+    "__v": 1,
+    "liveExamNo": ""
   },
   {
     "chapters": [],
