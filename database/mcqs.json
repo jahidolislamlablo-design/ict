@@ -59787,22 +59787,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98a7",
     "serialNo": 343,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ঢাবি খ ইউনিট ২০১৭-১৮",
+    "collegeName": "",
     "boardName": "",
     "examYear": "2017",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "ইভিএম - এর ই অংশের পূর্ণরূপ -\t[ঢাবি খ ইউনিট ২০১৭-১৮]",
+    "question": "ইভিএম - এর ই অংশের পূর্ণরূপ -",
     "options": [
       "ইলেক্ট্রিক",
       "ইলেক্ট্রনিক",
@@ -59811,7 +59809,8 @@
     ],
     "correctAnswer": "ইলেক্ট্রনিক",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.274Z"
+    "createdAt": "2026-11-02T16:02:04.274Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
