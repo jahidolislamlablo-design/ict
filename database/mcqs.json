@@ -58471,22 +58471,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9893",
     "serialNo": 323,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "ইসলামী বিশ্ববিদ্যালয় এ ইউনিট ২০১৪-১৫",
+    "collegeName": "Govt. BM College, Barishal",
     "boardName": "",
-    "examYear": "2014",
-    "testPaperName": "",
+    "examYear": "",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
     "modelTestNo": "",
-    "question": "লেনদেনের ধরণ অনুযায়ী ই-রিটেইলিং সাধারণত কোন ধরনের হয়ে থাকে?\t[ইসলামী বিশ্ববিদ্যালয় এ ইউনিট ২০১৪-১৫]",
+    "question": "লেনদেনের ধরণ অনুযায়ী ই-রিটেইলিং সাধারণত কোন ধরনের হয়ে থাকে?",
     "options": [
       "B2C",
       "B2C",
@@ -58495,7 +58493,8 @@
     ],
     "correctAnswer": "B2C",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.242Z"
+    "createdAt": "2026-11-02T16:02:04.242Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
