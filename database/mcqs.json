@@ -59918,22 +59918,20 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae98a9",
     "serialNo": 345,
     "categoryTypes": [
-      "University Admission",
       "Chapter Practice"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "কুবি ডি ইউনিট ২০১২-১৩; ঢাবি খ ইউনিট ২০১১-১২",
+    "collegeName": "",
     "boardName": "",
-    "examYear": "2012",
+    "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "EVM এর পূর্ণরূপ - \t[কুবি ডি ইউনিট ২০১২-১৩; ঢাবি খ ইউনিট ২০১১-১২]",
+    "question": "EVM এর পূর্ণরূপ -",
     "options": [
       "Electrical Voting Management",
       "Electronic Voting Machine",
@@ -59942,7 +59940,8 @@
     ],
     "correctAnswer": "Electronic Voting Machine",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.278Z"
+    "createdAt": "2026-11-02T16:02:04.278Z",
+    "liveExamNo": ""
   },
   {
     "chapters": [],
