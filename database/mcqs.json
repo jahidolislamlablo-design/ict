@@ -57619,22 +57619,22 @@
     "boardNames": [],
     "examYears": [],
     "modelTestNos": [],
-    "liveExamNo": "",
     "image": "",
     "_id": "6ae8b3fc04ce40b2c4ae9886",
     "serialNo": 310,
     "categoryTypes": [
-      "University Admission",
-      "Chapter Practice"
+      "Chapter Practice",
+      "Live Exam",
+      "Model Test"
     ],
-    "categoryType": "University Admission",
+    "categoryType": "Chapter Practice",
     "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "জাতীয় কবি কাজী নজরুল ইসলাম বিশ্ববিদ্যালয় ডি ইউনিট ২০১৭-১৮",
+    "collegeName": "Viqarunnisa Noon School & College",
     "boardName": "",
     "examYear": "2017",
-    "testPaperName": "",
-    "modelTestNo": "",
-    "question": "ইন্টারনেটের মাধ্যমে চিকিৎসা পদ্ধতিকে কী বলে?\n[জাতীয় কবি কাজী নজরুল ইসলাম বিশ্ববিদ্যালয় ডি ইউনিট ২০১৭-১৮]",
+    "testPaperName": "টেস্ট পেপার ২০২৬",
+    "modelTestNo": "Model Test 10",
+    "question": "ইন্টারনেটের মাধ্যমে চিকিৎসা পদ্ধতিকে কী বলে?",
     "options": [
       "টেলিমেডিসিন",
       "ইলেক্ট্র মেডিসিন",
@@ -57643,7 +57643,8 @@
     ],
     "correctAnswer": "টেলিমেডিসিন",
     "explanation": "",
-    "createdAt": "2026-11-02T16:02:04.216Z"
+    "createdAt": "2026-11-02T16:02:04.216Z",
+    "liveExamNo": "Live Exam 10"
   },
   {
     "chapters": [],
