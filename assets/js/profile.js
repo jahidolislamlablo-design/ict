@@ -88,6 +88,69 @@ function updateProfileUI(user) {
         const batchBadge = document.getElementById('profileHscBatchBadge');
         if (batchBadge) batchBadge.innerText = batchText;
     }
+
+    // সম্পন্ন মডেল টেস্টের সংখ্যা আপডেট
+    const testsCountEl = document.getElementById('profileCompletedTests');
+    const realTestsCount = Number(user.testsCompleted) || 0;
+    if (testsCountEl) {
+        testsCountEl.innerText = `${toBn(realTestsCount)}টি`;
+    }
+
+    // সাম্প্রতিক পরীক্ষার ইতিহাস আপডেট
+    renderProfileExamHistory(user);
+}
+
+/**
+ * ইউজারের সাম্প্রতিক পরীক্ষার ইতিহাস রেন্ডার
+ */
+function renderProfileExamHistory(user) {
+    const historyBody = document.getElementById('profileExamHistoryBody');
+    if (!historyBody) return;
+    const toBn = (n) => (window.toBanglaNum ? window.toBanglaNum(n) : n);
+
+    let exams = [];
+
+    // ১. লোকাল স্টোরেজ থেকে লাইভ সাবমিশন আনা
+    try {
+        const subLive = JSON.parse(localStorage.getItem('ict_submitted_live_exams') || '{}');
+        Object.values(subLive).forEach(e => {
+            if (e && (e.score !== undefined || e.examTitle)) {
+                const total = e.total || 25;
+                const score = e.score || 0;
+                const pct = e.scorePercentage || (total > 0 ? Math.round((score / total) * 100) : 0);
+                const gradeBadge = pct >= 80 ? '<span class="badge badge-success">চমৎকার</span>' : (pct >= 50 ? '<span class="badge badge-primary">পাস</span>' : '<span class="badge badge-danger">উন্নতি প্রয়োজন</span>');
+                const dateStr = e.submittedAt ? new Date(e.submittedAt).toLocaleDateString('bn-BD', { day: 'numeric', month: 'short' }) : 'আজ';
+                exams.push({
+                    title: e.examTitle || 'মডেল টেস্ট',
+                    date: dateStr,
+                    score: `${toBn(score)} / ${toBn(total)}`,
+                    badge: gradeBadge
+                });
+            }
+        });
+    } catch(e) {}
+
+    // ২. যদি কোনো পরীক্ষা না থাকে
+    if (exams.length === 0) {
+        historyBody.innerHTML = `
+            <tr>
+                <td colspan="4" style="text-align: center; padding: 2rem; color: #94a3b8;">
+                    <div style="font-size: 1.5rem; margin-bottom: 6px;">⏱️</div>
+                    <span style="font-size: 0.9rem;">এখনও কোনো মডেল টেস্টে অংশগ্রহণ করেননি</span>
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    historyBody.innerHTML = exams.slice(0, 5).map(ex => `
+        <tr>
+            <td><strong>${ex.title}</strong></td>
+            <td>${ex.date}</td>
+            <td><strong>${ex.score}</strong></td>
+            <td>${ex.badge}</td>
+        </tr>
+    `).join('');
 }
 
 /**
@@ -375,23 +438,31 @@ window.confirmLogout = confirmLogout;
 
 
 // ==========================================
-// স্ক্রিন মোড নিয়ন্ত্রণ (Permanently Light Mode)
+// স্ক্রিন মোড নিয়ন্ত্রণ (Light & Dark Mode)
 // ==========================================
 function initThemeMode() {
-    applyThemeMode(false);
+    const isDark = (localStorage.getItem('ict_theme') === 'dark');
+    applyThemeMode(isDark);
 }
 
 function toggleScreenTheme(isDark) {
-    applyThemeMode(false);
+    applyThemeMode(isDark);
 }
 window.toggleScreenTheme = toggleScreenTheme;
 
 function applyThemeMode(isDark) {
-    document.documentElement.removeAttribute('data-theme');
-    document.documentElement.style.colorScheme = 'light';
-    document.body.classList.remove('dark-mode');
-    document.body.style.colorScheme = 'light';
-    localStorage.setItem('ict_theme', 'light');
+    if (typeof window.applyGlobalTheme === 'function') {
+        window.applyGlobalTheme(isDark ? 'dark' : 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+        localStorage.setItem('ict_theme', isDark ? 'dark' : 'light');
+    }
 }
 window.applyThemeMode = applyThemeMode;
 

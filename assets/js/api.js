@@ -1,21 +1,133 @@
 
-// ict_theme_global_init - Enforce Light Mode permanently across all browsers
+// ict_theme_global_init - Global Theme Initialization & Persistence (Light / Dark)
 (function() {
     try {
-        localStorage.setItem('ict_theme', 'light');
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.documentElement.style.colorScheme = 'light';
+        const savedTheme = localStorage.getItem('ict_theme') || 'light';
+        const isDark = savedTheme === 'dark';
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        
+        function applyInitialBodyClass() {
+            if (document.body) {
+                if (isDark) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+                document.body.style.colorScheme = isDark ? 'dark' : 'light';
+            }
+        }
+
         if (document.body) {
-            document.body.classList.remove('dark-mode');
-            document.body.style.colorScheme = 'light';
+            applyInitialBodyClass();
         } else {
-            document.addEventListener('DOMContentLoaded', () => {
-                document.body.classList.remove('dark-mode');
-                document.body.style.colorScheme = 'light';
-            });
+            document.addEventListener('DOMContentLoaded', applyInitialBodyClass);
         }
     } catch(e) {}
 })();
+
+// Global Theme Switcher Helper Functions
+function applyGlobalTheme(theme) {
+    const isDark = (theme === 'dark');
+    localStorage.setItem('ict_theme', isDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    if (document.body) {
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+        document.body.style.colorScheme = isDark ? 'dark' : 'light';
+    }
+    updateAllThemeToggleButtonsUI(isDark);
+}
+window.applyGlobalTheme = applyGlobalTheme;
+
+function toggleGlobalTheme() {
+    const currentTheme = localStorage.getItem('ict_theme') || 'light';
+    const newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+    applyGlobalTheme(newTheme);
+}
+window.toggleGlobalTheme = toggleGlobalTheme;
+
+function updateAllThemeToggleButtonsUI(isDark) {
+    const btns = document.querySelectorAll('.header-theme-toggle-btn');
+    btns.forEach(btn => {
+        const iconSpan = btn.querySelector('.theme-icon');
+        const textSpan = btn.querySelector('.theme-text');
+        if (isDark) {
+            if (iconSpan) iconSpan.innerHTML = '<i class="fa-solid fa-sun" style="color: #F59E0B;"></i>';
+            if (textSpan) textSpan.textContent = 'লাইট মোড';
+            btn.title = 'লাইট মোড সক্রিয় করুন';
+        } else {
+            if (iconSpan) iconSpan.innerHTML = '<i class="fa-solid fa-moon" style="color: #D97706;"></i>';
+            if (textSpan) textSpan.textContent = 'ডার্ক মোড';
+            btn.title = 'ডার্ক মোড সক্রিয় করুন';
+        }
+    });
+
+    // Also update profile slider if present
+    const profileCheckbox = document.getElementById('themeToggleCheckbox');
+    if (profileCheckbox) profileCheckbox.checked = isDark;
+    const profileStatusText = document.getElementById('themeStatusText');
+    if (profileStatusText) profileStatusText.textContent = isDark ? 'ডার্ক মোড সক্রিয়' : 'লাইট মোড সক্রিয়';
+}
+window.updateAllThemeToggleButtonsUI = updateAllThemeToggleButtonsUI;
+
+// Header Theme Buttons Injector (Ensures buttons are placed perfectly on Desktop & Mobile)
+function ensureHeaderThemeButtons() {
+    const isDark = (localStorage.getItem('ict_theme') === 'dark');
+    const iconHtml = isDark 
+        ? '<i class="fa-solid fa-sun" style="color: #F59E0B;"></i>' 
+        : '<i class="fa-solid fa-moon" style="color: #D97706;"></i>';
+    const textHtml = isDark ? 'লাইট মোড' : 'ডার্ক মোড';
+    const titleAttr = isDark ? 'লাইট মোড সক্রিয় করুন' : 'ডার্ক মোড সক্রিয় করুন';
+
+    // 1. Desktop placement: Right after "ICT EASY LEARNING" brand group / text
+    const brandLink = document.querySelector('.header-brand-group .brand-link') || document.querySelector('.site-header .brand-link');
+    if (brandLink && !document.querySelector('.header-theme-toggle-btn.theme-toggle-desktop')) {
+        const desktopBtn = document.createElement('button');
+        desktopBtn.type = 'button';
+        desktopBtn.className = 'header-theme-toggle-btn theme-toggle-desktop';
+        desktopBtn.title = titleAttr;
+        desktopBtn.onclick = toggleGlobalTheme;
+        desktopBtn.innerHTML = `<span class="theme-icon">${iconHtml}</span><span class="theme-text">${textHtml}</span>`;
+        
+        // Place after brand-link inside brand-group or header-container
+        if (brandLink.parentNode) {
+            brandLink.parentNode.insertBefore(desktopBtn, brandLink.nextSibling);
+        }
+    }
+
+    // 2. Mobile placement: Between ICT EASY LEARNING and Profile
+    const headerActions = document.querySelector('.header-actions');
+    const userBtn = headerActions ? headerActions.querySelector('.header-user-btn') : null;
+    if (userBtn && !document.querySelector('.header-theme-toggle-btn.theme-toggle-mobile')) {
+        const mobileBtn = document.createElement('button');
+        mobileBtn.type = 'button';
+        mobileBtn.className = 'header-theme-toggle-btn theme-toggle-mobile';
+        mobileBtn.title = titleAttr;
+        mobileBtn.onclick = toggleGlobalTheme;
+        mobileBtn.innerHTML = `<span class="theme-icon">${iconHtml}</span><span class="theme-text">${textHtml}</span>`;
+
+        // Insert before profile button in header-actions
+        userBtn.parentNode.insertBefore(mobileBtn, userBtn);
+    }
+}
+window.ensureHeaderThemeButtons = ensureHeaderThemeButtons;
+
+// Auto-sync theme buttons on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    ensureHeaderThemeButtons();
+    const isDark = (localStorage.getItem('ict_theme') === 'dark');
+    updateAllThemeToggleButtonsUI(isDark);
+});
+setTimeout(() => {
+    ensureHeaderThemeButtons();
+    const isDark = (localStorage.getItem('ict_theme') === 'dark');
+    updateAllThemeToggleButtonsUI(isDark);
+}, 100);
 
 /**
  * ICT EASY LEARNING - API & DATA SERVICE
@@ -2020,8 +2132,8 @@ const ApiService = {
         } catch (e) {}
 
         const profile = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
-        profile.points = (profile.points || 24) + 1;
-        profile.testsCompleted = (profile.testsCompleted || 18) + 1;
+        profile.points = (profile.points || 0) + 1;
+        profile.testsCompleted = (profile.testsCompleted || 0) + 1;
         localStorage.setItem('ict_student_profile', JSON.stringify(profile));
 
         return {
@@ -2054,7 +2166,7 @@ const ApiService = {
             college: 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল',
             avatar: '../assets/images/developer.jpg',
             points: 25,
-            testsCompleted: 26,
+            testsCompleted: 0,
             isCurrentUser: true
         };
         localStorage.setItem('ict_student_profile', JSON.stringify(curr));
@@ -2272,7 +2384,7 @@ function toggleFavoriteQuestion(btn, qDataStr) {
         localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
         if (btn) {
             btn.classList.remove('active');
-            btn.innerHTML = '<i class="fa-regular fa-bookmark"></i> <span>ফেভারিট</span>';
+            btn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span>ফেভারিট</span>';
             btn.title = 'ফেভারিটে যোগ করুন';
         }
         showToastNotification('প্রশ্নটি ফেভারিট থেকে সরানো হয়েছে');
@@ -2292,7 +2404,7 @@ function toggleFavoriteQuestion(btn, qDataStr) {
         localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
         if (btn) {
             btn.classList.add('active');
-            btn.innerHTML = '<i class="fa-solid fa-bookmark" style="color: #4F46E5;"></i> <span>সংরক্ষিত</span>';
+            btn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span>ফেভারিট</span>';
             btn.title = 'ফেভারিট থেকে সরান';
         }
         showToastNotification('প্রশ্নটি ফেভারিটে যোগ করা হয়েছে!');
@@ -2303,10 +2415,10 @@ function toggleFavoriteQuestion(btn, qDataStr) {
             const isFavNow = isQuestionFavorite(qData.id);
             if (isFavNow) {
                 otherBtn.classList.add('active');
-                otherBtn.innerHTML = '<i class="fa-solid fa-bookmark" style="color: #4F46E5;"></i> <span>সংরক্ষিত</span>';
+                otherBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span>ফেভারিট</span>';
             } else {
                 otherBtn.classList.remove('active');
-                otherBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> <span>ফেভারিট</span>';
+                otherBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span>ফেভারিট</span>';
             }
         }
     });
@@ -2407,18 +2519,31 @@ function renderModernMCQCardHTML(q, index, options = {}) {
         optionsHtml += `
             <div class="modern-option-pill" data-opt-idx="${oIdx}" onclick="handleModernOptionClick(this, ${index}, ${oIdx}, ${correctIndex}, '${mode}')">
                 <div class="modern-option-pill-left">
-                    <span class="option-radio-circle"></span>
-                    <span class="option-text"><strong>${marker}.</strong> ${escapeModernMCQOption(optText)}</span>
+                    <span class="option-radio-circle">${marker}</span>
+                    <span class="option-text">${escapeModernMCQOption(optText)}</span>
                 </div>
                 <span class="modern-status-icon"></span>
             </div>
         `;
     });
 
+    const isFav = isQuestionFavorite(qId);
+    const favDataEncoded = encodeURIComponent(JSON.stringify({
+        id: qId,
+        category: category,
+        question_text: qText,
+        options: opts,
+        correct_index: correctIndex,
+        explanation: explanation,
+        context_stem: q.context_stem || '',
+        image: q.image || '',
+        source_title: q.source_title || options.source_title || ''
+    }));
+
     const favButtonHtml = `
         <button type="button" class="modern-fav-btn ${isFav ? 'active' : ''}" data-q-id="${qId}" data-fav-payload="${favDataEncoded}" onclick="toggleFavoriteQuestion(this)" title="${isFav ? 'ফেভারিট থেকে সরান' : 'ফেভারিটে যোগ করুন'}">
-            <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
-            <span>${isFav ? 'সংরক্ষিত' : 'ফেভারিট'}</span>
+            <i class="fa-solid fa-bookmark"></i>
+            <span>${isFav ? 'ফেভারিট' : 'ফেভারিট'}</span>
         </button>
     `;
 
@@ -2436,16 +2561,16 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     ` : '';
 
     const expBtnAndBox = `
-        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: ${isModelTest ? 'flex-end' : 'space-between'}; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
+        <div class="modern-card-actions" style="display: flex; align-items: center; justify-content: flex-start; width: 100%; margin-top: 12px; gap: 10px; flex-wrap: wrap;">
             <button type="button" class="modern-exp-btn" onclick="toggleModernExp(this)" style="${isModelTest ? 'display: none;' : ''}">
-                <i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন
+                <i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা দেখুন
             </button>
-            ${readToggleHtml}
             ${favButtonHtml}
+            ${readToggleHtml}
         </div>
         <div class="modern-exp-box" style="display: none; width: 100%; margin-top: 12px;">
-            <div style="font-weight: 700; color: #4338CA; margin-bottom: 6px;"><i class="fa-solid fa-lightbulb" style="color: #F59E0B; margin-right: 6px;"></i> ব্যাখ্যা:</div>
-            <p style="margin: 0; line-height: 1.6;">${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</p>
+            <div class="exp-correct-heading"><strong>সঠিক উত্তর: ${markers[correctIndex] || (correctIndex + 1)} (${escapeModernMCQOption(opts[correctIndex] || '')})</strong></div>
+            <div class="exp-detail-text"><strong>ব্যাখ্যা:</strong> ${formatModernMCQContent(explanation) || 'কোনো ব্যাখ্যা দেওয়া নেই।'}</div>
         </div>
     `;
 
@@ -2653,7 +2778,7 @@ function toggleModernExp(btn) {
     if (!box) return;
     if (box.style.display === 'block') {
         box.style.display = 'none';
-        btn.innerHTML = '<i class="fa-regular fa-lightbulb"></i> ব্যাখ্যা দেখুন';
+        btn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা দেখুন';
     } else {
         box.style.display = 'block';
         btn.innerHTML = '<i class="fa-solid fa-lightbulb"></i> ব্যাখ্যা লুকান';
