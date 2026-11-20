@@ -12,7 +12,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Global Style -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=9.0">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9.1">
     <style>
         :root {
             --rr-green: #15803D;
@@ -1871,7 +1871,7 @@
     </nav>
 
     <!-- Global App Scripts -->
-    <script src="../assets/js/api.js?v=9.0"></script>
+    <script src="../assets/js/api.js?v=9.1"></script>
     <script src="../assets/js/main.js?v=9.0"></script>
 
     <!-- Reading Room Interactive Logic -->
@@ -1935,12 +1935,7 @@
             ]
         };
 
-        const DEFAULT_EXAMS = [
-            { title: 'অধ্যায় ভিত্তিক মডেল টেস্ট ০১ - তথ্য ও যোগাযোগ প্রযুক্তি', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১৪', score: '২৩ / ২৫', rank: '৩য় স্থান', pct: '৯২% সঠিক' },
-            { title: 'এইচএসসি স্পেশাল লাইভ এক্সাম - ১ম ও ২য় অধ্যায়', sub: 'অধ্যায় ০১ ও ০২ · ২০২৪-১১-১২', score: '২৪ / ২৫', rank: '২য় স্থান', pct: '৯৬% সঠিক' },
-            { title: 'পূর্ণাঙ্গ সিলেবাস গ্র্যান্ড মডেল টেস্ট - ফাইনাল টেস্ট', sub: 'পূর্ণাঙ্গ সিলেবাস · ২০২৪-১১-০৮', score: '২২ / ২৫', rank: '৫ম স্থান', pct: '৮৮% সঠিক' },
-            { title: 'এইচএসসি বোর্ড স্ট্যান্ডার্ড মডেল টেস্ট - ঢাকা বোর্ড', sub: 'বোর্ড প্রশ্ন · ২০২৪-১১-০৪', score: '২৩ / ২৫', rank: '৪র্থ স্থান', pct: '৯২% সঠিক' }
-        ];
+        const DEFAULT_EXAMS = [];
 
         // SHOW FULL PAGE STUDENT DETAIL VIEW (ছবির মতো উল্লম্ব লিস্ট)
         function showUserDetailView(name, batch, college, todayTime, todaySessions, yestTime, yestSessions, weekTime, weekSessions, totalTime, totalSessions, userKey, avatarUrl) {
@@ -1968,30 +1963,33 @@
             document.getElementById('detailUserCollege').innerHTML = '<i class="fa-solid fa-building-columns"></i> ' + (college || 'ঢাকা কলেজ, ঢাকা');
 
             // ৪টি স্টাডি স্ট্যাটাস মান সেট (আজ, গতকাল, এই সপ্তাহ, সর্বমোট)
-            document.getElementById('detailStatToday').innerText = todayTime || '৭ ঘণ্টা';
-            document.getElementById('detailStatTodaySessions').innerText = todaySessions || '১৪ সেশন';
+            document.getElementById('detailStatToday').innerText = todayTime || '০ মিনিট';
+            document.getElementById('detailStatTodaySessions').innerText = todaySessions || '০ সেশন';
 
             const elYest = document.getElementById('detailStatYesterday');
             const elYestSub = document.getElementById('detailStatYesterdaySessions');
-            if (elYest) elYest.innerText = yestTime || '৯ ঘণ্টা';
-            if (elYestSub) elYestSub.innerText = yestSessions || '১৮ সেশন';
+            if (elYest) elYest.innerText = yestTime || '০ মিনিট';
+            if (elYestSub) elYestSub.innerText = yestSessions || '০ সেশন';
 
             const elWeek = document.getElementById('detailStatWeek');
             const elWeekSub = document.getElementById('detailStatWeekSessions');
-            if (elWeek) elWeek.innerText = weekTime || '১৬ ঘণ্টা';
-            if (elWeekSub) elWeekSub.innerText = weekSessions || '৩২ সেশন';
+            if (elWeek) elWeek.innerText = weekTime || todayTime || '০ মিনিট';
+            if (elWeekSub) elWeekSub.innerText = weekSessions || todaySessions || '০ সেশন';
 
             const elTotal = document.getElementById('detailStatTotal');
             const elTotalSub = document.getElementById('detailStatTotalSessions');
-            if (elTotal) elTotal.innerText = totalTime || '১৯৯ ঘণ্টা';
-            if (elTotalSub) elTotalSub.innerText = totalSessions || '৩৯৮ সেশন';
+            if (elTotal) elTotal.innerText = totalTime || todayTime || '০ মিনিট';
+            if (elTotalSub) elTotalSub.innerText = totalSessions || todaySessions || '০ সেশন';
 
-            // মডেল টেস্ট তালিকা পপুলেট
-            let exams = (userKey && MOCK_EXAM_RECORDS[userKey.toLowerCase()]) ? [...MOCK_EXAM_RECORDS[userKey.toLowerCase()]] : [...DEFAULT_EXAMS];
+            // মডেল টেস্ট তালিকা লোড
+            let exams = [];
+            const keyLower = String(userKey || '').toLowerCase();
 
-            // যদি কারেন্ট ইউজারের প্রোফাইল হয় ('me'), তবে ইউজারের প্রকৃত সম্পন্নকৃত মডেল টেস্ট লোড করি
-            if (!userKey || userKey === 'me' || userKey.startsWith('me')) {
-                let userRealExams = [];
+            // যদি নির্দিষ্ট ডেমো বট হয়
+            if (MOCK_EXAM_RECORDS[keyLower]) {
+                exams = [...MOCK_EXAM_RECORDS[keyLower]];
+            } else if (!userKey || userKey === 'me' || userKey.startsWith('me')) {
+                // কারেন্ট ইউজারের ক্ষেত্রে লোকাল স্টোরেজ থেকে প্রকৃত সাবমিশন লোড করি
                 try {
                     const subLive = JSON.parse(localStorage.getItem('ict_submitted_live_exams') || '{}');
                     Object.values(subLive).forEach(e => {
@@ -1999,7 +1997,7 @@
                             const total = e.total || 25;
                             const score = e.score || 0;
                             const pct = e.scorePercentage || Math.round((score / total) * 100);
-                            userRealExams.push({
+                            exams.push({
                                 title: e.examTitle || 'মডেল টেস্ট',
                                 sub: `${toBnDigits(score)} / ${toBnDigits(total)} (${toBnDigits(pct)}%) • ${e.submittedAt ? new Date(e.submittedAt).toLocaleDateString('bn-BD') : 'আজ'}`,
                                 rank: `মেধাক্রম ১`,
@@ -2013,36 +2011,76 @@
                     const hist = JSON.parse(localStorage.getItem('ict_model_test_history') || '[]');
                     if (Array.isArray(hist)) {
                         hist.forEach(h => {
-                            userRealExams.push({
-                                title: h.examTitle || h.title || 'মডেল টেস্ট',
-                                sub: `${toBnDigits(h.score || 0)} / ${toBnDigits(h.total || 25)}`,
-                                rank: h.rank || 'মেধাক্রম ১',
-                                score: `${toBnDigits(h.score || 0)}/${toBnDigits(h.total || 25)}`
-                            });
+                            if (!exams.some(ex => ex.title === (h.examTitle || h.title))) {
+                                exams.push({
+                                    title: h.examTitle || h.title || 'মডেল টেস্ট',
+                                    sub: `${toBnDigits(h.score || 0)} / ${toBnDigits(h.total || 25)}`,
+                                    rank: h.rank || 'মেধাক্রম ১',
+                                    score: `${toBnDigits(h.score || 0)}/${toBnDigits(h.total || 25)}`
+                                });
+                            }
                         });
                     }
                 } catch(e) {}
-
-                if (userRealExams.length > 0) {
-                    exams = [...userRealExams, ...exams];
-                }
             }
 
             const listEl = document.getElementById('detailExamFullList');
             document.getElementById('detailExamTotalBadge').innerText = toBnDigits(exams.length) + 'টি সম্পন্ন';
 
-            listEl.innerHTML = exams.map(e => `
-                <div class="rr-exam-full-item">
-                    <div class="rr-efi-left">
-                        <h4 class="rr-efi-title">${e.title}</h4>
-                        <span class="rr-efi-sub"><i class="fa-regular fa-clock" style="margin-right: 4px;"></i>${e.sub}</span>
+            if (exams.length === 0) {
+                listEl.innerHTML = `
+                    <div style="text-align: center; padding: 36px 16px; color: #64748B;">
+                        <div style="font-size: 2.2rem; margin-bottom: 8px;">⏱️</div>
+                        <h4 style="font-size: 0.98rem; font-weight: 700; color: #334155; margin-bottom: 4px;">এখনও কোনো মডেল টেস্ট সম্পন্ন করা হয়নি</h4>
+                        <p style="font-size: 0.82rem; color: #94A3B8; margin: 0;">মডেল টেস্ট বা লাইভ পরীক্ষায় অংশ নিলে এখানে বিষয়ভিত্তিক প্রাপ্ত স্কোর ও ফলাফল দেখতে পাবেন।</p>
                     </div>
-                    <div class="rr-efi-right">
-                        <span class="rr-efi-rank-pill">${e.rank}</span>
-                        <span class="rr-efi-score">${e.score}</span>
+                `;
+            } else {
+                listEl.innerHTML = exams.map(e => `
+                    <div class="rr-exam-full-item">
+                        <div class="rr-efi-left">
+                            <h4 class="rr-efi-title">${e.title}</h4>
+                            <span class="rr-efi-sub"><i class="fa-regular fa-clock" style="margin-right: 4px;"></i>${e.sub}</span>
+                        </div>
+                        <div class="rr-efi-right">
+                            <span class="rr-efi-rank-pill">${e.rank}</span>
+                            <span class="rr-efi-score">${e.score}</span>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
+            }
+
+            // যদি অন্য কোনো রেজিস্টার্ড ইউজার হয়, ব্যাকএন্ড থেকে তাজা ফলাফল চেক করি
+            if (userKey && (userKey.startsWith('user_') || userKey.startsWith('acc_'))) {
+                if (typeof fetch === 'function') {
+                    fetch('/api/results?studentName=' + encodeURIComponent(name) + '&t=' + Date.now())
+                        .then(r => r.ok ? r.json() : null)
+                        .then(res => {
+                            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
+                                const userExams = res.data.map(d => ({
+                                    title: d.examTitle || 'মডেল টেস্ট',
+                                    sub: `${toBnDigits(d.score || 0)} / ${toBnDigits(d.totalMarks || 25)} (${toBnDigits(d.scorePercentage || 0)}%) • ${d.submittedAt ? new Date(d.submittedAt).toLocaleDateString('bn-BD') : 'আজ'}`,
+                                    rank: `মেধাক্রম ১`,
+                                    score: `${toBnDigits(d.score || 0)}/${toBnDigits(d.totalMarks || 25)}`
+                                }));
+                                document.getElementById('detailExamTotalBadge').innerText = toBnDigits(userExams.length) + 'টি সম্পন্ন';
+                                listEl.innerHTML = userExams.map(e => `
+                                    <div class="rr-exam-full-item">
+                                        <div class="rr-efi-left">
+                                            <h4 class="rr-efi-title">${e.title}</h4>
+                                            <span class="rr-efi-sub"><i class="fa-regular fa-clock" style="margin-right: 4px;"></i>${e.sub}</span>
+                                        </div>
+                                        <div class="rr-efi-right">
+                                            <span class="rr-efi-rank-pill">${e.rank}</span>
+                                            <span class="rr-efi-score">${e.score}</span>
+                                        </div>
+                                    </div>
+                                `).join('');
+                            }
+                        })
+                        .catch(() => {});
+                }
+            }
 
             // ভিউ ট্রানজিশন
             document.getElementById('reading-room-main-view').style.display = 'none';
@@ -2473,8 +2511,13 @@
                 todayTimeStr = toBnDigits(hrs) + ' ঘণ্টা ' + toBnDigits(remMins) + ' মিনিট';
             }
 
-            const yestTimeStr = yestMins > 0 ? toBnDigits(yestMins) + ' মিনিট' : '৯ ঘণ্টা';
-            const yestSessionsStr = yestMins > 0 ? toBnDigits(Math.max(1, Math.round(yestMins / 30))) + ' সেশন' : '১৮ সেশন';
+            const yestTimeStr = yestMins > 0 ? (yestMins >= 60 ? toBnDigits(Math.floor(yestMins / 60)) + ' ঘণ্টা ' + toBnDigits(yestMins % 60) + ' মিনিট' : toBnDigits(yestMins) + ' মিনিট') : '০ মিনিট';
+            const yestSessionsStr = yestMins > 0 ? toBnDigits(Math.max(1, Math.round(yestMins / 30))) + ' সেশন' : '০ সেশন';
+
+            const weekHours = Math.max(0, Math.floor((totalSecs + yestSecs) / 3600));
+            const weekMins = Math.floor(((totalSecs + yestSecs) % 3600) / 60);
+            const weekTimeStr = weekHours > 0 ? `${toBnDigits(weekHours)} ঘণ্টা ${toBnDigits(weekMins)} মিনিট` : (weekMins > 0 ? `${toBnDigits(weekMins)} মিনিট` : todayTimeStr);
+            const weekSessionsStr = toBnDigits(sessions + (yestMins > 0 ? Math.max(1, Math.round(yestMins / 30)) : 0)) + ' সেশন';
 
             showUserDetailView(
                 name,
@@ -2484,10 +2527,10 @@
                 toBnDigits(sessions) + 'টি সেশন',
                 yestTimeStr,
                 yestSessionsStr,
-                '১৬ ঘণ্টা',
-                '৩২ সেশন',
-                '১৯৯ ঘণ্টা',
-                '৩৯৮ সেশন',
+                weekTimeStr,
+                weekSessionsStr,
+                weekTimeStr,
+                weekSessionsStr,
                 'me',
                 avatar
             );

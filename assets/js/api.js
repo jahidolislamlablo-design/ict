@@ -2527,19 +2527,6 @@ function renderModernMCQCardHTML(q, index, options = {}) {
         `;
     });
 
-    const isFav = isQuestionFavorite(qId);
-    const favDataEncoded = encodeURIComponent(JSON.stringify({
-        id: qId,
-        category: category,
-        question_text: qText,
-        options: opts,
-        correct_index: correctIndex,
-        explanation: explanation,
-        context_stem: q.context_stem || '',
-        image: q.image || '',
-        source_title: q.source_title || options.source_title || ''
-    }));
-
     const favButtonHtml = `
         <button type="button" class="modern-fav-btn ${isFav ? 'active' : ''}" data-q-id="${qId}" data-fav-payload="${favDataEncoded}" onclick="toggleFavoriteQuestion(this)" title="${isFav ? 'ফেভারিট থেকে সরান' : 'ফেভারিটে যোগ করুন'}">
             <i class="fa-solid fa-bookmark"></i>
