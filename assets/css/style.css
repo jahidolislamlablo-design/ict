@@ -3762,18 +3762,54 @@ body.dark-mode .interactive-view-container {
 }
 
 body.dark-mode .interactive-sub-header {
-    background: #1E293B !important;
+    background: transparent !important;
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .sub-header-title {
+body.dark-mode .sub-header-title,
+body.dark-mode #chapter-interactive-title,
+body.dark-mode #board-interactive-title,
+body.dark-mode #college-interactive-title,
+body.dark-mode .interactive-sub-header .sub-header-title,
+body.dark-mode .neumorphic-section-title {
     color: #F8FAFC !important;
 }
 
 body.dark-mode .round-back-btn {
-    background: #334155 !important;
-    color: #F8FAFC !important;
+    background: #1E293B !important;
+    border: 1.5px solid #334155 !important;
+    color: #F1F5F9 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .round-back-btn:hover {
+    background: #273549 !important;
+    border-color: #60A5FA !important;
+    color: #60A5FA !important;
+}
+
+body.dark-mode .show-answer-toggle-wrapper {
+    background: #1E293B !important;
+    border: 1px solid #334155 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    color: #F1F5F9 !important;
+}
+
+body.dark-mode .show-answer-toggle-wrapper span {
+    color: #F1F5F9 !important;
+}
+
+body.dark-mode .show-answer-toggle-wrapper .slider {
+    background-color: #334155 !important;
+}
+
+body.dark-mode .show-answer-toggle-wrapper input:checked + .slider {
+    background-color: #2563EB !important;
+}
+
+body.dark-mode .show-answer-toggle-wrapper .slider:before {
+    background-color: #FFFFFF !important;
 }
 
 body.dark-mode .modern-q-title {
@@ -4188,12 +4224,12 @@ body.dark-mode .modern-exp-btn.active {
 }
 
 body.dark-mode .modern-fav-btn.active {
-    color: #f59e0b !important;
-    border-color: #f59e0b !important;
-    background-color: rgba(245, 158, 11, 0.15) !important;
+    color: #FBBF24 !important;
+    border-color: #F59E0B !important;
+    background-color: rgba(245, 158, 11, 0.22) !important;
 }
 body.dark-mode .modern-fav-btn.active i {
-    color: #f59e0b !important;
+    color: #FBBF24 !important;
 }
 
 body.dark-mode .mcq-read-checkbox {
