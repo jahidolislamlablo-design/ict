@@ -975,6 +975,38 @@ function submitExam() {
         }
     }
 
+    // ব্যাকেন্ডে ফলাফল পাঠানো যাতে এডমিন প্যানেলে কে কোন পরীক্ষায় কত পেয়েছে দেখতে পারে
+    try {
+        let studentInfo = null;
+        try {
+            studentInfo = JSON.parse(localStorage.getItem('ict_student_profile') || 'null') ||
+                          JSON.parse(localStorage.getItem('ict_logged_in_user') || 'null');
+        } catch(e) {}
+
+        const resultPayload = {
+            studentId: (studentInfo && (studentInfo._id || studentInfo.id)) || '',
+            studentName: (studentInfo && studentInfo.name) || 'শিক্ষার্থী',
+            emailOrNumber: (studentInfo && (studentInfo.emailOrNumber || studentInfo.email)) || '',
+            college: (studentInfo && studentInfo.college) || '',
+            examId: currentExamKey || '01',
+            examTitle: currentExamTitle || 'মডেল টেস্ট',
+            category: currentExamIsLive ? 'live' : 'model_test',
+            score: correctCount,
+            totalMarks: totalQuestions,
+            wrongCount,
+            skippedCount,
+            scorePercentage
+        };
+
+        if (window.ApiService && typeof ApiService.saveExamResult === 'function') {
+            ApiService.saveExamResult(resultPayload).catch(() => {});
+        }
+
+        const localProf = JSON.parse(localStorage.getItem('ict_student_profile') || '{}');
+        localProf.testsCompleted = (localProf.testsCompleted || 0) + 1;
+        localStorage.setItem('ict_student_profile', JSON.stringify(localProf));
+    } catch(e) {}
+
     // লাইভ চলাকালীন পুনরায় পরীক্ষা দেওয়ার বাটন বন্ধ রাখা
     const retakeBtn = document.getElementById('modal-retake-btn');
     if (retakeBtn) {

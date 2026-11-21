@@ -133,6 +133,14 @@ const McqSchema = new mongoose.Schema({
     type: [String],
     default: []
   },
+  testPaperNames: {
+    type: [String],
+    default: []
+  },
+  liveExamNos: {
+    type: [String],
+    default: []
+  },
   modelTestNos: {
     type: [String],
     default: []
@@ -236,6 +244,14 @@ const CqSchema = new mongoose.Schema({
     default: []
   },
   examYears: {
+    type: [String],
+    default: []
+  },
+  testPaperNames: {
+    type: [String],
+    default: []
+  },
+  liveExamNos: {
     type: [String],
     default: []
   },
@@ -774,6 +790,42 @@ const ModelTestSchema = new mongoose.Schema({
 const ModelTest = mongoose.model('ModelTest', ModelTestSchema);
 
 // ------------------------------------------
+// ৪.২ Exam Result Model (শিক্ষার্থীদের পরীক্ষার ফলাফল)
+// ------------------------------------------
+const ExamResultSchema = new mongoose.Schema({
+  studentId: { type: String, default: '', index: true },
+  studentName: { type: String, default: '', trim: true },
+  emailOrNumber: { type: String, default: '', trim: true, index: true },
+  college: { type: String, default: '', trim: true },
+  examId: { type: String, default: '', index: true },
+  examTitle: { type: String, default: 'মডেল টেস্ট', trim: true },
+  category: { type: String, default: 'model_test', trim: true },
+  score: { type: Number, default: 0 },
+  totalMarks: { type: Number, default: 25 },
+  wrongCount: { type: Number, default: 0 },
+  skippedCount: { type: Number, default: 0 },
+  scorePercentage: { type: Number, default: 0 },
+  submittedAt: { type: Date, default: Date.now }
+}, { timestamps: true });
+
+const ExamResult = mongoose.model('ExamResult', ExamResultSchema);
+
+const examResultsJsonPath = path.join(__dirname, 'database', 'exam_results.json');
+function readExamResultsFile() {
+  try {
+    if (fs.existsSync(examResultsJsonPath)) {
+      return JSON.parse(fs.readFileSync(examResultsJsonPath, 'utf8'));
+    }
+  } catch (e) {}
+  return [];
+}
+function writeExamResultsFile(data) {
+  try {
+    fs.writeFileSync(examResultsJsonPath, JSON.stringify(data, null, 2), 'utf8');
+  } catch (e) {}
+}
+
+// ------------------------------------------
 // ৪.৩ Trash Model & Helpers (ট্র্যাশ ক্যান / রিসাইকেল বিন)
 // ------------------------------------------
 const TrashSchema = new mongoose.Schema({
@@ -976,6 +1028,17 @@ async function syncDatabaseJson(type = 'all') {
         try {
           if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
           fs.writeFileSync(path.join(dir, 'model_tests.json'), jsonStr, 'utf8');
+        } catch (e) {}
+      });
+    }
+
+    if (type === 'all' || type === 'examResults' || type === 'results') {
+      const allResults = await ExamResult.find({}).sort({ submittedAt: -1 });
+      const jsonStr = JSON.stringify(allResults, null, 2);
+      destDirs.forEach(dir => {
+        try {
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'exam_results.json'), jsonStr, 'utf8');
         } catch (e) {}
       });
     }
@@ -1332,9 +1395,11 @@ app.post('/api/mcqs', async (req, res) => {
       boardName,
       examYears,
       examYear,
+      testPaperNames,
       testPaperName,
       modelTestNos,
       modelTestNo,
+      liveExamNos,
       liveExamNo,
       question,
       options,
@@ -1347,6 +1412,8 @@ app.post('/api/mcqs', async (req, res) => {
     const finalBoards = Array.isArray(boardNames) && boardNames.length > 0 ? boardNames.map(b => String(b).trim()) : (boardName ? [String(boardName).trim()] : []);
     const finalYears = Array.isArray(examYears) && examYears.length > 0 ? examYears.map(y => String(y).trim()) : (examYear ? [String(examYear).trim()] : []);
     const finalModels = Array.isArray(modelTestNos) && modelTestNos.length > 0 ? modelTestNos.map(m => String(m).trim()) : (modelTestNo ? [String(modelTestNo).trim()] : []);
+    const finalTestPapers = Array.isArray(testPaperNames) && testPaperNames.length > 0 ? testPaperNames.map(t => String(t).trim()) : (testPaperName ? [String(testPaperName).trim()] : []);
+    const finalLiveExams = Array.isArray(liveExamNos) && liveExamNos.length > 0 ? liveExamNos.map(l => String(l).trim()) : (liveExamNo ? [String(liveExamNo).trim()] : []);
 
     let finalCategoryTypes = categoryTypes;
     if (!finalCategoryTypes || !Array.isArray(finalCategoryTypes) || finalCategoryTypes.length === 0) {
@@ -1367,15 +1434,17 @@ app.post('/api/mcqs', async (req, res) => {
       chapters: finalChapters,
       chapter: finalChapters[0] || (chapter ? chapter.trim() : ''),
       collegeNames: finalColleges,
-      collegeName: finalColleges[0] || (collegeName ? collegeName.trim() : ''),
+      collegeName: finalColleges.join(', ') || (collegeName ? collegeName.trim() : ''),
       boardNames: finalBoards,
-      boardName: finalBoards[0] || (boardName ? boardName.trim() : ''),
+      boardName: finalBoards.join(', ') || (boardName ? boardName.trim() : ''),
       examYears: finalYears,
-      examYear: finalYears[0] || (examYear ? String(examYear).trim() : ''),
-      testPaperName: testPaperName ? testPaperName.trim() : '',
+      examYear: finalYears.join(', ') || (examYear ? String(examYear).trim() : ''),
+      testPaperNames: finalTestPapers,
+      testPaperName: finalTestPapers.join(', ') || (testPaperName ? testPaperName.trim() : ''),
       modelTestNos: finalModels,
-      modelTestNo: finalModels[0] || (modelTestNo ? modelTestNo.trim() : ''),
-      liveExamNo: liveExamNo ? liveExamNo.trim() : '',
+      modelTestNo: finalModels.join(', ') || (modelTestNo ? modelTestNo.trim() : ''),
+      liveExamNos: finalLiveExams,
+      liveExamNo: finalLiveExams.join(', ') || (liveExamNo ? liveExamNo.trim() : ''),
       serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
       image: image ? image.trim() : '',
       question: question.trim(),
@@ -1417,9 +1486,11 @@ app.put('/api/mcqs/:id', async (req, res) => {
       boardName,
       examYears,
       examYear,
+      testPaperNames,
       testPaperName,
       modelTestNos,
       modelTestNo,
+      liveExamNos,
       liveExamNo,
       question,
       options,
@@ -1435,19 +1506,27 @@ app.put('/api/mcqs/:id', async (req, res) => {
     }
     if (collegeNames && Array.isArray(collegeNames)) {
       updateData.collegeNames = collegeNames.map(c => String(c).trim());
-      updateData.collegeName = updateData.collegeNames[0] || '';
+      updateData.collegeName = updateData.collegeNames.join(', ');
     }
     if (boardNames && Array.isArray(boardNames)) {
       updateData.boardNames = boardNames.map(b => String(b).trim());
-      updateData.boardName = updateData.boardNames[0] || '';
+      updateData.boardName = updateData.boardNames.join(', ');
     }
     if (examYears && Array.isArray(examYears)) {
       updateData.examYears = examYears.map(y => String(y).trim());
-      updateData.examYear = updateData.examYears[0] || '';
+      updateData.examYear = updateData.examYears.join(', ');
     }
     if (modelTestNos && Array.isArray(modelTestNos)) {
       updateData.modelTestNos = modelTestNos.map(m => String(m).trim());
-      updateData.modelTestNo = updateData.modelTestNos[0] || '';
+      updateData.modelTestNo = updateData.modelTestNos.join(', ');
+    }
+    if (testPaperNames && Array.isArray(testPaperNames)) {
+      updateData.testPaperNames = testPaperNames.map(t => String(t).trim());
+      updateData.testPaperName = updateData.testPaperNames.join(', ');
+    }
+    if (liveExamNos && Array.isArray(liveExamNos)) {
+      updateData.liveExamNos = liveExamNos.map(l => String(l).trim());
+      updateData.liveExamNo = updateData.liveExamNos.join(', ');
     }
 
     if (categoryTypes && Array.isArray(categoryTypes) && categoryTypes.length > 0) {
@@ -1660,9 +1739,11 @@ app.post('/api/cqs', async (req, res) => {
       boardName,
       examYears,
       examYear,
+      testPaperNames,
       testPaperName,
       modelTestNos,
       modelTestNo,
+      liveExamNos,
       liveExamNo,
       stem,
       q_ka,
@@ -1680,6 +1761,8 @@ app.post('/api/cqs', async (req, res) => {
     const finalBoards = Array.isArray(boardNames) && boardNames.length > 0 ? boardNames.map(b => String(b).trim()) : (boardName ? [String(boardName).trim()] : []);
     const finalYears = Array.isArray(examYears) && examYears.length > 0 ? examYears.map(y => String(y).trim()) : (examYear ? [String(examYear).trim()] : []);
     const finalModels = Array.isArray(modelTestNos) && modelTestNos.length > 0 ? modelTestNos.map(m => String(m).trim()) : (modelTestNo ? [String(modelTestNo).trim()] : []);
+    const finalTestPapers = Array.isArray(testPaperNames) && testPaperNames.length > 0 ? testPaperNames.map(t => String(t).trim()) : (testPaperName ? [String(testPaperName).trim()] : []);
+    const finalLiveExams = Array.isArray(liveExamNos) && liveExamNos.length > 0 ? liveExamNos.map(l => String(l).trim()) : (liveExamNo ? [String(liveExamNo).trim()] : []);
 
     let finalCategoryTypes = categoryTypes;
     if (!finalCategoryTypes || !Array.isArray(finalCategoryTypes) || finalCategoryTypes.length === 0) {
@@ -1701,15 +1784,17 @@ app.post('/api/cqs', async (req, res) => {
       chapters: finalChapters,
       chapter: finalChapters[0] || (chapter ? chapter.trim() : ''),
       collegeNames: finalColleges,
-      collegeName: finalColleges[0] || (collegeName ? collegeName.trim() : ''),
+      collegeName: finalColleges.join(', ') || (collegeName ? collegeName.trim() : ''),
       boardNames: finalBoards,
-      boardName: finalBoards[0] || (boardName ? boardName.trim() : ''),
+      boardName: finalBoards.join(', ') || (boardName ? boardName.trim() : ''),
       examYears: finalYears,
-      examYear: finalYears[0] || (examYear ? String(examYear).trim() : ''),
-      testPaperName: testPaperName ? testPaperName.trim() : '',
+      examYear: finalYears.join(', ') || (examYear ? String(examYear).trim() : ''),
+      testPaperNames: finalTestPapers,
+      testPaperName: finalTestPapers.join(', ') || (testPaperName ? testPaperName.trim() : ''),
       modelTestNos: finalModels,
-      modelTestNo: finalModels[0] || (modelTestNo ? modelTestNo.trim() : ''),
-      liveExamNo: liveExamNo ? liveExamNo.trim() : '',
+      modelTestNo: finalModels.join(', ') || (modelTestNo ? modelTestNo.trim() : ''),
+      liveExamNos: finalLiveExams,
+      liveExamNo: finalLiveExams.join(', ') || (liveExamNo ? liveExamNo.trim() : ''),
       serialNo: (serialNo !== undefined && serialNo !== '') ? (parseInt(serialNo, 10) || 0) : 0,
       image: image ? image.trim() : '',
       stem: stem.trim(),
@@ -1757,9 +1842,11 @@ app.put('/api/cqs/:id', async (req, res) => {
       boardName,
       examYears,
       examYear,
+      testPaperNames,
       testPaperName,
       modelTestNos,
       modelTestNo,
+      liveExamNos,
       liveExamNo,
       stem,
       q_ka,
@@ -1780,15 +1867,27 @@ app.put('/api/cqs/:id', async (req, res) => {
     }
     if (collegeNames && Array.isArray(collegeNames)) {
       updateData.collegeNames = collegeNames.map(c => String(c).trim());
-      updateData.collegeName = updateData.collegeNames[0] || '';
+      updateData.collegeName = updateData.collegeNames.join(', ');
     }
     if (boardNames && Array.isArray(boardNames)) {
       updateData.boardNames = boardNames.map(b => String(b).trim());
-      updateData.boardName = updateData.boardNames[0] || '';
+      updateData.boardName = updateData.boardNames.join(', ');
     }
     if (examYears && Array.isArray(examYears)) {
       updateData.examYears = examYears.map(y => String(y).trim());
-      updateData.examYear = updateData.examYears[0] || '';
+      updateData.examYear = updateData.examYears.join(', ');
+    }
+    if (modelTestNos && Array.isArray(modelTestNos)) {
+      updateData.modelTestNos = modelTestNos.map(m => String(m).trim());
+      updateData.modelTestNo = updateData.modelTestNos.join(', ');
+    }
+    if (testPaperNames && Array.isArray(testPaperNames)) {
+      updateData.testPaperNames = testPaperNames.map(t => String(t).trim());
+      updateData.testPaperName = updateData.testPaperNames.join(', ');
+    }
+    if (liveExamNos && Array.isArray(liveExamNos)) {
+      updateData.liveExamNos = liveExamNos.map(l => String(l).trim());
+      updateData.liveExamNo = updateData.liveExamNos.join(', ');
     }
     if (modelTestNos && Array.isArray(modelTestNos)) {
       updateData.modelTestNos = modelTestNos.map(m => String(m).trim());
@@ -2869,6 +2968,156 @@ app.post('/api/students/point', async (req, res) => {
   }
 });
 
+// ==========================================
+// ২.১ শিক্ষার্থীদের পরীক্ষার ফলাফল ও নম্বর সংক্রান্ত APIs (Exam Results)
+// ==========================================
+
+// ফলাফল সংরক্ষণ (POST /api/results)
+app.post('/api/results', async (req, res) => {
+  try {
+    const {
+      studentId,
+      studentName,
+      emailOrNumber,
+      college,
+      examId,
+      examTitle,
+      category,
+      score,
+      totalMarks,
+      total,
+      wrongCount,
+      skippedCount,
+      scorePercentage
+    } = req.body;
+
+    const finalTotal = totalMarks || total || 25;
+    const finalScore = Number(score) || 0;
+    const finalPct = scorePercentage !== undefined ? Number(scorePercentage) : Math.round((finalScore / finalTotal) * 100);
+
+    const resultDoc = {
+      studentId: studentId || '',
+      studentName: studentName || 'শিক্ষার্থী',
+      emailOrNumber: emailOrNumber || '',
+      college: college || '',
+      examId: String(examId || '').trim(),
+      examTitle: examTitle || 'মডেল টেস্ট',
+      category: category || 'model_test',
+      score: finalScore,
+      totalMarks: finalTotal,
+      wrongCount: Number(wrongCount) || 0,
+      skippedCount: Number(skippedCount) || 0,
+      scorePercentage: finalPct,
+      submittedAt: new Date()
+    };
+
+    let savedResult = null;
+    if (isConnected) {
+      savedResult = await ExamResult.create(resultDoc);
+      // Update student testsCompleted and points
+      if (emailOrNumber || studentId) {
+        const query = studentId && mongoose.Types.ObjectId.isValid(studentId)
+          ? { _id: studentId }
+          : { emailOrNumber: emailOrNumber };
+        const student = await Student.findOne(query);
+        if (student) {
+          student.testsCompleted = (student.testsCompleted || 0) + 1;
+          if (finalScore > 20) {
+            student.points = (student.points || 0) + 1;
+          }
+          await student.save();
+          await syncDatabaseJson('students');
+        }
+      }
+      await syncDatabaseJson('examResults');
+    }
+
+    // Always ensure local file is updated
+    const fileResults = readExamResultsFile();
+    const localEntry = savedResult ? savedResult.toObject() : { _id: 'res_' + Date.now(), ...resultDoc };
+    fileResults.unshift(localEntry);
+    writeExamResultsFile(fileResults);
+
+    // Also update student in students.json if offline
+    if (!isConnected && (emailOrNumber || studentId)) {
+      const studentsPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(studentsPath)) {
+        try {
+          const sList = JSON.parse(fs.readFileSync(studentsPath, 'utf8'));
+          const s = sList.find(item => (studentId && String(item._id) === String(studentId)) || (emailOrNumber && item.emailOrNumber === emailOrNumber));
+          if (s) {
+            s.testsCompleted = (s.testsCompleted || 0) + 1;
+            if (finalScore > 20) s.points = (s.points || 0) + 1;
+            fs.writeFileSync(studentsPath, JSON.stringify(sList, null, 2), 'utf8');
+          }
+        } catch(e) {}
+      }
+    }
+
+    res.status(201).json({
+      success: true,
+      message: 'ফলাফল সফলভাবে সংরক্ষিত হয়েছে!',
+      data: localEntry
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'ফলাফল সংরক্ষণ ব্যর্থ: ' + err.message });
+  }
+});
+
+// ফলাফল ফেচ করা (GET /api/results)
+app.get('/api/results', async (req, res) => {
+  try {
+    const { studentId, emailOrNumber, studentName, examId } = req.query;
+    let results = [];
+    if (isConnected) {
+      const filter = {};
+      if (studentId) filter.studentId = studentId;
+      if (emailOrNumber) filter.emailOrNumber = emailOrNumber;
+      if (studentName) filter.studentName = { $regex: new RegExp(studentName.trim(), 'i') };
+      if (examId) filter.examId = examId;
+      results = await ExamResult.find(filter).sort({ submittedAt: -1 }).lean();
+    }
+    if (!results || results.length === 0) {
+      results = readExamResultsFile();
+      if (studentId) results = results.filter(r => String(r.studentId) === String(studentId));
+      if (emailOrNumber) results = results.filter(r => r.emailOrNumber === emailOrNumber);
+      if (studentName) results = results.filter(r => r.studentName && r.studentName.toLowerCase().includes(studentName.toLowerCase()));
+      if (examId) results = results.filter(r => String(r.examId) === String(examId));
+    }
+    res.json({ success: true, count: results.length, data: results });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// নির্দিষ্ট ইউজারের ফলাফল ফেচ করা (GET /api/results/user/:userKey)
+app.get('/api/results/user/:userKey', async (req, res) => {
+  try {
+    const userKey = req.params.userKey;
+    let results = [];
+    if (isConnected) {
+      results = await ExamResult.find({
+        $or: [
+          { studentId: userKey },
+          { emailOrNumber: userKey },
+          { studentName: { $regex: new RegExp(userKey.trim(), 'i') } }
+        ]
+      }).sort({ submittedAt: -1 }).lean();
+    }
+    if (!results || results.length === 0) {
+      const fileData = readExamResultsFile();
+      results = fileData.filter(r =>
+        String(r.studentId) === String(userKey) ||
+        r.emailOrNumber === userKey ||
+        (r.studentName && r.studentName.toLowerCase().includes(userKey.toLowerCase()))
+      );
+    }
+    res.json({ success: true, count: results.length, data: results });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
 // ৩. প্রোফাইল তথ্য আনা (Get Profile)
 app.get('/api/profile', async (req, res) => {
   try {
@@ -3274,7 +3523,7 @@ app.post('/api/auth/reset-password', async (req, res) => {
   }
 });
 
-// ৮. ইউজার ম্যানেজমেন্ট তালিকা (Registered Users List)
+// ৮. ইউজার ম্যানেজমেন্ট তালিকা (Registered Users List with Exam Results)
 app.get('/api/users', async (req, res) => {
   try {
     let users = [];
@@ -3291,6 +3540,36 @@ app.get('/api/users', async (req, res) => {
         users = list.map(({ password, ...u }) => u);
       }
     }
+
+    // পরীক্ষার ফলাফল নিয়ে প্রতিটি ইউজারের সাথে সংযুক্ত করা
+    let allResults = [];
+    if (mongoose.connection.readyState === 1) {
+      allResults = await ExamResult.find({}).sort({ submittedAt: -1 }).lean();
+    }
+    if (!allResults || allResults.length === 0) {
+      allResults = readExamResultsFile();
+    }
+
+    users = users.map(u => {
+      const uId = String(u._id || '');
+      const uContact = String(u.emailOrNumber || '').trim().toLowerCase();
+      const uName = String(u.name || '').trim().toLowerCase();
+      const uResults = allResults.filter(r => {
+        const rStudentId = String(r.studentId || '');
+        const rContact = String(r.emailOrNumber || '').trim().toLowerCase();
+        const rName = String(r.studentName || '').trim().toLowerCase();
+        return (uId && rStudentId === uId) ||
+               (uContact && rContact === uContact) ||
+               (uName && rName === uName);
+      });
+
+      return {
+        ...u,
+        testsCompleted: uResults.length > 0 ? uResults.length : (Number(u.testsCompleted) || 0),
+        examResults: uResults
+      };
+    });
+
     res.json({ success: true, count: users.length, data: users });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });

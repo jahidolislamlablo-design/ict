@@ -981,76 +981,125 @@
             </div>
 
             <div class="form-group" id="mcqBoardGroup">
-              <label for="mcqBoardName">বোর্ডের নাম (boardName)</label>
-              <select id="mcqBoardName">
-                <option value="">-- কোনো বোর্ড নয় --</option>
-                <option value="Dhaka Board">Dhaka Board (ঢাকা বোর্ড)</option>
-                <option value="Rajshahi Board">Rajshahi Board (রাজশাহী বোর্ড)</option>
-                <option value="Cumilla Board">Cumilla Board (কুমিল্লা বোর্ড)</option>
-                <option value="Jashore Board">Jashore Board (যশোর বোর্ড)</option>
-                <option value="Chattogram Board">Chattogram Board (চট্টগ্রাম বোর্ড)</option>
-                <option value="Barishal Board">Barishal Board (বরিশাল বোর্ড)</option>
-                <option value="Sylhet Board">Sylhet Board (সিলেট বোর্ড)</option>
-                <option value="Dinajpur Board">Dinajpur Board (দিনাজপুর বোর্ড)</option>
-                <option value="Mymensingh Board">Mymensingh Board (ময়মনসিংহ বোর্ড)</option>
-                <option value="Madrasah Board">Madrasah Board (মাদ্রাসা বোর্ড)</option>
-                <option value="All Boards">All Boards (সকল বোর্ড)</option>
-              </select>
+              <label>বোর্ডের নাম (boardName) — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="mcqBoardWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('mcqBoardWrapper')">
+                  <span id="mcqBoardTriggerText">-- কোনো বোর্ড নয় --</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <input type="text" class="multiselect-search-input" placeholder="🔍 বোর্ড খুঁজুন..." oninput="filterMultiSelectItems('mcqBoardWrapper', this.value)">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('mcqBoardWrapper', 'mcqBoardName', 'বোর্ড')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="mcqBoardItems">
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Dhaka Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Dhaka Board (ঢাকা বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Rajshahi Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Rajshahi Board (রাজশাহী বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Cumilla Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Cumilla Board (কুমিল্লা বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Jashore Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Jashore Board (যশোর বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Chattogram Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Chattogram Board (চট্টগ্রাম বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Barishal Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Barishal Board (বরিশাল বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Sylhet Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Sylhet Board (সিলেট বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Dinajpur Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Dinajpur Board (দিনাজপুর বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Mymensingh Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Mymensingh Board (ময়মনসিংহ বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="Madrasah Board" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Madrasah Board (মাদ্রাসা বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqBoardName" value="All Boards" onchange="syncMultiSelectText('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ All Boards (সকল বোর্ড)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="grid-4" style="margin-top: 0.5rem;">
             <div class="form-group" id="mcqCollegeGroup">
-              <label for="mcqCollegeName">কলেজের নাম (collegeName)</label>
-              <select id="mcqCollegeName">
-
-                <option value="">-- শীর্ষ কলেজ নির্বাচন করুন --</option>
-                <option value="Notre Dame College, Dhaka">নটর ডেম কলেজ, ঢাকা (Notre Dame College)</option>
-                <option value="Dhaka College, Dhaka">ঢাকা কলেজ, ঢাকা (Dhaka College)</option>
-                <option value="Viqarunnisa Noon School & College">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ (Viqarunnisa)</option>
-                <option value="RAJUK Uttara Model College">রাজউক উত্তরা মডেল কলেজ (RAJUK Uttara)</option>
-                <option value="Dhaka Residential Model College">ঢাকা রেসিডেনসিয়াল মডেল কলেজ (DRMC)</option>
-                <option value="Dhaka City College">ঢাকা সিটি কলেজ (Dhaka City College)</option>
-                <option value="Adamjee Cantonment College">আদমজী ক্যান্টনমেন্ট কলেজ (Adamjee Cantonment)</option>
-                <option value="Ideal School & College, Motijheel">আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</option>
-                <option value="Chittagong College, Chittagong">চট্টগ্রাম কলেজ, চট্টগ্রাম (Chittagong College)</option>
-                <option value="Govt. Hazi Muhammad Mohsin College">সরকারি হাজী মুহাম্মদ মহসিন কলেজ, চট্টগ্রাম</option>
-                <option value="Rajshahi College, Rajshahi">রাজশাহী কলেজ, রাজশাহী (Rajshahi College)</option>
-                <option value="Cantonment Public School & College, Rangpur">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</option>
-                <option value="Govt. Mujib College, Sakhipur, Tangail">সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</option>
-                <option value="Comilla Victoria Govt. College">কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</option>
-                <option value="Sylhet MC College">সিলেট এম সি কলেজ (Murari Chand College)</option>
-                <option value="Govt. BM College, Barishal">সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</option>
-                <option value="Ananda Mohan College, Mymensingh">আনন্দ মোহন কলেজ, ময়মনসিংহ</option>
-                <option value="Other">অন্যান্য কলেজ (Other College)</option>
-              </select>
+              <label>শীর্ষ কলেজ — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="mcqCollegeWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('mcqCollegeWrapper')">
+                  <span id="mcqCollegeTriggerText">-- শীর্ষ কলেজ নির্বাচন করুন --</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <input type="text" class="multiselect-search-input" placeholder="🔍 কলেজ খুঁজুন..." oninput="filterMultiSelectItems('mcqCollegeWrapper', this.value)">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('mcqCollegeWrapper', 'mcqCollegeName', 'কলেজ')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="mcqCollegeItems">
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Notre Dame College, Dhaka" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 নটর ডেম কলেজ, ঢাকা (Notre Dame College)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Dhaka College, Dhaka" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ঢাকা কলেজ, ঢাকা (Dhaka College)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Viqarunnisa Noon School & College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="RAJUK Uttara Model College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 রাজউক উত্তরা মডেল কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Dhaka Residential Model College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ঢাকা রেসিডেনসিয়াল মডেল কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Dhaka City College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ঢাকা সিটি কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Adamjee Cantonment College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 আদমজী ক্যান্টনমেন্ট কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Ideal School & College, Motijheel" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Chittagong College, Chittagong" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 চট্টগ্রাম কলেজ, চট্টগ্রাম</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Govt. Hazi Muhammad Mohsin College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সরকারি হাজী মুহাম্মদ মহসিন কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Rajshahi College, Rajshahi" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 রাজশাহী কলেজ, রাজশাহী</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Cantonment Public School & College, Rangpur" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Govt. Mujib College, Sakhipur, Tangail" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Comilla Victoria Govt. College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Sylhet MC College" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সিলেট এম সি কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Govt. BM College, Barishal" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Ananda Mohan College, Mymensingh" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 আনন্দ মোহন কলেজ, ময়মনসিংহ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqCollegeName" value="Other" onchange="syncMultiSelectText('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 অন্যান্য কলেজ (Other College)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="mcqExamYear">পরীক্ষার সাল (examYear)</label>
-              <select id="mcqExamYear">
-
-                <option value="">-- পরীক্ষার সাল নির্বাচন করুন --</option>
-                <option value="2026" >2026 (২০২৬)</option>
-                <option value="2025" selected>2025 (২০২৫)</option>
-                <option value="2024" >2024 (২০২৪)</option>
-                <option value="2023" >2023 (২০২৩)</option>
-                <option value="2022" >2022 (২০২২)</option>
-                <option value="2021" >2021 (২০২১)</option>
-                <option value="2020" >2020 (২০২০)</option>
-                <option value="2019" >2019 (২০১৯)</option>
-                <option value="2018" >2018 (২০১৮)</option>
-                <option value="2017" >2017 (২০১৭)</option>
-                <option value="2016" >2016 (২০১৬)</option>
-              </select>
+              <label>পরীক্ষার সাল (examYear) — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="mcqExamYearWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('mcqExamYearWrapper')">
+                  <span id="mcqExamYearTriggerText">2025 (২০২৫)</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('mcqExamYearWrapper', 'mcqExamYear', 'সাল')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="mcqExamYearItems">
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2026" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2026 (২০২৬)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2025" checked onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2025 (২০২৫)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2024" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2024 (২০২৪)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2023" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2023 (২০২৩)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2022" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2022 (২০২২)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2021" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2021 (২০২১)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2020" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2020 (২০২০)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2019" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2019 (২০১৯)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2018" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2018 (২০১৮)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2017" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2017 (২০১৭)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqExamYear" value="2016" onchange="syncMultiSelectText('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2016 (২০১৬)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="mcqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
-              <select id="mcqTestPaperName">
-                <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
-                <option value="টেস্ট পেপার ২০২৬">টেস্ট পেপার ২০২৬ (Test Paper 2026)</option>
-              </select>
+              <label>টেস্ট পেপার প্রকাশনী — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="mcqTestPaperWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('mcqTestPaperWrapper')">
+                  <span id="mcqTestPaperTriggerText">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('mcqTestPaperWrapper', 'mcqTestPaperName', 'প্রকাশনী')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="mcqTestPaperItems">
+                    <label class="multiselect-item"><input type="checkbox" name="mcqTestPaperName" value="টেস্ট পেপার ২০২৬" onchange="syncMultiSelectText('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 টেস্ট পেপার ২০২৬ (Test Paper 2026)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqTestPaperName" value="পাঞ্জেরী টেস্ট পেপার" onchange="syncMultiSelectText('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 পাঞ্জেরী টেস্ট পেপার (Panjeree)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqTestPaperName" value="অনুপম টেস্ট পেপার" onchange="syncMultiSelectText('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 অনুপম টেস্ট পেপার (Anupam)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqTestPaperName" value="লেকচার টেস্ট পেপার" onchange="syncMultiSelectText('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 লেকচার টেস্ট পেপার (Lecture)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqTestPaperName" value="রয়েল টেস্ট পেপার" onchange="syncMultiSelectText('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 রয়েল টেস্ট পেপার (Royal)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="mcqTestPaperName" value="মেড ইজি (Made Easy)" onchange="syncMultiSelectText('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 মেড ইজি (Made Easy)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
@@ -1115,65 +1164,28 @@
 
           <!-- লাইভ এক্সাম নির্বাচন ফিল্ড -->
           <div class="form-group" id="mcqLiveExamGroup" style="margin-top: 1rem; background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 8px; padding: 12px;">
-            <label for="mcqLiveExamNo" style="font-weight: 700; color: #dc2626; display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-size: 0.95rem;">🔴 লাইভ এক্সাম নির্বাচন (Live Exam Selection Field)</span>
+            <label style="font-weight: 700; color: #dc2626; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 0.95rem;">🔴 লাইভ এক্সাম নির্বাচন (Live Exam) — একাধিক নির্বাচন সম্ভব</span>
               <span class="badge" style="background: #dc2626; color: #fff; font-size: 0.75rem; padding: 3px 8px; border-radius: 10px;">লাইভ এক্সাম ফিল্ড</span>
             </label>
-            <select id="mcqLiveExamNo" onchange="onLiveExamSelect(this.value)" style="font-weight: 600; border-color: #fda4af; margin-top: 4px;">
-<option value="">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</option>
-                  <option value="Live Exam 01">Live Exam 01 (লাইভ এক্সাম 01 - প্রথম অধ্যায়)</option>
-                  <option value="Live Exam 02">Live Exam 02 (লাইভ এক্সাম 02 - দ্বিতীয় অধ্যায়)</option>
-                  <option value="Live Exam 03">Live Exam 03 (লাইভ এক্সাম 03 - ৩য় অধ্যায় (১ম অংশ))</option>
-                  <option value="Live Exam 04">Live Exam 04 (লাইভ এক্সাম 04 - ৩য় অধ্যায় (২য় অংশ))</option>
-                  <option value="Live Exam 05">Live Exam 05 (লাইভ এক্সাম 05 - ৪র্থ অধ্যায়)</option>
-                  <option value="Live Exam 06">Live Exam 06 (লাইভ এক্সাম 06 - ৫ম অধ্যায়)</option>
-                  <option value="Live Exam 07">Live Exam 07 (লাইভ এক্সাম 07 - ৬ষ্ঠ অধ্যায়)</option>
-                  <option value="Live Exam 08">Live Exam 08 (লাইভ এক্সাম 08 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 09">Live Exam 09 (লাইভ এক্সাম 09 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 10">Live Exam 10 (লাইভ এক্সাম 10 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 11">Live Exam 11 (লাইভ এক্সাম 11 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 12">Live Exam 12 (লাইভ এক্সাম 12 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 13">Live Exam 13 (লাইভ এক্সাম 13 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 14">Live Exam 14 (লাইভ এক্সাম 14 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 15">Live Exam 15 (লাইভ এক্সাম 15 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 16">Live Exam 16 (লাইভ এক্সাম 16 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 17">Live Exam 17 (লাইভ এক্সাম 17 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 18">Live Exam 18 (লাইভ এক্সাম 18 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 19">Live Exam 19 (লাইভ এক্সাম 19 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 20">Live Exam 20 (লাইভ এক্সাম 20 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 21">Live Exam 21 (লাইভ এক্সাম 21 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 22">Live Exam 22 (লাইভ এক্সাম 22 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 23">Live Exam 23 (লাইভ এক্সাম 23 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 24">Live Exam 24 (লাইভ এক্সাম 24 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 25">Live Exam 25 (লাইভ এক্সাম 25 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 26">Live Exam 26 (লাইভ এক্সাম 26 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 27">Live Exam 27 (লাইভ এক্সাম 27 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 28">Live Exam 28 (লাইভ এক্সাম 28 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 29">Live Exam 29 (লাইভ এক্সাম 29 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 30">Live Exam 30 (লাইভ এক্সাম 30 - পূর্ণাঙ্গ সিলেবাস)</option>
-                  <option value="Live Exam 31">Live Exam 31 (লাইভ এক্সাম 31 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
-                  <option value="Live Exam 32">Live Exam 32 (লাইভ এক্সাম 32 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
-                  <option value="Live Exam 33">Live Exam 33 (লাইভ এক্সাম 33 - অধ্যায়ভিত্তিক স্পেশাল (4ম অধ্যায়))</option>
-                  <option value="Live Exam 34">Live Exam 34 (লাইভ এক্সাম 34 - অধ্যায়ভিত্তিক স্পেশাল (5ম অধ্যায়))</option>
-                  <option value="Live Exam 35">Live Exam 35 (লাইভ এক্সাম 35 - অধ্যায়ভিত্তিক স্পেশাল (6ম অধ্যায়))</option>
-                  <option value="Live Exam 36">Live Exam 36 (লাইভ এক্সাম 36 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
-                  <option value="Live Exam 37">Live Exam 37 (লাইভ এক্সাম 37 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
-                  <option value="Live Exam 38">Live Exam 38 (লাইভ এক্সাম 38 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
-                  <option value="Live Exam 39">Live Exam 39 (লাইভ এক্সাম 39 - অধ্যায়ভিত্তিক স্পেশাল (4ম অধ্যায়))</option>
-                  <option value="Live Exam 40">Live Exam 40 (লাইভ এক্সাম 40 - অধ্যায়ভিত্তিক স্পেশাল (5ম অধ্যায়))</option>
-                  <option value="Live Exam 41">Live Exam 41 (লাইভ এক্সাম 41 - অধ্যায়ভিত্তিক স্পেশাল (6ম অধ্যায়))</option>
-                  <option value="Live Exam 42">Live Exam 42 (লাইভ এক্সাম 42 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
-                  <option value="Live Exam 43">Live Exam 43 (লাইভ এক্সাম 43 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
-                  <option value="Live Exam 44">Live Exam 44 (লাইভ এক্সাম 44 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
-                  <option value="Live Exam 45">Live Exam 45 (লাইভ এক্সাম 45 - অধ্যায়ভিত্তিক স্পেশাল (4ম অধ্যায়))</option>
-                  <option value="Live Exam 46">Live Exam 46 (লাইভ এক্সাম 46 - অধ্যায়ভিত্তিক স্পেশাল (5ম অধ্যায়))</option>
-                  <option value="Live Exam 47">Live Exam 47 (লাইভ এক্সাম 47 - অধ্যায়ভিত্তিক স্পেশাল (6ম অধ্যায়))</option>
-                  <option value="Live Exam 48">Live Exam 48 (লাইভ এক্সাম 48 - অধ্যায়ভিত্তিক স্পেশাল (1ম অধ্যায়))</option>
-                  <option value="Live Exam 49">Live Exam 49 (লাইভ এক্সাম 49 - অধ্যায়ভিত্তিক স্পেশাল (2ম অধ্যায়))</option>
-                  <option value="Live Exam 50">Live Exam 50 (লাইভ এক্সাম 50 - অধ্যায়ভিত্তিক স্পেশাল (3ম অধ্যায়))</option>
-            </select>
+            <div class="multiselect-wrapper" id="mcqLiveExamWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('mcqLiveExamWrapper')" style="border-color: #fda4af;">
+                <span id="mcqLiveExamTriggerText">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</span>
+                <span class="chevron-icon" style="color: #dc2626;">▼</span>
+              </div>
+              <div class="multiselect-menu" style="border-color: #fecdd3;">
+                <input type="text" class="multiselect-search-input" placeholder="🔍 লাইভ এক্সাম খুঁজুন..." oninput="filterMultiSelectItems('mcqLiveExamWrapper', this.value)">
+                <div class="multiselect-menu-actions">
+                  <a onclick="selectAllMultiSelectItems('mcqLiveExamWrapper', 'mcqLiveExamNo', 'লাইভ এক্সাম')">✓ সকল নির্বাচন</a>
+                  <a class="clear-link" onclick="clearAllMultiSelectItems('mcqLiveExamWrapper', 'mcqLiveExamNo', '-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --', 'লাইভ এক্সাম')">✕ সব মুছুন</a>
+                </div>
+                <div class="multiselect-items-container" id="mcqLiveExamItems">
+                  <!-- Will be populated dynamically by populateLiveExamSelectOptions() -->
+                </div>
+              </div>
+            </div>
             <span class="hint" style="color: #9f1239; font-size: 0.8rem; margin-top: 5px; display: block; font-weight: 500;">
-              💡 এখান থেকে লাইভ এক্সাম সিলেক্ট করলে প্রশ্নটি সরাসরি ঐ লাইভ এক্সামে যুক্ত হবে এবং স্বয়ংক্রিয়ভাবে "Live Exam" ক্যাটাগরি নির্বাচিত হবে।
+              💡 এখান থেকে লাইভ এক্সাম সিলেক্ট করলে প্রশ্নটি ঐ নির্দিষ্ট লাইভ এক্সামে যুক্ত হবে এবং স্বয়ংক্রিয়ভাবে "Live Exam" ক্যাটাগরি নির্বাচিত হবে।
             </span>
           </div>
 
@@ -1332,76 +1344,125 @@
             </div>
 
             <div class="form-group" id="cqBoardGroup">
-              <label for="cqBoardName">বোর্ডের নাম (boardName)</label>
-              <select id="cqBoardName">
-                <option value="">-- কোনো বোর্ড নয় --</option>
-                <option value="Dhaka Board" selected>Dhaka Board (ঢাকা বোর্ড)</option>
-                <option value="Rajshahi Board">Rajshahi Board (রাজশাহী বোর্ড)</option>
-                <option value="Cumilla Board">Cumilla Board (কুমিল্লা বোর্ড)</option>
-                <option value="Jashore Board">Jashore Board (যশোর বোর্ড)</option>
-                <option value="Chattogram Board">Chattogram Board (চট্টগ্রাম বোর্ড)</option>
-                <option value="Barishal Board">Barishal Board (বরিশাল বোর্ড)</option>
-                <option value="Sylhet Board">Sylhet Board (সিলেট বোর্ড)</option>
-                <option value="Dinajpur Board">Dinajpur Board (দিনাজপুর বোর্ড)</option>
-                <option value="Mymensingh Board">Mymensingh Board (ময়মনসিংহ বোর্ড)</option>
-                <option value="Madrasah Board">Madrasah Board (মাদ্রাসা বোর্ড)</option>
-                <option value="All Boards">All Boards (সকল বোর্ড)</option>
-              </select>
+              <label>বোর্ডের নাম (boardName) — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="cqBoardWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('cqBoardWrapper')">
+                  <span id="cqBoardTriggerText">Dhaka Board (ঢাকা বোর্ড)</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <input type="text" class="multiselect-search-input" placeholder="🔍 বোর্ড খুঁজুন..." oninput="filterMultiSelectItems('cqBoardWrapper', this.value)">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('cqBoardWrapper', 'cqBoardName', 'বোর্ড')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="cqBoardItems">
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Dhaka Board" checked onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Dhaka Board (ঢাকা বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Rajshahi Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Rajshahi Board (রাজশাহী বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Cumilla Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Cumilla Board (কুমিল্লা বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Jashore Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Jashore Board (যশোর বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Chattogram Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Chattogram Board (চট্টগ্রাম বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Barishal Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Barishal Board (বরিশাল বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Sylhet Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Sylhet Board (সিলেট বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Dinajpur Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Dinajpur Board (দিনাজপুর বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Mymensingh Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Mymensingh Board (ময়মনসিংহ বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="Madrasah Board" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ Madrasah Board (মাদ্রাসা বোর্ড)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqBoardName" value="All Boards" onchange="syncMultiSelectText('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ All Boards (সকল বোর্ড)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="grid-4" style="margin-top: 0.5rem;">
             <div class="form-group" id="cqCollegeGroup">
-              <label for="cqCollegeName">কলেজের নাম (collegeName)</label>
-              <select id="cqCollegeName">
-
-                <option value="">-- শীর্ষ কলেজ নির্বাচন করুন --</option>
-                <option value="Notre Dame College, Dhaka">নটর ডেম কলেজ, ঢাকা (Notre Dame College)</option>
-                <option value="Dhaka College, Dhaka">ঢাকা কলেজ, ঢাকা (Dhaka College)</option>
-                <option value="Viqarunnisa Noon School & College">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ (Viqarunnisa)</option>
-                <option value="RAJUK Uttara Model College">রাজউক উত্তরা মডেল কলেজ (RAJUK Uttara)</option>
-                <option value="Dhaka Residential Model College">ঢাকা রেসিডেনসিয়াল মডেল কলেজ (DRMC)</option>
-                <option value="Dhaka City College">ঢাকা সিটি কলেজ (Dhaka City College)</option>
-                <option value="Adamjee Cantonment College">আদমজী ক্যান্টনমেন্ট কলেজ (Adamjee Cantonment)</option>
-                <option value="Ideal School & College, Motijheel">আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</option>
-                <option value="Chittagong College, Chittagong">চট্টগ্রাম কলেজ, চট্টগ্রাম (Chittagong College)</option>
-                <option value="Govt. Hazi Muhammad Mohsin College">সরকারি হাজী মুহাম্মদ মহসিন কলেজ, চট্টগ্রাম</option>
-                <option value="Rajshahi College, Rajshahi">রাজশাহী কলেজ, রাজশাহী (Rajshahi College)</option>
-                <option value="Cantonment Public School & College, Rangpur">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</option>
-                <option value="Govt. Mujib College, Sakhipur, Tangail">সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</option>
-                <option value="Comilla Victoria Govt. College">কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</option>
-                <option value="Sylhet MC College">সিলেট এম সি কলেজ (Murari Chand College)</option>
-                <option value="Govt. BM College, Barishal">সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</option>
-                <option value="Ananda Mohan College, Mymensingh">আনন্দ মোহন কলেজ, ময়মনসিংহ</option>
-                <option value="Other">অন্যান্য কলেজ (Other College)</option>
-              </select>
+              <label>শীর্ষ কলেজ — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="cqCollegeWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('cqCollegeWrapper')">
+                  <span id="cqCollegeTriggerText">-- শীর্ষ কলেজ নির্বাচন করুন --</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <input type="text" class="multiselect-search-input" placeholder="🔍 কলেজ খুঁজুন..." oninput="filterMultiSelectItems('cqCollegeWrapper', this.value)">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('cqCollegeWrapper', 'cqCollegeName', 'কলেজ')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="cqCollegeItems">
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Notre Dame College, Dhaka" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 নটর ডেম কলেজ, ঢাকা (Notre Dame College)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Dhaka College, Dhaka" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ঢাকা কলেজ, ঢাকা (Dhaka College)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Viqarunnisa Noon School & College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="RAJUK Uttara Model College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 রাজউক উত্তরা মডেল কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Dhaka Residential Model College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ঢাকা রেসিডেনসিয়াল মডেল কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Dhaka City College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ঢাকা সিটি কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Adamjee Cantonment College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 আদমজী ক্যান্টনমেন্ট কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Ideal School & College, Motijheel" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Chittagong College, Chittagong" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 চট্টগ্রাম কলেজ, চট্টগ্রাম</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Govt. Hazi Muhammad Mohsin College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সরকারি হাজী মুহাম্মদ মহসিন কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Rajshahi College, Rajshahi" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 রাজশাহী কলেজ, রাজশাহী</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Cantonment Public School & College, Rangpur" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Govt. Mujib College, Sakhipur, Tangail" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Comilla Victoria Govt. College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Sylhet MC College" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সিলেট এম সি কলেজ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Govt. BM College, Barishal" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Ananda Mohan College, Mymensingh" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 আনন্দ মোহন কলেজ, ময়মনসিংহ</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqCollegeName" value="Other" onchange="syncMultiSelectText('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 অন্যান্য কলেজ (Other College)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="cqExamYear">পরীক্ষার সাল (examYear)</label>
-              <select id="cqExamYear">
-
-                <option value="">-- পরীক্ষার সাল নির্বাচন করুন --</option>
-                <option value="2026" >2026 (২০২৬)</option>
-                <option value="2025" selected>2025 (২০২৫)</option>
-                <option value="2024" >2024 (২০২৪)</option>
-                <option value="2023" >2023 (২০২৩)</option>
-                <option value="2022" >2022 (২০২২)</option>
-                <option value="2021" >2021 (২০২১)</option>
-                <option value="2020" >2020 (২০২০)</option>
-                <option value="2019" >2019 (২০১৯)</option>
-                <option value="2018" >2018 (২০১৮)</option>
-                <option value="2017" >2017 (২০১৭)</option>
-                <option value="2016" >2016 (২০১৬)</option>
-              </select>
+              <label>পরীক্ষার সাল (examYear) — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="cqExamYearWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('cqExamYearWrapper')">
+                  <span id="cqExamYearTriggerText">2025 (২০২৫)</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('cqExamYearWrapper', 'cqExamYear', 'সাল')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="cqExamYearItems">
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2026" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2026 (২০২৬)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2025" checked onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2025 (২০২৫)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2024" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2024 (২০২৪)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2023" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2023 (২০২৩)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2022" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2022 (২০২২)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2021" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2021 (২০২১)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2020" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2020 (২০২০)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2019" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2019 (২০১৯)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2018" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2018 (২০১৮)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2017" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2017 (২০১৭)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqExamYear" value="2016" onchange="syncMultiSelectText('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 2016 (২০১৬)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="cqTestPaperName">টেস্ট পেপার প্রকাশনী</label>
-              <select id="cqTestPaperName">
-                <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
-                <option value="টেস্ট পেপার ২০২৬">টেস্ট পেপার ২০২৬ (Test Paper 2026)</option>
-              </select>
+              <label>টেস্ট পেপার প্রকাশনী — একাধিক নির্বাচন সম্ভব</label>
+              <div class="multiselect-wrapper" id="cqTestPaperWrapper">
+                <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('cqTestPaperWrapper')">
+                  <span id="cqTestPaperTriggerText">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</span>
+                  <span class="chevron-icon">▼</span>
+                </div>
+                <div class="multiselect-menu">
+                  <div class="multiselect-menu-actions">
+                    <a onclick="selectAllMultiSelectItems('cqTestPaperWrapper', 'cqTestPaperName', 'প্রকাশনী')">✓ সকল নির্বাচন</a>
+                    <a class="clear-link" onclick="clearAllMultiSelectItems('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')">✕ সব মুছুন</a>
+                  </div>
+                  <div class="multiselect-items-container" id="cqTestPaperItems">
+                    <label class="multiselect-item"><input type="checkbox" name="cqTestPaperName" value="টেস্ট পেপার ২০২৬" onchange="syncMultiSelectText('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 টেস্ট পেপার ২০২৬ (Test Paper 2026)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqTestPaperName" value="পাঞ্জেরী টেস্ট পেপার" onchange="syncMultiSelectText('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 পাঞ্জেরী টেস্ট পেপার (Panjeree)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqTestPaperName" value="অনুপম টেস্ট পেপার" onchange="syncMultiSelectText('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 অনুপম টেস্ট পেপার (Anupam)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqTestPaperName" value="লেকচার টেস্ট পেপার" onchange="syncMultiSelectText('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 লেকচার টেস্ট পেপার (Lecture)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqTestPaperName" value="রয়েল টেস্ট পেপার" onchange="syncMultiSelectText('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 রয়েল টেস্ট পেপার (Royal)</span></label>
+                    <label class="multiselect-item"><input type="checkbox" name="cqTestPaperName" value="মেড ইজি (Made Easy)" onchange="syncMultiSelectText('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 মেড ইজি (Made Easy)</span></label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
@@ -2019,6 +2080,40 @@
 
 
   <!-- ============================================== -->
+  <!-- ৪.১ শিক্ষার্থীর পরীক্ষার ফলাফল ও মার্কশিট মোডাল -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="userResultsModal">
+    <div class="modal-card" style="max-width: 920px; width: 95%;">
+      <div class="modal-header" style="background: linear-gradient(135deg, #f8fafc, #eff6ff); border-bottom: 1.5px solid #e2e8f0; padding: 1.1rem 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: #e0e7ff; color: #4338ca; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 2px 6px rgba(67, 56, 202, 0.15);">
+            📊
+          </div>
+          <div>
+            <h3 id="userResultsModalTitle" style="font-size: 1.15rem; font-weight: 700; color: #1e293b; margin: 0;">
+              শিক্ষার্থীর মডেল টেস্ট ও পরীক্ষার ফলাফল
+            </h3>
+            <p id="userResultsModalSubtitle" style="font-size: 0.82rem; color: #64748b; margin: 2px 0 0 0;">
+              বিস্তারিত মার্কশিট ও পরীক্ষার রেকর্ড
+            </p>
+          </div>
+        </div>
+        <button type="button" style="background:transparent; border:none; font-size:1.6rem; color:#64748b; cursor:pointer; line-height: 1;" onclick="closeUserResultsModal()">&times;</button>
+      </div>
+
+      <div class="modal-body" id="userResultsModalBody" style="max-height: 72vh; overflow-y: auto; padding: 1.25rem;">
+        <!-- ডায়নামিক ফলাফল টেবিল ও পরিসংখ্যান লোড হবে -->
+      </div>
+
+      <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 0.85rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <span id="userResultsSummaryFooter" style="font-size: 0.84rem; color: #475569; font-weight: 600;"></span>
+        <button type="button" class="btn btn-secondary" onclick="closeUserResultsModal()">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================== -->
   <!-- ৫.১ লাইভ এক্সাম ও মডেল টেস্ট সম্পাদনা মোডাল -->
   <!-- ============================================== -->
   <div class="modal-overlay" id="liveExamEditModal">
@@ -2321,7 +2416,7 @@
       select.value = currentValue;
     }
 
-    // MCQ ফর্ম সাবমিট হ্যান্ডলার (একাধিক ক্যাটাগরি সাপোর্ট সহ)
+    // MCQ ফর্ম সাবমিট হ্যান্ডলার (মাল্টি-সিলেক্ট মেটাডেটা সাপোর্ট সহ)
     async function handleMcqSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('mcqSubmitBtn');
@@ -2341,14 +2436,27 @@
         }
 
         const chapter = document.getElementById('mcqChapter').value;
-        const boardName = document.getElementById('mcqBoardName').value;
-        const collegeName = document.getElementById('mcqCollegeName').value;
-        const examYear = document.getElementById('mcqExamYear').value;
-        const testPaperName = document.getElementById('mcqTestPaperName').value;
+
+        // মাল্টি-সিলেক্ট চেকবক্স থেকে সংগ্রহ
+        const checkedBoards = Array.from(document.querySelectorAll('input[name="mcqBoardName"]:checked')).map(cb => cb.value);
+        const checkedColleges = Array.from(document.querySelectorAll('input[name="mcqCollegeName"]:checked')).map(cb => cb.value);
+        const checkedYears = Array.from(document.querySelectorAll('input[name="mcqExamYear"]:checked')).map(cb => cb.value);
+        const checkedTestPapers = Array.from(document.querySelectorAll('input[name="mcqTestPaperName"]:checked')).map(cb => cb.value);
+        const checkedLiveExams = Array.from(document.querySelectorAll('input[name="mcqLiveExamNo"]:checked')).map(cb => cb.value);
+
+        const boardName = checkedBoards.join(', ');
+        const collegeName = checkedColleges.join(', ');
+        const examYear = checkedYears.join(', ');
+        const testPaperName = checkedTestPapers.join(', ');
+        const liveExamNo = checkedLiveExams.join(', ');
         const modelTestNo = document.getElementById('mcqModelTestNo')?.value || '';
-        const liveExamNo = document.getElementById('mcqLiveExamSelect')?.value || '';
-        if (liveExamNo && !categoryTypes.includes('Live Exam')) { categoryTypes.push('Live Exam'); }
-        if (modelTestNo && !categoryTypes.includes('Model Test')) { categoryTypes.push('Model Test'); }
+
+        if (checkedLiveExams.length > 0 && !categoryTypes.includes('Live Exam')) {
+          categoryTypes.push('Live Exam');
+        }
+        if (modelTestNo && !categoryTypes.includes('Model Test')) {
+          categoryTypes.push('Model Test');
+        }
 
         const question = document.getElementById('mcqQuestion').value.trim();
         const opt1 = document.getElementById('mcqOpt1').value.trim();
@@ -2382,17 +2490,17 @@
         const payload = {
           categoryTypes,
           categoryType: categoryTypes[0],
-          chapters: checkedChapters,
-          chapter: primaryChapter,
+          chapter,
           boardNames: checkedBoards,
-          boardName: primaryBoard,
+          boardName,
           collegeNames: checkedColleges,
-          collegeName: primaryCollege,
+          collegeName,
           examYears: checkedYears,
-          examYear: primaryYear,
+          examYear,
+          testPaperNames: checkedTestPapers,
           testPaperName,
-          modelTestNos: checkedModelTests,
           modelTestNo,
+          liveExamNos: checkedLiveExams,
           liveExamNo,
           question,
           options: [opt1, opt2, opt3, opt4],
@@ -2443,14 +2551,16 @@
       updateCorrectAnswerOptions();
 
       if (!keepMetadata) {
-        document.getElementById('mcqCollegeName').value = '';
+        clearAllMultiSelectItems('mcqBoardWrapper', 'mcqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড');
+        clearAllMultiSelectItems('mcqCollegeWrapper', 'mcqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ');
+        clearAllMultiSelectItems('mcqExamYearWrapper', 'mcqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল');
+        clearAllMultiSelectItems('mcqTestPaperWrapper', 'mcqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী');
+        clearAllMultiSelectItems('mcqLiveExamWrapper', 'mcqLiveExamNo', '-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --', 'লাইভ এক্সাম');
         if (document.getElementById('mcqModelTestNo')) document.getElementById('mcqModelTestNo').value = '';
-        if (document.getElementById('mcqLiveExamSelect')) document.getElementById('mcqLiveExamSelect').value = '';
-        document.getElementById('mcqTestPaperName').value = '';
       }
     }
 
-    // CQ ফর্ম সাবমিট হ্যান্ডলার
+    // CQ ফর্ম সাবমিট হ্যান্ডলার (মাল্টি-সিলেক্ট মেটাডেটা সাপোর্ট সহ)
     async function handleCqSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('cqSubmitBtn');
@@ -2469,10 +2579,17 @@
         }
 
         const chapter = document.getElementById('cqChapter').value;
-        const boardName = document.getElementById('cqBoardName').value;
-        const collegeName = document.getElementById('cqCollegeName').value;
-        const examYear = document.getElementById('cqExamYear').value;
-        const testPaperName = document.getElementById('cqTestPaperName').value;
+
+        // মাল্টি-সিলেক্ট চেকবক্স থেকে সংগ্রহ
+        const checkedBoards = Array.from(document.querySelectorAll('input[name="cqBoardName"]:checked')).map(cb => cb.value);
+        const checkedColleges = Array.from(document.querySelectorAll('input[name="cqCollegeName"]:checked')).map(cb => cb.value);
+        const checkedYears = Array.from(document.querySelectorAll('input[name="cqExamYear"]:checked')).map(cb => cb.value);
+        const checkedTestPapers = Array.from(document.querySelectorAll('input[name="cqTestPaperName"]:checked')).map(cb => cb.value);
+
+        const boardName = checkedBoards.join(', ');
+        const collegeName = checkedColleges.join(', ');
+        const examYear = checkedYears.join(', ');
+        const testPaperName = checkedTestPapers.join(', ');
         const modelTestNo = document.getElementById('cqModelTestNo')?.value || '';
         if (modelTestNo && !categoryTypes.includes('Model Test')) { categoryTypes.push('Model Test'); }
 
@@ -2498,18 +2615,16 @@
         const payload = {
           categoryTypes,
           categoryType: categoryTypes[0],
-          chapters: checkedChapters,
-          chapter: primaryChapter,
+          chapter,
           boardNames: checkedBoards,
-          boardName: primaryBoard,
+          boardName,
           collegeNames: checkedColleges,
-          collegeName: primaryCollege,
+          collegeName,
           examYears: checkedYears,
-          examYear: primaryYear,
+          examYear,
+          testPaperNames: checkedTestPapers,
           testPaperName,
-          modelTestNos: checkedModelTests,
           modelTestNo,
-          liveExamNo,
           stem,
           q_ka,
           a_ka,
@@ -2561,13 +2676,17 @@
       document.getElementById('cq_a_gha').value = '';
 
       if (!keepMetadata) {
-        document.getElementById('cqCollegeName').value = '';
+        clearAllMultiSelectItems('cqBoardWrapper', 'cqBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড');
+        clearAllMultiSelectItems('cqCollegeWrapper', 'cqCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ');
+        clearAllMultiSelectItems('cqExamYearWrapper', 'cqExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল');
+        clearAllMultiSelectItems('cqTestPaperWrapper', 'cqTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী');
         if (document.getElementById('cqModelTestNo')) document.getElementById('cqModelTestNo').value = '';
-        document.getElementById('cqTestPaperName').value = '';
       }
     }
 
+    // ==============================================
     // Multi-Select Dropdown Helpers
+    // ==============================================
     function toggleMultiSelectDropdown(wrapperId) {
       const wrapper = document.getElementById(wrapperId);
       if (!wrapper) return;
@@ -2597,6 +2716,61 @@
       } else {
         textEl.innerHTML = `<span style="font-weight:600; color:var(--primary);">${checked.length}টি ক্যাটাগরি নির্বাচিত</span> <span class="badge" style="background:#e0e7ff; color:#4338ca; font-size:0.75rem; margin-left:6px;">মাল্টিপল</span>`;
       }
+    }
+
+    function syncMultiSelectText(wrapperId, inputName, defaultText, labelUnit = 'আইটেম') {
+      const wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      const trigger = wrapper.querySelector('.multiselect-trigger span:first-child');
+      if (!trigger) return;
+      const checkedBoxes = Array.from(wrapper.querySelectorAll(`input[name="${inputName}"]:checked`));
+      if (checkedBoxes.length === 0) {
+        trigger.textContent = defaultText;
+        trigger.style.color = '#64748b';
+        trigger.style.fontWeight = 'normal';
+      } else if (checkedBoxes.length === 1) {
+        const parentLabel = checkedBoxes[0].closest('label');
+        const labelSpan = parentLabel ? parentLabel.querySelector('span') : null;
+        const labelClean = labelSpan ? labelSpan.textContent.replace(/^[🏛️🏫📅📚🔴⏱️📖]\s*/, '').trim() : checkedBoxes[0].value;
+        trigger.textContent = labelClean;
+        trigger.style.color = 'var(--primary)';
+        trigger.style.fontWeight = '600';
+      } else {
+        trigger.innerHTML = `<span style="font-weight:600; color:var(--primary);">${checkedBoxes.length}টি ${labelUnit} নির্বাচিত</span> <span class="badge" style="background:#e0e7ff; color:#4338ca; font-size:0.75rem; margin-left:6px;">মাল্টিপল</span>`;
+      }
+    }
+
+    function filterMultiSelectItems(wrapperId, query) {
+      const wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      const items = wrapper.querySelectorAll('.multiselect-item');
+      const q = (query || '').toLowerCase().trim();
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    function selectAllMultiSelectItems(wrapperId, inputName, labelUnit = 'আইটেম') {
+      const wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      const boxes = wrapper.querySelectorAll(`input[name="${inputName}"]`);
+      boxes.forEach(b => {
+        const item = b.closest('.multiselect-item');
+        if (!item || item.style.display !== 'none') {
+          b.checked = true;
+        }
+      });
+      const defaultText = wrapper.querySelector('.multiselect-trigger span:first-child')?.getAttribute('data-default') || 'নির্বাচিত';
+      syncMultiSelectText(wrapperId, inputName, defaultText, labelUnit);
+    }
+
+    function clearAllMultiSelectItems(wrapperId, inputName, defaultText, labelUnit = 'আইটেম') {
+      const wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      const boxes = wrapper.querySelectorAll(`input[name="${inputName}"]`);
+      boxes.forEach(b => { b.checked = false; });
+      syncMultiSelectText(wrapperId, inputName, defaultText, labelUnit);
     }
 
     document.addEventListener('click', function(e) {
@@ -3231,6 +3405,26 @@
       const isChapter = cats.includes('Chapter Practice');
       const isLiveExam = cats.includes('Live Exam');
 
+      function extractArray(item, arrKey, strKey) {
+        if (Array.isArray(item[arrKey]) && item[arrKey].length > 0) {
+          return item[arrKey].map(v => String(v).trim().toLowerCase());
+        }
+        if (typeof item[strKey] === 'string' && item[strKey].trim()) {
+          return item[strKey].split(',').map(v => v.trim().toLowerCase());
+        }
+        return [];
+      }
+
+      const curBoards = extractArray(currentEditingItem, 'boardNames', 'boardName');
+      const curColleges = extractArray(currentEditingItem, 'collegeNames', 'collegeName');
+      const curYears = extractArray(currentEditingItem, 'examYears', 'examYear');
+      const curTestPapers = extractArray(currentEditingItem, 'testPaperNames', 'testPaperName');
+      const curLiveExams = extractArray(currentEditingItem, 'liveExamNos', 'liveExamNo');
+      if (currentEditingItem.modelTestNo) {
+        const mtn = String(currentEditingItem.modelTestNo).toLowerCase();
+        if (!curLiveExams.some(x => x.includes(mtn))) curLiveExams.push(mtn);
+      }
+
       let formHtml = `
         <!-- এডিট মেটাডেটা ক্যাটাগরি -->
         <div class="form-group">
@@ -3265,7 +3459,7 @@
 
         <div class="grid-2">
           <div class="form-group">
-            <label for="editChapter">অধ্যায়</label>
+            <label for="editChapter">অধ্যায় নির্বাচন (chapter)</label>
             <select id="editChapter">
                 <option value="Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)">Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)</option>
                 <option value="Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং">Chapter 2: কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</option>
@@ -3278,72 +3472,133 @@
           </div>
 
           <div class="form-group">
-            <label for="editBoardName">বোর্ড</label>
-            <select id="editBoardName">
-              <option value="">-- কোনো বোর্ড নয় --</option>
-              <option value="Dhaka Board">Dhaka Board (ঢাকা বোর্ড)</option>
-              <option value="Rajshahi Board">Rajshahi Board (রাজশাহী বোর্ড)</option>
-              <option value="Cumilla Board">Cumilla Board (কুমিল্লা বোর্ড)</option>
-              <option value="Jashore Board">Jashore Board (যশোর বোর্ড)</option>
-              <option value="Chattogram Board">Chattogram Board (চট্টগ্রাম বোর্ড)</option>
-              <option value="Barishal Board">Barishal Board (বরিশাল বোর্ড)</option>
-              <option value="Sylhet Board">Sylhet Board (সিলেট বোর্ড)</option>
-              <option value="Dinajpur Board">Dinajpur Board (দিনাজপুর বোর্ড)</option>
-              <option value="Mymensingh Board">Mymensingh Board (ময়মনসিংহ বোর্ড)</option>
-              <option value="Madrasah Board">Madrasah Board (মাদ্রাসা বোর্ড)</option>
-              <option value="All Boards">All Boards (সকল বোর্ড)</option>
-            </select>
+            <label>বোর্ড (boardName) — একাধিক নির্বাচন সম্ভব</label>
+            <div class="multiselect-wrapper" id="editBoardWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('editBoardWrapper')">
+                <span id="editBoardTriggerText">-- কোনো বোর্ড নয় --</span>
+                <span class="chevron-icon">▼</span>
+              </div>
+              <div class="multiselect-menu">
+                <input type="text" class="multiselect-search-input" placeholder="🔍 বোর্ড খুঁজুন..." oninput="filterMultiSelectItems('editBoardWrapper', this.value)">
+                <div class="multiselect-menu-actions">
+                  <a onclick="selectAllMultiSelectItems('editBoardWrapper', 'editBoardName', 'বোর্ড')">✓ সকল নির্বাচন</a>
+                  <a class="clear-link" onclick="clearAllMultiSelectItems('editBoardWrapper', 'editBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')">✕ সব মুছুন</a>
+                </div>
+                <div class="multiselect-items-container" id="editBoardItems">
+                  ${[
+                    ['Dhaka Board', 'Dhaka Board (ঢাকা বোর্ড)'],
+                    ['Rajshahi Board', 'Rajshahi Board (রাজশাহী বোর্ড)'],
+                    ['Cumilla Board', 'Cumilla Board (কুমিল্লা বোর্ড)'],
+                    ['Jashore Board', 'Jashore Board (যশোর বোর্ড)'],
+                    ['Chattogram Board', 'Chattogram Board (চট্টগ্রাম বোর্ড)'],
+                    ['Barishal Board', 'Barishal Board (বরিশাল বোর্ড)'],
+                    ['Sylhet Board', 'Sylhet Board (সিলেট বোর্ড)'],
+                    ['Dinajpur Board', 'Dinajpur Board (দিনাজপুর বোর্ড)'],
+                    ['Mymensingh Board', 'Mymensingh Board (ময়মনসিংহ বোর্ড)'],
+                    ['Madrasah Board', 'Madrasah Board (মাদ্রাসা বোর্ড)'],
+                    ['All Boards', 'All Boards (সকল বোর্ড)']
+                  ].map(([val, label]) => {
+                    const isChecked = curBoards.some(b => b.includes(val.toLowerCase()) || val.toLowerCase().includes(b)) ? 'checked' : '';
+                    return `<label class="multiselect-item"><input type="checkbox" name="editBoardName" value="${val}" ${isChecked} onchange="syncMultiSelectText('editBoardWrapper', 'editBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড')"><span>🏛️ ${label}</span></label>`;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="grid-3">
           <div class="form-group">
-            <label for="editCollegeName">শীর্ষ কলেজ</label>
-            <select id="editCollegeName">
-                <option value="">-- শীর্ষ কলেজ নির্বাচন করুন --</option>
-                <option value="Notre Dame College, Dhaka">নটর ডেম কলেজ, ঢাকা (Notre Dame College)</option>
-                <option value="Dhaka College, Dhaka">ঢাকা কলেজ, ঢাকা (Dhaka College)</option>
-                <option value="Viqarunnisa Noon School & College">ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ (Viqarunnisa)</option>
-                <option value="RAJUK Uttara Model College">রাজউক উত্তরা মডেল কলেজ (RAJUK Uttara)</option>
-                <option value="Dhaka Residential Model College">ঢাকা রেসিডেনসিয়াল মডেল কলেজ (DRMC)</option>
-                <option value="Dhaka City College">ঢাকা সিটি কলেজ (Dhaka City College)</option>
-                <option value="Adamjee Cantonment College">আদমজী ক্যান্টনমেন্ট কলেজ (Adamjee Cantonment)</option>
-                <option value="Ideal School & College, Motijheel">আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল</option>
-                <option value="Chittagong College, Chittagong">চট্টগ্রাম কলেজ, চট্টগ্রাম (Chittagong College)</option>
-                <option value="Govt. Hazi Muhammad Mohsin College">সরকারি হাজী মুহাম্মদ মহসিন কলেজ, চট্টগ্রাম</option>
-                <option value="Rajshahi College, Rajshahi">রাজশাহী কলেজ, রাজশাহী (Rajshahi College)</option>
-                <option value="Cantonment Public School & College, Rangpur">ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর</option>
-                <option value="Govt. Mujib College, Sakhipur, Tangail">সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল</option>
-                <option value="Comilla Victoria Govt. College">কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ</option>
-                <option value="Sylhet MC College">সিলেট এম সি কলেজ (Murari Chand College)</option>
-                <option value="Govt. BM College, Barishal">সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল</option>
-                <option value="Ananda Mohan College, Mymensingh">আনন্দ মোহন কলেজ, ময়মনসিংহ</option>
-                <option value="Other">অন্যান্য কলেজ (Other College)</option>
-            </select>
+            <label>শীর্ষ কলেজ — একাধিক নির্বাচন সম্ভব</label>
+            <div class="multiselect-wrapper" id="editCollegeWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('editCollegeWrapper')">
+                <span id="editCollegeTriggerText">-- শীর্ষ কলেজ নির্বাচন করুন --</span>
+                <span class="chevron-icon">▼</span>
+              </div>
+              <div class="multiselect-menu">
+                <input type="text" class="multiselect-search-input" placeholder="🔍 কলেজ খুঁজুন..." oninput="filterMultiSelectItems('editCollegeWrapper', this.value)">
+                <div class="multiselect-menu-actions">
+                  <a onclick="selectAllMultiSelectItems('editCollegeWrapper', 'editCollegeName', 'কলেজ')">✓ সকল নির্বাচন</a>
+                  <a class="clear-link" onclick="clearAllMultiSelectItems('editCollegeWrapper', 'editCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')">✕ সব মুছুন</a>
+                </div>
+                <div class="multiselect-items-container" id="editCollegeItems">
+                  ${[
+                    ['Notre Dame College, Dhaka', 'নটর ডেম কলেজ, ঢাকা (Notre Dame College)'],
+                    ['Dhaka College, Dhaka', 'ঢাকা কলেজ, ঢাকা (Dhaka College)'],
+                    ['Viqarunnisa Noon School & College', 'ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ'],
+                    ['RAJUK Uttara Model College', 'রাজউক উত্তরা মডেল কলেজ'],
+                    ['Dhaka Residential Model College', 'ঢাকা রেসিডেনসিয়াল মডেল কলেজ'],
+                    ['Dhaka City College', 'ঢাকা সিটি কলেজ'],
+                    ['Adamjee Cantonment College', 'আদমজী ক্যান্টনমেন্ট কলেজ'],
+                    ['Ideal School & College, Motijheel', 'আইডিয়াল স্কুল অ্যান্ড কলেজ, মতিঝিল'],
+                    ['Chittagong College, Chittagong', 'চট্টগ্রাম কলেজ, চট্টগ্রাম'],
+                    ['Govt. Hazi Muhammad Mohsin College', 'সরকারি হাজী মুহাম্মদ মহসিন কলেজ'],
+                    ['Rajshahi College, Rajshahi', 'রাজশাহী কলেজ, রাজশাহী'],
+                    ['Cantonment Public School & College, Rangpur', 'ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর'],
+                    ['Govt. Mujib College, Sakhipur, Tangail', 'সরকারি মুজিব কলেজ, সখিপুর, টাঙ্গাইল'],
+                    ['Comilla Victoria Govt. College', 'কুমিল্লা ভিক্টোরিয়া সরকারি কলেজ'],
+                    ['Sylhet MC College', 'সিলেট এম সি কলেজ'],
+                    ['Govt. BM College, Barishal', 'সরকারি ব্রজমোহন (বিএম) কলেজ, বরিশাল'],
+                    ['Ananda Mohan College, Mymensingh', 'আনন্দ মোহন কলেজ, ময়মনসিংহ'],
+                    ['Other', 'অন্যান্য কলেজ (Other College)']
+                  ].map(([val, label]) => {
+                    const isChecked = curColleges.some(c => c.includes(val.toLowerCase()) || val.toLowerCase().includes(c)) ? 'checked' : '';
+                    return `<label class="multiselect-item"><input type="checkbox" name="editCollegeName" value="${val}" ${isChecked} onchange="syncMultiSelectText('editCollegeWrapper', 'editCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ')"><span>🏫 ${label}</span></label>`;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="editExamYear">পরীক্ষার সাল</label>
-            <select id="editExamYear">
-                <option value="">-- পরীক্ষার সাল নির্বাচন করুন --</option>
-                <option value="2026" >2026 (২০২৬)</option>
-                <option value="2025" selected>2025 (২০২৫)</option>
-                <option value="2024" >2024 (২০২৪)</option>
-                <option value="2023" >2023 (২০২৩)</option>
-                <option value="2022" >2022 (২০২২)</option>
-                <option value="2021" >2021 (২০২১)</option>
-                <option value="2020" >2020 (২০২০)</option>
-                <option value="2019" >2019 (২০১৯)</option>
-                <option value="2018" >2018 (২০১৮)</option>
-                <option value="2017" >2017 (২০১৭)</option>
-                <option value="2016" >2016 (২০১৬)</option>
-            </select>
+            <label>পরীক্ষার সাল — একাধিক নির্বাচন সম্ভব</label>
+            <div class="multiselect-wrapper" id="editExamYearWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('editExamYearWrapper')">
+                <span id="editExamYearTriggerText">-- পরীক্ষার সাল নির্বাচন করুন --</span>
+                <span class="chevron-icon">▼</span>
+              </div>
+              <div class="multiselect-menu">
+                <div class="multiselect-menu-actions">
+                  <a onclick="selectAllMultiSelectItems('editExamYearWrapper', 'editExamYear', 'সাল')">✓ সকল নির্বাচন</a>
+                  <a class="clear-link" onclick="clearAllMultiSelectItems('editExamYearWrapper', 'editExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')">✕ সব মুছুন</a>
+                </div>
+                <div class="multiselect-items-container" id="editExamYearItems">
+                  ${['2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016'].map(y => {
+                    const isChecked = curYears.some(yr => yr.includes(y) || y.includes(yr)) ? 'checked' : '';
+                    return `<label class="multiselect-item"><input type="checkbox" name="editExamYear" value="${y}" ${isChecked} onchange="syncMultiSelectText('editExamYearWrapper', 'editExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল')"><span>📅 ${y}</span></label>`;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="editTestPaperName">টেস্ট পেপার প্রকাশনী</label>
-            <select id="editTestPaperName">
-                <option value="">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</option>
-                <option value="টেস্ট পেপার ২০২৬">টেস্ট পেপার ২০২৬ (Test Paper 2026)</option>
-            </select>
+            <label>টেস্ট পেপার প্রকাশনী — একাধিক নির্বাচন সম্ভব</label>
+            <div class="multiselect-wrapper" id="editTestPaperWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('editTestPaperWrapper')">
+                <span id="editTestPaperTriggerText">-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --</span>
+                <span class="chevron-icon">▼</span>
+              </div>
+              <div class="multiselect-menu">
+                <div class="multiselect-menu-actions">
+                  <a onclick="selectAllMultiSelectItems('editTestPaperWrapper', 'editTestPaperName', 'প্রকাশনী')">✓ সকল নির্বাচন</a>
+                  <a class="clear-link" onclick="clearAllMultiSelectItems('editTestPaperWrapper', 'editTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')">✕ সব মুছুন</a>
+                </div>
+                <div class="multiselect-items-container" id="editTestPaperItems">
+                  ${[
+                    'টেস্ট পেপার ২০২৬',
+                    'পাঞ্জেরী টেস্ট পেপার',
+                    'অনুপম টেস্ট পেপার',
+                    'লেকচার টেস্ট পেপার',
+                    'রয়েল টেস্ট পেপার',
+                    'মেড ইজি (Made Easy)'
+                  ].map(tp => {
+                    const isChecked = curTestPapers.some(t => t.includes(tp.toLowerCase()) || tp.toLowerCase().includes(t)) ? 'checked' : '';
+                    return `<label class="multiselect-item"><input type="checkbox" name="editTestPaperName" value="${tp}" ${isChecked} onchange="syncMultiSelectText('editTestPaperWrapper', 'editTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী')"><span>📚 ${tp}</span></label>`;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -3356,21 +3611,35 @@
           </div>
 
           <div class="form-group">
-            <label for="editLiveExamNo" style="font-weight: 700; color: #1E293B;">🔴 লাইভ এক্সাম নির্বাচন (Live Exam)</label>
-            <select id="editLiveExamNo" style="font-weight: 600; margin-top: 4px;">
-              <option value="">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</option>
-              ${allModelTests.map(item => {
-                const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
-                const title = item.title || ('Model Test ' + key);
-                const optVal = 'Live Exam ' + key;
-                const isSelected = (currentEditingItem && (
-                  currentEditingItem.liveExamNo === optVal ||
-                  String(currentEditingItem.liveExamNo).includes(key) ||
-                  String(currentEditingItem.modelTestNo).includes(key)
-                )) ? 'selected' : '';
-                return `<option value="${optVal}" ${isSelected}>Live Exam ${key} (${title})</option>`;
-              }).join('')}
-            </select>
+            <label style="font-weight: 700; color: #dc2626;">🔴 লাইভ এক্সাম নির্বাচন (Live Exam) — একাধিক নির্বাচন সম্ভব</label>
+            <div class="multiselect-wrapper" id="editLiveExamWrapper">
+              <div class="multiselect-trigger" onclick="toggleMultiSelectDropdown('editLiveExamWrapper')" style="border-color: #fda4af;">
+                <span id="editLiveExamTriggerText">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</span>
+                <span class="chevron-icon" style="color: #dc2626;">▼</span>
+              </div>
+              <div class="multiselect-menu" style="border-color: #fecdd3;">
+                <input type="text" class="multiselect-search-input" placeholder="🔍 লাইভ এক্সাম খুঁজুন..." oninput="filterMultiSelectItems('editLiveExamWrapper', this.value)">
+                <div class="multiselect-menu-actions">
+                  <a onclick="selectAllMultiSelectItems('editLiveExamWrapper', 'editLiveExamNo', 'লাইভ এক্সাম')">✓ সকল নির্বাচন</a>
+                  <a class="clear-link" onclick="clearAllMultiSelectItems('editLiveExamWrapper', 'editLiveExamNo', '-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --', 'লাইভ এক্সাম')">✕ সব মুছুন</a>
+                </div>
+                <div class="multiselect-items-container" id="editLiveExamItems">
+                  ${allModelTests.map(item => {
+                    const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+                    const title = item.title || ('Model Test ' + key);
+                    const optVal = 'Live Exam ' + key;
+                    const optText = 'Live Exam ' + key + ' (' + title + ')';
+                    const isChecked = curLiveExams.some(le => le.includes(key.toLowerCase()) || le.includes(optVal.toLowerCase())) ? 'checked' : '';
+                    return `
+                      <label class="multiselect-item">
+                        <input type="checkbox" name="editLiveExamNo" value="${optVal}" ${isChecked} onchange="syncMultiSelectText('editLiveExamWrapper', 'editLiveExamNo', '-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --', 'লাইভ এক্সাম'); if(this.checked){ const le = document.getElementById('editCatLiveExam'); if(le) { le.checked = true; syncMultiSelectDisplay('edit'); } }">
+                        <span>🔴 ${escapeHtml(optText)}</span>
+                      </label>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         ` : `
@@ -3476,34 +3745,21 @@
       }
 
       body.innerHTML = formHtml;
-      if (currentEditingItem.collegeName) document.getElementById('editCollegeName').value = currentEditingItem.collegeName;
-      if (currentEditingItem.examYear) document.getElementById('editExamYear').value = currentEditingItem.examYear;
-      if (currentEditingItem.testPaperName) document.getElementById('editTestPaperName').value = currentEditingItem.testPaperName;
-      if (currentEditingItem.modelTestNo && document.getElementById('editModelTestNo')) document.getElementById('editModelTestNo').value = currentEditingItem.modelTestNo;
-      if (currentEditingItem.liveExamNo && document.getElementById('editLiveExamNo')) {
-        document.getElementById('editLiveExamNo').value = currentEditingItem.liveExamNo;
-      }
-      if (currentEditingItem.serialNo !== undefined && document.getElementById('editSerialNo')) {
-        document.getElementById('editSerialNo').value = currentEditingItem.serialNo || '';
-      }
       syncMultiSelectDisplay('edit');
+      syncMultiSelectText('editBoardWrapper', 'editBoardName', '-- কোনো বোর্ড নয় --', 'বোর্ড');
+      syncMultiSelectText('editCollegeWrapper', 'editCollegeName', '-- শীর্ষ কলেজ নির্বাচন করুন --', 'কলেজ');
+      syncMultiSelectText('editExamYearWrapper', 'editExamYear', '-- পরীক্ষার সাল নির্বাচন করুন --', 'সাল');
+      syncMultiSelectText('editTestPaperWrapper', 'editTestPaperName', '-- টেস্ট পেপার প্রকাশনী নির্বাচন করুন --', 'প্রকাশনী');
+      if (type === 'MCQ') {
+        syncMultiSelectText('editLiveExamWrapper', 'editLiveExamNo', '-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --', 'লাইভ এক্সাম');
+      }
 
-      // সেট সিলেক্টেড ভ্যালুজ
+      // সেট সিলেক্টেড অধ্যায়
       const chSelect = document.getElementById('editChapter');
       if (chSelect && currentEditingItem.chapter) {
         for (let i = 0; i < chSelect.options.length; i++) {
           if (chSelect.options[i].value.includes(currentEditingItem.chapter) || currentEditingItem.chapter.includes(chSelect.options[i].value.substring(0, 9))) {
             chSelect.selectedIndex = i;
-            break;
-          }
-        }
-      }
-
-      const bdSelect = document.getElementById('editBoardName');
-      if (bdSelect && currentEditingItem.boardName) {
-        for (let i = 0; i < bdSelect.options.length; i++) {
-          if (bdSelect.options[i].value.toLowerCase().includes(currentEditingItem.boardName.toLowerCase())) {
-            bdSelect.selectedIndex = i;
             break;
           }
         }
@@ -3535,19 +3791,27 @@
         }
 
         const chapter = document.getElementById('editChapter').value;
-        const boardName = document.getElementById('editBoardName').value;
-        const collegeName = document.getElementById('editCollegeName').value;
-        const examYear = document.getElementById('editExamYear').value;
-        const testPaperName = document.getElementById('editTestPaperName').value;
+        const checkedBoards = Array.from(document.querySelectorAll('input[name="editBoardName"]:checked')).map(cb => cb.value);
+        const checkedColleges = Array.from(document.querySelectorAll('input[name="editCollegeName"]:checked')).map(cb => cb.value);
+        const checkedYears = Array.from(document.querySelectorAll('input[name="editExamYear"]:checked')).map(cb => cb.value);
+        const checkedTestPapers = Array.from(document.querySelectorAll('input[name="editTestPaperName"]:checked')).map(cb => cb.value);
         const serialNo = parseInt(document.getElementById('editSerialNo')?.value, 10) || 0;
 
+        const boardName = checkedBoards.join(', ');
+        const collegeName = checkedColleges.join(', ');
+        const examYear = checkedYears.join(', ');
+        const testPaperName = checkedTestPapers.join(', ');
+
+        let checkedLiveExams = [];
         let liveExamNo = '';
         let modelTestNo = '';
 
         if (currentEditingType === 'MCQ') {
-          liveExamNo = document.getElementById('editLiveExamNo')?.value || '';
-          if (liveExamNo) {
-            const numMatch = liveExamNo.match(/\d+/);
+          checkedLiveExams = Array.from(document.querySelectorAll('input[name="editLiveExamNo"]:checked')).map(cb => cb.value);
+          liveExamNo = checkedLiveExams.join(', ');
+          if (checkedLiveExams.length > 0) {
+            const firstLe = checkedLiveExams[0];
+            const numMatch = firstLe.match(/\d+/);
             const num = numMatch ? numMatch[0] : '';
             const paddedNum = num ? (num.length === 1 ? '0' + num : num) : '';
             modelTestNo = paddedNum ? ('Model Test ' + paddedNum) : '';
@@ -3565,11 +3829,16 @@
           categoryTypes,
           categoryType: categoryTypes[0],
           chapter,
+          boardNames: checkedBoards,
           boardName,
+          collegeNames: checkedColleges,
           collegeName,
+          examYears: checkedYears,
           examYear,
+          testPaperNames: checkedTestPapers,
           testPaperName,
           modelTestNo,
+          liveExamNos: checkedLiveExams,
           liveExamNo,
           serialNo
         };
@@ -3850,12 +4119,18 @@
       } else if (type === 'board') {
         appendOptionIfMissing('mcqBoardName', val, val);
         appendOptionIfMissing('cqBoardName', val, val);
+        appendMultiSelectItemIfMissing('mcqBoardItems', 'mcqBoardName', 'mcqBoardWrapper', val, '🏛️', 'বোর্ড');
+        appendMultiSelectItemIfMissing('cqBoardItems', 'cqBoardName', 'cqBoardWrapper', val, '🏛️', 'বোর্ড');
       } else if (type === 'year') {
         appendOptionIfMissing('mcqExamYear', val, val);
         appendOptionIfMissing('cqExamYear', val, val);
+        appendMultiSelectItemIfMissing('mcqExamYearItems', 'mcqExamYear', 'mcqExamYearWrapper', val, '📅', 'সাল');
+        appendMultiSelectItemIfMissing('cqExamYearItems', 'cqExamYear', 'cqExamYearWrapper', val, '📅', 'সাল');
       } else if (type === 'college') {
         appendOptionIfMissing('mcqCollegeName', val, val);
         appendOptionIfMissing('cqCollegeName', val, val);
+        appendMultiSelectItemIfMissing('mcqCollegeItems', 'mcqCollegeName', 'mcqCollegeWrapper', val, '🏫', 'কলেজ');
+        appendMultiSelectItemIfMissing('cqCollegeItems', 'cqCollegeName', 'cqCollegeWrapper', val, '🏫', 'কলেজ');
       } else if (type === 'modelTest') {
         appendOptionIfMissing('mcqModelTestNo', val, val);
         appendOptionIfMissing('cqModelTestNo', val, val);
@@ -3894,6 +4169,25 @@
       opt.text = text;
       opt.selected = true;
       select.appendChild(opt);
+    }
+
+    function appendMultiSelectItemIfMissing(containerId, inputName, wrapperId, val, icon = '📌', unit = 'আইটেম') {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const existing = container.querySelector(`input[name="${inputName}"][value="${val}"]`);
+      if (existing) {
+        existing.checked = true;
+        syncMultiSelectText(wrapperId, inputName, '-- নির্বাচন করুন --', unit);
+        return;
+      }
+      const label = document.createElement('label');
+      label.className = 'multiselect-item';
+      label.innerHTML = `
+        <input type="checkbox" name="${inputName}" value="${escapeHtml(val)}" checked onchange="syncMultiSelectText('${wrapperId}', '${inputName}', '-- নির্বাচন করুন --', '${unit}')">
+        <span>${icon} ${escapeHtml(val)}</span>
+      `;
+      container.prepend(label);
+      syncMultiSelectText(wrapperId, inputName, '-- নির্বাচন করুন --', unit);
     }
 
     async function loadCustomMetaOptions() {
@@ -4053,26 +4347,46 @@
 
     
     function populateLiveExamSelectOptions() {
+      // 1. Fallback select যদি থাকে
       const select = document.getElementById('mcqLiveExamNo');
-      if (!select) return;
+      if (select) {
+        const currentVal = select.value;
+        select.innerHTML = '<option value="">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</option>';
+        const sorted = [...allModelTests].sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
+        sorted.forEach(item => {
+          const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+          const title = item.title || ('Model Test ' + key);
+          const optVal = 'Live Exam ' + key;
+          const optText = 'Live Exam ' + key + ' (' + title + ')';
+          const opt = document.createElement('option');
+          opt.value = optVal;
+          opt.textContent = optText;
+          if (currentVal === optVal) opt.selected = true;
+          select.appendChild(opt);
+        });
+      }
 
-      const currentVal = select.value;
-      select.innerHTML = '<option value="">-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --</option>';
-
-      // Sort by serialNo ascending so options appear in clean order 01 to 50
-      const sorted = [...allModelTests].sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
-
-      sorted.forEach(item => {
-        const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
-        const title = item.title || ('Model Test ' + key);
-        const optVal = 'Live Exam ' + key;
-        const optText = 'Live Exam ' + key + ' (' + title + ')';
-        const opt = document.createElement('option');
-        opt.value = optVal;
-        opt.textContent = optText;
-        if (currentVal === optVal) opt.selected = true;
-        select.appendChild(opt);
-      });
+      // 2. মাল্টি-সিলেক্ট কন্টেইনার পপুলেট
+      const container = document.getElementById('mcqLiveExamItems');
+      if (container) {
+        const sorted = [...allModelTests].sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
+        if (sorted.length === 0) {
+          container.innerHTML = '<div style="padding:10px; color:#64748b; font-size:0.85rem;">লাইভ এক্সাম লোড হচ্ছে...</div>';
+          return;
+        }
+        container.innerHTML = sorted.map(item => {
+          const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+          const title = item.title || ('Model Test ' + key);
+          const optVal = 'Live Exam ' + key;
+          const optText = 'Live Exam ' + key + ' (' + title + ')';
+          return `
+            <label class="multiselect-item">
+              <input type="checkbox" name="mcqLiveExamNo" value="${escapeHtml(optVal)}" onchange="syncMultiSelectText('mcqLiveExamWrapper', 'mcqLiveExamNo', '-- কোনো লাইভ এক্সাম নয় (সাধারণ MCQ) --', 'লাইভ এক্সাম'); if(this.checked){ const le = document.getElementById('mcqCatLiveExam'); if(le) { le.checked = true; syncMultiSelectDisplay('mcq'); } }">
+              <span>🔴 ${escapeHtml(optText)}</span>
+            </label>
+          `;
+        }).join('');
+      }
     }
 
     async function loadLiveExamItems() {
@@ -4739,13 +5053,19 @@
             <td>
               <span class="tag tag-amber" style="font-weight: 700;">★ ${points}</span>
             </td>
-            <td>
-              <span class="tag tag-purple">${tests} টি</span>
+            <td style="text-align: center;">
+              <button type="button" class="btn btn-sm" onclick="openUserResultsModal('${escapeHtml(String(id))}', '${escapeHtml(name)}', '${escapeHtml(contact)}', '${escapeHtml(college)}')" style="background: #eef2ff; color: #4338ca; border: 1.5px solid #c7d2fe; padding: 4px 10px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(67, 56, 202, 0.08);" title="এই শিক্ষার্থীর সকল পরীক্ষার ফলাফল ও মার্কশিট দেখুন">
+                <span>📊 ${tests} টি</span>
+                <span style="font-size: 0.72rem; opacity: 0.9; background: #c7d2fe; color: #3730a3; padding: 1px 5px; border-radius: 4px;">ফলাফল</span>
+              </button>
             </td>
             <td style="font-size: 0.80rem; color: #64748b; white-space: nowrap;">
               ${dateStr}
             </td>
-            <td style="text-align: center;">
+            <td style="text-align: center; white-space: nowrap;">
+              <button type="button" class="btn btn-sm" onclick="openUserResultsModal('${escapeHtml(String(id))}', '${escapeHtml(name)}', '${escapeHtml(contact)}', '${escapeHtml(college)}')" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 3px 8px; font-size: 0.78rem; border-radius: 4px; cursor: pointer; margin-right: 4px;" title="মার্কশিট ও পরীক্ষার তালিকা">
+                📊 মার্কশিট
+              </button>
               <button type="button" class="btn btn-sm" onclick="deleteUserItem('${escapeHtml(String(id))}', '${escapeHtml(name)}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 3px 8px; font-size: 0.78rem; border-radius: 4px; cursor: pointer;" title="ইউজার ডিলিট করুন">
                 🗑️ মুছুন
               </button>
@@ -4791,6 +5111,249 @@
       } catch (err) {
         showToast('ত্রুটি', 'ডিলিট করতে সমস্যা হয়েছে: ' + err.message, 'error');
       }
+    }
+
+    // ==============================================
+    // শিক্ষার্থীর পরীক্ষার ফলাফল মোডাল হ্যান্ডলার (User Exam Results View)
+    // ==============================================
+    function closeUserResultsModal() {
+      const modal = document.getElementById('userResultsModal');
+      if (modal) modal.classList.remove('open');
+    }
+
+    async function openUserResultsModal(userId, name, contact, college) {
+      const modal = document.getElementById('userResultsModal');
+      const body = document.getElementById('userResultsModalBody');
+      const subtitle = document.getElementById('userResultsModalSubtitle');
+      const footerSummary = document.getElementById('userResultsSummaryFooter');
+
+      if (!modal || !body) return;
+
+      if (subtitle) {
+        subtitle.innerHTML = `<strong>${escapeHtml(name)}</strong> | 📱 ${escapeHtml(contact)} | 🏫 ${escapeHtml(college || 'এইচএসসি পরীক্ষার্থী')}`;
+      }
+      body.innerHTML = `
+        <div style="text-align: center; padding: 3rem 1rem; color: #64748b;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">⏳</div>
+          <strong style="color: #334155; font-size: 1rem;">পরীক্ষার ফলাফল লোড হচ্ছে...</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.35rem;">অনুগ্রহ করে অপেক্ষা করুন</p>
+        </div>
+      `;
+      if (footerSummary) footerSummary.textContent = '';
+      modal.classList.add('open');
+
+      try {
+        let results = [];
+
+        // ১. সব ইউজার তালিকার ক্যাশ থেকে চেক (GET /api/users attach করে পাঠায়)
+        const userObj = allUsers.find(u => String(u._id) === String(userId) || u.emailOrNumber === contact || u.name === name);
+        if (userObj && Array.isArray(userObj.examResults) && userObj.examResults.length > 0) {
+          results = userObj.examResults;
+        }
+
+        // ২. ব্যাকএন্ড এপিআই কল: নির্দিষ্ট ইউজারের ফলাফল
+        try {
+          const userKey = contact && contact !== 'দেওয়া হয়নি' ? contact : (name || userId);
+          const res = await fetch(`${API_BASE}/api/results/user/${encodeURIComponent(userKey)}?t=` + Date.now());
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success && Array.isArray(data.data) && data.data.length > 0) {
+              results = data.data;
+            }
+          }
+        } catch (apiErr) {
+          console.warn('Backend /api/results/user error:', apiErr.message);
+        }
+
+        // ৩. ফলব্যাক: লোকালস্টোরেজ থেকে ইউজার কর্তৃক সাবমিট করা পরীক্ষা
+        if (results.length === 0) {
+          try {
+            const localSubmitted = JSON.parse(localStorage.getItem('ict_submitted_live_exams') || '[]');
+            if (Array.isArray(localSubmitted) && localSubmitted.length > 0) {
+              const matched = localSubmitted.filter(r =>
+                String(r.studentId) === String(userId) ||
+                r.emailOrNumber === contact ||
+                (r.studentName && r.studentName.toLowerCase() === name.toLowerCase())
+              );
+              if (matched.length > 0) results = matched;
+            }
+          } catch(e) {}
+        }
+
+        renderUserResultsContent(name, contact, college, results);
+      } catch (err) {
+        console.error('openUserResultsModal error:', err);
+        body.innerHTML = `
+          <div style="text-align: center; padding: 2.5rem; color: #ef4444;">
+            <p>❌ ফলাফল লোড করতে সমস্যা হয়েছে: ${escapeHtml(err.message)}</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderUserResultsContent(name, contact, college, results) {
+      const body = document.getElementById('userResultsModalBody');
+      const footerSummary = document.getElementById('userResultsSummaryFooter');
+      if (!body) return;
+
+      if (!results || results.length === 0) {
+        body.innerHTML = `
+          <div style="text-align: center; padding: 3rem 1.5rem; background: #f8fafc; border-radius: 12px; border: 1.5px dashed #cbd5e1;">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">📝</div>
+            <h4 style="font-size: 1.1rem; color: #334155; margin-bottom: 0.35rem;">এখনও কোনো পরীক্ষায় অংশগ্রহণ করেননি</h4>
+            <p style="font-size: 0.88rem; color: #64748b; margin: 0 auto; max-width: 420px;">
+              শিক্ষার্থী <strong>${escapeHtml(name)}</strong> এখনও কোনো লাইভ এক্সাম বা মডেল টেস্ট সম্পন্ন করেননি। পরীক্ষা দেওয়া হলে তার মার্কশিট ও ফলাফল এখানে দেখা যাবে।
+            </p>
+          </div>
+        `;
+        if (footerSummary) footerSummary.textContent = 'মোট সম্পন্ন পরীক্ষা: ০টি';
+        return;
+      }
+
+      // পরিসংখ্যান হিসাব
+      const totalExams = results.length;
+      const totalScoreObtained = results.reduce((sum, r) => sum + (Number(r.score) || 0), 0);
+      const totalPossibleScore = results.reduce((sum, r) => sum + (Number(r.totalQuestions || r.total) || 25), 0);
+      const avgPercentage = totalPossibleScore > 0 ? Math.round((totalScoreObtained / totalPossibleScore) * 100) : 0;
+      const highestScore = Math.max(...results.map(r => Number(r.score) || 0));
+      const totalPointsEarned = results.reduce((sum, r) => sum + (Number(r.pointsAwarded) || (Number(r.score) >= 20 ? 1 : 0)), 0);
+
+      if (footerSummary) {
+        footerSummary.innerHTML = `মোট পরীক্ষা: <strong>${totalExams}টি</strong> | মোট নম্বর: <strong>${totalScoreObtained}/${totalPossibleScore}</strong> | গড় হার: <strong>${avgPercentage}%</strong>`;
+      }
+
+      body.innerHTML = `
+        <!-- সারসংক্ষেপ কার্ড -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 1.25rem;">
+          <div style="background: linear-gradient(135deg, #eef2ff, #e0e7ff); border: 1px solid #c7d2fe; padding: 12px 14px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
+            <div style="font-size: 1.8rem;">🎯</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #4338ca; font-weight: 600;">মোট পরীক্ষা</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #312e81;">${totalExams} টি</div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #bbf7d0; padding: 12px 14px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
+            <div style="font-size: 1.8rem;">📈</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #15803d; font-weight: 600;">গড় ফলাফল হার</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #14532d;">${avgPercentage}%</div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #fde68a; padding: 12px 14px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
+            <div style="font-size: 1.8rem;">🏆</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #b45309; font-weight: 600;">সর্বোচ্চ স্কোর</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #78350f;">${highestScore}</div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 1px solid #e9d5ff; padding: 12px 14px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
+            <div style="font-size: 1.8rem;">⭐</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #7e22ce; font-weight: 600;">অর্জিত পয়েন্ট</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #581c87;">+${totalPointsEarned}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- বিস্তারিত পরীক্ষার টেবিল -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div style="background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #334155; font-size: 0.88rem; display: flex; justify-content: space-between; align-items: center;">
+            <span>📋 পরীক্ষার বিস্তারিত ফলাফল তালিকা</span>
+            <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">(সর্বশেষ পরীক্ষা উপরে প্রদর্শিত)</span>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="data-table" style="width: 100%; border-collapse: collapse; font-size: 0.86rem;">
+              <thead>
+                <tr style="background: #f1f5f9; color: #475569; text-align: left;">
+                  <th style="padding: 10px; width: 40px; text-align: center;">নং</th>
+                  <th style="padding: 10px;">পরীক্ষার নাম ও ক্যাটাগরি</th>
+                  <th style="padding: 10px; text-align: center;">প্রাপ্ত নম্বর</th>
+                  <th style="padding: 10px; text-align: center;">সঠিক / ভুল</th>
+                  <th style="padding: 10px; text-align: center;">শতকরা হার</th>
+                  <th style="padding: 10px; text-align: center;">গ্রেড / মূল্যায়ন</th>
+                  <th style="padding: 10px; text-align: right;">তারিখ ও সময়</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${results.map((res, index) => {
+                  const title = res.examTitle || ('Model Test ' + (res.examId || (index + 1)));
+                  const score = Number(res.score) || 0;
+                  const total = Number(res.totalQuestions || res.total) || 25;
+                  const correct = res.correctAnswers !== undefined ? res.correctAnswers : score;
+                  const wrong = res.wrongAnswers !== undefined ? res.wrongAnswers : Math.max(0, total - correct);
+                  const skipped = res.skippedAnswers !== undefined ? res.skippedAnswers : 0;
+                  const pct = res.percentage !== undefined ? Math.round(Number(res.percentage)) : (total > 0 ? Math.round((score / total) * 100) : 0);
+
+                  // ব্যাজ ও কালার লজিক
+                  let gradeBadge = '';
+                  let scoreColor = '#334155';
+                  if (pct >= 80) {
+                    gradeBadge = '<span class="tag tag-emerald" style="font-weight:700;">A+ (চমৎকার)</span>';
+                    scoreColor = '#16a34a';
+                  } else if (pct >= 70) {
+                    gradeBadge = '<span class="tag tag-blue" style="font-weight:700;">A (উত্তম)</span>';
+                    scoreColor = '#2563eb';
+                  } else if (pct >= 60) {
+                    gradeBadge = '<span class="tag tag-blue">A- (ভালো)</span>';
+                    scoreColor = '#0284c7';
+                  } else if (pct >= 50) {
+                    gradeBadge = '<span class="tag tag-amber">B (চলনসই)</span>';
+                    scoreColor = '#d97706';
+                  } else if (pct >= 33) {
+                    gradeBadge = '<span class="tag tag-amber">C (উন্নতি প্রয়োজন)</span>';
+                    scoreColor = '#e11d48';
+                  } else {
+                    gradeBadge = '<span class="tag" style="background:#fee2e2; color:#b91c1c; font-weight:700;">F (অনুত্তীর্ণ)</span>';
+                    scoreColor = '#dc2626';
+                  }
+
+                  let dateStr = '—';
+                  if (res.submittedAt || res.date) {
+                    try {
+                      const d = new Date(res.submittedAt || res.date);
+                      dateStr = d.toLocaleDateString('bn-BD', { day: 'numeric', month: 'short', year: 'numeric' }) + '<br><span style="font-size:0.74rem; color:#94a3b8;">' + d.toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }) + '</span>';
+                    } catch(e) {}
+                  }
+
+                  return `
+                    <tr style="border-bottom: 1px solid #f1f5f9;">
+                      <td style="text-align: center; font-weight: 700; color: #64748b; padding: 10px;">${index + 1}</td>
+                      <td style="padding: 10px;">
+                        <strong style="color: #1e293b; font-size: 0.90rem;">${escapeHtml(title)}</strong>
+                        <div style="font-size: 0.76rem; color: #64748b; margin-top: 2px;">
+                          ${res.category ? `<span class="tag tag-purple" style="font-size: 0.70rem; padding: 1px 6px;">${escapeHtml(res.category)}</span>` : ''}
+                          ${res.examId ? `<span style="font-family: monospace; color: #0284c7; margin-left: 4px;">ID: ${escapeHtml(res.examId)}</span>` : ''}
+                        </div>
+                      </td>
+                      <td style="text-align: center; padding: 10px;">
+                        <div style="font-size: 1.15rem; font-weight: 800; color: ${scoreColor};">${score} <span style="font-size: 0.82rem; color: #94a3b8; font-weight: normal;">/ ${total}</span></div>
+                      </td>
+                      <td style="text-align: center; padding: 10px; font-size: 0.82rem;">
+                        <span style="color: #16a34a; font-weight: 700;">✓ ${correct}</span> / 
+                        <span style="color: #dc2626; font-weight: 600;">✗ ${wrong}</span>
+                        ${skipped > 0 ? `<br><span style="color: #94a3b8; font-size: 0.74rem;">ছাড় দেওয়া: ${skipped}</span>` : ''}
+                      </td>
+                      <td style="text-align: center; padding: 10px;">
+                        <strong style="font-size: 0.95rem; color: ${scoreColor};">${pct}%</strong>
+                      </td>
+                      <td style="text-align: center; padding: 10px;">
+                        ${gradeBadge}
+                      </td>
+                      <td style="text-align: right; padding: 10px; font-size: 0.80rem; color: #475569; white-space: nowrap;">
+                        ${dateStr}
+                      </td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
     }
 
     // উইন্ডো লোডে মেটাডাটা অপশন ইনজেক্ট
