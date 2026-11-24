@@ -519,3 +519,128 @@
     padding-top: 12px;
     border-top: 1.5px solid var(--border-color);
 }
+
+/* ==========================================================================
+   PROFILE DARK MODE STYLES
+   ========================================================================== */
+body.dark-mode .profile-card,
+body.dark-mode .metric-card,
+body.dark-mode .history-section,
+body.dark-mode .profile-edit-modal-window {
+    background-color: #1E293B !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .profile-name {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .profile-role {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .avatar-edit-badge,
+body.dark-mode .edit-avatar-camera-btn {
+    border-color: #1E293B !important;
+}
+
+body.dark-mode .progress-track {
+    background-color: #334155 !important;
+}
+
+body.dark-mode .history-table th {
+    color: #94A3B8 !important;
+    border-bottom-color: #334155 !important;
+}
+
+body.dark-mode .history-table td {
+    color: #CBD5E1 !important;
+    border-bottom-color: #334155 !important;
+}
+
+body.dark-mode .modal-header-row {
+    border-bottom-color: #334155 !important;
+}
+
+body.dark-mode .modal-header-row h3 {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .modal-close-icon-btn {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .modal-close-icon-btn:hover {
+    color: #EF4444 !important;
+    background: rgba(239, 68, 68, 0.15) !important;
+}
+
+body.dark-mode .btn-change-photo {
+    background: #334155 !important;
+    border-color: #475569 !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .btn-change-photo:hover {
+    background: rgba(59, 130, 246, 0.2) !important;
+    border-color: #3B82F6 !important;
+    color: #60A5FA !important;
+}
+
+body.dark-mode .form-label-styled {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .form-input-styled {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .form-input-styled::placeholder {
+    color: #64748B !important;
+}
+
+body.dark-mode .form-input-styled:focus {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+body.dark-mode .edit-password-box {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .edit-section-header {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .edit-section-hint {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .btn-eye-toggle {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .btn-eye-toggle:hover {
+    color: #60A5FA !important;
+}
+
+body.dark-mode .modal-btn-row {
+    border-top-color: #334155 !important;
+}
+
+body.dark-mode .profile-inline-alert.error {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #FCA5A5 !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+body.dark-mode .profile-inline-alert.success {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #6EE7B7 !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+}
+

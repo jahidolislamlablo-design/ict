@@ -5128,6 +5128,7 @@
       const footerSummary = document.getElementById('userResultsSummaryFooter');
 
       if (!modal || !body) return;
+      window.currentUserResultsContext = { userId, name, contact, college };
 
       if (subtitle) {
         subtitle.innerHTML = `<strong>${escapeHtml(name)}</strong> | 📱 ${escapeHtml(contact)} | 🏫 ${escapeHtml(college || 'এইচএসসি পরীক্ষার্থী')}`;
@@ -5260,9 +5261,14 @@
 
         <!-- বিস্তারিত পরীক্ষার টেবিল -->
         <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-          <div style="background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #334155; font-size: 0.88rem; display: flex; justify-content: space-between; align-items: center;">
-            <span>📋 পরীক্ষার বিস্তারিত ফলাফল তালিকা</span>
-            <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">(সর্বশেষ পরীক্ষা উপরে প্রদর্শিত)</span>
+          <div style="background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #334155; font-size: 0.88rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <span>📋 পরীক্ষার বিস্তারিত ফলাফল তালিকা (${totalExams}টি)</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">(সর্বশেষ পরীক্ষা উপরে প্রদর্শিত)</span>
+              <button type="button" class="btn btn-sm" onclick="deleteAllStudentExamResults('${escapeHtml(contact && contact !== 'দেওয়া হয়নি' ? contact : (name || ''))}', '${escapeHtml(name)}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 3px 8px; font-size: 0.76rem; font-weight: 700; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="এই শিক্ষার্থীর সকল ফলাফল মুছে ফেলুন">
+                <i class="fa-solid fa-trash-can"></i> সকল ফলাফল মুছুন
+              </button>
+            </div>
           </div>
 
           <div style="overflow-x: auto;">
@@ -5276,17 +5282,18 @@
                   <th style="padding: 10px; text-align: center;">শতকরা হার</th>
                   <th style="padding: 10px; text-align: center;">গ্রেড / মূল্যায়ন</th>
                   <th style="padding: 10px; text-align: right;">তারিখ ও সময়</th>
+                  <th style="padding: 10px; text-align: center; width: 75px;">অ্যাকশন</th>
                 </tr>
               </thead>
               <tbody>
                 ${results.map((res, index) => {
                   const title = res.examTitle || ('Model Test ' + (res.examId || (index + 1)));
                   const score = Number(res.score) || 0;
-                  const total = Number(res.totalQuestions || res.total) || 25;
+                  const total = Number(res.totalMarks || res.totalQuestions || res.total) || 25;
                   const correct = res.correctAnswers !== undefined ? res.correctAnswers : score;
                   const wrong = res.wrongAnswers !== undefined ? res.wrongAnswers : Math.max(0, total - correct);
-                  const skipped = res.skippedAnswers !== undefined ? res.skippedAnswers : 0;
-                  const pct = res.percentage !== undefined ? Math.round(Number(res.percentage)) : (total > 0 ? Math.round((score / total) * 100) : 0);
+                  const skipped = res.skippedAnswers !== undefined ? res.skippedAnswers : (res.skippedCount || 0);
+                  const pct = res.percentage !== undefined ? Math.round(Number(res.percentage)) : (res.scorePercentage !== undefined ? Math.round(Number(res.scorePercentage)) : (total > 0 ? Math.round((score / total) * 100) : 0));
 
                   // ব্যাজ ও কালার লজিক
                   let gradeBadge = '';
@@ -5346,6 +5353,11 @@
                       <td style="text-align: right; padding: 10px; font-size: 0.80rem; color: #475569; white-space: nowrap;">
                         ${dateStr}
                       </td>
+                      <td style="text-align: center; padding: 10px;">
+                        <button type="button" class="btn btn-sm" onclick="deleteStudentExamResult('${res._id || ''}', '${escapeHtml(title)}')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 4px 8px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="এই ফলাফলটি মুছে ফেলুন">
+                          <i class="fa-solid fa-trash-can"></i> মুছুন
+                        </button>
+                      </td>
                     </tr>
                   `;
                 }).join('')}
@@ -5354,6 +5366,64 @@
           </div>
         </div>
       `;
+    }
+
+    // শিক্ষার্থীর একক মডেল টেস্ট ফলাফল ডিলিট করা
+    async function deleteStudentExamResult(resultId, examTitle) {
+      if (!resultId) {
+        alert('ফলাফল আইডি পাওয়া যায়নি।');
+        return;
+      }
+      if (!confirm(`আপনি কি নিশ্চিতভাবে "${examTitle}" পরীক্ষার ফলাফলটি মুছে ফেলতে চান?`)) {
+        return;
+      }
+      try {
+        const res = await fetch(`${API_BASE}/api/results/${encodeURIComponent(resultId)}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          alert(data.message || 'ফলাফল সফলভাবে মুছে ফেলা হয়েছে!');
+          if (window.currentUserResultsContext) {
+            const { userId, name, contact, college } = window.currentUserResultsContext;
+            openUserResultsModal(userId, name, contact, college);
+          }
+          loadUserItems(false);
+        } else {
+          alert('ত্রুটি: ' + (data.message || 'ফলাফল মুছা সম্ভব হয়নি'));
+        }
+      } catch (err) {
+        alert('সার্ভার যোগাযোগে ত্রুটি: ' + err.message);
+      }
+    }
+
+    // শিক্ষার্থীর সকল মডেল টেস্ট ফলাফল একবারে ডিলিট করা
+    async function deleteAllStudentExamResults(userKey, studentName) {
+      if (!userKey) {
+        alert('শিক্ষার্থীর তথ্য পাওয়া যায়নি।');
+        return;
+      }
+      if (!confirm(`⚠️ সতর্কতা: আপনি কি নিশ্চিতভাবে "${studentName}"-এর সকল মডেল টেস্ট ফলাফল মুছে ফেলতে চান? এটি আর ফিরিয়ে আনা যাবে না!`)) {
+        return;
+      }
+      try {
+        const res = await fetch(`${API_BASE}/api/results/user/${encodeURIComponent(userKey)}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          alert(data.message || 'সকল ফলাফল সফলভাবে মুছে ফেলা হয়েছে!');
+          if (window.currentUserResultsContext) {
+            const { userId, name, contact, college } = window.currentUserResultsContext;
+            openUserResultsModal(userId, name, contact, college);
+          }
+          loadUserItems(false);
+        } else {
+          alert('ত্রুটি: ' + (data.message || 'ফলাফল মুছা সম্ভব হয়নি'));
+        }
+      } catch (err) {
+        alert('সার্ভার যোগাযোগে ত্রুটি: ' + err.message);
+      }
     }
 
     // উইন্ডো লোডে মেটাডাটা অপশন ইনজেক্ট

@@ -3118,6 +3118,155 @@ app.get('/api/results/user/:userKey', async (req, res) => {
   }
 });
 
+// নির্দিষ্ট পরীক্ষার ফলাফল ডিলিট করা (DELETE /api/results/:id)
+app.delete('/api/results/:id', async (req, res) => {
+  try {
+    const id = String(req.params.id || '').trim();
+    if (!id) {
+      return res.status(400).json({ success: false, message: 'ফলাফল আইডি প্রদান করুন।' });
+    }
+
+    let deletedDoc = null;
+
+    if (isConnected) {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        deletedDoc = await ExamResult.findByIdAndDelete(id);
+      }
+      if (!deletedDoc) {
+        deletedDoc = await ExamResult.findOneAndDelete({ _id: id });
+      }
+    }
+
+    // Always update local file database/exam_results.json
+    let fileResults = readExamResultsFile();
+    const existingIndex = fileResults.findIndex(r => String(r._id) === id);
+    if (existingIndex !== -1) {
+      if (!deletedDoc) deletedDoc = fileResults[existingIndex];
+      fileResults.splice(existingIndex, 1);
+      writeExamResultsFile(fileResults);
+    }
+
+    if (!deletedDoc) {
+      return res.status(404).json({ success: false, message: 'ফলাফল পাওয়া যায়নি।' });
+    }
+
+    // Decrement student testsCompleted & points if applicable
+    const studentId = deletedDoc.studentId;
+    const emailOrNumber = deletedDoc.emailOrNumber;
+    const finalScore = Number(deletedDoc.score) || 0;
+
+    if (isConnected && (studentId || emailOrNumber)) {
+      const query = (studentId && mongoose.Types.ObjectId.isValid(studentId))
+        ? { _id: studentId }
+        : { emailOrNumber: emailOrNumber };
+      const student = await Student.findOne(query);
+      if (student) {
+        student.testsCompleted = Math.max(0, (student.testsCompleted || 0) - 1);
+        if (finalScore > 20) {
+          student.points = Math.max(0, (student.points || 0) - 1);
+        }
+        await student.save();
+        await syncDatabaseJson('students');
+      }
+      await syncDatabaseJson('examResults');
+    }
+
+    // Also update offline students.json
+    const studentsPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(studentsPath) && (studentId || emailOrNumber)) {
+      try {
+        const sList = JSON.parse(fs.readFileSync(studentsPath, 'utf8'));
+        const s = sList.find(item => (studentId && String(item._id) === String(studentId)) || (emailOrNumber && item.emailOrNumber === emailOrNumber));
+        if (s) {
+          s.testsCompleted = Math.max(0, (s.testsCompleted || 0) - 1);
+          if (finalScore > 20) {
+            s.points = Math.max(0, (s.points || 0) - 1);
+          }
+          fs.writeFileSync(studentsPath, JSON.stringify(sList, null, 2), 'utf8');
+        }
+      } catch(e) {}
+    }
+
+    res.json({
+      success: true,
+      message: 'মডেল টেস্ট ফলাফল সফলভাবে মুছে ফেলা হয়েছে!',
+      data: deletedDoc
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'ফলাফল মুছতে ত্রুটি: ' + err.message });
+  }
+});
+
+// নির্দিষ্ট ইউজারের সকল পরীক্ষার ফলাফল ডিলিট করা (DELETE /api/results/user/:userKey)
+app.delete('/api/results/user/:userKey', async (req, res) => {
+  try {
+    const userKey = String(req.params.userKey || '').trim();
+    if (!userKey) {
+      return res.status(400).json({ success: false, message: 'ইউজার কি প্রদান করুন।' });
+    }
+    let deletedCount = 0;
+
+    if (isConnected) {
+      const filter = {
+        $or: [
+          { studentId: userKey },
+          { emailOrNumber: userKey },
+          { studentName: { $regex: new RegExp(userKey.trim(), 'i') } }
+        ]
+      };
+      const result = await ExamResult.deleteMany(filter);
+      deletedCount = result.deletedCount || 0;
+      await syncDatabaseJson('examResults');
+    }
+
+    // Update local file database/exam_results.json
+    let fileResults = readExamResultsFile();
+    const beforeCount = fileResults.length;
+    fileResults = fileResults.filter(r =>
+      String(r.studentId) !== userKey &&
+      r.emailOrNumber !== userKey &&
+      !(r.studentName && r.studentName.toLowerCase() === userKey.toLowerCase())
+    );
+    deletedCount = Math.max(deletedCount, beforeCount - fileResults.length);
+    writeExamResultsFile(fileResults);
+
+    // Reset student's testsCompleted
+    if (isConnected) {
+      const student = await Student.findOne({
+        $or: [
+          { _id: mongoose.Types.ObjectId.isValid(userKey) ? userKey : null },
+          { emailOrNumber: userKey }
+        ]
+      });
+      if (student) {
+        student.testsCompleted = 0;
+        await student.save();
+        await syncDatabaseJson('students');
+      }
+    }
+
+    const studentsPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(studentsPath)) {
+      try {
+        const sList = JSON.parse(fs.readFileSync(studentsPath, 'utf8'));
+        const s = sList.find(item => String(item._id) === userKey || item.emailOrNumber === userKey);
+        if (s) {
+          s.testsCompleted = 0;
+          fs.writeFileSync(studentsPath, JSON.stringify(sList, null, 2), 'utf8');
+        }
+      } catch(e) {}
+    }
+
+    res.json({
+      success: true,
+      message: `মোট ${deletedCount}টি মডেল টেস্ট ফলাফল মুছে ফেলা হয়েছে!`,
+      deletedCount
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'ফলাফল মুছতে ত্রুটি: ' + err.message });
+  }
+});
+
 // ৩. প্রোফাইল তথ্য আনা (Get Profile)
 app.get('/api/profile', async (req, res) => {
   try {

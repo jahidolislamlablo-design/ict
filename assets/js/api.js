@@ -2002,6 +2002,17 @@ const ApiService = {
         }
     },
 
+    async deleteExamResult(resultId) {
+        try {
+            const res = await fetchFromBackend(`/api/results/${encodeURIComponent(resultId)}`, {
+                method: 'DELETE'
+            });
+            return res;
+        } catch (e) {
+            return { success: false, message: e.message };
+        }
+    },
+
     async getCustomOptions() {
         try {
             const res = await fetchFromBackend('/api/custom-options');
