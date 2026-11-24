@@ -8,7 +8,7 @@
     <!-- FontAwesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=9.2">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9.3">
     <style>
         .fav-filter-wrapper {
             display: grid;
@@ -139,6 +139,68 @@
             .fav-tab-btn span.tab-badge {
                 font-size: 0.70rem;
             }
+        }
+
+        /* Dark Mode Support for Favorite Questions */
+        body.dark-mode .fav-tab-btn,
+        [data-theme="dark"] .fav-tab-btn {
+            background: #1E293B !important;
+            border: 1.5px solid #334155 !important;
+            color: #F8FAFC !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+        }
+
+        body.dark-mode .fav-tab-btn i,
+        [data-theme="dark"] .fav-tab-btn i {
+            color: #818CF8 !important;
+        }
+
+        body.dark-mode .fav-tab-btn span.tab-title,
+        [data-theme="dark"] .fav-tab-btn span.tab-title {
+            color: #F8FAFC !important;
+        }
+
+        body.dark-mode .fav-tab-btn span.tab-badge,
+        [data-theme="dark"] .fav-tab-btn span.tab-badge {
+            background: #0F172A !important;
+            color: #94A3B8 !important;
+            border: 1px solid #334155 !important;
+        }
+
+        body.dark-mode .fav-tab-btn:hover,
+        [data-theme="dark"] .fav-tab-btn:hover {
+            border-color: #6366F1 !important;
+            background: #273549 !important;
+        }
+
+        body.dark-mode .fav-tab-btn.active,
+        [data-theme="dark"] .fav-tab-btn.active {
+            background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) !important;
+            border-color: #6366F1 !important;
+            color: #FFFFFF !important;
+        }
+
+        body.dark-mode .fav-tab-btn.active i,
+        [data-theme="dark"] .fav-tab-btn.active i {
+            color: #FFFFFF !important;
+        }
+
+        body.dark-mode .fav-tab-btn.active span.tab-title,
+        [data-theme="dark"] .fav-tab-btn.active span.tab-title {
+            color: #FFFFFF !important;
+        }
+
+        body.dark-mode .fav-tab-btn.active span.tab-badge,
+        [data-theme="dark"] .fav-tab-btn.active span.tab-badge {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #FFFFFF !important;
+            border: none !important;
+        }
+
+        body.dark-mode .fav-empty-state,
+        [data-theme="dark"] .fav-empty-state {
+            background: #1E293B !important;
+            border-color: #334155 !important;
         }
     </style>
 </head>

@@ -4473,3 +4473,121 @@ body.dark-mode .model-test-card,
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
+
+
+/* Favorite Questions Page Dark Mode */
+body.dark-mode .fav-tab-btn,
+[data-theme="dark"] .fav-tab-btn {
+    background: #1E293B !important;
+    border: 1.5px solid #334155 !important;
+    color: #F8FAFC !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.dark-mode .fav-tab-btn i,
+[data-theme="dark"] .fav-tab-btn i {
+    color: #818CF8 !important;
+}
+
+body.dark-mode .fav-tab-btn span.tab-title,
+[data-theme="dark"] .fav-tab-btn span.tab-title {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .fav-tab-btn span.tab-badge,
+[data-theme="dark"] .fav-tab-btn span.tab-badge {
+    background: #0F172A !important;
+    color: #94A3B8 !important;
+    border: 1px solid #334155 !important;
+}
+
+body.dark-mode .fav-tab-btn:hover,
+[data-theme="dark"] .fav-tab-btn:hover {
+    border-color: #6366F1 !important;
+    background: #273549 !important;
+}
+
+body.dark-mode .fav-tab-btn.active,
+[data-theme="dark"] .fav-tab-btn.active {
+    background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) !important;
+    border-color: #6366F1 !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .fav-tab-btn.active span.tab-title,
+[data-theme="dark"] .fav-tab-btn.active span.tab-title {
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .fav-tab-btn.active span.tab-badge,
+[data-theme="dark"] .fav-tab-btn.active span.tab-badge {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+
+body.dark-mode .fav-empty-state,
+[data-theme="dark"] .fav-empty-state {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+}
+
+/* Marksheet & Result Modal in Dark Mode (Globally Ensured) */
+body.dark-mode #liveExamMarksheetModal .modal-window,
+[data-theme="dark"] #liveExamMarksheetModal .modal-window,
+body.dark-mode .marksheet-modal,
+[data-theme="dark"] .marksheet-modal {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .live-marksheet-student-card,
+[data-theme="dark"] .live-marksheet-student-card {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .marksheet-student-name,
+[data-theme="dark"] .marksheet-student-name {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .marksheet-student-college,
+[data-theme="dark"] .marksheet-student-college,
+body.dark-mode .marksheet-date-col,
+[data-theme="dark"] .marksheet-date-col {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .score-stat-box,
+[data-theme="dark"] .score-stat-box {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .score-stat-box span,
+[data-theme="dark"] .score-stat-box span {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .score-stat-box strong.stat-correct,
+[data-theme="dark"] .score-stat-box strong.stat-correct,
+body.dark-mode #modal-correct-count,
+[data-theme="dark"] #modal-correct-count {
+    color: #22C55E !important;
+}
+
+body.dark-mode .score-stat-box strong.stat-wrong,
+[data-theme="dark"] .score-stat-box strong.stat-wrong,
+body.dark-mode #modal-wrong-count,
+[data-theme="dark"] #modal-wrong-count {
+    color: #EF4444 !important;
+}
+
+body.dark-mode .score-stat-box strong.stat-skipped,
+[data-theme="dark"] .score-stat-box strong.stat-skipped,
+body.dark-mode #modal-skipped-count,
+[data-theme="dark"] #modal-skipped-count {
+    color: #F59E0B !important;
+}

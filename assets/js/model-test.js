@@ -1225,12 +1225,12 @@ function openLiveExamMarksheet(examKey, testTitle, duration = 25) {
             </div>
 
             <!-- স্টুডেন্ট প্রোফাইল কার্ড -->
-            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+            <div class="live-marksheet-student-card" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; text-align: left;">
                 <div>
-                    <strong style="color: #0F172A; font-size: 0.95rem;">👤 ${escapeHtml(studentName)}</strong>
-                    ${studentCollege ? `<div style="font-size: 0.78rem; color: #64748B;">🏫 ${escapeHtml(studentCollege)}</div>` : ''}
+                    <strong class="marksheet-student-name" style="color: #0F172A; font-size: 0.95rem;">👤 ${escapeHtml(studentName)}</strong>
+                    ${studentCollege ? `<div class="marksheet-student-college" style="font-size: 0.78rem; color: #64748B;">🏫 ${escapeHtml(studentCollege)}</div>` : ''}
                 </div>
-                <div style="text-align: right; font-size: 0.78rem; color: #64748B;">
+                <div class="marksheet-date-col" style="text-align: right; font-size: 0.78rem; color: #64748B;">
                     <div><i class="fa-regular fa-calendar-check"></i> ${dateStr}</div>
                     <span style="display: inline-block; margin-top: 3px; font-weight: 700; color: #059669; background: #D1FAE5; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem;">${gradeText}</span>
                 </div>
@@ -1250,16 +1250,16 @@ function openLiveExamMarksheet(examKey, testTitle, duration = 25) {
 
             <!-- সঠিক / ভুল / অনুত্তরিত পরিসংখ্যান -->
             <div class="score-stats-grid" style="margin-bottom: 20px;">
-                <div class="score-stat-box" style="border-top: 3px solid var(--success); background: #F0FDF4;">
-                    <strong style="color: var(--success); font-size: 1.35rem;">${toBanglaNum(score)}টি</strong>
+                <div class="score-stat-box score-stat-correct" style="border-top: 3px solid var(--success); background: #F0FDF4;">
+                    <strong class="stat-correct" style="color: var(--success); font-size: 1.35rem;">${toBanglaNum(score)}টি</strong>
                     <span style="font-size: 0.8rem; color: #475569;">সঠিক উত্তর</span>
                 </div>
-                <div class="score-stat-box" style="border-top: 3px solid var(--danger); background: #FEF2F2;">
-                    <strong style="color: var(--danger); font-size: 1.35rem;">${toBanglaNum(wrong)}টি</strong>
+                <div class="score-stat-box score-stat-wrong" style="border-top: 3px solid var(--danger); background: #FEF2F2;">
+                    <strong class="stat-wrong" style="color: var(--danger); font-size: 1.35rem;">${toBanglaNum(wrong)}টি</strong>
                     <span style="font-size: 0.8rem; color: #475569;">ভুল উত্তর</span>
                 </div>
-                <div class="score-stat-box" style="border-top: 3px solid var(--warning); background: #FFFBEB;">
-                    <strong style="color: var(--warning-dark); font-size: 1.35rem;">${toBanglaNum(skipped)}টি</strong>
+                <div class="score-stat-box score-stat-skipped" style="border-top: 3px solid var(--warning); background: #FFFBEB;">
+                    <strong class="stat-skipped" style="color: var(--warning-dark); font-size: 1.35rem;">${toBanglaNum(skipped)}টি</strong>
                     <span style="font-size: 0.8rem; color: #475569;">অনুত্তরিত</span>
                 </div>
             </div>

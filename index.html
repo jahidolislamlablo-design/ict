@@ -8,7 +8,7 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Universal Design System -->
-    <link rel="stylesheet" href="assets/css/style.css?v=9.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=9.3">
     <style>
         /* Hero Automatic Image Slider Styles */
         .hero-slider-wrapper {
@@ -632,9 +632,51 @@
         }
 
         @media (max-width: 640px) {
+            .hero-slider-wrapper {
+                margin-bottom: 12px !important;
+            }
+            .features-section-title {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                gap: 8px !important;
+                margin-top: 0 !important;
+                margin-bottom: 12px !important;
+                flex-wrap: nowrap !important;
+            }
+            .features-section-title .title-left {
+                display: flex !important;
+                align-items: center !important;
+                min-width: 0 !important;
+                flex: 1 1 auto !important;
+            }
+            .features-section-title h2 {
+                font-size: 1.05rem !important;
+                white-space: nowrap !important;
+                margin: 0 !important;
+                line-height: 1.2 !important;
+                letter-spacing: -0.2px !important;
+            }
+            .features-section-title .badge.badge-primary {
+                font-size: 0.72rem !important;
+                padding: 3px 8px !important;
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+                margin: 0 !important;
+            }
             .main-features-grid.all-eight-features {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .features-section-title h2 {
+                font-size: 0.95rem !important;
+            }
+            .features-section-title .badge.badge-primary {
+                font-size: 0.68rem !important;
+                padding: 2px 6px !important;
             }
         }
 
@@ -941,7 +983,6 @@
             <!-- মূল ৮টি ফিচারের গ্রিড -->
             <div class="features-section-title">
                 <div class="title-left">
-                    <span class="icon-indicator" style="background: #EEF2FF; color: #4F46E5;"><i class="fa-solid fa-shapes"></i></span>
                     <h2>প্রস্তুতি ও প্র্যাকটিস কর্নার</h2>
                 </div>
                 <span class="badge badge-primary">৮টি ক্যাটাগরি</span>

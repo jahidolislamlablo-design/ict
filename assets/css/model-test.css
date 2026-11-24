@@ -1252,10 +1252,93 @@ body.dark-mode .marksheet-modal,
     color: #F8FAFC !important;
 }
 
-body.dark-mode .result-score-box,
-[data-theme="dark"] .result-score-box {
+body.dark-mode .live-marksheet-student-card,
+[data-theme="dark"] .live-marksheet-student-card {
     background: #0F172A !important;
     border-color: #334155 !important;
+}
+
+body.dark-mode .marksheet-student-name,
+[data-theme="dark"] .marksheet-student-name {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .marksheet-student-college,
+[data-theme="dark"] .marksheet-student-college,
+body.dark-mode .marksheet-date-col,
+[data-theme="dark"] .marksheet-date-col {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .result-score-marks-box,
+[data-theme="dark"] .result-score-marks-box {
+    background: #0F172A !important;
+    border: 1.5px solid #312E81 !important;
+}
+
+body.dark-mode .result-score-marks-box .result-score-box-label,
+[data-theme="dark"] .result-score-marks-box .result-score-box-label {
+    color: #818CF8 !important;
+}
+
+body.dark-mode .result-score-marks-box .result-score-box-val,
+[data-theme="dark"] .result-score-marks-box .result-score-box-val {
+    color: #A5B4FC !important;
+}
+
+body.dark-mode .result-score-perc-box,
+[data-theme="dark"] .result-score-perc-box {
+    background: #0F172A !important;
+    border: 1.5px solid #064E3B !important;
+}
+
+body.dark-mode .result-score-perc-box .result-score-box-label,
+[data-theme="dark"] .result-score-perc-box .result-score-box-label {
+    color: #34D399 !important;
+}
+
+body.dark-mode .result-score-perc-box .result-score-box-val,
+[data-theme="dark"] .result-score-perc-box .result-score-box-val {
+    color: #6EE7B7 !important;
+}
+
+body.dark-mode .score-stat-box,
+[data-theme="dark"] .score-stat-box {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .score-stat-box span,
+[data-theme="dark"] .score-stat-box span {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .score-stat-box strong.stat-correct,
+[data-theme="dark"] .score-stat-box strong.stat-correct,
+body.dark-mode #modal-correct-count,
+[data-theme="dark"] #modal-correct-count {
+    color: #22C55E !important;
+}
+
+body.dark-mode .score-stat-box strong.stat-wrong,
+[data-theme="dark"] .score-stat-box strong.stat-wrong,
+body.dark-mode #modal-wrong-count,
+[data-theme="dark"] #modal-wrong-count {
+    color: #EF4444 !important;
+}
+
+body.dark-mode .score-stat-box strong.stat-skipped,
+[data-theme="dark"] .score-stat-box strong.stat-skipped,
+body.dark-mode #modal-skipped-count,
+[data-theme="dark"] #modal-skipped-count {
+    color: #F59E0B !important;
+}
+
+body.dark-mode .marksheet-actions-row .btn-outline,
+[data-theme="dark"] .marksheet-actions-row .btn-outline {
+    background: #334155 !important;
+    border-color: #475569 !important;
+    color: #F8FAFC !important;
 }
 
 body.dark-mode .result-card,
