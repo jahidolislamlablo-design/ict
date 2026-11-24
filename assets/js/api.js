@@ -2519,7 +2519,9 @@ function renderModernMCQCardHTML(q, index, options = {}) {
     
     const imageHtml = q.image ? `
         <div class="question-image-box" style="margin: 12px 0 16px 0; text-align: center;">
-            <img src="${resolveMediaUrl(q.image)}" alt="প্রশ্ন চিত্র" style="max-width: 100%; max-height: 320px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
+            <div class="question-img-frame">
+                <img src="${resolveMediaUrl(q.image)}" alt="প্রশ্ন চিত্র" class="question-diagram-img" style="max-width: 100%; max-height: 320px; object-fit: contain;">
+            </div>
         </div>
     ` : '';
     const contextHtml = q.context_stem ? `<div class="question-stem" style="background:#F1F5F9; padding:12px 16px; border-radius:12px; margin-bottom:14px; font-size:0.95rem; border-left:4px solid var(--primary); line-height: 1.6;">${formatModernMCQContent(q.context_stem)}</div>` : '';
@@ -2603,8 +2605,10 @@ function renderModernCQCardHTML(cq, index) {
                 </div>
                 <div class="cq-stem-text" style="margin: 0; line-height: 1.7; font-size: 1rem;">${formatModernMCQContent(resolveHtmlMediaUrls(cq.stem))}</div>
                 ${cq.image ? `
-                    <div style="margin: 14px 0 10px 0; text-align: center;">
-                        <img src="${resolveMediaUrl(cq.image)}" alt="উদ্দীপক চিত্র" style="max-width: 100%; max-height: 380px; border-radius: 12px; border: 1px solid #E2E8F0; object-fit: contain;">
+                    <div class="question-image-box cq-image-box" style="margin: 14px 0 10px 0; text-align: center;">
+                        <div class="question-img-frame">
+                            <img src="${resolveMediaUrl(cq.image)}" alt="উদ্দীপক চিত্র" class="question-diagram-img" style="max-width: 100%; max-height: 380px; object-fit: contain;">
+                        </div>
                     </div>
                 ` : ''}
             </div>

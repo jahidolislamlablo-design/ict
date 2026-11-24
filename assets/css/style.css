@@ -3166,6 +3166,66 @@ body.dark-mode .theme-swap-icon {
     color: #A5B4FC !important;
 }
 
+/* ==========================================================================
+   QUESTION DIAGRAMS & LOGIC GATES (Light: Black lines, Dark: White lines)
+   ========================================================================== */
+.question-image-box {
+    margin: 12px 0 16px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.question-img-frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    background: transparent;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.question-diagram-img {
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    display: block;
+    border: none !important;
+    transition: filter 0.25s ease;
+}
+
+/* Dark mode for logic gates and question diagrams:
+   In light mode: black lines on light background.
+   In dark mode: lines/drawings invert to bright white.
+*/
+body.dark-mode .question-img-frame,
+[data-theme="dark"] .question-img-frame {
+    border-color: #334155 !important;
+    background: rgba(15, 23, 42, 0.4) !important;
+}
+
+body.dark-mode .question-diagram-img,
+body.dark-mode .question-image-box img,
+body.dark-mode .modern-quiz-card .question-image-box img,
+body.dark-mode .model-mcq-card .question-image-box img,
+body.dark-mode .modern-option-pill img,
+body.dark-mode .modern-cq-stem-box img,
+body.dark-mode .cq-image-box img,
+body.dark-mode .mcq-explanation img,
+[data-theme="dark"] .question-diagram-img,
+[data-theme="dark"] .question-image-box img,
+[data-theme="dark"] .modern-quiz-card .question-image-box img,
+[data-theme="dark"] .model-mcq-card .question-image-box img,
+[data-theme="dark"] .modern-option-pill img,
+[data-theme="dark"] .modern-cq-stem-box img,
+[data-theme="dark"] .cq-image-box img,
+[data-theme="dark"] .mcq-explanation img {
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.08) !important;
+}
+
 /* Theme Swap Toggle Card & Slider */
 .theme-swap-card {
     display: flex;
