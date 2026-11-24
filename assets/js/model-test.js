@@ -262,15 +262,15 @@ function filterTests(filter) {
             emptyMsg = document.createElement('div');
             emptyMsg.id = 'mt-filter-empty-msg';
             emptyMsg.className = 'mt-empty-filter-state';
-            emptyMsg.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: var(--text-secondary); background: #ffffff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin: 15px 0;';
+            emptyMsg.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: var(--text-secondary); background: var(--bg-card); border-radius: 18px; border: 1.5px dashed var(--border-color); margin: 15px 0;';
             grid.appendChild(emptyMsg);
         }
         if (emptyMsg) {
             emptyMsg.style.display = 'block';
             if (currentFilterCategory === 'live') {
-                emptyMsg.innerHTML = '<i class="fa-solid fa-satellite-dish fa-2x" style="color: #EF4444; margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: #1E293B;">বর্তমানে কোনো লাইভ এক্সাম চালু নেই</p><p style="font-size: 0.88rem; color: var(--text-muted);">পরবর্তী লাইভ এক্সামের নোটিশ শীঘ্রই এখানে প্রকাশ করা হবে।</p>';
+                emptyMsg.innerHTML = '<i class="fa-solid fa-satellite-dish fa-2x" style="color: #EF4444; margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: var(--text-primary);">বর্তমানে কোনো লাইভ এক্সাম চালু নেই</p><p style="font-size: 0.88rem; color: var(--text-muted);">পরবর্তী লাইভ এক্সামের নোটিশ শীঘ্রই এখানে প্রকাশ করা হবে।</p>';
             } else {
-                emptyMsg.innerHTML = '<i class="fa-regular fa-folder-open fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: #1E293B;">এই ক্যাটাগরিতে কোনো মডেল টেস্ট পাওয়া যায়নি</p>';
+                emptyMsg.innerHTML = '<i class="fa-regular fa-folder-open fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: var(--text-primary);">এই ক্যাটাগরিতে কোনো মডেল টেস্ট পাওয়া যায়নি</p>';
             }
         }
     } else if (emptyMsg) {
@@ -483,7 +483,7 @@ async function loadAllModelTests() {
             startLiveCountdowns();
         } else {
             if (grid) {
-                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: var(--text-secondary); background: #ffffff; border-radius: 18px; border: 1.5px dashed var(--border-color); margin: 15px 0;"><i class="fa-regular fa-folder-open fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: #1E293B;">কোনো মডেল টেস্ট পাওয়া যায়নি</p></div>';
+                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: var(--text-secondary); background: var(--bg-card); border-radius: 18px; border: 1.5px dashed var(--border-color); margin: 15px 0;"><i class="fa-regular fa-folder-open fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i><p style="font-weight: 600; font-size: 1.05rem; color: var(--text-primary);">কোনো মডেল টেস্ট পাওয়া যায়নি</p></div>';
             }
             startLiveCountdowns();
         }
@@ -608,7 +608,7 @@ async function startExam(testTitle, durationMins = 25, examNo = '', forceRestart
             container.innerHTML = `
                 <div style="text-align: center; padding: 60px 20px; background: #FFF; border-radius: 16px; border: 1px solid #E2E8F0; margin: 20px 0;">
                     <i class="fa-solid fa-clipboard-question" style="font-size: 3rem; color: #94A3B8; margin-bottom: 16px;"></i>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #1E293B; margin-bottom: 8px;">এই লাইভ পরীক্ষার জন্য এখনও কোনো প্রশ্ন আপলোড করা হয়নি।</h3>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">এই লাইভ পরীক্ষার জন্য এখনও কোনো প্রশ্ন আপলোড করা হয়নি।</h3>
                     <p style="color: #64748B; font-size: 0.95rem; margin-bottom: 24px;">অ্যাডমিন প্যানেল থেকে প্রশ্ন আপলোড করার পর এখানে প্রদর্শিত হবে।</p>
                     <button class="btn btn-primary" onclick="exitExam()" style="display: inline-flex; align-items: center; gap: 8px; margin: 0 auto;">
                         <i class="fa-solid fa-arrow-left"></i> <span>মডেল টেস্ট তালিকায় ফিরে যান</span>
@@ -812,7 +812,7 @@ function openSubmitConfirmModal(answeredCount, unanswered, onConfirmCallback) {
             </div>
 
             <div class="confirm-prompt-card" style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 18px; padding: 18px 20px; margin-bottom: 26px;">
-                <p class="confirm-prompt-text" style="font-size: 1.25rem; font-weight: 700; color: #1E293B; line-height: 1.6; margin: 0;">
+                <p class="confirm-prompt-text" style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); line-height: 1.6; margin: 0;">
                     আপনি মোট <span style="color: #16A34A; font-weight: 900;">${toBanglaNum(answeredCount)}টি</span> প্রশ্নের উত্তর দিয়েছেন।<br>
                     ${unanswered > 0 ? `এখনও <span style="color: #DC2626; font-weight: 900;">${toBanglaNum(unanswered)}টি</span> প্রশ্নের উত্তর দেওয়া বাকি আছে।<br>` : ''}
                     <span class="confirm-prompt-question" style="display: block; margin-top: 10px; font-size: 1.30rem; font-weight: 800; color: #4338CA;">
@@ -1219,7 +1219,7 @@ function openLiveExamMarksheet(examKey, testTitle, duration = 25) {
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 12px; margin-bottom: 16px;">
                 <div style="text-align: left;">
                     <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: #6366F1; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap"></i> ICT Easy Learning Mark Sheet</span>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #1E293B; margin: 2px 0 0 0;">${escapeHtml(title)}</h3>
+                    <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin: 2px 0 0 0;">${escapeHtml(title)}</h3>
                 </div>
                 <button type="button" onclick="closeLiveExamMarksheet()" style="background: #F1F5F9; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; color: #64748B; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s;">&times;</button>
             </div>

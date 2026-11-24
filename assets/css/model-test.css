@@ -1043,3 +1043,224 @@
         min-width: 100%;
     }
 }
+
+
+/* ==========================================================================
+   MODEL TEST - COMPREHENSIVE DARK MODE SUPPORT
+   ========================================================================== */
+body.dark-mode, [data-theme="dark"] {
+    --bg-page: #0F172A;
+    --bg-card: #1E293B;
+    --border-color: #334155;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+}
+
+body.dark-mode #model-test-list-view,
+[data-theme="dark"] #model-test-list-view,
+body.dark-mode #live-exam-view,
+[data-theme="dark"] #live-exam-view {
+    color: #F8FAFC;
+}
+
+/* 1. Model Test Cards */
+body.dark-mode .model-test-card,
+[data-theme="dark"] .model-test-card,
+body.dark-mode .test-card,
+[data-theme="dark"] .test-card {
+    background: #1E293B !important;
+    border: 1.5px solid #334155 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .model-test-card:hover,
+[data-theme="dark"] .model-test-card:hover,
+body.dark-mode .test-card:hover,
+[data-theme="dark"] .test-card:hover {
+    border-color: #6366F1 !important;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25) !important;
+}
+
+/* 2. Top row badges & pills */
+body.dark-mode .mt-date-pill,
+[data-theme="dark"] .mt-date-pill {
+    background: #334155 !important;
+    color: #F1F5F9 !important;
+}
+
+body.dark-mode .mt-participants-pill,
+[data-theme="dark"] .mt-participants-pill {
+    background: rgba(16, 185, 129, 0.18) !important;
+    color: #34D399 !important;
+}
+
+body.dark-mode .mt-exam-no,
+[data-theme="dark"] .mt-exam-no,
+body.dark-mode .test-card-title,
+[data-theme="dark"] .test-card-title {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .mt-chapters,
+[data-theme="dark"] .mt-chapters {
+    color: #CBD5E1 !important;
+}
+
+body.dark-mode .mt-chapters span,
+[data-theme="dark"] .mt-chapters span {
+    color: #A5B4FC !important;
+}
+
+body.dark-mode .mt-meta-row,
+[data-theme="dark"] .mt-meta-row,
+body.dark-mode .test-meta-info,
+[data-theme="dark"] .test-meta-info {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .mt-meta-item i,
+[data-theme="dark"] .mt-meta-item i {
+    color: #818CF8 !important;
+}
+
+/* 3. Live Active Card & Featured Live Section */
+body.dark-mode .model-test-card.is-live-active,
+[data-theme="dark"] .model-test-card.is-live-active {
+    background: #1E1B4B !important;
+    border: 2px solid #F43F5E !important;
+    box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.3) !important;
+}
+
+body.dark-mode .featured-live-section,
+[data-theme="dark"] .featured-live-section {
+    background: linear-gradient(135deg, #1E1B4B 0%, #31102A 50%, #4C0519 100%) !important;
+    border: 2px solid #E11D48 !important;
+    box-shadow: 0 12px 28px -6px rgba(244, 63, 94, 0.3) !important;
+}
+
+body.dark-mode .featured-live-title,
+[data-theme="dark"] .featured-live-title {
+    color: #FDA4AF !important;
+}
+
+/* 4. Filter Tabs */
+body.dark-mode .filter-tabs .tab-btn,
+[data-theme="dark"] .filter-tabs .tab-btn {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+    color: #CBD5E1 !important;
+}
+
+body.dark-mode .filter-tabs .tab-btn:hover,
+[data-theme="dark"] .filter-tabs .tab-btn:hover {
+    border-color: #6366F1 !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .filter-tabs .tab-btn.active,
+[data-theme="dark"] .filter-tabs .tab-btn.active {
+    background: #4F46E5 !important;
+    border-color: #4F46E5 !important;
+    color: #FFFFFF !important;
+}
+
+/* 5. Exam Interface in Dark Mode */
+body.dark-mode .exam-topbar,
+[data-theme="dark"] .exam-topbar {
+    background: rgba(30, 41, 59, 0.96) !important;
+    border-color: #334155 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .exam-questions-scroll-area,
+[data-theme="dark"] .exam-questions-scroll-area {
+    background-color: #0F172A !important;
+}
+
+body.dark-mode .exam-timer,
+[data-theme="dark"] .exam-timer {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border-color: #7F1D1D !important;
+    color: #F87171 !important;
+}
+
+body.dark-mode .exam-timer.normal,
+[data-theme="dark"] .exam-timer.normal {
+    background: rgba(59, 130, 246, 0.15) !important;
+    border-color: #1E3A8A !important;
+    color: #60A5FA !important;
+}
+
+/* 6. Submit Confirmation Modal */
+body.dark-mode #examSubmitConfirmModal .modal-window,
+[data-theme="dark"] #examSubmitConfirmModal .modal-window {
+    background: #1E293B !important;
+    border: 1.5px solid #334155 !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5) !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode #examSubmitConfirmModal h3,
+[data-theme="dark"] #examSubmitConfirmModal h3 {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode #examSubmitConfirmModal .confirm-stat-box,
+[data-theme="dark"] #examSubmitConfirmModal .confirm-stat-box {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #examSubmitConfirmModal .confirm-prompt-card,
+[data-theme="dark"] #examSubmitConfirmModal .confirm-prompt-card {
+    background: #0F172A !important;
+    border: 1.5px solid #334155 !important;
+}
+
+body.dark-mode #examSubmitConfirmModal .confirm-prompt-text,
+[data-theme="dark"] #examSubmitConfirmModal .confirm-prompt-text {
+    color: #CBD5E1 !important;
+}
+
+body.dark-mode #examSubmitConfirmModal .confirm-prompt-question,
+[data-theme="dark"] #examSubmitConfirmModal .confirm-prompt-question {
+    color: #818CF8 !important;
+}
+
+body.dark-mode #examSubmitConfirmModal .confirm-btn-no,
+[data-theme="dark"] #examSubmitConfirmModal .confirm-btn-no {
+    background: #334155 !important;
+    border: 1.5px solid #475569 !important;
+    color: #CBD5E1 !important;
+}
+
+body.dark-mode #examSubmitConfirmModal .confirm-btn-no:hover,
+[data-theme="dark"] #examSubmitConfirmModal .confirm-btn-no:hover {
+    background: #475569 !important;
+    color: #F8FAFC !important;
+}
+
+/* 7. Live Exam Marksheet & Result Modal in Dark Mode */
+body.dark-mode #liveExamMarksheetModal .modal-window,
+[data-theme="dark"] #liveExamMarksheetModal .modal-window,
+body.dark-mode .marksheet-modal,
+[data-theme="dark"] .marksheet-modal {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .result-score-box,
+[data-theme="dark"] .result-score-box {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .result-card,
+[data-theme="dark"] .result-card {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}

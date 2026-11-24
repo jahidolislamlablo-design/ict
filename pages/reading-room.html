@@ -12,7 +12,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Global Style -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=9.1">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9.2">
     <style>
         :root {
             --rr-green: #15803D;
@@ -1328,6 +1328,60 @@
             color: #F8FAFC;
             border-color: #475569;
         }
+
+        body.dark-mode .rr-tag-pill,
+        [data-theme="dark"] .rr-tag-pill {
+            background: #1E293B !important;
+            border-color: #334155 !important;
+            color: #94A3B8 !important;
+        }
+
+        body.dark-mode .rr-tag-pill.college-pill,
+        [data-theme="dark"] .rr-tag-pill.college-pill {
+            background: #1E293B !important;
+            border-color: #334155 !important;
+            color: #CBD5E1 !important;
+        }
+
+        body.dark-mode .rr-detail-pill,
+        [data-theme="dark"] .rr-detail-pill {
+            background: #1E293B !important;
+            border-color: #334155 !important;
+            color: #38BDF8 !important;
+        }
+
+        body.dark-mode .rr-name-text,
+        [data-theme="dark"] .rr-name-text {
+            color: #F8FAFC !important;
+        }
+
+        body.dark-mode .rr-bubble-name,
+        [data-theme="dark"] .rr-bubble-name {
+            color: #CBD5E1 !important;
+        }
+
+        body.dark-mode .rr-filter-tab,
+        [data-theme="dark"] .rr-filter-tab {
+            background: #0F172A !important;
+            color: #94A3B8 !important;
+        }
+
+        body.dark-mode .rr-filter-tab:hover,
+        [data-theme="dark"] .rr-filter-tab:hover {
+            background: #1E293B !important;
+            color: #F8FAFC !important;
+        }
+
+        body.dark-mode .rr-filter-tab.active,
+        [data-theme="dark"] .rr-filter-tab.active {
+            background: #16A34A !important;
+            color: #FFFFFF !important;
+        }
+
+        body.dark-mode .rr-filters-row,
+        [data-theme="dark"] .rr-filters-row {
+            border-bottom-color: #334155 !important;
+        }
     </style>
 </head>
 <body>
@@ -2561,16 +2615,6 @@
                 studyTimerInterval = setInterval(updateStudyTimerDisplay, 1000);
             }
         });
-
-        // Dark Mode Initialization
-        (function() {
-            try {
-                localStorage.setItem("ict_theme", "light"); document.body.classList.remove("dark-mode");
-            } catch(e) {}
-        })();
-    </script>
-</body>
-</html>
     </script>
 </body>
 </html>
