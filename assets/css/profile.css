@@ -588,43 +588,60 @@ body.dark-mode .btn-change-photo:hover {
     color: #60A5FA !important;
 }
 
-body.dark-mode .form-label-styled {
+body.dark-mode .form-label-styled,
+[data-theme="dark"] .form-label-styled {
     color: #F8FAFC !important;
 }
 
-body.dark-mode .form-input-styled {
+body.dark-mode .form-input-styled,
+[data-theme="dark"] .form-input-styled,
+body.dark-mode input.form-input-styled,
+[data-theme="dark"] input.form-input-styled,
+body.dark-mode input[type="text"],
+[data-theme="dark"] input[type="text"],
+body.dark-mode input[type="password"],
+[data-theme="dark"] input[type="password"] {
     background: #0F172A !important;
+    background-color: #0F172A !important;
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
 
-body.dark-mode .form-input-styled::placeholder {
+body.dark-mode .form-input-styled::placeholder,
+[data-theme="dark"] .form-input-styled::placeholder {
     color: #64748B !important;
 }
 
-body.dark-mode .form-input-styled:focus {
+body.dark-mode .form-input-styled:focus,
+[data-theme="dark"] .form-input-styled:focus {
     border-color: #3B82F6 !important;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
 }
 
-body.dark-mode .edit-password-box {
+body.dark-mode .edit-password-box,
+[data-theme="dark"] .edit-password-box {
     background: #0F172A !important;
+    background-color: #0F172A !important;
     border-color: #334155 !important;
 }
 
-body.dark-mode .edit-section-header {
+body.dark-mode .edit-section-header,
+[data-theme="dark"] .edit-section-header {
     color: #F8FAFC !important;
 }
 
-body.dark-mode .edit-section-hint {
+body.dark-mode .edit-section-hint,
+[data-theme="dark"] .edit-section-hint {
     color: #94A3B8 !important;
 }
 
-body.dark-mode .btn-eye-toggle {
+body.dark-mode .btn-eye-toggle,
+[data-theme="dark"] .btn-eye-toggle {
     color: #94A3B8 !important;
 }
 
-body.dark-mode .btn-eye-toggle:hover {
+body.dark-mode .btn-eye-toggle:hover,
+[data-theme="dark"] .btn-eye-toggle:hover {
     color: #60A5FA !important;
 }
 

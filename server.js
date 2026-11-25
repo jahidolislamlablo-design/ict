@@ -3729,21 +3729,37 @@ app.get('/api/users', async (req, res) => {
 app.delete('/api/users/:id', async (req, res) => {
   try {
     const id = req.params.id;
+    let studentName = '';
+    const fallbackPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(fallbackPath)) {
+      let list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+      const target = list.find(s => String(s._id) === String(id) || s.emailOrNumber === id || s.name === id);
+      if (target) studentName = target.name;
+      list = list.filter(s => String(s._id) !== String(id) && s.emailOrNumber !== id && s.name !== id);
+      fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+    }
     if (mongoose.connection.readyState === 1) {
       if (mongoose.Types.ObjectId.isValid(id)) {
         await Student.findByIdAndDelete(id);
       } else {
-        await Student.deleteOne({ emailOrNumber: id });
+        await Student.deleteOne({ $or: [{ emailOrNumber: id }, { name: id }] });
+      }
+      if (studentName) {
+        await ExamResult.deleteMany({ $or: [{ studentId: id }, { studentName: studentName }, { emailOrNumber: id }] });
+      } else {
+        await ExamResult.deleteMany({ $or: [{ studentId: id }, { emailOrNumber: id }] });
       }
       await syncDatabaseJson('students');
+      await syncDatabaseJson('exam_results');
     }
-    const fallbackPath = path.join(__dirname, 'database', 'students.json');
-    if (fs.existsSync(fallbackPath)) {
-      let list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-      list = list.filter(s => String(s._id) !== String(id) && s.emailOrNumber !== id);
-      fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
+    // লোকাল exam_results.json থেকেও মুছে ফেলা
+    const examPath = path.join(__dirname, 'database', 'exam_results.json');
+    if (fs.existsSync(examPath)) {
+      let exams = JSON.parse(fs.readFileSync(examPath, 'utf8'));
+      exams = exams.filter(e => String(e.studentId) !== String(id) && e.emailOrNumber !== id && (!studentName || e.studentName !== studentName));
+      fs.writeFileSync(examPath, JSON.stringify(exams, null, 2), 'utf8');
     }
-    res.json({ success: true, message: 'ব্যবহারকারী সফলভাবে ডিলিট করা হয়েছে।' });
+    res.json({ success: true, message: 'ব্যবহারকারী ও তার সকল পরীক্ষার ফলাফল সফলভাবে ডিলিট করা হয়েছে।' });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }

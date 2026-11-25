@@ -4651,3 +4651,179 @@ body.dark-mode #modal-skipped-count,
 [data-theme="dark"] #modal-skipped-count {
     color: #F59E0B !important;
 }
+
+
+/* ========================================================
+   LIVE MARKSHEET MODAL STYLES (Light & Dark Mode)
+   ======================================================== */
+.live-marksheet-student-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+.marksheet-student-name {
+    color: #0F172A;
+    font-size: 0.95rem;
+    display: block;
+}
+.marksheet-student-college {
+    font-size: 0.78rem;
+    color: #64748B;
+}
+.marksheet-date-col {
+    text-align: right;
+    font-size: 0.78rem;
+    color: #64748B;
+}
+.marksheet-grade-pill {
+    display: inline-block;
+    margin-top: 3px;
+    font-weight: 700;
+    color: #059669;
+    background: #D1FAE5;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+}
+.score-stat-box {
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.score-stat-box.score-stat-correct {
+    border-top: 3px solid var(--success, #22C55E);
+    background: #F0FDF4;
+}
+.score-stat-box.score-stat-wrong {
+    border-top: 3px solid var(--danger, #EF4444);
+    background: #FEF2F2;
+}
+.score-stat-box.score-stat-skipped {
+    border-top: 3px solid var(--warning, #F59E0B);
+    background: #FFFBEB;
+}
+.score-stat-box .stat-label {
+    font-size: 0.8rem;
+    color: #475569;
+}
+.marksheet-actions-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn-marksheet-restart {
+    flex: 1;
+    min-width: 140px;
+    padding: 11px 16px;
+    border-radius: 9999px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #F59E0B;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+.btn-marksheet-answers {
+    flex: 1;
+    min-width: 140px;
+    padding: 11px 16px;
+    border-radius: 9999px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #4F46E5;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+.btn-marksheet-exit {
+    flex: 1;
+    min-width: 90px;
+    padding: 11px 16px;
+    border-radius: 9999px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    color: #475569;
+    cursor: pointer;
+}
+
+/* Dark mode overrides for Marksheet Modal */
+body.dark-mode .live-marksheet-student-card,
+[data-theme="dark"] .live-marksheet-student-card {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+}
+body.dark-mode .marksheet-student-name,
+[data-theme="dark"] .marksheet-student-name {
+    color: #F8FAFC !important;
+}
+body.dark-mode .marksheet-student-college,
+[data-theme="dark"] .marksheet-student-college,
+body.dark-mode .marksheet-date-col,
+[data-theme="dark"] .marksheet-date-col {
+    color: #94A3B8 !important;
+}
+body.dark-mode .marksheet-grade-pill,
+[data-theme="dark"] .marksheet-grade-pill {
+    background: rgba(16, 185, 129, 0.2) !important;
+    color: #34D399 !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+}
+body.dark-mode .score-stat-box.score-stat-correct,
+[data-theme="dark"] .score-stat-box.score-stat-correct {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border-top: 3px solid #10B981 !important;
+}
+body.dark-mode .score-stat-box.score-stat-correct strong,
+[data-theme="dark"] .score-stat-box.score-stat-correct strong {
+    color: #34D399 !important;
+}
+body.dark-mode .score-stat-box.score-stat-wrong,
+[data-theme="dark"] .score-stat-box.score-stat-wrong {
+    background: rgba(239, 68, 68, 0.12) !important;
+    border-top: 3px solid #EF4444 !important;
+}
+body.dark-mode .score-stat-box.score-stat-wrong strong,
+[data-theme="dark"] .score-stat-box.score-stat-wrong strong {
+    color: #F87171 !important;
+}
+body.dark-mode .score-stat-box.score-stat-skipped,
+[data-theme="dark"] .score-stat-box.score-stat-skipped {
+    background: rgba(245, 158, 11, 0.12) !important;
+    border-top: 3px solid #F59E0B !important;
+}
+body.dark-mode .score-stat-box.score-stat-skipped strong,
+[data-theme="dark"] .score-stat-box.score-stat-skipped strong {
+    color: #FBBF24 !important;
+}
+body.dark-mode .score-stat-box .stat-label,
+[data-theme="dark"] .score-stat-box .stat-label {
+    color: #CBD5E1 !important;
+}
+body.dark-mode .btn-marksheet-exit,
+[data-theme="dark"] .btn-marksheet-exit {
+    background: #1E293B !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}

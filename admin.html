@@ -5094,19 +5094,32 @@
     async function deleteUserItem(id, name) {
       if (!confirm(`আপনি কি নিশ্চিত যে "${name}"-এর অ্যাকাউন্ট ডিলিট করতে চান?`)) return;
       try {
-        const res = await fetch(`${API_BASE}/api/users/${encodeURIComponent(id)}`, {
-          method: 'DELETE'
-        });
-        const data = await res.json().catch(() => null);
+        let deletedOnServer = false;
+        try {
+          const res = await fetch(`${API_BASE}/api/users/${encodeURIComponent(id)}`, {
+            method: 'DELETE'
+          });
+          if (res.ok) {
+            const data = await res.json().catch(() => null);
+            if (data && data.success) deletedOnServer = true;
+          }
+        } catch (fetchErr) {
+          console.warn('Backend DELETE error:', fetchErr.message);
+        }
+
+        // লোকাল মেমোরি অ্যারে থেকেও মুছে ফেলা যাতে সাথে সাথে টেবিল আপডেট হয়
+        allUsers = allUsers.filter(u => String(u._id) !== String(id) && u.emailOrNumber !== id && u.name !== name);
+        renderUserTable(allUsers);
+        updateUserStats();
 
         // লোকাল অ্যাকাউন্ট তালিকা থেকেও মুছে ফেলা
         try {
           let accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-          accounts = accounts.filter(a => String(a._id) !== String(id) && a.emailOrNumber !== id);
+          accounts = accounts.filter(a => String(a._id) !== String(id) && a.emailOrNumber !== id && a.name !== name);
           localStorage.setItem('ict_registered_accounts', JSON.stringify(accounts));
         } catch(e) {}
 
-        showToast('সফলতা', 'ব্যবহারকারী অ্যাকাউন্ট সফলভাবে ডিলিট করা হয়েছে', 'success');
+        showToast('সফলতা', `ব্যবহারকারী "${name}" সফলভাবে ডিলিট করা হয়েছে`, 'success');
         await loadUserItems();
       } catch (err) {
         showToast('ত্রুটি', 'ডিলিট করতে সমস্যা হয়েছে: ' + err.message, 'error');

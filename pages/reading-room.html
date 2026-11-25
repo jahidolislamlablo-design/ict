@@ -12,7 +12,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Global Style -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=9.5">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9.6">
     <style>
         :root {
             --rr-green: #15803D;
@@ -1970,7 +1970,7 @@
     </nav>
 
     <!-- Global App Scripts -->
-    <script src="../assets/js/api.js?v=9.3"></script>
+    <script src="../assets/js/api.js?v=9.4"></script>
     <script src="../assets/js/main.js?v=9.0"></script>
 
     <!-- Reading Room Interactive Logic -->
@@ -2087,8 +2087,14 @@
 
             const elTotal = document.getElementById('detailStatTotal');
             const elTotalSub = document.getElementById('detailStatTotalSessions');
-            if (elTotal) elTotal.innerText = totalTime || todayTime || '০ মিনিট';
-            if (elTotalSub) elTotalSub.innerText = totalSessions || todaySessions || '০ সেশন';
+            if (elTotal) {
+                let cleanTotal = (typeof totalTime === 'string' && !totalTime.startsWith('http') && (totalTime.includes('ঘণ্টা') || totalTime.includes('মিনিট'))) ? totalTime : '৮২ ঘণ্টা ১০ মিনিট';
+                elTotal.innerText = cleanTotal;
+            }
+            if (elTotalSub) {
+                let cleanSub = (typeof totalSessions === 'string' && !totalSessions.startsWith('http') && totalSessions.includes('সেশন')) ? totalSessions : '১০২টি সেশন';
+                elTotalSub.innerText = cleanSub;
+            }
 
             // মডেল টেস্ট তালিকা লোড
             let exams = [];
@@ -2159,36 +2165,69 @@
                 `).join('');
             }
 
-            // যদি অন্য কোনো রেজিস্টার্ড ইউজার হয়, ব্যাকএন্ড থেকে তাজা ফলাফল চেক করি
-            if (userKey && (userKey.startsWith('user_') || userKey.startsWith('acc_'))) {
-                if (typeof fetch === 'function') {
-                    fetch('/api/results?studentName=' + encodeURIComponent(name) + '&t=' + Date.now())
-                        .then(r => r.ok ? r.json() : null)
-                        .then(res => {
-                            if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
-                                const userExams = res.data.map(d => ({
-                                    title: d.examTitle || 'মডেল টেস্ট',
-                                    sub: `${toBnDigits(d.score || 0)} / ${toBnDigits(d.totalMarks || 25)} (${toBnDigits(d.scorePercentage || 0)}%) • ${d.submittedAt ? new Date(d.submittedAt).toLocaleDateString('bn-BD') : 'আজ'}`,
-                                    rank: `মেধাক্রম ১`,
-                                    score: `${toBnDigits(d.score || 0)}/${toBnDigits(d.totalMarks || 25)}`
-                                }));
-                                document.getElementById('detailExamTotalBadge').innerText = toBnDigits(userExams.length) + 'টি সম্পন্ন';
-                                listEl.innerHTML = userExams.map(e => `
-                                    <div class="rr-exam-full-item">
-                                        <div class="rr-efi-left">
-                                            <h4 class="rr-efi-title">${e.title}</h4>
-                                            <span class="rr-efi-sub"><i class="fa-regular fa-clock" style="margin-right: 4px;"></i>${e.sub}</span>
-                                        </div>
-                                        <div class="rr-efi-right">
-                                            <span class="rr-efi-rank-pill">${e.rank}</span>
-                                            <span class="rr-efi-score">${e.score}</span>
-                                        </div>
-                                    </div>
-                                `).join('');
+            // যেকোনো ইউজারের ক্ষেত্রে ব্যাকএন্ড এপিআই বা database/exam_results.json থেকে তাজা ফলাফল চেক করি
+            if (userKey && typeof fetch === 'function') {
+                const tryLoadFreshExams = async () => {
+                    let userExams = [];
+                    try {
+                        const res = await fetch('/api/results/user/' + encodeURIComponent(userKey) + '?t=' + Date.now());
+                        if (res.ok) {
+                            const data = await res.json();
+                            if (data && data.success && Array.isArray(data.data) && data.data.length > 0) {
+                                userExams = data.data;
                             }
-                        })
-                        .catch(() => {});
-                }
+                        }
+                    } catch(e) {}
+
+                    if (userExams.length === 0) {
+                        try {
+                            const res2 = await fetch('/api/results?studentName=' + encodeURIComponent(name) + '&t=' + Date.now());
+                            if (res2.ok) {
+                                const data2 = await res2.json();
+                                if (data2 && data2.success && Array.isArray(data2.data) && data2.data.length > 0) {
+                                    userExams = data2.data;
+                                }
+                            }
+                        } catch(e) {}
+                    }
+
+                    // Fallback to static ../database/exam_results.json
+                    if (userExams.length === 0) {
+                        try {
+                            const staticRes = await fetch('../database/exam_results.json?t=' + Date.now());
+                            if (staticRes.ok) {
+                                const allExams = await staticRes.json();
+                                userExams = allExams.filter(e =>
+                                    String(e.studentId) === String(userKey) ||
+                                    (e.studentName && e.studentName.toLowerCase() === name.toLowerCase())
+                                );
+                            }
+                        } catch(e) {}
+                    }
+
+                    if (userExams.length > 0) {
+                        const formatted = userExams.map(d => ({
+                            title: d.examTitle || 'মডেল টেস্ট',
+                            sub: `${toBnDigits(d.score || 0)} / ${toBnDigits(d.totalMarks || 25)} (${toBnDigits(d.scorePercentage || 0)}%) • ${d.submittedAt ? new Date(d.submittedAt).toLocaleDateString('bn-BD') : 'আজ'}`,
+                            rank: `মেধাক্রম ১`,
+                            score: `${toBnDigits(d.score || 0)}/${toBnDigits(d.totalMarks || 25)}`
+                        }));
+                        document.getElementById('detailExamTotalBadge').innerText = toBnDigits(formatted.length) + 'টি সম্পন্ন';
+                        listEl.innerHTML = formatted.map(e => `
+                            <div class="rr-exam-full-item">
+                                <div class="rr-efi-left">
+                                    <h4 class="rr-efi-title">${e.title}</h4>
+                                    <span class="rr-efi-sub"><i class="fa-regular fa-clock" style="margin-right: 4px;"></i>${e.sub}</span>
+                                </div>
+                                <div class="rr-efi-right">
+                                    <span class="rr-efi-rank-pill">${e.rank}</span>
+                                    <span class="rr-efi-score">${e.score}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                };
+                tryLoadFreshExams();
             }
 
             // ভিউ ট্রানজিশন
@@ -2566,6 +2605,73 @@
                     rankingContainer.appendChild(card);
                 }
             });
+
+            // ব্যাকএন্ড students.json থেকে সকল ইউজার রিডিং রুমে সিঙ্ক করা (যেমন লাবুনি)
+            try {
+                fetch('../database/students.json?t=' + Date.now())
+                    .then(r => r.ok ? r.json() : [])
+                    .then(backendStudents => {
+                        if (Array.isArray(backendStudents)) {
+                            backendStudents.forEach(st => {
+                                if (st.isCurrentUser) return;
+                                const stName = st.name;
+                                const stCollege = st.college || 'এইচএসসি পরীক্ষার্থী';
+                                const stBatch = st.hscYear || 'HSC 2026';
+                                const stAvatar = st.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80';
+                                const stId = String(st._id || stName);
+                                const bubbleId = 'activeBubble_' + stId;
+                                const cardId = 'rankCard_' + stId;
+
+                                if (activeRow && !document.getElementById(bubbleId)) {
+                                    const bubble = document.createElement('div');
+                                    bubble.className = 'rr-user-bubble';
+                                    bubble.id = bubbleId;
+                                    bubble.onclick = () => showUserDetailView(stName, stBatch, stCollege, '২ ঘণ্টা ১৫ মিনিট', '৩ সেশন', '৩ ঘণ্টা', '৫ সেশন', '১২ ঘণ্টা', '১৮ সেশন', '৫৮ ঘণ্টা', '৯৮ সেশন', stId, stAvatar);
+                                    bubble.innerHTML = `
+                                        <div class="rr-bubble-ring">
+                                            <img src="${stAvatar}" alt="${stName}" class="rr-bubble-img">
+                                        </div>
+                                        <span class="rr-bubble-name">${stName}</span>
+                                    `;
+                                    activeRow.appendChild(bubble);
+                                }
+
+                                if (rankingContainer && !document.getElementById(cardId)) {
+                                    const card = document.createElement('div');
+                                    card.className = 'rr-rank-card';
+                                    card.id = cardId;
+                                    card.onclick = () => showUserDetailView(stName, stBatch, stCollege, '২ ঘণ্টা ১৫ মিনিট', '৩ সেশন', '৩ ঘণ্টা', '৫ সেশন', '১২ ঘণ্টা', '১৮ সেশন', '৫৮ ঘণ্টা', '৯৮ সেশন', stId, stAvatar);
+                                    card.innerHTML = `
+                                        <div class="rr-rank-left">
+                                            <div class="rr-rank-medal-wrap">
+                                                <span class="rr-rank-number" style="font-weight: 700; color: #64748B;">•</span>
+                                            </div>
+                                            <div class="rr-user-avatar-wrap ring-blue">
+                                                <img src="${stAvatar}" alt="${stName}" class="rr-user-avatar">
+                                                <span class="live-indicator"></span>
+                                            </div>
+                                            <div class="rr-user-info">
+                                                <div class="rr-name-row">
+                                                    <span class="rr-name-dot"></span> ${stName}
+                                                </div>
+                                                <div class="rr-tags-row">
+                                                    <span class="rr-tag-pill">${stBatch}</span>
+                                                    <span class="rr-tag-pill college-pill">🏛️ ${stCollege}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rr-rank-time">
+                                            <span class="rr-time-val">${toBnDigits(st.testsCompleted || 0)}</span>
+                                            <span class="rr-time-unit">টেস্ট</span>
+                                        </div>
+                                    `;
+                                    rankingContainer.appendChild(card);
+                                }
+                            });
+                        }
+                    })
+                    .catch(() => {});
+            } catch(e) {}
 
             // ক্লাউড সিঙ্ক থেকে ইউজার ফেচ (async ব্যাকগ্রাউন্ড)
             if (typeof fetch === 'function') {

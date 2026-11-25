@@ -1225,54 +1225,54 @@ function openLiveExamMarksheet(examKey, testTitle, duration = 25) {
             </div>
 
             <!-- স্টুডেন্ট প্রোফাইল কার্ড -->
-            <div class="live-marksheet-student-card" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+            <div class="live-marksheet-student-card">
                 <div>
-                    <strong class="marksheet-student-name" style="color: #0F172A; font-size: 0.95rem;">👤 ${escapeHtml(studentName)}</strong>
-                    ${studentCollege ? `<div class="marksheet-student-college" style="font-size: 0.78rem; color: #64748B;">🏫 ${escapeHtml(studentCollege)}</div>` : ''}
+                    <strong class="marksheet-student-name">👤 ${escapeHtml(studentName)}</strong>
+                    ${studentCollege ? `<div class="marksheet-student-college">🏫 ${escapeHtml(studentCollege)}</div>` : ''}
                 </div>
-                <div class="marksheet-date-col" style="text-align: right; font-size: 0.78rem; color: #64748B;">
+                <div class="marksheet-date-col">
                     <div><i class="fa-regular fa-calendar-check"></i> ${dateStr}</div>
-                    <span style="display: inline-block; margin-top: 3px; font-weight: 700; color: #059669; background: #D1FAE5; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem;">${gradeText}</span>
+                    <span class="marksheet-grade-pill">${gradeText}</span>
                 </div>
             </div>
 
             <!-- স্কোর সামারি বক্স -->
-            <div class="result-score-summary-row" style="margin-bottom: 18px;">
-                <div class="result-score-box result-score-marks-box" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); border: 1.5px solid #C7D2FE;">
-                    <span class="result-score-box-label" style="color: #4338CA;"><i class="fa-solid fa-award"></i> প্রাপ্ত নম্বর</span>
-                    <strong class="result-score-box-val" style="color: #3730A3;">${toBanglaNum(score)} / ${toBanglaNum(total)}</strong>
+            <div class="result-score-summary-row">
+                <div class="result-score-box result-score-marks-box">
+                    <span class="result-score-box-label"><i class="fa-solid fa-award"></i> প্রাপ্ত নম্বর</span>
+                    <strong class="result-score-box-val">${toBanglaNum(score)} / ${toBanglaNum(total)}</strong>
                 </div>
-                <div class="result-score-box result-score-perc-box" style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); border: 1.5px solid #A7F3D0;">
-                    <span class="result-score-box-label" style="color: #065F46;"><i class="fa-solid fa-percent"></i> শতকরা হার</span>
-                    <strong class="result-score-box-val" style="color: #047857;">${toBanglaNum(perc)}%</strong>
+                <div class="result-score-box result-score-perc-box">
+                    <span class="result-score-box-label"><i class="fa-solid fa-percent"></i> শতকরা হার</span>
+                    <strong class="result-score-box-val">${toBanglaNum(perc)}%</strong>
                 </div>
             </div>
 
             <!-- সঠিক / ভুল / অনুত্তরিত পরিসংখ্যান -->
-            <div class="score-stats-grid" style="margin-bottom: 20px;">
-                <div class="score-stat-box score-stat-correct" style="border-top: 3px solid var(--success); background: #F0FDF4;">
-                    <strong class="stat-correct" style="color: var(--success); font-size: 1.35rem;">${toBanglaNum(score)}টি</strong>
-                    <span style="font-size: 0.8rem; color: #475569;">সঠিক উত্তর</span>
+            <div class="score-stats-grid">
+                <div class="score-stat-box score-stat-correct">
+                    <strong class="stat-correct">${toBanglaNum(score)}টি</strong>
+                    <span class="stat-label">সঠিক উত্তর</span>
                 </div>
-                <div class="score-stat-box score-stat-wrong" style="border-top: 3px solid var(--danger); background: #FEF2F2;">
-                    <strong class="stat-wrong" style="color: var(--danger); font-size: 1.35rem;">${toBanglaNum(wrong)}টি</strong>
-                    <span style="font-size: 0.8rem; color: #475569;">ভুল উত্তর</span>
+                <div class="score-stat-box score-stat-wrong">
+                    <strong class="stat-wrong">${toBanglaNum(wrong)}টি</strong>
+                    <span class="stat-label">ভুল উত্তর</span>
                 </div>
-                <div class="score-stat-box score-stat-skipped" style="border-top: 3px solid var(--warning); background: #FFFBEB;">
-                    <strong class="stat-skipped" style="color: var(--warning-dark); font-size: 1.35rem;">${toBanglaNum(skipped)}টি</strong>
-                    <span style="font-size: 0.8rem; color: #475569;">অনুত্তরিত</span>
+                <div class="score-stat-box score-stat-skipped">
+                    <strong class="stat-skipped">${toBanglaNum(skipped)}টি</strong>
+                    <span class="stat-label">অনুত্তরিত</span>
                 </div>
             </div>
 
             <!-- ৩টি অ্যাকশন বাটন: Restart Exam, Answer Sheet, Exit -->
-            <div class="marksheet-actions-row" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                <button type="button" class="btn btn-warning" onclick="restartExamFromMarksheet('${examKeyEscapedForJs}', '${titleEscapedForJs}', ${duration})" style="flex: 1; min-width: 140px; padding: 11px 16px; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: #F59E0B; border: none; color: #FFF; cursor: pointer;">
+            <div class="marksheet-actions-row">
+                <button type="button" class="btn btn-warning btn-marksheet-restart" onclick="restartExamFromMarksheet('${examKeyEscapedForJs}', '${titleEscapedForJs}', ${duration})">
                     <i class="fa-solid fa-rotate-right"></i> Restart Exam
                 </button>
-                <button type="button" class="btn btn-primary" onclick="showAnswerSheetFromMarksheet('${examKeyEscapedForJs}', '${titleEscapedForJs}')" style="flex: 1; min-width: 140px; padding: 11px 16px; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: #4F46E5; border: none; color: #FFF; cursor: pointer;">
+                <button type="button" class="btn btn-primary btn-marksheet-answers" onclick="showAnswerSheetFromMarksheet('${examKeyEscapedForJs}', '${titleEscapedForJs}')">
                     <i class="fa-solid fa-list-check"></i> Answer Sheet
                 </button>
-                <button type="button" class="btn btn-outline" onclick="closeLiveExamMarksheet()" style="flex: 1; min-width: 90px; padding: 11px 16px; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: #F1F5F9; border: 1px solid #CBD5E1; color: #475569; cursor: pointer;">
+                <button type="button" class="btn btn-outline btn-marksheet-exit" onclick="closeLiveExamMarksheet()">
                     <i class="fa-solid fa-xmark"></i> Exit
                 </button>
             </div>
