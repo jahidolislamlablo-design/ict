@@ -73,6 +73,7 @@ mongoose.connection.on('connected', () => {
   isConnected = true;
   console.log('----------------------------------------------------');
   seedInitialModelTestsIfEmpty();
+  seedInitialStudentsIfEmpty();
   console.log('âœ… ICT Easy Learning Database Connected Successfully!');
   console.log(`ðŸ“¡ Database URI: ${MONGO_URI}`);
   console.log('----------------------------------------------------');
@@ -1073,6 +1074,46 @@ async function seedInitialModelTestsIfEmpty() {
     }
   } catch (err) {
     console.warn('seedInitialModelTestsIfEmpty warning:', err.message);
+  }
+}
+
+// প্রাথমিক শিক্ষার্থী ও ফলাফল সিডিং (যদি ডাটাবেজে পর্যাপ্ত শিক্ষার্থী না থাকে)
+async function seedInitialStudentsIfEmpty() {
+  try {
+    if (!isConnected) return;
+    const count = await Student.countDocuments();
+    const jsonPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(jsonPath)) {
+      const list = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      if (Array.isArray(list) && list.length > count) {
+        for (const s of list) {
+          const doc = {
+            name: s.name,
+            emailOrNumber: s.emailOrNumber || '',
+            password: s.password || '',
+            college: s.college || '',
+            hscYear: s.hscYear || 'HSC 2026',
+            avatar: s.avatar || '',
+            points: Number(s.points) || 25,
+            testsCompleted: Number(s.testsCompleted) || 0,
+            isCurrentUser: !!s.isCurrentUser,
+            createdAt: s.createdAt ? new Date(s.createdAt) : new Date(),
+            updatedAt: new Date()
+          };
+          if (s._id && mongoose.Types.ObjectId.isValid(s._id)) {
+            doc._id = new mongoose.Types.ObjectId(s._id);
+          }
+          await Student.updateOne(
+            { $or: [{ name: s.name }, { emailOrNumber: s.emailOrNumber && s.emailOrNumber !== '' ? s.emailOrNumber : '__none__' }] },
+            { $set: doc },
+            { upsert: true }
+          );
+        }
+        console.log(`✅ [Student Seed] শিক্ষার্থীদের MongoDB ডাটাবেজে সিঙ্ক করা হয়েছে!`);
+      }
+    }
+  } catch (err) {
+    console.warn('seedInitialStudentsIfEmpty warning:', err.message);
   }
 }
 
@@ -3682,12 +3723,24 @@ app.get('/api/users', async (req, res) => {
         .sort({ createdAt: -1 })
         .lean();
     }
-    if (!users || users.length === 0) {
-      const fallbackPath = path.join(__dirname, 'database', 'students.json');
-      if (fs.existsSync(fallbackPath)) {
-        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-        users = list.map(({ password, ...u }) => u);
-      }
+    // লোকাল students.json এর সাথে মার্জ করা যাতে ব্যাকেন্ড বা মঙ্গোডিবি উভয় উৎস থেকেই সব শিক্ষার্থী প্রদর্শিত হয়
+    const fallbackPath = path.join(__dirname, 'database', 'students.json');
+    if (fs.existsSync(fallbackPath)) {
+      const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+      list.forEach(({ password, ...u }) => {
+        const uId = String(u._id || '');
+        const uContact = String(u.emailOrNumber || '').trim().toLowerCase();
+        const uName = String(u.name || '').trim().toLowerCase();
+        const exists = users.some(existing => {
+          const eId = String(existing._id || '');
+          const eContact = String(existing.emailOrNumber || '').trim().toLowerCase();
+          const eName = String(existing.name || '').trim().toLowerCase();
+          return (uId && eId === uId) || (uContact && eContact === uContact) || (uName && eName === uName);
+        });
+        if (!exists) {
+          users.push(u);
+        }
+      });
     }
 
     // পরীক্ষার ফলাফল নিয়ে প্রতিটি ইউজারের সাথে সংযুক্ত করা

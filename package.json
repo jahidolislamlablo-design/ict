@@ -1,5 +1,5 @@
 {
-  "name": "ict-backend",
+  "name": "ict-easy-learning-project",
   "version": "1.0.0",
   "description": "ICT Easy Learning Backend API",
   "main": "server.js",
