@@ -2086,28 +2086,8 @@ const ApiService = {
             }
         }
 
-        // ২. লোকাল রেজিস্ট্রি থেকে সকল একাউন্ট অন্তর্ভুক্ত করা
-        try {
-            const localAccs = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-            localAccs.forEach(acc => {
-                const accPhone = typeof normalizeBanglaDigits === 'function' ? normalizeBanglaDigits(acc.emailOrNumber || '').toLowerCase() : (acc.emailOrNumber || '').toLowerCase();
-                const exists = students.some(s => {
-                    const sPhone = typeof normalizeBanglaDigits === 'function' ? normalizeBanglaDigits(s.emailOrNumber || '').toLowerCase() : (s.emailOrNumber || '').toLowerCase();
-                    return (accPhone && sPhone === accPhone) || (s.name && s.name === acc.name);
-                });
-                if (!exists) {
-                    students.push({
-                        name: acc.name,
-                        college: acc.college || 'এইচএসসি পরীক্ষার্থী',
-                        avatar: acc.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
-                        points: acc.points !== undefined ? acc.points : 25,
-                        testsCompleted: acc.testsCompleted || 0,
-                        isCurrentUser: false,
-                        emailOrNumber: acc.emailOrNumber || ''
-                    });
-                }
-            });
-        } catch(e) {}
+        // ২. লোকাল রেজিস্ট্রি (ict_registered_accounts) থেকে পুরোনো ডিলিট হওয়া ইউজার আর মার্জ করা হবে না,
+        // কেবল ব্যাকএন্ড / students.json-এর তালিকাটিই চূড়ান্ত হিসেবে দেখানো হবে।
 
         students.sort((a, b) => (b.points || 0) - (a.points || 0));
         const ranked = students.map((s, idx) => ({ ...s, position: idx + 1 }));

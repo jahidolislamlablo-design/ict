@@ -58,9 +58,18 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // à¦¸à§à¦Ÿà§à¦¯à¦¾à¦Ÿà¦¿à¦• à¦«à¦¾à¦‡à¦² à¦ªà¦°à¦¿à¦¬à§‡à¦¶à¦¨ (public à¦¡à¦¿à¦°à§‡à¦•à§à¦Ÿà¦°à¦¿ à¦à¦¬à¦‚ à¦°à§à¦Ÿ à¦«à§‹à¦²à§à¦¡à¦¾à¦°)
-app.use(express.static(__dirname));
+const noCacheStaticOptions = {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html') || filePath.endsWith('.json')) {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+  }
+};
+app.use(express.static(__dirname, noCacheStaticOptions));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use('/database', express.static(path.join(__dirname, 'database')));
+app.use('/database', express.static(path.join(__dirname, 'database'), noCacheStaticOptions));
 
 // ==========================================
 // à§¨. MongoDB à¦¡à¦¾à¦Ÿà¦¾à¦¬à§‡à¦œ à¦•à¦¾à¦¨à§‡à¦•à¦¶à¦¨ (Mongoose)

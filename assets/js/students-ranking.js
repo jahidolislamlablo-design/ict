@@ -50,29 +50,8 @@ async function loadRankingsData() {
                 list = [];
             }
 
-            // লোকাল প্রোফাইল ও রেজিস্টার্ড ইউজার মার্জ
+            // কেবল ব্যাকএন্ড / students.json থেকে প্রাপ্ত ইউজার ও কারেন্ট প্রোফাইল রাখা (ডিলিট হওয়া লোকাল একাউন্ট বাদ দেওয়া)
             const localProfile = JSON.parse(localStorage.getItem('ict_student_profile') || 'null');
-            let accounts = [];
-            try {
-                accounts = JSON.parse(localStorage.getItem('ict_registered_accounts') || '[]');
-            } catch(e) {}
-
-            accounts.forEach(acc => {
-                const cleanPhone = (acc.emailOrNumber || acc.email || '').toLowerCase();
-                const exists = list.some(s => (s.emailOrNumber || s.phone || '').toLowerCase() === cleanPhone || s.name === acc.name);
-                if (!exists) {
-                    list.push({
-                        id: 'acc_' + cleanPhone,
-                        name: acc.name,
-                        college: acc.college || 'এইচএসসি পরীক্ষার্থী',
-                        hscYear: acc.hscYear || 'HSC 2026',
-                        points: acc.points !== undefined ? acc.points : 25,
-                        testsCompleted: acc.testsCompleted || 0,
-                        avatar: acc.avatar || '',
-                        isCurrentUser: false
-                    });
-                }
-            });
 
             if (localProfile) {
                 const myIdx = list.findIndex(s => s.name === localProfile.name || (s.emailOrNumber && s.emailOrNumber === localProfile.emailOrNumber));
