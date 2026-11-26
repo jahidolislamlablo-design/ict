@@ -545,6 +545,7 @@ async function handleCreateAccount(e) {
         if (data && data.success) {
             backendSuccess = true;
             savedUser = data.user;
+            if (data.token) localStorage.setItem('ict_auth_token', data.token);
         }
     } catch (netErr) {
         console.warn('Backend register request failed or timed out, fallback to local storage:', netErr.message);
@@ -689,6 +690,7 @@ async function handleLogin(e) {
 
         if (response.ok && data && data.success) {
             loggedInUser = data.user;
+            if (data.token) localStorage.setItem('ict_auth_token', data.token);
         } else if (response.status === 400 || response.status === 401 || (data && data.message)) {
             const msg = (data && data.message) || 'ভুল ইমেইল/নম্বর অথবা পাসওয়ার্ড!';
             setAuthAlert(msg, 'error', 'login');

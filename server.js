@@ -2,12 +2,113 @@ const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const helmet = require('helmet');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const rateLimit = require('express-rate-limit');
+const crypto = require('crypto');
 const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
 require('dotenv').config();
 
 const app = express();
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+
+// Render / Railway / Nginx proxy support
+app.set('trust proxy', 1);
+
+// ==========================================
+// 0. Security Helpers (JWT, Bcrypt, Rate Limit, Helmet)
+// ==========================================
+const JWT_SECRET = process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex');
+if (!process.env.JWT_SECRET && IS_PRODUCTION) {
+  console.warn('WARNING: JWT_SECRET is not set in .env! Existing tokens will invalidate on restart.');
+}
+
+const BCRYPT_ROUNDS = 10;
+
+async function hashPassword(plainPassword) {
+  return bcrypt.hash(String(plainPassword), BCRYPT_ROUNDS);
+}
+
+function isBcryptHash(value) {
+  return typeof value === 'string' && /^\$2[aby]\$\d{2}\$/.test(value);
+}
+
+async function verifyPassword(plainPassword, storedPassword) {
+  if (!storedPassword) return { match: false, needsUpgrade: false };
+  const clean = String(plainPassword).trim();
+  const normClean = normalizeBanglaDigitsServer(clean);
+
+  if (isBcryptHash(storedPassword)) {
+    const directMatch = await bcrypt.compare(clean, storedPassword);
+    if (directMatch) return { match: true, needsUpgrade: false };
+    if (normClean !== clean) {
+      const normMatch = await bcrypt.compare(normClean, storedPassword);
+      if (normMatch) return { match: true, needsUpgrade: false };
+    }
+    return { match: false, needsUpgrade: false };
+  }
+
+  // Legacy plain-text password fallback (auto-upgrades to bcrypt on login)
+  const storedNorm = normalizeBanglaDigitsServer(storedPassword);
+  const match = storedPassword === clean || storedNorm === normClean;
+  return { match, needsUpgrade: match };
+}
+
+function signStudentToken(student) {
+  const id = String(student._id || student.id || '');
+  return jwt.sign(
+    {
+      id,
+      emailOrNumber: student.emailOrNumber || '',
+      role: 'student'
+    },
+    JWT_SECRET,
+    { expiresIn: '30d' }
+  );
+}
+
+function sanitizeUser(student) {
+  const obj = student && student.toObject ? student.toObject() : { ...(student || {}) };
+  delete obj.password;
+  return obj;
+}
+
+function optionalAuth(req, res, next) {
+  const authHeader = req.headers.authorization || '';
+  if (authHeader.startsWith('Bearer ')) {
+    const token = authHeader.slice(7).trim();
+    try {
+      req.user = jwt.verify(token, JWT_SECRET);
+    } catch (e) {
+      req.user = null;
+    }
+  }
+  next();
+}
+
+app.use(helmet({
+  contentSecurityPolicy: false,
+  crossOriginEmbedderPolicy: false
+}));
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'অতিরিক্ত রিকোয়েস্ট পাঠানো হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।' }
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 25,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'অতিরিক্ত লগইন/রেজিস্ট্রেশন চেষ্টা করা হয়েছে। ১৫ মিনিট পর আবার চেষ্টা করুন।' }
+});
 
 // ==========================================
 // à§§. CORS à¦•à¦¨à¦«à¦¿à¦—à¦¾à¦°à§‡à¦¶à¦¨ (GitHub Pages à¦à¦¬à¦‚ Localhost)
@@ -33,10 +134,12 @@ const corsOptions = {
     const isAllowed = allowedOrigins.includes(origin) || 
                       origin.startsWith('https://jahidolislamlablo-design.github.io');
 
-    if (isAllowed) {
+    const extraOrigins = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
+    const isCapacitor = origin === 'capacitor://localhost' || origin === 'https://localhost';
+    if (isAllowed || isCapacitor || extraOrigins.includes(origin) || !IS_PRODUCTION) {
       callback(null, true);
     } else {
-      callback(null, true); // à¦¡à§‡à¦­à§‡à¦²à¦ªà¦®à§‡à¦¨à§à¦Ÿ à¦¸à¦¹à¦œ à¦°à¦¾à¦–à¦¤à§‡ à¦¸à¦¬ à¦…à¦°à¦¿à¦œà¦¿à¦¨ à¦¸à¦®à¦°à§à¦¥à¦¿à¦¤
+      callback(new Error('Not allowed by CORS')); // à¦¡à§‡à¦­à§‡à¦²à¦ªà¦®à§‡à¦¨à§à¦Ÿ à¦¸à¦¹à¦œ à¦°à¦¾à¦–à¦¤à§‡ à¦¸à¦¬ à¦…à¦°à¦¿à¦œà¦¿à¦¨ à¦¸à¦®à¦°à§à¦¥à¦¿à¦¤
     }
   },
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -46,6 +149,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use('/api', apiLimiter);
+app.use('/api/auth', authLimiter);
+app.use(optionalAuth);
 
 // Chrome Private Network Access (PNA) à¦¹à§‡à¦¡à¦¾à¦°
 app.use((req, res, next) => {
@@ -3391,7 +3497,7 @@ app.post('/api/profile', async (req, res) => {
       if (college && String(college).trim()) student.college = String(college).trim();
       if (hscYear && String(hscYear).trim()) student.hscYear = String(hscYear).trim();
       if (avatar && String(avatar).trim()) student.avatar = String(avatar).trim();
-      if (password && String(password).trim().length >= 4) student.password = String(password).trim();
+      if (password && String(password).trim().length >= 4) student.password = await hashPassword(normalizeBanglaDigitsServer(String(password).trim()));
       student.isCurrentUser = true;
 
       await student.save();
@@ -3427,7 +3533,7 @@ app.post('/api/profile', async (req, res) => {
       if (college && String(college).trim()) student.college = String(college).trim();
       if (hscYear && String(hscYear).trim()) student.hscYear = String(hscYear).trim();
       if (avatar && String(avatar).trim()) student.avatar = String(avatar).trim();
-      if (password && String(password).trim().length >= 4) student.password = String(password).trim();
+      if (password && String(password).trim().length >= 4) student.password = await hashPassword(normalizeBanglaDigitsServer(String(password).trim()));
       student.isCurrentUser = true;
 
       fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
@@ -3478,6 +3584,7 @@ app.post('/api/auth/register', async (req, res) => {
     const cleanInput = emailOrNumber.trim();
     const normEmailOrNumber = normalizePhoneOrEmail(cleanInput);
     const cleanPass = normalizeBanglaDigitsServer(password.trim());
+    const hashedPass = await hashPassword(cleanPass);
     const cleanName = name.trim();
     const cleanCollege = (college || 'এইচএসসি পরীক্ষার্থী').trim();
     const cleanHscYear = (hscYear || 'HSC 2026').trim();
@@ -3505,7 +3612,7 @@ app.post('/api/auth/register', async (req, res) => {
       const newStudent = new Student({
         name: cleanName,
         emailOrNumber: normEmailOrNumber,
-        password: cleanPass,
+        password: hashedPass,
         college: cleanCollege,
         hscYear: cleanHscYear,
         avatar: cleanAvatar,
@@ -3516,9 +3623,11 @@ app.post('/api/auth/register', async (req, res) => {
       await newStudent.save();
       await syncDatabaseJson('students');
 
+      const token = signStudentToken(newStudent);
       return res.json({
         success: true,
         message: 'অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!',
+        token,
         user: {
           id: newStudent._id,
           name: newStudent.name,
@@ -3553,7 +3662,7 @@ app.post('/api/auth/register', async (req, res) => {
         _id: 'user_' + Date.now(),
         name: cleanName,
         emailOrNumber: normEmailOrNumber,
-        password: cleanPass,
+        password: hashedPass,
         college: cleanCollege,
         hscYear: cleanHscYear,
         avatar: cleanAvatar,
@@ -3565,10 +3674,12 @@ app.post('/api/auth/register', async (req, res) => {
       list.unshift(newStudent);
       fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
 
+      const token = signStudentToken(newStudent);
       return res.json({
         success: true,
         message: 'অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!',
-        user: newStudent
+        token,
+        user: sanitizeUser(newStudent)
       });
     }
   } catch (err) {
@@ -3631,12 +3742,15 @@ app.post('/api/auth/login', async (req, res) => {
       });
     }
 
-    const studentPassNorm = normalizeBanglaDigitsServer(student.password || '');
-    if (student.password !== cleanPass && studentPassNorm !== normPass) {
+    const passCheck = await verifyPassword(cleanPass, student.password || '');
+    if (!passCheck.match) {
       return res.status(400).json({
         success: false,
         message: 'ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন অথবা পাসওয়ার্ড রিসেট করুন।'
       });
+    }
+    if (passCheck.needsUpgrade) {
+      student.password = await hashPassword(normPass || cleanPass);
     }
 
     // Set isCurrentUser = true for this student and false for others
@@ -3654,9 +3768,11 @@ app.post('/api/auth/login', async (req, res) => {
       }
     }
 
+    const token = signStudentToken(student);
     return res.json({
       success: true,
       message: 'সফলভাবে লগইন হয়েছে!',
+      token,
       user: {
         id: student._id,
         name: student.name,
@@ -3687,13 +3803,14 @@ app.post('/api/auth/reset-password', async (req, res) => {
     }
 
     const cleanInput = emailOrNumber.trim();
-    const cleanPass = newPassword.trim();
+    const cleanPass = normalizeBanglaDigitsServer(newPassword.trim());
+    const hashedNewPass = await hashPassword(cleanPass);
 
     let student = null;
     if (mongoose.connection.readyState === 1) {
       student = await Student.findOne({ emailOrNumber: cleanInput });
       if (student) {
-        student.password = cleanPass;
+        student.password = hashedNewPass;
         await student.save();
         await syncDatabaseJson('students');
       }
@@ -3704,7 +3821,7 @@ app.post('/api/auth/reset-password', async (req, res) => {
       const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
       const found = list.find(s => s.emailOrNumber === cleanInput);
       if (found) {
-        found.password = cleanPass;
+        found.password = hashedNewPass;
         fs.writeFileSync(fallbackPath, JSON.stringify(list, null, 2), 'utf8');
         if (!student) student = found;
       }
@@ -4058,6 +4175,37 @@ async function syncCloudAccountsToMongo() {
 // প্রতি ৩০ সেকেন্ড পরপর ক্লাউড অ্যাকাউন্ট সিঙ্ক
 setInterval(syncCloudAccountsToMongo, 30000);
 setTimeout(syncCloudAccountsToMongo, 3000);
+
+app.get('/api/auth/me', async (req, res) => {
+  if (!req.user || !req.user.id) {
+    return res.status(401).json({ success: false, message: 'অননুমোদিত অ্যাক্সেস (টোকেন নেই বা মেয়াদোত্তীর্ণ)' });
+  }
+  try {
+    let student = null;
+    if (mongoose.connection.readyState === 1 && mongoose.Types.ObjectId.isValid(req.user.id)) {
+      student = await Student.findById(req.user.id).select('-password').lean();
+    }
+    if (!student) {
+      const fallbackPath = path.join(__dirname, 'database', 'students.json');
+      if (fs.existsSync(fallbackPath)) {
+        const list = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        student = list.find(s => String(s._id) === String(req.user.id));
+      }
+    }
+    if (!student) return res.status(404).json({ success: false, message: 'ব্যবহারকারী পাওয়া যায়নি' });
+    return res.json({ success: true, user: sanitizeUser(student) });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'সার্ভার ত্রুটি' });
+  }
+});
+
+app.use((err, req, res, next) => {
+  if (err && err.message === 'Not allowed by CORS') {
+    return res.status(403).json({ success: false, message: 'CORS নীতিমালা অনুযায়ী অ্যাক্সেস অনুমোদিত নয়' });
+  }
+  console.error('Unhandled server error:', err ? err.message : err);
+  return res.status(500).json({ success: false, message: IS_PRODUCTION ? 'সার্ভারে একটি ত্রুটি ঘটেছে' : (err && err.message) || 'Server error' });
+});
 
 const PORT = process.env.PORT || 5000;
 

@@ -9,9 +9,24 @@
     "isCurrentUser": false,
     "name": "লাবুনি",
     "password": "",
-    "points": 42,
-    "testsCompleted": 15,
-    "updatedAt": "2026-11-25T05:46:10.601Z"
+    "points": 31,
+    "testsCompleted": 4,
+    "updatedAt": "2026-11-26T06:57:19.265Z"
+  },
+  {
+    "_id": "6b07cd79e994cf3dbccc0fdc",
+    "name": "Tamim iqbal",
+    "emailOrNumber": "01604201930",
+    "password": "12345",
+    "college": "KAJI AJIMUDDIN COLLEGE",
+    "hscYear": "HSC2027",
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+    "points": 25,
+    "testsCompleted": 0,
+    "isCurrentUser": false,
+    "createdAt": "2026-11-26T06:11:06.495Z",
+    "updatedAt": "2026-11-26T06:11:06.495Z",
+    "__v": 0
   },
   {
     "_id": "6af35d5eb69555e186931cf2",

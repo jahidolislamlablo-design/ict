@@ -199,6 +199,9 @@ async function fetchFromBackend(endpoint, options = {}) {
     const timeoutId = setTimeout(() => controller.abort(), CONFIG.TIMEOUT);
 
     try {
+        const authToken = localStorage.getItem('ict_auth_token');
+        const authHeaders = authToken ? { 'Authorization': `Bearer ${authToken}` } : {};
+
         const response = await fetch(url, {
             ...options,
             cache: 'no-cache',
@@ -207,6 +210,7 @@ async function fetchFromBackend(endpoint, options = {}) {
                 'Accept': 'application/json',
                 'Cache-Control': 'no-cache, no-store, must-revalidate',
                 'Pragma': 'no-cache',
+                ...authHeaders,
                 ...options.headers
             },
             signal: controller.signal

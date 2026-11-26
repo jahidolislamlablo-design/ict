@@ -1,0 +1,65 @@
+{
+  "name": "ICT Easy Learning - এইচএসসি আইসিটি",
+  "short_name": "ICT Learning",
+  "description": "এইচএসসি আইসিটি শেখার সেরা প্ল্যাটফর্ম — রিডিং রুম, অধ্যায় প্রস্তুতি, মডেল টেস্ট, বোর্ড প্রশ্ন ও কোড কম্পাইলার।",
+  "id": "/index.html",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F8FAFC",
+  "theme_color": "#4F46E5",
+  "lang": "bn",
+  "dir": "ltr",
+  "categories": ["education", "books"],
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "রিডিং রুম",
+      "short_name": "রিডিং রুম",
+      "description": "অধ্যায়ভিত্তিক নোট ও পড়াশোনা",
+      "url": "/pages/reading-room.html",
+      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "মডেল টেস্ট",
+      "short_name": "মডেল টেস্ট",
+      "description": "অনলাইন মডেল টেস্ট দিন",
+      "url": "/pages/model-test.html",
+      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "বোর্ড প্রশ্ন",
+      "short_name": "বোর্ড প্রশ্ন",
+      "description": "বিগত বছরের বোর্ড প্রশ্ন অনুশীলন",
+      "url": "/pages/board-question.html",
+      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "কম্পাইলার",
+      "short_name": "কম্পাইলার",
+      "description": "HTML ও C প্রোগ্রামিং রান করুন",
+      "url": "/pages/compiler.html",
+      "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
