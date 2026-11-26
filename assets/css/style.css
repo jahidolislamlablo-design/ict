@@ -4827,3 +4827,73 @@ body.dark-mode .btn-marksheet-exit,
     border-color: #334155 !important;
     color: #F8FAFC !important;
 }
+
+/* ========================================================
+   MARKDOWN / QUESTION TABLES (Light & Dark Mode)
+   ======================================================== */
+.ict-md-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #0F172A;
+}
+.ict-md-table tr.ict-md-table-header {
+    background: #E2E8F0;
+    font-weight: 700;
+    color: #0F172A;
+}
+.ict-md-table td,
+.ict-md-table th {
+    border: 1px solid #CBD5E1;
+    padding: 8px 12px;
+}
+
+body.dark-mode .ict-md-table,
+[data-theme="dark"] .ict-md-table,
+body.dark-mode .modern-mcq-card table,
+[data-theme="dark"] .modern-mcq-card table,
+body.dark-mode .cq-card table,
+[data-theme="dark"] .cq-card table {
+    background: #0F172A !important;
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}
+body.dark-mode .ict-md-table tr,
+[data-theme="dark"] .ict-md-table tr,
+body.dark-mode .modern-mcq-card table tr,
+[data-theme="dark"] .modern-mcq-card table tr,
+body.dark-mode .cq-card table tr,
+[data-theme="dark"] .cq-card table tr {
+    background: #0F172A !important;
+    color: #F8FAFC !important;
+}
+body.dark-mode .ict-md-table tr.ict-md-table-header,
+[data-theme="dark"] .ict-md-table tr.ict-md-table-header,
+body.dark-mode .modern-mcq-card table tr:first-child,
+[data-theme="dark"] .modern-mcq-card table tr:first-child,
+body.dark-mode .cq-card table tr:first-child,
+[data-theme="dark"] .cq-card table tr:first-child {
+    background: #1E293B !important;
+    color: #F8FAFC !important;
+}
+body.dark-mode .ict-md-table td,
+body.dark-mode .ict-md-table th,
+[data-theme="dark"] .ict-md-table td,
+[data-theme="dark"] .ict-md-table th,
+body.dark-mode .modern-mcq-card table td,
+body.dark-mode .modern-mcq-card table th,
+[data-theme="dark"] .modern-mcq-card table td,
+[data-theme="dark"] .modern-mcq-card table th,
+body.dark-mode .cq-card table td,
+body.dark-mode .cq-card table th,
+[data-theme="dark"] .cq-card table td,
+[data-theme="dark"] .cq-card table th {
+    border-color: #334155 !important;
+    color: #F8FAFC !important;
+}

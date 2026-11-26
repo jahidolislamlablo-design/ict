@@ -60,7 +60,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 // à¦¸à§à¦Ÿà§à¦¯à¦¾à¦Ÿà¦¿à¦• à¦«à¦¾à¦‡à¦² à¦ªà¦°à¦¿à¦¬à§‡à¦¶à¦¨ (public à¦¡à¦¿à¦°à§‡à¦•à§à¦Ÿà¦°à¦¿ à¦à¦¬à¦‚ à¦°à§à¦Ÿ à¦«à§‹à¦²à§à¦¡à¦¾à¦°)
 const noCacheStaticOptions = {
   setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.html') || filePath.endsWith('.json')) {
+    if (filePath.endsWith('.html') || filePath.endsWith('.json') || filePath.endsWith('sw.js')) {
       res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
       res.setHeader('Pragma', 'no-cache');
       res.setHeader('Expires', '0');
@@ -3183,7 +3183,11 @@ app.delete('/api/results/:id', async (req, res) => {
         deletedDoc = await ExamResult.findByIdAndDelete(id);
       }
       if (!deletedDoc) {
-        deletedDoc = await ExamResult.findOneAndDelete({ _id: id });
+        // String _id (e.g. "res_labuni_02") bypasses Mongoose ObjectId casting via raw collection
+        const rawRes = await mongoose.connection.db.collection('examresults').findOneAndDelete({
+          $or: [{ _id: id }, { examId: id }]
+        });
+        deletedDoc = rawRes && rawRes.value ? rawRes.value : rawRes;
       }
     }
 

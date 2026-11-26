@@ -2200,10 +2200,10 @@ function toBanglaNum(num) {
 
 function escapeModernMCQOption(str) {
     if (!str) return '';
-    if (typeof str === 'string' && str.includes('<img')) {
+    if (typeof str === 'string' && str.includes('<img') && (str.includes('/uploads/') || str.includes('uploads/') || str.includes('data:image/') || /src\s*=\s*["']https?:\/\//i.test(str))) {
         return resolveHtmlMediaUrls(str);
     }
-    return str
+    return String(str)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
@@ -2265,15 +2265,21 @@ function formatModernMCQContent(text) {
     }
 
     function renderHtmlTable(rows) {
-        let h = '<div style="overflow-x:auto; margin:12px 0;"><table style="border-collapse:collapse; width:100%; max-width:480px; margin:0 auto; background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:8px; font-size:0.95rem; text-align:center;">';
+        let h = '<div class="ict-md-table-wrap" style="overflow-x:auto; margin:12px 0;"><table class="ict-md-table">';
         rows.forEach((r, rIdx) => {
-            h += `<tr style="${rIdx === 0 ? 'background:#E2E8F0; font-weight:700;' : ''}">`;
+            h += `<tr class="${rIdx === 0 ? 'ict-md-table-header' : ''}">`;
             r.forEach(c => {
-                const escapedCell = c
-                    .replace(/&/g, '&amp;')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;');
-                h += `<td style="border:1px solid #CBD5E1; padding:8px 12px;">${escapedCell || '&nbsp;'}</td>`;
+                const isRealImgCell = typeof c === 'string' && c.includes('<img') && (c.includes('/uploads/') || c.includes('uploads/') || c.includes('data:image/') || /src\s*=\s*["']https?:\/\//i.test(c));
+                let cellHtml;
+                if (isRealImgCell) {
+                    cellHtml = resolveHtmlMediaUrls(c).replace(/<img(?![^>]*class=)/gi, '<img class="question-diagram-img"');
+                } else {
+                    cellHtml = String(c || '')
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                }
+                h += `<td>${cellHtml || '&nbsp;'}</td>`;
             });
             h += '</tr>';
         });

@@ -1326,12 +1326,12 @@
     "question": "মেশিন লার্নিং ব্যবহার করে তৈরিকৃত NLP সফটওয়্যার কোনটি?",
     "image": "",
     "options": [
-      "গরপৎড়ংড়ভঃ অুঁৎব",
-      "গরপৎড়ংড়ভঃ ঈড়ঢ়রষড়ঃ",
-      "গরপৎড়ংড়ভঃ ইধৎফ",
-      "গরপৎড়ংড়ভঃ ঐঁন"
+      "Microsoft Azure",
+      "Microsoft Copilot",
+      "Microsoft Bard",
+      "Microsoft Hub"
     ],
-    "correctAnswer": "গরপৎড়ংড়ভঃ ঈড়ঢ়রষড়ঃ",
+    "correctAnswer": "Microsoft Copilot",
     "explanation": "",
     "createdAt": "2026-11-08T06:25:58.065Z",
     "__v": 0
@@ -5089,7 +5089,7 @@
     "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "‘An investigation of the laws of thought’ গ্রন্থটি জর্জ বুল কতৃর্ক কোন সালে প্রকাশিত হয়?",
+    "question": "‘An investigation of the laws of thought’ গ্রন্থটি জর্জ বুল কর্তৃক কোন সালে প্রকাশিত হয়?",
     "image": "",
     "options": [
       "1754",
@@ -18301,7 +18301,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "অইইঅ এর ডেসিমেল মান কত?",
+    "question": "ABBA এর ডেসিমেল মান কত?",
     "image": "",
     "options": [
       "10111110",
@@ -20599,7 +20599,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "ইঅইঅ হতে উঅউঅ কত বড়?",
+    "question": "BABA হতে DADA কত বড়?",
     "image": "",
     "options": [
       "1010",
@@ -22431,7 +22431,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "দশমিক সংখ্যা ১৪ এর ২'ং ঈড়সঢ়ষবসবহঃ কত?",
+    "question": "দশমিক সংখ্যা ১৪ এর ২'s Complement কত?",
     "image": "",
     "options": [
       "00001110",
@@ -22882,15 +22882,15 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "Model Test 48",
-    "question": "বাইনারি ১০০০১০১১ এর ২'ং পড়সঢ়ষবসবহঃ এর মান কত?",
+    "question": "বাইনারি ১০০০১০১১ এর ২'s complement এর মান কত?",
     "image": "",
     "options": [
       "125₁₀",
-      "ু১৪৯₁₀",
-      "ু১৩৯₁₀",
-      "ু১৩৫₁₀"
+      "-১৪৯₁₀",
+      "-১৩৯₁₀",
+      "-১৩৫₁₀"
     ],
-    "correctAnswer": "ু১৩৯₁₀",
+    "correctAnswer": "-১৩৯₁₀",
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
@@ -25388,7 +25388,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "ঈ অক্ষরের অঈঝওও কোড হলো—",
+    "question": "C অক্ষরের ASCII কোড হলো—",
     "image": "",
     "options": [
       "01000011",
@@ -29934,7 +29934,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "অইথঐ+ইঅথঐ=? হেক্সাডেসিমাল যোগফল কত হবে?",
+    "question": "AB_H + BA_H = ? হেক্সাডেসিমাল যোগফল কত হবে?",
     "image": "",
     "options": [
       "357_H",
@@ -30382,7 +30382,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "২্থং পড়সঢ়ষবসবহঃ ব্যবহার করে কীভাবে বিয়োগ করা হয়?",
+    "question": "২'s complement ব্যবহার করে কীভাবে বিয়োগ করা হয়?",
     "image": "",
     "options": [
       "যোগ করে",
@@ -30605,7 +30605,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "ু৫৪ এর ২ এর পরিপূরক কত?",
+    "question": "-৫৪ এর ২ এর পরিপূরক কত?",
     "image": "",
     "options": [
       "00110110₂",
@@ -30970,10 +30970,10 @@
     "question": "নিচের কোনটি একটি জনপ্রিয় DBMS সফটওয়্যার?",
     "image": "",
     "options": [
-      "গঝ ডড়ৎফ",
+      "MS Word",
       "Oracle",
-      "চযড়ঃড়ংযড়ঢ়",
-      "ঠখঈ চষধুবৎ"
+      "Photoshop",
+      "VLC Player"
     ],
     "correctAnswer": "Oracle",
     "explanation": "",
@@ -36067,7 +36067,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "Model Test 42",
-    "question": "গঝই-এর পূর্ণরূপ হচ্ছেু",
+    "question": "MSB-এর পূর্ণরূপ হচ্ছে—",
     "image": "",
     "options": [
       "Most Suitable Bit",
@@ -38259,7 +38259,7 @@
     "image": "",
     "options": [
       "WHERE",
-      "ঐঅঠওঘএ",
+      "HAVING",
       "GROUP BY",
       "ORDER BY"
     ],
@@ -38714,8 +38714,8 @@
     "options": [
       "UNIQUE",
       "DISTINCT(",
-      ") উওঋঋঊজঊঘঞ",
-      "ঝওঘএখঊ"
+      ") DIFFERENT",
+      "SINGLE"
     ],
     "correctAnswer": "DISTINCT(",
     "explanation": "",
@@ -38806,7 +38806,7 @@
     "examYear": "",
     "testPaperName": "",
     "modelTestNo": "Model Test 48",
-    "question": "দশমিক সংখ্যা ১৩ এর ২'ঝ পড়সঢ়ষবসবহঃ কত?",
+    "question": "দশমিক সংখ্যা ১৩ এর ২'s complement কত?",
     "image": "",
     "options": [
       "00001100",
@@ -39619,9 +39619,9 @@
     "question": "একটি নির্দিষ্ট সীমার মধ্যকার মান (Range) খোঁজার জন্য কোন\nঅপারেটর ব্যবহৃত হয়?",
     "image": "",
     "options": [
-      "ওঘ",
+      "IN",
       "BETWEEN",
-      "ডওঞঐওঘ",
+      "WITHIN",
       "LIKE"
     ],
     "correctAnswer": "BETWEEN",
@@ -39875,7 +39875,7 @@
     "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "Model Test 45",
-    "question": "IEE কতৃর্ক কোন প্রোগ্রামিং ভাষা সর্বশ্রেষ্ঠ হিসাবে স্বীকৃতি পেয়েছে?",
+    "question": "IEE কর্তৃক কোন প্রোগ্রামিং ভাষা সর্বশ্রেষ্ঠ হিসাবে স্বীকৃতি পেয়েছে?",
     "image": "",
     "options": [
       "সি",
@@ -40317,7 +40317,7 @@
       "Transaction Control Language",
       "Total Control Language",
       "Table Control Language",
-      "ঞৎধহংভবৎ ঈড়সসধহফ খধহমঁধমব"
+      "Transfer Command Language"
     ],
     "correctAnswer": "Transaction Control Language",
     "explanation": "",
@@ -41685,7 +41685,7 @@
       "OR",
       "AND",
       "NOT",
-      "ওঘ"
+      "IN"
     ],
     "correctAnswer": "AND",
     "explanation": "",
@@ -41908,7 +41908,7 @@
     "options": [
       "AND",
       "OR",
-      "ওঘ",
+      "IN",
       "LIKE"
     ],
     "correctAnswer": "OR",
@@ -42130,11 +42130,11 @@
     "image": "",
     "options": [
       "BETWEEN",
-      "ওঘ",
+      "IN",
       "LIKE",
-      "ঊঢওঝঞঝ"
+      "EXISTS"
     ],
-    "correctAnswer": "ওঘ",
+    "correctAnswer": "IN",
     "explanation": "",
     "createdAt": "2026-11-08T06:54:55.458Z",
     "__v": 0
@@ -43969,7 +43969,7 @@
     "examYear": "2017",
     "testPaperName": "",
     "modelTestNo": "",
-    "question": "নিচের উদ্দীপকটি পড় এবং ১১৩ I ১১৪নং প্রশ্নের উত্তর দাও:\nইজজও কতৃর্ক উদ্ভাবিত বিভিন্ন উচ্চফলনশীল ধান আবিष्कारরে ফলে বাংলাদেশ এখন চাল রপ্তানিকারক দেশ হিসেবে পরিচিত লাভ করেছে। \t\t[রা.বো.'১৭]\nউদ্দীপকে ইজজও কতৃর্ক ব্যবহৃত প্রযুক্তি কোনটি?",
+    "question": "নিচের উদ্দীপকটি পড় এবং ১১৩ ও ১১৪নং প্রশ্নের উত্তর দাও:\nBRRI কর্তৃক উদ্ভাবিত বিভিন্ন উচ্চফলনশীল ধান আবিষ্কারের ফলে বাংলাদেশ এখন চাল রপ্তানিকারক দেশ হিসেবে পরিচিত লাভ করেছে। \t\t[রা.বো.'১৭]\nউদ্দীপকে BRRI কর্তৃক ব্যবহৃত প্রযুক্তি কোনটি?",
     "options": [
       "বায়োমেট্রিক্স",
       "বায়োইনফরমেটিকস",
@@ -44545,7 +44545,7 @@
     "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "Model Test 48",
-    "question": "উদ্দীপকে যে বিষয়ে বলা হয়েছে তা হচ্ছে কিসের কল্যাণে-\ni. সংবাদপত্রেi\t\nii. তথ্য প্রযুক্তির\niii. ইন্টারনেট প্রযুক্তির\n\nনিচের কোনটি সঠিক?",
+    "question": "উদ্দীপকে যে বিষয়ে বলা হয়েছে তা হচ্ছে কিসের কল্যাণে-\ni. সংবাদপত্রের\t\nii. তথ্য প্রযুক্তির\niii. ইন্টারনেট প্রযুক্তির\n\nনিচের কোনটি সঠিক?",
     "options": [
       "i ও ii",
       "i ও iii",
@@ -48926,7 +48926,7 @@
     "examYear": "2025",
     "testPaperName": "",
     "modelTestNo": "Model Test 47",
-    "question": "ঝরসঁষধঃরড়হ- এর প্রয়োগক্ষেত্র কোনটি?\n[রাজউক উত্তরা মডেল কলেজ, ঢাকা]",
+    "question": "Simulation- এর প্রয়োগক্ষেত্র কোনটি?\n[রাজউক উত্তরা মডেল কলেজ, ঢাকা]",
     "options": [
       "ক্রায়োসার্জারিতে",
       "বায়োমেট্রিক্স",
