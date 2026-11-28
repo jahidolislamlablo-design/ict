@@ -3,7 +3,7 @@
  * Handles app-shell precaching, offline fallback, and smart runtime caching.
  */
 
-const CACHE_VERSION = 'ict-pwa-v1.0.1';
+const CACHE_VERSION = 'ict-pwa-v1.0.2';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
