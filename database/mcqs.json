@@ -10132,7 +10132,7 @@
     "boardName": "Chattogram Board",
     "examYear": "2025",
     "testPaperName": "টেস্ট পেপার ২০২৬",
-    "modelTestNo": "Model Test 11",
+    "modelTestNo": "Model Test 10",
     "question": "নিচের উদ্দীপকটি পড় এবং  প্রশ্নের উত্তর দাও: [চ. বো. '২৫]\nবৃহৎ কর্মসংস্থান সৃষ্টি, কার্যকরী I সস্তায় শক্তি উৎপাদনসহ পানি I বায়ু দূষণ কমিয়ে আনার জন্য একটি প্রযুক্তি নিয়ে বিজ্ঞানীরা কাজ করে চলছে। এই প্রযুক্তিটি বর্তমানে খাদ্যদ্রব্য প্যাকেটজাত করতে ব্যাপকভাবে ব্যবহৃত হচ্ছে।\t\t\t\t\nউদ্দীপকে উল্লিখিত প্রযুক্তিটি কী?",
     "options": [
       "ন্যানোটেকনোলজি",
@@ -10143,7 +10143,7 @@
     "correctAnswer": "ন্যানোটেকনোলজি",
     "explanation": "",
     "createdAt": "2026-11-02T16:02:03.435Z",
-    "liveExamNo": "Live Exam 11, Live Exam 15, Live Exam 51",
+    "liveExamNo": "Live Exam 10, Live Exam 11, Live Exam 15, Live Exam 51",
     "modelTestNos": [
       "Model Test 47",
       "Live Exam 47",
@@ -10162,6 +10162,7 @@
       "2025"
     ],
     "liveExamNos": [
+      "Live Exam 10",
       "Live Exam 11",
       "Live Exam 15",
       "Live Exam 51"
