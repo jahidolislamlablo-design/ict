@@ -2437,7 +2437,17 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ password })
         });
-        const data = await res.json();
+        let data = {};
+        try {
+          const rawText = await res.text();
+          try {
+            data = JSON.parse(rawText);
+          } catch (jsonErr) {
+            data = { message: rawText || 'সার্ভার রেসপন্স বুঝতে সমস্যা হয়েছে' };
+          }
+        } catch (readErr) {
+          data = { message: 'রেসপন্স পড়তে সমস্যা হয়েছে' };
+        }
         if (res.ok && data.success && data.token) {
           localStorage.setItem(ADMIN_TOKEN_KEY, data.token);
           if (input) input.value = '';
@@ -2450,7 +2460,7 @@
           showAdminAuthOverlay(data.message || 'ভুল পাসওয়ার্ড!');
         }
       } catch (err) {
-        showAdminAuthOverlay('সার্ভারের সাথে সংযোগ পাওয়া যায়নি। কিছুক্ষণ পর আবার চেষ্টা করুন।');
+        showAdminAuthOverlay('সার্ভারের সাথে সংযোগ পাওয়া যায়নি (' + (err.message || 'Network Error') + ')।');
       } finally {
         if (btn) { btn.disabled = false; btn.textContent = 'প্রবেশ করুন'; }
       }

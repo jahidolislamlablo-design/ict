@@ -93,9 +93,14 @@ const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD || '').trim();
 
 function verifyAdminPassword(inputPassword) {
   if (!ADMIN_PASSWORD || typeof inputPassword !== 'string') return false;
-  const inputHash = crypto.createHash('sha256').update(inputPassword.trim()).digest();
-  const targetHash = crypto.createHash('sha256').update(ADMIN_PASSWORD).digest();
-  return crypto.timingSafeEqual(inputHash, targetHash);
+  const cleanInput = inputPassword.trim();
+  const normInput = typeof normalizeBanglaDigitsServer === 'function' ? normalizeBanglaDigitsServer(cleanInput) : cleanInput;
+  const normAdmin = typeof normalizeBanglaDigitsServer === 'function' ? normalizeBanglaDigitsServer(ADMIN_PASSWORD) : ADMIN_PASSWORD;
+
+  if (cleanInput === ADMIN_PASSWORD || normInput === normAdmin || cleanInput === normAdmin || normInput === ADMIN_PASSWORD) {
+    return true;
+  }
+  return false;
 }
 
 function requireAdmin(req, res, next) {
@@ -126,11 +131,20 @@ const authLimiter = rateLimit({
   message: { success: false, message: 'অতিরিক্ত লগইন/রেজিস্ট্রেশন চেষ্টা করা হয়েছে। ১৫ মিনিট পর আবার চেষ্টা করুন।' }
 });
 
+const adminLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 150,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'অতিরিক্ত অ্যাডমিন লগইন চেষ্টা করা হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।' }
+});
+
 // ==========================================
 // à§§. CORS à¦•à¦¨à¦«à¦¿à¦—à¦¾à¦°à§‡à¦¶à¦¨ (GitHub Pages à¦à¦¬à¦‚ Localhost)
 // ==========================================
 // à¦«à§à¦°à¦¨à§à¦Ÿà¦à¦¨à§à¦¡ Origin: https://jahidolislamlablo-design.github.io
 const allowedOrigins = [
+  'https://hscict.onrender.com',
   'https://jahidolislamlablo-design.github.io',
   'http://localhost:3000',
   'http://localhost:5000',
@@ -148,7 +162,9 @@ const corsOptions = {
     if (!origin || origin === 'null') return callback(null, true);
 
     const isAllowed = allowedOrigins.includes(origin) || 
-                      origin.startsWith('https://jahidolislamlablo-design.github.io');
+                      origin.startsWith('https://jahidolislamlablo-design.github.io') ||
+                      origin.includes('onrender.com') ||
+                      origin.includes('github.io');
 
     const extraOrigins = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
     const isCapacitor = origin === 'capacitor://localhost' || origin === 'https://localhost';
@@ -1555,7 +1571,7 @@ app.delete('/api/custom-options', requireAdmin, (req, res) => {
 });
 
 // হেলথ চেক API (মোবাইল কানেকশন সহজ করতে লোকাল নেটওয়ার্ক IP সহ)
-app.post('/api/admin/login', authLimiter, (req, res) => {
+app.post('/api/admin/login', adminLimiter, (req, res) => {
   if (!ADMIN_PASSWORD) {
     return res.status(503).json({ success: false, message: 'সার্ভারে ADMIN_PASSWORD সেট করা হয়নি।' });
   }
