@@ -9917,43 +9917,6 @@
     "examYears": [],
     "testPaperNames": [],
     "liveExamNos": [],
-    "image": "",
-    "_id": "6ae8b3fc04ce40b2c4ae9778",
-    "serialNo": 40,
-    "categoryTypes": [
-      "Chapter Practice"
-    ],
-    "categoryType": "Chapter Practice",
-    "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
-    "collegeName": "",
-    "boardName": "",
-    "examYear": "2025",
-    "testPaperName": "",
-    "modelTestNo": "Model Test 51",
-    "question": "ডাঃ শেফার পরীক্ষা-নিরীক্ষার বিষয়টির বৈশিষ্ট্য হলো-",
-    "options": [
-      "নিম্ন তাপমাত্রার প্রয়োগ",
-      "শীতল আর্গন গ্যাসের ব্যবহার",
-      "টেলিপ্রেজেন্সের প্রয়োগ",
-      "সূক্ষ্ণ সুচযুক্ত নলের ব্যবহার"
-    ],
-    "correctAnswer": "টেলিপ্রেজেন্সের প্রয়োগ",
-    "explanation": "",
-    "createdAt": "2026-11-02T16:02:03.432Z",
-    "__v": 1,
-    "liveExamNo": "Live Exam 51",
-    "modelTestNos": [
-      "Model Test 51",
-      "Live Exam 51"
-    ]
-  },
-  {
-    "chapters": [],
-    "collegeNames": [],
-    "boardNames": [],
-    "examYears": [],
-    "testPaperNames": [],
-    "liveExamNos": [],
     "modelTestNos": [],
     "liveExamNo": "",
     "_id": "6af01cbf268cb6b55a18cc11",

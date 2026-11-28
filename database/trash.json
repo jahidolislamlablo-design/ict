@@ -1,5 +1,50 @@
 [
   {
+    "_id": "6b0ac0747e2a74d1e904f2c6",
+    "itemType": "mcq",
+    "originalId": "6ae8b3fc04ce40b2c4ae9778",
+    "title": "ডাঃ শেফার পরীক্ষা-নিরীক্ষার বিষয়টির বৈশিষ্ট্য হলো-",
+    "details": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+    "data": {
+      "chapters": [],
+      "collegeNames": [],
+      "boardNames": [],
+      "examYears": [],
+      "testPaperNames": [],
+      "liveExamNos": [],
+      "image": "",
+      "_id": "6ae8b3fc04ce40b2c4ae9778",
+      "serialNo": 40,
+      "categoryTypes": [
+        "Chapter Practice"
+      ],
+      "categoryType": "Chapter Practice",
+      "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+      "collegeName": "",
+      "boardName": "",
+      "examYear": "2025",
+      "testPaperName": "",
+      "modelTestNo": "Model Test 51",
+      "question": "ডাঃ শেফার পরীক্ষা-নিরীক্ষার বিষয়টির বৈশিষ্ট্য হলো-",
+      "options": [
+        "নিম্ন তাপমাত্রার প্রয়োগ",
+        "শীতল আর্গন গ্যাসের ব্যবহার",
+        "টেলিপ্রেজেন্সের প্রয়োগ",
+        "সূক্ষ্ণ সুচযুক্ত নলের ব্যবহার"
+      ],
+      "correctAnswer": "টেলিপ্রেজেন্সের প্রয়োগ",
+      "explanation": "",
+      "createdAt": "2026-11-02T16:02:03.432Z",
+      "__v": 1,
+      "liveExamNo": "Live Exam 51",
+      "modelTestNos": [
+        "Model Test 51",
+        "Live Exam 51"
+      ]
+    },
+    "deletedAt": "2026-11-28T11:52:20.956Z"
+  },
+  {
     "_id": "6b0ac0707e2a74d1e904f2c5",
     "itemType": "mcq",
     "originalId": "6ae8b3fc04ce40b2c4ae9772",
