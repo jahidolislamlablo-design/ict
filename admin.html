@@ -2309,11 +2309,25 @@
   </footer>
 
   <script>
-    const API_BASE = (window.location.port === '5000' || (window.location.origin && window.location.origin.includes(':5000')))
-      ? ''
-      : ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-        ? 'http://localhost:5000'
-        : (window.location.protocol.startsWith('http') && window.location.hostname ? `${window.location.protocol}//${window.location.hostname}:5000` : 'http://localhost:5000'));
+    const API_BASE = (() => {
+      const h = window.location.hostname;
+      if (window.location.port === '5000' || (window.location.origin && window.location.origin.includes(':5000'))) {
+        return '';
+      }
+      if (h === 'localhost' || h === '127.0.0.1') {
+        return 'http://localhost:5000';
+      }
+      if (/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(h)) {
+        return `${window.location.protocol}//${h}:5000`;
+      }
+      if (h.includes('github.io')) {
+        return 'https://hscict.onrender.com';
+      }
+      if (window.location.protocol.startsWith('http') && h) {
+        return '';
+      }
+      return 'http://localhost:5000';
+    })();
 
     let allMcqs = [];
     let allCqs = [];
@@ -3017,7 +3031,7 @@
 
         if (isOnline) {
           dot.className = 'status-dot online';
-          text.textContent = 'সার্ভার অনলাইন (port 5000)';
+          text.textContent = API_BASE ? `সার্ভার অনলাইন (${API_BASE.replace(/^https?:\/\//, '')})` : 'সার্ভার অনলাইন';
           updateCounts();
         } else {
           throw new Error('Server unreachable');
