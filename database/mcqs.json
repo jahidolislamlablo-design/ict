@@ -3321,8 +3321,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e057",
     "serialNo": 14,
     "categoryTypes": [
@@ -3335,7 +3338,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "<a> ট্যাগের অ্যাট্রিবিউট হলো–\t[কু. বো. '২৫]",
     "image": "",
     "options": [
@@ -3520,8 +3523,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e058",
     "serialNo": 15,
     "categoryTypes": [
@@ -3534,7 +3540,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "হাইপারলিংক হচ্ছে–\t[সি. বো. '২৫]\ni. একাধিক ফাইলের সংযোগ\tii. একাধিক ওয়েবপেইজের সংযোগ\niii. একাধিক ফিল্ডের সংযোগ\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -3755,8 +3761,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e059",
     "serialNo": 16,
     "categoryTypes": [
@@ -3769,7 +3778,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "হাইপারমিডিয়ার উপাদান হলো–\t[কু. বো. '২৫]\ni. টেক্সট\tii. অডিও\niii. ভিডিও\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -4915,7 +4924,10 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
     "_id": "6aeb32daf84660475440e05e",
     "serialNo": 21,
     "categoryTypes": [
@@ -4930,7 +4942,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 49",
+    "modelTestNo": "Model Test 52",
     "question": "src অ্যাট্রিবিউট কোন ট্যাগে ব্যবহৃত হয়?\t[সি. বো. '২৫]",
     "image": "",
     "options": [
@@ -4942,7 +4954,7 @@
     "correctAnswer": "<img>",
     "explanation": "",
     "createdAt": "2026-11-04T13:27:53.330Z",
-    "liveExamNo": "Live Exam 49"
+    "liveExamNo": "Live Exam 52"
   },
   {
     "chapters": [],
@@ -5150,8 +5162,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e05f",
     "serialNo": 22,
     "categoryTypes": [
@@ -5164,7 +5179,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "দৈর্ঘ্য 120Px প্রস্থ 150Px আকারের Flag.jpg নামক ছবি সংযুক্তির জন্য নিচের সঠিক HTML কোড কোনটি?\t[য. বো. '২৫]",
     "image": "",
     "options": [
@@ -5386,8 +5401,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e060",
     "serialNo": 23,
     "categoryTypes": [
@@ -5400,7 +5418,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "HTML এ ইমেজ ফরমেট সাপোর্ট করে–\t[দি. বো. '২৫]\ni. .gif\tii. .png\niii. .jpg\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -5621,8 +5639,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e061",
     "serialNo": 24,
     "categoryTypes": [
@@ -5635,7 +5656,7 @@
     "boardName": "ময়মনসিংহ বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "নিচের উদ্দীপকটি পড় এবং ২২ ও ২৩ নং প্রশ্নের উত্তর দাও:\nসুভাষ HTML কোড দিয়ে HSC.jpg নামের একটি ফাইলযুক্ত করে ওয়েবপেজ তৈরি করে। পরবর্তীতে ওয়েবপেজটি সবাইকে প্রদর্শনের জন্য প্রয়োজনীয় পদক্ষেপ গ্রহণ করে।\nউদ্দীপকের ফাইলটির জন্য আবশ্যকীয় অ্যাট্রিবিউট কোনটি?\t[ম. বো. '২৫]",
     "image": "",
     "options": [
@@ -6090,8 +6111,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e063",
     "serialNo": 26,
     "categoryTypes": [
@@ -6104,7 +6128,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "টেবিলের সেলগুলোতে অবস্থিত লেখার মধ্যে দূরত্ব নিয়ন্ত্রণের জন্য ব্যবহৃত অ্যাট্রিবিউট কোনটি?\t[সি. বো. '২৫]",
     "image": "",
     "options": [
@@ -6548,7 +6572,10 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
     "_id": "6aeb32daf84660475440e065",
     "serialNo": 28,
     "categoryTypes": [
@@ -6563,7 +6590,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 49",
+    "modelTestNo": "Model Test 52",
     "question": "টেবিল সেলের ব্যাকগ্রাউন্ড কালার সবুজ হবে কোন ট্যাগে?\n[ঢা. বো. '২৫; দি. বো. '১৯]",
     "image": "",
     "options": [
@@ -6575,7 +6602,7 @@
     "correctAnswer": "<td bgcolor = \"green\">",
     "explanation": "",
     "createdAt": "2026-11-04T13:27:53.386Z",
-    "liveExamNo": "Live Exam 49"
+    "liveExamNo": "Live Exam 52"
   },
   {
     "chapters": [],
@@ -7247,8 +7274,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e068",
     "serialNo": 31,
     "categoryTypes": [
@@ -7261,7 +7291,7 @@
     "boardName": "যশোর বোর্ড",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "Table এর element Tag-গুলো হতে পারে–\t[য. বো. '২৫]\ni. tr\tii. td\niii. tbody\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -8880,8 +8910,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e06f",
     "serialNo": 38,
     "categoryTypes": [
@@ -8894,7 +8927,7 @@
     "boardName": "ঢাকা বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "সবচেয়ে বড় হেডিং ট্যাগ কোনটি? [ঢা.বো.'২৪]",
     "image": "",
     "options": [
@@ -12810,8 +12843,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e080",
     "serialNo": 55,
     "categoryTypes": [
@@ -12824,7 +12860,7 @@
     "boardName": "কুমিল্লা বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "স্ট্যাটিক ওয়েব পেজ তৈরিতে প্রয়োজন— [কু.বো. ২৪]\ni. HTML\tii. PHP\niii. CSS\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -15130,8 +15166,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e08a",
     "serialNo": 65,
     "categoryTypes": [
@@ -15144,7 +15183,7 @@
     "boardName": "ময়মনসিংহ বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "নিচের কোনটি সঠিক চলক— [ম.বো. ২৪]",
     "image": "",
     "options": [
@@ -16045,8 +16084,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e08e",
     "serialNo": 69,
     "categoryTypes": [
@@ -16059,7 +16101,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "একটি ওয়েবসাইটকে পাবলিশ করার জন্য ওয়েব সার্ভারে ওয়েবসাইটটি আপলোড করার পদ্ধতিকে কী বলা হয়? [দি.বো. ২৪]",
     "image": "",
     "options": [
@@ -16505,7 +16547,10 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
     "_id": "6aeb32daf84660475440e090",
     "serialNo": 71,
     "categoryTypes": [
@@ -16520,7 +16565,7 @@
     "boardName": "",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "Model Test 49",
+    "modelTestNo": "Model Test 52",
     "question": "<ol type = “a” start = “4”> এর আউটপুট কেমন হবে? [ব.বো. ২৪]",
     "image": "",
     "options": [
@@ -16532,7 +16577,7 @@
     "correctAnswer": "d. e. f.",
     "explanation": "",
     "createdAt": "2026-11-04T13:27:53.666Z",
-    "liveExamNo": "Live Exam 49"
+    "liveExamNo": "Live Exam 52"
   },
   {
     "chapters": [],
@@ -16969,8 +17014,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e092",
     "serialNo": 73,
     "categoryTypes": [
@@ -16983,7 +17031,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "নিচের উদ্দীপক হতে ১৫ ও ১৬ নং প্রশ্নের উত্তর দাও:\nরাসেল html ব্যবহারিক ক্লাসে লিখ <p> <img src = “Picture.jpg” width = “300” height = “200”> </p> কিন্তু আউটপুট তার ফলাফল আসেনি।\nউদ্দীপকে Attribute কোনটি? [ব.বো. ২৪]",
     "image": "",
     "options": [
@@ -18575,8 +18623,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e099",
     "serialNo": 80,
     "categoryTypes": [
@@ -18589,7 +18640,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2024",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "Google.com কী? [সি.বো. ২৪]",
     "image": "",
     "options": [
@@ -19735,8 +19786,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e09e",
     "serialNo": 85,
     "categoryTypes": [
@@ -19749,7 +19803,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "কোন ওয়েবসাইট কাঠামোতে যে কোনো পেইজ থেকে সরাসরি হোম পেইজে যাওয়া যায়?\t[রা.বো.'১৯]",
     "image": "",
     "options": [
@@ -22033,7 +22087,10 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
     "_id": "6aeb32daf84660475440e0a8",
     "serialNo": 95,
     "categoryTypes": [
@@ -22048,7 +22105,7 @@
     "boardName": "",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 52",
     "question": "একটি আইপি অ্যাড্রেসকে প্রকাশের জন্য মোট কয়টি অকটেড প্রয়োজন?\t[চ.বো.'১৬]",
     "image": "",
     "options": [
@@ -22060,7 +22117,7 @@
     "correctAnswer": "৪",
     "explanation": "",
     "createdAt": "2026-11-04T13:27:53.788Z",
-    "liveExamNo": "Live Exam 3"
+    "liveExamNo": "Live Exam 52"
   },
   {
     "chapters": [],
@@ -22260,8 +22317,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e0a9",
     "serialNo": 96,
     "categoryTypes": [
@@ -22274,7 +22334,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "কোনটি ওয়েব ব্রাউজার?\t[দি.বো.'১৬]",
     "image": "",
     "options": [
@@ -24320,8 +24380,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e0b2",
     "serialNo": 105,
     "categoryTypes": [
@@ -24334,7 +24397,7 @@
     "boardName": "চট্টগ্রাম বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "ওপেনিং ট্যাগ থেকে ক্লোজিং ট্যাগ পযর্ন্ত সকল কিছুকে কি বলে?\t[চ.বো.'১৬]",
     "image": "",
     "options": [
@@ -24773,8 +24836,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e0b4",
     "serialNo": 107,
     "categoryTypes": [
@@ -24787,7 +24853,7 @@
     "boardName": "সিলেট বোর্ড",
     "examYear": "2016",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "ওয়েব পেজ তৈরিতে ব্যবহৃত আবশ্যক ট্যাগ কোনটি?\t[সি.বো.'১৬]",
     "image": "",
     "options": [
@@ -27046,8 +27112,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e0be",
     "serialNo": 117,
     "categoryTypes": [
@@ -27060,7 +27129,7 @@
     "boardName": "রাজশাহী বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "লিস্ট তৈরিতে ব্যবহৃত হয় কোনটি?\t[রা.বো.'২৩]",
     "image": "",
     "options": [
@@ -33627,8 +33696,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e0db",
     "serialNo": 146,
     "categoryTypes": [
@@ -33641,7 +33713,7 @@
     "boardName": "বরিশাল বোর্ড",
     "examYear": "2019",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "শিক্ষা প্রতিষ্ঠানে ব্যবহৃত টপ লেভেল ডোমেইনের নাম কি?\t[ব.বো.'১৯]",
     "image": "",
     "options": [
@@ -36148,8 +36220,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 52",
+      "Live Exam 52"
+    ],
+    "liveExamNo": "Live Exam 52",
     "_id": "6aeb32daf84660475440e0e6",
     "serialNo": 157,
     "categoryTypes": [
@@ -36162,7 +36237,7 @@
     "boardName": "দিনাজপুর বোর্ড",
     "examYear": "2023",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 52",
     "question": "ওয়েবসাইট পাবলিশ করার জন্য এমন একটি সার্ভার কম্পিউটার রাখতে হয় যা––\t[দি.বো.'২৩]\ni. সবর্ক্ষণ সচল থাকতে হয়\nii. সাবর্ক্ষণিক ইন্টারনেটের সাথে যুক্ত থাকতে হয়\niii. পাবলিক আইপি অ্যাড্রেস থাকতে হয়\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
