@@ -3506,6 +3506,21 @@
 
         const deleteUrl = item._type === 'MCQ' ? `${API_BASE}/api/mcqs/${item._id}` : `${API_BASE}/api/cqs/${item._id}`;
 
+        const isFilteredByTest = selectedModelTestFilter && selectedModelTestFilter !== 'all';
+        const hasTestAttached = (item.modelTestNo && item.modelTestNo.trim()) || 
+                               (item.liveExamNo && item.liveExamNo.trim()) || 
+                               (Array.isArray(item.modelTestNos) && item.modelTestNos.length > 0);
+
+        let testActionBtn = '';
+        if (isFilteredByTest || hasTestAttached) {
+          const targetTest = isFilteredByTest ? selectedModelTestFilter : (item.modelTestNo || item.liveExamNo || (item.modelTestNos && item.modelTestNos[0]) || '');
+          testActionBtn = `
+            <button class="btn btn-warning" style="background:#f59e0b; color:#fff; border:none; padding:0.35rem 0.65rem; font-size:0.8rem; font-weight:600; border-radius:4px; margin-right:4px; cursor:pointer;" title="শুধুমাত্র এই মডেল টেস্ট থেকে প্রশ্নটি বাদ দিন (বোর্ড ও অধ্যায়ে প্রশ্ন বহাল থাকবে)" onclick="removeFromModelTest('${item._type}', '${item._id}', '${escapeHtml(targetTest)}')">
+              ❌ টেস্ট থেকে বাদ
+            </button>
+          `;
+        }
+
         tr.innerHTML = `
           <td>${typeBadge}</td>
           <td>${metaHtml}</td>
@@ -3514,7 +3529,8 @@
             <button class="btn btn-edit" onclick="openEditModal('${item._type}', '${item._id}')">
               ✏️ এডিট
             </button>
-            <button class="btn btn-danger" onclick="deleteItem('${deleteUrl}', '${item._type}')">
+            ${testActionBtn}
+            <button class="btn btn-danger" onclick="deleteItem('${deleteUrl}', '${item._type}', '${item._id}')">
               🗑 মুছুন
             </button>
           </td>
@@ -4049,8 +4065,20 @@
       }
     }
 
-    async function deleteItem(url, type) {
-      if (!confirm(`আপনি কি সত্যিই এই ${type} প্রশ্নটি মুছে ফেলতে চান?`)) return;
+    async function deleteItem(url, type, itemId) {
+      const item = itemId ? (type === 'MCQ' ? allMcqs.find(q => q._id === itemId) : allCqs.find(q => q._id === itemId)) : null;
+      const testName = item ? (item.modelTestNo || item.liveExamNo || (item.modelTestNos && item.modelTestNos[0])) : null;
+      const hasOtherSources = item && (item.chapter || item.boardName || item.collegeName || (item.boardNames && item.boardNames.length > 0) || (item.collegeNames && item.collegeNames.length > 0));
+
+      if (testName && hasOtherSources) {
+        const confirmMsg = 
+          `⚠️ সতর্কবার্তা:\nএই প্রশ্নটি "${testName}" মডেল টেস্টের পাশাপাশি বোর্ড/অধ্যায়/কলেজেও রয়েছে।\n\n` +
+          `• আপনি কি এটি সম্পূর্ণ ডাটাবেজ (বোর্ড, অধ্যায়, কলেজ) থেকে চিরতরে মুছে ফেলতে চান?\n\n` +
+          `(পরামর্শ: যদি শুধুমাত্র মডেল টেস্ট থেকে বাদ দিতে চান, তবে Cancel চেপে '❌ টেস্ট থেকে বাদ' বাটন ব্যবহার করুন।)`;
+        if (!confirm(confirmMsg)) return;
+      } else {
+        if (!confirm(`আপনি কি সত্যিই এই ${type} প্রশ্নটি ডাটাবেজ থেকে সম্পূর্ণ মুছে ফেলতে চান?`)) return;
+      }
 
       try {
         const res = await fetch(url, { method: 'DELETE' });
@@ -4063,6 +4091,70 @@
         }
       } catch (err) {
         showToast('এরর', err.message, 'error');
+      }
+    }
+
+    async function removeFromModelTest(type, id, modelTestName) {
+      const item = type === 'MCQ' ? allMcqs.find(q => q._id === id) : allCqs.find(q => q._id === id);
+      if (!item) {
+        showToast('ত্রুটি', 'প্রশ্নটি খুঁজে পাওয়া যায়নি', 'error');
+        return;
+      }
+
+      const testLabel = modelTestName || (item.modelTestNo || item.liveExamNo || (item.modelTestNos && item.modelTestNos[0]) || 'মডেল টেস্ট');
+      const confirmPrompt = `আপনি কি এই প্রশ্নটি "${testLabel}" থেকে বাদ দিতে চান?\n\n` +
+        `✅ বোর্ড, অধ্যায় ও কলেজে প্রশ্নটি সম্পূর্ণ অক্ষত ও বহাল থাকবে।\n` +
+        `❌ শুধুমাত্র "${testLabel}" থেকে বাদ যাবে।`;
+      if (!confirm(confirmPrompt)) return;
+
+      try {
+        const updatePayload = { ...item };
+        const cleanNumMatch = String(testLabel).match(/\d+/);
+        const testNum = cleanNumMatch ? cleanNumMatch[0] : '';
+
+        const matchesThisTest = (str) => {
+          if (!str) return false;
+          const s = String(str).toLowerCase();
+          if (testLabel && s.includes(testLabel.toLowerCase())) return true;
+          if (testNum && s.includes(testNum)) return true;
+          return false;
+        };
+
+        if (matchesThisTest(updatePayload.modelTestNo)) updatePayload.modelTestNo = '';
+        if (matchesThisTest(updatePayload.liveExamNo)) updatePayload.liveExamNo = '';
+        if (Array.isArray(updatePayload.modelTestNos)) {
+          updatePayload.modelTestNos = updatePayload.modelTestNos.filter(t => !matchesThisTest(t));
+        }
+        if (Array.isArray(updatePayload.liveExamNos)) {
+          updatePayload.liveExamNos = updatePayload.liveExamNos.filter(t => !matchesThisTest(t));
+        }
+        if (Array.isArray(updatePayload.categoryTypes)) {
+          const hasRemainingLive = (updatePayload.liveExamNo && updatePayload.liveExamNo.trim()) || 
+                                   (Array.isArray(updatePayload.liveExamNos) && updatePayload.liveExamNos.length > 0);
+          if (!hasRemainingLive) {
+            updatePayload.categoryTypes = updatePayload.categoryTypes.filter(c => c !== 'Live Exam');
+            if (updatePayload.categoryTypes.length === 0) {
+              updatePayload.categoryTypes = ['Chapter Practice'];
+            }
+            updatePayload.categoryType = updatePayload.categoryTypes[0];
+          }
+        }
+
+        const endpoint = type === 'MCQ' ? `${API_BASE}/api/mcqs/${id}` : `${API_BASE}/api/cqs/${id}`;
+        const res = await fetch(endpoint, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatePayload)
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('সফল হয়েছে!', `প্রশ্নটি "${testLabel}" থেকে সরানো হয়েছে (বোর্ড ও অধ্যায়ে বহাল রয়েছে)`, 'success');
+          loadDatabaseItems();
+        } else {
+          showToast('ব্যর্থ', data.message || 'মডেল টেস্ট থেকে বাদ দেওয়া সম্ভব হয়নি', 'error');
+        }
+      } catch (err) {
+        showToast('ত্রুটি', err.message, 'error');
       }
     }
 
