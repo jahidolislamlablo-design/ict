@@ -1879,7 +1879,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 51",
     "question": "(101101.01)₂ এর সমকক্ষ মান কোনটি?",
     "image": "",
     "options": [
@@ -1892,10 +1892,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 51",
     "modelTestNos": [
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 51",
+      "Live Exam 51"
     ]
   },
   {
@@ -3735,7 +3737,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "Model Test 48",
+    "modelTestNo": "Model Test 51",
     "question": "101101 এর বাইনারি কমপ্লিমেন্ট কোনটি?",
     "image": "",
     "options": [
@@ -3748,12 +3750,14 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 48",
+    "liveExamNo": "Live Exam 51",
     "modelTestNos": [
       "Model Test 03",
       "Live Exam 03",
       "Model Test 48",
-      "Live Exam 48"
+      "Live Exam 48",
+      "Model Test 51",
+      "Live Exam 51"
     ]
   },
   {
@@ -12119,8 +12123,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afc4a",
     "serialNo": 52,
     "categoryTypes": [
@@ -12132,7 +12139,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "ইঈ এর পূর্বের মান কত?",
     "image": "",
     "options": [
@@ -16515,8 +16522,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afc5d",
     "serialNo": 71,
     "categoryTypes": [
@@ -16528,7 +16538,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "১২৫₁₀ এর সমতুল্য বাইনারি মান কত?",
     "image": "",
     "options": [
@@ -18591,8 +18601,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afc66",
     "serialNo": 80,
     "categoryTypes": [
@@ -18604,7 +18617,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "১১০১১₂ কে দশমিক সংখ্যায় রূপান্তর করলে হয়?",
     "image": "",
     "options": [
@@ -19286,8 +19299,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afc69",
     "serialNo": 83,
     "categoryTypes": [
@@ -19299,7 +19315,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "হেক্সাডেসিমাল-১০ এর ডেসিমাল মান কত?",
     "image": "",
     "options": [
@@ -19530,7 +19546,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 51",
     "question": "হেক্সাডেসিমেল সংখ্যা ৩উ এর সমতুল্য বাইনারি মান কত হবে?",
     "image": "",
     "options": [
@@ -19543,10 +19559,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 51",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 51",
+      "Live Exam 51"
     ]
   },
   {
@@ -26178,7 +26196,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 03",
+    "modelTestNo": "Model Test 51",
     "question": "\"ধ\" বর্ণটির ASCII-৪ মান কোনটি?",
     "image": "",
     "options": [
@@ -26191,10 +26209,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 03",
+    "liveExamNo": "Live Exam 51",
     "modelTestNos": [
       "Model Test 03",
-      "Live Exam 03"
+      "Live Exam 03",
+      "Model Test 51",
+      "Live Exam 51"
     ]
   },
   {
@@ -26621,8 +26641,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afc89",
     "serialNo": 115,
     "categoryTypes": [
@@ -26634,7 +26657,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "3D₁₆+১₁₆ এর সমকক্ষ মান কোনটি?\ni. 62                ii. 76               iii. 111110\nনিচের কোনটি সঠিক?",
     "image": "",
     "options": [
@@ -28186,8 +28209,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef62db441e8a8634d0c97b",
     "serialNo": 122,
     "categoryTypes": [
@@ -28199,7 +28225,7 @@
     "boardName": "",
     "examYear": "2025",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "নিচের সমীকরণটি লক্ষ কর এবং  উত্তর দাও:\nX=((A+B+C̅)̅).A̅C\nউদ্দীপকের সমীকরণের সরল রূপ কোনটি?",
     "image": "",
     "options": [
@@ -31398,8 +31424,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afc9e",
     "serialNo": 136,
     "categoryTypes": [
@@ -31411,7 +31440,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "কোন সংখ্যা পদ্ধতিতে সর্বমোট যতগুলো অংক ব্যবহার করা হয় তাকে কী বলে?",
     "image": "",
     "options": [
@@ -34137,7 +34166,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 49",
+    "modelTestNo": "Model Test 51",
     "question": "(২৯)₁₀ সংখ্যাটি বাইনারি মান কত?",
     "image": "",
     "options": [
@@ -34150,10 +34179,12 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 49",
+    "liveExamNo": "Live Exam 51",
     "modelTestNos": [
       "Model Test 49",
-      "Live Exam 49"
+      "Live Exam 49",
+      "Model Test 51",
+      "Live Exam 51"
     ]
   },
   {
@@ -36429,7 +36460,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "Model Test 42",
+    "modelTestNo": "Model Test 51",
     "question": "(১২)₁₀ এর সমকক্ষ বাইনারি কোনটি?",
     "image": "",
     "options": [
@@ -36442,12 +36473,14 @@
     "explanation": "",
     "createdAt": "2026-11-07T15:51:28.435Z",
     "__v": 0,
-    "liveExamNo": "Live Exam 42",
+    "liveExamNo": "Live Exam 51",
     "modelTestNos": [
       "Model Test 03",
       "Live Exam 03",
       "Model Test 42",
-      "Live Exam 42"
+      "Live Exam 42",
+      "Model Test 51",
+      "Live Exam 51"
     ]
   },
   {
@@ -47327,8 +47360,11 @@
     "collegeNames": [],
     "boardNames": [],
     "examYears": [],
-    "modelTestNos": [],
-    "liveExamNo": "",
+    "modelTestNos": [
+      "Model Test 51",
+      "Live Exam 51"
+    ],
+    "liveExamNo": "Live Exam 51",
     "_id": "6aef4900541019a0004afce8",
     "serialNo": 210,
     "categoryTypes": [
@@ -47340,7 +47376,7 @@
     "boardName": "",
     "examYear": "",
     "testPaperName": "",
-    "modelTestNo": "",
+    "modelTestNo": "Model Test 51",
     "question": "৭৫₁₀-এর সমতুল্য বাইনারি সংখ্যা কোনটি?",
     "image": "",
     "options": [
