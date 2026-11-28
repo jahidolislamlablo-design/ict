@@ -1,5 +1,56 @@
 [
   {
+    "_id": "6b0ac0707e2a74d1e904f2c5",
+    "itemType": "mcq",
+    "originalId": "6ae8b3fc04ce40b2c4ae9772",
+    "title": "উদ্দীপকের আলোকে মি. ফরিদ সাহেবের লক্ষ্য হলো-\ni. \tপ্রতিকূল পরিবেশে উৎপাদন নিশ্চিত করা\nii. \tউৎপাদনের পরিমাণ বাড়ানো\niii. \tরোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করা\nনিচের কোনটি সঠিক?",
+    "details": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+    "data": {
+      "chapters": [],
+      "collegeNames": [],
+      "boardNames": [],
+      "examYears": [],
+      "testPaperNames": [],
+      "liveExamNos": [],
+      "image": "",
+      "_id": "6ae8b3fc04ce40b2c4ae9772",
+      "serialNo": 34,
+      "categoryTypes": [
+        "Board Question",
+        "College Test Paper",
+        "Chapter Practice",
+        "Live Exam",
+        "Model Test"
+      ],
+      "categoryType": "Board Question",
+      "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+      "collegeName": "Chittagong College, Chittagong",
+      "boardName": "Rajshahi Board",
+      "examYear": "2025",
+      "testPaperName": "টেস্ট পেপার ২০২৬",
+      "modelTestNo": "Model Test 51",
+      "question": "উদ্দীপকের আলোকে মি. ফরিদ সাহেবের লক্ষ্য হলো-\ni. \tপ্রতিকূল পরিবেশে উৎপাদন নিশ্চিত করা\nii. \tউৎপাদনের পরিমাণ বাড়ানো\niii. \tরোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করা\nনিচের কোনটি সঠিক?",
+      "options": [
+        "i ও ii",
+        "ii ও iii",
+        "i ও iii",
+        "i, ii ও iii"
+      ],
+      "correctAnswer": "i, ii ও iii",
+      "explanation": "",
+      "createdAt": "2026-11-02T16:02:03.411Z",
+      "__v": 1,
+      "liveExamNo": "Live Exam 51",
+      "modelTestNos": [
+        "Model Test 41",
+        "Live Exam 41",
+        "Model Test 51",
+        "Live Exam 51"
+      ]
+    },
+    "deletedAt": "2026-11-28T11:52:16.370Z"
+  },
+  {
     "_id": "6b0ac06a7e2a74d1e904f2c4",
     "itemType": "mcq",
     "originalId": "6ae8b3fc04ce40b2c4ae975b",
