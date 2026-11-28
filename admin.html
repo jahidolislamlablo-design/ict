@@ -3263,48 +3263,24 @@
         const sorted = [...allModelTests].sort((a, b) => (parseInt(a.serialNo, 10) || 0) - (parseInt(b.serialNo, 10) || 0));
         sorted.forEach(item => {
           const key = item.examNo || (item.serialNo < 10 ? '0' + item.serialNo : '' + item.serialNo);
+          const isLive = item.category === 'live_exam' || item.isLive;
+          const labelPrefix = isLive ? 'Live Exam' : 'Model Test';
+          const defaultLabel = labelPrefix + ' ' + key;
+          const cleanTitle = (item.title && item.title.trim() && item.title.trim().toLowerCase() !== defaultLabel.toLowerCase()) 
+            ? ` (${item.title.trim()})` 
+            : '';
+          const displayText = defaultLabel + cleanTitle;
           const val = 'Model Test ' + key;
-          const liveVal = 'Live Exam ' + key;
-          const title = item.title ? ` (${item.title})` : '';
 
           if (!added.has(val.toLowerCase())) {
             added.add(val.toLowerCase());
             const opt = document.createElement('option');
             opt.value = val;
-            opt.textContent = val + title;
-            select.appendChild(opt);
-          }
-          if (!added.has(liveVal.toLowerCase())) {
-            added.add(liveVal.toLowerCase());
-            const opt = document.createElement('option');
-            opt.value = liveVal;
-            opt.textContent = liveVal + title;
+            opt.textContent = displayText;
             select.appendChild(opt);
           }
         });
       }
-
-      // Add any custom modelTestNo or liveExamNo currently attached to questions
-      [...allMcqs, ...allCqs].forEach(item => {
-        const names = [];
-        if (Array.isArray(item.modelTestNos)) names.push(...item.modelTestNos);
-        if (item.modelTestNo) names.push(item.modelTestNo);
-        if (item.liveExamNo) names.push(item.liveExamNo);
-
-        names.forEach(name => {
-          if (name && name.trim()) {
-            const trimmed = name.trim();
-            const lower = trimmed.toLowerCase();
-            if (!added.has(lower)) {
-              added.add(lower);
-              const opt = document.createElement('option');
-              opt.value = trimmed;
-              opt.textContent = trimmed;
-              select.appendChild(opt);
-            }
-          }
-        });
-      });
 
       select.value = currentVal || 'all';
     }
@@ -3440,13 +3416,19 @@
       // মডেল টেস্ট ফিল্টার (একক বা একাধিক মডেল টেস্ট সমর্থন)
       if (selectedModelTestFilter && selectedModelTestFilter !== 'all') {
         const query = selectedModelTestFilter.toLowerCase();
+        const numMatch = query.match(/\d+/);
+        const queryNum = numMatch ? numMatch[0] : null;
         items = items.filter(item => {
           const mList = (Array.isArray(item.modelTestNos) && item.modelTestNos.length > 0)
             ? [...item.modelTestNos]
             : [];
           if (item.modelTestNo) mList.push(item.modelTestNo);
           if (item.liveExamNo) mList.push(item.liveExamNo);
-          return mList.some(m => m && String(m).toLowerCase().includes(query));
+          return mList.some(m => {
+            if (!m) return false;
+            const s = String(m).toLowerCase();
+            return s.includes(query) || (queryNum && s.includes(queryNum));
+          });
         });
       }
 
@@ -4599,6 +4581,7 @@
 
         renderLiveExamTable(allModelTests);
         populateLiveExamSelectOptions();
+        populateModelTestFilterOptions();
       } catch (err) {
         console.error('loadLiveExamItems error:', err);
         if (tableBody) {
@@ -5017,6 +5000,8 @@
         if (data.success) {
           showToast('সফলতা', 'মডেল টেস্ট সফলভাবে মুছে ফেলা হয়েছে', 'success');
           await loadLiveExamItems();
+          populateModelTestFilterOptions();
+          if (typeof loadDatabaseItems === 'function') loadDatabaseItems();
         } else {
           showToast('ত্রুটি', data.message || 'মুছে ফেলতে ব্যর্থ হয়েছে', 'error');
         }

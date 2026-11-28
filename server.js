@@ -3363,6 +3363,37 @@ app.delete('/api/model-tests/:id', requireAdmin, async (req, res) => {
           writeCustomOptionsFile(custom);
         }
       } catch(e) {}
+
+      // Clean up / untag any questions referencing this deleted model test
+      try {
+        const tExam = String(target.examNo || '').trim();
+        const tTitle = String(target.title || '').trim().toLowerCase();
+        const untag = (item) => {
+          if (item.modelTestNo && (item.modelTestNo.toLowerCase().includes(tTitle) || (tExam && item.modelTestNo.includes(tExam)))) {
+            delete item.modelTestNo;
+          }
+          if (item.liveExamNo && (item.liveExamNo.toLowerCase().includes(tTitle) || (tExam && item.liveExamNo.includes(tExam)))) {
+            delete item.liveExamNo;
+          }
+          if (Array.isArray(item.modelTestNos)) {
+            item.modelTestNos = item.modelTestNos.filter(n => !n.toLowerCase().includes(tTitle) && (!tExam || !n.includes(tExam)));
+            if (item.modelTestNos.length === 0) delete item.modelTestNos;
+          }
+        };
+
+        const mcqJson = path.join(__dirname, 'database', 'mcqs.json');
+        if (fs.existsSync(mcqJson)) {
+          let mcqs = JSON.parse(fs.readFileSync(mcqJson, 'utf8'));
+          mcqs.forEach(untag);
+          fs.writeFileSync(mcqJson, JSON.stringify(mcqs, null, 2), 'utf8');
+        }
+        const cqJson = path.join(__dirname, 'database', 'cqs.json');
+        if (fs.existsSync(cqJson)) {
+          let cqs = JSON.parse(fs.readFileSync(cqJson, 'utf8'));
+          cqs.forEach(untag);
+          fs.writeFileSync(cqJson, JSON.stringify(cqs, null, 2), 'utf8');
+        }
+      } catch(e) {}
     }
 
     if (isConnected) {
