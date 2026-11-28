@@ -64,7 +64,10 @@ function getAuthApiBaseUrl() {
         return 'http://localhost:5000';
     }
 
-    // ৭. গিটহাব পেজ বা অন্যান্য ওয়েব হোস্টিং - ডিফল্ট লোকাল বা লাইভ ব্যাকএন্ড ট্রাই করবে
+    // ৭. গিটহাব পেজ বা অন্যান্য ওয়েব হোস্টিং - ডিফল্ট লাইভ Render ব্যাকএন্ড ব্যবহার করবে
+    if (window.location.host.includes('github.io')) {
+        return 'https://hscict.onrender.com';
+    }
     return 'http://localhost:5000';
 }
 window.getAuthApiBaseUrl = getAuthApiBaseUrl;

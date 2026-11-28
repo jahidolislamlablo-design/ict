@@ -139,9 +139,10 @@ setTimeout(() => {
 // ==========================================
 // ১. ব্যাকএন্ড কনফিগারেশন ও API বেস URL নির্ধারণ
 // ==========================================
+const DEFAULT_CLOUD_API_URL = 'https://hscict.onrender.com';
 const CONFIG = {
     // কাস্টম লাইভ ব্যাকএন্ড URL (যদি Render / Railway / ngrok এ ডেপ্লয় করা থাকে)
-    LIVE_API_URL: localStorage.getItem('ICT_LIVE_API_URL') || '',
+    LIVE_API_URL: localStorage.getItem('ICT_LIVE_API_URL') || (window.location.host.includes('github.io') ? DEFAULT_CLOUD_API_URL : ''),
 
     // ডিফল্ট লোকালহোস্ট পোর্ট
     LOCAL_API_URL: 'http://localhost:5000',
