@@ -1,5 +1,53 @@
 [
   {
+    "_id": "6b0ac06a7e2a74d1e904f2c4",
+    "itemType": "mcq",
+    "originalId": "6ae8b3fc04ce40b2c4ae975b",
+    "title": "কৃত্রিম বুদ্ধিমত্তার ক্ষেত্র হলো-\t[রা. বো. '২৫]\ni. \tমেশিন লার্নিং\t\nii. \tই-লার্নিং\niii. \tডিপ লার্নিং\nনিচের কোনটি সঠিক?",
+    "details": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+    "data": {
+      "chapters": [],
+      "collegeNames": [],
+      "boardNames": [],
+      "examYears": [],
+      "testPaperNames": [],
+      "liveExamNos": [],
+      "image": "",
+      "_id": "6ae8b3fc04ce40b2c4ae975b",
+      "serialNo": 11,
+      "categoryTypes": [
+        "Board Question",
+        "College Test Paper",
+        "Model Test",
+        "Chapter Practice"
+      ],
+      "categoryType": "Board Question",
+      "chapter": "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি (বিশ্ব ও বাংলাদেশ)",
+      "collegeName": "Dhaka Residential Model College",
+      "boardName": "Rajshahi Board",
+      "examYear": "2025",
+      "testPaperName": "টেস্ট পেপার ২০২৬",
+      "modelTestNo": "Model Test 51",
+      "question": "কৃত্রিম বুদ্ধিমত্তার ক্ষেত্র হলো-\t[রা. বো. '২৫]\ni. \tমেশিন লার্নিং\t\nii. \tই-লার্নিং\niii. \tডিপ লার্নিং\nনিচের কোনটি সঠিক?",
+      "options": [
+        "i ও ii",
+        "i ও iii",
+        "ii ও iii",
+        "i, ii ও iii"
+      ],
+      "correctAnswer": "i ও iii",
+      "explanation": "",
+      "createdAt": "2026-11-02T16:02:03.319Z",
+      "__v": 1,
+      "liveExamNo": "Live Exam 51",
+      "modelTestNos": [
+        "Model Test 51",
+        "Live Exam 51"
+      ]
+    },
+    "deletedAt": "2026-11-28T11:52:10.196Z"
+  },
+  {
     "_id": "6b0abfe17e2a74d1e904f2c3",
     "itemType": "modelTest",
     "originalId": "6af1d14cab67463556e2c336",
