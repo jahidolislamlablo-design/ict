@@ -1,24 +1,5 @@
 [
   {
-    "_id": "6af02ffd1d0bfdc47abca863",
-    "serialNo": 9,
-    "examNo": "09",
-    "title": "Model Test 09",
-    "date": "10-11-26",
-    "chapters": "পূর্ণাঙ্গ সিলেবাস",
-    "category": "full",
-    "totalQuestions": 25,
-    "duration": 25,
-    "totalMarks": 25,
-    "participants": 573,
-    "startTime": "",
-    "endTime": "",
-    "isLive": false,
-    "buttonText": "Start Previous Live Exam",
-    "createdAt": "2026-11-08T07:44:20.033Z",
-    "__v": 0
-  },
-  {
     "_id": "6af02ffd1d0bfdc47abca864",
     "serialNo": 10,
     "examNo": "10",
