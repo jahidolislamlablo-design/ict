@@ -89,6 +89,22 @@ function optionalAuth(req, res, next) {
   next();
 }
 
+const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD || '').trim();
+
+function verifyAdminPassword(inputPassword) {
+  if (!ADMIN_PASSWORD || typeof inputPassword !== 'string') return false;
+  const inputHash = crypto.createHash('sha256').update(inputPassword.trim()).digest();
+  const targetHash = crypto.createHash('sha256').update(ADMIN_PASSWORD).digest();
+  return crypto.timingSafeEqual(inputHash, targetHash);
+}
+
+function requireAdmin(req, res, next) {
+  if (!req.user || req.user.role !== 'admin') {
+    return res.status(401).json({ success: false, message: 'অ্যাডমিন অনুমোদন প্রয়োজন! অনুগ্রহ করে লগইন করুন।' });
+  }
+  next();
+}
+
 app.use(helmet({
   contentSecurityPolicy: false,
   crossOriginEmbedderPolicy: false
@@ -1337,7 +1353,7 @@ app.get('/api/custom-options', async (req, res) => {
 });
 
 // নতুন কাস্টম অপশন যুক্ত করার API
-app.post('/api/custom-options', (req, res) => {
+app.post('/api/custom-options', requireAdmin, (req, res) => {
   try {
     const { type, val } = req.body;
     if (!type || !val || !val.trim()) {
@@ -1365,7 +1381,7 @@ app.post('/api/custom-options', (req, res) => {
 });
 
 // কাস্টম অপশন ডিলিট করার API
-app.delete('/api/custom-options', (req, res) => {
+app.delete('/api/custom-options', requireAdmin, (req, res) => {
   try {
     const { type, val } = req.body || {};
     if (!type || !val) {
@@ -1392,6 +1408,25 @@ app.delete('/api/custom-options', (req, res) => {
 });
 
 // হেলথ চেক API (মোবাইল কানেকশন সহজ করতে লোকাল নেটওয়ার্ক IP সহ)
+app.post('/api/admin/login', authLimiter, (req, res) => {
+  if (!ADMIN_PASSWORD) {
+    return res.status(503).json({ success: false, message: 'সার্ভারে ADMIN_PASSWORD সেট করা হয়নি।' });
+  }
+  const { password } = req.body || {};
+  if (!verifyAdminPassword(password)) {
+    return res.status(401).json({ success: false, message: 'ভুল অ্যাডমিন পাসওয়ার্ড!' });
+  }
+  const token = jwt.sign({ role: 'admin' }, JWT_SECRET, { expiresIn: '7d' });
+  return res.json({ success: true, token });
+});
+
+app.get('/api/admin/verify', (req, res) => {
+  if (!req.user || req.user.role !== 'admin') {
+    return res.status(401).json({ success: false, message: 'অননুমোদিত' });
+  }
+  return res.json({ success: true });
+});
+
 app.get('/api/health', (req, res) => {
   const os = require('os');
   const interfaces = os.networkInterfaces();
@@ -1536,7 +1571,7 @@ app.get('/api/mcqs/:id', async (req, res) => {
 });
 
 // ৪. নতুন MCQ সংরক্ষণ করা (POST /api/mcqs)
-app.post('/api/mcqs', async (req, res) => {
+app.post('/api/mcqs', requireAdmin, async (req, res) => {
   try {
     const {
       categoryTypes,
@@ -1627,7 +1662,7 @@ app.post('/api/mcqs', async (req, res) => {
 });
 
 // ৫. MCQ আপডেট করা (PUT /api/mcqs/:id)
-app.put('/api/mcqs/:id', async (req, res) => {
+app.put('/api/mcqs/:id', requireAdmin, async (req, res) => {
   try {
     const {
       serialNo,
@@ -1730,7 +1765,7 @@ app.put('/api/mcqs/:id', async (req, res) => {
 });
 
 // ৬. MCQ ডিলিট করা (DELETE /api/mcqs/:id)
-app.delete('/api/mcqs/:id', async (req, res) => {
+app.delete('/api/mcqs/:id', requireAdmin, async (req, res) => {
   try {
     let deletedMcq = null;
     if (isConnected) {
@@ -1880,7 +1915,7 @@ app.get('/api/cqs/:id', async (req, res) => {
 });
 
 // à§ª. à¦¨à¦¤à§à¦¨ CQ à¦¸à¦‚à¦°à¦•à§à¦·à¦£ à¦•à¦°à¦¾ (POST /api/cqs)
-app.post('/api/cqs', async (req, res) => {
+app.post('/api/cqs', requireAdmin, async (req, res) => {
   try {
     const {
       serialNo,
@@ -1983,7 +2018,7 @@ app.post('/api/cqs', async (req, res) => {
 
 
 // à§«. CQ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à¦¾ (PUT /api/cqs/:id)
-app.put('/api/cqs/:id', async (req, res) => {
+app.put('/api/cqs/:id', requireAdmin, async (req, res) => {
   try {
     const {
       serialNo,
@@ -2100,7 +2135,7 @@ app.put('/api/cqs/:id', async (req, res) => {
 });
 
 // à§¬. CQ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾ (DELETE /api/cqs/:id)
-app.delete('/api/cqs/:id', async (req, res) => {
+app.delete('/api/cqs/:id', requireAdmin, async (req, res) => {
   try {
     let deletedCq = null;
     if (isConnected) {
@@ -2166,7 +2201,7 @@ app.get('/api/notes/:id', async (req, res) => {
 });
 
 // à§©. à¦¨à¦¤à§à¦¨ à¦¨à§‹à¦Ÿ à¦¸à§‡à¦­ à¦•à¦°à¦¾ (POST)
-app.post('/api/notes', async (req, res) => {
+app.post('/api/notes', requireAdmin, async (req, res) => {
   try {
     const { title, type, category, content, pdfUrl } = req.body;
 
@@ -2201,7 +2236,7 @@ app.post('/api/notes', async (req, res) => {
 });
 
 // à§ª. à¦¨à§‹à¦Ÿ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾
-app.delete('/api/notes/:id', async (req, res) => {
+app.delete('/api/notes/:id', requireAdmin, async (req, res) => {
   try {
     const deletedNote = await Note.findByIdAndDelete(req.params.id);
     if (!deletedNote) {
@@ -2216,7 +2251,7 @@ app.delete('/api/notes/:id', async (req, res) => {
 // ------------------------------------------
 // à¦˜. à¦¡à¦¾à¦Ÿà¦¾à¦¬à§‡à¦œ à¦¸à¦¿à¦¡à¦¿à¦‚ à¦à¦¨à§à¦¡à¦ªà§Ÿà§‡à¦¨à§à¦Ÿ (POST /api/seed)
 // ------------------------------------------
-app.post('/api/seed', async (req, res) => {
+app.post('/api/seed', requireAdmin, async (req, res) => {
   try {
     const sampleMcqs = [
       {
@@ -2406,7 +2441,7 @@ app.get('/api/pdfs/:id', async (req, res) => {
 // ------------------------------------------
 // ইমেজ আপলোড এন্ডপয়েন্ট (MCQ & CQ Diagram Image)
 // ------------------------------------------
-app.post('/api/upload-image', (req, res) => {
+app.post('/api/upload-image', requireAdmin, (req, res) => {
   uploadImage.single('image')(req, res, function (err) {
     if (err) {
       return res.status(400).json({ success: false, message: err.message || 'ছবি আপলোড ব্যর্থ হয়েছে' });
@@ -2429,7 +2464,7 @@ app.post('/api/upload-image', (req, res) => {
 // ------------------------------------------
 // লাইভ গিটহাব সিঙ্ক এন্ডপয়েন্ট (Git Push to GitHub Pages)
 // ------------------------------------------
-app.post('/api/git-sync', (req, res) => {
+app.post('/api/git-sync', requireAdmin, (req, res) => {
   const commitMsg = (req.body && req.body.message) || 'Sync latest updates to GitHub Pages';
   const cmd = `git add database/ uploads/ assets/ pages/ && git commit -m "${commitMsg}" && git -c http.version=HTTP/1.1 push origin main`;
   execGit(cmd, { cwd: __dirname }, (error, stdout, stderr) => {
@@ -2443,7 +2478,7 @@ app.post('/api/git-sync', (req, res) => {
 // ------------------------------------------
 // পিডিএফ আপডেট / এডিট এন্ডপয়েন্ট (PUT /api/pdfs/:id)
 // ------------------------------------------
-app.put('/api/pdfs/:id', (req, res) => {
+app.put('/api/pdfs/:id', requireAdmin, (req, res) => {
   uploadPdf.single('pdfFile')(req, res, async function (err) {
     if (err) {
       return res.status(400).json({ success: false, message: err.message || 'ফাইল আপলোড ব্যর্থ হয়েছে' });
@@ -2492,7 +2527,7 @@ app.put('/api/pdfs/:id', (req, res) => {
   });
 });
 
-app.post('/api/pdfs', (req, res) => {
+app.post('/api/pdfs', requireAdmin, (req, res) => {
   uploadPdf.single('pdfFile')(req, res, async function (err) {
     if (err) {
       return res.status(400).json({
@@ -2564,7 +2599,7 @@ app.post('/api/pdfs', (req, res) => {
 });
 
 // ৪. পিডিএফ ডিলিট করা (ফাইল ও ডাটাবেজ রেকর্ড)
-app.delete('/api/pdfs/:id', async (req, res) => {
+app.delete('/api/pdfs/:id', requireAdmin, async (req, res) => {
   try {
     let pdf = null;
     if (isConnected) {
@@ -2609,7 +2644,7 @@ app.post('/api/pdfs/:id/download', async (req, res) => {
 
 
 // ৬. ম্যানুয়াল GitHub সিঙ্ক API
-app.post('/api/sync-github', async (req, res) => {
+app.post('/api/sync-github', requireAdmin, async (req, res) => {
   const repoDir = __dirname;
   if (!fs.existsSync(path.join(repoDir, '.git'))) {
     return res.status(400).json({ success: false, message: 'Git repository পাওয়া যায়নি' });
@@ -2799,7 +2834,7 @@ async function syncModelTestMCQs(examNo, selectedChapters = [], targetCount = 25
 
 
 // ৫. মডেল টেস্টের জন্য অটোমেটিক ২৫টি MCQ সিংক করার এন্ডপয়েন্ট
-app.post('/api/model-tests/sync-mcqs', async (req, res) => {
+app.post('/api/model-tests/sync-mcqs', requireAdmin, async (req, res) => {
   try {
     const { examNo, chapters, totalQuestions } = req.body;
     const result = await syncModelTestMCQs(examNo, chapters, totalQuestions || 25);
@@ -2809,7 +2844,7 @@ app.post('/api/model-tests/sync-mcqs', async (req, res) => {
   }
 });
 
-app.post('/api/model-tests', async (req, res) => {
+app.post('/api/model-tests', requireAdmin, async (req, res) => {
   try {
     const {
       serialNo,
@@ -2891,7 +2926,7 @@ app.post('/api/model-tests', async (req, res) => {
 });
 
 // ৪. মডেল টেস্ট / লাইভ এক্সাম আপডেট বা এডিট করা
-app.put('/api/model-tests/:id', async (req, res) => {
+app.put('/api/model-tests/:id', requireAdmin, async (req, res) => {
   try {
     const { id } = req.params;
     const updateData = { ...req.body };
@@ -2957,7 +2992,7 @@ app.put('/api/model-tests/:id', async (req, res) => {
 });
 
 // ৫. মডেল টেস্ট মুছে ফেলা
-app.delete('/api/model-tests/:id', async (req, res) => {
+app.delete('/api/model-tests/:id', requireAdmin, async (req, res) => {
   try {
     const { id } = req.params;
     let target = null;
@@ -3844,7 +3879,7 @@ app.post('/api/auth/reset-password', async (req, res) => {
 });
 
 // ৮. ইউজার ম্যানেজমেন্ট তালিকা (Registered Users List with Exam Results)
-app.get('/api/users', async (req, res) => {
+app.get('/api/users', requireAdmin, async (req, res) => {
   try {
     let users = [];
     if (mongoose.connection.readyState === 1) {
@@ -3909,7 +3944,7 @@ app.get('/api/users', async (req, res) => {
 });
 
 // ৯. ইউজার ডিলিট করা (Delete User by ID or emailOrNumber)
-app.delete('/api/users/:id', async (req, res) => {
+app.delete('/api/users/:id', requireAdmin, async (req, res) => {
   try {
     const id = req.params.id;
     let studentName = '';
@@ -3954,7 +3989,7 @@ app.delete('/api/users/:id', async (req, res) => {
 // ==========================================
 
 // ১. সকল ট্র্যাশ আইটেম ফেচ করা
-app.get('/api/trash', async (req, res) => {
+app.get('/api/trash', requireAdmin, async (req, res) => {
   try {
     let items = [];
     if (isConnected) {
@@ -3971,7 +4006,7 @@ app.get('/api/trash', async (req, res) => {
 });
 
 // ২. ট্র্যাশ থেকে আইটেম পুনরুদ্ধার (Restore) করা
-app.post('/api/trash/:id/restore', async (req, res) => {
+app.post('/api/trash/:id/restore', requireAdmin, async (req, res) => {
   try {
     const { id } = req.params;
     let item = null;
@@ -4057,7 +4092,7 @@ app.post('/api/trash/:id/restore', async (req, res) => {
 });
 
 // ৩. ট্র্যাশ থেকে একটি আইটেম স্থায়ীভাবে মুছে ফেলা
-app.delete('/api/trash/:id', async (req, res) => {
+app.delete('/api/trash/:id', requireAdmin, async (req, res) => {
   try {
     const { id } = req.params;
     let item = null;
@@ -4094,7 +4129,7 @@ app.delete('/api/trash/:id', async (req, res) => {
 });
 
 // ৪. ট্র্যাশ সম্পূর্ণ খালি করা (Empty Trash)
-app.delete('/api/trash', async (req, res) => {
+app.delete('/api/trash', requireAdmin, async (req, res) => {
   try {
     if (isConnected) {
       await Trash.deleteMany({});

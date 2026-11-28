@@ -875,6 +875,9 @@
           <span class="status-dot" id="serverStatusDot"></span>
           <span id="serverStatusText">সার্ভার চেক করা হচ্ছে...</span>
         </div>
+        <button type="button" id="adminLogoutBtn" onclick="adminLogout()" class="btn btn-secondary" style="display: none; padding: 0.35rem 0.75rem; font-size: 0.82rem;" title="অ্যাডমিন প্যানেল থেকে লগআউট">
+          🔒 লগআউট
+        </button>
       </div>
     </div>
   </header>
@@ -2304,6 +2307,27 @@
 
   <div class="toast-container" id="toastContainer"></div>
 
+  <!-- Admin Password Gate Overlay -->
+  <div id="adminAuthOverlay" style="position: fixed; inset: 0; z-index: 99999; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 1rem;">
+    <form id="adminLoginForm" onsubmit="submitAdminLogin(event)" style="width: 100%; max-width: 390px; background: #ffffff; color: #0f172a; border-radius: 16px; padding: 1.75rem; box-shadow: 0 24px 60px rgba(0,0,0,0.35);">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+        <div style="width: 42px; height: 42px; border-radius: 10px; background: #4F46E5; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;">ICT</div>
+        <div>
+          <h2 style="margin: 0; font-size: 1.15rem; font-weight: 700;">অ্যাডমিন লগইন</h2>
+          <p style="margin: 0; font-size: 0.82rem; color: #64748b;">ড্যাশবোর্ডে প্রবেশ করতে পাসওয়ার্ড দিন</p>
+        </div>
+      </div>
+      <div style="margin-bottom: 0.9rem;">
+        <label for="adminPasswordInput" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;">অ্যাডমিন পাসওয়ার্ড</label>
+        <input id="adminPasswordInput" type="password" required autocomplete="current-password" placeholder="পাসওয়ার্ড লিখুন..." style="width: 100%; padding: 0.7rem 0.85rem; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; outline: none; box-sizing: border-box;">
+      </div>
+      <div id="adminLoginError" style="display: none; margin-bottom: 0.85rem; padding: 0.55rem 0.75rem; border-radius: 8px; background: #fee2e2; color: #b91c1c; font-size: 0.83rem;"></div>
+      <button type="submit" id="adminLoginSubmitBtn" style="width: 100%; padding: 0.75rem; border: none; border-radius: 10px; background: #4F46E5; color: #ffffff; font-size: 0.95rem; font-weight: 600; cursor: pointer;">
+        প্রবেশ করুন
+      </button>
+    </form>
+  </div>
+
   <footer>
     ICT Easy Learning Dashboard • Backend: <a href="http://localhost:5000" target="_blank" style="color: var(--primary); text-decoration: none;">http://localhost:5000</a>
   </footer>
@@ -2328,6 +2352,114 @@
       }
       return 'http://localhost:5000';
     })();
+
+    const ADMIN_TOKEN_KEY = 'ict_admin_token';
+    const _rawFetch = window.fetch.bind(window);
+    window.fetch = async (input, init = {}) => {
+      const url = typeof input === 'string' ? input : (input && input.url) || '';
+      const isApiCall = url.startsWith(`${API_BASE}/api/`) || url.startsWith('/api/');
+      const isAuthEndpoint = url.includes('/api/admin/login') || url.includes('/api/health');
+
+      let finalInit = init;
+      if (isApiCall && !isAuthEndpoint) {
+        const token = localStorage.getItem(ADMIN_TOKEN_KEY);
+        if (token) {
+          const headers = new Headers(init.headers || {});
+          if (!headers.has('Authorization')) {
+            headers.set('Authorization', `Bearer ${token}`);
+          }
+          finalInit = { ...init, headers };
+        }
+      }
+
+      const response = await _rawFetch(input, finalInit);
+      if (response.status === 401 && isApiCall && !isAuthEndpoint) {
+        localStorage.removeItem(ADMIN_TOKEN_KEY);
+        showAdminAuthOverlay('সেশন শেষ হয়েছে বা অনুমোদন প্রয়োজন। আবার পাসওয়ার্ড দিন।');
+      }
+      return response;
+    };
+
+    function showAdminAuthOverlay(errorMsg = '') {
+      const overlay = document.getElementById('adminAuthOverlay');
+      const errBox = document.getElementById('adminLoginError');
+      const logoutBtn = document.getElementById('adminLogoutBtn');
+      if (overlay) overlay.style.display = 'flex';
+      if (logoutBtn) logoutBtn.style.display = 'none';
+      if (errBox) {
+        errBox.textContent = errorMsg;
+        errBox.style.display = errorMsg ? 'block' : 'none';
+      }
+    }
+
+    function hideAdminAuthOverlay() {
+      const overlay = document.getElementById('adminAuthOverlay');
+      const logoutBtn = document.getElementById('adminLogoutBtn');
+      if (overlay) overlay.style.display = 'none';
+      if (logoutBtn) logoutBtn.style.display = 'inline-flex';
+    }
+
+    async function verifyAdminSession() {
+      const token = localStorage.getItem(ADMIN_TOKEN_KEY);
+      if (!token) {
+        showAdminAuthOverlay();
+        return false;
+      }
+      try {
+        const res = await _rawFetch(`${API_BASE}/api/admin/verify`, {
+          headers: { 'Authorization': `Bearer ${token}` },
+          cache: 'no-cache'
+        });
+        if (res.ok) {
+          hideAdminAuthOverlay();
+          return true;
+        }
+      } catch (e) {}
+      localStorage.removeItem(ADMIN_TOKEN_KEY);
+      showAdminAuthOverlay();
+      return false;
+    }
+
+    async function submitAdminLogin(e) {
+      e.preventDefault();
+      const input = document.getElementById('adminPasswordInput');
+      const btn = document.getElementById('adminLoginSubmitBtn');
+      const errBox = document.getElementById('adminLoginError');
+      const password = (input ? input.value : '').trim();
+      if (!password) return;
+
+      if (btn) { btn.disabled = true; btn.textContent = 'যাচাই করা হচ্ছে...'; }
+      if (errBox) errBox.style.display = 'none';
+
+      try {
+        const res = await _rawFetch(`${API_BASE}/api/admin/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password })
+        });
+        const data = await res.json();
+        if (res.ok && data.success && data.token) {
+          localStorage.setItem(ADMIN_TOKEN_KEY, data.token);
+          if (input) input.value = '';
+          hideAdminAuthOverlay();
+          checkServerHealth();
+          loadCustomMetaOptions();
+          loadLiveExamItems();
+          loadUserItems(true);
+        } else {
+          showAdminAuthOverlay(data.message || 'ভুল পাসওয়ার্ড!');
+        }
+      } catch (err) {
+        showAdminAuthOverlay('সার্ভারের সাথে সংযোগ পাওয়া যায়নি। কিছুক্ষণ পর আবার চেষ্টা করুন।');
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = 'প্রবেশ করুন'; }
+      }
+    }
+
+    function adminLogout() {
+      localStorage.removeItem(ADMIN_TOKEN_KEY);
+      showAdminAuthOverlay();
+    }
 
     let allMcqs = [];
     let allCqs = [];
@@ -5463,11 +5595,14 @@
       }
     }
 
-    // উইন্ডো লোডে মেটাডাটা অপশন ইনজেক্ট
-    window.addEventListener('DOMContentLoaded', () => {
-      loadCustomMetaOptions();
-      loadLiveExamItems();
-      loadUserItems(true);
+    // উইন্ডো লোডে অ্যাডমিন সেশন যাচাই ও মেটাডাটা অপশন ইনজেক্ট
+    window.addEventListener('DOMContentLoaded', async () => {
+      const ok = await verifyAdminSession();
+      if (ok) {
+        loadCustomMetaOptions();
+        loadLiveExamItems();
+        loadUserItems(true);
+      }
     });
 
   </script>
