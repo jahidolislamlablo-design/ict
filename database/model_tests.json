@@ -1,24 +1,5 @@
 [
   {
-    "_id": "6af3fbadae8873411fe00995",
-    "serialNo": 4,
-    "examNo": "4",
-    "title": "Live Exam 4",
-    "date": "10-11-26",
-    "chapters": "প্রথম অধ্যায়",
-    "category": "live",
-    "totalQuestions": 25,
-    "duration": 25,
-    "totalMarks": 25,
-    "participants": 547,
-    "startTime": "",
-    "endTime": "",
-    "isLive": false,
-    "buttonText": "Start Live Exam",
-    "createdAt": "2026-11-11T05:22:53.370Z",
-    "__v": 0
-  },
-  {
     "_id": "6af3fc45ae8873411fe00996",
     "serialNo": 5,
     "examNo": "5",
