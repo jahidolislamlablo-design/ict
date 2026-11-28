@@ -199,6 +199,7 @@ app.use('/database', express.static(path.join(__dirname, 'database'), noCacheSta
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ict_easy_learning';
 
 let isConnected = false;
+mongoose.set('bufferCommands', false);
 
 mongoose.connection.on('connected', () => {
   isConnected = true;
@@ -779,6 +780,152 @@ function buildCollegeRegex(col) {
   }
   const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return new RegExp(escaped, 'i');
+}
+
+function readJsonDatabase(filename) {
+  const fp = path.join(__dirname, 'database', filename);
+  if (!fs.existsSync(fp)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(fp, 'utf8'));
+  } catch (e) {
+    return [];
+  }
+}
+
+function writeJsonDatabase(filename, data) {
+  const destDirs = [
+    path.join(__dirname, 'database'),
+    'C:/Users/taibu/OneDrive/Desktop/Antygravity project/ict-easy-learning/database'
+  ];
+  const jsonStr = JSON.stringify(data, null, 2);
+  destDirs.forEach(dir => {
+    try {
+      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, filename), jsonStr, 'utf8');
+    } catch (e) {}
+  });
+}
+
+function filterItemsList(items, query, type = 'mcq') {
+  let result = Array.isArray(items) ? [...items] : [];
+  const {
+    chapter,
+    categoryType,
+    boardName,
+    collegeName,
+    examYear,
+    testPaperName,
+    modelTestNo,
+    liveExamNo,
+    examIdentifier
+  } = query || {};
+
+  if (examIdentifier && examIdentifier.trim()) {
+    const idStr = examIdentifier.trim();
+    const numMatch = idStr.match(/\d+/);
+    const num = numMatch ? numMatch[0] : idStr;
+    const paddedNum = num.length === 1 ? '0' + num : num;
+    const r1 = new RegExp(paddedNum, 'i');
+    const r2 = new RegExp(idStr, 'i');
+    result = result.filter(item => {
+      const l = item.liveExamNo || '';
+      const m = item.modelTestNo || '';
+      const lm = (item.liveExamNos || []).join(' ');
+      const mm = (item.modelTestNos || []).join(' ');
+      return r1.test(l) || r1.test(m) || r1.test(lm) || r1.test(mm) ||
+             r2.test(l) || r2.test(m) || r2.test(lm) || r2.test(mm);
+    });
+  } else if (modelTestNo && modelTestNo.trim()) {
+    const numMatch = modelTestNo.match(/\d+/);
+    const numStr = numMatch ? (numMatch[0].length === 1 ? '0' + numMatch[0] : numMatch[0]) : modelTestNo.trim();
+    const r = new RegExp(numStr, 'i');
+    result = result.filter(item => r.test(item.modelTestNo || '') || r.test(item.liveExamNo || '') || (item.modelTestNos || []).some(x => r.test(x)));
+  } else if (liveExamNo && liveExamNo.trim()) {
+    const numMatch = liveExamNo.match(/\d+/);
+    const numStr = numMatch ? (numMatch[0].length === 1 ? '0' + numMatch[0] : numMatch[0]) : liveExamNo.trim();
+    const r = new RegExp(numStr, 'i');
+    result = result.filter(item => r.test(item.liveExamNo || '') || r.test(item.modelTestNo || '') || (item.liveExamNos || []).some(x => r.test(x)));
+  }
+
+  if (categoryType && categoryType.trim() && !examIdentifier && !modelTestNo && !liveExamNo) {
+    const cat = categoryType.trim().toLowerCase();
+    result = result.filter(item => {
+      if (item.categoryType && item.categoryType.toLowerCase() === cat) return true;
+      if (Array.isArray(item.categoryTypes) && item.categoryTypes.some(c => c && c.toLowerCase() === cat)) return true;
+      return false;
+    });
+  }
+
+  if (chapter && chapter.trim()) {
+    const chRegex = buildChapterRegex(chapter);
+    if (chRegex) {
+      result = result.filter(item => {
+        if (item.chapter && chRegex.test(item.chapter)) return true;
+        if (Array.isArray(item.chapters) && item.chapters.some(c => chRegex.test(c))) return true;
+        return false;
+      });
+    }
+  }
+
+  if (boardName && boardName.trim() && boardName.toLowerCase() !== 'all') {
+    const bRegex = buildBoardRegex(boardName);
+    if (bRegex) {
+      result = result.filter(item => {
+        if (item.boardName && bRegex.test(item.boardName)) return true;
+        if (Array.isArray(item.boardNames) && item.boardNames.some(b => bRegex.test(b))) return true;
+        return false;
+      });
+    }
+  }
+
+  if (collegeName && collegeName.trim()) {
+    const colRegex = buildCollegeRegex(collegeName);
+    if (colRegex) {
+      result = result.filter(item => {
+        if (item.collegeName && colRegex.test(item.collegeName)) return true;
+        if (Array.isArray(item.collegeNames) && item.collegeNames.some(c => colRegex.test(c))) return true;
+        return false;
+      });
+    }
+  }
+
+  if (examYear && examYear.trim()) {
+    const yr = examYear.trim();
+    result = result.filter(item => {
+      if (String(item.examYear || '').includes(yr)) return true;
+      if (Array.isArray(item.examYears) && item.examYears.some(y => String(y).includes(yr))) return true;
+      return false;
+    });
+  }
+
+  if (testPaperName && testPaperName.trim()) {
+    const tpRegex = new RegExp(testPaperName.trim(), 'i');
+    result = result.filter(item => {
+      if (item.testPaperName && tpRegex.test(item.testPaperName)) return true;
+      if (Array.isArray(item.testPaperNames) && item.testPaperNames.some(t => tpRegex.test(t))) return true;
+      return false;
+    });
+  }
+
+  return result.sort((a, b) => {
+    const sa = (a.serialNo !== undefined && a.serialNo !== null && a.serialNo > 0) ? a.serialNo : 999999;
+    const sb = (b.serialNo !== undefined && b.serialNo !== null && b.serialNo > 0) ? b.serialNo : 999999;
+    if (sa !== sb) return sa - sb;
+    if (type === 'cq') {
+      return (new Date(b.createdAt || 0)) - (new Date(a.createdAt || 0));
+    }
+    return (new Date(a.createdAt || 0)) - (new Date(b.createdAt || 0));
+  });
+}
+
+function getJsonDistinctChapters(filename) {
+  const list = readJsonDatabase(filename);
+  const chSet = new Set();
+  list.forEach(i => {
+    if (i.chapter && i.chapter.trim()) chSet.add(i.chapter.trim());
+    if (Array.isArray(i.chapters)) i.chapters.forEach(c => { if (c && c.trim()) chSet.add(c.trim()); });
+  });
+  return Array.from(chSet).filter(Boolean);
 }
 
 const uploadPdf = multer({
@@ -1516,13 +1663,25 @@ app.get('/api/mcqs', async (req, res) => {
     if (examYear && examYear.trim()) filter.examYear = examYear.trim();
     if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
 
-    const mcqs = await Mcq.find(filter);
-    const sortedMcqs = mcqs.sort((a, b) => {
-      const sa = (a.serialNo !== undefined && a.serialNo !== null && a.serialNo > 0) ? a.serialNo : 999999;
-      const sb = (b.serialNo !== undefined && b.serialNo !== null && b.serialNo > 0) ? b.serialNo : 999999;
-      if (sa !== sb) return sa - sb;
-      return (new Date(a.createdAt || 0)) - (new Date(b.createdAt || 0));
-    });
+    let sortedMcqs = null;
+    if (isConnected) {
+      try {
+        const mcqs = await Mcq.find(filter);
+        sortedMcqs = mcqs.sort((a, b) => {
+          const sa = (a.serialNo !== undefined && a.serialNo !== null && a.serialNo > 0) ? a.serialNo : 999999;
+          const sb = (b.serialNo !== undefined && b.serialNo !== null && b.serialNo > 0) ? b.serialNo : 999999;
+          if (sa !== sb) return sa - sb;
+          return (new Date(a.createdAt || 0)) - (new Date(b.createdAt || 0));
+        });
+      } catch (e) {
+        sortedMcqs = null;
+      }
+    }
+
+    if (!sortedMcqs) {
+      const allMcqsJson = readJsonDatabase('mcqs.json');
+      sortedMcqs = filterItemsList(allMcqsJson, req.query, 'mcq');
+    }
 
     res.status(200).json({
       success: true,
@@ -1542,7 +1701,17 @@ app.get('/api/mcqs', async (req, res) => {
 // ২. ডাটাবেজে থাকা MCQ চ্যাপ্টারের তালিকা
 app.get('/api/mcqs/chapters', async (req, res) => {
   try {
-    const chapters = await Mcq.distinct('chapter');
+    let chapters = null;
+    if (isConnected) {
+      try {
+        chapters = await Mcq.distinct('chapter');
+      } catch (e) {
+        chapters = null;
+      }
+    }
+    if (!chapters || chapters.length === 0) {
+      chapters = getJsonDistinctChapters('mcqs.json');
+    }
     res.status(200).json({
       success: true,
       count: chapters.length,
@@ -1560,7 +1729,18 @@ app.get('/api/mcqs/chapters', async (req, res) => {
 // ৩. নির্দিষ্ট MCQ আইডি দিয়ে ফেচ করা
 app.get('/api/mcqs/:id', async (req, res) => {
   try {
-    const mcq = await Mcq.findById(req.params.id);
+    let mcq = null;
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        mcq = await Mcq.findById(req.params.id);
+      } catch (e) {
+        mcq = null;
+      }
+    }
+    if (!mcq) {
+      const list = readJsonDatabase('mcqs.json');
+      mcq = list.find(m => String(m._id) === String(req.params.id));
+    }
     if (!mcq) {
       return res.status(404).json({ success: false, message: 'MCQ প্রশ্নটি পাওয়া যায়নি' });
     }
@@ -1644,8 +1824,24 @@ app.post('/api/mcqs', requireAdmin, async (req, res) => {
       explanation: explanation ? String(explanation).trim() : ''
     });
 
-    const savedMcq = await newMcq.save();
-    await syncDatabaseJson('mcqs');
+    let savedMcq = null;
+    if (isConnected) {
+      try {
+        savedMcq = await newMcq.save();
+      } catch (e) {
+        savedMcq = null;
+      }
+    }
+    if (!savedMcq) {
+      const list = readJsonDatabase('mcqs.json');
+      const mcqObj = newMcq.toObject ? newMcq.toObject() : newMcq;
+      if (!mcqObj._id) mcqObj._id = new mongoose.Types.ObjectId().toString();
+      list.unshift(mcqObj);
+      writeJsonDatabase('mcqs.json', list);
+      savedMcq = mcqObj;
+    } else {
+      await syncDatabaseJson('mcqs');
+    }
     autoPushToGitHub('Add new MCQ: ' + (savedMcq.question ? savedMcq.question.slice(0, 30) : 'item'));
     res.status(201).json({
       success: true,
@@ -1742,12 +1938,26 @@ app.put('/api/mcqs/:id', requireAdmin, async (req, res) => {
     if (correctAnswer) updateData.correctAnswer = String(correctAnswer).trim();
     if (explanation !== undefined) updateData.explanation = String(explanation).trim();
 
-    const updatedMcq = await Mcq.findByIdAndUpdate(req.params.id, updateData, { returnDocument: 'after', runValidators: true });
+    let updatedMcq = null;
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        updatedMcq = await Mcq.findByIdAndUpdate(req.params.id, updateData, { returnDocument: 'after', runValidators: true });
+      } catch (e) {
+        updatedMcq = null;
+      }
+    }
+    const list = readJsonDatabase('mcqs.json');
+    const idx = list.findIndex(m => String(m._id) === String(req.params.id));
+    if (idx !== -1) {
+      list[idx] = { ...list[idx], ...updateData, updatedAt: new Date().toISOString() };
+      writeJsonDatabase('mcqs.json', list);
+      if (!updatedMcq) updatedMcq = list[idx];
+    }
     if (!updatedMcq) {
       return res.status(404).json({ success: false, message: 'MCQ প্রশ্নটি পাওয়া যায়নি' });
     }
 
-    await syncDatabaseJson('mcqs');
+    if (isConnected) await syncDatabaseJson('mcqs');
     autoPushToGitHub('Update MCQ: ' + (updatedMcq.question ? updatedMcq.question.slice(0, 30) : req.params.id));
 
     res.status(200).json({
@@ -1768,20 +1978,24 @@ app.put('/api/mcqs/:id', requireAdmin, async (req, res) => {
 app.delete('/api/mcqs/:id', requireAdmin, async (req, res) => {
   try {
     let deletedMcq = null;
-    if (isConnected) {
-      deletedMcq = await Mcq.findById(req.params.id);
-      if (deletedMcq) await Mcq.findByIdAndDelete(req.params.id);
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        deletedMcq = await Mcq.findById(req.params.id);
+        if (deletedMcq) await Mcq.findByIdAndDelete(req.params.id);
+      } catch (e) {}
     }
-    const mcqsPath = path.join(__dirname, 'database', 'mcqs.json');
-    if (!deletedMcq && fs.existsSync(mcqsPath)) {
-      const list = JSON.parse(fs.readFileSync(mcqsPath, 'utf8'));
-      deletedMcq = list.find(m => String(m._id) === String(req.params.id));
+    const list = readJsonDatabase('mcqs.json');
+    const idx = list.findIndex(m => String(m._id) === String(req.params.id));
+    if (idx !== -1) {
+      if (!deletedMcq) deletedMcq = list[idx];
+      list.splice(idx, 1);
+      writeJsonDatabase('mcqs.json', list);
     }
     if (!deletedMcq) {
       return res.status(404).json({ success: false, message: 'MCQ প্রশ্নটি পাওয়া যায়নি' });
     }
     await moveToTrash('mcq', deletedMcq._id || req.params.id, deletedMcq.question, deletedMcq.chapter, deletedMcq);
-    await syncDatabaseJson('mcqs');
+    if (isConnected) await syncDatabaseJson('mcqs');
     autoPushToGitHub('Delete MCQ: ' + req.params.id);
     res.status(200).json({ success: true, message: 'MCQ প্রশ্নটি ট্র্যাশে পাঠানো হয়েছে (প্রয়োজনে রিস্টোর করা যাবে)' });
   } catch (error) {
@@ -1860,13 +2074,24 @@ app.get('/api/cqs', async (req, res) => {
     if (examYear && examYear.trim()) filter.examYear = examYear.trim();
     if (testPaperName && testPaperName.trim()) filter.testPaperName = { $regex: new RegExp(testPaperName.trim(), 'i') };
 
-    const cqs = await Cq.find(filter);
-    const sortedCqs = cqs.sort((a, b) => {
-      const sa = (a.serialNo !== undefined && a.serialNo !== null && a.serialNo > 0) ? a.serialNo : 999999;
-      const sb = (b.serialNo !== undefined && b.serialNo !== null && b.serialNo > 0) ? b.serialNo : 999999;
-      if (sa !== sb) return sa - sb;
-      return (new Date(b.createdAt || 0)) - (new Date(a.createdAt || 0));
-    });
+    let sortedCqs = null;
+    if (isConnected) {
+      try {
+        const cqs = await Cq.find(filter);
+        sortedCqs = cqs.sort((a, b) => {
+          const sa = (a.serialNo !== undefined && a.serialNo !== null && a.serialNo > 0) ? a.serialNo : 999999;
+          const sb = (b.serialNo !== undefined && b.serialNo !== null && b.serialNo > 0) ? b.serialNo : 999999;
+          if (sa !== sb) return sa - sb;
+          return (new Date(b.createdAt || 0)) - (new Date(a.createdAt || 0));
+        });
+      } catch (e) {
+        sortedCqs = null;
+      }
+    }
+    if (!sortedCqs) {
+      const allCqsJson = readJsonDatabase('cqs.json');
+      sortedCqs = filterItemsList(allCqsJson, req.query, 'cq');
+    }
 
     res.status(200).json({
       success: true,
@@ -1886,7 +2111,17 @@ app.get('/api/cqs', async (req, res) => {
 // ২. ডাটাবেজে থাকা CQ চ্যাপ্টারের তালিকা
 app.get('/api/cqs/chapters', async (req, res) => {
   try {
-    const chapters = await Cq.distinct('chapter');
+    let chapters = null;
+    if (isConnected) {
+      try {
+        chapters = await Cq.distinct('chapter');
+      } catch (e) {
+        chapters = null;
+      }
+    }
+    if (!chapters || chapters.length === 0) {
+      chapters = getJsonDistinctChapters('cqs.json');
+    }
     res.status(200).json({
       success: true,
       count: chapters.length,
@@ -1904,7 +2139,18 @@ app.get('/api/cqs/chapters', async (req, res) => {
 // à§©. à¦¨à¦¿à¦°à§à¦¦à¦¿à¦·à§à¦Ÿ CQ à¦†à¦‡à¦¡à¦¿ à¦¦à¦¿à§Ÿà§‡ à¦«à§‡à¦š à¦•à¦°à¦¾
 app.get('/api/cqs/:id', async (req, res) => {
   try {
-    const cq = await Cq.findById(req.params.id);
+    let cq = null;
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        cq = await Cq.findById(req.params.id);
+      } catch (e) {
+        cq = null;
+      }
+    }
+    if (!cq) {
+      const list = readJsonDatabase('cqs.json');
+      cq = list.find(c => String(c._id) === String(req.params.id));
+    }
     if (!cq) {
       return res.status(404).json({ success: false, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿' });
     }
@@ -1999,8 +2245,24 @@ app.post('/api/cqs', requireAdmin, async (req, res) => {
       a_gha: a_gha ? a_gha.trim() : ''
     });
 
-    const savedCq = await newCq.save();
-    await syncDatabaseJson('cqs');
+    let savedCq = null;
+    if (isConnected) {
+      try {
+        savedCq = await newCq.save();
+      } catch (e) {
+        savedCq = null;
+      }
+    }
+    if (!savedCq) {
+      const list = readJsonDatabase('cqs.json');
+      const cqObj = newCq.toObject ? newCq.toObject() : newCq;
+      if (!cqObj._id) cqObj._id = new mongoose.Types.ObjectId().toString();
+      list.unshift(cqObj);
+      writeJsonDatabase('cqs.json', list);
+      savedCq = cqObj;
+    } else {
+      await syncDatabaseJson('cqs');
+    }
     autoPushToGitHub('Add new CQ');
     res.status(201).json({
       success: true,
@@ -2112,12 +2374,23 @@ app.put('/api/cqs/:id', requireAdmin, async (req, res) => {
     if (q_gha) updateData.q_gha = q_gha.trim();
     if (a_gha !== undefined) updateData.a_gha = a_gha.trim();
 
-    const updatedCq = await Cq.findByIdAndUpdate(req.params.id, updateData, { returnDocument: 'after', runValidators: true });
-    if (!updatedCq) {
-      return res.status(404).json({ success: false, message: 'CQ à¦ªà§à¦°à¦¶à§à¦¨à¦Ÿà¦¿ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿' });
+        let updatedCq = null;
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        updatedCq = await Cq.findByIdAndUpdate(req.params.id, updateData, { returnDocument: 'after', runValidators: true });
+      } catch (e) {}
     }
-
-    await syncDatabaseJson('cqs');
+    const list = readJsonDatabase('cqs.json');
+    const idx = list.findIndex(c => String(c._id) === String(req.params.id));
+    if (idx !== -1) {
+      list[idx] = { ...list[idx], ...updateData, updatedAt: new Date().toISOString() };
+      writeJsonDatabase('cqs.json', list);
+      if (!updatedCq) updatedCq = list[idx];
+    }
+    if (!updatedCq) {
+      return res.status(404).json({ success: false, message: 'CQ প্রশ্নটি পাওয়া যায়নি' });
+    }
+    if (isConnected) await syncDatabaseJson('cqs');
     autoPushToGitHub('Update CQ: ' + req.params.id);
 
     res.status(200).json({
@@ -2138,20 +2411,24 @@ app.put('/api/cqs/:id', requireAdmin, async (req, res) => {
 app.delete('/api/cqs/:id', requireAdmin, async (req, res) => {
   try {
     let deletedCq = null;
-    if (isConnected) {
-      deletedCq = await Cq.findById(req.params.id);
-      if (deletedCq) await Cq.findByIdAndDelete(req.params.id);
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        deletedCq = await Cq.findById(req.params.id);
+        if (deletedCq) await Cq.findByIdAndDelete(req.params.id);
+      } catch (e) {}
     }
-    const cqsPath = path.join(__dirname, 'database', 'cqs.json');
-    if (!deletedCq && fs.existsSync(cqsPath)) {
-      const list = JSON.parse(fs.readFileSync(cqsPath, 'utf8'));
-      deletedCq = list.find(c => String(c._id) === String(req.params.id));
+    const list = readJsonDatabase('cqs.json');
+    const idx = list.findIndex(c => String(c._id) === String(req.params.id));
+    if (idx !== -1) {
+      if (!deletedCq) deletedCq = list[idx];
+      list.splice(idx, 1);
+      writeJsonDatabase('cqs.json', list);
     }
     if (!deletedCq) {
       return res.status(404).json({ success: false, message: 'CQ প্রশ্নটি পাওয়া যায়নি' });
     }
     await moveToTrash('cq', deletedCq._id || req.params.id, deletedCq.stem || deletedCq.q_ka, deletedCq.chapter, deletedCq);
-    await syncDatabaseJson('cqs');
+    if (isConnected) await syncDatabaseJson('cqs');
     autoPushToGitHub('Delete CQ: ' + req.params.id);
     res.status(200).json({ success: true, message: 'CQ প্রশ্নটি ট্র্যাশে পাঠানো হয়েছে (প্রয়োজনে রিস্টোর করা যাবে)' });
   } catch (error) {
@@ -2407,7 +2684,32 @@ app.get('/api/pdfs', async (req, res) => {
       ];
     }
 
-    const pdfs = await Pdf.find(filter).sort({ serialNo: 1, createdAt: -1 });
+    let pdfs = null;
+    if (isConnected) {
+      try {
+        pdfs = await Pdf.find(filter).sort({ serialNo: 1, createdAt: -1 });
+      } catch (e) {
+        pdfs = null;
+      }
+    }
+    if (!pdfs) {
+      let list = readJsonDatabase('pdfs.json');
+      if (category && category !== 'all') list = list.filter(p => p.category === category.trim());
+      if (chapter && chapter !== 'all') {
+        const reg = new RegExp(chapter.trim(), 'i');
+        list = list.filter(p => reg.test(p.chapter || ''));
+      }
+      if (search) {
+        const q = new RegExp(search.trim(), 'i');
+        list = list.filter(p => q.test(p.title || '') || q.test(p.description || '') || q.test(p.chapter || ''));
+      }
+      pdfs = list.sort((a, b) => {
+        const sa = (a.serialNo !== undefined && a.serialNo !== null) ? a.serialNo : 999999;
+        const sb = (b.serialNo !== undefined && b.serialNo !== null) ? b.serialNo : 999999;
+        if (sa !== sb) return sa - sb;
+        return (new Date(b.createdAt || 0)) - (new Date(a.createdAt || 0));
+      });
+    }
 
     res.status(200).json({
       success: true,
@@ -2602,21 +2904,25 @@ app.post('/api/pdfs', requireAdmin, (req, res) => {
 app.delete('/api/pdfs/:id', requireAdmin, async (req, res) => {
   try {
     let pdf = null;
-    if (isConnected) {
-      pdf = await Pdf.findById(req.params.id);
-      if (pdf) await Pdf.findByIdAndDelete(req.params.id);
+    if (isConnected && mongoose.Types.ObjectId.isValid(req.params.id)) {
+      try {
+        pdf = await Pdf.findById(req.params.id);
+        if (pdf) await Pdf.findByIdAndDelete(req.params.id);
+      } catch (e) {}
     }
-    const pdfsPath = path.join(__dirname, 'database', 'pdfs.json');
-    if (!pdf && fs.existsSync(pdfsPath)) {
-      const list = JSON.parse(fs.readFileSync(pdfsPath, 'utf8'));
-      pdf = list.find(p => String(p._id) === String(req.params.id));
+    const list = readJsonDatabase('pdfs.json');
+    const idx = list.findIndex(p => String(p._id) === String(req.params.id));
+    if (idx !== -1) {
+      if (!pdf) pdf = list[idx];
+      list.splice(idx, 1);
+      writeJsonDatabase('pdfs.json', list);
     }
     if (!pdf) {
       return res.status(404).json({ success: false, message: 'পিডিএফ পাওয়া যায়নি' });
     }
 
     await moveToTrash('pdf', pdf._id || req.params.id, pdf.title, pdf.chapter || pdf.category, pdf);
-    await syncPdfsJson();
+    if (isConnected) await syncPdfsJson();
     autoPushToGitHub(`Delete PDF to Trash: ${pdf.title || 'item'}`);
 
     res.status(200).json({
